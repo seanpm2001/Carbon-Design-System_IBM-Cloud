@@ -1,0 +1,160 @@
+$feature-flags: (
+  grid-columns-16: true,
+  enable-css-custom-properties: true,
+);
+
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+
+@use "@carbon/react/scss/components/skeleton-styles";
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/components/button";
+
+/* Make sure to import any Carbon Component's styles that this component uses */
+
+$resource-status-indicator-green-primary: $support-success;
+$resource-status-indicator-green-secondary: $green-30;
+$resource-status-indicator-red-primary: $support-error;
+$resource-status-indicator-red-secondary: $red-40;
+
+.red-failure-icon {
+  fill: $support-error;
+}
+
+.green-checkmark-icon {
+  fill: $support-success;
+}
+
+.pal--resource-status-indicator {
+  /* All styles for this Component should go here */
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+
+  &__progress {
+    $shrink-transition: width 400ms carbon--motion(standard, expressive);
+
+    transition: $shrink-transition;
+    transition-delay: 400ms;
+    position: relative;
+    height: 0.75rem;
+    border-radius: 2rem;
+    background-color: $layer-03;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__icon--inprogress {
+    fill: $support-info;
+  }
+
+  &__label {
+    color: $text-secondary;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+  }
+
+  &--segments {
+    .pal--resource-status-indicator__section:not(:last-child) {
+      border-right: 0.125rem solid $layer-02;
+    }
+  }
+
+  &__section {
+    position: relative;
+    height: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 0;
+    overflow: hidden;
+    background-color: transparent;
+    transition: flex-basis 400ms carbon--motion(standard, expressive);
+  }
+
+  &__section__fill {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: none;
+    transition: width 400ms carbon--motion(standard, expressive);
+  }
+
+  .pal--resource-status-indicator__section[data-status="green"]
+    .pal--resource-status-indicator__section__fill {
+    background-color: $resource-status-indicator-green-primary;
+  }
+
+  .pal--resource-status-indicator__section[data-status="red"]
+    .pal--resource-status-indicator__section__fill {
+    background-color: $resource-status-indicator-red-primary;
+  }
+
+  .pal--resource-status-indicator__section[data-status^="indeterminate"]
+    .pal--resource-status-indicator__section__fill {
+    background-size: 15px 15px;
+    background-image: linear-gradient(
+      135deg,
+      $resource-status-indicator-green-primary 25%,
+      $resource-status-indicator-green-secondary 25%,
+      $resource-status-indicator-green-secondary 50%,
+      $resource-status-indicator-green-primary 50%,
+      $resource-status-indicator-green-primary 75%,
+      $resource-status-indicator-green-secondary 75%,
+      $resource-status-indicator-green-secondary
+    );
+    animation: animate-stripes 3s linear infinite;
+  }
+
+  .pal--resource-status-indicator__section[data-status="indeterminate-red"]
+    .pal--resource-status-indicator__section__fill {
+    background-image: linear-gradient(
+      135deg,
+      $resource-status-indicator-red-primary 25%,
+      $resource-status-indicator-red-secondary 25%,
+      $resource-status-indicator-red-secondary 50%,
+      $resource-status-indicator-red-primary 50%,
+      $resource-status-indicator-red-primary 75%,
+      $resource-status-indicator-red-secondary 75%,
+      $resource-status-indicator-red-secondary
+    );
+  }
+
+  &--skeleton {
+    display: flex;
+    align-items: center;
+
+    .cds--skeleton__text {
+      margin-bottom: 0;
+    }
+
+    &__progress {
+      height: 0.75rem;
+      border-radius: 2rem;
+      overflow: hidden;
+    }
+
+    &__label {
+      height: 0.875rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  @keyframes animate-stripes {
+    0% {
+      background-position: 0 0;
+    }
+
+    100% {
+      background-position: 60px 0;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+// @use '@carbon/layout';
+// @use "@carbon/react/scss/components/button";
+@use "@carbon/react/scss/components/link";
+@use "@carbon/react/scss/components/overflow-menu";
+// @use "@carbon/react/scss/grid";
+@use "@carbon/react/scss/components/skeleton-styles";
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/components/button";
+@import "@carbon/react/scss/grid";
+
+.pal--isometric-icon {
+  height: 128px;
+  width: 128px;
+}

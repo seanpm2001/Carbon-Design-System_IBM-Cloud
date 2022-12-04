@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 140 200">
+  <defs>
+    <linearGradient id="error--dark-gray-2" x1="66.98" x2="66.98" y1="206.78" y2="29.82" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6f6f6f"/>
+      <stop offset="1" stop-color="#161616" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="error--dark-gray-3" x1="50.11" x2="83.93" y1="455.37" y2="396.78" gradientTransform="matrix(1 0 0 -1 0 567.15)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#525252"/>
+      <stop offset="1" stop-color="#393939"/>
+    </linearGradient>
+    <linearGradient id="error--dark-gray-1" x1="67.19" x2="134" y1="404.16" y2="404.16" gradientTransform="matrix(1 0 0 -1 0 567.15)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#161616"/>
+      <stop offset="1" stop-color="#262626"/>
+    </linearGradient>
+    <linearGradient id="error--dark-gray-4" x2="67.24" y1="404.16" y2="404.16" gradientTransform="matrix(1 0 0 -1 0 567.15)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#393939"/>
+      <stop offset="1" stop-color="#262626"/>
+    </linearGradient>
+    <linearGradient id="error--dark-gray-5" x1="341.73" x2="388.39" y1="113.2" y2="113.2" gradientTransform="translate(-299.95)" xlink:href="#a"/>
+    <linearGradient id="error--dark-gray-6" x1="47.82" x2="88.44" y1="112.51" y2="112.51" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#545454"/>
+      <stop offset="1" stop-color="#2b2b2b"/>
+    </linearGradient>
+    <linearGradient id="error--dark-gray-7" x1="48.07" x2="75.27" y1="129.15" y2="101.95" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0d0d0d"/>
+      <stop offset="1" stop-color="#212121"/>
+    </linearGradient>
+    <linearGradient id="error--dark-gray-8" x1="61.43" x2="61.43" y1="469.3" y2="437.81" gradientTransform="matrix(1 0 0 -1 0 567.15)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#575757"/>
+      <stop offset="1" stop-color="#2e2e2e"/>
+    </linearGradient>
+  </defs>
+  <g data-name="Platforms and glow">
+    <path fill="url(#error--dark-gray-2)" d="M66.76 102.24L134 141.17V0H0v141.17z" opacity=".4" style="isolation:isolate"/>
+    <path fill="url(#error--dark-gray-3)" d="M0 141.07l66.77-38.93L134 141.07 67.24 180z"/>
+    <path fill="url(#error--dark-gray-1)" d="M134 141.07v4.9L67.19 184.9V180z"/>
+    <path fill="url(#error--dark-gray-4)" d="M67.24 180v4.9L0 146v-4.9z"/>
+    <path fill="#161616" fill-opacity=".3" d="M67.19 184.9l-54.2-31.4L0 161.07 67.19 200l66.77-38.93-12.99-7.52-53.78 31.35z"/>
+  </g>
+  <path fill="url(#error--dark-gray-5)" d="M67.74 88c-5.74-3.36-11-3.65-14.74-1.45l-5.15 3c3.77-2.21 9-1.91 14.78 1.42 11.48 6.61 20.76 22.56 20.7 35.66 0 6.49-2.34 11.07-6 13.27l5.15-3c3.71-2.15 6-6.73 6-13.28.02-13.08-9.25-29.09-20.74-35.62z"/>
+  <path fill="url(#error--dark-gray-5)" d="M67.74 88c-5.74-3.36-11-3.65-14.74-1.45l-5.15 3c3.77-2.21 9-1.91 14.78 1.42 11.48 6.61 20.76 22.56 20.7 35.66 0 6.49-2.34 11.07-6 13.27l5.15-3c3.71-2.15 6-6.73 6-13.28.02-13.08-9.25-29.09-20.74-35.62z"/>
+  <path fill="url(#error--dark-gray-5)" d="M62.6 91c11.48 6.61 20.76 22.56 20.7 35.66S74 145 62.48 138.45s-20.76-22.55-20.7-35.65S51.11 84.35 62.6 91z"/>
+  <path fill="url(#error--dark-gray-5)" d="M61.46 128.82a5.63 5.63 0 01-2.07-1.93 4.47 4.47 0 01-.62-2.3v-.75c0-.81.19-1.31.62-1.56s1.13-.12 2.07.44a4.91 4.91 0 012 1.93 5 5 0 01.63 2.31v.74c0 .81-.19 1.31-.63 1.56s-1.06.06-2-.44zm-.88-11.52l-1.37-11.91v-7.54l4.51 2.62V108l-1.32 10.35z"/>
+  <path fill="url(#error--dark-gray-6)" d="M67.74 88c-5.74-3.36-11-3.65-14.74-1.45l-5.15 3c3.77-2.21 9-1.91 14.78 1.42 11.48 6.61 20.76 22.56 20.7 35.66 0 6.49-2.34 11.07-6 13.27l5.15-3c3.71-2.15 6-6.73 6-13.28.02-13.08-9.25-29.09-20.74-35.62z" opacity=".3"/>
+  <path fill="url(#error--dark-gray-7)" d="M62.6 91c11.48 6.61 20.76 22.56 20.7 35.66S74 145 62.48 138.45s-20.76-22.55-20.7-35.65S51.11 84.35 62.6 91z"/>
+  <path fill="url(#error--dark-gray-8)" d="M61.46 128.82a5.63 5.63 0 01-2.07-1.93 4.47 4.47 0 01-.62-2.3v-.75c0-.81.19-1.31.62-1.56s1.13-.12 2.07.44a4.91 4.91 0 012 1.93 5 5 0 01.63 2.31v.74c0 .81-.19 1.31-.63 1.56s-1.06.06-2-.44zm-.88-11.52l-1.37-11.91v-7.54l4.51 2.62V108l-1.32 10.35z"/>
+</svg>

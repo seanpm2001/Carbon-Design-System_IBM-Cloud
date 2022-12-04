@@ -1,0 +1,157 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { SidePanel, SidePanelContainer } from "./";
+import "./_styles.scss";
+import Examples from "./examples";
+
+<Meta
+  title="Components/SidePanel"
+  component={SidePanel}
+  argTypes={{
+    locale: {
+      control: { type: "select" },
+      options: [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "ja",
+        "ko",
+        "pt-br",
+        "zh-cn",
+        "zh-tw",
+      ],
+      defaultValue: "en",
+    },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: "GA" } }}
+/>
+
+# SidePanel
+
+export const Template = (args) => <Examples {...args} />;
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      dismissible: true,
+      withGradient: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+Side panels display additional information for objects within a page. They help users gain context and make edits
+while still viewing the contents of the page.
+
+Side panels can display up to three levels of additional information, and may include form fields, code snippets
+and static visualizations. They can also walk users through a multi-step flow, display teachable moments, and edit content in tables.
+
+## Usage
+
+Careful! The SidePanel content can not be rendered within a component defined within render as this is an [anti-pattern](https://reactjs.org/docs/higher-order-components.html#dont-use-hocs-inside-the-render-method) and can cause various issues.
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/SidePanel/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { SidePanel, SidePanelContainer } from "./";
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+### Multi-step side panels
+
+<p>
+  Multi step side panels are handled by placing more than one SidePanel
+  component in a SidePanelContainer. Navigation between panels is provided by
+  the component.
+</p>
+<p>
+  The first SidePanel will have a primary "next" button and a secondary "cancel"
+  button.
+</p>
+<p>
+  Subsequent SidePanels before the last will have a primary "next" button and a
+  secondary "previous" button.
+</p>
+<p>
+  The final SidePanel will have a primary "done" button and a secondary
+  "previous" button.
+</p>
+<p>
+  The text for all buttons can be overridden by providing the appropriate
+  property. The properties can be set on the SidePanelContainer and will be
+  inherited by any SidePanel that does not declare its own value for the
+  property.
+</p>
+<p>
+  If any sort of validation is needed before navigating to the next (or
+  previous) SidePanel, you can assign a function to the appropriate click event
+  passed into the component via props. That function will be called when the
+  event is fired. To prevent navigation, the function should return false.
+</p>
+
+### Nested side panels
+
+<p>
+  A control within a side panel can be made to open a nested side panel. To open
+  a nested SidePanel, set it's parent's <em>nestedPanel</em> component to be an
+  array of nested panels. The nested SidePanel will open over the parent side
+  panel, but the parent side panel will remain loaded in the DOM. The nested
+  panel will have two navigation buttons. A 'previous' button will close the
+  nested panel, uncovering the parent. A 'done' button will do the same, but
+  event handlers are provided for both to allow for canceling and saving
+  submissions. The text of these buttons can be overridden with the{" "}
+  <em>previousText</em>
+  and <em>DoneText</em> properties. The default closing behavior will be prevented
+  if a function assigned to <em>onPreviousClick</em> or <em>onDoneClick</em> property
+  returns false.
+</p>
+<p>
+  A Panel which may potentially contain a nested panel should have its
+  _breadCrumbText_ property set to a string that will be displayed as a
+  breadcrumb at the top of the side panel. Each nested panel should also have
+  its _breadCrumbText_ property set.
+</p>
+<p>Any given panel of a multi-step panel may contain a nested panel.</p>
+
+## Focus
+
+<p>
+  A SidePanel with an overlay (<em>hasOverlay</em> set to true) will capture
+  focus. By default the item focused will be the primaryButton rendered in the
+  sidePanel. If you want a specific element to be focused by default, you can
+  add a data attribute, <em>data-focus-first</em>, to the element you want to be
+  focused when the SidePanel opens.
+</p>
+
+### Controlling Pagination
+
+Pagination is controlled within the `SidePanelContainer` component and can be controlled using props passed to a SidePanel with a single React
+component as a child. The following props are exposed for controlling pagination during
+
+## Props for SidePanel
+
+<ArgsTable of={SidePanel} />
+
+## Props for SidePanelContainer
+
+<ArgsTable of={SidePanelContainer} />
+
+## Loading State
+
+Since there is no predefined content for a side panel, there is no loading state provided.

@@ -1,0 +1,79 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { MiniOrderSummarySidePanel, MiniOrderSummary } from ".";
+import "./_styles.scss";
+import Examples from "./examples";
+
+<Meta
+  title="Components/MiniOrderSummarySidePanel"
+  component={MiniOrderSummarySidePanel}
+  argTypes={{
+    locale: {
+      control: { type: "select" },
+      options: [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "ja",
+        "ko",
+        "pt-br",
+        "zh-cn",
+        "zh-tw",
+      ],
+      defaultValue: "en",
+    },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: "GA" } }}
+/>
+
+# MiniOrderSummarySidePanel
+
+export const Template = (args) => <Examples />;
+
+<Canvas>
+  <Story name="Demo" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+MiniOrderSummarySidePanel and MiniOrderSummary are components designed to be used in conjuction to allow users to both configure and create orders within the context of a side panel. The needed configuration for the order is typically simple. More complex configurations should use a Catalog provisioning page.
+MiniOrderSummarySidePanel manages the form area of the side panel and provides transitions for the expanding / collapsing MiniOrderSummary. This component is meant to work exactly like SidePanel. For more information, see [Side panel](/components/side-panel/code) code documentation.
+MiniOrderSummary manages the displayed order details. This component is meant to work similar to OrderSummaryV2. For more information, see [Order summary V2](/components/order-summary-v2/code) code documentation.
+**NOTE:** It is required that every Order Summary includes the `estimateData` to pass along to the cost estimator.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/MiniOrderSummarySidePanel/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { MiniOrderSummarySidePanel } from "@console/pal/Components";
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props for MiniOrderSummarySidePanel
+
+<ArgsTable of={MiniOrderSummarySidePanel} />
+
+## Props for MiniOrderSummary
+
+<ArgsTable of={MiniOrderSummary} />
+
+## Loading State
+
+Since there is no predefined content for the MiniOrderSummary or MiniOrderSummarySidePanel, there is no loading state provided.
+
+## Contributors
+
+- Zachary Singh

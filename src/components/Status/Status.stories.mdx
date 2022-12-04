@@ -1,0 +1,72 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import Status from '.';
+import './_styles.scss';
+
+<Meta
+  title="Components/Status"
+  component={Status}
+  argTypes={{
+    locale: { control: { type: 'select' }, options: ['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'zh-cn', 'zh-tw'], defaultValue: 'en' },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: 'deprecated' }}}
+/>
+
+# Status
+
+export const Template = (args) => (
+  <Status {...args} />
+);
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      label: 'Test label',
+      status: 'success',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+The Status component is used to indicate the status of a service, API call, health check, etc.
+
+## Usage and Style guidelines
+
+For usage and style guidelines please refer to [status indicators](/patterns/status-indicators/style)
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/Status/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { Status } from '@console/pal/Components';
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={Status} />
+
+## Loading State
+
+<Canvas>
+  <Story name="Skeleton">
+    <Status.skeleton />
+  </Story>
+</Canvas>
+
+## Contributors
+- Anthony Barbee

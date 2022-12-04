@@ -1,0 +1,77 @@
+@use '@carbon/styles/scss/colors';
+@use "@carbon/react/scss/type";
+@import "@carbon/react/scss/components/tag";
+@import "@carbon/styles/scss/components/tag/mixins";
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+
+@mixin tag-icon-theme($bg-color, $text-color) {
+  fill: $text-color;
+}
+
+@mixin tag-icon-hover($bg-color) {
+  background-color: $bg-color;
+}
+
+@mixin tag-filter-rules($color-name, $bg-color, $fg-color) {
+  .pal--tag {
+    &.cds--tag--#{$color-name}.cds--tag--filter > svg:hover {
+      background-color: rgba($fg-color, 0.5);
+      fill: $bg-color;
+      box-shadow: none;
+    }
+
+    &.cds--tag--#{$color-name}.cds--tag--filter:hover {
+      box-shadow: 0 0 0 1px $fg-color;
+    }
+
+    &.cds--tag--#{$color-name}.cds--tag--filter:focus {
+      box-shadow: 0 0 0 2px $fg-color;
+
+      svg {
+        box-shadow: inset 0 0 0 1px transparent;
+      }
+    }
+
+    &.cds--tag--#{$color-name}.pal--tag--clickable:hover {
+      box-shadow: 0 0 0 1px $fg-color;
+    }
+
+    &.cds--tag--#{$color-name}.pal--tag--clickable:focus {
+      box-shadow: 0 0 0 2px $fg-color;
+    }
+
+    &.cds--tag--#{$color-name}.cds--tag--filter {
+      @include tag-theme($bg-color, $fg-color);
+
+      svg {
+        fill: $fg-color;
+      }
+    }
+  }
+}
+
+@mixin filter-fix() {
+  @include tag-filter-rules("red", colors.$red-20, colors.$red-70);
+  @include tag-filter-rules("magenta", colors.$magenta-20, colors.$magenta-70);
+  @include tag-filter-rules("purple", colors.$purple-20, colors.$purple-70);
+  @include tag-filter-rules("blue", colors.$blue-20, colors.$blue-70);
+  @include tag-filter-rules("cyan", colors.$cyan-20, colors.$cyan-70);
+  @include tag-filter-rules("teal", colors.$teal-20, colors.$teal-70);
+  @include tag-filter-rules("green", colors.$green-20, colors.$green-70);
+  @include tag-filter-rules("gray", colors.$gray-20, colors.$gray-100);
+  @include tag-filter-rules(
+    cool-gray,
+    colors.$cool-gray-20,
+    colors.$cool-gray-100
+  );
+  @include tag-filter-rules(
+    warm-gray,
+    colors.$warm-gray-20,
+    colors.$warm-gray-100
+  );
+}

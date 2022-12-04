@@ -1,0 +1,118 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import Tag from '.';
+
+import './_styles.scss';
+
+<Meta
+  title="Components/Tag"
+  component={Tag}
+  argTypes={{
+    locale: { control: { type: 'select' }, options: ['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'zh-cn', 'zh-tw'], defaultValue: 'en' },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: 'core' }}}
+/>
+
+# Tag
+
+export const Template = (args) => (
+  <Tag {...args} />
+);
+
+<Canvas>
+  <Story
+    name="Clickable Tag"
+    args={{
+      className: "test",
+      maxCharacters: 12,
+      type: "functional",
+      onClick: () => { console.log("Clicked tag"); },
+      children: "Clickable Tag"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Unclickable Tag"
+    args={{
+      className: "test",
+      maxCharacters: 12,
+      type: "functional",
+      children: "Unclickable Tag",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Removable Tag"
+    args={{
+      isRemovable: true,
+      className: "test",
+      maxCharacters: 12,
+      type: "functional",
+      onRemove: () => { console.log("Removing tag"); },
+      children: "Removable Tag",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Removable Tag with large character limit"
+    args={{
+      isRemovable: true,
+      className: "test",
+      maxCharacters: 64,
+      type: "red",
+      onRemove: () => { console.log("Removing tag"); },
+      onClick: () => { console.log("Clicked tag"); },
+      children: "Removable Tag with large character limit",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Blue tag special"
+    args={{
+      isRemovable: true,
+      className: "test",
+      maxCharacters: 64,
+      type: "blue",
+      onRemove: () => { console.log("Removing tag"); },
+      onClick: () => { console.log("Clicked tag"); },
+      children: "Blue tag special",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+The Tag component is a wrapper around Carbon's tag component. It is used for rendering user defined (resource) Tags on the cloud platform. The blue tags are reserved for user defined Tags and should not be used for any other form of tagging.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/Tag/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { Tag } from '@console/pal/Components';
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={Tag} />
+
+## Contributors
+
+- ADD YOUR Tag

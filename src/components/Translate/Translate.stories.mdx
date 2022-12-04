@@ -1,0 +1,104 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import Translate from '.';
+import './_styles.scss';
+
+<Meta
+  title="Community components/Translate"
+  component={Translate}
+  argTypes={{
+    locale: { control: { type: 'select' }, options: ['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'zh-cn', 'zh-tw'], defaultValue: 'en' },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: 'community' }}}
+/>
+
+# Translate
+
+export const Template = (args) => (
+  <Translate {...args}>
+    {"Try waiting a few minutes and perform the action again to see if the problem persists. If so, check the <a>status page</a> to see if something else is going on. If you're still experiencing an issue reach out to <a>support</a> for help."}
+  </Translate>
+);
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      tagProps: [
+        { href: '/status', target: '_blank' },
+        { href: '/unifiedsupport/supportcenter', target: '_blank' },
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+Translate is a component used for embedding HTML or React components inside a translated string. It serves the same purpose as the react-i18next Trans component but behaves a bit differently. You wrap the relevant text inside the string with a tag and then provide the properties to apply to the element / component created by that tag. Three tags are currently supported: `a`, `code`, and `span`. Use the `a` tag to embed links in the text, `code` to embed inline code, and `span` to apply any classes or styling to certain words.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/Translate/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { Translate } from '@console/pal/Components';
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={Translate} />
+
+
+## Other Examples
+
+### Render an inline code block
+<Canvas>
+  <Story
+    name="Demo-inline"
+    args={{
+      tagProps: [{ className: 'inline-code-block' }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Render a react-router Link component (tagMap={{ a: Link }})
+<Canvas>
+  <Story
+    name="Demo-router-link"
+    args={{
+      tagProps: [{ to: '/kubernetes/registry/main/start', className: 'cds--link' }],
+      tagMap: { /* a: Link */ }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Add some styling
+<Canvas>
+  <Story
+    name="Demo-styling"
+    args={{
+      tagProps: [{ style: { fontSize: '150%', fontWeight: 600 } }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Contributors
+- Argonauts UI dev team (@squids)

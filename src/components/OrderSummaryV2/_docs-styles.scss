@@ -1,0 +1,6 @@
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+
+.pal--order-summary-v2 .pal--submit-promo__container .cds--modal {
+  @include theme($g10, true);
+}

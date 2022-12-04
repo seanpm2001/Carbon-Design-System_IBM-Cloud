@@ -1,0 +1,95 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { IbmCloud } from "@carbon/react/icons";
+import CatalogTile from ".";
+import "./_styles.scss";
+
+<Meta
+  title="Components/CatalogTile"
+  component={CatalogTile}
+  argTypes={{
+    locale: {
+      control: { type: "select" },
+      options: [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "ja",
+        "ko",
+        "pt-br",
+        "zh-cn",
+        "zh-tw",
+      ],
+      defaultValue: "en",
+    },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: "experimental" } }}
+/>
+
+# CatalogTile
+
+export const Template = (args) => <CatalogTile {...args} />;
+export const icon = <IbmCloud size={32} aria-label="IbmCloud" />;
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      href: "https://www.ibm.com/cloud",
+      learnMoreHref: "https://www.ibm.com/cloud",
+      offeringName: "Cloud Pal",
+      providerName: "IBM",
+      description:
+        "This is a description that would explain in brief what this offering would do and how it would provide perfectly",
+      tag: ["IBM", "Computer"],
+      label: "Example Tile",
+      icon: icon,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+CatalogTile is a component used to show IBM Cloud offerings/services in the Catalog.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/CatalogTile/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { CatalogTile } from "@console/pal/Components";
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={CatalogTile} />
+
+## Loading State
+
+<Canvas>
+  <Story name="Skeleton">
+    <CatalogTile.skeleton />
+  </Story>
+</Canvas>
+
+## Contributors
+
+- Flannan Lo
+- Felipe Franklin
+- Brian Svihovec
+- Faiq Malik

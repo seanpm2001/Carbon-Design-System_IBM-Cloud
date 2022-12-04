@@ -1,0 +1,184 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/components/button";
+@import "@carbon/react/scss/components/inline-loading";
+@import "@carbon/react/scss/grid";
+@import "@carbon/react/scss/motion";
+
+// @import '../SidePanel/styles';
+// @import '../OrderSummaryV2/styles';
+
+.pal--mini-order-summary-side-panel {
+  .pal--mini-order-summary-side-panel__summary {
+    position: absolute;
+    bottom: 4rem;
+    left: 0;
+    width: 100%;
+  }
+
+  .pal--mini-order-summary-side-panel__summary::before {
+    content: "";
+    pointer-events: none;
+    top: -2rem;
+    position: absolute;
+    height: 2rem;
+    width: 100%;
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0) 0%,
+      $icon-inverse 100%
+    );
+  }
+
+  // SidePanel Overrides
+  .pal--side-panel__body-content {
+    // May break multi-step styles
+    position: unset;
+  }
+
+  .pal--side-panel__content {
+    transition: height $duration-moderate-01 motion(standard, productive);
+  }
+  @include theme($g90, true);
+  .pal--side-panel__btn-set.#{$prefix}--btn-set {
+    @include inline-loading;
+
+    background-color: $layer-02;
+  }
+}
+
+.pal--mini-order-summary {
+  @include theme($g90, true);
+  @include button;
+  @include inline-loading;
+
+  border-top: 2px solid $button-primary;
+  position: relative;
+
+  .pal--mini-order-summary__expand-button {
+    &.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger {
+      position: absolute;
+      top: 0.625rem;
+      left: 1rem;
+    }
+  }
+
+  &.pal--mini-order-summary--expanded {
+    .pal--mini-order-summary__expand-arrow {
+      transform: rotate(-180deg) #{"/*rtl:ignore*/"};
+    }
+  }
+
+  .pal--mini-order-summary__expand-arrow {
+    transform: rotate(0) #{"/*rtl:ignore*/"};
+    transition: transform $duration-fast-02 motion(standard, productive);
+  }
+
+  .pal--mini-order-summary__estimate {
+    display: flex;
+    flex-direction: column;
+    margin-top: $spacing-05;
+
+    > .#{$prefix}--btn--tertiary {
+      max-width: unset;
+    }
+  }
+
+  .pal--mini-order-summary__notifications {
+    display: flex;
+    flex-direction: column;
+    margin-left: $spacing-05;
+  }
+
+  .pal--mini-order-summary__terms--invalid {
+    .#{$prefix}--checkbox-label::before {
+      border-color: $support-error;
+    }
+
+    .#{$prefix}--checkbox:focus + .#{$prefix}--checkbox-label::before {
+      box-shadow: 0 0 0 2px $icon-inverse, 0 0 0 4px $support-error;
+    }
+  }
+
+  // OrderSummaryV2 overrides
+  .pal--order-summary-v2__meta-details {
+    margin-bottom: 0;
+    padding-bottom: $spacing-05;
+  }
+
+  &:not(.pal--mini-order-summary--expanded) {
+    .pal--order-summary-v2__total-cost .pal--order-summary-v2__heading {
+      margin-left: 1.5rem;
+    }
+  }
+
+  .pal--order-summary-v2 {
+    overflow: hidden;
+    position: unset;
+    height: unset;
+    width: unset;
+    transition: height $duration-moderate-01 motion(standard, productive);
+
+    &__content {
+      min-height: unset;
+      padding-left: $spacing-06;
+      padding-right: $spacing-06;
+    }
+
+    &__header,
+    &__footer {
+      margin: 0 $spacing-06;
+    }
+
+    &__header {
+      min-height: 3rem;
+    }
+
+    &__header .pal--order-summary-v2__heading {
+      margin-left: 1.5rem;
+      padding-top: $spacing-05;
+    }
+
+    &__switchers {
+      padding-top: calc(#{$spacing-05} - 0.375rem);
+      transform: unset;
+    }
+
+    &__footer {
+      padding-bottom: $spacing-06;
+    }
+
+    &__currency-switcher,
+    &__country-switcher {
+      .#{$prefix}--list-box__menu {
+        min-width: unset;
+      }
+    }
+
+    body.#{$prefix}--dark-theme & {
+      background-color: $layer-01;
+    }
+  }
+
+  .pal--order-summary-v2__footer-text.pal--order-summary-v2__links {
+    padding-top: $spacing-05;
+  }
+
+  .pal--submit-promo {
+    &__container {
+      max-width: unset;
+    }
+
+    &__row div:first-child {
+      flex: 1 1 auto;
+    }
+
+    &__button-wrapper {
+      flex: 0 0 auto;
+    }
+  }
+}

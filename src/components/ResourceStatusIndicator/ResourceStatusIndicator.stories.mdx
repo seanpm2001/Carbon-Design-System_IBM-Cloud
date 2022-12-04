@@ -1,0 +1,135 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import ResourceStatusIndicator from '.';
+import './_styles.scss';
+
+<Meta
+  title="Components/ResourceStatusIndicator"
+  component={ResourceStatusIndicator}
+  argTypes={{
+    locale: { control: { type: 'select' }, options: ['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'zh-cn', 'zh-tw'], defaultValue: 'en' },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: 'experimental' }}}
+/>
+
+# ResourceStatusIndicator
+
+export const Template = (args) => (
+  <ResourceStatusIndicator {...args} />
+);
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      value: 50,
+      width: '3rem',
+      label: 'Percent progress'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+ResourceStatusIndicator is a component used for important notifications that stretch across the entire width of the screen to draw the user's attention. Buttons rendered as children of this component will be colored to contrast appropriately with the gradient background.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/ResourceStatusIndicator/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { ResourceStatusIndicator } from '@console/pal/Components';
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={ResourceStatusIndicator} />
+
+## Other Examples
+
+### Icons
+<Canvas>
+  <Story
+    name="Demo-icon"
+    args={{
+      width: '3rem',
+      statusIndicator: 'success',
+      label: 'Percent progress'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Demo-icon-failure"
+    args={{
+      width: '3rem',
+      statusIndicator: 'failure',
+      label: 'Percent progress'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Indeterminate progress
+<Canvas>
+  <Story
+    name="Demo-indeterminate"
+    args={{
+      kind: 'indeterminate',
+      label: 'Percent progress'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+### Segmented progress
+For the Segmented Resource Status Indicator, segments are needed to define each breakpoint of the segments. The first
+segment always needs to have value 0, and the others the desired break points.
+<Canvas>
+  <Story
+    name="Demo-segmented"
+    args={{
+      value: 50,
+      width: '3rem',
+      kind: 'segments',
+      label: 'Label goes here...',
+      segments: [
+        { value: 0 },
+        { value: 33 },
+        { value: 66 }
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Loading State
+
+<Canvas>
+  <Story name="Skeleton">
+    <ResourceStatusIndicator.skeleton label width="3rem" />
+  </Story>
+</Canvas>
+
+## Contributors
+- Felipe Franklin

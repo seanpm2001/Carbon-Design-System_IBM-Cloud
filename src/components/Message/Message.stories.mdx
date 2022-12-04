@@ -1,0 +1,329 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Button } from "@carbon/react";
+import Message from ".";
+
+import "./_styles.scss";
+
+<Meta
+  title="Components/Message"
+  component={Message}
+  argTypes={{
+    locale: {
+      control: { type: "select" },
+      options: [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "ja",
+        "ko",
+        "pt-br",
+        "zh-cn",
+        "zh-tw",
+      ],
+      defaultValue: "en",
+    },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: "experimental" } }}
+/>
+
+# Message
+
+export const Template = (args) => <Message {...args} />;
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      id: "example-generic",
+      icon: "EMPTY",
+      isTileWrapped: true,
+      text: "Empty state title.",
+      caption: "Description explaining what is supposed to be here",
+      children: (
+        <Button kind="primary" size="small">
+          Action button
+        </Button>
+      ),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+The empty state message component is a fallback component for communicating errors such as no data, fetching errors, unauthorized access, or no results to the user.
+It is best used _after_ attempting to load content and should be used to inform the user as to whether there was an error, they do not have access, or there is no content available.
+Also consider offering a way for the user try again in case of an error and / or explain what caused the error if possible.
+
+### Error boundary component and fetching errors
+
+Consider using the empty state Message component in combination with [ErrorBoundary](https://pages.github.ibm.com/ibmcloud/pal/components/error-boundary/code) component to catch errors and prevent JS code from crashing React.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/Message/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { Message } from "@console/pal/Components";
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={Message} />
+
+## Other Examples
+
+### Full page
+
+Full page empty state
+
+<Canvas>
+  <Story
+    name="Full page empty state"
+    args={{
+      id: "example-fullpage",
+      icon: "EMPTY",
+      fullPage: true,
+      isLarge: true,
+      isTileWrapped: true,
+      text: "Empty state title",
+      caption: "Description text explaining why this card is empty.",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Large icon with tile
+
+Message with a large icon wrapped by a tile
+
+<Canvas>
+  <Story
+    name="Large icon with tile"
+    args={{
+      id: "example-error",
+      icon: "ERROR",
+      isTileWrapped: true,
+      isLarge: true,
+      text: "Something went wrong. Try reloading the page to see this information.",
+      caption: "Error code from the backend",
+    }}
+  >
+    {((args) => <Message {...args} />).bind({})}
+  </Story>
+</Canvas>
+
+### Error with Button
+
+Used when something went wrong while fetching data for the user.
+
+<Canvas>
+  <Story
+    name="Error with button"
+    args={{
+      id: "example-error-button",
+      icon: "ERROR",
+      text: "Something went wrong. Try reloading the page to see this information.",
+      caption: "Error code from the backend",
+      isTileWrapped: true,
+    }}
+  >
+    {((args) => (
+      <Message {...args}>
+        <Button kind="ghost" size="small">
+          Try again
+        </Button>
+      </Message>
+    )).bind({})}
+  </Story>
+</Canvas>
+
+### Unauthorized
+
+The user does not have the correct permissions to view the content.
+
+<Canvas>
+  <Story
+    name="Unauthorized"
+    args={{
+      id: "example-unathorized",
+      icon: "UNAUTHORIZED",
+      text: "Looks like you don't have permission to view this.",
+      caption: "Possibly the permission/role needed",
+      isTileWrapped: true,
+    }}
+  >
+    {((args) => <Message {...args} />).bind({})}
+  </Story>
+</Canvas>
+
+### Empty
+
+The user does not have any content to populate a table.
+
+<Canvas>
+  <Story
+    name="Empty"
+    args={{
+      id: "example-empty",
+      icon: "EMPTY",
+      text: "Empty state title",
+      caption: "Description as to why this card is empty.",
+      isTileWrapped: true,
+    }}
+  >
+    {((args) => <Message {...args} />).bind({})}
+  </Story>
+</Canvas>
+
+### No results
+
+Another icon to show that the user does not have any content to populate a table.
+
+<Canvas>
+  <Story
+    name="No results"
+    args={{
+      id: "example-noresults",
+      icon: "NORESULTS",
+      text: "You don't have anything here.",
+      caption: "Get started by doing such and such.",
+      isTileWrapped: true,
+    }}
+  >
+    {((args) => <Message {...args} />).bind({})}
+  </Story>
+</Canvas>
+
+### Notification
+
+A variation for use with notifications.
+
+<Canvas>
+  <Story
+    name="Notification"
+    args={{
+      id: "example-notification",
+      icon: "NOTIFICATION",
+      text: "You don't have anything here.",
+      caption: "Get started by doing such and such.",
+      isTileWrapped: true,
+    }}
+  >
+    {((args) => <Message {...args} />).bind({})}
+  </Story>
+</Canvas>
+
+### Tag
+
+A variation for use with tags.
+
+<Canvas>
+  <Story
+    name="Tag"
+    args={{
+      id: "example-tag",
+      icon: "TAG",
+      text: "You don't have anything here.",
+      caption: "Get started by doing such and such.",
+      isTileWrapped: true,
+    }}
+  >
+    {((args) => <Message {...args} />).bind({})}
+  </Story>
+</Canvas>
+
+### Empty usage
+
+A contextual icon used to relay zero - usage to the user.
+
+<Canvas>
+  <Story
+    name="Empty usage"
+    args={{
+      id: "example-usage",
+      icon: "USAGE",
+      text: "You don't have anything here.",
+      caption: "Get started by doing such and such.",
+      isTileWrapped: true,
+    }}
+  >
+    {((args) => <Message {...args} />).bind({})}
+  </Story>
+</Canvas>
+
+### Accounts
+
+An contextual icon for use with hierarchical-account-related messaging.
+
+<Canvas>
+  <Story
+    name="Accounts"
+    args={{
+      id: "example-hierarchy",
+      icon: "HIERARCHY",
+      text: "You don't have anything here.",
+      caption: "Get started by doing such and such.",
+      isTileWrapped: true,
+    }}
+  >
+    {((args) => <Message {...args} />).bind({})}
+  </Story>
+</Canvas>
+
+### Money
+
+An contextual icon for use with billing-related messaging.
+
+<Canvas>
+  <Story
+    name="Money"
+    args={{
+      id: "example-money",
+      icon: "MONEY",
+      text: "You don't have anything here.",
+      caption: "Get started by doing such and such.",
+      isTileWrapped: true,
+    }}
+  >
+    {((args) => <Message {...args} />).bind({})}
+  </Story>
+</Canvas>
+
+## Pass div for text
+
+<Canvas>
+  <Story
+    name="Pass div for text"
+    args={{
+      id: "example-div",
+      icon: "EMPTY",
+      text: <div>Title in a div</div>,
+      caption: "Description as to why this card is empty.",
+      isTileWrapped: true,
+    }}
+  >
+    {((args) => <Message {...args} />).bind({})}
+  </Story>
+</Canvas>
+
+## Contributors
+
+- Ryan O. Mackey
+- Jeff Ng

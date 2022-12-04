@@ -1,0 +1,54 @@
+import { Meta, Canvas, Story, Source } from '@storybook/addon-docs';
+import getDateLocaleFormat from './';
+import { documentation } from './getDateLocaleFormat';
+
+<Meta
+  title="Cloud utilities/getDateLocaleFormat"
+  component={getDateLocaleFormat}
+  argTypes={{}}
+/>
+
+# getDateLocaleFormat
+
+## Description
+
+Takes a locale and returns its date format. Similar to `Intl.DateTimeFormat().formatToParts` however
+it is supported on all browsers. Falls back to `en`.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the utility
+
+    ```js
+    import { getDateLocaleFormat } from '@console/pal/Utilities';
+    ```
+
+3.  Use the utility
+
+    ```js
+    getDateLocaleFormat(input);
+    ```
+
+## Example
+
+<Canvas>
+  <Story name="Example">
+    {getDateLocaleFormat('en-GB')}
+  </Story>
+</Canvas>
+
+## Model
+
+### Input
+
+<Source language="json" code={JSON.stringify(documentation.input, null, 2)} />
+
+### Output
+
+<Source language="json" code={JSON.stringify(documentation.output, null, 2)} />
+
+## Contributors
+
+- @crhuff
+

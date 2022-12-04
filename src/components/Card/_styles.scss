@@ -1,0 +1,271 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+// @use '@carbon/layout';
+// @use "@carbon/react/scss/components/button";
+@use "@carbon/react/scss/components/link";
+@use "@carbon/react/scss/components/overflow-menu";
+// @use "@carbon/react/scss/grid";
+@use "@carbon/react/scss/components/skeleton-styles";
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/components/button";
+@import "@carbon/react/scss/grid";
+// @import "@carbon/react/scss/type";
+/**
+ * Apply this class to the document body to put the cursor in "wait" mode while
+ * an async action is taking place.
+ */
+.pal--wait,
+.pal--wait * {
+  cursor: wait !important;
+}
+
+/**
+ *  Imports useful element packages (color, type, etc.), wraps the component in
+ *  an import once mixin.
+ */
+@mixin component($name) {
+  @content;
+}
+
+@include component("pal--card") {
+  .pal--card {
+    $card-spacing: $spacing-05;
+
+    /* variable we can use in place of & that won't break when scoped */
+    $p: ".pal--card";
+
+    @include type.type-style("body-long-01");
+
+    background-color: $layer-01;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &--call-out {
+      background-color: $gray-90;
+      color: $text-on-color;
+    }
+
+    &--fade-in {
+      /* stylelint-disable max-nesting-depth */ // Nesting needed to add motion accessibility queries
+      @media (prefers-reduced-motion: no-preference) {
+        animation: 145ms carbon--motion(entrance, productive) 0s 1 fadein;
+
+        @keyframes fadein {
+          0% {
+            transform: translateY(3rem);
+            opacity: 0;
+          }
+
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+      /* stylelint-enable max-nesting-depth */
+    }
+
+    /* Header Component */
+    &__header {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: $card-spacing $card-spacing 0 $card-spacing;
+      position: relative;
+    }
+
+    /* Editable Header Classes */
+
+    &__header--editing,
+    &__header--editable {
+      padding: 0 0 0 $card-spacing;
+    }
+
+    &__header--editing,
+    &__header--editing #{$p}__header-button.#{$prefix}--btn,
+    &__header--editing
+      #{$p}__header-button.#{$prefix}--btn
+      .#{$prefix}--btn__icon
+      path {
+      background-color: $button-primary;
+      color: $text-on-color;
+      fill: $text-on-color;
+    }
+
+    &__header--editing #{$p}__header-button--save.#{$prefix}--btn::before {
+      content: "";
+      display: block;
+      position: absolute;
+      opacity: 1;
+      left: 0;
+      height: $spacing-05;
+      width: 0.8px;
+      background-color: $text-on-color;
+    }
+
+    &__header--editing #{$p}__header-button--save.#{$prefix}--btn:hover::before,
+    &__header--editing
+      #{$p}__header-button:hover
+      + #{$p}__header-button--save.#{$prefix}--btn::before,
+    &__header--editing #{$p}__header-button--save.#{$prefix}--btn:focus::before,
+    &__header--editing
+      #{$p}__header-button:focus
+      + #{$p}__header-button--save.#{$prefix}--btn::before {
+      opacity: 0;
+    }
+
+    &__header--editing #{$p}__header-button.#{$prefix}--btn:hover {
+      background-color: $button-primary-hover;
+    }
+
+    &__header--editing #{$p}__header-button.#{$prefix}--btn:active {
+      background-color: $button-primary-active;
+    }
+
+    &__header--editing #{$p}__header-button.#{$prefix}--btn:focus {
+      border-color: $focus;
+    }
+
+    &__header--editing #{$p}__header-button.#{$prefix}--btn:disabled {
+      background-color: $button-disabled;
+      color: $text-on-color-disabled;
+
+      .#{$prefix}--btn__icon path {
+        fill: $icon-on-color-disabled;
+      }
+    }
+
+    /* Title Component */
+    &__title {
+      @include type.type-style("productive-heading-03");
+    }
+
+    &__header--small #{$p}__title {
+      @include type.type-style("productive-heading-01");
+    }
+
+    &__header--double #{$p}__title {
+      @include type.type-style("productive-heading-05");
+    }
+
+    /* Subtitle Component */
+    &__header #{$p}__subtitle {
+      color: $text-secondary;
+
+      @include type.type-style("label-01");
+    }
+
+    &__header--editing #{$p}__subtitle {
+      color: $text-on-color;
+    }
+
+    /* Body Component */
+    &__body {
+      padding: $card-spacing;
+    }
+
+    &__body--short {
+      @include type.type-style("body-short-01");
+    }
+
+    &__body:first-child,
+    &__header--editing + #{$p}__body {
+      padding-top: $card-spacing;
+    }
+
+    &__body-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Footer Component */
+    &__footer {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      > * {
+        margin: $card-spacing $card-spacing 0 0;
+      }
+
+      .cds--skeleton {
+        width: 100%;
+      }
+    }
+
+    /* Image Component */
+    &__image-wrap {
+      position: relative;
+      padding-top: 56.25%;
+    }
+
+    &__image {
+      height: auto;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    /* Labeled Rows */
+    &__labeled-rows {
+      display: grid;
+      grid-template-columns: minmax(5rem, 33%) minmax(min-content, 66%);
+    }
+
+    &__labeled-rows > * {
+      padding-bottom: 1rem;
+    }
+
+    &__labeled-rows > *:last-child,
+    &__labeled-rows > *:nth-last-child(2) {
+      padding-bottom: 0;
+    }
+
+    &__labeled-rows > *:nth-child(odd):not(.pal--card__grid-row--full-width) {
+      @include type.type-style("label-01");
+    }
+
+    &__labeled-rows > *:nth-child(even):not(.pal--card__grid-row--full-width) {
+      padding-left: 2rem;
+
+      @include type.type-style("body-short-01");
+    }
+
+    /* Stacked Labeled Rows */
+    &__stacked-labeled-rows {
+      .cds--row {
+        row-gap: $spacing-05;
+      }
+    }
+
+    &__stacked-labeled-rows-label {
+      color: $text-secondary;
+      padding-bottom: $spacing-03;
+
+      @include type.type-style("label-01");
+    }
+
+    &__stacked-labeled-rows-value {
+      word-break: break-all;
+
+      @include type.type-style("body-short-01");
+    }
+
+    .link-with-icon {
+      margin-right: 0.3rem;
+      vertical-align: top;
+      margin-left: 1rem;
+    }
+  }
+}

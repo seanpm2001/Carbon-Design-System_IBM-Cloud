@@ -1,0 +1,338 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { OverflowMenu, OverflowMenuItem } from "@carbon/react";
+import { ArrowRight } from "@carbon/react/icons";
+import Card, { CardSkeleton, CardHeader, CardBody } from ".";
+
+import "./_styles.scss";
+
+<Meta
+  title="Components/Card"
+  component={Card}
+  subcomponents={{ CardHeader, CardBody }}
+  argTypes={{
+    locale: {
+      control: { type: "select" },
+      options: [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "ja",
+        "ko",
+        "pt-br",
+        "zh-cn",
+        "zh-tw",
+      ],
+      defaultValue: "en",
+    },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: "core" } }}
+/>
+
+# Card
+
+export const Template = (args) => (
+  <Card style={{ width: "500px" }} {...args}>
+    <CardHeader title="IBM Cloud" />
+    <CardBody>
+      <div>
+        With Red Hat OpenShift on IBM Cloud, OpenShift developers have a fast
+        and secure way to containerize and deploy enterprise workloads in
+        Kubernetes clusters. OpenShift clusters build on Kubernetes container
+        orchestration that offers consistency and flexibility in operations.
+        Because IBM manages OpenShift Container Platform (OCP), you'll have more
+        time to focus on your core tasks.
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          paddingTop: "1rem",
+        }}
+      >
+        <a
+          className="cds--link"
+          href="https://cloud.ibm.com"
+          style={{ display: "flex", alignItems: "center" }}
+        >
+          Learn More
+          <ArrowRight
+            style={{ marginLeft: "1rem", fill: "var(--cds-link-01, #0f62fe)" }}
+          />
+        </a>
+      </div>
+    </CardBody>
+  </Card>
+);
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      callOut: false,
+      fadeIn: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+A card is a flexible-sized container that groups related blocks of content and
+information into one understandable unit. There are two types of Cards that can
+be used on IBM Cloud. Editable cards can be used for viewing and modifying
+content that is contained entirely in the card. Content Cards display a summary
+of information and do not contain an editable state.
+
+The card Component's are composable and can be reordered based upon the need of
+the component. By default, cards use a flexbox column based layout to arrange
+content.
+
+## Child Components
+
+The Card component comes with two supported child components `CardHeader` and
+`CardBody`. Both of these components should always be siblings of each other and
+as a children of the `Card` component.
+
+## Usage
+
+1.  Install the
+    [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use)
+    library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/Card/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { Card, CardHeader, CardBody } from "@console/pal/Components";
+    ```
+
+4.  Render the component.
+
+For general component usage review the
+[Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Other Examples
+
+### Editable Card
+
+By passing in `onEditClick` and an `onSaveClick` props to the `CardHeader`
+component, you can can create an editable card component. By default, this will
+toggle the button from `Edit` to a`Save` or `Cancel` buttton on click and change
+the background of the header. This will not change the content of the card. This
+is up to the development team using the card to swap content within the
+`CardBody` to the appropriate form elements.
+
+If you need to use async events, you can control whether the card is in Edit
+mode by passing in an`editing` prop to the `CardHeader` component. This is
+useful if you need to validate data server side before switching the user back
+to read only mode.
+
+<Canvas>
+  <Story name="Editable">
+    <Card style={{ width: "500px" }}>
+      <CardHeader
+        title="IBM Cloud"
+        onEditClick={() => {}}
+        onSaveClick={() => {}}
+        onCancelClick={() => {}}
+        editText="Edit"
+        saveText="Save"
+      />
+      <CardBody>
+        <Card.labeledRows>
+          <p>Date Created</p>
+          <p>02/09/2019 9:30 am</p>
+          <p>Routing</p>
+          <p>local</p>
+          <p>Speed</p>
+          <p>100 Mbps</p>
+          <p>User IP Address</p>
+          <p>10.254.17/30</p>
+          <p>Service Key</p>
+          <p>4edr576-r874-t949-fr-4857743</p>
+        </Card.labeledRows>
+      </CardBody>
+    </Card>
+  </Story>
+</Canvas>
+
+### Card with custom overflow
+
+You can add custom actions to the Card Component by passing in children to the
+`CardHeader`.
+
+<Canvas>
+  <Story name="Custom overflow">
+    <Card style={{ width: "500px" }}>
+      <CardHeader title="IBM Cloud">
+        <OverflowMenu flipped selectorPrimaryFocus="#menuitem1">
+          <OverflowMenuItem id="menuitem1" itemText="Option 1" />
+          <OverflowMenuItem id="menuitem2" itemText="Option 2" />
+        </OverflowMenu>
+      </CardHeader>
+      <CardBody>
+        <div>
+          With Red Hat OpenShift on IBM Cloud, OpenShift developers have a fast
+          and secure way to containerize and deploy enterprise workloads in
+          Kubernetes clusters. OpenShift clusters build on Kubernetes container
+          orchestration that offers consistency and flexibility in operations.
+          Because IBM manages OpenShift Container Platform (OCP), you'll have
+          more time to focus on your core tasks.
+        </div>
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <a
+            className="cds--link"
+            href="https://cloud.ibm.com"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            Learn More
+            <ArrowRight
+              style={{
+                marginLeft: "1rem",
+                fill: "var(--cds-link-01, #0f62fe)",
+              }}
+            />
+          </a>
+        </div>
+      </CardBody>
+    </Card>
+  </Story>
+</Canvas>
+
+### Card with Double Heading
+
+The `CardHeader` supports the ability to pass in a `subtitle` prop that will
+render a subtitle above the title.
+
+<Canvas>
+  <Story name="Double heading">
+    <Card style={{ width: "500px" }}>
+      <CardHeader title="IBM Cloud" subtitle="A subtitle for cloud" />
+      <CardBody short>
+        With Red Hat OpenShift on IBM Cloud, OpenShift developers have a fast
+        and secure way to containerize and deploy enterprise workloads in
+        Kubernetes clusters. OpenShift clusters build on Kubernetes container
+        orchestration that offers consistency and flexibility in operations.
+        Because IBM manages OpenShift Container Platform (OCP), you'll have more
+        time to focus on your core tasks.
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            paddingTop: "1rem",
+          }}
+        >
+          <a
+            className="cds--link"
+            href="https://cloud.ibm.com"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            Learn More
+            <ArrowRight
+              style={{
+                marginLeft: "1rem",
+                fill: "var(--cds-link-01, #0f62fe)",
+              }}
+            />
+          </a>
+        </div>
+      </CardBody>
+    </Card>
+  </Story>
+</Canvas>
+
+### Card with a Small Header
+
+When passing the small prop into the `CardHeader` component a smaller header is
+rendered and the sub title moves below the title.
+
+<Canvas>
+  <Story name="Small header">
+    <Card style={{ width: "500px" }}>
+      <CardHeader title="IBM Cloud" subtitle="A subtitle for cloud" small />
+      <CardBody short>
+        With Red Hat OpenShift on IBM Cloud, OpenShift developers have a fast
+        and secure way to containerize and deploy enterprise workloads in
+        Kubernetes clusters. OpenShift clusters build on Kubernetes container
+        orchestration that offers consistency and flexibility in operations.
+        Because IBM manages OpenShift Container Platform (OCP), you'll have more
+        time to focus on your core tasks.
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            paddingTop: "1rem",
+          }}
+        >
+          <a
+            className="cds--link"
+            href="https://cloud.ibm.com"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            Learn More
+            <ArrowRight
+              style={{
+                marginLeft: "1rem",
+                fill: "var(--cds-link-01, #0f62fe)",
+              }}
+            />
+          </a>
+        </div>
+      </CardBody>
+    </Card>
+  </Story>
+</Canvas>
+
+### Detail card with stacked labeled rows
+
+You can use the stacked labeled rows by passing in children of type
+`CardLabeledItem` to `CardStackedLabeledRows`.
+
+<Canvas>
+  <Story name="Details with stacked rows">
+    <Card style={{ width: "500px" }}>
+      <CardHeader title="Details" />
+      <CardBody>
+        <Card.stackedLabeledRows>
+          <Card.labeledItem label="Name" value="austin-server-1234" />
+          <Card.labeledItem label="Created" value="05/4/2020, 11:51:22" />
+          <Card.labeledItem label="Version" value="1.1" />
+          <Card.labeledItem label="Location" value="Dallas" />
+          <Card.labeledItem label="ID" value="123456" />
+        </Card.stackedLabeledRows>
+      </CardBody>
+    </Card>
+  </Story>
+</Canvas>
+
+### Card Skeletons
+
+<Canvas>
+  <Story name="Card skeletons">
+    <div style={{ width: "500px" }}>
+      <CardSkeleton />
+    </div>
+  </Story>
+  <Story name="Card skeletons, unstacked">
+    <div style={{ width: "500px" }}>
+      <CardSkeleton stacked={false} />
+    </div>
+  </Story>
+</Canvas>
+
+## Card Props
+
+<ArgsTable of={Card} />
+
+## Contributors
+
+- Trevor Wong
+- Stephanie Cree

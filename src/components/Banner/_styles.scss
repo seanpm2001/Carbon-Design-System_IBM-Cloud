@@ -1,0 +1,77 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+
+@use "@carbon/react/scss/components/skeleton-styles";
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+
+/* Make sure to import any Carbon Component's styles that this component uses */
+
+.pal--banner {
+  align-items: center;
+  background-color: $layer-accent-01;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+
+  p {
+    font-weight: 600;
+  }
+
+  a {
+    font-weight: 500;
+    margin-left: 0.5rem;
+    color: $support-info;
+  }
+
+  &__children-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__close-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    > svg {
+      fill: $layer-selected-inverse;
+    }
+  }
+
+  &--with-gradient {
+    background: rgb(2, 45, 157);
+    background: linear-gradient(
+      294deg,
+      rgba(2, 45, 157, 1) 0%,
+      rgba(88, 74, 207, 1) 35%
+    );
+    color: $text-on-color;
+
+    a {
+      color: $text-on-color;
+    }
+
+    // Buttons on the gradient should be colored differently
+    .pal--banner__children-container button {
+      color: $background;
+      border: 1px solid $background;
+      background-color: transparent;
+
+      &:hover {
+        background-color: transparent;
+        color: inherit;
+      }
+
+      margin-left: $spacing-04;
+    }
+
+    // The dismiss button should be colored differently on the gradient too
+    .pal--banner__close-button > svg {
+      fill: $layer-accent-01;
+    }
+  }
+}

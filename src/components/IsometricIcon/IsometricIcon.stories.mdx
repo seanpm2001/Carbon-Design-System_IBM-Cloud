@@ -1,0 +1,62 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import IsometricIcon from '.';
+
+import './_styles.scss';
+
+<Meta
+  title="Components/IsometricIcon"
+  component={IsometricIcon}
+  argTypes={{
+    locale: { control: { type: 'select' }, options: ['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'zh-cn', 'zh-tw'], defaultValue: 'en' },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: 'core' }}}
+/>
+
+# IsometricIcon
+
+<Canvas>
+  <Story
+    name="Demo"
+  >
+    <div>
+      <IsometricIcon id="icon-empty-example" icon="EMPTY" />
+      <IsometricIcon id="icon-error-example" icon="ERROR" />
+      <IsometricIcon id="icon-noresults-example" icon="NORESULTS" />
+      <IsometricIcon id="icon-notification-example" icon="NOTIFICATION" />
+      <IsometricIcon id="icon-tag-example" icon="TAG" />
+      <IsometricIcon id="icon-unauthorized-example" icon="UNAUTHORIZED" />
+    </div>
+  </Story>
+</Canvas>
+
+## Description
+
+IsometricIcon is a component used for... (FILL ME IN)
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/IsometricIcon/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { IsometricIcon } from '@console/pal/Components';
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={IsometricIcon} />
+
+## Contributors
+
+- Ryan O. Mackey

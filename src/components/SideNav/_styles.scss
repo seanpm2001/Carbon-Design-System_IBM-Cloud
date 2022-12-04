@@ -1,0 +1,389 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+// @use '@carbon/react/scss/motion';
+@use '@carbon/react/scss/spacing';
+
+@use "@carbon/react/scss/components/skeleton-styles";
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/components/dropdown";
+@import "@carbon/react/scss/components/list-box";
+@import "@carbon/react/scss/components/button";
+@import "@carbon/react/scss/motion";
+@import "./side-nav-vars";
+
+@mixin breakpoint($size) {
+  @if map-has-key($grid-breakpoints, $size) {
+    $breakpoint-key: map-get($grid-breakpoints, $size);
+
+    @media screen and (min-width: map-get($breakpoint-key, "width")) {
+      @content;
+    }
+  } @else {
+    @media all and (min-width: $size) {
+      @content;
+    }
+  }
+}
+
+/* Make sure to import any Carbon Component's styles that this component uses */
+
+// Side Nav Colors
+$pal-side-nav-background: $background;
+$pal-side-nav-text: $text-secondary;
+$pal-side-nav-active-text: $layer-selected-01;
+$pal-side-nav-item-hover: $layer-selected-01;
+$pal-side-nav-item-active: $layer-selected-01;
+
+.pal--side-nav {
+  background-color: $pal-inverse-side-nav-background;
+  flex-direction: column;
+  height: 100%;
+  opacity: 1;
+  position: relative;
+  transition: all $duration-moderate-02 motion(entrance, productive);
+  width: $pal-side-nav-width;
+  z-index: 1;
+
+  @include breakpoint("md") {
+    background-color: $pal-side-nav-background;
+    display: flex;
+  }
+
+  &--collapsed {
+    overflow: hidden;
+    transition: transform $duration-moderate-02 motion(exit, productive);
+    transform: translateY($pal-side-nav-collapse-transition-top);
+
+    @include breakpoint("md") {
+      transition: all;
+      transform: translateY(0);
+    }
+  }
+
+  &--collapsed > *:not(.pal--side-nav__collapse-button) {
+    visibility: hidden;
+    opacity: 0;
+    transition: all $duration-moderate-02 motion(exit, productive);
+
+    @include breakpoint("md") {
+      opacity: 1;
+      visibility: visible;
+      transition: all;
+    }
+  }
+
+  &__header {
+    position: relative;
+  }
+
+  // The first level of navigation items that are rendered in the nav menu.
+  &__items {
+    overflow-x: visible;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    list-style: none;
+  }
+
+  // General styles for any nav item.
+  &__item:not(.pal--side-nav__item--with-menu),
+  &__menu-button {
+    /* All styles for this Component should go here */
+    @include type.type-style("body-short-01");
+
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    text-align: left;
+    transition: background-color $duration-fast-02 motion(standard, productive);
+    width: 100%;
+  }
+
+  &__link {
+    position: relative;
+  }
+  // General styles for any clickable link or expandable menu.
+  &__link,
+  &__menu-button {
+    align-items: center;
+    color: $pal-inverse-side-nav-text;
+    display: flex;
+    justify-content: space-between;
+    outline-offset: -2px;
+    outline: 2px solid transparent;
+    padding: $spacing-03 $spacing-04 $spacing-03 $spacing-07;
+    text-decoration: none;
+
+    @include breakpoint("md") {
+      color: $pal-side-nav-text;
+    }
+
+    @include breakpoint("max") {
+      padding: $spacing-03 $spacing-04 $spacing-03 $spacing-08;
+    }
+  }
+
+  .pal--side-nav__menu-flyout,
+  .pal--side-nav__menu-button {
+    padding: $spacing-03 $spacing-04 $spacing-03 $spacing-08;
+
+    @include breakpoint("max") {
+      padding: $spacing-03 $spacing-04 $spacing-03 $spacing-09;
+    }
+  }
+
+  &__menu-flyout {
+    &:hover,
+    &:focus-within {
+      .pal--side-nav__flyout {
+        display: block;
+      }
+    }
+  }
+
+  //prevents scrollbar from taking hover away from flyout
+  &__flyout-box {
+    position: absolute;
+    left: 235px;
+    width: 21px;
+    background: transparent;
+    height: 34px;
+    display: block;
+  }
+
+  //Flyout should be hidden by default. It gets shown when the menu-flyout parent gets focus/hover/etc.
+  &__flyout {
+    display: none;
+    position: absolute;
+    left: 16rem;
+    width: 16rem;
+    background-color: $pal-inverse-side-nav-background;
+
+    @include breakpoint("md") {
+      background-color: $pal-side-nav-background;
+    }
+  }
+
+  // The second level of navigation items that are rendered in the nav menu.
+  &__menu {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__menu,
+  &__menu &__item,
+  &__menu &__link {
+    transition: all $duration-moderate-02 motion(standard, productive);
+    transition-property: max-height, opacity, visibility;
+  }
+
+  &__menu-icon {
+    fill: $gray-30;
+    transition: all $duration-fast-01 motion(standard, productive);
+
+    @include breakpoint("md") {
+      fill: $icon-secondary;
+    }
+  }
+
+  &__menu &__link {
+    padding: $spacing-03 $spacing-06 $spacing-03 $spacing-08;
+
+    @include breakpoint("max") {
+      padding-left: $spacing-09;
+    }
+  }
+
+  > .pal--side-nav__item.pal--side-nav__header {
+    margin-bottom: $spacing-05;
+  }
+
+  // Active item styles
+  &__item--active &__menu-button,
+  &__link[aria-current="page"] {
+    background-color: $pal-inverse-side-nav-active;
+
+    @include breakpoint("md") {
+      color: $pal-inverse-side-nav-active-text;
+      background-color: $pal-side-nav-item-active;
+    }
+  }
+
+  // Active link type style
+  &__link[aria-current="page"] {
+    @include type.type-style("productive-heading-01");
+  }
+
+  &__collapse-button {
+    @include type.type-style("productive-heading-01");
+
+    background-color: $layer-02;
+    border: none;
+    cursor: pointer;
+    color: $gray-30;
+    display: flex;
+    justify-content: space-between;
+    outline-offset: -2px;
+    outline: 2px solid transparent;
+    padding: $spacing-05 $spacing-05 $spacing-05 $spacing-07;
+    width: 100%;
+
+    @include breakpoint("md") {
+      display: none;
+    }
+  }
+
+  &__collapse-button:hover,
+  &--collapsed &__collapse-button:hover {
+    background-color: $gray-80;
+  }
+
+  &__collapse-button-icon {
+    fill: $gray-30;
+    margin-left: auto;
+    transition: all $duration-fast-01 motion(standard, productive);
+  }
+
+  &--collapsed &__collapse-button {
+    animation-duration: $duration-slow-02;
+
+    &--active::before {
+      background-color: $button-primary;
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 3.125rem;
+      top: 0;
+      width: 4px;
+    }
+  }
+
+  &--collapsed &__collapse-button-icon {
+    transform: rotate(180deg);
+  }
+
+  // Active link focus styles
+  &__link:focus,
+  &__menu-button:focus,
+  &__collapse-button:focus {
+    outline: 2px solid $button-primary;
+  }
+
+  // Active link hover styles
+  &__item:not(.pal--side-nav__item--with-menu):hover,
+  &__item &__menu-button:hover {
+    background-color: $pal-inverse-side-nav-hover;
+
+    @include breakpoint("md") {
+      background-color: $pal-side-nav-item-hover;
+    }
+  }
+
+  // Adds a divider between elements.
+  &__menu::before,
+  :not(.pal--side-nav__menu) > &__item::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $gray-80;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include breakpoint("md") {
+      display: none;
+    }
+  }
+
+  &__item--active + &__item::before {
+    display: none;
+  }
+
+  // Active link indicator styles
+  &__item--active &__menu-button::before,
+  &__link[aria-current="page"]::before {
+    background-color: $button-primary;
+    content: "";
+    left: 0;
+    position: absolute;
+    width: 4px;
+    height: 2.125rem;
+  }
+
+  // Link styles for title elements
+  &__header > .pal--side-nav__link[aria-current="page"]::before {
+    height: 4.5rem;
+    top: 0;
+  }
+
+  > .pal--side-nav__header .pal--side-nav__link {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: $spacing-05;
+    padding-bottom: $spacing-05;
+
+    svg {
+      margin-bottom: 0.375rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 1px;
+      width: calc(100% - #{$spacing-07});
+      background-color: $layer-accent-01;
+      left: $spacing-05;
+    }
+
+    &:hover::after {
+      display: none;
+    }
+  }
+
+  > .pal--side-nav__header.pal--side-nav__item--active
+    .pal--side-nav__link::after {
+    display: none;
+  }
+
+  // Immediately hide the indicator for motion transition.
+  &__menu-button[aria-expanded="false"]
+    + &__menu
+    &__link[aria-current="page"]::before {
+    display: none;
+  }
+
+  // Menu motion styles
+  &__menu-button[aria-expanded="true"] + &__menu,
+  &__menu-button[aria-expanded="true"] + &__menu &__item,
+  &__menu-button[aria-expanded="true"] + &__menu &__link {
+    max-height: 25rem;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__menu-button[aria-expanded="false"] + &__menu,
+  &__menu-button[aria-expanded="false"] + &__menu &__item,
+  &__menu-button[aria-expanded="false"] + &__menu &__link {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__menu-button[aria-expanded="true"] > .pal--side-nav__menu-icon {
+    transform: rotate(180deg);
+  }
+}
+// Fix margins on tags inside nav items.
+.pal--side-nav__link .cds--tag,
+.cds--list-box__menu-item .cds--tag {
+  margin: 0 0 0 $spacing-02;
+  border: 0;
+}

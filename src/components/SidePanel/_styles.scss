@@ -1,0 +1,303 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/grid";
+@import "@carbon/react/scss/motion";
+@import "@carbon/react/scss/components/button";
+@import "@carbon/react/scss/components/tooltip";
+@import "@carbon/react/scss/components/breadcrumb";
+@import "@carbon/react/scss/components/modal";
+@import "@carbon/react/scss/components/progress-indicator";
+
+/* Make sure to import any Carbon Component's styles that this component uses */
+
+$side-panel-width: 448px;
+$side-panel-width-sm: 320px;
+$header-height: 50px;
+$slide-transition: transform 400ms carbon--motion(standard, expressive),
+  visibility 400ms;
+$side-panel-height: calc(100vh - #{$header-height});
+$side-panel-layer: 5100;
+
+@mixin breakpoint($size) {
+  @if map-has-key($grid-breakpoints, $size) {
+    $breakpoint-key: map-get($grid-breakpoints, $size);
+
+    @media screen and (min-width: map-get($breakpoint-key, "width")) {
+      @content;
+    }
+  } @else {
+    @media all and (min-width: $size) {
+      @content;
+    }
+  }
+}
+
+body.pal--no-scroll {
+  overflow: hidden;
+}
+
+.pal--side-panel-container {
+  body:not(.cds--dark-theme) & {
+    @include theme($white, true);
+  }
+
+  body.cds--dark-theme & {
+    @include theme($g90, true);
+  }
+
+  z-index: $side-panel-layer;
+
+  &--open.pal--side-panel-container--overlay::before {
+    background-color: $overlay;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    content: "";
+    height: $side-panel-height;
+    width: 100vw;
+    z-index: $side-panel-layer;
+  }
+
+  &__panels {
+    bottom: 0;
+    height: $side-panel-height;
+    position: fixed;
+    right: 0;
+    transform: translateX(100%);
+    z-index: $side-panel-layer;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: $slide-transition;
+    }
+  }
+
+  &--open &__panels {
+    transform: translateX(0);
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation-duration: 400ms;
+      animation-name: panel-slide-in;
+      animation-timing-function: carbon--motion(standard, expressive);
+    }
+  }
+}
+
+.pal--side-panel {
+  background: $background;
+  height: 100%;
+  width: $side-panel-width;
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  z-index: $side-panel-layer;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: $slide-transition;
+  }
+
+  &__multi-step__parent {
+    overflow: hidden;
+  }
+
+  &__multi-step-content {
+    $multi-step-transition: transform 400ms carbon--motion(standard, expressive),
+      opacity 400ms carbon--motion(standard, expressive);
+
+    transition: $multi-step-transition;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    &--open {
+      opacity: 1;
+    }
+
+    &--next {
+      transform: translateX(100%);
+      opacity: 0;
+      z-index: -1;
+    }
+
+    &--previous {
+      transform: translateX(-100%);
+      opacity: 0;
+      z-index: -1;
+    }
+
+    &--hidden-in-place {
+      z-index: -1;
+    }
+  }
+
+  &__progress-indicator {
+    margin-bottom: $spacing-05;
+  }
+
+  &--open {
+    visibility: visible;
+    transform: translateX(-100%);
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation-duration: 400ms;
+      animation-name: panel-slide-in;
+      animation-timing-function: carbon--motion(standard, expressive);
+    }
+  }
+
+  &--small {
+    width: $side-panel-width-sm;
+  }
+
+  &--xl {
+    max-width: 1200px;
+    width: 100vw;
+
+    @include breakpoint("md") {
+      width: 75vw;
+    }
+  }
+
+  &__content {
+    height: 100%;
+    overflow-y: auto;
+    padding: $spacing-07 $spacing-07;
+  }
+
+  &--has-bottom-nav &__content {
+    height: calc(100% - 4rem);
+  }
+
+  &__content--scroll::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2rem;
+    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), $layer-01);
+    width: calc(100% - 4rem);
+  }
+
+  &--has-bottom-nav &__content--scroll::after {
+    bottom: 4rem;
+  }
+
+  &__breadcrumbs {
+    padding-bottom: $spacing-02;
+  }
+
+  &__breadcrumbs + &__content {
+    padding-top: $spacing-05;
+  }
+
+  &__button-close {
+    transform: translateY(-1rem) translateX(1rem);
+    position: relative;
+    max-width: $spacing-09;
+
+    &.cds--btn.cds--btn--icon-only.cds--tooltip__trigger .cds--assistive-text {
+      transform: translate(-100%, -50%);
+    }
+
+    svg {
+      stroke: $icon-primary;
+    }
+  }
+
+  &__button {
+    padding: 16px;
+    display: inline-flex;
+    align-items: flex-start;
+  }
+
+  &__controls {
+    height: $spacing-09;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__btn-set.cds--btn-set {
+    background-color: $layer-01;
+    bottom: 0;
+    justify-content: flex-end;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+
+    .cds--btn {
+      max-width: 50%;
+      min-width: 50%;
+      position: relative;
+      min-height: $spacing-10;
+    }
+
+    span.cds--btn {
+      cursor: default;
+    }
+
+    .cds--btn span svg {
+      margin-top: -$spacing-03;
+      position: absolute;
+      right: $spacing-05;
+      stroke: white;
+      top: 50%;
+    }
+  }
+
+  &__heading--close-button {
+    display: flex;
+  }
+
+  &__heading {
+    @include type.type-style("productive-heading-03");
+
+    display: inline-block;
+    padding-bottom: $spacing-07;
+    width: calc(100% - #{$spacing-09});
+  }
+
+  &__button-close:hover,
+  &__button-close:focus {
+    transition: background-color 250ms carbon--motion(standard, productive);
+  }
+
+  &--has-bottom-nav::after {
+    bottom: 3rem;
+  }
+
+  .cds--breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    margin: $spacing-05 0 0 $spacing-07;
+  }
+}
+
+.pal--side-panel-container--open:not(.pal--side-panel-container--overlay)
+  .pal--side-panel {
+  body:not(.cds--dark-theme) & {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  body.cds--dark-theme & {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  }
+}
+
+@keyframes panel-slide-in {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}

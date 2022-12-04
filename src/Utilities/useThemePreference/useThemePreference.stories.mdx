@@ -1,0 +1,62 @@
+import { Meta, Canvas, Story, Source } from '@storybook/addon-docs';
+import useThemePreference from './';
+import { documentation } from './useThemePreference';
+
+<Meta
+  title="Cloud utilities/useThemePreference"
+  component={useThemePreference}
+  argTypes={{}}
+/>
+
+# useThemePreference
+
+## Description
+
+useThemePreference is a hook that returns the user's theme preference from local
+storage.
+
+If called as `useThemePreference(true)`, when there is no value in local
+storage, it will return the user's OS preferences. Called as
+`useThemePreference()`, it will return by default `themeLight` if there is no
+value in local storage. As a breaking change in Cloud PAL v2 and when dark mode
+is implemented in production, the default behavior for this utility will be to
+return the OS preference when there is no value in local storage to match with
+what cloud.ibm.com will do.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the utility
+
+    ```js
+    import { useThemePreference } from '@console/pal/Utilities';
+    ```
+
+3.  Use the utility
+
+    ```js
+    useThemePreference(input);
+    ```
+
+## Example
+
+<Canvas>
+  <Story name="Example">
+    {useThemePreference()}
+  </Story>
+</Canvas>
+
+## Model
+
+### Input
+
+<Source language="json" code={JSON.stringify(documentation.input, null, 2)} />
+
+### Output
+
+<Source language="json" code={JSON.stringify(documentation.output, null, 2)} />
+
+## Contributors
+
+- Abagail Hart
+
