@@ -1,0 +1,84 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import ErrorBoundary from ".";
+import "./_styles.scss";
+import ErrorExample from "./examples/Error";
+
+<Meta
+  title="Components/ErrorBoundary"
+  component={ErrorBoundary}
+  argTypes={{
+    locale: {
+      control: { type: "select" },
+      options: [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "ja",
+        "ko",
+        "pt-br",
+        "zh-cn",
+        "zh-tw",
+      ],
+      defaultValue: "en",
+    },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: "GA" } }}
+/>
+
+# ErrorBoundary
+
+export const Template = (args) => (
+  <ErrorBoundary {...args}>
+    <ErrorExample shouldError={true} />
+  </ErrorBoundary>
+);
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      dismissible: true,
+      withGradient: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+ErrorBoundary is a component used to prevent JS code from crashing React.
+The component will catch any JS errors thrown from any React components rendered as children and show a generic
+error message in it's place.
+
+The above example simulates an error by trying to JSON.parse bad JSON. Try changing the shouldError from false to true to simulate the error.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/ErrorBoundary/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { ErrorBoundary } from "@console/pal/Components";
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={ErrorBoundary} />
+
+## Contributors
+
+- Logan McCaul

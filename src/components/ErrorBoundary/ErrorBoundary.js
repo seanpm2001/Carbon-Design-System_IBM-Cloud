@@ -62,7 +62,7 @@ class ErrorBoundary extends Component {
       children,
       text,
       caption,
-      loggingEndpoint,
+      // loggingEndpoint,
     } = this.props;
     const { error, errorId } = this.state;
 
@@ -73,14 +73,6 @@ class ErrorBoundary extends Component {
     // );
 
     let formattedCaption = caption;
-    if (loggingEndpoint && errorId) {
-      formattedCaption = (
-        <Fragment>
-          <div>{formattedCaption}</div>
-          <div style={{ marginTop: "1.5rem" }}>{errorId}</div>
-        </Fragment>
-      );
-    }
 
     // If error show a generic error message
     if (error) {
@@ -107,7 +99,7 @@ ErrorBoundary.propTypes = {
   /**
    * If provided, error information will be POSTed to the given endpoint for logging purposes. This includes a generated ID (which is also displayed to the user), and the error name, message, and stack.
    */
-  loggingEndpoint: PropTypes.string,
+  // loggingEndpoint: PropTypes.string,
   /**
    * Override the text to show in the Message component.
    */
@@ -125,7 +117,7 @@ ErrorBoundary.defaultProps = {
   //     !!document.documentElement &&
   //     document.documentElement.lang) ||
   //   "en",
-  loggingEndpoint: undefined,
+  // loggingEndpoint: undefined,
   text: undefined,
   caption: undefined,
 };
