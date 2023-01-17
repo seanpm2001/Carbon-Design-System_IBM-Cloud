@@ -1,0 +1,211 @@
+$feature-flags: (
+  grid-columns-16: true,
+  enable-css-custom-properties: true,
+);
+
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/grid";
+@import "@carbon/react/scss/motion";
+@import "../Tag/styles";
+
+@mixin breakpoint($size) {
+  @if map-has-key($grid-breakpoints, $size) {
+    $breakpoint-key: map-get($grid-breakpoints, $size);
+
+    @media screen and (min-width: map-get($breakpoint-key, "width")) {
+      @content;
+    }
+  } @else {
+    @media all and (min-width: $size) {
+      @content;
+    }
+  }
+}
+
+.pal--tag-list {
+  display: flex;
+  align-items: center;
+
+  &:hover .pal--tag-list--edit--button .pal--tag-list--edit--icon {
+    fill: $layer-selected-inverse;
+  }
+}
+
+.pal--tag-list-editable {
+  // between space
+  &:hover {
+    cursor: pointer;
+  }
+
+  .pal--tag-list--tag:hover {
+    //over the tag
+    cursor: pointer;
+  }
+}
+
+.pal--tag-list--tag {
+  margin-right: $spacing-02;
+
+  &:last-of-type {
+    margin-right: $spacing-02;
+  }
+
+  &:focus ~ .pal--tag-list--edit--button .pal--tag-list--edit--icon {
+    fill: $layer-selected-inverse;
+  }
+
+  &:focus {
+    outline: 1px solid transparent;
+  }
+}
+
+.cds--tooltip__label:focus {
+  outline: none;
+}
+
+.pal--cell--tooltip > .pal--tag {
+  margin: 0;
+}
+
+.pal--cell--tooltip:focus {
+  border-radius: 20%;
+  box-shadow: 0 0 0 2px $support-info;
+}
+
+.pal--tag-list--tag-tooltip {
+  padding: 2px;
+  font-size: 0.75rem;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $support-info;
+  }
+}
+
+.pal--tag-list--tag-counter {
+  border-radius: 0.375rem;
+  margin-right: $spacing-02;
+  padding: 0 0.25rem;
+  margin-left: 0;
+  min-width: 0;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0 1px $support-info;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $support-info;
+  }
+}
+
+.pal--tag-list--tag-counter--icon {
+  width: rem(6px);
+  height: rem(6px);
+  background-color: none;
+  fill: $layer-selected-inverse;
+  margin: 0 $spacing-03 0 0;
+}
+
+.pal--tag-list--edit--button {
+  @include type.type-style("body-short-01");
+
+  background-color: transparent;
+  border-radius: 0.375rem;
+  border: none;
+  vertical-align: baseline;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-left: $spacing-02;
+
+  .pal--tag-list--edit--icon {
+    fill: transparent;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $support-info;
+    -webkit-box-shadow: 0 0 0 2px $support-info;
+    -moz-box-shadow: 0 0 0 2px $support-info;
+
+    .pal--tag-list--edit--icon {
+      fill: $button-primary;
+    }
+  }
+
+  &.always-editable {
+    &:hover {
+      box-shadow: 0 0 0 1px $support-info;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px $support-info;
+      -webkit-box-shadow: 0 0 0 2px $support-info;
+      -moz-box-shadow: 0 0 0 2px $support-info;
+    }
+
+    &:active {
+      box-shadow: 0 0 0 2px $support-info;
+      -webkit-box-shadow: 0 0 0 2px $support-info;
+      -moz-box-shadow: 0 0 0 2px $support-info;
+    }
+
+    .pal--tag-list--edit--icon {
+      fill: $layer-selected-inverse;
+    }
+  }
+
+  &.never-editable {
+    display: none;
+  }
+}
+
+.pal--tag-list--is-empty
+  .pal--tag-list--edit--button
+  .pal--tag-list--edit--icon {
+  fill: $layer-selected-inverse;
+}
+
+.pal--tag-list--label-empty {
+  padding: 0 $spacing-02 0 $spacing-05;
+  padding-left: $spacing-05;
+  color: $text-primary;
+}
+
+.pal--tag-list--edit--icon {
+  position: relative;
+  margin: $spacing-02;
+}
+
+.pal--tag-list--wrap {
+  flex-wrap: wrap;
+}
+
+.bc--tag__close-icon > svg:focus:disabled {
+  box-shadow: none;
+}
+
+.bc--tag__close-icon > svg {
+  outline: none;
+  box-shadow: none;
+}
+
+// Hide tags in the page header at the small breakpoint.
+.pal--page-header__surfaced-details .pal--tag-list {
+  display: none;
+
+  @include breakpoint("md") {
+    display: flex;
+  }
+}

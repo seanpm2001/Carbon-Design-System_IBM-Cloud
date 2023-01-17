@@ -1,0 +1,76 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import ResourceLevelNav from '.';
+import './_styles.scss';
+
+<Meta
+  title="Components/ResourceLevelNav"
+  component={ResourceLevelNav}
+  argTypes={{
+    locale: { control: { type: 'select' }, options: ['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'zh-cn', 'zh-tw'], defaultValue: 'en' },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: 'GA' }}}
+/>
+
+# ResourceLevelNav
+
+export const Template = (args) => (
+  <ResourceLevelNav {...args} />
+);
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      items: [
+        { href: '/ibmcloud/pal/components/resource-level-nav/code', label: 'Link 1A'},
+        { href: '#example-item-1B', label: 'Link 1B'},
+        { href: '#example-item-1C', label: 'Link 1C'},
+        { href: '#example-item-1D', label: 'Link 1D'},
+        { href: '#example-item-1E', label: 'Link 1E'}
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+A component used for the navigation of pages within a resource on a resource details page. It should be used as outlined in the Resource Page Template. This component DOES NOT have nested elements
+the convention is to use Level 4 (L4) Horizontal tabs instead. [Here](/ibm-cloud-concepts/navigation-on-cloud/usage#navigation-levels) a good resource on using the horizontal navigation on the cloud.
+Skeleton states on the resource level nav do not display below 672px as it transforms into a collapsible drawer on small view-ports.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/ResourceLevelNav/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { ResourceLevelNav } from '@console/pal/Components';
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={ResourceLevelNav} />
+
+## Loading State
+
+<Canvas>
+  <Story name="Skeleton">
+    <ResourceLevelNav.skeleton />
+  </Story>
+</Canvas>
+
+## Contributors
+- Alex Kim
+- Tony Wu

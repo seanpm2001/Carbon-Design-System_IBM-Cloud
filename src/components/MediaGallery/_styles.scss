@@ -1,0 +1,205 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/grid";
+@import "@carbon/react/scss/motion";
+@import "@carbon/react/scss/components/modal";
+@import "@carbon/react/scss/components/pagination-nav";
+/* Make sure to import any Carbon Component's styles that this component uses */
+
+.pal--media-gallery {
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  &__display {
+    margin-bottom: 1rem;
+  }
+
+  &__image,
+  &__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    color: $text-primary;
+  }
+
+  &__video {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__media-wrap {
+    overflow: hidden;
+    padding-top: 56.33%;
+    position: relative;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+
+  &__controls p {
+    padding: 1rem 0;
+  }
+
+  &__display--is-video {
+    display: initial;
+  }
+
+  .remove-text-indent {
+    text-indent: 0;
+  }
+
+  .cds--pagination-nav__page--select {
+    -webkit-appearance: none;
+
+    option {
+      display: inline;
+
+      &[hidden] {
+        display: none;
+      }
+    }
+  }
+
+  .cds--pagination-nav__page,
+  .cds--pagination-nav__select-icon-wrapper {
+    svg {
+      will-change: transform;
+    }
+  }
+
+  &--loaded {
+    visibility: hidden;
+  }
+
+  &__inline-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    transform: translate(-50%, -50%);
+  }
+
+  &--overlay-styles {
+    filter: blur(1px);
+    transition: opacity ease-in 2000ms;
+    clip-path: inset(0);
+  }
+
+  &__image-container {
+    border: 0;
+    padding: 0;
+  }
+
+  &__image-clickable:hover {
+    cursor: pointer;
+  }
+
+  &__image-clickable:focus .pal--media-gallery__image {
+    border: 2px solid $focus;
+  }
+
+  &__image-clickable .pal--media-gallery__image {
+    border: 2px solid transparent;
+  }
+
+  &__modal {
+    text-align: left;
+  }
+
+  &__modal .cds--modal-container {
+    height: auto;
+    min-height: 32rem;
+    min-width: 80%;
+    position: static;
+  }
+
+  &__modal .cds--modal-header {
+    min-height: 2.25rem;
+  }
+
+  &__modal .cds--modal-content {
+    margin-top: 0.5rem;
+    padding: 0 2.5rem;
+  }
+
+  &__modal .pal--media-gallery__display {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+  }
+
+  &__modal .pal--media-gallery__media-wrap {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+    width: 100%;
+  }
+
+  &__modal .pal--media-gallery__image-container {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__modal .pal--media-gallery--loaded {
+    display: none;
+  }
+
+  &__modal .pal--media-gallery__image,
+  &__modal .pal--media-gallery__video {
+    position: static;
+    transform: none;
+  }
+
+  &__modal img.pal--media-gallery__image,
+  &__modal video.pal--media-gallery__video {
+    height: auto;
+  }
+
+  &__modal iframe.pal--media-gallery__video {
+    max-width: 50rem;
+  }
+
+  &__modal-left,
+  &__modal-right {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    position: fixed;
+    top: calc(50% - 1rem);
+  }
+
+  &__modal-left {
+    left: 0.5rem;
+  }
+
+  &__modal-right {
+    right: 0.5rem;
+  }
+}

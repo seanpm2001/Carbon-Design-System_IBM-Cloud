@@ -1,0 +1,142 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import TagList from ".";
+import "./_styles.scss";
+
+<Meta
+  title="Components/TagList"
+  component={TagList}
+  argTypes={{
+    locale: {
+      control: { type: "select" },
+      options: [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "ja",
+        "ko",
+        "pt-br",
+        "zh-cn",
+        "zh-tw",
+      ],
+      defaultValue: "en",
+    },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: "experimental" } }}
+/>
+
+# TagList
+
+export const Template = (args) => <TagList {...args} />;
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      tags: [
+        { name: "test:tag", type: "functional" },
+        { name: "a really looooooooooooooong tag", type: "functional" },
+        {
+          name: "removable tag",
+          type: "blue",
+          otherProps: {
+            isRemovable: true,
+            onRemove: () => console.log("Attempting to remove this tag"),
+          },
+        },
+        { name: "is this really a tag", type: "functional" },
+        { name: "my node app", type: "red" },
+        { name: "anothertag", type: "functional" },
+        { name: "mytag", type: "functional" },
+        { name: "new label", type: "functional" },
+        { name: "hello world", type: "functional" },
+        { name: "yet another tag", type: "functional" },
+      ],
+      numTagsDisplayed: 6,
+      maxCharacters: 18,
+      maxCharactersTooltip: 36,
+      maxTagsTooltip: 8,
+      iconDescription: "Edit Tags",
+      isEditable: "always",
+      onIconClick: () => console.log("Clicked the icon"),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+The TagList component is used to render a list of tags. It is used primarily for user defined (resource) tags. The TagList is primarily used in the connected TagList, TagArea, and TagModal components. The TagList can be seen on a resource details page where tags are associated to the resources
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/TagList/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { TagList } from "@console/pal/Components";
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={TagList} />
+
+## Other Examples
+
+### An Empty Tag List with showAddLabelText set
+
+<Canvas>
+  <Story
+    name="Demo-empty-add"
+    args={{
+      tags: [],
+      showAddLabelText: true,
+      numTagsDisplayed: 6,
+      maxCharacters: 18,
+      maxCharactersTooltip: 36,
+      maxTagsTooltip: 8,
+      iconDescription: "Add Tags",
+      isEditable: "always",
+      onIconClick: () => console.log("Clicked the icon"),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### A NOT Empty Tag List with showAddLabelText set
+
+<Canvas>
+  <Story
+    name="Demo-not-empty-add"
+    args={{
+      tags: [
+        { name: "tag 1", type: "functional" },
+        { name: "tag 2", type: "functional" },
+      ],
+      showAddLabelText: true,
+      numTagsDisplayed: 6,
+      maxCharacters: 18,
+      maxCharactersTooltip: 36,
+      maxTagsTooltip: 8,
+      iconDescription: "Edit Tags",
+      isEditable: "always",
+      onIconClick: () => console.log("Clicked the icon"),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

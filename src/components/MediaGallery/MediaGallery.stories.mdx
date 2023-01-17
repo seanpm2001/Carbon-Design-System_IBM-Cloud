@@ -1,0 +1,130 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import MediaGallery from '.';
+import MediaDisplay from './components/MediaDisplay';
+import PaginationNav from './components/PaginationNav';
+import './_styles.scss';
+
+<Meta
+  title="Components/MediaGallery"
+  component={MediaGallery}
+  argTypes={{
+    locale: { control: { type: 'select' }, options: ['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'zh-cn', 'zh-tw'], defaultValue: 'en' },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: 'experimental' }}}
+/>
+
+# MediaGallery
+export const mediaExample = [
+  {
+    type: 'video/mp4',
+    url: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+    alt: 'A random video',
+    onError: (event) => {console.log('Wont be called', event.target.src)}
+  },
+  {
+    type: 'image',
+    url: 'https://picsum.photos/id/168/600/400',
+    blurredUrl: 'https://picsum.photos/id/168/600/400?blur=10',
+    alt: 'A random image'
+  },
+  {
+    type: 'image',
+    url: 'https://picsum.photos/id/169/600/400',
+    blurredUrl: 'https://picsum.photos/id/169/600/400?blur=10',
+    alt: 'A random image'
+  },
+  {
+    type: 'image',
+    url: 'https://picsum.photos/id/170/600/400',
+    alt: 'A random image'
+  },
+  {
+    type: 'image',
+    url: 'https://picsum.photos/id/171/600/400',
+    alt: 'A random image'
+  },
+  {
+    type: 'image',
+    url: 'https://picsum.photos/id/172/600/400',
+    alt: 'A random image'
+  },
+  {
+    type: 'image',
+    url: 'https://picsum.photos/id/172/600/400',
+    alt: 'A random valid image with onError',
+    onError: (event) => {console.log('Wont be called', event.target.src)}
+  },
+  {
+    type: 'image',
+    url: 'https://invalidUrl.notvalid',
+    alt: 'Invalid image with onError',
+    onError: (event) => {console.log('Couldnt load image', event.target.src)}
+  },
+  {
+    type: 'video/mp4',
+    url: 'https://invalidUrl.notvalid',
+    alt: 'Invlid video url with onError',
+    onError: (event) => {console.log('Couldnt load video', event.target.src)}
+  },
+  {
+    type: 'youtube',
+    url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+  }
+];
+export const Template = (args) => (
+  <MediaGallery {...args} />
+);
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      media: mediaExample,
+      nextLabel: 'Next Media',
+      previousLabel: 'Previous Media',
+      optionLabel: 'Media Number',
+      selectLabel: 'Select Media'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+MediaGallery is a component that can be used for highlighting various forms of media associated with an offering.
+The MediaGallery component can be found on a catalog details page. This should take up half of the available page space (8 columns) on large viewports.
+On smaller viewports this should take up the entire width of the page (16 columns).
+The media gallery will grow based upon the parent component's width.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/MediaGallery/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { MediaGallery } from '@console/pal/Components';
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={MediaGallery} />
+
+## Media Display Props
+<ArgsTable of={MediaDisplay} />
+
+## Pagination Navigation Props
+<ArgsTable of={PaginationNav} />
+
+## Contributors
+- Trevor Wong
