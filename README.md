@@ -1,3 +1,5 @@
+## [Link to Storybook](https://carbon-design-system.github.io/ibm-cloud).
+
 # Getting Started
 
 ## 1. Clone repo
