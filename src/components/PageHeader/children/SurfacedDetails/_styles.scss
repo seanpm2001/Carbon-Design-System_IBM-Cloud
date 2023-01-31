@@ -1,0 +1,58 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+
+.pal--page-header__surfaced-details {
+  display: flex;
+  align-items: center;
+
+  .pal--tag-list--label-empty {
+    padding-left: 0;
+  }
+
+  .cds--tag {
+    margin: 0 $spacing-03 0 0;
+  }
+
+  > * {
+    margin: 0 $spacing-03;
+  }
+
+  > p {
+    .pal--page-header--v2.pal--page-header--provisioning & {
+      display: -webkit-box;
+      font-size: 0.875rem;
+      margin: 0;
+      max-width: 46rem;
+      overflow: hidden;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  // Surfaced Details List
+  &--list {
+    ul {
+      @include type.type-style("helper-text-01");
+
+      display: flex;
+      margin-left: 0;
+    }
+
+    li:not(:first-child)::before {
+      content: "\00a0\00a0\2022\00a0\00a0";
+    }
+
+    &__label {
+      font-weight: font-weight("semibold");
+    }
+  }
+
+  .pal--page-header--wrapped-details & {
+    min-width: 100%;
+  }
+}

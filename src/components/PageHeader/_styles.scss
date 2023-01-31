@@ -1,0 +1,277 @@
+$feature-flags: (
+  grid-columns-16: true,
+  enable-css-custom-properties: true,
+);
+
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/grid";
+
+@import "@carbon/react/scss/components/breadcrumb";
+@import "@carbon/react/scss/components/button";
+@import "@carbon/react/scss/components/overflow-menu";
+@import "@carbon/react/scss/components/skeleton-styles";
+@import "@carbon/react/scss/components/link";
+
+// children
+@import "./children/ActionsPanel/styles";
+@import "./children/SurfacedDetails/styles";
+
+@mixin breakpoint($size) {
+  @if map-has-key($grid-breakpoints, $size) {
+    $breakpoint-key: map-get($grid-breakpoints, $size);
+
+    @media screen and (min-width: map-get($breakpoint-key, "width")) {
+      @content;
+    }
+  } @else {
+    @media all and (min-width: $size) {
+      @content;
+    }
+  }
+}
+
+.pal--page-header {
+  background-color: $background;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  @include breakpoint("960px") {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  // PageHeader Main Content
+  &__main {
+    flex: 1;
+    width: calc(100% - 3rem);
+
+    .pal--page-header__icon {
+      position: absolute; // Absolute positioning to allow us to still allow for truncation.
+    }
+
+    &-container {
+      display: flex;
+      flex: 1;
+      flex-wrap: wrap;
+      margin: 0 1rem;
+      width: calc(100% - 136px);
+    }
+
+    @include breakpoint("md") {
+      min-width: 17.125rem;
+      max-width: 100%;
+    }
+  }
+
+  // PageHeader Breadcrumbs
+  &__breadcrumb {
+    z-index: 1;
+    position: relative;
+  }
+
+  .#{$prefix}--breadcrumb {
+    display: flex;
+    flex-wrap: nowrap;
+
+    // Override the link here because font-sizes differ.
+    .#{$prefix}--link,
+    .#{$prefix}--breadcrumb-item::after,
+    .pal--page-header__breadcrumb-btn {
+      @include type.type-style("label-01");
+    }
+
+    .#{$prefix}--link,
+    .pal--page-header__breadcrumb-btn {
+      color: $link-primary;
+    }
+
+    .pal--page-header__breadcrumb-btn {
+      background-color: transparent;
+      border: 0;
+      box-sizing: border-box;
+      font-family: inherit;
+      margin: 0;
+      outline: none;
+      padding: 0;
+      text-decoration: none;
+      vertical-align: baseline;
+      white-space: nowrap;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 1px solid $button-primary;
+      }
+    }
+  }
+
+  .#{$prefix}--row {
+    justify-content: space-between;
+    width: calc(100% + 2rem);
+  }
+
+  // PageHeader Title
+  &__title-container {
+    padding: $spacing-05 0 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  &__breadcrumb + &__title-container {
+    padding: 0;
+  }
+
+  &__title-text {
+    @include type.type-style("productive-heading-04");
+
+    line-height: 2.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__title {
+    position: relative;
+    padding-right: $spacing-03;
+
+    @include breakpoint("980px") {
+      max-width: 100%;
+    }
+  }
+
+  &__title--truncated {
+    max-width: 100%;
+  }
+
+  &__title--truncated &__title-text {
+    white-space: nowrap;
+  }
+
+  &__title--skeleton {
+    margin-top: $spacing-03;
+    height: 2rem;
+    margin-bottom: 0;
+  }
+
+  &__icon + &__title-text {
+    margin-left: 36px;
+  }
+
+  // Page Header Icon
+  &__icon {
+    display: flex;
+    align-items: center;
+    width: 36px;
+    height: 100%;
+
+    &-container {
+      align-items: center;
+      display: flex;
+      width: 104px;
+    }
+
+    .pal--page-header--v2 & {
+      border: 1px solid $layer-accent-01;
+      border-radius: 6px;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      padding: 12px;
+    }
+  }
+
+  &__icon > svg,
+  &__icon > img,
+  &__icon > * {
+    width: 32px;
+    height: 32px;
+
+    .pal--page-header--v2 & {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  // PageHeader Actions
+  &__actions {
+    align-items: center;
+    display: flex;
+    padding-top: $spacing-05;
+    position: relative;
+    max-height: 3.5rem;
+  }
+
+  &__actions > *,
+  &__actions > .cds--btn {
+    // Additional specificity needed for nested styles.
+    margin-left: $spacing-05;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &--provisioning {
+    background-color: $layer-01;
+    padding-bottom: $spacing-05;
+
+    &.pal--page-header--wrapped-details .pal--page-header__surfaced-details {
+      padding-top: $spacing-03;
+      margin-left: 2.5rem;
+      height: initial;
+    }
+
+    .pal--page-header__breadcrumb {
+      padding-bottom: $spacing-04;
+      margin-left: 2.5rem;
+    }
+
+    .pal--page-header__title-text {
+      line-height: 2.25rem;
+      margin-left: 2.5rem;
+    }
+
+    &.pal--page-header--v2 .pal--page-header__breadcrumb {
+      padding-bottom: $spacing-02;
+    }
+
+    &.pal--page-header--v2 .pal--page-header__breadcrumb,
+    &.pal--page-header--v2 .pal--page-header__title-text,
+    &.pal--page-header--v2.pal--page-header--wrapped-details
+      .pal--page-header__surfaced-details {
+      margin-left: 0;
+
+      @include breakpoint("lg") {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &--sticky {
+    position: sticky;
+    top: rem(50px);
+  }
+
+  &--skeleton &__main {
+    flex: auto;
+    width: auto;
+  }
+}
+
+.cds--grid .pal--page-header {
+  padding-left: 0;
+  padding-right: 0;
+}

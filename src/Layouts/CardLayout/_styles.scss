@@ -1,0 +1,27 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+
+@import "../../utils/Layouts/styles";
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/grid";
+@import "@carbon/react/scss/motion";
+
+$card-layout-gutter-width: $spacing-04 !default;
+
+.pal--card-layout {
+  .pal--card-layout--container > * {
+    margin-bottom: $card-layout-gutter-width;
+  }
+
+  .pal--card {
+    height: 100%;
+
+    &__body {
+      margin-top: auto;
+    }
+  }
+}
