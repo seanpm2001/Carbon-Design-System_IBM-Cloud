@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 140 200">
+  <defs>
+    <linearGradient id="support--dark-blue-3" x1="66.98" x2="66.98" y1="5.67" y2="200.03" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f6f2ff" stop-opacity="0"/>
+      <stop offset=".47" stop-color="#bdccfe" stop-opacity=".47"/>
+      <stop offset=".81" stop-color="#99b4fe" stop-opacity=".81"/>
+      <stop offset="1" stop-color="#8babfe"/>
+      <stop offset="1" stop-color="#8cacfe"/>
+    </linearGradient>
+    <linearGradient id="support--dark-blue-4" x1="116.59" x2="35.2" y1="1826.57" y2="1875.25" gradientTransform="matrix(1 0 0 -1 0 1997.29)" gradientUnits="userSpaceOnUse">
+      <stop offset=".01" stop-color="#545a74"/>
+      <stop offset="1" stop-color="#3a3b46"/>
+    </linearGradient>
+    <linearGradient id="support--dark-blue-5" x1="67.19" x2="134" y1="1834.3" y2="1834.3" gradientTransform="matrix(1 0 0 -1 0 1997.29)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#313437"/>
+      <stop offset="1" stop-color="#434251"/>
+    </linearGradient>
+    <linearGradient id="support--dark-blue-6" x2="67.24" y1="1834.3" y2="1834.3" gradientTransform="matrix(1 0 0 -1 0 1997.29)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#28292d"/>
+      <stop offset="1" stop-color="#3c3d40"/>
+    </linearGradient>
+    <linearGradient id="support--dark-blue-1" x1="26.04" x2="58.35" y1="129.2" y2="91.18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#324280"/>
+      <stop offset="1" stop-color="#908dd0"/>
+    </linearGradient>
+    <linearGradient id="support--dark-blue-7" x1="23.67" x2="53.6" y1="1828.84" y2="1896.07" gradientTransform="matrix(1 0 0 -1 0 1997.29)" xlink:href="#support--dark-blue-1"/>
+    <linearGradient id="support--dark-blue-8" x1="24.44" x2="56.75" y1="127.84" y2="89.82" xlink:href="#support--dark-blue-1"/>
+    <linearGradient id="support--dark-blue-2" x1="48.35" x2="48.35" y1="1850.13" y2="1875.77" gradientTransform="matrix(1 0 0 -1 0 1997.29)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e6e6f0"/>
+      <stop offset="1" stop-color="#f2f4f8"/>
+    </linearGradient>
+    <linearGradient id="support--dark-blue-9" x1="53.37" x2="53.37" y1="1847.35" y2="1872.99" xlink:href="#support--dark-blue-2"/>
+    <linearGradient id="support--dark-blue-10" x1="58.43" x2="58.43" y1="1844.48" y2="1870.12" xlink:href="#support--dark-blue-2"/>
+    <linearGradient id="support--dark-blue-11" x1="63.45" x2="63.45" y1="1841.7" y2="1867.34" xlink:href="#support--dark-blue-2"/>
+  </defs>
+  <g>
+    <path fill="url(#support--dark-blue-3)" d="M66.76 102.24L134 141.17V0H0v141.17z" opacity=".1" style="isolation:isolate"/>
+    <path fill="url(#support--dark-blue-4)" d="M0 141.07l66.77-38.93L134 141.07 67.24 180z"/>
+    <path fill="url(#support--dark-blue-5)" d="M134 141.07v4.9L67.19 184.9V180z" opacity=".7" style="isolation:isolate"/>
+    <path fill="url(#support--dark-blue-6)" d="M67.24 180v4.9L0 146v-4.9z"/>
+    <path fill="#161616" fill-opacity=".3" d="M67.19 184.9l-54.2-31.4L0 161.07 67.19 200l66.77-38.93-12.99-7.52-53.78 31.35z"/>
+  </g>
+  <g opacity=".8">
+    <path fill="url(#support--dark-blue-1)" d="M32.4 135.18l-1-.63-.05-25 1.05.64z"/>
+    <path fill="url(#support--dark-blue-7)" d="M63.89 91.64l.09 25-31.58 18.54v-25z"/>
+    <path fill="url(#support--dark-blue-8)" d="M32.35 110.18l-1.05-.64 31.54-18.49 1 .59z"/>
+  </g>
+  <path fill="#f2f4f8" d="M48.83 122.16l-1-.64L79.31 103l1 .59z"/>
+  <path fill="url(#support--dark-blue-2)" d="M48.92 147.16l-1.05-.63-.09-25 1 .64z"/>
+  <path fill="#d0d6eb" d="M80.36 103.62l.09 25-31.53 18.54-.09-25z"/>
+  <path fill="url(#support--dark-blue-9)" d="M53.94 149.94l-1-.64-.09-25 1.05.64z"/>
+  <path fill="#f2f4f8" d="M53.85 124.94l-1.05-.64 31.53-18.49 1.09.59z"/>
+  <path fill="#d0d6eb" d="M85.42 106.4v25l-31.48 18.54-.09-25z" opacity=".8" style="isolation:isolate"/>
+  <path fill="url(#support--dark-blue-10)" d="M59 152.81l-1-.64-.09-25 1 .64z"/>
+  <path fill="#f2f4f8" d="M58.91 127.81l-1-.64 31.53-18.49 1.1.59z"/>
+  <path fill="#d0d6eb" d="M90.49 109.27v25L59 152.81l-.09-25z" opacity=".8" style="isolation:isolate"/>
+  <path fill="#f2f4f8" d="M64 130.58l-1.1-.63 31.58-18.49 1.05.59z"/>
+  <path fill="url(#support--dark-blue-11)" d="M64 155.59l-1-.59-.09-25 1.1.63z"/>
+  <path fill="#d0d6eb" d="M95.51 112.05v25L64 155.59v-25z" opacity=".8" style="isolation:isolate"/>
+</svg>
