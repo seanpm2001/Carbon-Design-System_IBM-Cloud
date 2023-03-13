@@ -1,0 +1,16 @@
+{
+    "active": "Active",
+    "completed": "Completed",
+    "connecting": "Connecting",
+    "inProgress": "In progress",
+    "created": "Created",
+    "critical": "Critical",
+    "disabled": "Disabled",
+    "draft": "Draft",
+    "failed": "Failed",
+    "inactive": "Inactive",
+    "normal": "Normal",
+    "pending": "Pending",
+    "scanning": "Scanning",
+    "templateError": "Template error"
+}

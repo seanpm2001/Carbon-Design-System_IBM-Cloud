@@ -1,0 +1,23 @@
+{
+  "accessTags": {
+    "labelText": "Etiquetas de gestión de acceso",
+    "placeholder": "Ejemplos: access:dev, proj:version-1",
+    "tooltip": {
+      "exampleOpeningLine": "Las etiquetas de gestión de accesos le ayudan a aplicar políticas de acceso flexibles en recursos específicos."
+    }
+  },
+  "accessTagPrefix": "IAM",
+  "errors": {
+    "exceeds_attach_limit": "Se ha alcanzado el número máximo de etiquetas que puede adjuntar a la vez. Para adjuntar más etiquetas, guarde primero los cambios.",
+    "exceeds_detach_limit": "Se ha alcanzado el número máximo de etiquetas que puede desconectar a la vez. Para desconectar más etiquetas, guarde primero los cambios.",
+    "tag_exists": "Esta etiqueta ya existe. Especifique otro nombre para la etiqueta.",
+    "too_many_characters": "Una etiqueta no puede incluir más de 128 caracteres.",
+    "more_than_one_colon": "Una etiqueta no puede contener más de un carácter de dos puntos.",
+    "starts_with_colon": "Una etiqueta no puede empezar por un carácter de dos puntos.",
+    "ends_with_colon": "Una etiqueta no puede acabar en un carácter de dos puntos.",
+    "invalid_characters": "Una etiqueta solo puede incluir caracteres alfanuméricos, espacios, guiones bajos, guiones, puntos y un carácter de dos puntos.",
+    "not_key_value_format": "El nombre de la etiqueta debe estar en formato clave:valor",
+    "tag_not_found": "No se han encontrado coincidencias. Para crear nuevas etiquetas, póngase en contacto con el administrador de etiquetas.",
+    "error_creating_tags": "Error al crear etiquetas:"
+  }
+}

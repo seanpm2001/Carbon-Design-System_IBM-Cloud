@@ -1,0 +1,6 @@
+{
+    "selectCountry": "Land auswählen",
+    "invalidText": "Gültiger Wert erforderlich",
+    "errorLoadingCountries": "Laden von Ländern nicht möglich",
+    "pricingCountries": "Preisstruktur - Länder"
+}

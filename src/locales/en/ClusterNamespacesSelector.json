@@ -1,0 +1,51 @@
+{
+  "close": {
+    "menu": "Close menu"
+  },
+  "open": {
+    "menu": "Open menu"
+  },
+  "collapse": {
+    "group": "Collapse group"
+  },
+  "expand": {
+    "group": "Expand group"
+  },
+  "clear": {
+    "all": "Clear all selected items",
+    "selection": "Clear selected item"
+  },
+  "legend_iks": "Select one or more namespaces",
+  "legend_roks": "Select one or more projects",
+  "allNamespaces_iks": "All namespaces",
+  "allNamespaces_roks": "All projects",
+  "selectNamespaces_iks": "Select namespaces",
+  "selectNamespaces_roks": "Select projects",
+  "namespacesLabel_iks": "Namespaces",
+  "namespacesLabel_roks": "Projects",
+  "createNamespace_iks": "Add namespace",
+  "createNamespace_roks": "Add project",
+  "createNamespaceDescription_iks": "Add a single namespace or multiple namespaces to your specific namespace's list.",
+  "createNamespaceDescription_roks": "Add a single project or multiple projects to your specific project's list.",
+  "enterNamespace_iks": "Enter namespaces separated by a comma. After you click Add, the new namespaces are included in the list and automatically selected.",
+  "enterNamespace_roks": "Enter projects separated by a comma. After you click Add, the new projects are included in the list and automatically selected.",
+  "namespace_iks": "Namespace",
+  "namespace_roks": "Project",
+  "placeholder_iks": "nmpc-1, namespc-2",
+  "placeholder_roks": "prj-1, projct-2",
+  "targetCluster": "Target selected",
+  "create": "Add",
+  "cancel": "Cancel",
+  "closeLabel": "Close",
+  "placeholder": "Filter...",
+  "allNotSupportedTitle_iks": "All namespaces not supported",
+  "allNotSupportedTitle_roks": "All projects not supported",
+  "multiNotSupportedTitle_iks": "Specific namespaces not supported",
+  "multiNotSupportedTitle_roks": "Specific projects not supported",
+  "invalidNamespace_iks": "The name of a namespace can include only lowercase letters, numbers, and dashes. The name can't start or end with a dash, and it must be at a maximum of 63 characters.",
+  "invalidNamespace_roks": "The name of a project can include only lowercase letters, numbers, and dashes. The name can't start or end with a dash, and it must be at a maximum of 63 characters.",
+  "duplicateNamespace": "‘{{namespace}}’ already exists. Enter another name.",
+  "fetchErrorTitle": "Can't retrieve details",
+  "fetchErrorDescription_iks": "The list of namespaces can't be populated. Try again later.",
+  "fetchErrorDescription_roks": "The list of projects can't be populated. Try again later."
+}

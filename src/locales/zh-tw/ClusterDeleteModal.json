@@ -1,0 +1,15 @@
+{
+  "title": "刪除叢集",
+  "secondaryButton": "取消",
+  "primaryButton": "刪除",
+  "description": "刪除叢集時，會永久地刪除所有的工作者節點、應用程式及容器。 此動作無法復原。 在您繼續之前，請確定先備份所有必要的資料及配置檔。",
+  "deleteStorage": "刪除此叢集使用的持續性儲存空間",
+  "confirmationInputLabel": "鍵入 \"{{clusterName}}\" 進行確認",
+  "deleting": "正在刪除...",
+  "deleteWorkspace": "刪除叢集不會刪除 Schematics 工作區或相關聯的資源。 若要清除叢集，請在 Schematics 中執行工作區毀損及刪除。",
+  "workspaceError": "我們無法判斷此叢集是否已連接至 Schematics 工作區。 如果是，則您應該在 Schematics 中執行工作區毀損及刪除。",
+  "blockedSchematics": "Schematics 工作區視窗可能已封鎖，無法開啟。",
+  "popup": "蹦現畫面已封鎖？",
+  "workspace": "Schematics 工作區",
+  "workspaces": "Schematics 工作區"
+}

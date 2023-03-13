@@ -1,0 +1,17 @@
+{
+  "addToEstimate": "見積もりに追加",
+  "create": "作成",
+  "estimateCosts": "見積もりコスト",
+  "estimated": "見積もり",
+  "free": "無料",
+  "loading": "ロード中...",
+  "creating": "作成中...",
+  "loginText": "既にアカウントをお持ちの場合 <a>ログイン</a>",
+  "showMore": "詳細を表示",
+  "signUp": "登録して作成",
+  "summaryHeader": "サマリー",
+  "totalEstimated": "見積もりコストの合計",
+  "monthShort": "月",
+  "upgrade": "アップグレード",
+  "viewTerms": "ご利用条件を表示"
+}

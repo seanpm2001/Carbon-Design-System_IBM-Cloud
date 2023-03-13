@@ -1,0 +1,98 @@
+{
+  "activitytracker": {
+    "description": "Affichez et suivez les modifications dans vos applications et votre infrastructure. <a>En savoir plus</a>",
+    "name": "Suivi des activités",
+    "nonePlatformSubtitle": "Sans suivi d'activité, l'identification et la résolution des erreurs et l'obtention d'une assistance peuvent être difficiles.",
+    "plansError": "Impossible de charger les plans de suivi d'activité.",
+    "resourceListError": "Impossible de charger les instances de suivi d'activité.",
+    "serviceName": "IBM Cloud Activity Tracker with LogDNA",
+    "sidePanelHeader": "IBM Cloud Activity Tracker avec LogDNA • <a>Docs</a>",
+    "sidePanelTitle": "Modifier le suivi d'activité",
+    "liteInstanceError": {
+      "title": "Instance non valide",
+      "subtitle": "L'<a>instance d'Activity Tracker</a> de cet emplacement utilise le plan Lite et ne peut pas être utilisée. Supprimez d'abord l'instance ou choisissez un autre emplacement."
+    },
+    "noKey": {
+      "subtitle": "L'instance de suivi d'activité sélectionnée n'a pas de clé d'ingestion associée. Vous pouvez obtenir une clé en exécutant l'action \"Obtain key\" à partir de la page de détails de l'instance <a></a>.",
+      "title": "Pas de clé d'ingestion"
+    }
+  },
+  "applicationInstance": "Instance d'application",
+  "disabled": "Désactivé",
+  "edit": "Editer",
+  "enabled": "Activé",
+  "error": "Erreur",
+  "free": "Gratuit",
+  "information": "Informations",
+  "instance": "Instance",
+  "instanceNameRequired": "Un nom d'instance est requis",
+  "instanceNew": "Créer une instance",
+  "instancePlatform": "Identique à la plateforme",
+  "instanceNone": "Aucun",
+  "locationsError": "Impossible de charger les données d'emplacement.",
+  "learnMore": "<a>En savoir plus</a>",
+  "liteAlreadySelectedError": {
+    "subtitle": "Le plan Lite est sélectionné pour les instances de service de plateforme et d'application. Sélectionnez un plan payant pour une ou les deux instances.",
+    "title": "Une seule instance de plan Lite est autorisée"
+  },
+  "liteExistingInstanceError": {
+    "subtitle": "Il ne peut y avoir qu'une seule instance de plan Lite de ce service par compte. Supprimez votre instance de plan Lite en cours pour en créer une nouvelle.",
+    "title": "Instance de plan Lite existante"
+  },
+  "loading": "Chargement en cours...",
+  "location": "Emplacement",
+  "logging": {
+    "description": "Stockez, recherchez, analysez, surveillez et alertez sur vos données et événements de journalisation IBM Cloud. <a>En savoir plus</a>",
+    "keysError": "Impossible d'extraire les clés d'ingestion de journalisation.",
+    "name": "Journalisation",
+    "noKey": {
+      "subtitle": "L'instance de journalisation sélectionnée n'a pas de clé d'ingestion attachée. Vous pouvez obtenir une clé en exécutant l'action \"Obtain key\" à partir de la page de détails de l'instance <a></a>.",
+      "title": "Pas de clé d'ingestion"
+    },
+    "nonePlatformSubtitle": "Sans journalisation de la plateforme, l'identification et la résolution des erreurs et l'obtention d'une assistance peuvent être difficiles.",
+    "noneApplicationSubtitle": "Sans journalisation de l'application, l'identification et la résolution des erreurs et l'obtention d'une assistance peuvent être difficiles.",
+    "plansError": "Impossible de charger les plans de journalisation.",
+    "resourceListError": "Impossible de charger les instances de journalisation.",
+    "serviceName": "IBM Log Analysis",
+    "sidePanelHeader": "IBM Log Analysis • <a>Docs</a>",
+    "sidePanelTitle": "Modifier la journalisation",
+    "liteInstanceError": {
+      "title": "Instance de plateforme non valide",
+      "subtitle": "L'<a>instance de journalisation</a> de plateforme de cet emplacement utilise le plan Lite et ne peut pas être utilisée. Désactivez d'abord la journalisation de la plateforme pour cette instance ou choisissez un autre emplacement."
+    }
+  },
+  "monitoring": {
+    "description": "Fournit une visibilité des performances et de la santé de vos ressources IBM Cloud. <a>En savoir plus</a>",
+    "keysError": "Impossible d'extraire les clés d'accès de surveillance.",
+    "name": "Surveillance",
+    "noKey": {
+      "subtitle": "L'instance de surveillance sélectionnée n'a pas de clé d'accès attachée. Vous pouvez obtenir une clé en exécutant l'action \"Obtain key\" à partir de la page de détails de l'instance <a></a>.",
+      "title": "Aucune clé d'accès"
+    },
+    "nonePlatformSubtitle": "Sans mesure de plateforme, l'identification et la résolution des erreurs et l'obtention d'une assistance peuvent être difficiles.",
+    "noneApplicationSubtitle": "Sans mesure d'application, l'identification et la résolution des erreurs et l'obtention d'une assistance peuvent être difficiles.",
+    "plansError": "Impossible de charger les plans de surveillance.",
+    "resourceListError": "Impossible de charger les instances de surveillance.",
+    "serviceName": "IBM Cloud Monitoring",
+    "sidePanelHeader": "IBM Cloud Monitoring • <a>Docs</a>",
+    "sidePanelTitle": "Modifier la surveillance",
+    "liteInstanceError": {
+      "title": "Instance de plateforme non valide",
+      "subtitle": "L'<a>instance de surveillance</a> de plateforme de cet emplacement utilise le plan Lite et ne peut pas être utilisée. Désactivez d'abord la surveillance des métriques de la plateforme pour cette instance ou choisissez un autre emplacement."
+    }
+  },
+  "name": "Nom",
+  "plan": "Plan",
+  "platformExistingHelperText": "Une instance de plateforme existe déjà et sera automatiquement connectée.",
+  "platformInstance": "Instance de plateforme",
+  "policiesError": "Impossible de charger les règles d'accès au groupe de ressources.",
+  "resourceGroup": "Groupe de ressources",
+  "resourceGroupsError": "Impossible de charger les groupes de ressources.",
+  "save": "Sauvegarder",
+  "serviceName": "Nom du service",
+  "tag": "Balise",
+  "tags": "Balises",
+  "warning": "Avertissement",
+  "noPlans": "Aucune option de plan n'a été trouvée pour ce service. Vous ne pourrez pas créer de nouvelle instance.",
+  "platformLocationHelperText": "Il doit s'agir du même emplacement que celui de la source de données"
+}

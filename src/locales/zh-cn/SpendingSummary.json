@@ -1,0 +1,17 @@
+{
+  "title": "开支摘要",
+  "month-to-date": "月初至今开支",
+  "last-month": "上个月",
+  "average": "平均每月开支",
+  "billingPeriod": "结算周期",
+  "usage": "实际",
+  "predictedUsage": "预测",
+  "error": "访存图表数据时发生了错误。 请刷新页面或稍后重试。",
+  "unauthorized": "您似乎无权查看帐户使用情况数据。",
+  "unauthorizedCaption": "您必须具有缴费帐户管理服务的管理员角色，才能查看整个帐户的使用情况。",
+  "empty": "尚未生成此帐户的使用情况数据。",
+  "emptyCaption": "以后再来查看帐户的使用情况。",
+  "chartMessageTitle": "没有使用情况数据可供查看",
+  "chartMessageSubtitle": "试用帐户无法查看开支摘要。",
+  "amount": "金额"
+}

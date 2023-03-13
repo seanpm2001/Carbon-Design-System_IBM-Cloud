@@ -1,0 +1,19 @@
+{
+  "createTag" : "Si vous devez créer une étiquette de gestion des accès, faites-le à la section Etiquettes",
+  "comboBox" : "Entrer un nom d'étiquette",
+  "error" : "Statut de l'erreur : ",
+  "labels" : {
+    "tags": "Etiquettes",
+    "singleresource" : "ressource",
+    "resources" : "ressources",
+    "ghost" : "Ghost : ",
+    "createTag": "Pour créer de nouvelles étiquettes de gestion des accès, visitez la page Etiquettes."
+},
+  "heading" : {
+    "tagmap" : "Ressources marquées que vous pouvez afficher"
+},
+  "button" : {
+    "add" : "Ajouter"
+},
+  "close": "Fermer"
+}

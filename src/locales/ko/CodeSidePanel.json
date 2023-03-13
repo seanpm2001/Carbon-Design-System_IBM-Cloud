@@ -1,0 +1,9 @@
+{
+  "backText": "이전",
+  "cancelText": "취소",
+  "doneText": "완료",
+  "nextText": "다음",
+  "previousText": "이전",
+  "closePanelText": "패널 닫기",
+  "doneIsLoadingText": "로드 중..."
+}

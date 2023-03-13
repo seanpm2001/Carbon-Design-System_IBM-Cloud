@@ -1,0 +1,51 @@
+{
+  "close": {
+    "menu": "Chiudi menu"
+  },
+  "open": {
+    "menu": "Apri menu"
+  },
+  "collapse": {
+    "group": "Comprimi gruppo"
+  },
+  "expand": {
+    "group": "Espandi gruppo"
+  },
+  "clear": {
+    "all": "Cancella tutti gli elementi selezionati",
+    "selection": "Cancella elemento selezionato"
+  },
+  "legend_iks": "Seleziona uno o più spazi dei nomi",
+  "legend_roks": "Seleziona uno o più progetti",
+  "allNamespaces_iks": "Tutti gli spazi dei nomi",
+  "allNamespaces_roks": "Tutti i progetti",
+  "selectNamespaces_iks": "Seleziona spazi dei nomi",
+  "selectNamespaces_roks": "Seleziona progetti",
+  "namespacesLabel_iks": "Spazi dei nomi",
+  "namespacesLabel_roks": "Progetti",
+  "createNamespace_iks": "Aggiungi spazio dei nomi",
+  "createNamespace_roks": "Aggiungi progetto",
+  "createNamespaceDescription_iks": "Aggiungi uno o più spazi dei nomi all'elenco del tuo spazio dei nomi specifico.",
+  "createNamespaceDescription_roks": "Aggiungi uno o più progetti all'elenco del tuo progetto specifico.",
+  "enterNamespace_iks": "Immetti gli spazi dei nomi separati da una virgola. Dopo aver fatto clic su Aggiungi, i nuovi spazi dei nomi vengono inclusi nell'elenco e selezionati automaticamente.",
+  "enterNamespace_roks": "Immetti i progetti separati da una virgola. Dopo aver fatto clic su Aggiungi, i nuovi progetti vengono inclusi nell'elenco e selezionati automaticamente.",
+  "namespace_iks": "Spazio dei nomi",
+  "namespace_roks": "Progetto",
+  "placeholder_iks": "nmpc-1, namespc-2",
+  "placeholder_roks": "prj-1, projct-2",
+  "targetCluster": "Destinazione selezionata",
+  "create": "Aggiungi",
+  "cancel": "Annulla",
+  "closeLabel": "Chiudi",
+  "placeholder": "Filtro...",
+  "allNotSupportedTitle_iks": "Tutti gli spazi dei nomi non supportati",
+  "allNotSupportedTitle_roks": "Tutti i progetti non supportati",
+  "multiNotSupportedTitle_iks": "Specifici spazi dei nomi non supportati",
+  "multiNotSupportedTitle_roks": "Specifici progetti non supportati",
+  "invalidNamespace_iks": "Il nome di uno spazio dei nomi può includere solo lettere minuscole, numeri e trattini. Il nome non può iniziare o terminare con un trattino e deve avere un massimo di 63 caratteri.",
+  "invalidNamespace_roks": "Il nome di un progetto può includere solo lettere minuscole, numeri e trattini. Il nome non può iniziare o terminare con un trattino e deve avere un massimo di 63 caratteri.",
+  "duplicateNamespace": "‘{{namespace}} esiste già. Immetti un altro nome.",
+  "fetchErrorTitle": "Impossibile richiamare i dettagli",
+  "fetchErrorDescription_iks": "Impossibile popolare l'elenco degli spazi dei nomi. Riprova più tardi.",
+  "fetchErrorDescription_roks": "Impossibile popolare l'elenco dei progetti. Riprova più tardi."
+}

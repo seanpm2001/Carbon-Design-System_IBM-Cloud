@@ -1,0 +1,21 @@
+{
+  "title": "更新叢集版本",
+  "secondaryButton": "取消",
+  "primaryButton": "更新",
+  "updating": "正在更新...",
+  "inputLabel": "叢集版本",
+  "description": "在更新期間，您的叢集主節點、工作者節點、應用程式及資源都會繼續執行。 更新完成之後，您可以更新工作者節點版本。 如需指示及版本間差異的相關資訊，<a>請檢閱文件</a>。",
+  "versionRequiresUpdate": "{{version}}（請先更新為較早的版本）",
+  "betaVersion": "{{version}}（請建立新的叢集，以嘗試此測試版）",
+  "noUpdatesAvailable": "您正在使用最新版的 API 伺服器。 目前沒有可用的更新。",
+  "clusterUpdating": "您的 API 伺服器正在更新為 {{version}} 版！ 請 1 小時後再回來，將您的工作者節點更新為相同的版本。",
+  "errorSubtitle": "無法更新叢集版本。",
+  "dropdownLabel": "選擇叢集版本",
+  "notificationIcon": "通知",
+  "cannotUpdateTitle": "無法更新叢集版本。",
+  "cannotUpdateSubtitle": "沒有可用的有效版本更新選項。",
+  "clusterErrorSubtitle": "無法載入叢集詳細資料。",
+  "versionsErrorSubtitle": "無法載入叢集更新版本選項。",
+  "success": "成功！",
+  "close": "關閉"
+}

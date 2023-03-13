@@ -1,0 +1,47 @@
+{
+  "COMMITMENT": "Verpflichtung",
+  "SUBSCRIPTION": "Abonnement",
+  "title": {
+    "COMMITMENT": "Aktive Verpflichtungslaufzeit",
+    "SUBSCRIPTION": "Aktive Abonnementlaufzeit"
+  },
+  "viewDetails": "Details anzeigen",
+  "contactSales": "Kontakt zum Vertrieb aufnehmen",
+  "empty": {
+    "title": "Verpflichtungen und Abonnements",
+    "text": "Für die nutzungsabhängige Verwendung von IBM Cloud mit Nutzungsverpflichtung registrieren",
+    "caption": "Wenn Sie sich verpflichten, eine bestimmte Summe in IBM Cloud auszugeben, erhalten Sie Rabatte auf der gesamten Plattform. Die Abrechnung erfolgt monatlich auf der Basis der Nutzung und Sie erhalten auch nach dem Erreichen der Ausgabeverpflichtungssumme einen Rabatt."
+  },
+  "unauthorized": {
+    "text": "Sie verfügen nicht über die Zugriffsberechtigung zum Anzeigen von Verpflichtungs- und Abonnementinformationen.",
+    "caption": "Wenden Sie sich an den zuständigen Administrator und fordern Sie die Zugriffsberechtigung an."
+  },
+  "error": {
+    "text": "Abrufen von Verpflichtungs- und Abonnementdaten nicht möglich."
+  },
+  "enterprise": {
+    "text": "Dieses Konto wird durch ein Unternehmen verwaltet.",
+    "caption": "Wenn Sie Mitglied des Unternehmens sind, wechseln Sie zum Unternehmenskonto, um weitere Informationen anzuzeigen."
+  },
+  "noUpcoming": {
+    "text": "Sie verfügen nicht über eine aktive Verpflichtung.",
+    "caption": "Mit einer Registrierung für eine Verpflichtung haben Sie die Möglichkeit, Kosten zu reduzieren."
+  },
+  "upcomingTerm": "Nächste(s) {{mode}}: aktiv am {{date}}.",
+  "metadata": {
+    "daysRemaining": "Verbleibende Tage",
+    "dates": "Datumsangaben",
+    "discount": "Rabatt",
+    "amountPercentOff": "{{amount}}% für die gesamte Nutzung",
+    "startingCredit": "Startguthaben",
+    "remainingCredit": "Verbleibendes Guthaben"
+  },
+  "commitmentMeter": {
+    "spentToward": " der Augabeverpflichtung von {{total}} ausgegeben.",
+    "reachedCommitment": "Die Ausgabeverpflichtung ist erreicht."
+  },
+  "tooltip" : {
+    "month": "Monat",
+    "remainingCredit": "Verbleibendes Guthaben"
+  }
+}

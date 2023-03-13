@@ -1,0 +1,15 @@
+{
+  "billingPeriod": "計費期間",
+  "end": "結束",
+  "errorCaption": "如需其他協助，請與管理者聯絡。",
+  "errorText": "發生問題。 請嘗試重新載入頁面，以查看此資訊",
+  "key": "值",
+  "lastInvoice": "上一張發票",
+  "nextInvoice": "下一張發票",
+  "notAvailableCaption": "請升級帳戶，以檢視計費期間。",
+  "notAvailableText": "此視圖不適用於部分帳戶類型",
+  "start": "啟動",
+  "today": "今天",
+  "unauthorizedCaption": "若要存取，請聯絡管理者。",
+  "unauthorizedText": "您似乎沒有存取權，無法檢視計費期間"
+}

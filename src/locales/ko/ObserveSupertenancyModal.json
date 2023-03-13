@@ -1,0 +1,52 @@
+{
+  "monitoring": {
+    "allRegions": "모든 지역",
+    "cancel": "취소",
+    "configure": "구성",
+    "heading": "플랫폼 메트릭을 수신할 IBM Cloud Monitoring 인스턴스 선택",
+    "regionLabel": "지역 선택",
+    "regionTitle": "지역별로 인스턴스 필터링:",
+    "instanceLabel": "인스턴스 선택",
+    "instanceTitle": "지역에 있는 인스턴스",
+    "instanceTitleWithRegion": "{{region}}의 인스턴스",
+    "generalDescription": "IBM Cloud에서 사용 가능한 서비스 인스턴스의 플랫폼 메트릭을 수신할 IBM Cloud Monitoring 인스턴스를 선택하십시오.",
+    "createLink": "<a>인스턴스를 작성</a>할 수도 있습니다.",
+    "somethingWentWrong": "문제가 발생했습니다.",
+    "updateError": "{{message}}. 오류: {{error_code}}",
+    "fetchError": "IBM Cloud Monitoring 인스턴스 페치에 실패했습니다.",
+    "confirmInstanceChange": "{{instance}}에서 플랫폼 메트릭 수신을 중지하려고 합니다."
+  },
+  "logging": {
+    "allRegions": "모든 지역",
+    "cancel": "취소",
+    "configure": "구성",
+    "heading": "플랫폼 로그를 수신할 IBM Log Analysis 인스턴스 선택",
+    "regionLabel": "지역 선택",
+    "regionTitle": "지역별로 인스턴스 필터링:",
+    "instanceLabel": "인스턴스 선택",
+    "instanceTitle": "지역에 있는 인스턴스",
+    "instanceTitleWithRegion": "{{region}}의 인스턴스",
+    "generalDescription": "IBM Cloud에서 사용 가능한 서비스 인스턴스의 플랫폼 로그를 수신할 IBM Cloud Analysis 인스턴스를 선택하십시오.",
+    "createLink": "<a>인스턴스를 작성</a>할 수도 있습니다.",
+    "somethingWentWrong": "문제가 발생했습니다.",
+    "updateError": "{{message}}. 오류: {{error_code}}",
+    "fetchError": "IBM Log Analysis 인스턴스 페치에 실패했습니다.",
+    "confirmInstanceChange": "{{instance}}에서 플랫폼 로그 수신을 중지하려고 합니다."
+  },
+  "common": {
+    "successIconDescription": "성공 아이콘",
+    "errorIconDescription": "오류 아이콘",
+    "au-syd": "시드니",
+    "br-sao": "상파울루",
+    "ca-tor": "토론토",
+    "eu-de": "프랑크푸르트",
+    "eu-fr2": "BNPP_EU",
+    "eu-gb": "런던",
+    "jp-osa": "오사카",
+    "jp-tok": "도쿄",
+    "us-east": "워싱턴 DC",
+    "us-south": "댈러스",
+    "select": "선택",
+    "close": "닫기"
+  }
+}

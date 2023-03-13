@@ -1,0 +1,77 @@
+{
+  "settingsColumnsTitle": "Modifica colonne",
+  "settingsSizeTitle": "Altezza riga",
+  "settingsSize": {
+    "tall": "Alta (64px)",
+    "normal": "Normale (48px)",
+    "short": "Bassa (32px)",
+    "compact": "Compatta (24px)"
+  },
+  "settingsReset": "Reimposta su valore predefinito",
+  "settingsLabel": "Impostazioni",
+  "filtersLabel": "Filtro",
+  "filtersApply": "Applica",
+  "filtersDone": "Fine",
+  "filtersClear": "Cancella",
+  "filtersClearFilters": "Cancella filtri",
+  "noItems": "Nessun elemento corrisponde al filtro corrente.",
+  "previousPage": "Pagina precedente",
+  "nextPage": "Pagina successiva",
+  "itemRange": "{{min}}–{{max}} di {{total}} elementi",
+  "itemRangeSingle": "1–1 di 1 elemento",
+  "itemsPerPage": "Elementi per pagina:",
+  "pageNumber": "Numero di pagina",
+  "pageRange": "{{current}} di n. pagine: {{total}}",
+  "pageRangeSingle": "1 di 1 pagina",
+  "itemText": "{{min}}–{{max}} elementi",
+  "pageText": "pagina {{pageNumber}}",
+  "all": "Tutto",
+  "carbon.table.batch.cancel": "Annulla",
+  "carbon.table.batch.items.selected": "{{count}} elementi selezionati",
+  "carbon.table.batch.item.selected": "1 elemento selezionato",
+  "carbon.table.toolbar.search.label": "Cerca",
+  "carbon.table.toolbar.search.placeholder": "Cerca",
+  "carbon.table.row.expand": "Espandi riga",
+  "carbon.table.row.collapse": "Comprimi riga",
+  "carbon.table.all.expand": "Espandi tutte le righe",
+  "carbon.table.all.collapse": "Comprimi tutte le righe",
+  "carbon.table.all.select": "Seleziona tutte le righe nella pagina",
+  "carbon.table.all.unselect": "Deseleziona tutte le righe",
+  "carbon.table.row.select": "Seleziona riga",
+  "carbon.table.row.unselect": "Deseleziona riga",
+  "carbon": {
+    "dropdown": {
+      "open": {
+        "menu": "Apri menu"
+      },
+      "close": {
+        "menu": "Chiudi menu"
+      }
+    },
+    "multiselect": {
+      "open": {
+        "menu": "Apri menu"
+      },
+      "close": {
+        "menu": "Chiudi menu"
+      },
+      "clear": {
+        "all": "Cancella tutto"
+      }
+    },
+    "dateselect": {
+      "start": "Data iniziale",
+      "end": "Data di fine"
+    }
+  },
+  "sortAscending": "Ordinamento crescente",
+  "sortDescending": "Ordinamento decrescente",
+  "removeSort": "Rimuovi ordinamento",
+  "overflowMenu": "Menu di overflow",
+  "emptyStateTitle": "Risorse",
+  "emptyStateDescription": "Puoi trovare le tue risorse qui dopo averle create.",
+  "multiselectPlaceholder": "Filtro...",
+  "download": "Scarica",
+  "refresh": "Aggiorna",
+  "selectAllRows": "Seleziona tutti e {{totalRowCount}} elementi"
+}

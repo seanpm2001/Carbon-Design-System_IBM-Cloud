@@ -1,0 +1,11 @@
+{
+  "rename": "重新命名",
+  "delete": "刪除",
+  "errorTitle": "發生問題",
+  "resourceList": "資源清單",
+  "renameModalContent": "在下面輸入您想要使用的新名稱。",
+  "deleteModalContent": "您即將刪除此服務。您要繼續嗎？",
+  "deleteModalPriButton": "是，刪除",
+  "ModalCancelButton": "取消",
+  "renameInputLabel": "名稱"
+}

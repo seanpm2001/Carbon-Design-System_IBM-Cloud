@@ -1,0 +1,10 @@
+{
+  "titleText": "Instanz",
+  "errorTitle": "Auflisten der Ressourceninstanzen nicht möglich.",
+  "errorIconDescription": "Auflisten der Ressourceninstanzen nicht möglich.",
+  "errorSubtitle": "Die Ressourceninstanzen sind nicht verfügbar.",
+  "infoTitle": "Es sind keine Ressourceninstanzen vorhanden.",
+  "infoIconDescription": "Es ist keine Ressourceninstanz vorhanden.",
+  "infoSubtitle": "Eine Ressourceninstanz erstellen und den Vorgang wiederholen.",
+  "dropdownLabel": "Instanzname..."
+}

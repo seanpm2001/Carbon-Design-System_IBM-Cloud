@@ -1,0 +1,17 @@
+{
+  "recentInvoices": "Recent invoices",
+  "viewAll": "View all",
+  "UNAUTHORIZED_CAPTION": "Contact your administrator for access.",
+  "UNAUTHORIZED_TEXT": "Looks like you don't have access to view recent invoices",
+  "ERROR_CAPTION": "Try reloading the page to see this information.",
+  "ERROR_TEXT": "Something went wrong",
+  "DSW_CAPTION": "To view your official invoice, visit ",
+  "DSW_CAPTION_LINK": "IBM Invoices",
+  "DSW_TEXT": "This account is invoiced on a separate platform",
+  "EMPTY_CAPTION": "Check back at the beginning of the next billing cycle.",
+  "EMPTY_TEXT": "Looks like there aren’t any invoices created for this account yet",
+  "UPGRADE_CAPTION": "Upgrade your account to view recent invoices.",
+  "UPGRADE_TEXT": "This view is not available for some account types",
+  "ENTERPRISE_CAPTION": "Contact the account owner or switch to the enterprise account for more information about invoices.",
+  "ENTERPRISE_TEXT": "This account is managed by an enterprise"
+}

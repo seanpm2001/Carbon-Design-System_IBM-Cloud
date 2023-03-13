@@ -1,0 +1,10 @@
+{
+  "summaryText": "Total dû maintenant",
+  "summaryDetails": "estimé",
+  "create": "Créer",
+  "cancel": "Annuler",
+  "categoryText": "Texte de la catégorie",
+  "creating": "Création du service...",
+  "creating-success": "Service créé.",
+  "creating-iconDescription": "Icône de chargement"
+}

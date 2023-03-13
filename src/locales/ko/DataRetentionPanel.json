@@ -1,0 +1,37 @@
+{
+  "sidePanelTitle": "히스토리 데이터 저장",
+  "panelDoneButton": "작성",
+
+  "progressStep1": "플랜 선택",
+  "progressStep2": "구성",
+
+  "serviceDescription": "7일보다 이전의 스캔 결과가 필요할 것으로 예상됩니까? IBM Cloud Platform Analytics 인스턴스를 추가하여 무제한의 히스토리 데이터를 저장하고 시간 경과에 따른 동향을 탐색하십시오.",
+  "pricingTitle": "가격 플랜 선택",
+  "disclaimer": "현재는 플랜을 변경할 수 없습니다. 나중에 전환해야 하는 경우에는 Platform Analytics의 새 인스턴스를 작성해야 합니다.",
+
+  "configureTitle": "스토리지 구성",
+  "serviceLabel": "서비스 이름",
+  "regionLabel": "지역",
+  "groupLabel": "리소스 그룹 선택",
+  "groupEmptyLabel": "사용 가능한 리소스 그룹이 없음",
+  "groupTooltipText": "계정에서 리소스를 구성하는 방법을 고려하십시오. 서비스 인스턴스가 작성된 후 선택한 리소스 그룹을 변경할 수 없습니다.",
+  "groupTooltipLink": "자세히 보기",
+  "tooltipIcon": "정보",
+  "tagsLabel": "태그(선택사항)",
+  "tagsPlaceholder": "예: env:dev, version-1",
+
+  "permissionErrorMessage": "이 계정의 리소스 그룹에 인스턴스를 추가할 수 있는 권한이 없는 것 같습니다. 계정의 리소스 그룹에 대한 편집자 또는 관리자 역할을 지정하려면 계정 소유자에게 문의하십시오.",
+  "plansNotFoundErrorMessage": "이 계정에 대해 사용할 수 있는 가격 플랜이 없는 것 같습니다.",
+
+  "costMessage": "예상 월별 비용",
+  "costTooltipText": "TBA",
+  "termsMessage": "다음 항목에 동의합니다: ",
+  "termsLink": "이용 약관",
+
+  "successModalHeader": "성공!",
+  "successModalMessage": "Data Storage for Compliance의 인스턴스를 작성했습니다. 이제 미래의 모든 규제 준수 데이터가 저장되며 이를 날짜별로 검색할 수 있습니다.",
+  "errorModalHeader": "오류!",
+  "errorModalMessage": "데이터 범위를 작성하는 중에 오류가 발생했습니다. 나중에 다시 시도하십시오.",
+  "modalPrimaryButton": "확인",
+  "modalSecondaryButton": "취소"
+}

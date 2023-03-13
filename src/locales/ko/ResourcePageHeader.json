@@ -1,0 +1,11 @@
+{
+  "rename": "이름 바꾸기",
+  "delete": "삭제",
+  "errorTitle": "문제가 발생했습니다.",
+  "resourceList": "리소스 목록",
+  "renameModalContent": "아래에 새 이름을 입력하십시오.",
+  "deleteModalContent": "이 서비스를 삭제하려고 합니다. 계속하시겠습니까?",
+  "deleteModalPriButton": "삭제",
+  "ModalCancelButton": "취소",
+  "renameInputLabel": "이름"
+}

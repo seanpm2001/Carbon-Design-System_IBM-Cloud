@@ -1,0 +1,67 @@
+{
+  "sidePanel": {
+    "reviewBtn": "Überprüfung",
+    "title": "Zugriffsberechtigungen für {{resourceDisplayName}} bearbeiten",
+    "subjectUnsupportedTitle": "Ändern der Richtlinie nicht möglich",
+    "subjectUnsupported": "Für den Typ des angegebenen Richtliniensubjekts ({{policySubjectId}}) wird keine Änderung im Kontext unterstützt. Wenn Sie Zugriffsrichtlinien für bestimmte Benutzer oder Service-IDs verwalten möchten, rufen Sie <a>Identity & Access Management</a> auf."
+  },
+  "notifications": {
+    "genericTitle": "Abrufen der Daten nicht möglich.",
+    "transactionId": "Transaktions-ID",
+    "EditPolicySuccess": "Änderung für die Instanz erfolgreich.",
+    "editPolicyErrorTitle": "Bearbeiten der Zugriffsberechtigung nicht möglich.",
+    "editPolicyError": "Beim Bearbeiten der Zugriffsberechtigung ist ein Fehler aufgetreten.",
+    "moreInfo": "Fehlerinformationen anzeigen",
+    "getAccessGroupError": "Das Abrufen von Zugriffsgruppen ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getAccessGroupsError": "Das Abrufen der Liste mit Zugriffsgruppen ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getGroupPolicyErrorTitle": "Abrufen der Richtliniendaten nicht möglich.",
+    "getGroupPolicyError": "Das Abrufen der Richtliniendaten ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getAuthzResourceError": "Das Abrufen der Ressourcendaten ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getPubAccessGroupSettingError": "Das Abrufen der Einstellungen für die Gruppe mit öffentlichen Zugriffsberechtigungen ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getServiceError": "Das Abrufen der Rollen für die Gruppe mit öffentlichen Zugriffsberechtigungen ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getHeaderAccountError": "Das Abrufen von Kontoinformationen ist derzeit nicht möglich.",
+    "getHeaderAccountErrorSubtitle": "Das Abrufen von Kontoinformationen ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "viewModeTitle": "Nur-Anzeige-Modus",
+    "viewModeText": "Sie können diese Richtlinie aufgrund Ihrer Zugriffsberechtigungsebene für die Ressource der Richtlinie nicht ändern. Wenn Sie Änderungen vornehmen möchten, wenden Sie sich an den Administrator, damit dieser Ihre Zugriffsberechtigung für die Ressource aktualisiert."
+  },
+  "accessGroup": {
+    "heading": "Zugriffsberechtigung für die Zugriffsgruppe bearbeiten",
+    "helpText": "Die Zugriffsberechtigung für diese Ressource für alle Entitäten der ausgewählten Zugriffsgruppe ändern.",
+    "label": "Ausgewählte Zugriffsgruppe",
+    "tagUsersLabel": "{{totalCount}} Benutzer",
+    "tagUsersLabelSingle": "{{totalCount}} Benutzer",
+    "tagServiceIdsLabel": "{{totalCount}} Service-IDs",
+    "tagServiceIdsLabelSingle": "{{totalCount}} Service-ID"
+  },
+  "roles": {
+    "heading": "Zugriffsberechtigung",
+    "noAvailableRoles": "Sie verfügen nicht über die Zugriffsberechtigung für das Zuweisen einer Rolle für diese Ressource. Wenden Sie sich an den Kontoeigner oder den Administrator dieser Ressource, wenn Ihre Zugriffsberechtigung aktualisiert werden soll.",
+    "helpText": "Rollen auswählen, die zugewiesen werden sollen, um die Zugriffsberechtigungsebene zu definieren.",
+    "platformRolesLabel": "Plattformzugriff",
+    "serviceRolesLabel": "Servicezugriff",
+    "customRolesLabel": "Angepasster Zugriff",
+    "popupHeading": "Zulässige Aktionen für die Rolle {{roleName}} ({{actionCount}})",
+    "platformRolesInfo": "Diese ermöglichen das Ausführen von Aktionen für Plattformressourcen, zum Beispiel das Erstellen einer Instanz, das Verbinden von Instanzen mit Apps oder das Zuordnen von Benutzerzugriff. Wählen Sie alle aus, die gültig sind.",
+    "serviceRolesInfo": "Diese Rollen ermöglichen den Zugriff für die Verwendung des Service und für die Ausführung von Service-API-Aufrufen. Jede Rolle wird vom ausgewählten Service angepasst. Wählen Sie alle aus, die gültig sind. Weitere Informationen finden Sie in der Dokumentation des Service.",
+    "customRolesInfo": "Diese Rollen werden von Administratoren im Konto erstellt, um das Zuweisen von Zugriffsberechtigungen für den Service anzupassen. Klicken Sie auf das Symbol der Aktionen für die Rolle, um die dieser Rolle zugeordneten Aktionen anzuzeigen."
+  },
+  "confirmationModal": {
+    "heading": "Zugewiesene Zugriffsberechtigungen für {{resourceDisplayName}} überprüfen",
+    "helpText": "Überprüfen Sie die folgenden Zugriffsgruppenrichtlinien, um sicherzustellen, dass die korrekte Zugriffsberechtigungsebene zugewiesen wird.",
+    "accessGroupLabel": "Zugriffsgruppe",
+    "rolesLabel": "{{rolesCount}} Rollen",
+    "rolesLabelSingle": "{{rolesCount}} Rolle",
+    "confirmBtn": "Speichern",
+    "platformAccessLabel": "Plattformzugriff",
+    "serviceAccessLabel": "Servicezugriff",
+    "customAccessLabel": "Angepasster Zugriff"
+  },
+  "accessAssignments": "Zuweisungen von Zugriffsberechtigungen",
+  "transactionId": "Transaktions-ID",
+  "genericRetrieveError": "Abrufen von Daten derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+  "genericEditPolicyError": "Bearbeiten der Zugriffsrichtlinie derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+  "yes": "Ja",
+  "no": "Nein",
+  "cancel": "Abbrechen",
+  "close": "Schließen"
+}

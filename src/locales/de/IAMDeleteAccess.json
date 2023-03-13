@@ -1,0 +1,37 @@
+{
+  "notifications": {
+    "genericTitle": "Abrufen der Daten nicht möglich.",
+    "transactionId": "Transaktions-ID",
+    "deletePolicySuccess": "Entfernen für die Instanz erfolgreich.",
+    "deletePolicyErrorTitle": "Entfernen der Zugriffsberechtigung nicht möglich.",
+    "deletePolicyError": "Beim Entfernen der Zugriffsberechtigung ist ein Fehler aufgetreten.",
+    "moreInfo": "Fehlerinformationen anzeigen",
+    "getGroupPolicyErrorTitle": "Abrufen der Richtliniendaten nicht möglich.",
+    "getGroupPolicyError": "Das Abrufen der Richtliniendaten ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getHeaderAccountError": "Das Abrufen von Kontoinformationen ist derzeit nicht möglich.",
+    "getHeaderAccountErrorSubtitle": "Das Abrufen von Kontoinformationen ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "deleteNotAllowedTitle": "Zum Löschen dieser Richtlinie ist die entsprechende Berechtigung erforderlich.",
+    "deleteNotAllowedText": "Sie verfügen nicht über die Zugriffsberechtigung zum Löschen dieser Richtlinie. Kontaktieren Sie den Administrator, damit dieser Ihre Zugriffsberechtigungsebene für die Ressource dieser Richtlinie aktualisiert."
+  },
+  "deleteModal": {
+    "heading": "Zugewiesene Zugriffsberechtigungen für {{resourceDisplayName}} entfernen",
+    "helpText": "Überprüfen Sie die folgende Zugriffsgruppenrichtlinie, um sicherzustellen, dass die korrekte Zugriffsberechtigungsebene entfernt wird.",
+    "accessGroupLabel": "Zugriffsgruppe",
+    "rolesLabel": "{{rolesCount}} Rollen",
+    "rolesLabelSingle": "{{rolesCount}} Rolle",
+    "confirmBtn": "Entfernen",
+    "platformAccessLabel": "Plattformzugriff",
+    "serviceAccessLabel": "Servicezugriff",
+    "customAccessLabel": "Angepasster Zugriff"
+  },
+  "subjectUnsupportedTitle": "Entfernen der Richtlinie nicht möglich.",
+  "subjectUnsupported": "Für den Typ des angegebenen Richtliniensubjekts ({{policySubjectId}}) wird kein Entfernen im Kontext unterstützt. Wenn Sie Zugriffsrichtlinien für bestimmte Benutzer oder Service-IDs verwalten möchten, rufen Sie <a>Identity & Access Management</a> auf.",
+  "accessAssignments": "Zuweisen von Zugriffsberechtigungen",
+  "transactionId": "Transaktions-ID",
+  "genericRetrieveError": "Abrufen von Daten derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+  "genericDeletePolicyError": "Bearbeiten der Zugriffsrichtlinie derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+  "yes": "Ja",
+  "no": "Nein",
+  "cancel": "Abbrechen",
+  "close": "Schließen"
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Coûts liés au support",
+  "supportPlan": "Plan de support",
+  "supportPlans": {
+    "BASIC": "De base",
+    "STANDARD": "Avancé",
+    "PREMIUM": "Premium",
+    "FREE": "Gratuit"
+  },
+  "cost": "coût",
+  "validThrough": "Valide jusqu'au",
+  "commitmentCost": {
+    "key": "Coût mensuel",
+    "value": "10 % des dépenses mensuelles"
+  },
+  "commitmentDetails": {
+    "belowThreshold": "Vos coûts annuels liés au support sont inclus dans votre engagement.",
+    "aboveThreshold": "Vos coûts de support sont basés sur l'utilisation mensuelle de votre compte."
+  },
+  "details": {
+    "FREE": "Ce plan de support est inclus avec votre compte sans frais.",
+    "BASIC": "Ce plan de support est inclus avec votre compte sans frais.",
+    "STANDARD": "Ce montant comprend vos coûts liés au support pour ce mois, ainsi que tous les éventuels dépassements.",
+    "PREMIUM": "Ce montant comprend vos coûts liés au support pour ce mois, ainsi que tous les éventuels dépassements."
+  },
+  "errorText": "Impossible d'extraire les informations sur les coûts liés au support",
+  "enterprise": {
+    "text": "Ce compte est géré par une entreprise",
+    "caption": "Si vous êtes membre de l'entreprise, passez au compte entreprise pour plus d'informations."
+  },
+  "unauthorized":  {
+    "text": "Il semble que vous n'ayez pas les droits d'accès nécessaires pour afficher vos coûts liés au support",
+    "caption": "Contactez votre administrateur pour y accéder."
+  }
+}

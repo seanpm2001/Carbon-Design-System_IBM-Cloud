@@ -1,0 +1,17 @@
+{
+  "recentInvoices": "Factures récentes",
+  "viewAll": "Tout afficher",
+  "UNAUTHORIZED_CAPTION": "Contactez votre administrateur pour y accéder.",
+  "UNAUTHORIZED_TEXT": "Il semble que vous ne disposez pas des droits d'accès pour afficher les factures récentes",
+  "ERROR_CAPTION": "Essayez de recharger la page pour voir ces informations.",
+  "ERROR_TEXT": "Un problème est survenu",
+  "DSW_CAPTION": "Pour afficher votre facture officielle, visitez ",
+  "DSW_CAPTION_LINK": "IBM Invoices",
+  "DSW_TEXT": "Ce compte est facturé sur une plateforme distincte",
+  "EMPTY_CAPTION": "Revenez au début du cycle de facturation suivant.",
+  "EMPTY_TEXT": "Il semble qu'il n'y ait pas encore eu de factures créées pour ce compte",
+  "UPGRADE_CAPTION": "Mettez à niveau votre compte pour afficher les dernières factures.",
+  "UPGRADE_TEXT": "Cette vue n'est pas disponible pour certains types de compte",
+  "ENTERPRISE_CAPTION": "Pour plus d'informations sur les factures, contactez le propriétaire du compte ou accédez au compte d'entreprise.",
+  "ENTERPRISE_TEXT": "Ce compte est géré par une entreprise"
+}

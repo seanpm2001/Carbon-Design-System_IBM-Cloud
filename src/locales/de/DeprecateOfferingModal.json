@@ -1,0 +1,12 @@
+{
+  "heading": "Sind Sie sicher, dass Sie dieses Produkt aussetzen wollen?",
+  "details": "{{productName}} tritt in eine 90-Tage-Phase bis zur Einstellung der Unterstützung ein, in der Sie keine Änderungen daran vornehmen können. In einer Benachrichtigung werden Endbenutzer darauf hingewiesen, dass das Produkt ab dem {{date}} nicht mehr verfügbar sein wird.",
+  "reasonLabel": "Warum unterstützen Sie Ihr Produkt nicht mehr?",
+  "descriptionLabel": "In das folgende Feld können zusätzliche Informationen eingeschlossen werden, z. B. ein Link zu einer Ankündigung, dass das Produkt nicht mehr verwendet wird:",
+  "close": "Schließen",
+  "deprecate": "Nicht mehr unterstützen",
+  "cancel": "Abbrechen",
+  "loading": "Ladevorgang läuft",
+  "deprecateOnlyVersionHeading": "Sind Sie sicher, dass Sie die einzige veröffentlichte Version nicht mehr verwenden möchten?",
+  "deprecateOnlyVersionDescription": "{{productName}} {{versionNumber}} ist die einzige veröffentlichte Version, die verfügbar ist. Wenn Sie diese Version nicht mehr verwenden, wird Ihr Produkt in eine 90-Tage-Deprekationsphase eintreten, in der Sie keine Änderungen daran vornehmen können. Eine Benachrichtigung wird für Endbenutzer angezeigt, die besagt, dass dieses Produkt ab {{date}} nicht mehr verfügbar ist."
+}

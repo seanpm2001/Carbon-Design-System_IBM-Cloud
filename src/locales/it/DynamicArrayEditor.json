@@ -1,0 +1,17 @@
+{
+  "modalHeader": "Modifica array",
+  "save": "Salva",
+  "edit": "Modifica",
+  "cancel": "Annulla",
+  "tagArea": {
+    "label": "Valori",
+    "placeholder": "Immettere i valori di array. Tutti i valori vengono automaticamente racchiusi tra apici dopo il salvataggio."
+  },
+  "stringArrayEditor": {
+    "description": "Immettere i valori di array. Le virgolette vengono aggiunte ai valori dopo il salvataggio.",
+    "errorMsg": "Il valore deve essere un array di stringhe valido. Ad esempio, [\"array\"]."
+  },
+  "mixedArrayEditor": {
+    "errorMsg": "Il valore deve essere un array valido. Ad esempio, [\"array\"]."
+  }
+}

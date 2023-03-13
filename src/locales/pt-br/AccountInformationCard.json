@@ -1,0 +1,18 @@
+{
+  "SUBSCRIPTION": "Assinatura",
+  "BASIC": "Básica",
+  "FREE": "Sem custo",
+  "TRIAL": "Avaliação",
+  "LITE": "Lite",
+  "PAYG": "Pré-paga",
+  "STANDARD": "Avançada",
+  "PREMIUM": "Premium",
+  "accountInformation": "Informações de faturamento",
+  "type": "Tipo de Conta",
+  "supportPlan": "Plano de suporte",
+  "caption": "Parece que você não tem acesso para visualizar as informações de conta.",
+  "text": "Entre em contato com o administrador para obter acesso.",
+  "activePromotions": "Promoções ativas",
+  "totalAccounts": "Total de contas",
+  "enterprise": "Corporativo"
+}

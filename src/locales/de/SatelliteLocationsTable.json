@@ -1,0 +1,12 @@
+{
+  "name": "Name",
+  "state": "Status",
+  "metro": "Verwaltet über",
+  "created": "Erstellt",
+  "create": "Standort erstellen",
+  "error": "Auflisten der Standorte nicht möglich.",
+  "hostUsage": "Hostnutzung\n(genutzt / gesamt)",
+  "emptyStateTitle": "Standorte",
+  "emptyStateDescription": "Nach der Erstellung der Satellite-Standorte werden diese hier angezeigt.",
+  "resourceGroup": "Ressourcengruppe"
+}

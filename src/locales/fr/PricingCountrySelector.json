@@ -1,0 +1,6 @@
+{
+    "selectCountry": "Sélectionner un pays",
+    "invalidText": "Une valeur valide est requise",
+    "errorLoadingCountries": "Impossible de charger les pays",
+    "pricingCountries": "Pays de tarification"
+}

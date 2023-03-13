@@ -1,0 +1,12 @@
+{
+  "heading": "Sei sicuro di voler rendere obsoleto questo prodotto?",
+  "details": "{{productName}} entrerà in un periodo di obsolescenza di 90 giorni, durante il quale non sarà possibile apportare modifiche ad esso. Agli utenti finali verrà mostrata una notifica che indica che il prodotto non sarà disponibile a partire da {{date}}.",
+  "reasonLabel": "Perché rendere obsoleto il tuo prodotto?",
+  "descriptionLabel": "Nel seguente campo, puoi includere ulteriori informazioni, ad esempio un link ad un annuncio di obsolescenza:",
+  "close": "Chiudi",
+  "deprecate": "Dichiara obsoleto",
+  "cancel": "Annulla",
+  "loading": "Caricamento",
+  "deprecateOnlyVersionHeading": "Sei sicuro di voler rendere obsoleta l'unica versione pubblicata?",
+  "deprecateOnlyVersionDescription": "{{productName}} {{versionNumber}} è l'unica versione pubblicata disponibile. Se si rende obsoleta questa versione, il proprio prodotto entrerà in un periodo di obsolescenza di 90 giorni, durante il quale non sarà possibile apportare modifiche ad esso. Verrà visualizzata una notifica per gli utenti finali che afferma che questo prodotto non sarà disponibile a partire da {{date}}"
+}

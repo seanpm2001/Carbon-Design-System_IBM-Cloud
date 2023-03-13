@@ -1,0 +1,14 @@
+{
+  "monitoring": {
+    "createBtn": "모니터링 추가",
+    "launchBtn": "모니터링"
+  },
+  "logging": {
+    "createBtn": "로깅 추가",
+    "launchBtn": "로깅"
+  },
+  "auditing": {
+    "createBtn": "활동 추적 추가",
+    "launchBtn": "활동 추적"
+  }
+}

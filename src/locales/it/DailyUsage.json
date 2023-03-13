@@ -1,0 +1,18 @@
+{
+  "title": "Utilizzo da inizio mese",
+  "explore": "Esplora altro in <a>Platform Analytics</a>",
+  "tooltipAriaLabel": "Suggerimenti Platform Analytics",
+  "tooltipContent": "Platform Analytics ti consente di esplorare date e filtri personalizzati.",
+  "dailyUsageByService": "Utilizzo giornaliero per servizio",
+  "dailyUsageByInstance": "Utilizzo giornaliero di un servizio per istanza",
+  "dailyUsageByGroup": "Utilizzo giornaliero per gruppo",
+  "date": "Data",
+  "amount": "Importo ({{currency}})",
+  "groupName": "Utilizzo cumulativo",
+  "unauthorizedCaption": "Devi disporre del ruolo di amministratore nel servizio di gestione dell'account di fatturazione per visualizzare l'utilizzo per l'intero account.",
+  "unauthorizedText": "Sembra che tu non disponga dell'accesso per visualizzare i dati di utilizzo dell'account.",
+  "genericErrorCaption": "Errore interno del server",
+  "genericErrorText": "Si è verificato un problema con il recupero dei dati del grafico. Aggiorna la pagina o riprova successivamente.",
+  "lastUpdated": "Ultimo aggiornamento",
+  "noDataAvailable": "Dati non ancora disponibili"
+}

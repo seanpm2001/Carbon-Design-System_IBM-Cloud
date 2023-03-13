@@ -1,0 +1,98 @@
+{
+  "activitytracker": {
+    "description": "Visualize e rastreie as mudanças em seus aplicativos e infraestrutura. <a>Saiba mais</a>",
+    "name": "Acompanhamento de atividade",
+    "nonePlatformSubtitle": "Sem rastreamento de atividade, a solução de erros e a obtenção de suporte podem ser difíceis.",
+    "plansError": "Não é possível carregar planos de rastreamento de atividade.",
+    "resourceListError": "Não é possível carregar instâncias de rastreamento de atividade.",
+    "serviceName": "IBM Cloud Activity Tracker with LogDNA",
+    "sidePanelHeader": "IBM Cloud Activity Tracker with LogDNA • <a>Docs</a>",
+    "sidePanelTitle": "Editar rastreamento de atividade",
+    "liteInstanceError": {
+      "title": "Instância inválida",
+      "subtitle": "A <a>instância do Activity Tracker</a> neste local usa o plano Lite e não pode ser usada. Exclua a instância primeiro ou escolha um local diferente."
+    },
+    "noKey": {
+      "subtitle": "A instância do rastreador de atividade selecionada não tem uma chave de ingestão anexada. É possível obter uma chave executando a ação \"Obter chave\" na <a>página de detalhes da intância</a>.",
+      "title": "Nenhuma chave de ingestão"
+    }
+  },
+  "applicationInstance": "Instância do aplicativo",
+  "disabled": "Desativado",
+  "edit": "Editar",
+  "enabled": "Ativado",
+  "error": "Erro",
+  "free": "Livre",
+  "information": "Informações",
+  "instance": "Instância",
+  "instanceNameRequired": "Um nome de instância é necessário",
+  "instanceNew": "Criar uma nova instância",
+  "instancePlatform": "O mesmo que plataforma",
+  "instanceNone": "Nenhum",
+  "locationsError": "Não é possível carregar dados de locais.",
+  "learnMore": "<a>Saiba mais</a>",
+  "liteAlreadySelectedError": {
+    "subtitle": "O plano Lite é selecionado para as instâncias de serviços de plataforma e de aplicativo. Selecione um plano pago para uma ou ambas as instâncias.",
+    "title": "É permitida uma instância do plano Lite"
+  },
+  "liteExistingInstanceError": {
+    "subtitle": "É possível ter somente uma instância do plano Lite desse serviço por conta. Exclua sua instância do plano Lite atual para criar uma nova.",
+    "title": "Instância do plano Lite existente"
+  },
+  "loading": "Carregando...",
+  "location": "Local",
+  "logging": {
+    "description": "Armazene, procure, analise, monitore e crie alertas sobre seus dados e eventos de criação de log da IBM Cloud. <a>Saiba mais</a>",
+    "keysError": "Não é possível recuperar chaves de ingestão de criação de log.",
+    "name": "Criação de log",
+    "noKey": {
+      "subtitle": "'A instância de criação de log selecionada não tem uma chave de ingestão anexada.' É possível obter uma chave executando a ação \"Obter chave\" na <a>página de detalhes da intância</a>.",
+      "title": "Nenhuma chave de ingestão"
+    },
+    "nonePlatformSubtitle": "Sem a criação de log de plataforma, a solução de erros e a obtenção de suporte podem ser difíceis.",
+    "noneApplicationSubtitle": "Sem a criação de log de aplicativo, a solução de erros e a obtenção de suporte podem ser difíceis.",
+    "plansError": "Não é possível carregar planos de criação de log.",
+    "resourceListError": "Não é possível carregar instâncias de criação de log.",
+    "serviceName": "IBM Log Analysis",
+    "sidePanelHeader": "IBM Log Analysis • <a>Docs</a>",
+    "sidePanelTitle": "Editar criação de log",
+    "liteInstanceError": {
+      "title": "Instância de plataforma inválida",
+      "subtitle": "A <a>instância de criação de log</a> da plataforma neste local usa o plano Lite e não pode ser usada. Desative o registro de plataforma para esta instância primeiro ou escolha um local diferente."
+    }
+  },
+  "monitoring": {
+    "description": "Fornece visibilidade do desempenho e funcionamento de seus recursos alimentados por IBM Cloud. <a>Saiba mais</a>",
+    "keysError": "Não é possível recuperar chaves de acesso de monitoramento.",
+    "name": "Monitoramento",
+    "noKey": {
+      "subtitle": "A instância de monitoramento selecionada não tem uma chave de acesso anexada. É possível obter uma chave executando a ação \"Obter chave\" na <a>página de detalhes da intância</a>.",
+      "title": "Sem chave de acesso"
+    },
+    "nonePlatformSubtitle": "Sem as métricas de plataforma, a solução de erros e a obtenção de suporte podem ser difíceis.",
+    "noneApplicationSubtitle": "Sem as métricas de aplicativo, a solução de erros e a obtenção de suporte podem ser difíceis.",
+    "plansError": "Não é possível carregar planos de monitoramento.",
+    "resourceListError": "Não é possível carregar instâncias de monitoramento.",
+    "serviceName": "IBM Cloud Monitoring",
+    "sidePanelHeader": "IBM Cloud Monitoring • <a>Docs</a>",
+    "sidePanelTitle": "Editar monitoramento",
+    "liteInstanceError": {
+      "title": "Instância de plataforma inválida",
+      "subtitle": "A <a>instância de monitoramento</a> de plataforma neste local usa o plano Lite e não pode ser usada. Desative as métricas da plataforma para esta instância primeiro ou escolha um local diferente."
+    }
+  },
+  "name": "Nome",
+  "plan": "Plano",
+  "platformExistingHelperText": "Uma instância de plataforma já existe e será conectada automaticamente.",
+  "platformInstance": "Instância de plataforma",
+  "policiesError": "Não é possível carregar políticas de acesso do grupo de recursos.",
+  "resourceGroup": "Grupo de recursos",
+  "resourceGroupsError": "Não é possível carregar grupos de recursos.",
+  "save": "Salvar",
+  "serviceName": "Nome do serviço",
+  "tag": "Tag",
+  "tags": "Tags",
+  "warning": "Aviso",
+  "noPlans": "Nenhuma opção de plano poderia ser encontrada para este serviço. Você não será capaz de criar uma nova instância.",
+  "platformLocationHelperText": "Este deve ser o mesmo local que a fonte de dados"
+}

@@ -1,0 +1,37 @@
+{
+  "sidePanelTitle": "Stocker les données d'historique",
+  "panelDoneButton": "Créer",
+
+  "progressStep1": "Sélectionner un plan",
+  "progressStep2": "Configurer",
+
+  "serviceDescription": "Vous prévoyez d'avoir besoin des résultats de votre analyse pendant plus de 7 jours ? Ajoutez une instance d'IBM Cloud Platform Analytics pour stocker un nombre illimité de données historiques et explorer les tendances au fil du temps",
+  "pricingTitle": "Sélectionner un plan de tarification",
+  "disclaimer": "Les plans ne peuvent pas être modifiés actuellement. Si vous devez changer de plan ultérieurement, vous devrez créer une nouvelle instance de Platform Analytics.",
+
+  "configureTitle": "Configurer le stockage",
+  "serviceLabel": "Nom du service",
+  "regionLabel": "Région",
+  "groupLabel": "Sélectionner un groupe de ressources",
+  "groupEmptyLabel": "Aucun groupe de ressources disponible",
+  "groupTooltipText": "Réfléchissez à la façon dont vos ressources doivent être organisées dans votre compte. Le groupe de ressources que vous sélectionnez ne pourra plus être modifié une fois l'instance de service créée.",
+  "groupTooltipLink": "En savoir plus",
+  "tooltipIcon": "Information",
+  "tagsLabel": "Etiquettes (facultatif)",
+  "tagsPlaceholder": "Exemples : env:dev, version-1",
+
+  "permissionErrorMessage": "Il semble que vous n'ayez pas le droit d'ajouter l'instance à un groupe de ressources sur ce compte. Prenez contact avec le propriétaire du compte pour qu'il vous attribue le rôle Editeur ou Administrateur pour un groupe de ressources sur le compte.",
+  "plansNotFoundErrorMessage": "Il semble qu'aucun plan de tarification n'est disponible pour ce compte.",
+
+  "costMessage": "Coût mensuel estimé",
+  "costTooltipText": "TBA",
+  "termsMessage": "J'accepte les ",
+  "termsLink": "dispositions",
+
+  "successModalHeader": "Félicitations !",
+  "successModalMessage": "Vous avez créé une instance de stockage de données pour la conformité. Toutes les futures données de conformité seront désormais stockées et consultables par date.",
+  "errorModalHeader": "Erreur",
+  "errorModalMessage": "Une erreur s'est produite lors de la création de votre portée des données. Réessayez ultérieurement.",
+  "modalPrimaryButton": "OK",
+  "modalSecondaryButton": "Annuler"
+}

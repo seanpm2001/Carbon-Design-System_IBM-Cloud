@@ -1,0 +1,15 @@
+{
+  "title": "删除集群",
+  "secondaryButton": "取消",
+  "primaryButton": "删除",
+  "description": "删除集群时，会永久删除所有工作程序节点、应用程序和容器。 无法撤销此操作。 继续之前，请先确保备份所有必要数据和配置文件。",
+  "deleteStorage": "删除此集群使用的持久性存储器",
+  "confirmationInputLabel": "输入“{{clusterName}}”进行确认",
+  "deleting": "正在删除...",
+  "deleteWorkspace": "删除集群不会删除“示意图”工作空间或关联的资源。 要清除集群，请在示意图中执行工作空间销毁和删除。",
+  "workspaceError": "我们无法确定此集群是否连接到“示意图”工作空间。 如果是，您应该在示意图中执行工作空间销毁和删除。",
+  "blockedSchematics": "“示意图”工作空间窗口可能已被阻止打开。",
+  "popup": "弹出框被阻止?",
+  "workspace": "Schematics 工作空间",
+  "workspaces": "Schematics 工作空间"
+}

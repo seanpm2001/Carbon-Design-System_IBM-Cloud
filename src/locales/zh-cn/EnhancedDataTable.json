@@ -1,0 +1,77 @@
+{
+  "settingsColumnsTitle": "编辑列",
+  "settingsSizeTitle": "行高",
+  "settingsSize": {
+    "tall": "高（64 像素）",
+    "normal": "正常（48 像素）",
+    "short": "矮（32 像素）",
+    "compact": "精简（24 像素）"
+  },
+  "settingsReset": "重置为缺省值",
+  "settingsLabel": "设置",
+  "filtersLabel": "过滤",
+  "filtersApply": "应用",
+  "filtersDone": "完成",
+  "filtersClear": "清除",
+  "filtersClearFilters": "清除过滤器",
+  "noItems": "没有项与当前过滤器匹配。",
+  "previousPage": "上一页",
+  "nextPage": "下一页",
+  "itemRange": "第 {{min}}–{{max}} 项（共 {{total}} 项）",
+  "itemRangeSingle": "1–1 项（共 1 项）",
+  "itemsPerPage": "每页项数：",
+  "pageNumber": "页码",
+  "pageRange": "第 {{current}} 页，共 {{total}} 页",
+  "pageRangeSingle": "第 1 页（共 1 页）",
+  "itemText": "第 {{min}}–{{max}} 项",
+  "pageText": "第 {{pageNumber}} 页",
+  "all": "全部",
+  "carbon.table.batch.cancel": "取消",
+  "carbon.table.batch.items.selected": "已选择 {{count}} 项",
+  "carbon.table.batch.item.selected": "已选择 1 项",
+  "carbon.table.toolbar.search.label": "搜索",
+  "carbon.table.toolbar.search.placeholder": "搜索",
+  "carbon.table.row.expand": "展开行",
+  "carbon.table.row.collapse": "折叠行",
+  "carbon.table.all.expand": "展开所有行",
+  "carbon.table.all.collapse": "折叠所有行",
+  "carbon.table.all.select": "选择页面上的所有行",
+  "carbon.table.all.unselect": "取消选择所有行",
+  "carbon.table.row.select": "选择行",
+  "carbon.table.row.unselect": "取消选择行",
+  "carbon": {
+    "dropdown": {
+      "open": {
+        "menu": "打开菜单"
+      },
+      "close": {
+        "menu": "关闭菜单"
+      }
+    },
+    "multiselect": {
+      "open": {
+        "menu": "打开菜单"
+      },
+      "close": {
+        "menu": "关闭菜单"
+      },
+      "clear": {
+        "all": "全部清除"
+      }
+    },
+    "dateselect": {
+      "start": "开始日期",
+      "end": "结束日期"
+    }
+  },
+  "sortAscending": "升序排序",
+  "sortDescending": "降序排序",
+  "removeSort": "除去排序",
+  "overflowMenu": "溢出菜单",
+  "emptyStateTitle": "资源",
+  "emptyStateDescription": "创建资源后，可以在此处找到所创建的资源。",
+  "multiselectPlaceholder": "过滤器...",
+  "download": "下载",
+  "refresh": "刷新",
+  "selectAllRows": "选择所有 {{totalRowCount}} 项"
+}

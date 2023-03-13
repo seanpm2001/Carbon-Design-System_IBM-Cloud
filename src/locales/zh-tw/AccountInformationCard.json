@@ -1,0 +1,18 @@
+{
+  "SUBSCRIPTION": "訂閱",
+  "BASIC": "基本",
+  "FREE": "免費",
+  "TRIAL": "試用",
+  "LITE": "精簡",
+  "PAYG": "隨收隨付制",
+  "STANDARD": "進階",
+  "PREMIUM": "超值",
+  "accountInformation": "計費資訊",
+  "type": "帳戶類型",
+  "supportPlan": "支援方案",
+  "caption": "您似乎沒有存取權，無法檢視帳戶資訊。",
+  "text": "若要存取，請聯絡管理者。",
+  "activePromotions": "作用中的促銷",
+  "totalAccounts": "帳戶總數",
+  "enterprise": "企業"
+}

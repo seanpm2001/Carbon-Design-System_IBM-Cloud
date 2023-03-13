@@ -1,0 +1,23 @@
+{
+  "accessTags": {
+    "labelText": "Tag di gestione accesso",
+    "placeholder": "Esempi: access:dev, proj:version-1",
+    "tooltip": {
+      "exampleOpeningLine": "Le tag di gestione dell'accesso ti consentono di applicare politiche di accesso flessibili a risorse specifiche."
+    }
+  },
+  "accessTagPrefix": "IAM",
+  "errors": {
+    "exceeds_attach_limit": "Hai raggiunto il numero massimo di tag che puoi collegare in una sola volta. Per collegare più tag, salva prima le tue modifiche.",
+    "exceeds_detach_limit": "Hai raggiunto il numero massimo di tag che puoi scollegare in una sola volta. Per scollegare più tag, salva prima le tue modifiche.",
+    "tag_exists": "Questa tag già esiste. Immetti un altro nome per la tua tag.",
+    "too_many_characters": "Una tag non può includere più di 128 caratteri.",
+    "more_than_one_colon": "Una tag non può contenere più di un carattere due punti.",
+    "starts_with_colon": "Una tag non può iniziare con un carattere due punti.",
+    "ends_with_colon": "Una tag non può terminare con un carattere due punti.",
+    "invalid_characters": "Una tag può includere solo caratteri alfanumerici, spazi, caratteri di sottolineatura, trattini, punti e un solo carattere due punti.",
+    "not_key_value_format": "Il nome della tag deve essere in formato chiave:valore",
+    "tag_not_found": "Non è stata trovata alcuna corrispondenza. Per creare nuove tag, contatta il tuo amministratore di tag.",
+    "error_creating_tags": "Errore durante la creazione delle tag:"
+  }
+}

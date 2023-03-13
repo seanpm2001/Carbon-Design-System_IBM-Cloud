@@ -1,0 +1,42 @@
+{
+  "modalHeadingEdit": "Modifica tag",
+  "modalHeadingAdd": "Aggiungi tag",
+  "primaryButtonText": "Salva",
+  "savingText": "Salvataggio in corso...",
+  "secondaryButtonText": "Annulla",
+  "subtitleEdit": "Stai modificando le tag per:",
+  "subtitleAdd": "Stai aggiungendo delle tag a:",
+  "resourceTags": {
+    "labelText": "Tag utente",
+    "placeholder": "Esempi: env:dev, version-1",
+    "tooltip": {
+      "exampleOpeningLine": "Utilizza le tag per organizzare le tue risorse. Se le tue tag utente sono correlate alla fatturazione, valuta la possibilità di scrivere le tag come coppie chiave:valore per aiutarti a raggruppare le tag correlate, come ad esempio",
+      "exampleTag": "costctr:124.",
+      "tagVisibility": "Le tag utente sono visibili a livello di account. Evita di includere dati sensibili nel nome della tag.",
+      "learnMore": "Ulteriori informazioni."
+    }
+  },
+  "accessTags": {
+    "labelText": "Tag di gestione accesso",
+    "placeholder": "Esempi: access:dev, proj:version-1",
+    "tooltip": {
+      "exampleOpeningLine": "Le tag di gestione dell'accesso ti consentono di applicare politiche di accesso flessibili a risorse specifiche."
+    }
+  },
+  "accessTagPrefix": "IAM",
+  "errors": {
+    "exceeds_attach_limit": "Hai raggiunto il numero massimo di tag che puoi collegare in una sola volta. Per collegare più tag, salva prima le tue modifiche.",
+    "exceeds_detach_limit": "Hai raggiunto il numero massimo di tag che puoi scollegare in una sola volta. Per scollegare più tag, salva prima le tue modifiche.",
+    "tag_exists": "Questa tag già esiste. Immetti un altro nome per la tua tag.",
+    "too_many_characters": "Una tag non può includere più di 128 caratteri.",
+    "more_than_one_colon": "Una tag non può contenere più di un carattere due punti.",
+    "starts_with_colon": "Una tag non può iniziare con un carattere due punti.",
+    "ends_with_colon": "Una tag non può terminare con un carattere due punti.",
+    "invalid_characters": "Una tag può includere solo caratteri alfanumerici, spazi, caratteri di sottolineatura, trattini, punti e un solo carattere due punti.",
+    "not_key_value_format": "Il nome della tag deve essere in formato chiave:valore",
+    "unable_to_fetch": "Errore durante il recupero delle tag",
+    "tag_not_found": "Non è stata trovata alcuna corrispondenza. Per creare nuove tag, contatta il tuo amministratore di tag.",
+    "invalid_tag_name": "Non è stato possibile creare la tag '{{tagName}}' perché il nome non è valido.",
+    "exceeds_access_tag_limit": "Non è stato possibile creare le tag di accesso perché hai superato il limite massimo. Sono consentite solo 30 tag di accesso per ogni account."
+  }
+}

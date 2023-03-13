@@ -1,0 +1,20 @@
+{
+  "docsLink": "Documentation",
+  "keyManagementBtn": "Connecter",
+  "auditing": {
+    "title": "Suivi des activités",
+    "description": "Permet la supervision, la conformité, et effectue l'audit des opérations et des risques pour gérer votre compte IBM Cloud."
+  },
+  "keymanagement": {
+    "title": "Gestion des clés",
+    "description": "Gérez le cycle de vie des clés de chiffrement utilisées pour vos ressources, services et applications IBM Cloud."
+  },
+  "logging": {
+    "title": "Journalisation",
+    "description": "Stockez, recherchez, analysez, surveillez et alertez sur vos données et événements de journalisation IBM Cloud."
+  },
+  "monitoring": {
+    "title": "Surveillance",
+    "description": "Fournit une visibilité de la performance et de l'état de santé de votre application de ressources IBM Cloud."
+  }
+}

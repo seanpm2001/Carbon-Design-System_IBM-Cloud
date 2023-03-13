@@ -1,0 +1,12 @@
+{
+  "heading": "Voulez-vous vraiment déprécier ce produit ?",
+  "details": "{{productName}} entrera dans une période d'obsolescence de 90 jours, pendant laquelle vous ne pourrez pas y apporter de modifications. Une notification s'affichera pour les utilisateurs finaux, indiquant que le produit ne sera pas disponible à partir du {{date}}.",
+  "reasonLabel": "Pourquoi déprécier votre produit ?",
+  "descriptionLabel": "Dans la zone suivante, vous pouvez inclure des informations supplémentaires, telles qu'un lien vers une annonce d'obsolescence :",
+  "close": "Fermer",
+  "deprecate": "Déprécier",
+  "cancel": "Annuler",
+  "loading": "Chargement en cours",
+  "deprecateOnlyVersionHeading": "Voulez-vous vraiment déprécier la seule version publiée ?",
+  "deprecateOnlyVersionDescription": "{{productName}} {{versionNumber}} est la seule version publiée disponible. Si vous dépréciez cette version, votre produit entrera dans une période d'obsolescence de 90 jours, période pendant laquelle vous ne pourrez pas apporter de modifications. Une notification s'affichera pour les utilisateurs finaux, indiquant que ce produit ne sera plus disponible à partir du {{date}}."
+}

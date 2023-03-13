@@ -1,0 +1,11 @@
+{
+  "rename": "Renombrar",
+  "delete": "Suprimir",
+  "errorTitle": "Algo ha fallado",
+  "resourceList": "Lista de recursos",
+  "renameModalContent": "Especifique a continuación el nombre que desea utilizar.",
+  "deleteModalContent": "Está a punto de suprimir este servicio. ¿Desea continuar?",
+  "deleteModalPriButton": "Sí, suprimir",
+  "ModalCancelButton": "Cancelar",
+  "renameInputLabel": "Nombre"
+}

@@ -1,0 +1,10 @@
+{
+  "titleText": "Instance",
+  "errorTitle": "Impossible de répertorier les instances de ressource.",
+  "errorIconDescription": "Impossible de répertorier les instances de ressource.",
+  "errorSubtitle": "Les instances de ressource ne sont pas disponibles.",
+  "infoTitle": "Il n'existe aucune instance de ressources.",
+  "infoIconDescription": "Il n'existe aucune instance de ressource.",
+  "infoSubtitle": "Créez une instance de ressource et réessayez.",
+  "dropdownLabel": "Nom d'instance..."
+}

@@ -1,0 +1,10 @@
+{
+  "titleText": "Instance",
+  "errorTitle": "Unable to list resource instances.",
+  "errorIconDescription": "Unable to list resource instances.",
+  "errorSubtitle": "Resource instances are unavailable.",
+  "infoTitle": "No resources instances exist.",
+  "infoIconDescription": "No resource instance exist.",
+  "infoSubtitle": "Create a resource instance and try again.",
+  "dropdownLabel": "Instance name..."
+}

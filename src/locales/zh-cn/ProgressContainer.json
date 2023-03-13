@@ -1,0 +1,8 @@
+{
+  "back": "上一步",
+  "next": "下一步",
+  "carbon.progress-step.complete": "已完成",
+  "carbon.progress-step.incomplete": "不完整",
+  "carbon.progress-step.current": "当前",
+  "carbon.progress-step.invalid": "无效"
+}

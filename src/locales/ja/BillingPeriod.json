@@ -1,0 +1,15 @@
+{
+  "billingPeriod": "請求対象期間",
+  "end": "終了",
+  "errorCaption": "さらに支援が必要な場合は、管理者にお問い合わせください。",
+  "errorText": "問題が発生しました。 この情報を表示するため、ページを再ロードしてみてください",
+  "key": "値",
+  "lastInvoice": "最後の送り状",
+  "nextInvoice": "次の送り状",
+  "notAvailableCaption": "請求対象期間を表示するには、アカウントをアップグレードしてください。",
+  "notAvailableText": "このビューは、一部のアカウント・タイプでは使用できません",
+  "start": "開始",
+  "today": "今日",
+  "unauthorizedCaption": "アクセス権限については、管理者に問い合わせてください。",
+  "unauthorizedText": "請求対象期間を表示するためのアクセス権限がないようです"
+}

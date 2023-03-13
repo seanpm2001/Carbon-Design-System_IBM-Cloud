@@ -1,0 +1,78 @@
+{
+  "sidePanel": {
+    "reviewBtn": "Vérifier",
+    "title": "Autoriser l'accès de service à service pour {{resourceDisplayName}}"
+  },
+  "notifications": {
+    "genericTitle": "Impossible d'extraire les données",
+    "transactionId": "ID transaction",
+    "addPolicySuccess": "ont été affectés à l'instance.",
+    "addPolicyPartialSuccess": "ont été partiellement affectés à l'instance.",
+    "addPolicyError": "Des erreurs se sont produites lors de la tentative d'affectation d'accès.",
+    "moreInfo": "Afficher les informations sur l'erreur",
+    "getAttributesError": "Impossible d'extraire les attributs de ressource pour le moment. Actualisez la page ou faites une nouvelle tentative ultérieurement.",
+    "getServicesError": "Impossible d'extraire les informations sur les services pour le moment. Actualisez la page ou faites une nouvelle tentative ultérieurement.",
+    "getHeaderAccountError": "Impossible d'obtenir les informations sur le compte",
+    "getHeaderAccountErrorSubtitle": "Impossible d'extraire les informations sur le compte pour le moment. Actualisez la page ou faites une nouvelle tentative ultérieurement."
+  },
+  "targetService": {
+    "heading": "Sélectionner un service cible",
+    "helpText": "Sélectionnez un service cible pour {{resourceDisplayName}} auquel accéder en tant que service source. Un seul service à la fois peut être ajouté.",
+    "invalidText": "Le service cible {{targetServiceName}} n'est pas pris en charge par le service source {{resourceDisplayName}}.",
+    "selectorLabel": "Service cible",
+    "serviceFieldPlaceholder": "Sélectionner un service",
+    "childServiceLabel": "Type de ressource",
+    "allServiceInstances": "Toutes les instances"
+  },
+  "resourceAttributes": {
+    "childFieldPlaceholder": "Entrez ou sélectionnez un type de ressource",
+    "regionFieldLabel": "Région",
+    "operatorFieldLabel": "Opérateur",
+    "allResourceTypes": "Tous les types de ressource",
+    "learnMore": "En savoir plus",
+    "stringEquals": "chaîne Est égal à",
+    "stringEqualsDescription": "Correspondance de chaîne exacte sensible à la casse."
+  },
+  "roles": {
+    "heading": "Accès",
+    "noAvailableRoles": "Il semble que vous ne disposiez pas de l'accès correct. Vous devez avoir accès au service cible pour créer une autorisation entre des services.",
+    "helpText": "Sélectionnez un rôle afin de déterminer le niveau d'accès pour le service source.",
+    "platformRolesLabel": "Accès à la plateforme",
+    "serviceRolesLabel": "Accès au service",
+    "customRolesLabel": "Accès personnalisé",
+    "popupHeading": "Actions autorisées pour le rôle {{roleName}} : ({{actionCount}})",
+    "platformRolesInfo": "Ces rôles permettent d'effectuer des actions sur des ressources de plateforme, telles que la création d'une instance, la connexion d'instances à des applications et l'affectation d'un accès utilisateur. Sélectionnez tous les rôles qui s'appliquent.",
+    "serviceRolesInfo": "Ces rôles octroient un accès permettant d'utiliser le service et d'effectuer des appels d'API de service. Chaque rôle est personnalisé par le service sélectionné. Sélectionnez tous les rôles qui s'appliquent. Pour plus d'informations, reportez-vous à la documentation du service.",
+    "customRolesInfo": "Les administrateurs créent ces rôles dans le compte afin de personnaliser comment l'accès est affecté au service. Cliquez sur l'icône Actions pour le rôle pour passer en revue les actions associées à ce rôle.",
+    "delegatorHeading": "Autoriser les services dépendants",
+    "delegatorHelpText": "L'activation du service source pour déléguer son accès à d'autres services dépendants crée automatiquement des règles d'autorisation pour ces services. <a>En savoir plus.</a>",
+    "delegatorCheckboxLabel": "Autoriser la délégation des autorisations par les services source et dépendants"
+  },
+  "confirmationModal": {
+    "heading": "Vérifier l'autorisation d'accès de service à service pour {{resourceDisplayName}}",
+    "helpText": "Examinez l'affectation avant de créer l'accès suivant.",
+    "targetServiceLabel": "Service cible",
+    "delegatorRoleLabel": "Service d'autorisation dépendant",
+    "delegatorRoleValue": "Activé",
+    "rolesLabel": "{{rolesCount}} rôles",
+    "rolesLabelSingle": "{{rolesCount}} rôle",
+    "confirmBtn": "Affecter",
+    "platformAccessLabel": "Accès à la plateforme",
+    "serviceAccessLabel": "Accès au service",
+    "customAccessLabel": "Accès personnalisé",
+    "stringEquals": "chaîne Est égal à"
+  },
+  "delegatorModal": {
+    "heading": "Activer la délégation d'autorisation ?",
+    "helptext": "Autorisez la création automatique de règles d'autorisation par le service source pour ses services dépendants.",
+    "confirmBtn": "Autoriser"
+  },
+  "accessAssignments": "Affectations d'accès",
+  "transactionId": "ID transaction",
+  "genericRetrieveError": "Impossible d'extraire les données pour le moment. Actualisez la page ou faites une nouvelle tentative ultérieurement.",
+  "genericCreatePolicyError": "Impossible de créer la règle de service à service pour le moment. Actualisez la page ou faites une nouvelle tentative ultérieurement.",
+  "yes": "Oui",
+  "no": "Non",
+  "cancel": "Annuler",
+  "close": "Fermer"
+}

@@ -1,0 +1,9 @@
+{
+  "totalText": "Month-to-date spending",
+  "errorText": "Unable to retrive usage information at this time. Please try again later.",
+  "unauthText": "Looks like you don't have access to view account usage data. <a>Learn more about IAM access</a>.",
+  "unauthCaption": "You must have the Administrator role on the Billing account management service to view usage for the entire account.",
+  "emptyText": "Looks like you don't have any resources yet.",
+  "emptyCaption": "Get started in the <a>catalog</a>.",
+  "notEnough": "There aren't enough resources or costs to make a chart."
+}

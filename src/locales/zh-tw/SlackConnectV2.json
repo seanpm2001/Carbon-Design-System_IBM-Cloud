@@ -1,0 +1,13 @@
+{
+    "requestToJoin": "要求加入 Slack",
+    "orSignIn": "或登入 Slack",
+    "email": "電子郵件",
+    "joinUs": "在 Slack 上加入我們。",
+    "confirmationModalTitle": "這是客戶的公用 Slack 頻道",
+    "confirmationModalMessage": "如果您在尋求協助，請<a>與 IBM 支援中心聯絡</a>。",
+    "confirmationModalMessageWithSlack": "如果您在尋求協助，請<a>與 IBM 支援中心聯絡</a>，或試用 IBM 內部 <a>{{name}}</a> 頻道。",
+    "cancel": "取消",
+    "error": "錯誤",
+    "unknownError": "發生不明錯誤。 請在幾分鐘後重試。",
+    "requestInvite": "要求邀請"
+}

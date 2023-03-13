@@ -1,0 +1,23 @@
+{
+  "accessTags": {
+    "labelText": "Etiquettes de gestion des accès",
+    "placeholder": "Exemples : access:dev, proj:version-1",
+    "tooltip": {
+      "exampleOpeningLine": "Les étiquettes de gestion d'accès vous aident à appliquer des stratégies d'accès flexibles sur des ressources spécifiques."
+    }
+  },
+  "accessTagPrefix": "IAM",
+  "errors": {
+    "exceeds_attach_limit": "Vous avez atteint le nombre maximal d'étiquettes que vous pouvez connecter simultanément. Pour connecter plusieurs étiquettes, sauvegardez d'abord vos modifications.",
+    "exceeds_detach_limit": "Vous avez atteint le nombre maximal d'étiquettes que vous pouvez déconnecter simultanément. Pour déconnecter plusieurs étiquettes, sauvegardez d'abord vos modifications.",
+    "tag_exists": "Cette étiquette existe déjà. Entrez un autre nom pour votre étiquette.",
+    "too_many_characters": "Une étiquette ne peut pas comporter plus de 128 caractères.",
+    "more_than_one_colon": "Une étiquette ne peut pas contenir plus d'un signe deux-points.",
+    "starts_with_colon": "Une étiquette ne peut pas commencer par un signe deux-points.",
+    "ends_with_colon": "Une étiquette ne peut pas se terminer par un signe deux-points.",
+    "invalid_characters": "Une étiquette peut uniquement contenir des caractères alphanumériques, des espaces, des traits de soulignement, des tirets, des points et un signe deux-points.",
+    "not_key_value_format": "Le nom de l'étiquette doit être au format clé-valeur",
+    "tag_not_found": "Aucune correspondance n'a été trouvée. Pour créer de nouvelles étiquettes, contactez votre administrateur d'étiquettes.",
+    "error_creating_tags": "Erreur lors de la création d'étiquettes :"
+  }
+}

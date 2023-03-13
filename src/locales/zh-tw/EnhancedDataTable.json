@@ -1,0 +1,77 @@
+{
+  "settingsColumnsTitle": "編輯直欄",
+  "settingsSizeTitle": "列高度",
+  "settingsSize": {
+    "tall": "高 (64px)",
+    "normal": "正常 (48px)",
+    "short": "低 (32px)",
+    "compact": "精簡 (24px)"
+  },
+  "settingsReset": "重設為預設值",
+  "settingsLabel": "設定",
+  "filtersLabel": "過濾",
+  "filtersApply": "套用",
+  "filtersDone": "完成",
+  "filtersClear": "清除",
+  "filtersClearFilters": "清除過濾器",
+  "noItems": "沒有項目符合現行過濾器。",
+  "previousPage": "前一頁",
+  "nextPage": "下一頁",
+  "itemRange": "{{min}}–{{max}} / {{total}} 個項目",
+  "itemRangeSingle": "1–1 / 1 個項目",
+  "itemsPerPage": "每頁項目數：",
+  "pageNumber": "頁數",
+  "pageRange": "{{current}} / {{total}} 頁",
+  "pageRangeSingle": "1 / 1 頁",
+  "itemText": "{{min}}–{{max}} 個項目",
+  "pageText": "第 {{pageNumber}} 頁",
+  "all": "全部",
+  "carbon.table.batch.cancel": "取消",
+  "carbon.table.batch.items.selected": "已選取 {{count}} 個項目",
+  "carbon.table.batch.item.selected": "已選取 1 個項目",
+  "carbon.table.toolbar.search.label": "搜尋",
+  "carbon.table.toolbar.search.placeholder": "搜尋",
+  "carbon.table.row.expand": "展開列",
+  "carbon.table.row.collapse": "收合列",
+  "carbon.table.all.expand": "展開所有列",
+  "carbon.table.all.collapse": "收合所有列",
+  "carbon.table.all.select": "選取頁面上的所有列",
+  "carbon.table.all.unselect": "取消選取所有列",
+  "carbon.table.row.select": "選取列",
+  "carbon.table.row.unselect": "取消選取列",
+  "carbon": {
+    "dropdown": {
+      "open": {
+        "menu": "開啟功能表"
+      },
+      "close": {
+        "menu": "關閉功能表"
+      }
+    },
+    "multiselect": {
+      "open": {
+        "menu": "開啟功能表"
+      },
+      "close": {
+        "menu": "關閉功能表"
+      },
+      "clear": {
+        "all": "全部清除"
+      }
+    },
+    "dateselect": {
+      "start": "開始日期",
+      "end": "結束日期"
+    }
+  },
+  "sortAscending": "遞增排序",
+  "sortDescending": "遞減排序",
+  "removeSort": "移除排序",
+  "overflowMenu": "溢位功能表",
+  "emptyStateTitle": "資源",
+  "emptyStateDescription": "在建立資源之後，您可以在這裡找到資源。",
+  "multiselectPlaceholder": "過濾...",
+  "download": "下載",
+  "refresh": "重新整理",
+  "selectAllRows": "選取全部 {{totalRowCount}} 個項目"
+}

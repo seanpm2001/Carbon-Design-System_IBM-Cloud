@@ -1,0 +1,12 @@
+{
+  "name": "Nombre",
+  "state": "Estado",
+  "metro": "Gestionado desde",
+  "created": "Creado",
+  "create": "Crear ubicación",
+  "error": "No se puede mostrar la lista de ubicaciones.",
+  "hostUsage": "Uso de host\n(utilizado / total)",
+  "emptyStateTitle": "Ubicaciones",
+  "emptyStateDescription": "Aquí encontrará las ubicaciones de Satellite después de crearlas.",
+  "resourceGroup": "Grupo de recursos"
+}

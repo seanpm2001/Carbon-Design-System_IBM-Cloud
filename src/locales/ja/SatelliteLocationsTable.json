@@ -1,0 +1,12 @@
+{
+  "name": "名前",
+  "state": "状態",
+  "metro": "管理元",
+  "created": "作成",
+  "create": "ロケーションの作成",
+  "error": "ロケーションをリストできません。",
+  "hostUsage": "ホストの使用率\n(使用中/合計)",
+  "emptyStateTitle": "ロケーション",
+  "emptyStateDescription": "サテライトのロケーションは、作成後にここで確認できます。",
+  "resourceGroup": "リソース・グループ"
+}

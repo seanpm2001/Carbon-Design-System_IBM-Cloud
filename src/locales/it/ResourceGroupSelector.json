@@ -1,0 +1,9 @@
+{
+  "titleText": "Gruppo di risorse",
+  "label": "Seleziona un gruppo di risorse",
+  "errorTitle": "Si è verificato un problema durante il caricamento dei gruppi di risorse.",
+  "errorSubtitle": "Riprova più tardi.",
+  "noGroupsTitle": "Non hai accesso ad alcun gruppo di risorse.",
+  "linkText": "Crea un gruppo di risorse",
+  "iconDescription": "Aggiorna gruppi di risorse"
+}

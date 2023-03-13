@@ -1,0 +1,16 @@
+{
+  "active": "作用中",
+  "completed": "已完成",
+  "connecting": "正在連接",
+  "inProgress": "進行中",
+  "created": "建立時間",
+  "critical": "嚴重",
+  "disabled": "已停用",
+  "draft": "草稿",
+  "failed": "失敗",
+  "inactive": "非作用中",
+  "normal": "正常",
+  "pending": "擱置",
+  "scanning": "掃描中",
+  "templateError": "範本錯誤"
+}

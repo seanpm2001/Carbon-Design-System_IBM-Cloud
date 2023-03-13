@@ -1,0 +1,6 @@
+{
+  "edit": "Edit",
+  "none": "None",
+  "doneEditing": "Done editing",
+  "revertToDefault": "Revert {{resetCount}} to default"
+}

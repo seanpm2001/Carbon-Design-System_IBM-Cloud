@@ -1,0 +1,8 @@
+{
+  "clearAll": "全部清除",
+  "filters": "過濾器",
+  "filtersWithColon": "過濾器：",
+  "noMatch": "沒有項目符合過濾器。 請清除過濾器，然後再試一次。",
+  "placeholder": "過濾...",
+  "resetFilters": "重設過濾器"
+}

@@ -1,0 +1,78 @@
+{
+  "sidePanel": {
+    "reviewBtn": "复查",
+    "title": "为 {{resourceDisplayName}} 授予服务到服务访问权"
+  },
+  "notifications": {
+    "genericTitle": "检索不到数据",
+    "transactionId": "事务标识",
+    "addPolicySuccess": "已成功分配给实例。",
+    "addPolicyPartialSuccess": "已部分分配给实例。",
+    "addPolicyError": "尝试分配访问权时发生错误。",
+    "moreInfo": "查看错误信息",
+    "getAttributesError": "此时检索不到资源属性。 请刷新页面或稍后重试。",
+    "getServicesError": "此时检索不到服务信息。 请刷新页面或稍后重试。",
+    "getHeaderAccountError": "无法获取帐户信息",
+    "getHeaderAccountErrorSubtitle": "此时检索不到帐户信息。 请刷新页面或稍后重试。"
+  },
+  "targetService": {
+    "heading": "选择目标服务",
+    "helpText": "选择目标服务以供 {{resourceDisplayName}} 作为源服务进行访问。 一次只能添加一个服务。",
+    "invalidText": "源服务 {{resourceDisplayName}} 不支持目标服务 {{targetServiceName}}。",
+    "selectorLabel": "目标服务",
+    "serviceFieldPlaceholder": "选择服务",
+    "childServiceLabel": "资源类型",
+    "allServiceInstances": "所有实例"
+  },
+  "resourceAttributes": {
+    "childFieldPlaceholder": "输入或选择资源类型",
+    "regionFieldLabel": "区域",
+    "operatorFieldLabel": "操作员",
+    "allResourceTypes": "所有资源类型",
+    "learnMore": "了解更多信息",
+    "stringEquals": "字符串等于",
+    "stringEqualsDescription": "区分大小写的完全字符串匹配。"
+  },
+  "roles": {
+    "heading": "访问权",
+    "noAvailableRoles": "似乎您没有正确的访问权。您必须有权访问目标服务，才能在服务之间创建授权。",
+    "helpText": "选择角色以确定对源服务的访问级别。",
+    "platformRolesLabel": "平台访问权",
+    "serviceRolesLabel": "服务访问权",
+    "customRolesLabel": "定制访问权",
+    "popupHeading": "允许 {{roleName}} 角色执行的操作数（{{actionCount}} 个）",
+    "platformRolesInfo": "这些角色支持对平台资源执行操作，例如创建实例、将实例连接到应用程序和分配用户访问权。 选择适用的所有角色。",
+    "serviceRolesInfo": "这些角色允许有权使用服务和执行服务 API 调用。 每个角色由所选服务进行定制。 选择适用的所有角色。 请参阅服务的文档以获取更多详细信息。",
+    "customRolesInfo": "这些角色由管理员在帐户中创建，以定制如何分配对服务的访问权。 单击“角色的操作”图标以查看哪些操作映射到此角色。",
+    "delegatorHeading": "授权相依服务",
+    "delegatorHelpText": "如果允许源服务将其访问权委派给其他相依服务，那么会自动为这些服务创建授权策略。 <a>了解更多信息</a>。",
+    "delegatorCheckboxLabel": "允许源服务和相依服务委派授权"
+  },
+  "confirmationModal": {
+    "heading": "复查 {{resourceDisplayName}} 的服务到服务授权",
+    "helpText": "请先复查分配，然后再创建以下访问权。",
+    "targetServiceLabel": "目标服务",
+    "delegatorRoleLabel": "从属授权服务",
+    "delegatorRoleValue": "已启用",
+    "rolesLabel": "{{rolesCount}} 个角色",
+    "rolesLabelSingle": "{{rolesCount}} 个角色",
+    "confirmBtn": "分配",
+    "platformAccessLabel": "平台访问权",
+    "serviceAccessLabel": "服务访问权",
+    "customAccessLabel": "定制访问权",
+    "stringEquals": "字符串等于"
+  },
+  "delegatorModal": {
+    "heading": "支持委派授权吗？",
+    "helptext": "允许源服务为其相依服务自动创建授权策略。",
+    "confirmBtn": "授权"
+  },
+  "accessAssignments": "访问权分配",
+  "transactionId": "事务标识",
+  "genericRetrieveError": "此时无法检索数据。 请刷新页面或稍后重试。",
+  "genericCreatePolicyError": "此时无法创建服务到服务策略。 请刷新页面或稍后重试。",
+  "yes": "是",
+  "no": "否",
+  "cancel": "取消",
+  "close": "关闭"
+}

@@ -1,0 +1,51 @@
+{
+  "description": "Gère le codage et le décodage des clés cryptographiques de vos ressources, services et applications IBM Cloud. <a>En savoir plus</a>",
+  "hpcsInstanceNotificationTitle": "Les instances Hyper Protect Crypto Services doivent être créées manuellement.",
+  "hpcsInstanceNotificationSubtitle": "<a>Créez l'instance de service</a> et actualisez ensuite les instances.",
+  "hpcsKeyNotificationTitle": "Les clés racine Hyper Protect Crypto Services doivent être créées manuellement.",
+  "hpcsKeyNotificationSubtitle": "<a>Créez la clé racine</a> de l'instance puis actualisez les clés.",
+  "instance": {
+    "title": "Instance de service de gestion des clés",
+    "label": "Instance de service de gestion des clés",
+    "create": "Créer une instance ",
+    "createHPCS": "Créer une nouvelle instance Hyper Protect Crypto Services",
+    "createKeyProtect": "Créer une nouvelle instance Key Protect",
+    "error": {
+      "title": "Les instances de service de gestion de clés ne sont pas disponibles.",
+      "subtitle": "Impossible de charger les instances de service de gestion des clés.",
+      "description": "Erreur"
+    },
+    "info": {
+      "title": "Désolé.",
+      "subtitle": "Vous n'avez pas encore d'instance Key Protect. Avant de pouvoir démarrer avec l'intégration, vous devez <a>créer et configurer</a> une instance du service Key Protect.",
+      "description": "Info"
+    }
+  },
+  "instanceName": "Nom d'instance",
+  "instanceNameRequired": "Un nom d'instance est requis",
+  "key": {
+    "title": "Clé racine",
+    "label": "Clé racine",
+    "create": "Créer une clé racine",
+    "error": {
+      "title": "Les clés racine ne sont pas disponibles.",
+      "subtitle": "Impossible de charger les clés racine du service de gestion des clés.",
+      "description": "Erreur"
+    },
+    "info": {
+      "title": "Oups !",
+      "subtitle": "Vous n'avez pas encore de clé racine. Accédez à votre instance Key Protect et <a>créez une clé racine</a>, puis réessayez.",
+      "description": "Info"
+    }
+  },
+  "keyName": "Nom de la clé racine",
+  "keyNameRequired": "Un nom de clé racine est requis",
+  "keyProtect": "Key Protect",
+  "loading": "Chargement en cours...",
+  "name": "Gestion des clés",
+  "refresh": "Actualiser",
+  "save": "Sauvegarder",
+  "serviceName": "Nom de service",
+  "sidePanelTitle": "Éditer la gestion des clés",
+  "warning": "Avertissement"
+}

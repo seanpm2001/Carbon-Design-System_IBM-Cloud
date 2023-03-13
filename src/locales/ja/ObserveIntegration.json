@@ -1,0 +1,98 @@
+{
+  "activitytracker": {
+    "description": "アプリケーションとインフラストラクチャー全体での変更内容を表示および追跡します。 <a>詳細はこちら</a>",
+    "name": "アクティビティー・トラッキング",
+    "nonePlatformSubtitle": "アクティビティー・トラッキングを使用しないと、エラーをトラブルシューティングしたりサポートを得たりするのが難しくなる可能性があります。",
+    "plansError": "アクティビティー・トラッキング計画をロードできません。",
+    "resourceListError": "アクティビティー・トラッキングのインスタンスをロードできません。",
+    "serviceName": "IBM Cloud Activity Tracker with LogDNA",
+    "sidePanelHeader": "IBM Cloud Activity Tracker with LogDNA • <a>Docs</a>",
+    "sidePanelTitle": "アクティビティー・トラッキングの編集",
+    "liteInstanceError": {
+      "title": "無効なインスタンス",
+      "subtitle": "このロケーションの <a>Activity Tracker インスタンス</a> は、ライト・プランを利用して、使用されることができません。 最初にインスタンスを削除するか、または別の場所を選択してください。"
+    },
+    "noKey": {
+      "subtitle": "選択された Activity Tracker インスタンスには、関連付けられた取り込み鍵がありません。 キーを取得するには、<a>インスタンスの詳細ページ</a>から「キーの取得」アクションを実行します。",
+      "title": "取り込み鍵がありません"
+    }
+  },
+  "applicationInstance": "アプリケーション・インスタンス",
+  "disabled": "無効化されました",
+  "edit": "編集",
+  "enabled": "対応",
+  "error": "エラー",
+  "free": "無料",
+  "information": "情報",
+  "instance": "インスタンス",
+  "instanceNameRequired": "インスタンス名は必須です",
+  "instanceNew": "新規インスタンスの作成",
+  "instancePlatform": "プラットフォームと同じ",
+  "instanceNone": "なし",
+  "locationsError": "ロケーション・データをロードできません。",
+  "learnMore": "<a>詳細はこちら</a>",
+  "liteAlreadySelectedError": {
+    "subtitle": "Liteプランは、プラットフォームとアプリケーションの両方のサービス・インスタンスで選択されます。 1つまたは両方のインスタンスの有料プランを選択します。",
+    "title": "許可される1つのLiteプラン"
+  },
+  "liteExistingInstanceError": {
+    "subtitle": "このサービスのLiteプラン・インスタンスはアカウントごとに1つしか作成できません。 現在のLiteプラン・インスタンスを削除して、新しいプラン・インスタンスを作成します。",
+    "title": "既存のライト・プラン・インスタンス"
+  },
+  "loading": "ロード中…",
+  "location": "場所",
+  "logging": {
+    "description": "IBM Cloud ロギング・データとイベントを保管、検索、分析、モニターし、これらについて警報を出します。 <a>詳細はこちら</a>",
+    "keysError": "ロギング取り込みキーを取得できません。",
+    "name": "ロギング",
+    "noKey": {
+      "subtitle": "'選択されたロギング・インスタンスに接続された取り込みキーがありません。 キーを取得するには、<a>インスタンスの詳細ページ</a>から「キーの取得」アクションを実行します。",
+      "title": "取り込み鍵がありません"
+    },
+    "nonePlatformSubtitle": "ロギングを使用しないと、エラーをトラブルシューティングしたりサポートを得たりするのが難しくなる可能性があります。",
+    "noneApplicationSubtitle": "アプリケーション・ロギングを使用しないと、エラーをトラブルシューティングしたりサポートを得たりするのが難しくなる可能性があります。",
+    "plansError": "ロギングプランの読み込みができません。",
+    "resourceListError": "ロギング・インスタンスをロードできません。",
+    "serviceName": "IBM Log Analysis",
+    "sidePanelHeader": "IBM Log Analysis • <a>Docs</a>",
+    "sidePanelTitle": "ログの編集",
+    "liteInstanceError": {
+      "title": "プラットフォーム・インスタンスが無効です",
+      "subtitle": "このロケーションのプラットフォーム <a>ロギング・インスタンス</a> はライト・プランを使用しているため、使用できません。 最初にこのインスタンスのプラットフォーム・ロギングを無効にするか、または別の場所を選択してください。"
+    }
+  },
+  "monitoring": {
+    "description": "IBM Cloud を採用したリソースのパフォーマンスと正常性の可視性を提供します。 <a>詳細はこちら</a>",
+    "keysError": "モニタリング・アクセス・キーを取得できません。",
+    "name": "モニタリング",
+    "noKey": {
+      "subtitle": "選択したモニタリング・インスタンスには、接続されたアクセス・キーがありません。 キーを取得するには、<a>インスタンスの詳細ページ</a>から「キーの取得」アクションを実行します。",
+      "title": "アクセス・キーなし"
+    },
+    "nonePlatformSubtitle": "プラットフォーム・メトリックを使用しないと、エラーをトラブルシューティングしたりサポートを得たりするのが難しくなる可能性があります。",
+    "noneApplicationSubtitle": "アプリケーション・メトリックを使用しないと、エラーをトラブルシューティングしたりサポートを得たりするのが難しくなる可能性があります。",
+    "plansError": "モニタリングプランの読み込みができません。",
+    "resourceListError": "モニター・インスタンスをロードできません。",
+    "serviceName": "IBM Cloud Monitoring",
+    "sidePanelHeader": "IBM Cloud Monitoring • <a>Docs</a>",
+    "sidePanelTitle": "モニターの編集",
+    "liteInstanceError": {
+      "title": "プラットフォーム・インスタンスが無効です",
+      "subtitle": "このロケーションのプラットフォーム <a>インスタンスのモニター</a> はライト・プランを使用しているため、使用されることができません。 最初にこのインスタンスのプラットフォーム・メトリックを無効にするか、または別の場所を選択してください。"
+    }
+  },
+  "name": "名前",
+  "plan": "プラン",
+  "platformExistingHelperText": "プラットフォーム・インスタンスが既に存在し、自動的に接続されます。",
+  "platformInstance": "プラットフォーム・インスタンス",
+  "policiesError": "リソース。グループのアクセス・ポリシーをロードできません。",
+  "resourceGroup": "リソース・グループ",
+  "resourceGroupsError": "リソース・グループをロードできません。",
+  "save": "保存",
+  "serviceName": "サービス名",
+  "tag": "タグ",
+  "tags": "タグ",
+  "warning": "警告",
+  "noPlans": "このサービスのプラン・オプションが見つかりませんでした。 新規インスタンスを作成することはできません。",
+  "platformLocationHelperText": "これは、データ・ソースと同じロケーションでなければなりません"
+}

@@ -1,0 +1,70 @@
+{
+  "sidePanel": {
+    "reviewBtn": "Überprüfung",
+    "title": "Zugriffsberechtigungen zuweisen zu {{resourceDisplayName}}"
+  },
+  "notifications": {
+    "genericTitle": "Abrufen der Daten nicht möglich.",
+    "transactionId": "Transaktions-ID",
+    "addPolicySuccess": "Zuweisung zur Instanz erfolgreich.",
+    "addPolicyPartialSuccess": "Zuweisung zur Instanz teilweise erfolgreich.",
+    "addPolicyError": "Beim Zuweisen der Zugriffsberechtigung sind Fehler aufgetreten.",
+    "moreInfo": "Fehlerinformationen anzeigen",
+    "getAccessGroupsError": "Das Abrufen der Liste mit Zugriffsgruppen ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getAuthzResourceError": "Das Abrufen der Ressourcendaten ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getPubAccessGroupSettingError": "Das Abrufen der Einstellungen für die Gruppe mit öffentlichen Zugriffsberechtigungen ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getServiceError": "Das Abrufen der Rollen für die Gruppe mit öffentlichen Zugriffsberechtigungen ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getHeaderAccountError": "Das Abrufen von Kontoinformationen ist derzeit nicht möglich.",
+    "getHeaderAccountErrorSubtitle": "Das Abrufen von Kontoinformationen ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt."
+  },
+  "accessGroups": {
+    "heading": "Zugriffsberechtigungen für Zugriffsgruppen zuweisen",
+    "publicAccessToggleLabel": "Soll der öffentliche Zugriff auf diese Ressource ermöglicht werden? <a>Weitere Informationen.</a>",
+    "selectorHelpText": "Eine Zugriffsgruppe auswählen, um alle Entitäten der Gruppe die Zugriffsberechtigung für diese Ressource zuzuweisen.",
+    "selectorLabel": "Zugriffsgruppe",
+    "selectorPlaceholder": "Zugriffsgruppe auswählen",
+    "addBtn": "Hinzufügen",
+    "tagUsersLabel": "{{totalCount}} Benutzer",
+    "tagUsersLabelSingle": "{{totalCount}} Benutzer",
+    "tagServiceIdsLabel": "{{totalCount}} Service-IDs",
+    "tagServiceIdsLabelSingle": "{{totalCount}} Service-ID",
+    "deselectGroup": "Auswahl der Gruppe aufheben"
+  },
+  "roles": {
+    "heading": "Zugriffsberechtigung",
+    "noAvailableRoles": "Sie verfügen nicht über die Zugriffsberechtigung für das Zuweisen einer Rolle für diese Ressource. Wenden Sie sich an den Kontoeigner oder den Administrator dieser Ressource, wenn Ihre Zugriffsberechtigung aktualisiert werden soll.",
+    "helpText": "Rollen auswählen, die zugewiesen werden sollen, um die Zugriffsberechtigungsebene zu definieren.",
+    "platformRolesLabel": "Plattformzugriff",
+    "serviceRolesLabel": "Servicezugriff",
+    "customRolesLabel": "Angepasster Zugriff",
+    "popupHeading": "Zulässige Aktionen für die Rolle {{roleName}} ({{actionCount}})",
+    "platformRolesInfo": "Diese ermöglichen das Ausführen von Aktionen für Plattformressourcen, zum Beispiel das Erstellen einer Instanz, das Verbinden von Instanzen mit Apps oder das Zuordnen von Benutzerzugriff. Wählen Sie alle aus, die gültig sind.",
+    "serviceRolesInfo": "Diese Rollen ermöglichen den Zugriff für die Verwendung des Service und für die Ausführung von Service-API-Aufrufen. Jede Rolle wird vom ausgewählten Service angepasst. Wählen Sie alle aus, die gültig sind. Weitere Informationen finden Sie in der Dokumentation des Service.",
+    "customRolesInfo": "Diese Rollen werden von Administratoren im Konto erstellt, um das Zuweisen von Zugriffsberechtigungen für den Service anzupassen. Klicken Sie auf das Symbol der Aktionen für die Rolle, um die dieser Rolle zugeordneten Aktionen anzuzeigen."
+  },
+  "confirmationModal": {
+    "heading": "Zugewiesene Zugriffsberechtigungen für {{resourceDisplayName}} überprüfen",
+    "helpText": "Überprüfen Sie die folgenden Zugriffsgruppenrichtlinien, um sicherzustellen, dass die korrekte Zugriffsberechtigungsebene zugewiesen wird.",
+    "accessGroupsLabel": "{{accessGroupCount}} Zugriffsgruppen",
+    "accessGroupsLabelSingle": "{{accessGroupCount}} Zugriffsgruppe",
+    "rolesLabel": "{{rolesCount}} Rollen",
+    "rolesLabelSingle": "{{rolesCount}} Rolle",
+    "confirmBtn": "Zuweisen",
+    "platformAccessLabel": "Plattformzugriff",
+    "serviceAccessLabel": "Servicezugriff",
+    "customAccessLabel": "Angepasster Zugriff"
+  },
+  "publicAccessModal": {
+    "heading": "Zugriffsberechtigung für die Gruppe mit öffentlichen Zugriffsberechtigungen zuweisen",
+    "checkboxLabel": "Soll der öffentliche Zugriff auf diese Ressource tatsächlich zugelassen werden, indem eine Zugriffsrichtlinie zur Gruppe mit öffentlichen Zugriffsberechtigungen hinzugefügt wird?",
+    "confirmBtn": "Ja"
+  },
+  "accessAssignments": "Zuweisungen von Zugriffsberechtigungen",
+  "transactionId": "Transaktions-ID",
+  "genericRetrieveError": "Abrufen von Daten derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+  "genericCreatePolicyError": "Erstellen der Zugriffsrichtlinie derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+  "yes": "Ja",
+  "no": "Nein",
+  "cancel": "Abbrechen",
+  "close": "Schließen"
+}

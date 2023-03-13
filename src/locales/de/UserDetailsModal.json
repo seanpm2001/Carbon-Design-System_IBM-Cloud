@@ -1,0 +1,12 @@
+{
+  "welcometext": "Willkommen. Erzählen Sie uns von sich selbst.",
+  "modalSubHeading": "Ihre Antworten helfen uns dabei, unsere Empfehlungen zu personalisieren.",
+  "primaryButtonText": "Erste Schritte!",
+  "secondaryButtonText": "Diesen Schritt überspringen",
+  "interestTitleText": "Woran sind Sie am meisten interessiert?",
+  "label": "Eine Option auswählen",
+  "interestOtherLabelText": "Bitte beschreiben Sie Ihr Interesse",
+  "interestOtherPlaceholder": "Geben Sie den Text ein. ",
+  "jobFunctionTitleText": "Was ist Ihre Rolle?",
+  "industryTitleText": "Was ist Ihre Branche?"
+}

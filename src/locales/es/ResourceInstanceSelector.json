@@ -1,0 +1,10 @@
+{
+  "titleText": "Instancia",
+  "errorTitle": "No se puede mostrar una lista de las instancias de recursos.",
+  "errorIconDescription": "No se puede mostrar una lista de las instancias de recursos.",
+  "errorSubtitle": "Las instancias de recursos no están disponibles.",
+  "infoTitle": "No existe ninguna instancia de recurso.",
+  "infoIconDescription": "No existe ninguna instancia de recurso.",
+  "infoSubtitle": "Cree una instancia de recurso y vuelva a intentarlo.",
+  "dropdownLabel": "Nombre de instancia..."
+}

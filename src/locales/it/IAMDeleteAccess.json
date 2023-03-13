@@ -1,0 +1,37 @@
+{
+  "notifications": {
+    "genericTitle": "Impossibile richiamare i dati",
+    "transactionId": "ID transazione",
+    "deletePolicySuccess": "Rimozione completata correttamente per l'istanza.",
+    "deletePolicyErrorTitle": "Impossibile rimuovere l'accesso.",
+    "deletePolicyError": "Si è verificato un errore durante il tentativo di rimuovere l'accesso.",
+    "moreInfo": "Visualizza informazioni sull'errore",
+    "getGroupPolicyErrorTitle": "Impossibile richiamare i dati della politica",
+    "getGroupPolicyError": "Non è possibile richiamare i dati della politica in questo momento. Aggiorna la pagina o riprova più tardi.",
+    "getHeaderAccountError": "Impossibile ottenere le informazioni sull'account",
+    "getHeaderAccountErrorSubtitle": "Non è possibile richiamare le informazioni sull'account in questo momento. Aggiorna la pagina o riprova più tardi.",
+    "deleteNotAllowedTitle": "È richiesta l'autorizzazione per eliminare questa politica",
+    "deleteNotAllowedText": "Non disponi dell'accesso per eliminare questa politica. Contatta il tuo amministratore per aggiornare il tuo livello di accesso per la risorsa di questa politica."
+  },
+  "deleteModal": {
+    "heading": "Rimuovi le assegnazioni dell'accesso a {{resourceDisplayName}}",
+    "helpText": "Riesamina la seguente politica del gruppo di accesso per assicurarti di rimuovere il livello di accesso corretto.",
+    "accessGroupLabel": "Gruppo di accesso",
+    "rolesLabel": "{{rolesCount}} ruoli",
+    "rolesLabelSingle": "{{rolesCount}} ruolo",
+    "confirmBtn": "Rimuovi",
+    "platformAccessLabel": "Accesso alla piattaforma",
+    "serviceAccessLabel": "Accesso al servizio",
+    "customAccessLabel": "Accesso personalizzato"
+  },
+  "subjectUnsupportedTitle": "Impossibile rimuovere la politica",
+  "subjectUnsupported": "Il tipo di oggetto della politica specificato ({{policySubjectId}}) non è supportato per la rimozione nel contesto. Per gestire le politiche di accesso per utenti o ID servizio specifici, visita <a>Identity & Access Management.</a>",
+  "accessAssignments": "Assegnazione dell'accesso",
+  "transactionId": "ID transazione",
+  "genericRetrieveError": "Impossibile richiamare i dati in questo momento. Aggiorna la pagina o riprova più tardi.",
+  "genericDeletePolicyError": "Impossibile modificare la politica di accesso in questo momento. Aggiorna la pagina o riprova più tardi.",
+  "yes": "Sì",
+  "no": "No",
+  "cancel": "Annulla",
+  "close": "Chiudi"
+}

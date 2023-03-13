@@ -1,0 +1,52 @@
+{
+  "monitoring": {
+    "allRegions": "すべてのリージョン",
+    "cancel": "キャンセル",
+    "configure": "構成",
+    "heading": "プラットフォーム・メトリックを受け取る IBM Cloud Monitoring インスタンスの選択",
+    "regionLabel": "リージョンの選択",
+    "regionTitle": "リージョンでインスタンスをフィルター",
+    "instanceLabel": "インスタンスの選択",
+    "instanceTitle": "リージョン内のインスタンス",
+    "instanceTitleWithRegion": "{{region}} のインスタンス",
+    "generalDescription": "IBM Cloud の対応サービス・インスタンスからプラットフォーム・メトリックを受け取る IBM Cloud Monitoring インスタンスを選択します。",
+    "createLink": "<a>インスタンスを作成</a>することもできます。",
+    "somethingWentWrong": "何らかの問題が発生しました",
+    "updateError": "{{message}}. エラー: {{error_code}}",
+    "fetchError": "IBM Cloud Monitoring インスタンスの取得に失敗しました。",
+    "confirmInstanceChange": "{{instance}} からのプラットフォーム・メトリックの受信停止を要請します"
+  },
+  "logging": {
+    "allRegions": "すべてのリージョン",
+    "cancel": "キャンセル",
+    "configure": "構成",
+    "heading": "プラットフォーム・ログを受け取る IBM Log Analysis インスタンスの選択",
+    "regionLabel": "リージョンの選択",
+    "regionTitle": "リージョンでインスタンスをフィルター",
+    "instanceLabel": "インスタンスの選択",
+    "instanceTitle": "リージョン内のインスタンス",
+    "instanceTitleWithRegion": "{{region}} のインスタンス",
+    "generalDescription": "IBM Cloud の対応サービス・インスタンスからプラットフォーム・ログを受け取る IBM Log Analysis インスタンスを選択します。",
+    "createLink": "<a>インスタンスを作成</a>することもできます。",
+    "somethingWentWrong": "何らかの問題が発生しました",
+    "updateError": "{{message}}. エラー: {{error_code}}",
+    "fetchError": "IBM Log Analysis インスタンスの取得に失敗しました。",
+    "confirmInstanceChange": "{{instance}} からのプラットフォーム・ログの受信停止を要請します"
+  },
+  "common": {
+    "successIconDescription": "成功アイコン",
+    "errorIconDescription": "エラー・アイコン",
+    "au-syd": "シドニー",
+    "br-sao": "サンパウロ",
+    "ca-tor": "トロント",
+    "eu-de": "フランクフルト",
+    "eu-fr2": "BNPP_EU",
+    "eu-gb": "ロンドン",
+    "jp-osa": "大阪",
+    "jp-tok": "東京",
+    "us-east": "ワシントン DC",
+    "us-south": "ダラス",
+    "select": "選択",
+    "close": "閉じる"
+  }
+}

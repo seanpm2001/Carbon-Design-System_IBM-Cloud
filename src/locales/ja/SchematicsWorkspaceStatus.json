@@ -1,0 +1,16 @@
+{
+  "active": "アクティブ",
+  "completed": "完了",
+  "connecting": "接続中",
+  "inProgress": "進行中",
+  "created": "作成日",
+  "critical": "重要",
+  "disabled": "無効",
+  "draft": "ドラフト",
+  "failed": "失敗",
+  "inactive": "非アクティブ",
+  "normal": "通常",
+  "pending": "保留",
+  "scanning": "スキャン中",
+  "templateError": "テンプレート・エラー"
+}

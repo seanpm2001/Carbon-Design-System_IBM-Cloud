@@ -1,0 +1,23 @@
+{
+  "create-tags": "创建标记",
+  "tagPrefix": "IAM",
+  "tag-area": {
+    "labelText": "标记名称",
+    "placeholder": "输入以创建标记，例如 dev:env",
+    "tooltip": "通过输入“键:值”对来创建新的访问标记。"
+  },
+  "formatNote": "注意：访问权管理标记需要使用“键:值”格式，这些标记在帐户范围内可见。 避免使用个人信息，例如姓名、地址、电话号码、电子邮件地址或其他识别信息或专有信息。",
+  "errors": {
+    "exceeds_attach_limit": "您已达到一次可以附加的最大标记数。 要附加更多标记，请先保存更改。",
+    "exceeds_detach_limit": "您已达到一次可以拆离的最大标记数。 要拆离更多标记，请先保存更改。",
+    "tag_exists": "此标记已存在。 请为标记输入其他名称。",
+    "too_many_characters": "标记包含的字符不能超过 128 个。",
+    "more_than_one_colon": "标记不能包含多个冒号。",
+    "starts_with_colon": "标记不能以冒号开头。",
+    "ends_with_colon": "标记不能以冒号结尾。",
+    "invalid_characters": "标记只能包含字母数字字符、空格、下划线、短划线、句点和一个冒号。",
+    "not_key_value_format": "标记名称必须为“键:值”格式",
+    "tag_not_found": "找不到匹配项。 要创建新标记，请与标记管理员联系。",
+    "tags_not_created": "发生错误，未创建访问标记。"
+  }
+}

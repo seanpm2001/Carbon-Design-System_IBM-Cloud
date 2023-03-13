@@ -1,0 +1,17 @@
+{
+  "modalHeader": "配列の編集",
+  "save": "保存",
+  "edit": "編集",
+  "cancel": "キャンセル",
+  "tagArea": {
+    "label": "値",
+    "placeholder": "配列値を入力します。 すべての値は、保存後に自動的に引用符で囲まれます。"
+  },
+  "stringArrayEditor": {
+    "description": "配列値を入力します。 保存すると、引用符が値に追加されます。",
+    "errorMsg": "値はストリングの有効な配列でなければなりません。 例: [\"array\"]。"
+  },
+  "mixedArrayEditor": {
+    "errorMsg": "値は有効な配列でなければなりません。 例: [\"array\"]。"
+  }
+}

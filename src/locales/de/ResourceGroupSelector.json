@@ -1,0 +1,9 @@
+{
+  "titleText": "Ressourcengruppe",
+  "label": "Ressourcengruppe auswählen",
+  "errorTitle": "Beim Laden der Ressourcengruppen ist ein Problem aufgetreten.",
+  "errorSubtitle": "Wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+  "noGroupsTitle": "Sie verfügen nicht über Zugriffsberechtigungen für eine Ressourcengruppe.",
+  "linkText": "Ressourcengruppe erstellen",
+  "iconDescription": "Ressourcengruppen aktualisieren"
+}

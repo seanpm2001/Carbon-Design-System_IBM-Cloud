@@ -1,0 +1,35 @@
+{
+  "title": "Costes de soporte",
+  "supportPlan": "Plan de soporte",
+  "supportPlans": {
+    "BASIC": "Básico",
+    "STANDARD": "Avanzado",
+    "PREMIUM": "Premium",
+    "FREE": "Gratuito"
+  },
+  "cost": "coste",
+  "validThrough": "Válido hasta",
+  "commitmentCost": {
+    "key": "Coste mensual",
+    "value": "10 % del gasto mensual"
+  },
+  "commitmentDetails": {
+    "belowThreshold": "Su coste anual de soporte se incluye en su compromiso.",
+    "aboveThreshold": "Sus costes de soporte se basan en el uso mensual de la cuenta."
+  },
+  "details": {
+    "FREE": "Este plan de soporte está incluido con su cuenta sin coste alguno.",
+    "BASIC": "Este plan de soporte está incluido con su cuenta sin coste alguno.",
+    "STANDARD": "Esta cantidad incluye los costes de soporte para este mes más cualquier excedente.",
+    "PREMIUM": "Esta cantidad incluye los costes de soporte para este mes más cualquier excedente."
+  },
+  "errorText": "No se puede recuperar la información de coste de soporte",
+  "enterprise": {
+    "text": "Esta cuenta se gestiona mediante una empresa",
+    "caption": "Si no es miembro de la empresa, vaya a la cuenta de empresa para obtener más información."
+  },
+  "unauthorized":  {
+    "text": "Parece que no tiene acceso para ver los costes de soporte",
+    "caption": "Póngase en contacto con el administrador para obtener acceso."
+  }
+}

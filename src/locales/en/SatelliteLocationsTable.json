@@ -1,0 +1,15 @@
+{
+  "name": "Name",
+  "state": "State",
+  "metro": "Managed from",
+  "created": "Created",
+  "create": "Create location",
+  "error": "Unable to list locations.",
+  "hostUsage": "Host usage\n(used / total)",
+  "emptyStateTitle": "Locations",
+  "emptyStateDescription": "You can find your Satellite locations here after you create them.",
+  "resourceGroup": "Resource group",
+  "deployment":  "Deployment ready",
+  "ready": "Ready",
+  "notReady": "Not ready"
+}

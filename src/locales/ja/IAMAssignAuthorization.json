@@ -1,0 +1,78 @@
+{
+  "sidePanel": {
+    "reviewBtn": "確認",
+    "title": "{{resourceDisplayName}} へのサービス間アクセスの許可"
+  },
+  "notifications": {
+    "genericTitle": "データを取得できません",
+    "transactionId": "トランザクション ID",
+    "addPolicySuccess": "インスタンスに正常に割り当てられました。",
+    "addPolicyPartialSuccess": "インスタンスに部分的に割り当てられました。",
+    "addPolicyError": "アクセス権限の割り当てを試行中にエラーが発生しました。",
+    "moreInfo": "エラー情報の表示",
+    "getAttributesError": "現時点ではリソース属性を取得できません。 ページを最新表示するか、後で再試行してください。",
+    "getServicesError": "現時点ではサービス情報を取得できません。 ページを最新表示するか、後で再試行してください。",
+    "getHeaderAccountError": "アカウント情報を取得できません",
+    "getHeaderAccountErrorSubtitle": "現時点ではアカウント情報を取得できません。 ページを最新表示するか、後で再試行してください。"
+  },
+  "targetService": {
+    "heading": "ターゲット・サービスの選択",
+    "helpText": "{{resourceDisplayName}} がソース・サービスとしてアクセスするターゲット・サービスを選択してください。 一度に追加できるサービスは 1 つのみです。",
+    "invalidText": "ターゲット・サービス {{targetServiceName}} は、ソース・サービス {{resourceDisplayName}} によってサポートされていません。",
+    "selectorLabel": "ターゲット・サービス",
+    "serviceFieldPlaceholder": "サービスの選択",
+    "childServiceLabel": "リソース・タイプ",
+    "allServiceInstances": "すべてのインスタンス"
+  },
+  "resourceAttributes": {
+    "childFieldPlaceholder": "リソース・タイプを入力または選択",
+    "regionFieldLabel": "リージョン",
+    "operatorFieldLabel": "オペレーター",
+    "allResourceTypes": "すべてのリソース・タイプ",
+    "learnMore": "詳細はこちら",
+    "stringEquals": "ストリングが等しい",
+    "stringEqualsDescription": "大/小文字の区別がある文字列の完全一致。"
+  },
+  "roles": {
+    "heading": "アクセス",
+    "noAvailableRoles": "適切なアクセス権限がないようです。 サービス間の許可を作成するには、ターゲット・サービスにアクセスできる必要があります。",
+    "helpText": "ソース・サービスのアクセス権限のレベルを決定するために役割を選択してください。",
+    "platformRolesLabel": "プラットフォーム・アクセス",
+    "serviceRolesLabel": "サービス・アクセス",
+    "customRolesLabel": "カスタム・アクセス",
+    "popupHeading": "{{roleName}} 役割 ({{actionCount}}) に許可されたアクション",
+    "platformRolesInfo": "これらの役割は、プラットフォーム・リソースに対して、インスタンスの作成、アプリへのインスタンスの接続、ユーザー・アクセス権限の割り当てなどのアクションを実行できるようにします。 該当するものをすべて選択してください。",
+    "serviceRolesInfo": "これらの役割は、サービスの使用およびサービス API 呼び出しの実行のためのアクセスを許可します。 各役割は、選択されたサービスによってカスタマイズされます。 該当するものをすべて選択してください。 詳しくは、サービスの資料を参照してください。",
+    "customRolesInfo": "これらの役割は、サービスへのアクセス権限の割り当てをカスタマイズするために、アカウント内の管理者によって作成されます。 「役割のアクション」アイコンをクリックすると、この役割にマップされているアクションを確認できます。",
+    "delegatorHeading": "依存サービスの許可",
+    "delegatorHelpText": "ソース・サービスがアクセス権限を他の依存サービスに委任できるようにすると、それらのサービス用の許可ポリシーが自動的に作成されます。 <a>詳細はこちら。</a>",
+    "delegatorCheckboxLabel": "ソース・サービスと依存サービスによって許可を委任できるようにする"
+  },
+  "confirmationModal": {
+    "heading": "{{resourceDisplayName}} のサービス間の許可の確認",
+    "helpText": "次のアクセス権限を作成する前に、割り当てを確認してください。",
+    "targetServiceLabel": "ターゲット・サービス",
+    "delegatorRoleLabel": "従属許可のサービス",
+    "delegatorRoleValue": "有効",
+    "rolesLabel": "{{rolesCount}} 個の役割",
+    "rolesLabelSingle": "{{rolesCount}} 個の役割",
+    "confirmBtn": "割り当て",
+    "platformAccessLabel": "プラットフォーム・アクセス",
+    "serviceAccessLabel": "サービス・アクセス",
+    "customAccessLabel": "カスタム・アクセス",
+    "stringEquals": "ストリングが等しい"
+  },
+  "delegatorModal": {
+    "heading": "許可を委任できるようにしますか?",
+    "helptext": "ソース・サービスによってその依存サービス用に許可ポリシーが自動的に作成されることを許可します。",
+    "confirmBtn": "許可"
+  },
+  "accessAssignments": "アクセス権限の割り当て",
+  "transactionId": "トランザクション ID",
+  "genericRetrieveError": "現時点ではデータを取得できません。 ページを最新表示するか、後で再試行してください。",
+  "genericCreatePolicyError": "現時点ではサービス間ポリシーを作成できません。 ページを最新表示するか、後で再試行してください。",
+  "yes": "はい",
+  "no": "いいえ",
+  "cancel": "キャンセル",
+  "close": "閉じる"
+}

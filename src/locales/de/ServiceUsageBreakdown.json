@@ -1,0 +1,9 @@
+{
+  "totalText": "Ausgaben für den Monat bisher",
+  "errorText": "Zum gegenwärtigen Zeitpunkt können keine Nutzungsinformationen abgerufen werden. Wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+  "unauthText": "Sie verfügen nicht über die Zugriffsberechtigung zum Anzeigen von Kontonutzungsdaten. <a>Weitere Informationen zum IAM-Zugriff</a>.",
+  "unauthCaption": "Sie benötigen die Administratorrolle für den Kontoverwaltungsservice für die Abrechnung, um die Nutzungsdaten für das gesamte Konto anzuzeigen.",
+  "emptyText": "Sie verfügen noch nicht über Ressourcen.",
+  "emptyCaption": "Beginnen Sie im <a>Katalog</a>.",
+  "notEnough": "Es sind zu wenige Ressourcen oder Kosten vorhanden, um ein Diagramm zu erstellen."
+}

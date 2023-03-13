@@ -1,0 +1,20 @@
+{
+  "requested": "要求",
+  "deploying": "デプロイ中",
+  "pending": "保留中",
+  "normal": "正常",
+  "warning": "警告",
+  "critical": "重大",
+  "deleting": "削除中",
+  "delete_retry_wait": "削除再試行中",
+  "delete_failed": "削除失敗",
+  "deploy_retry_wait": "デプロイ再試行中",
+  "deploy_failed": "デプロイ失敗",
+  "unsupported": "サポート対象外",
+  "unknown": "不明",
+  "requestingCreation": "作成の要求中...",
+  "preparingMaster": "マスター、ワーカーの準備中...",
+  "preparingMasterSatellite": "マスターの準備中...",
+  "finalizing": "ワーカーのファイナライズ中...",
+  "finalizingSatellite": "クラスターのファイナライズ中 ..."
+}

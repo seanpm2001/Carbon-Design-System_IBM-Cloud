@@ -1,0 +1,12 @@
+{
+  "notLoggedIn": "Sie müssen angemeldet sein, wenn Sie ein Abonnement für ein Ereignis erstellen möchten.",
+  "unableToSubscribe": "Für das Ereignis konnte kein Abonnement für Sie erstellt werden. Wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+  "error": "Fehler",
+  "success": "Erfolg",
+  "successfullySubscribed": "Sie haben erfolgreich ein Abonnement für das Ereignis erstellt.",
+  "subscribe": "Abonnieren",
+  "cancel": "Abbrechen",
+  "subscribeModalHeader": "Zukünftige Aktualisierungen erhalten?",
+  "subscribeModalHint": "Aktualisierungen werden an dieses E-Mail-Konto gesendet, wenn dieser Vorfall aktualisiert oder gelöst wird.",
+  "email": "E-Mail"
+}

@@ -1,0 +1,23 @@
+{
+  "accessTags": {
+    "labelText": "액세스 관리 태그",
+    "placeholder": "예: access:dev, proj:version-1",
+    "tooltip": {
+      "exampleOpeningLine": "액세스 관리 태그는 특정 리소스에 대해 유연한 액세스 정책을 적용하는 데 도움을 줍니다."
+    }
+  },
+  "accessTagPrefix": "IAM",
+  "errors": {
+    "exceeds_attach_limit": "한 번에 첨부할 수 있는 최대 태그 수에 도달했습니다. 태그를 더 첨부하려면 먼저 변경사항을 저장하십시오.",
+    "exceeds_detach_limit": "한 번에 분리할 수 있는 최대 태그 수에 도달했습니다. 태그를 더 분리하려면 먼저 변경사항을 저장하십시오.",
+    "tag_exists": "이 태그는 이미 있습니다. 태그에 다른 이름을 입력하십시오.",
+    "too_many_characters": "태그는 128자 이하여야 합니다.",
+    "more_than_one_colon": "태그에는 두 개 이상의 콜론이 포함될 수 없습니다.",
+    "starts_with_colon": "태그는 콜론으로 시작할 수 없습니다.",
+    "ends_with_colon": "태그는 콜론으로 끝날 수 없습니다.",
+    "invalid_characters": "태그에는 영숫자 문자, 공백, 밑줄, 대시, 마침표 및 하나의 콜론만 포함될 수 있습니다.",
+    "not_key_value_format": "태그 이름의 형식은 키:값이어야 함",
+    "tag_not_found": "일치 항목을 찾을 수 없습니다. 새 태그를 작성하려면 태그 관리자에게 문의하십시오.",
+    "error_creating_tags": "태그 작성 중 오류 발생:"
+  }
+}

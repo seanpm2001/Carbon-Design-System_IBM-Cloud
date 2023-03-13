@@ -1,0 +1,12 @@
+{
+  "notLoggedIn": "イベントをサブスクライブするにはログインする必要があります。",
+  "unableToSubscribe": "イベントをサブスクライブできませんでした。後で再試行してください。",
+  "error": "エラー",
+  "success": "成功",
+  "successfullySubscribed": "イベントに正常にサブスクライブしました。",
+  "subscribe": "サブスクライブ",
+  "cancel": "キャンセル",
+  "subscribeModalHeader": "今後の更新情報を受け取りますか?",
+  "subscribeModalHint": "このインシデントが更新され、解決されたときに、このアカウントの E メール・アドレスに更新情報をお送りします。",
+  "email": "E メール"
+}

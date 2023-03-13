@@ -1,0 +1,9 @@
+{
+  "totalText": "Gasto del mes hasta la fecha",
+  "errorText": "No se ha podido recuperar la información sobre uso en este momento. Vuelva a intentarlo más adelante.",
+  "unauthText": "Parece que no tiene acceso para ver datos de uso de la cuenta. <a>Más información sobre el acceso a IAM</a>.",
+  "unauthCaption": "Debe tener el rol de Administrador sobre el servicio de gestión de cuenta de facturación para poder ver el uso de toda la cuenta.",
+  "emptyText": "Parece que todavía no tiene ningún recurso.",
+  "emptyCaption": "Comience en el <a>catálogo</a>.",
+  "notEnough": "No hay suficientes recursos o costes para hacer un gráfico."
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Support costs",
+  "supportPlan": "Support plan",
+  "supportPlans": {
+    "BASIC": "Basic",
+    "STANDARD": "Advanced",
+    "PREMIUM": "Premium",
+    "FREE": "Free"
+  },
+  "cost": "cost",
+  "validThrough": "Valid through",
+  "commitmentCost": {
+    "key": "Monthly cost",
+    "value": "10% of monthly spending"
+  },
+  "commitmentDetails": {
+    "belowThreshold": "Your annual support cost is included in your commitment.",
+    "aboveThreshold": "Your support costs are based on your monthly account usage."
+  },
+  "details": {
+    "FREE": "This support plan is included with your account at no cost.",
+    "BASIC": "This support plan is included with your account at no cost.",
+    "STANDARD": "This amount includes your support costs for this month plus any overages.",
+    "PREMIUM": "This amount includes your support costs for this month plus any overages."
+  },
+  "errorText": "Unable to retrieve support cost information",
+  "enterprise": {
+    "text": "This account is managed by an enterprise",
+    "caption": "If you're a member of the enterprise, switch to the enterprise account for more information."
+  },
+  "unauthorized":  {
+    "text": "Looks like you don't have access to view your support costs",
+    "caption": "Contact your administrator for access."
+  }
+}

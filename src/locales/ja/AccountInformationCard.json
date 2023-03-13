@@ -1,0 +1,18 @@
+{
+  "SUBSCRIPTION": "サブスクリプション",
+  "BASIC": "基本",
+  "FREE": "無料",
+  "TRIAL": "トライアル",
+  "LITE": "ライト",
+  "PAYG": "従量課金",
+  "STANDARD": "アドバンスト",
+  "PREMIUM": "プレミアム",
+  "accountInformation": "請求処理情報",
+  "type": "アカウント・タイプ",
+  "supportPlan": "サポート・プラン",
+  "caption": "アカウント情報を表示するためのアクセス権限がないようです。",
+  "text": "アクセス権限については、管理者に問い合わせてください。",
+  "activePromotions": "アクティブ・プロモーション",
+  "totalAccounts": "アカウントの合計",
+  "enterprise": "エンタープライズ"
+}

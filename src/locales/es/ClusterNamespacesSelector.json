@@ -1,0 +1,51 @@
+{
+  "close": {
+    "menu": "Cerrar menú"
+  },
+  "open": {
+    "menu": "Abrir menú"
+  },
+  "collapse": {
+    "group": "Contraer grupo"
+  },
+  "expand": {
+    "group": "Expandir grupo"
+  },
+  "clear": {
+    "all": "Borrar todos los elementos seleccionados",
+    "selection": "Borrar elemento seleccionado"
+  },
+  "legend_iks": "Seleccione uno o varios espacios de nombres",
+  "legend_roks": "Seleccione uno o varios proyectos",
+  "allNamespaces_iks": "Todos los espacios de nombres",
+  "allNamespaces_roks": "Todos los proyectos",
+  "selectNamespaces_iks": "Seleccionar espacios de nombres",
+  "selectNamespaces_roks": "Seleccionar proyectos",
+  "namespacesLabel_iks": "Espacios de nombres",
+  "namespacesLabel_roks": "Proyectos",
+  "createNamespace_iks": "Añadir espacio de nombres",
+  "createNamespace_roks": "Añadir proyecto",
+  "createNamespaceDescription_iks": "Añada un solo espacio de nombres o varios espacios de nombres a la lista de espacios de nombres específicos.",
+  "createNamespaceDescription_roks": "Añada un solo proyecto o varios proyectos a la lista de su proyecto específico.",
+  "enterNamespace_iks": "Especifique los espacios de nombres separados por una coma. Después de pulsar Añadir, los nuevos espacios de nombres se incluirán en la lista y se seleccionarán automáticamente.",
+  "enterNamespace_roks": "Especifique los proyectos separados por una coma. Después de pulsar Añadir, los proyectos se incluirán en la lista y se seleccionarán automáticamente.",
+  "namespace_iks": "Espacio de nombres",
+  "namespace_roks": "Proyecto",
+  "placeholder_iks": "nmpc-1, namespc-2",
+  "placeholder_roks": "prj-1, projct-2",
+  "targetCluster": "Destino seleccionado",
+  "create": "Añadir",
+  "cancel": "Cancelar",
+  "closeLabel": "Cerrar",
+  "placeholder": "Filtrar...",
+  "allNotSupportedTitle_iks": "No se da soporte a ningún espacio de nombres",
+  "allNotSupportedTitle_roks": "No se da soporte a ningún proyecto",
+  "multiNotSupportedTitle_iks": "No se da soporte a espacios de nombres específicos",
+  "multiNotSupportedTitle_roks": "No se da soporte a proyectos específicos",
+  "invalidNamespace_iks": "El nombre de un espacio de nombres solo puede contener letras en minúscula, números y guiones. El nombre no puede empezar ni terminar por un guion y debe tener un máximo de 63 caracteres.",
+  "invalidNamespace_roks": "El nombre de un proyecto solo puede contener letras en minúscula, números y guiones. El nombre no puede empezar ni terminar por un guion y debe tener un máximo de 63 caracteres.",
+  "duplicateNamespace": "‘{{namespace}}’ ya existe. Especifique otro nombre.",
+  "fetchErrorTitle": "No se pueden recuperar detalles",
+  "fetchErrorDescription_iks": "La lista de espacios de nombres no se puede cumplimentar. Vuelva a intentarlo más tarde.",
+  "fetchErrorDescription_roks": "La lista de proyectos no se puede cumplimentar. Vuelva a intentarlo más tarde."
+}

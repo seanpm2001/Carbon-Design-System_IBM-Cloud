@@ -1,0 +1,98 @@
+{
+  "activitytracker": {
+    "description": "Vea y realice un seguimiento de los cambios en las aplicaciones y la infraestructura. <a>Más información</a>",
+    "name": "Seguimiento de actividad",
+    "nonePlatformSubtitle": "Sin el seguimiento de actividad, la resolución de errores y la obtención de soporte puede resultar difícil.",
+    "plansError": "No se pueden cargar los planes de seguimiento de actividad.",
+    "resourceListError": "No se pueden cargar las instancias de seguimiento de actividad.",
+    "serviceName": "IBM Cloud Activity Tracker con LogDNA",
+    "sidePanelHeader": "IBM Cloud Activity Tracker con LogDNA • <a>Docs</a>",
+    "sidePanelTitle": "Editar seguimiento de actividad",
+    "liteInstanceError": {
+      "title": "Instancia no válida",
+      "subtitle": "La <a>instancia del comprobador de actividad</a> de esta ubicación usa el plan Lite y no se puede utilizar. Suprima la instancia primero o elija otra ubicación."
+    },
+    "noKey": {
+      "subtitle": "La instancia de rastreador de actividades seleccionada no tiene una clave de ingestión conectada. Puede obtener una clave ejecutando la acción \"Obtener clave\" desde la <a>página de detalles de instancia</a>.",
+      "title": "No hay ninguna clave de ingesta"
+    }
+  },
+  "applicationInstance": "Instancia de aplicación",
+  "disabled": "Inhabilitado",
+  "edit": "Editar",
+  "enabled": "Habilitada",
+  "error": "Error",
+  "free": "Gratuito",
+  "information": "Información",
+  "instance": "Instancia",
+  "instanceNameRequired": "Se necesita un nombre de instancia",
+  "instanceNew": "Crear una nueva instancia",
+  "instancePlatform": "Igual que la plataforma",
+  "instanceNone": "Ninguna",
+  "locationsError": "No se pueden cargar los datos de ubicaciones.",
+  "learnMore": "<a>Más información</a>",
+  "liteAlreadySelectedError": {
+    "subtitle": "El plan Lite se selecciona tanto para instancias de plataforma como de servicio de aplicaciones. Seleccione un plan de pago para una o ambas instancias.",
+    "title": "Se permite una instancia del plan Lite"
+  },
+  "liteExistingInstanceError": {
+    "subtitle": "Solo puede tener una instancia de plan Lite de este servicio por cuenta. Suprima la instancia de plan Lite actual para crear una nueva.",
+    "title": "Instancia existente del plan Lite"
+  },
+  "loading": "Cargando...",
+  "location": "Ubicación",
+  "logging": {
+    "description": "Almacene, busque, analice y supervise los datos y sucesos de registro de IBM Cloud y emita alertas sobre ellos. <a>Más información</a>",
+    "keysError": "No se pueden recuperar las claves de ingesta de registro.",
+    "name": "Registro",
+    "noKey": {
+      "subtitle": "'La instancia de registro seleccionada no tiene ninguna clave de ingesta conectada. Puede obtener una clave ejecutando la acción \"Obtener clave\" desde la <a>página de detalles de instancia</a>.",
+      "title": "No hay ninguna clave de ingesta"
+    },
+    "nonePlatformSubtitle": "Sin el registro de la plataforma, la resolución de errores y la obtención de soporte puede resultar difícil.",
+    "noneApplicationSubtitle": "Sin el registro de aplicaciones, la resolución de errores y la obtención de soporte puede resultar difícil.",
+    "plansError": "No se pueden cargar los planes del registro.",
+    "resourceListError": "No se pueden cargar las instancias de registro.",
+    "serviceName": "IBM Log Analysis",
+    "sidePanelHeader": "IBM Log Analysis • <a>Docs</a>",
+    "sidePanelTitle": "Editar registro",
+    "liteInstanceError": {
+      "title": "Instancia de plataforma no válida",
+      "subtitle": "La <a>instancia de registro</a> de plataforma de esta ubicación usa el plan Lite y no se puede utilizar. Inhabilite el registro de plataforma para esta instancia en primer lugar o elija otra ubicación."
+    }
+  },
+  "monitoring": {
+    "description": "Proporciona visibilidad del rendimiento y el estado de los recursos basados en IBM Cloud. <a>Más información</a>",
+    "keysError": "No se pueden recuperar las claves de acceso de supervisión.",
+    "name": "Supervisión",
+    "noKey": {
+      "subtitle": "La instancia de supervisión seleccionada no tiene una clave de acceso conectada. Puede obtener una clave ejecutando la acción \"Obtener clave\" desde la <a>página de detalles de instancia</a>.",
+      "title": "No hay ninguna clave de acceso"
+    },
+    "nonePlatformSubtitle": "Sin métricas de plataforma, la resolución de errores y la obtención de soporte pueden resultar difíciles.",
+    "noneApplicationSubtitle": "Sin métricas de aplicación, la resolución de errores y la obtención de soporte pueden resultar difíciles.",
+    "plansError": "No se pueden cargar los planes de supervisión.",
+    "resourceListError": "No se pueden cargar las instancias de supervisión.",
+    "serviceName": "IBM Cloud Monitoring",
+    "sidePanelHeader": "IBM Cloud Monitoring • <a>Docs</a>",
+    "sidePanelTitle": "Editar supervisión",
+    "liteInstanceError": {
+      "title": "Instancia de plataforma no válida",
+      "subtitle": "La <a>instancia de supervisión</a> de plataforma de esta ubicación usa el plan Lite y no se puede utilizar. Inhabilite las métricas de plataforma para esta instancia en primer lugar o elija otra ubicación."
+    }
+  },
+  "name": "Nombre",
+  "plan": "Plan",
+  "platformExistingHelperText": "Ya existe una instancia de plataforma y se conectará automáticamente.",
+  "platformInstance": "Instancia de plataforma",
+  "policiesError": "No se pueden cargar políticas de acceso de grupo de recursos.",
+  "resourceGroup": "Grupo de recursos",
+  "resourceGroupsError": "No se pueden cargar los grupos de recursos.",
+  "save": "Guardar",
+  "serviceName": "Nombre de servicio",
+  "tag": "Código",
+  "tags": "Etiquetas",
+  "warning": "Aviso",
+  "noPlans": "No se han podido encontrar opciones de plan para este servicio. No podrá crear una nueva instancia.",
+  "platformLocationHelperText": "Debe ser la misma ubicación que el origen de datos"
+}

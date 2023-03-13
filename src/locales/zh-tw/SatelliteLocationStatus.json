@@ -1,0 +1,8 @@
+{
+ "action_required": "需要動作",
+ "provisioning": "建立進行中...",
+ "requestingCreation": "正在要求建立...",
+ "preparingMaster": "正在準備主節點...",
+ "finalizing": "正在終結...",
+ "infoIconDescription": "資訊"
+}

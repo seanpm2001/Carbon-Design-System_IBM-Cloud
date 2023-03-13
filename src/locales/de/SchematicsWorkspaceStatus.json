@@ -1,0 +1,16 @@
+{
+  "active": "Aktiv",
+  "completed": "Abgeschlossen",
+  "connecting": "Verbindungen herstellen",
+  "inProgress": "In Bearbeitung",
+  "created": "Erstellungsdatum",
+  "critical": "Kritisch",
+  "disabled": "Inaktiviert",
+  "draft": "Entwurf",
+  "failed": "Fehlgeschlagen",
+  "inactive": "Inaktiv",
+  "normal": "Normal",
+  "pending": "Anstehend",
+  "scanning": "Scannen",
+  "templateError": "Vorlagenfehler"
+}

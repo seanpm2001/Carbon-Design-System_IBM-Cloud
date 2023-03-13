@@ -1,0 +1,98 @@
+{
+  "activitytracker": {
+    "description": "查看和跟踪应用程序和基础结构中的更改。 <a>了解更多</a>",
+    "name": "活动跟踪",
+    "nonePlatformSubtitle": "没有活动跟踪，可能很难进行错误故障诊断和获取支持。",
+    "plansError": "无法加载活动跟踪计划。",
+    "resourceListError": "无法加载活动跟踪实例。",
+    "serviceName": "IBM Cloud Activity Tracker with LogDNA",
+    "sidePanelHeader": "带有 LogDNA 的 IBM Cloud Activity Tracker • <a>Docs</a>",
+    "sidePanelTitle": "编辑活动跟踪",
+    "liteInstanceError": {
+      "title": "无效实例",
+      "subtitle": "此位置中的 <a>Activity Tracker 实例</a> 使用轻量套餐，并且无法使用。 请先删除实例或选择其他位置。"
+    },
+    "noKey": {
+      "subtitle": "所选 Activity Tracker 实例没有附加的摄入密钥。 您可以从<a>实例详细信息页面</a>运行“获取关键字”操作，以此获取密钥。",
+      "title": "无数据摄入密钥"
+    }
+  },
+  "applicationInstance": "应用程序实例",
+  "disabled": "已禁用",
+  "edit": "编辑",
+  "enabled": "已启用",
+  "error": "错误",
+  "free": "免费",
+  "information": "信息",
+  "instance": "实例",
+  "instanceNameRequired": "需要实例名称",
+  "instanceNew": "创建新实例",
+  "instancePlatform": "与平台相同",
+  "instanceNone": "无",
+  "locationsError": "无法加载位置数据。",
+  "learnMore": " <a>了解更多</a>",
+  "liteAlreadySelectedError": {
+    "subtitle": "已为平台和应用程序服务实例选择轻量套餐。 为一个或两个实例选择付费套餐。",
+    "title": "仅允许一个轻量套餐实例"
+  },
+  "liteExistingInstanceError": {
+    "subtitle": "每个帐户只能有一个此服务的轻量套餐实例。 删除当前 Lite 套餐实例以创建新实例。",
+    "title": "现有轻量套餐实例"
+  },
+  "loading": "正在加载...",
+  "location": "位置",
+  "logging": {
+    "description": "存储、搜索、分析、监视和警告 IBM Cloud 日志记录数据和事件。 <a>了解更多</a>",
+    "keysError": "无法检索日志记录数据摄入密钥。",
+    "name": "日志记录",
+    "noKey": {
+      "subtitle": "所选日志记录实例没有附加的数据摄入密钥。 您可以从<a>实例详细信息页面</a>运行“获取关键字”操作，以此获取密钥。",
+      "title": "无数据摄入密钥"
+    },
+    "nonePlatformSubtitle": "没有平台日志记录，可能很难进行错误故障诊断和获取支持。",
+    "noneApplicationSubtitle": "没有应用程序日志记录，可能很难进行错误故障诊断和获取支持。",
+    "plansError": "无法加载日志记录计划。",
+    "resourceListError": "无法加载日志记录实例。",
+    "serviceName": "IBM Log Analysis",
+    "sidePanelHeader": "IBM Log Analysis • <a>Docs</a>",
+    "sidePanelTitle": "编辑日志记录",
+    "liteInstanceError": {
+      "title": "平台实例无效",
+      "subtitle": "此位置中的平台<a>日志记录实例</a>使用轻量套餐，并且无法使用。 请先对此实例禁用平台日志记录，或者选择其他位置。"
+    }
+  },
+  "monitoring": {
+    "description": "提供 IBM Cloud 支持的资源的性能和运行状态可见性。 <a>了解更多</a>",
+    "keysError": "无法检索监视访问密钥。",
+    "name": "监视",
+    "noKey": {
+      "subtitle": "所选监视实例没有连接的访问密钥。 您可以从<a>实例详细信息页面</a>运行“获取关键字”操作，以此获取密钥。",
+      "title": "无访问密钥"
+    },
+    "nonePlatformSubtitle": "没有平台度量，可能很难进行错误故障诊断和获取支持。",
+    "noneApplicationSubtitle": "没有应用程序度量，可能很难进行错误故障诊断和获取支持。",
+    "plansError": "无法加载监视计划。",
+    "resourceListError": "无法加载监视实例。",
+    "serviceName": "IBM Cloud Monitoring",
+    "sidePanelHeader": "IBM Cloud Monitoring • <a>Docs</a>",
+    "sidePanelTitle": "编辑监视",
+    "liteInstanceError": {
+      "title": "平台实例无效",
+      "subtitle": "此位置中的平台<a>监视实例</a>使用轻量套餐，并且无法使用。 请先禁用此实例的平台度量值，或者选择其他位置。"
+    }
+  },
+  "name": "名称",
+  "plan": "计划",
+  "platformExistingHelperText": "平台实例已存在，并且将自动连接。",
+  "platformInstance": "平台实例",
+  "policiesError": "无法加载资源组访问策略。",
+  "resourceGroup": "资源组",
+  "resourceGroupsError": "无法装入资源组。",
+  "save": "保存",
+  "serviceName": "服务名称",
+  "tag": "标记",
+  "tags": "标记",
+  "warning": "警告",
+  "noPlans": "无法找到此服务的套餐选项。 您将无法创建新实例。",
+  "platformLocationHelperText": "这必须与数据源的位置相同"
+}

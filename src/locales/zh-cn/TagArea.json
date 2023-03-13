@@ -1,0 +1,15 @@
+{
+  "duplicateValue": "此值已存在。",
+  "tags": "标记",
+  "label": {
+    "keyValue": "标签的格式必须为 \"key:value\"。",
+    "invalidPrefix": "标签前缀或名称无效。",
+    "prefixMaxLength": "标签前缀必须不超过 {{maxLength}} 个字符。",
+    "dnsMaxLength": "DNS 子域标签必须不超过 {{maxLength}} 个字符。",
+    "dnsValidPrefix": "标签前缀必须是有效的 DNS 子域。",
+    "nameMaxLength": "标签名称必须不超过 {{maxLength}} 个字符。",
+    "invalidLabelName": "标签名称无效。",
+    "valueMaxLength": "标签值必须不超过 {{maxLength}} 个字符。",
+    "invalidLabelValue": "标签值无效。"
+  }
+}

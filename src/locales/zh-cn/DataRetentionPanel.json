@@ -1,0 +1,37 @@
+{
+  "sidePanelTitle": "存储历史数据",
+  "panelDoneButton": "创建",
+
+  "progressStep1": "选择套餐",
+  "progressStep2": "配置",
+
+  "serviceDescription": "预计需要过去 7 天以上的扫描结果？ 请添加 IBM Cloud Platform Analytics 实例，以存储无限历史数据并探索随时间变化的趋势",
+  "pricingTitle": "选择价格套餐",
+  "disclaimer": "当前无法更改套餐。 如果以后需要切换，您需要创建新的 Platform Analytics 实例。",
+
+  "configureTitle": "配置存储器",
+  "serviceLabel": "服务名称",
+  "regionLabel": "区域",
+  "groupLabel": "选择资源组",
+  "groupEmptyLabel": "无可用的资源组",
+  "groupTooltipText": "请考虑要如何在帐户中组织资源。 创建服务实例后，即无法更改所选择的资源组。",
+  "groupTooltipLink": "了解更多信息",
+  "tooltipIcon": "参考",
+  "tagsLabel": "标记（可选）",
+  "tagsPlaceholder": "示例：env:dev, version-1",
+
+  "permissionErrorMessage": "您没有将实例添加到此帐户中任何资源组的许可权。 请联系帐户所有者以在帐户中的资源组上分配编辑者或管理员角色。",
+  "plansNotFoundErrorMessage": "似乎没有可供此帐户使用的价格套餐。",
+
+  "costMessage": "估算每月成本",
+  "costTooltipText": "等待公布",
+  "termsMessage": "我同意 ",
+  "termsLink": "条款和条件",
+
+  "successModalHeader": "成功！",
+  "successModalMessage": "您已成功创建 Data Storage for Compliance 实例。 现在将存储所有未来的合规性数据，并可以按日期对这些数据进行搜索。",
+  "errorModalHeader": "错误！",
+  "errorModalMessage": "创建数据作用域时发生错误。 请稍后重试。",
+  "modalPrimaryButton": "确定",
+  "modalSecondaryButton": "取消"
+}

@@ -1,0 +1,6 @@
+{
+    "selectCountry": "選取國家/地區",
+    "invalidText": "需要有效的值",
+    "errorLoadingCountries": "無法載入國家/地區",
+    "pricingCountries": "定價國家/地區"
+}

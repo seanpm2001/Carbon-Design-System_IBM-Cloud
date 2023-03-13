@@ -1,0 +1,37 @@
+{
+  "sidePanelTitle": "Almacenar datos históricos",
+  "panelDoneButton": "Crear",
+
+  "progressStep1": "Seleccionar plan",
+  "progressStep2": "Configurar",
+
+  "serviceDescription": "¿Cree que necesitará los resultados de la exploración pasados más de 7 días? Añada una instancia de IBM Cloud Platform Analytics para almacenar datos históricos ilimitados y explorar las tendencias a lo largo del tiempo",
+  "pricingTitle": "Seleccione un plan de precios",
+  "disclaimer": "Los planes no se pueden cambiar actualmente. Si necesita cambiar más adelante, deberá crear una nueva instancia de Platform Analytics.",
+
+  "configureTitle": "Configurar almacenamiento",
+  "serviceLabel": "Nombre de servicio",
+  "regionLabel": "Región",
+  "groupLabel": "Seleccione un grupo de recursos",
+  "groupEmptyLabel": "No hay ningún grupo de recursos disponible",
+  "groupTooltipText": "Tenga en cuenta la forma en que desea organizar los recursos en la cuenta. El grupo de recursos que seleccione no se puede modificar una vez que se cree la instancia de servicio.",
+  "groupTooltipLink": "Más información",
+  "tooltipIcon": "Info",
+  "tagsLabel": "Etiquetas (opcional)",
+  "tagsPlaceholder": "Ejemplos: env:dev, version-1",
+
+  "permissionErrorMessage": "Parece que no tiene permiso para añadir la instancia a cualquier grupo de recursos en esta cuenta. Póngase en contacto con el propietario de la cuenta al que se ha asignado un rol de Editor o Administrador en un grupo de recursos de la cuenta.",
+  "plansNotFoundErrorMessage": "Parece que no hay ningún plan de precios disponible para esta cuenta.",
+
+  "costMessage": "Coste mensual estimado",
+  "costTooltipText": "TBA",
+  "termsMessage": "Acepto los ",
+  "termsLink": "Términos y condiciones",
+
+  "successModalHeader": "Correcto",
+  "successModalMessage": "Ha creado correctamente una instancia de Data Storage for Compliance. Todos los datos de conformidad futuros se almacenarán y se podrán buscar por fecha.",
+  "errorModalHeader": "Error",
+  "errorModalMessage": "Se ha producido un error al crear el ámbito de los datos. Vuelva a intentarlo más adelante.",
+  "modalPrimaryButton": "Correcto",
+  "modalSecondaryButton": "Cancelar"
+}

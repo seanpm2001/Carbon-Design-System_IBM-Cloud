@@ -1,0 +1,17 @@
+{
+  "recentInvoices": "Kürzlich bearbeitete Rechnungen",
+  "viewAll": "Alles anzeigen",
+  "UNAUTHORIZED_CAPTION": "Wenden Sie sich an den zuständigen Administrator und fordern Sie die Zugriffsberechtigung an.",
+  "UNAUTHORIZED_TEXT": "Sie verfügen nicht über die Zugriffsberechtigung zum Anzeigen kürzlich bearbeiteter Rechnungen",
+  "ERROR_CAPTION": "Laden Sie die Seite erneut, um diese Informationen anzuzeigen.",
+  "ERROR_TEXT": "Es ist ein Problem aufgetreten",
+  "DSW_CAPTION": "Zum Anzeigen Ihrer offiziellen Rechnung öffnen Sie ",
+  "DSW_CAPTION_LINK": "IBM Rechnungen",
+  "DSW_TEXT": "Die Rechnungen für dieses Konto werden auf einer separaten Plattform erstellt",
+  "EMPTY_CAPTION": "Rufen Sie die Seite am Anfang des nächsten Abrechnungszyklus erneut auf.",
+  "EMPTY_TEXT": "Für dieses Konto wurden noch keine Rechnungen erstellt",
+  "UPGRADE_CAPTION": "Führen Sie ein Upgrade für Ihr Konto durch, um kürzlich erstellte Rechnungen anzuzeigen.",
+  "UPGRADE_TEXT": "Diese Ansicht ist für einige Kontotypen nicht verfügbar.",
+  "ENTERPRISE_CAPTION": "Wenden Sie sich an den Kontoeigner oder wechseln Sie in das Unternehmenskonto, um weitere Informationen zu Rechnungen zu erhalten.",
+  "ENTERPRISE_TEXT": "Dieses Konto wird durch ein Unternehmen verwaltet."
+}

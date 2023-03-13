@@ -1,0 +1,12 @@
+{
+  "heading": "确定要弃用此产品吗？",
+  "details": "{{productName}} 将进入 90 天的弃用期，在此期间，您将无法对其进行更改。 将向最终用户显示通知，说明该产品从 {{date}} 开始将不可用。",
+  "reasonLabel": "为什么弃用您的产品？",
+  "descriptionLabel": "在以下字段中，您可以包含其他信息，如弃用声明的链接：",
+  "close": "关闭",
+  "deprecate": "不推荐",
+  "cancel": "取消",
+  "loading": "正在装入",
+  "deprecateOnlyVersionHeading": "确定要弃用唯一发布的版本吗？",
+  "deprecateOnlyVersionDescription": "{{productName}} {{versionNumber}} 是唯一可用的已发布版本。 如果要弃用此版本，那么您的产品将进入 90 天的弃用期，在此期间，您将无法对其进行更改。 将向最终用户显示通知，说明该产品将于 {{date}} 起无法启动"
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Atualizar versão do cluster",
+  "secondaryButton": "Cancelar",
+  "primaryButton": "Atualizar",
+  "updating": "Atualizando ...",
+  "inputLabel": "Versão do cluster",
+  "description": "Durante a atualização, seu cluster principal, nós do trabalhador, apps e recursos continuam a ser executados. Após a atualização ser concluída, é possível atualizar as versões do nó do trabalhador. Para obter instruções e mais informações sobre diferenças entre versões, <a>revise os docs</a>.",
+  "versionRequiresUpdate": "{{version}} (atualizar para uma versão anterior primeiro)",
+  "betaVersion": "{{version}} (criar um novo cluster para experimentar a versão beta)",
+  "noUpdatesAvailable": "Você está usando a versão mais recente do servidor de API. Não há atualizações disponíveis neste momento.",
+  "clusterUpdating": "Seu servidor de API está atualizando para a versão {{version}}! Volte em 1 hora para atualizar os nós do trabalhador para a mesma versão.",
+  "errorSubtitle": "Não é possível atualizar a versão do cluster.",
+  "dropdownLabel": "Escolha uma versão do cluster",
+  "notificationIcon": "Notificação",
+  "cannotUpdateTitle": "A versão do cluster não pode ser atualizada.",
+  "cannotUpdateSubtitle": "Nenhuma opção de atualização de versão válida está disponível.",
+  "clusterErrorSubtitle": "Não é possível carregar detalhes do cluster.",
+  "versionsErrorSubtitle": "Não é possível carregar opções de versão de atualização de cluster.",
+  "success": "Sucesso!",
+  "close": "Fechar"
+}

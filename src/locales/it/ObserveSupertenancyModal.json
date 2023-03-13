@@ -1,0 +1,52 @@
+{
+  "monitoring": {
+    "allRegions": "Tutte le regioni",
+    "cancel": "Annulla",
+    "configure": "Configura",
+    "heading": "Seleziona un'istanza IBM Cloud Monitoring per ricevere le metriche della piattaforma",
+    "regionLabel": "Seleziona una regione",
+    "regionTitle": "Filtra l'istanza per regione",
+    "instanceLabel": "Seleziona un'istanza",
+    "instanceTitle": "Istanza(e) nella regione",
+    "instanceTitleWithRegion": "Istanza(e) in {{region}}",
+    "generalDescription": "Scegli quale istanza IBM Cloud Monitoring riceverà le metriche della piattaforma dalle istanze del servizio abilitate su IBM Cloud.",
+    "createLink": "Puoi anche <a>creare un'istanza</a>.",
+    "somethingWentWrong": "Si è verificato un problema",
+    "updateError": "{{message}}. Errore: {{error_code}}",
+    "fetchError": "Impossibile recuperare le istanze IBM Cloud Monitoring.",
+    "confirmInstanceChange": "Confermo di voler interrompere la ricezione delle metriche della piattaforma da {{instance}}"
+  },
+  "logging": {
+    "allRegions": "Tutte le regioni",
+    "cancel": "Annulla",
+    "configure": "Configura",
+    "heading": "Seleziona un'istanza IBM Log Analysis per ricevere i log della piattaforma",
+    "regionLabel": "Seleziona una regione",
+    "regionTitle": "Filtra l'istanza per regione",
+    "instanceLabel": "Seleziona un'istanza",
+    "instanceTitle": "Istanza(e) nella regione",
+    "instanceTitleWithRegion": "Istanza(e) in {{region}}",
+    "generalDescription": "Scegli quale istanza IBM Log Analysis riceverà i log della piattaforma dalle istanze del servizio abilitate su IBM Cloud.",
+    "createLink": "Puoi anche <a>creare un'istanza</a>.",
+    "somethingWentWrong": "Si è verificato un problema",
+    "updateError": "{{message}}. Errore: {{error_code}}",
+    "fetchError": "Impossibile recuperare le istanze IBM Log Analysis.",
+    "confirmInstanceChange": "Confermo di voler interrompere la ricezione dei log della piattaforma da {{instance}}"
+  },
+  "common": {
+    "successIconDescription": "Icona di operazione riuscita",
+    "errorIconDescription": "Icona di errore",
+    "au-syd": "Sydney",
+    "br-sao": "Sao Paulo",
+    "ca-tor": "Toronto",
+    "eu-de": "Francoforte",
+    "eu-fr2": "BNPP_EU",
+    "eu-gb": "Londra",
+    "jp-osa": "Osaka",
+    "jp-tok": "Tokyo",
+    "us-east": "Washington DC",
+    "us-south": "Dallas",
+    "select": "Seleziona",
+    "close": "Chiudi"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "titleText": "实例",
+  "errorTitle": "无法列出资源实例。",
+  "errorIconDescription": "无法列出资源实例。",
+  "errorSubtitle": "资源实例不可用。",
+  "infoTitle": "资源实例不存在。",
+  "infoIconDescription": "资源实例不存在。",
+  "infoSubtitle": "创建资源实例并重试。",
+  "dropdownLabel": "实例名称..."
+}

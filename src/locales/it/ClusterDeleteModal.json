@@ -1,0 +1,15 @@
+{
+  "title": "Elimina cluster",
+  "secondaryButton": "Annulla",
+  "primaryButton": "Elimina",
+  "description": "Quando elimini il cluster, vengono eliminati in modo permanente tutti i nodi di lavoro, le applicazioni e i contenitori. Questa azione non può essere annullata. Prima di procedere, assicurati di aver eseguito il backup di tutti i file di configurazione e dei dati necessari.",
+  "deleteStorage": "Elimina l'archiviazione persistente utilizzata da questo cluster",
+  "confirmationInputLabel": "Immetti \"{{clusterName}}\" per confermare",
+  "deleting": "Eliminazione in corso...",
+  "deleteWorkspace": "L'eliminazione del cluster non elimina lo spazio di lavoro Schematics o le risorse associate. Per ripulire il cluster, eseguire una distruzione ed eliminazione dello spazio di lavoro in Schematics.",
+  "workspaceError": "Non è possibile determinare se questo cluster è connesso a uno spazio di lavoro Schematics. In questo caso, si deve eseguire una distruzione ed eliminazione dello spazio di lavoro in Schematics.",
+  "blockedSchematics": "L'apertura della finestra dello spazio di lavoro Schematics potrebbe essere stata bloccata.",
+  "popup": "Pop-up bloccato?",
+  "workspace": "Spazio di lavoro Schematics",
+  "workspaces": "Spazi di lavoro Schematics"
+}

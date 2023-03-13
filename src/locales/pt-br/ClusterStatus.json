@@ -1,0 +1,20 @@
+{
+  "requested": "Solicitado",
+  "deploying": "Implementando",
+  "pending": "Pendente",
+  "normal": "Normal",
+  "warning": "Aviso",
+  "critical": "Crítica",
+  "deleting": "Excluindo",
+  "delete_retry_wait": "Tentando excluir novamente",
+  "delete_failed": "Exclusão com falha",
+  "deploy_retry_wait": "Tentando implementar novamente",
+  "deploy_failed": "Implementação com falha",
+  "unsupported": "Não-suportado",
+  "unknown": "Desconhecido",
+  "requestingCreation": "Solicitando a criação...",
+  "preparingMaster": "Preparando o mestre, os trabalhadores...",
+  "preparingMasterSatellite": "Preparando o mestre...",
+  "finalizing": "Finalizando trabalhadores...",
+  "finalizingSatellite": "Finalizando cluster..."
+}

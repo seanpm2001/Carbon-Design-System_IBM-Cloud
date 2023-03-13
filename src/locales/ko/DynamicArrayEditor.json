@@ -1,0 +1,17 @@
+{
+  "modalHeader": "배열 편집",
+  "save": "저장",
+  "edit": "편집",
+  "cancel": "취소",
+  "tagArea": {
+    "label": "값",
+    "placeholder": "배열 값을 입력하십시오. 저장하고 나면 모든 값이 자동으로 견적서에 추가됩니다."
+  },
+  "stringArrayEditor": {
+    "description": "배열 값을 입력하십시오. 저장 후 견적이 값에 추가됩니다.",
+    "errorMsg": "값은 올바른 문자열 배열이어야 합니다. 예: [\"array\"]."
+  },
+  "mixedArrayEditor": {
+    "errorMsg": "값은 올바른 배열이어야 합니다. 예: [\"array\"]."
+  }
+}

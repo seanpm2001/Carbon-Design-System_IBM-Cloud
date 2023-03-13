@@ -1,0 +1,19 @@
+{
+  "createTag" : "Si necesita crear una nueva etiqueta de gestión de acceso, hágalo en la sección Etiquetas",
+  "comboBox" : "Especifique un nombre de etiqueta",
+  "error" : "Estado de error: ",
+  "labels" : {
+    "tags": "Etiquetas",
+    "singleresource" : "recurso",
+    "resources" : "recursos",
+    "ghost" : "ghost: ",
+    "createTag": "Para crear nuevas etiquetas de gestión de accesos, visite la página Etiquetas."
+},
+  "heading" : {
+    "tagmap" : "Recursos etiquetados que puede ver"
+},
+  "button" : {
+    "add" : "Añadir"
+},
+  "close": "Cerrar"
+}

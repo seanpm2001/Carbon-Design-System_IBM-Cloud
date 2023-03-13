@@ -1,0 +1,9 @@
+{
+  "titleText": "리소스 그룹",
+  "label": "리소스 그룹 선택",
+  "errorTitle": "리소스 그룹을 로드하는 중에 문제가 발생했습니다.",
+  "errorSubtitle": "나중에 다시 시도하십시오.",
+  "noGroupsTitle": "리소스 그룹에 액세스할 수 없습니다.",
+  "linkText": "리소스 그룹 작성",
+  "iconDescription": "리소스 그룹 새로 고치기"
+}

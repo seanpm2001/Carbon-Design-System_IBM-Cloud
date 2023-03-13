@@ -1,0 +1,19 @@
+{
+  "createTag" : "Se devi creare una nuova tag di gestione dell'accesso, puoi farlo nella sezione Tag",
+  "comboBox" : "Immetti il nome tag",
+  "error" : "Stato dell'errore: ",
+  "labels" : {
+    "tags": "Tag",
+    "singleresource" : "risorsa",
+    "resources" : "risorse",
+    "ghost" : "ghost: ",
+    "createTag": "Per creare le tag di gestione dell'accesso, visita la pagina Tag."
+},
+  "heading" : {
+    "tagmap" : "Risorse con tag che puoi visualizzare"
+},
+  "button" : {
+    "add" : "Aggiungi"
+},
+  "close": "Chiudi"
+}

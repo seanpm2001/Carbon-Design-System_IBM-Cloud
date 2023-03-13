@@ -1,0 +1,18 @@
+{
+    "requestToJoin": "请求加入 Slack",
+    "orSignIn": "或登录到 Slack",
+    "email": "电子邮件",
+    "windowBlocked": "Slack 窗口可能已被阻止，无法打开。",
+    "alreadyInvited": "加入 Slack 通道的邀请已发送到您的电子邮件。 请查看您的电子邮件。",
+    "unknownError": "发生未知错误。 请过几分钟后重试。",
+    "getInvite": "获取邀请",
+    "response": "响应",
+    "error": "错误",
+    "success": "成功",
+    "inviteSent": "邀请已发送到 {{emailAddress}}。 请查看您的电子邮件！",
+    "joinUs": "通过 Slack 加入我们。",
+    "confirmationModalTitle": "这是针对客户的公共 Slack 通道",
+    "confirmationModalMessage": "如果要寻求帮助，请<a>联系 IBM Cloud 支持人员</a>。",
+    "confirmationModalMessageWithSlack": "如果要寻求帮助，请<a>联系 IBM Cloud 支持人员</a>或尝试使用 IBM 内部 <a>{{name}}</a> 通道。",
+    "cancel": "取消"
+}

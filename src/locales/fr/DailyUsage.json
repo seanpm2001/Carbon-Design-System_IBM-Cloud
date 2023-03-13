@@ -1,0 +1,18 @@
+{
+  "title": "Utilisation mensuelle à ce jour",
+  "explore": "Explorer davantage dans <a>Platform Analytics</a>",
+  "tooltipAriaLabel": "Infobulle Platform Analytics",
+  "tooltipContent": "Platform Analytics permet d'explorer les dates et filtres personnalisés.",
+  "dailyUsageByService": "Utilisation quotidienne par service",
+  "dailyUsageByInstance": "Utilisation quotidienne d'un service par instance",
+  "dailyUsageByGroup": "Utilisation quotidienne par groupe",
+  "date": "Date",
+  "amount": "Montant ({{currency}})",
+  "groupName": "Utilisation cumulée",
+  "unauthorizedCaption": "Vous devez détenir le rôle Administrateur sur le service de gestion des comptes de facturation pour afficher l'utilisation de l'ensemble du compte.",
+  "unauthorizedText": "Il semble que vous ne disposiez pas des droits d'accès permettant d'afficher les données d'utilisation du compte.",
+  "genericErrorCaption": "Erreur de serveur interne",
+  "genericErrorText": "Un problème est survenu lors de l'extraction des données de graphique. Actualisez la page ou faites une nouvelle tentative ultérieurement.",
+  "lastUpdated": "Dernière mise à jour",
+  "noDataAvailable": "Données non disponibles pour le moment"
+}

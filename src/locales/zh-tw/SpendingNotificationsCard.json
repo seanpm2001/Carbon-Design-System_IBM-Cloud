@@ -1,0 +1,15 @@
+{
+  "spendingNotifications": "消費通知",
+  "notAvailableText": "此視圖不適用於部分帳戶類型",
+  "notAvailableCaption": "請升級您的帳戶以存取消費通知。",
+  "notEnabledText": "您似乎尚未啟用消費通知",
+  "notEnabledCaption": "若要啟用消費通知，請前往 ",
+  "noAccessText": "您似乎沒有存取權，無法檢視消費通知",
+  "noAccessCaption": "若要存取，請聯絡管理者。",
+  "totalAccount": "帳戶消費總計",
+  "totalRuntime": "Cloud Foundry 運行環境消費總計",
+  "totalContainer": "容器消費總計",
+  "totalService": "服務消費總計",
+  "viewAll": "檢視全部",
+  "genericError": "目前無法載入消費通知。 請稍後重試。"
+}

@@ -1,0 +1,15 @@
+{
+  "modal": {
+    "label": "您確定嗎？",
+    "closeText": "關閉",
+    "header": "正在關閉側邊畫面",
+    "confirmText": "您確定要關閉側邊畫面嗎？"
+  },
+  "backText": "上一步",
+  "cancelText": "取消",
+  "doneText": "完成",
+  "nextText": "下一步",
+  "previousText": "上一個",
+  "closePanelText": "關閉畫面",
+  "doneIsLoadingText": "正在載入..."
+}

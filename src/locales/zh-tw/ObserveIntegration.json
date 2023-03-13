@@ -1,0 +1,98 @@
+{
+  "activitytracker": {
+    "description": "檢視及追踪應用程式和基礎架構的變更。 <a>進一步瞭解</a>",
+    "name": "活動追蹤",
+    "nonePlatformSubtitle": "沒有活動追踪，疑難排解錯誤及取得支援可能很困難。",
+    "plansError": "無法載入活動追踪計劃。",
+    "resourceListError": "無法載入活動追踪實例。",
+    "serviceName": "IBM Cloud Activity Tracker with LogDNA",
+    "sidePanelHeader": "IBM Cloud Activity Tracker 具有 LogDNA•  <a>Docs</a>",
+    "sidePanelTitle": "編輯活動追踪",
+    "liteInstanceError": {
+      "title": "實例無效",
+      "subtitle": "此位置中的<a>活動追蹤程式實例</a>使用「精簡」方案，且無法使用。 請先刪除實例，或選擇不同的位置。"
+    },
+    "noKey": {
+      "subtitle": "選取的活動追蹤程式實例沒有附加的汲取金鑰。 您可以從<a>實例詳細資料頁面</a>中執行「取得金鑰」動作來取得金鑰。",
+      "title": "無汲取金鑰"
+    }
+  },
+  "applicationInstance": "應用程式實例",
+  "disabled": "已停用",
+  "edit": "編輯",
+  "enabled": "已啟用",
+  "error": "錯誤",
+  "free": "免費",
+  "information": "資訊",
+  "instance": "實例",
+  "instanceNameRequired": "需要實例名稱",
+  "instanceNew": "建立新的實例",
+  "instancePlatform": "與平台相同",
+  "instanceNone": "無",
+  "locationsError": "無法載入位置資料。",
+  "learnMore": "<a>進一步瞭解</a>",
+  "liteAlreadySelectedError": {
+    "subtitle": "已針對平台和應用程式服務實例選取 Lite 方案。 為其中一個或這兩個實例選取付費方案。",
+    "title": "僅容許一個 Lite 方案實例"
+  },
+  "liteExistingInstanceError": {
+    "subtitle": "每個帳戶只能有一個此服務的 Lite 方案實例。 刪除現行 Lite 計劃實例以建立新的實例。",
+    "title": "現有精簡方案實例"
+  },
+  "loading": "正在載入...",
+  "location": "位置",
+  "logging": {
+    "description": "儲存、搜尋、分析、監視 IBM Cloud 記載資料及事件，並針對其發出警示。 <a>進一步瞭解</a>",
+    "keysError": "無法擷取記載汲取金鑰。",
+    "name": "記載",
+    "noKey": {
+      "subtitle": "選取的記載實例沒有連接的汲取金鑰。 您可以從<a>實例詳細資料頁面</a>中執行「取得金鑰」動作來取得金鑰。",
+      "title": "無汲取金鑰"
+    },
+    "nonePlatformSubtitle": "沒有平台記載，疑難排解錯誤並取得支援可能很困難。",
+    "noneApplicationSubtitle": "沒有應用程式記載，疑難排解錯誤並取得支援可能很困難。",
+    "plansError": "無法載入記載計劃。",
+    "resourceListError": "無法載入記載實例。",
+    "serviceName": "IBM Log Analysis",
+    "sidePanelHeader": "IBM Log Analysis • <a>Docs</a>",
+    "sidePanelTitle": "編輯記載",
+    "liteInstanceError": {
+      "title": "平台實例無效",
+      "subtitle": "此位置中的平台<a>記載實例</a>使用「精簡」方案，無法使用。 請先停用此實例的平台記載，或選擇不同的位置。"
+    }
+  },
+  "monitoring": {
+    "description": "提供您 IBM Cloud 支援的資源的效能與性能的可見性。 <a>進一步瞭解</a>",
+    "keysError": "無法擷取監視存取金鑰。",
+    "name": "監視",
+    "noKey": {
+      "subtitle": "選取的監視實例沒有連接的存取金鑰。 您可以從<a>實例詳細資料頁面</a>中執行「取得金鑰」動作來取得金鑰。",
+      "title": "無存取金鑰"
+    },
+    "nonePlatformSubtitle": "沒有平台度量，疑難排解錯誤並取得支援可能很困難。",
+    "noneApplicationSubtitle": "沒有應用程式度量，疑難排解錯誤並取得支援可能很困難。",
+    "plansError": "無法載入監視計劃。",
+    "resourceListError": "無法載入監視實例。",
+    "serviceName": "IBM Cloud Monitoring",
+    "sidePanelHeader": "IBM Cloud Monitoring • <a>Docs</a>",
+    "sidePanelTitle": "編輯監視",
+    "liteInstanceError": {
+      "title": "平台實例無效",
+      "subtitle": "此位置中的平台<a>監視實例</a>使用「精簡」方案，無法使用。 請先停用此實例的平台度量值，或選擇不同的位置。"
+    }
+  },
+  "name": "名稱",
+  "plan": "方案",
+  "platformExistingHelperText": "平台實例已存在，且將自動連接。",
+  "platformInstance": "平台實例",
+  "policiesError": "無法載入資源群組存取原則。",
+  "resourceGroup": "資源群組",
+  "resourceGroupsError": "無法載入資源群組。",
+  "save": "儲存",
+  "serviceName": "服務名稱",
+  "tag": "標籤",
+  "tags": "標籤",
+  "warning": "警告",
+  "noPlans": "找不到此服務的方案選項。 您將無法建立新的實例。",
+  "platformLocationHelperText": "這必須與資料來源的位置相同"
+}

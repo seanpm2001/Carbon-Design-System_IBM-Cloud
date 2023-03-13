@@ -1,0 +1,51 @@
+{
+  "close": {
+    "menu": "메뉴 닫기"
+  },
+  "open": {
+    "menu": "메뉴 열기"
+  },
+  "collapse": {
+    "group": "그룹 접기"
+  },
+  "expand": {
+    "group": "그룹 펼치기"
+  },
+  "clear": {
+    "all": "모든 선택된 항목 취소",
+    "selection": "선택된 항목 취소"
+  },
+  "legend_iks": "하나 이상의 네임스페이스 선택",
+  "legend_roks": "하나 이상의 프로젝트 선택",
+  "allNamespaces_iks": "모든 네임스페이스",
+  "allNamespaces_roks": "모든 프로젝트",
+  "selectNamespaces_iks": "네임스페이스 선택",
+  "selectNamespaces_roks": "프로젝트 선택",
+  "namespacesLabel_iks": "네임스페이스",
+  "namespacesLabel_roks": "프로젝트",
+  "createNamespace_iks": "네임스페이스 추가",
+  "createNamespace_roks": "프로젝트 추가",
+  "createNamespaceDescription_iks": "사용자의 특정 네임스페이스 목록에 단일 네임스페이스 또는 여러 개의 네임스페이스를 추가하십시오.",
+  "createNamespaceDescription_roks": "사용자의 특정 프로젝트 목록에 단일 프로젝트 또는 여러 개의 프로젝트를 추가하십시오.",
+  "enterNamespace_iks": "쉼표로 구분된 네임스페이스를 입력하십시오. 추가를 클릭하면 새 네임스페이스가 목록에 포함되고 자동으로 선택됩니다.",
+  "enterNamespace_roks": "쉼표로 구분된 프로젝트를 입력하십시오. 추가를 클릭하면 새 프로젝트가 목록에 포함되고 자동으로 선택됩니다.",
+  "namespace_iks": "네임스페이스",
+  "namespace_roks": "프로젝트",
+  "placeholder_iks": "nmpc-1, namespc-2",
+  "placeholder_roks": "prj-1, projct-2",
+  "targetCluster": "대상이 선택됨",
+  "create": "추가",
+  "cancel": "취소",
+  "closeLabel": "닫기",
+  "placeholder": "필터...",
+  "allNotSupportedTitle_iks": "모든 네임스페이스가 지원되지 않음",
+  "allNotSupportedTitle_roks": "모든 프로젝트가 지원되지 않음",
+  "multiNotSupportedTitle_iks": "특정 네임스페이스가 지원되지 않음",
+  "multiNotSupportedTitle_roks": "특정 프로젝트가 지원되지 않음",
+  "invalidNamespace_iks": "네임스페이스의 이름에는 소문자, 숫자 및 대시만 포함될 수 있습니다. 이 이름은 대시로 시작되거나 끝나서는 안되며 최대 63자여야 합니다.",
+  "invalidNamespace_roks": "프로젝트의 이름에는 소문자, 숫자 및 대시만 포함될 수 있습니다. 이 이름은 대시로 시작되거나 끝나서는 안되며 최대 63자여야 합니다.",
+  "duplicateNamespace": "‘{{namespace}}’이(가) 이미 있습니다. 다른 이름을 입력하십시오.",
+  "fetchErrorTitle": "세부사항을 검색할 수 없습니다.",
+  "fetchErrorDescription_iks": "네임스페이스 목록을 채울 수 없습니다. 나중에 다시 시도하십시오.",
+  "fetchErrorDescription_roks": "프로젝트 목록을 채울 수 없습니다. 나중에 다시 시도하십시오."
+}

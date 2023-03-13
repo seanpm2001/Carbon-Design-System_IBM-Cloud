@@ -1,0 +1,52 @@
+{
+  "monitoring": {
+    "allRegions": "Toutes les régions",
+    "cancel": "Annuler",
+    "configure": "Configurer",
+    "heading": "Sélectionner une instance IBM Cloud Monitoring pour recevoir des métriques de plateforme",
+    "regionLabel": "Sélectionner une région",
+    "regionTitle": "Filtrer l'instance par région",
+    "instanceLabel": "Sélectionner une instance",
+    "instanceTitle": "Instance(s) dans la région",
+    "instanceTitleWithRegion": "Instance(s) dans {{region}}",
+    "generalDescription": "Choisissez l'instance IBM Cloud Monitoring qui recevra des métriques de plateforme des instances de service activées dans IBM Cloud.",
+    "createLink": "Vous pouvez également <a>créer une instance</a>.",
+    "somethingWentWrong": "Un problème est survenu",
+    "updateError": "{{message}}. Erreur : {{error_code}}",
+    "fetchError": "Echec d'extraction d'instances IBM Cloud Monitoring.",
+    "confirmInstanceChange": "Je confirme souhaiter ne plus recevoir les métriques de plateforme de {{instance}}"
+  },
+  "logging": {
+    "allRegions": "Toutes les régions",
+    "cancel": "Annuler",
+    "configure": "Configurer",
+    "heading": "Sélectionner une instance IBM Log Analysis pour recevoir des journaux de plateforme",
+    "regionLabel": "Sélectionner une région",
+    "regionTitle": "Filtrer l'instance par région",
+    "instanceLabel": "Sélectionner une instance",
+    "instanceTitle": "Instance(s) dans la région",
+    "instanceTitleWithRegion": "Instance(s) dans {{region}}",
+    "generalDescription": "Choisissez l'instance IBM Log Analysis qui recevra des journaux de plateforme d'instances de service activées dans IBM Cloud.",
+    "createLink": "Vous pouvez également <a>créer une instance</a>.",
+    "somethingWentWrong": "Un problème est survenu",
+    "updateError": "{{message}}. Erreur : {{error_code}}",
+    "fetchError": "Echec d'extraction d'instances IBM Log Analysis.",
+    "confirmInstanceChange": "Je confirme souhaiter ne plus recevoir les journaux de plateforme de {{instance}}"
+  },
+  "common": {
+    "successIconDescription": "Icône de succès",
+    "errorIconDescription": "Icône d'erreur",
+    "au-syd": "Sydney",
+    "br-sao": "Sao Paulo",
+    "ca-tor": "Toronto",
+    "eu-de": "Francfort",
+    "eu-fr2": "BNPP_EU",
+    "eu-gb": "Londres",
+    "jp-osa": "Osaka",
+    "jp-tok": "Tokyo",
+    "us-east": "Washington DC",
+    "us-south": "Dallas",
+    "select": "Sélection",
+    "close": "Fermer"
+  }
+}

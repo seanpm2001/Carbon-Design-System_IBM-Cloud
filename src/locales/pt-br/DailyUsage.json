@@ -1,0 +1,18 @@
+{
+  "title": "Uso do mês até a data",
+  "explore": "Explore mais na <a>Platform Analytics</a>",
+  "tooltipAriaLabel": "Dica de ferramenta Platform Analytics",
+  "tooltipContent": "A Platform Analytics permite explorar datas e filtros customizados.",
+  "dailyUsageByService": "Uso diário por serviço",
+  "dailyUsageByInstance": "Uso diário para um serviço por instância",
+  "dailyUsageByGroup": "Uso diário por grupo",
+  "date": "Data",
+  "amount": "Quantia ({{currency}})",
+  "groupName": "Uso acumulativo",
+  "unauthorizedCaption": "Deve-se ter a função de Administrador no serviço de gerenciamento de contas de cobrança para visualizar o uso de toda a conta.",
+  "unauthorizedText": "Parece que você não tem acesso para visualizar os dados de uso da conta.",
+  "genericErrorCaption": "Erro interno do servidor",
+  "genericErrorText": "Algo deu errado ao buscar os dados de diagrama. Atualize a página ou tente novamente mais tarde.",
+  "lastUpdated": "Última atualização",
+  "noDataAvailable": "Dados ainda não disponíveis"
+}

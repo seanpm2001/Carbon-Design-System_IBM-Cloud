@@ -1,0 +1,10 @@
+{
+  "summaryText": "现在到期总数",
+  "summaryDetails": "估算",
+  "create": "创建",
+  "cancel": "取消",
+  "categoryText": "类别文本",
+  "creating": "正在创建服务...",
+  "creating-success": "已创建服务。",
+  "creating-iconDescription": "正在装入图标"
+}

@@ -1,0 +1,51 @@
+{
+  "description": "Verwaltet die Verschlüsselung und Entschlüsselung von Verschlüsselungsschlüsseln für Ihre IBM Cloud-Ressourcen, -Services und -Anwendungen. <a>Weitere Informationen</a>",
+  "hpcsInstanceNotificationTitle": "Hyper Protect Crypto Services-Instanzen müssen manuell erstellt werden.",
+  "hpcsInstanceNotificationSubtitle": "<a>Serviceinstanz erstellen</a> und aktualisieren Sie die Instanzen nach der Erstellung.",
+  "hpcsKeyNotificationTitle": "Hyper Protect Crypto Services-Rootschlüssel müssen manuell erstellt werden.",
+  "hpcsKeyNotificationSubtitle": "<a>Rootschlüssel erstellen</a> für die Instanz und Schlüssel nach der Erstellung aktualisieren.",
+  "instance": {
+    "title": "Schlüsselmanagementserviceinstanz",
+    "label": "Schlüsselmanagementserviceinstanz",
+    "create": "Neue Instanz erstellen",
+    "createHPCS": "Neue Hyper Protect Crypto Services-Instanz erstellen",
+    "createKeyProtect": "Neue Key Protect-Instanz erstellen",
+    "error": {
+      "title": "Schlüsselmanagementserviceinstanzen sind nicht verfügbar.",
+      "subtitle": "Laden der Schlüsselmanagementserviceinstanzen nicht möglich.",
+      "description": "Fehler"
+    },
+    "info": {
+      "title": "Oups!",
+      "subtitle": "Sie verfügen noch nicht über eine Instanz von Key Protect. Bevor Sie mit der Integration beginnen können, müssen Sie eine Instanz des Key Protect-Service <a>erstellen und konfigurieren</a> .",
+      "description": "Info"
+    }
+  },
+  "instanceName": "Instanzname",
+  "instanceNameRequired": "Ein Instanzname ist erforderlich",
+  "key": {
+    "title": "Rootschlüssel",
+    "label": "Rootschlüssel",
+    "create": "Neuen Rootschlüssel erstellen",
+    "error": {
+      "title": "Rootschlüssel sind nicht verfügbar.",
+      "subtitle": "Laden der Rootschlüssel für den Schlüsselmanagementservice nicht möglich.",
+      "description": "Fehler"
+    },
+    "info": {
+      "title": "Hoppla!",
+      "subtitle": "Sie verfügen noch nicht über einen Rootschlüssel. Rufen Sie Ihre Key Protect-Instanz auf, <a>erstellen Sie einen Rootschlüssel</a>, und versuchen Sie es anschließend erneut.",
+      "description": "Info"
+    }
+  },
+  "keyName": "Name des Rootschlüssels",
+  "keyNameRequired": "Ein Rootschlüsselname ist erforderlich",
+  "keyProtect": "Key Protect",
+  "loading": "Wird geladen ...",
+  "name": "Schlüsselmanagement",
+  "refresh": "Aktualisieren",
+  "save": "Speichern",
+  "serviceName": "Servicename",
+  "sidePanelTitle": "Schlüsselmanagement bearbeiten",
+  "warning": "Warnung"
+}

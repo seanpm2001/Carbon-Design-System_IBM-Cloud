@@ -1,0 +1,28 @@
+{
+  "close": {
+    "menu": "メニューを閉じる"
+  },
+  "open": {
+    "menu": "メニューを開く"
+  },
+  "collapse": {
+    "group": "グループの省略"
+  },
+  "expand": {
+    "group": "グループの展開"
+  },
+  "clear": {
+    "all": "選択済みの項目をすべてクリア",
+    "selection": "選択済みの項目をクリア"
+  },
+  "placeholder": "フィルター...",
+  "geography": "地域",
+  "country": "国",
+  "metro": "メトロ",
+  "region": "リージョン",
+  "dc": "データ・センター",
+  "zone": "ゾーン",
+  "pop": "ポップ",
+  "satellite": "Satellite",
+  "location": "Satellite"
+}

@@ -1,0 +1,12 @@
+{
+    "welcometext" : "Welcome! Tell us about yourself.",
+    "modalSubHeading" : "Your answers will help us personalize our recommendations.",
+    "primaryButtonText" : "Let's get started!",
+    "secondaryButtonText" : "Skip this step",
+    "interestTitleText" : "What are you most interested in?",
+    "label" : "Select an option",
+    "interestOtherLabelText" : "Please describe your interest",
+    "interestOtherPlaceholder" : "Type to enter text.. ",
+    "jobFunctionTitleText" : "What is your job role?",
+    "industryTitleText" : "What is your industry?"
+}

@@ -1,0 +1,23 @@
+{
+  "create-tags": "Tags erstellen",
+  "tagPrefix": "IAM",
+  "tag-area": {
+    "labelText": "Tagnamen",
+    "placeholder": "Eingabe zum Erstellen von Tags, z. B. dev:env.",
+    "tooltip": "Einen neuen Zugriffsberechtigungstag durch die Eingabe eines Schlüssel:Wert-Paars erstellen."
+  },
+  "formatNote": "Hinweis: Für Zugriffsverwaltungstags ist ein Schlüssel:Wert-Format erforderlich; die Tags sind im gesamten Konto sichtbar. Verwenden Sie keine personenbezogenen Daten, wie z. B. Namen, Adressen, Telefonnummern, E-Mail-Adressen oder andere Identifikationsinformationen oder urheberrechtlich geschützten Informationen.",
+  "errors": {
+    "exceeds_attach_limit": "Sie haben die maximale Anzahl an Tags erreicht, die Sie gleichzeitig zuordnen können. Wenn Sie weitere Tags hinzufügen möchten, speichern Sie zuerst die Änderungen.",
+    "exceeds_detach_limit": "Sie haben die maximale Anzahl an Tags erreicht, für die Sie gleichzeitig die Zuordnung aufheben können. Wenn Sie für weitere Tags die Zuordnung aufheben möchten, speichern Sie zuerst die Änderungen.",
+    "tag_exists": "Dieser Tag ist bereits vorhanden. Geben Sie einen anderen Namen für Ihren Tag ein.",
+    "too_many_characters": "Ein Tag darf nicht mehr als 128 Zeichen enthalten.",
+    "more_than_one_colon": "Ein Tag darf höchstens einen Doppelpunkt enthalten.",
+    "starts_with_colon": "Ein Tag darf nicht mit einem Doppelpunkt beginnen.",
+    "ends_with_colon": "Ein Tag darf nicht auf einen Doppelpunkt enden.",
+    "invalid_characters": "Ein Tag darf nur alphanumerische Zeichen, Leerzeichen, Unterstreichungszeichen und Punkte sowie höchstens einen Doppelpunkt enthalten.",
+    "not_key_value_format": "Der Tagname muss das Format 'Schlüssel:Wert' aufweisen.",
+    "tag_not_found": "Keine Übereinstimmungen gefunden. Wenn Sie neue Tags erstellen möchten, kontaktieren Sie den für Tags zuständigen Administrator.",
+    "tags_not_created": "Es ist ein Fehler aufgetreten und die Zugriffstags wurden nicht erstellt."
+  }
+}

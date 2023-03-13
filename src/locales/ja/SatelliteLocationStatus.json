@@ -1,0 +1,8 @@
+{
+ "action_required": "アクションが必要",
+ "provisioning": "作成の進行中...",
+ "requestingCreation": "作成の要求中...",
+ "preparingMaster": "マスターの準備中...",
+ "finalizing": "ファイナライズ中...",
+ "infoIconDescription": "情報"
+}

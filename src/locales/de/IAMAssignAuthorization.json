@@ -1,0 +1,78 @@
+{
+  "sidePanel": {
+    "reviewBtn": "Überprüfung",
+    "title": "Service-zu-Service-Zugriffsberechtigung für {{resourceDisplayName}} autorisieren"
+  },
+  "notifications": {
+    "genericTitle": "Abrufen der Daten nicht möglich.",
+    "transactionId": "Transaktions-ID",
+    "addPolicySuccess": "Zuweisung zur Instanz erfolgreich.",
+    "addPolicyPartialSuccess": "Zuweisung zur Instanz teilweise erfolgreich.",
+    "addPolicyError": "Beim Zuweisen der Zugriffsberechtigung sind Fehler aufgetreten.",
+    "moreInfo": "Fehlerinformationen anzeigen",
+    "getAttributesError": "Das Abrufen der Ressourcenattribute ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getServicesError": "Das Abrufen der Serviceinformationen ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+    "getHeaderAccountError": "Das Abrufen von Kontoinformationen ist derzeit nicht möglich.",
+    "getHeaderAccountErrorSubtitle": "Das Abrufen von Kontoinformationen ist derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt."
+  },
+  "targetService": {
+    "heading": "Zielservice auswählen",
+    "helpText": "Zielservice für {{resourceDisplayName}} für den Zugriff als Quellenservice auswählen. Es kann nur jeweils ein Service hinzugefügt werden.",
+    "invalidText": "Der Zielservice {{targetServiceName}} wird vom Quellenservice {{resourceDisplayName}} nicht unterstützt.",
+    "selectorLabel": "Zielservice",
+    "serviceFieldPlaceholder": "Service auswählen",
+    "childServiceLabel": "Ressourcentyp",
+    "allServiceInstances": "Alle Instanzen"
+  },
+  "resourceAttributes": {
+    "childFieldPlaceholder": "Ressourcentyp eingeben oder auswählen",
+    "regionFieldLabel": "Region",
+    "operatorFieldLabel": "Operator",
+    "allResourceTypes": "Alle Ressourcentypen",
+    "learnMore": "Weitere Informationen",
+    "stringEquals": "Zeichenfolge ist gleich",
+    "stringEqualsDescription": "Zeichenfolgeabgleich mit exakter Übereinstimmung und Beachtung der Groß-/Kleinschreibung"
+  },
+  "roles": {
+    "heading": "Zugriffsberechtigung",
+    "noAvailableRoles": "Sie verfügen nicht über die korrekte Zugriffsberechtigung. Sie benötigen eine Zugriffsberechtigung für den Zielservice, um eine Autorisierung zwischen Services zu erstellen.",
+    "helpText": "Rolle auswählen, um die Zugriffsberechtigungsebene für den Quellenservice zu bestimmen.",
+    "platformRolesLabel": "Plattformzugriff",
+    "serviceRolesLabel": "Servicezugriff",
+    "customRolesLabel": "Angepasster Zugriff",
+    "popupHeading": "Zulässige Aktionen für die Rolle {{roleName}} ({{actionCount}})",
+    "platformRolesInfo": "Diese ermöglichen das Ausführen von Aktionen für Plattformressourcen, zum Beispiel das Erstellen einer Instanz, das Verbinden von Instanzen mit Apps oder das Zuordnen von Benutzerzugriff. Wählen Sie alle aus, die gültig sind.",
+    "serviceRolesInfo": "Diese Rollen ermöglichen den Zugriff für die Verwendung des Service und für die Ausführung von Service-API-Aufrufen. Jede Rolle wird vom ausgewählten Service angepasst. Wählen Sie alle aus, die gültig sind. Weitere Informationen finden Sie in der Dokumentation des Service.",
+    "customRolesInfo": "Diese Rollen werden von Administratoren im Konto erstellt, um das Zuweisen von Zugriffsberechtigungen für den Service anzupassen. Klicken Sie auf das Symbol der Aktionen für die Rolle, um die dieser Rolle zugeordneten Aktionen anzuzeigen.",
+    "delegatorHeading": "Abhängige Services autorisieren",
+    "delegatorHelpText": "Durch die Aktivierung des Quellenservice für die Delegation der Zugriffsberechtigung an andere abhängige Services werden automatisch Autorisierungsrichtlinien für diese Services erstellt. <a>Weitere Informationen.</a>",
+    "delegatorCheckboxLabel": "Delegierung von Autorisierungen nach Quellen und abhängigen Services aktivieren."
+  },
+  "confirmationModal": {
+    "heading": "Service-zu-Service-Autorisierung für {{resourceDisplayName}} überprüfen",
+    "helpText": "Vor dem Erstellen der folgenden Zugriffsberechtigung die Zuweisung überprüfen.",
+    "targetServiceLabel": "Zielservice",
+    "delegatorRoleLabel": "Abhängiger Autorisierungsservice",
+    "delegatorRoleValue": "Aktiviert",
+    "rolesLabel": "{{rolesCount}} Rollen",
+    "rolesLabelSingle": "{{rolesCount}} Rolle",
+    "confirmBtn": "Zuweisen",
+    "platformAccessLabel": "Plattformzugriff",
+    "serviceAccessLabel": "Servicezugriff",
+    "customAccessLabel": "Angepasster Zugriff",
+    "stringEquals": "Zeichenfolge ist gleich"
+  },
+  "delegatorModal": {
+    "heading": "Delegierung der Autorisierung aktivieren?",
+    "helptext": "Zulassen, dass Autorisierungsrichtlinien automatisch vom Quellenservice für die zugehörigen abhängigen Services erstellt werden.",
+    "confirmBtn": "Autorisieren"
+  },
+  "accessAssignments": "Zuweisungen von Zugriffsberechtigungen",
+  "transactionId": "Transaktions-ID",
+  "genericRetrieveError": "Abrufen von Daten derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+  "genericCreatePolicyError": "Erstellen der Service-zu-Service-Richtlinie derzeit nicht möglich. Aktualisieren Sie die Seite oder wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.",
+  "yes": "Ja",
+  "no": "Nein",
+  "cancel": "Abbrechen",
+  "close": "Schließen"
+}

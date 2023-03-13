@@ -1,0 +1,9 @@
+{
+  "backText": "Back",
+  "cancelText": "Cancel",
+  "doneText": "Done",
+  "nextText": "Next",
+  "previousText": "Previous",
+  "closePanelText": "Close Panel",
+  "doneIsLoadingText": "Loading..."
+}

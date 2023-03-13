@@ -1,0 +1,15 @@
+{
+  "billingPeriod": "结算周期",
+  "end": "结束",
+  "errorCaption": "联系管理员以获取更多帮助。",
+  "errorText": "发生了错误。 请尝试重新装入页面以查看此信息",
+  "key": "值",
+  "lastInvoice": "上一张发票",
+  "nextInvoice": "下一张发票",
+  "notAvailableCaption": "升级您的帐户以查看结算周期。",
+  "notAvailableText": "此视图对于某些帐户类型不可用。",
+  "start": "启动",
+  "today": "今天",
+  "unauthorizedCaption": "请联系管理员以获取访问权。",
+  "unauthorizedText": "您似乎无权查看结算周期"
+}

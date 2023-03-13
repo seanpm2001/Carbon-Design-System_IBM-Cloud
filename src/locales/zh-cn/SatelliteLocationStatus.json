@@ -1,0 +1,8 @@
+{
+ "action_required": "需要操作",
+ "provisioning": "正在进行创建...",
+ "requestingCreation": "正在请求创建...",
+ "preparingMaster": "正在准备主工作程序...",
+ "finalizing": "正在完成...",
+ "infoIconDescription": "信息"
+}

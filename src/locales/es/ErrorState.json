@@ -1,0 +1,5 @@
+{
+  "authError": "Se necesita autenticación o no tiene los permisos correctos para realizar esta acción.",
+  "genericError": "Intente esperar unos minutos y realice la acción de nuevo para ver si el problema continúa. Si lo hace, consulte la <a>página de estado</a> para ver si está pasando algo más. Si sigue teniendo problemas, póngase en contacto con el <a>soporte</a> para obtener ayuda.",
+  "error": "Error"
+}

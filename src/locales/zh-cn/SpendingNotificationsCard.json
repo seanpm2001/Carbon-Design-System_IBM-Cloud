@@ -1,0 +1,15 @@
+{
+  "spendingNotifications": "开支通知",
+  "notAvailableText": "此视图对于某些帐户类型不可用。",
+  "notAvailableCaption": "升级帐户以访问开支通知。",
+  "notEnabledText": "您似乎尚未启用开支通知",
+  "notEnabledCaption": "要启用开支通知，请转至 ",
+  "noAccessText": "您似乎无权查看开支通知",
+  "noAccessCaption": "请联系管理员以获取访问权。",
+  "totalAccount": "总帐户开支",
+  "totalRuntime": "Cloud Foundry 总运行时开支",
+  "totalContainer": "总容器开支",
+  "totalService": "总服务开支",
+  "viewAll": "查看全部",
+  "genericError": "此时无法装入开支通知。 请稍后重试。"
+}

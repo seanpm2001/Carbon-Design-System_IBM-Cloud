@@ -1,0 +1,12 @@
+{
+  "notLoggedIn": "您必须登录才能预订事件。",
+  "unableToSubscribe": "我们无法为您预订事件，请稍后重试。",
+  "error": "错误",
+  "success": "成功",
+  "successfullySubscribed": "您已成功预订事件。",
+  "subscribe": "预订",
+  "cancel": "取消",
+  "subscribeModalHeader": "接收未来更新吗？",
+  "subscribeModalHint": "更新和解决此事件后，我们将向此帐户的电子邮件发送更新。",
+  "email": "电子邮件"
+}

@@ -1,0 +1,6 @@
+{
+  "Submit": "送信",
+  "Cancel": "キャンセル",
+  "confirmTextLabel": "確認のために「{{confirmText}}」を入力してください",
+  "loading": "ロード"
+}

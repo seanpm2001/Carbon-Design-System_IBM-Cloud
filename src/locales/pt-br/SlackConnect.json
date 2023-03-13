@@ -1,0 +1,18 @@
+{
+    "requestToJoin": "Solicite associar-se ao Slack",
+    "orSignIn": "ou conecte-se ao Slack",
+    "email": "E-mail",
+    "windowBlocked": "A janela do Slack pode ter tido a abertura bloqueada.",
+    "alreadyInvited": "Já foi enviado para o seu e-mail um convite para o canal do Slack. Verifique seu e-mail.",
+    "unknownError": "Ocorreu um erro desconhecido. Tente novamente em alguns minutos.",
+    "getInvite": "Obtenha o convite",
+    "response": "Resposta",
+    "error": "Erro",
+    "success": "Sucesso",
+    "inviteSent": "Convite enviado para {{emailAddress}}. Verifique o seu e-mail.",
+    "joinUs": "Junte-se a nós no Slack.",
+    "confirmationModalTitle": "Este é um canal público do Slack para clientes",
+    "confirmationModalMessage": "Se estiver procurando ajuda, <a>entre em contato com o Suporte IBM</a>.",
+    "confirmationModalMessageWithSlack": "Se estiver procurando ajuda, <a>entre em contato com o Suporte IBM</a> ou tente o canal <a>{{name}}</a> interno da IBM.",
+    "cancel": "Cancelar"
+}

@@ -1,0 +1,20 @@
+{
+  "requested": "Demandé",
+  "deploying": "Déploiement en cours",
+  "pending": "En attente",
+  "normal": "Normal",
+  "warning": "Avertissement",
+  "critical": "Critique",
+  "deleting": "Suppression",
+  "delete_retry_wait": "Nouvel essai de suppression",
+  "delete_failed": "Echec de la suppression",
+  "deploy_retry_wait": "Nouvel essai de déploiement",
+  "deploy_failed": "Echec du déploiement",
+  "unsupported": "Non pris en charge",
+  "unknown": "Inconnu",
+  "requestingCreation": "Demande de création...",
+  "preparingMaster": "Préparation du maître, des noeuds worker...",
+  "preparingMasterSatellite": "Préparation du maître...",
+  "finalizing": "Finalisation des noeuds worker...",
+  "finalizingSatellite": "Finalisation du cluster..."
+}

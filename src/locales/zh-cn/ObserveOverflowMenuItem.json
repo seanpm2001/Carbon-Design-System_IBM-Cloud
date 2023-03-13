@@ -1,0 +1,14 @@
+{
+  "monitoring": {
+    "createBtn": "添加监视",
+    "launchBtn": "监视"
+  },
+  "logging": {
+    "createBtn": "添加日志记录",
+    "launchBtn": "日志记录"
+  },
+  "auditing": {
+    "createBtn": "添加活动跟踪",
+    "launchBtn": "活动跟踪"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "COMMITMENT": "impegno",
+  "SUBSCRIPTION": "sottoscrizione",
+  "title": {
+    "COMMITMENT": "Termine dell'impegno attivo",
+    "SUBSCRIPTION": "Termine della sottoscrizione attiva"
+  },
+  "viewDetails": "Visualizza dettagli",
+  "contactSales": "Contatta il settore Vendite",
+  "empty": {
+    "title": "Impegni e sottoscrizioni",
+    "text": "Registrati in IBM Cloud per un account Pagamento a consumo con impegno di utilizzo",
+    "caption": "Quando ti impegni a spendere un determinato importo su IBM Cloud, ricevi sconti su tutta la piattaforma. La fatturazione avviene mensilmente in base al tuo utilizzo e continui a ottenere uno sconto anche quando raggiungi l'importo del tuo impegno."
+  },
+  "unauthorized": {
+    "text": "Sembra che tu non disponga dell'accesso per visualizzare le informazioni sull'impegno e sulla sottoscrizione",
+    "caption": "Contatta il tuo amministratore per l'accesso."
+  },
+  "error": {
+    "text": "Impossibile richiamare i dati di impegno e sottoscrizione"
+  },
+  "enterprise": {
+    "text": "Questo account è gestito da un'azienda",
+    "caption": "Se sei un membro dell'azienda, passa all'account aziendale per ulteriori informazioni."
+  },
+  "noUpcoming": {
+    "text": "Sembra che tu non abbia un impegno attivo",
+    "caption": "Registrati oggi per un impegno e risparmia."
+  },
+  "upcomingTerm": "Il tuo prossimo {{mode}} sarà attivo il {{date}}",
+  "metadata": {
+    "daysRemaining": "Giorni rimanenti",
+    "dates": "Date",
+    "discount": "Sconto",
+    "amountPercentOff": "{{amount}}% di sconto su tutto l'utilizzo",
+    "startingCredit": "Credito iniziale",
+    "remainingCredit": "Credito rimanente"
+  },
+  "commitmentMeter": {
+    "spentToward": " speso per l'impegno di {{total}}",
+    "reachedCommitment": "Hai raggiunto il tuo impegno"
+  },
+  "tooltip" : {
+    "month": "Mese",
+    "remainingCredit": "Credito rimanente"
+  }
+}

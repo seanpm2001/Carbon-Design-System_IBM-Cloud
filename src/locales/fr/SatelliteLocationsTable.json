@@ -1,0 +1,12 @@
+{
+  "name": "Nom",
+  "state": "Etat",
+  "metro": "Géré depuis",
+  "created": "Créé",
+  "create": "Créer un emplacement",
+  "error": "Impossible de répertorier les emplacements.",
+  "hostUsage": "Utilisation hôte\n(utilisé/total)",
+  "emptyStateTitle": "Emplacements",
+  "emptyStateDescription": "Vous pouvez trouver vos emplacements Satellite ici après les avoir créés.",
+  "resourceGroup": "Groupe de ressources"
+}

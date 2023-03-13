@@ -1,0 +1,5 @@
+{
+  "authError": "A autenticação é necessária ou você não tem as permissões corretas para executar esta ação.",
+  "genericError": "Tente esperar alguns minutos e execute a ação novamente para ver se o problema persiste. Em caso afirmativo, verifique a <a>página de status</a> para ver se alguma outra coisa está acontecendo. Se ainda estiver passando por um problema, entre em contato com o <a>suporte</a> para obter ajuda.",
+  "error": "Erro"
+}

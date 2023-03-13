@@ -1,0 +1,37 @@
+{
+  "sidePanelTitle": "Armazenar dados históricos",
+  "panelDoneButton": "Criar",
+
+  "progressStep1": "Selecionar plano",
+  "progressStep2": "Configurar",
+
+  "serviceDescription": "Você espera precisar dos seus resultados de varredura mais de sete dias depois? Inclua uma instância da IBM Cloud Platform Analytics para armazenar dados históricos ilimitados e explorar tendências ao longo do tempo",
+  "pricingTitle": "Selecione um plano de precificação",
+  "disclaimer": "Os planos não podem ser mudados no momento. Se for necessário alternar mais tarde, uma nova instância do Platform Analytics precisará ser criada.",
+
+  "configureTitle": "Configurar armazenamento",
+  "serviceLabel": "Nome do serviço",
+  "regionLabel": "Região",
+  "groupLabel": "Selecione um grupo de recursos",
+  "groupEmptyLabel": "Nenhum grupo de recursos disponível",
+  "groupTooltipText": "Considere como você deseja os recursos organizados em sua conta. O grupo de recursos que você selecionar não poderá ser mudado depois que a instância de serviço for criada.",
+  "groupTooltipLink": "Saiba mais",
+  "tooltipIcon": "Informações",
+  "tagsLabel": "Tags (opcional)",
+  "tagsPlaceholder": "Exemplos: env:dev, version-1",
+
+  "permissionErrorMessage": "Parece que você não tem permissão para incluir a instância em nenhum grupo de recursos nesta conta. Entre em contato com o proprietário da conta para ter uma função de Editor ou de Administrador concedida em um grupo de recursos na conta.",
+  "plansNotFoundErrorMessage": "Parece que nenhum plano de precificação está disponível para esta conta.",
+
+  "costMessage": "Custo mensal estimado",
+  "costTooltipText": "A ser designado",
+  "termsMessage": "Concordo com o ",
+  "termsLink": "Termos e condições",
+
+  "successModalHeader": "Sucesso!",
+  "successModalMessage": "Você criou com sucesso uma instância de Armazenamento de Dados para Conformidade. Agora, todos os dados de conformidade futuros serão armazenados e podem ser pesquisados por data.",
+  "errorModalHeader": "Erro!",
+  "errorModalMessage": "Houve um erro ao criar o seu escopo de dados. Tente novamente mais tarde.",
+  "modalPrimaryButton": "OK",
+  "modalSecondaryButton": "Cancelar"
+}

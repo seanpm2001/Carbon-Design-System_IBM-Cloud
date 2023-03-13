@@ -1,0 +1,16 @@
+{
+  "active": "Activo",
+  "completed": "Completado",
+  "connecting": "Conectando",
+  "inProgress": "En curso",
+  "created": "Creado",
+  "critical": "Crítico",
+  "disabled": "Inhabilitado",
+  "draft": "Cheque",
+  "failed": "Fallido",
+  "inactive": "Inactivo",
+  "normal": "Normal",
+  "pending": "Pendiente",
+  "scanning": "Explorando",
+  "templateError": "Error de plantilla"
+}

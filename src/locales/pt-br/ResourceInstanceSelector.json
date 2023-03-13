@@ -1,0 +1,10 @@
+{
+  "titleText": "Instância",
+  "errorTitle": "Não é possível listar instâncias de recursos.",
+  "errorIconDescription": "Não é possível listar instâncias de recursos.",
+  "errorSubtitle": "As instâncias de recursos estão indisponíveis.",
+  "infoTitle": "Não existe nenhuma instância de recursos.",
+  "infoIconDescription": "Não existe nenhuma instância de recurso.",
+  "infoSubtitle": "Crie uma instância de recurso e tente novamente.",
+  "dropdownLabel": "Nome da instância..."
+}

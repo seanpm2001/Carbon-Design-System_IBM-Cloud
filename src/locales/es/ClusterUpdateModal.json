@@ -1,0 +1,21 @@
+{
+  "title": "Actualizar versión de clúster",
+  "secondaryButton": "Cancelar",
+  "primaryButton": "Actualizar",
+  "updating": "Actualizando...",
+  "inputLabel": "Versión de clúster",
+  "description": "Durante la actualización, seguirán ejecutándose los recursos, apps, nodos trabajadores y maestro del clúster. Al finalizar la actualización, puede actualizar las versiones de los nodos trabajadores. Para obtener instrucciones y más información de las diferencias entre las versiones, <a>consulte la documentación</a>.",
+  "versionRequiresUpdate": "{{version}} (primero actualice a una versión anterior)",
+  "betaVersion": "{{version}} (crear un nuevo clúster para probar esta versión beta)",
+  "noUpdatesAvailable": "Está utilizando la versión más reciente del servidor de API. En este momento no hay ninguna actualización disponible.",
+  "clusterUpdating": "Se está actualizando el servidor de API a la versión {{version}}. Vuelva en una hora para actualizar los nodos trabajadores a la misma versión.",
+  "errorSubtitle": "No se puede actualizar la versión del clúster.",
+  "dropdownLabel": "Elija una versión de clúster",
+  "notificationIcon": "Notificación",
+  "cannotUpdateTitle": "No se puede actualizar la versión del clúster.",
+  "cannotUpdateSubtitle": "No hay opciones de actualización de versión válidas disponibles.",
+  "clusterErrorSubtitle": "No se pueden cargar los detalles del clúster.",
+  "versionsErrorSubtitle": "No se pueden cargar las opciones de versión de actualización de clúster.",
+  "success": "Satisfactorio.",
+  "close": "Cerrar"
+}

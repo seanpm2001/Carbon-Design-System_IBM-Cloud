@@ -1,0 +1,51 @@
+{
+  "description": "Riesce a codificare e decodificare le chiavi crittografiche delle tue risorse, servizi e applicazioni IBM Cloud. <a>Ulteriori informazioni</a>",
+  "hpcsInstanceNotificationTitle": "Le istanze Hyper Protect Crypto Services devono essere create manualmente.",
+  "hpcsInstanceNotificationSubtitle": "<a>Creare l'istanza del servizio</a> e aggiornare le istanze una volta create.",
+  "hpcsKeyNotificationTitle": "Le chiavi root Hyper Protect Crypto Services devono essere create manualmente.",
+  "hpcsKeyNotificationSubtitle": "<a>Creare la chiave root</a> per l'istanza e aggiornare le chiavi una volta create.",
+  "instance": {
+    "title": "Istanza del servizio di gestione delle chiavi",
+    "label": "Istanza del servizio di gestione delle chiavi",
+    "create": "Crea nuova istanza",
+    "createHPCS": "Crea nuova istanza Hyper Protect Crypto Services",
+    "createKeyProtect": "Crea nuova istanza Key Protect",
+    "error": {
+      "title": "Le istanze del servizio di gestione delle chiavi non sono disponibili.",
+      "subtitle": "Impossibile caricare le istanze del servizio di gestione delle chiavi.",
+      "description": "Errore"
+    },
+    "info": {
+      "title": "Errore!",
+      "subtitle": "Non hai ancora un'istanza di Key Protect. Prima di poter iniziare con l'integrazione, devi <a>creare e configurare</a> un'istanza del servizio Key Protect.",
+      "description": "Informazioni"
+    }
+  },
+  "instanceName": "Nome istanza",
+  "instanceNameRequired": "Il nome istanza è obbligatorio",
+  "key": {
+    "title": "Chiave root",
+    "label": "Chiave root",
+    "create": "Crea nuova chiave root",
+    "error": {
+      "title": "Le chiavi root non sono disponibili.",
+      "subtitle": "Impossibile caricare le chiavi root del servizio di gestione delle chiavi.",
+      "description": "Errore"
+    },
+    "info": {
+      "title": "Spiacenti.",
+      "subtitle": "Non hai ancora una chiave root. Vai alla tua istanza Key Protect e <a>crea una chiave root</a>, quindi riprova.",
+      "description": "Informazioni"
+    }
+  },
+  "keyName": "Nome chiave root",
+  "keyNameRequired": "Il nome della chiave root è obbligatorio",
+  "keyProtect": "Key Protect",
+  "loading": "Caricamento...",
+  "name": "Gestione delle chiavi",
+  "refresh": "Aggiorna",
+  "save": "Salva",
+  "serviceName": "Nome servizio",
+  "sidePanelTitle": "Modifica gestione chiavi",
+  "warning": "Avvertenza"
+}

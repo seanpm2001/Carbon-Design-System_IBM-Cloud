@@ -1,0 +1,20 @@
+{
+  "docsLink": "資料",
+  "keyManagementBtn": "接続",
+  "auditing": {
+    "title": "アクティビティー・トラッキング",
+    "description": "IBM Cloud アカウントの管理のために、監視とコンプライアンスの徹底を実現し、運用状況とリスクを監査します。"
+  },
+  "keymanagement": {
+    "title": "鍵管理",
+    "description": "IBM Cloud リソース、サービス、およびアプリケーションに使用されている暗号鍵のライフサイクルを管理します。"
+  },
+  "logging": {
+    "title": "ロギング",
+    "description": "IBM Cloud ロギング・データとイベントを保管、検索、分析、モニターし、これらについて警報を出します。"
+  },
+  "monitoring": {
+    "title": "モニタリング",
+    "description": "IBM Cloud を採用したリソース・アプリケーションのパフォーマンスと正常性の可視性を提供します。"
+  }
+}

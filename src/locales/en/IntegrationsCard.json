@@ -1,0 +1,20 @@
+{
+  "docsLink": "Docs",
+  "keyManagementBtn": "Connect",
+  "auditing": {
+    "title": "Activity tracking",
+    "description": "Enables supervision, compliance, and audits the operations and risk to manage your IBM Cloud account."
+  },
+  "keymanagement": {
+    "title": "Key management",
+    "description": "Manage the lifecycle of your encryption keys that are used for you IBM Cloud resources, services, and applications."
+  },
+  "logging": {
+    "title": "Logging",
+    "description": "Store, search, analyze, monitor, and alert on your IBM Cloud logging data and events."
+  },
+  "monitoring": {
+    "title": "Monitoring",
+    "description": "Provides visibility of the performance and health of your IBM Cloud powered resources application."
+  }
+}

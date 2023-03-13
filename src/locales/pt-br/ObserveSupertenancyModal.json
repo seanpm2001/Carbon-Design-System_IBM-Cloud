@@ -1,0 +1,52 @@
+{
+  "monitoring": {
+    "allRegions": "Todas as regiões",
+    "cancel": "Cancelar",
+    "configure": "Configurar",
+    "heading": "Selecione uma instância do IBM Cloud Monitoring para receber métricas de plataforma",
+    "regionLabel": "Selecione uma região",
+    "regionTitle": "Filtre a instância por região",
+    "instanceLabel": "Selecionar uma instância",
+    "instanceTitle": "Instâncias na região",
+    "instanceTitleWithRegion": "Instância(s) em {{region}}",
+    "generalDescription": "Escolha qual instância do IBM Cloud Monitoring receberá métricas de plataforma de instâncias de serviço ativadas em toda IBM Cloud.",
+    "createLink": "Também é possível <a>criar uma instância</a>.",
+    "somethingWentWrong": "Algo saiu errado",
+    "updateError": "{{message}}. Erro: {{error_code}}",
+    "fetchError": "Falha ao buscar instâncias do IBM Cloud Monitoring.",
+    "confirmInstanceChange": "Confirmo que desejo parar de receber métricas de plataforma de {{instance}}"
+  },
+  "logging": {
+    "allRegions": "Todas as regiões",
+    "cancel": "Cancelar",
+    "configure": "Configurar",
+    "heading": "Selecione uma instância do IBM Log Analysis para receber logs de plataforma",
+    "regionLabel": "Selecione uma região",
+    "regionTitle": "Filtre a instância por região",
+    "instanceLabel": "Selecionar uma instância",
+    "instanceTitle": "Instâncias na região",
+    "instanceTitleWithRegion": "Instância(s) em {{region}}",
+    "generalDescription": "Escolha qual instância do IBM Log Analysis receberá logs de plataforma de instâncias de serviço ativadas em toda IBM Cloud.",
+    "createLink": "Também é possível <a>criar uma instância</a>.",
+    "somethingWentWrong": "Algo saiu errado",
+    "updateError": "{{message}}. Erro: {{error_code}}",
+    "fetchError": "Falha ao buscar instâncias do IBM Log Analysis.",
+    "confirmInstanceChange": "Confirmo que desejo parar de receber logs de plataforma de {{instance}}"
+  },
+  "common": {
+    "successIconDescription": "Ícone de Sucesso",
+    "errorIconDescription": "Ícone de erro",
+    "au-syd": "Sydney",
+    "br-sao": "São Paulo",
+    "ca-tor": "Toronto",
+    "eu-de": "Frankfurt",
+    "eu-fr2": "BNPP_EU",
+    "eu-gb": "Londres",
+    "jp-osa": "Osaka",
+    "jp-tok": "Tóquio",
+    "us-east": "Washington DC",
+    "us-south": "Dallas",
+    "select": "Selecionar",
+    "close": "Fechar"
+  }
+}

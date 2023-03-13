@@ -1,0 +1,11 @@
+{
+  "rename": "Rinomina",
+  "delete": "Elimina",
+  "errorTitle": "Si è verificato un problema",
+  "resourceList": "Elenco risorse",
+  "renameModalContent": "Immetti di seguito come desideri sia il nuovo nome.",
+  "deleteModalContent": "Stai per eliminare questo servizio. Vuoi procedere?",
+  "deleteModalPriButton": "Sì, elimina",
+  "ModalCancelButton": "Annulla",
+  "renameInputLabel": "Nome"
+}

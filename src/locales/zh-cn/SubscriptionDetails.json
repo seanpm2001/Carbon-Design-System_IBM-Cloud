@@ -1,0 +1,47 @@
+{
+  "COMMITMENT": "承诺",
+  "SUBSCRIPTION": "预订",
+  "title": {
+    "COMMITMENT": "活动承诺期限",
+    "SUBSCRIPTION": "活动预订期限"
+  },
+  "viewDetails": "查看详细信息",
+  "contactSales": "联系销售人员",
+  "empty": {
+    "title": "承诺和预订",
+    "text": "注册具有承诺使用量的 IBM Cloud 现收现付套餐",
+    "caption": "您承诺在 IBM Cloud 上花费特定金额时，将在整个平台上获得折扣。 每月会根据您的使用量收费，即使您达到承诺额后，也仍然可以享受折扣。"
+  },
+  "unauthorized": {
+    "text": "您似乎无权查看承诺和预订信息",
+    "caption": "请联系管理员以获取访问权。"
+  },
+  "error": {
+    "text": "检索不到承诺和预订数据"
+  },
+  "enterprise": {
+    "text": "此帐户由企业进行管理",
+    "caption": "如果您是该企业的成员，请切换到企业帐户以获取更多信息。"
+  },
+  "noUpcoming": {
+    "text": "您似乎没有活动承诺",
+    "caption": "请立即注册承诺并享受优惠。"
+  },
+  "upcomingTerm": "您的下一个 {{mode}} 将于 {{date}} 变为活动",
+  "metadata": {
+    "daysRemaining": "剩余天数",
+    "dates": "日期",
+    "discount": "折扣",
+    "amountPercentOff": "所有使用量享受 {{amount}}% 折扣",
+    "startingCredit": "起始信用值",
+    "remainingCredit": "剩余信用值"
+  },
+  "commitmentMeter": {
+    "spentToward": " 在承诺总额 {{total}} 中已花费金额",
+    "reachedCommitment": "您已达到承诺额"
+  },
+  "tooltip" : {
+    "month": "月",
+    "remainingCredit": "剩余信用值"
+  }
+}

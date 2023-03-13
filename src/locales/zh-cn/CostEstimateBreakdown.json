@@ -1,0 +1,12 @@
+{
+  "costConfiguration": "配置",
+  "costDetails": "成本明细",
+  "estimatedCostDistance": "每个实例的估算成本",
+  "estimatedCostInstanceTotal": "估算总计（{{count}} 个实例）",
+  "unsupportedResourcesCost": "未列入成本的资源",
+  "resourceCount": "{{count}} 个资源",
+  "resourceList": "资源列表",
+  "productsMayHaveCost": "以下资源未包含在估算成本中，但可能产生相关成本。",
+  "unknown": "未知",
+  "costSummaryLabel": "估算的起始成本"
+}

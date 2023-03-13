@@ -1,0 +1,12 @@
+{
+  "notLoggedIn": "Tiene que estar conectado para suscribirse a un evento.",
+  "unableToSubscribe": "No hemos podido suscribirle al evento, inténtelo de nuevo más tarde.",
+  "error": "Error",
+  "success": "Correcto",
+  "successfullySubscribed": "Se ha suscrito correctamente el evento.",
+  "subscribe": "Suscribir",
+  "cancel": "Cancelar",
+  "subscribeModalHeader": "¿Desea recibir actualizaciones futuras?",
+  "subscribeModalHint": "Enviaremos actualizaciones al correo electrónico de esta cuenta cuando la incidencia se actualice y se resuelva.",
+  "email": "Correo electrónico"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Cluster löschen",
+  "secondaryButton": "Abbrechen",
+  "primaryButton": "Löschen",
+  "description": "Wenn Sie den Cluster löschen, werden alle Workerknoten, Apps und Container unwiderruflich gelöscht. Diese Aktion kann nicht rückgängig gemacht werden. Erstellen Sie eine Sicherungskopie aller erforderlichen Daten und Konfigurationsdateien, bevor Sie den Vorgang fortsetzen.",
+  "deleteStorage": "Den von diesem Cluster verwendeten persistenten Speicher löschen",
+  "confirmationInputLabel": "Zum Bestätigen \"{{clusterName}}\" eingeben",
+  "deleting": "Löschvorgang läuft...",
+  "deleteWorkspace": "Beim Löschen des Clusters wird der Schematics-Arbeitsbereich oder die zugehörigen Ressourcen nicht gelöscht. Um den Cluster zu bereinigen, führen Sie einen Arbeitsbereich aus, der in Schematics gelöscht und gelöscht werden soll.",
+  "workspaceError": "Wenn dieser Cluster mit einem Schematics-Arbeitsbereich verbunden ist, können wir nicht feststellen, ob dieser Cluster verbunden ist. Ist dies der Fall, müssen Sie in Schematics eine Löschoperation für den Arbeitsbereich durchführen.",
+  "blockedSchematics": "Das Öffnen des Fensters für den Schematics-Arbeitsbereich wurde möglicherweise blockiert.",
+  "popup": "Pop-up blockiert?",
+  "workspace": "Schematics-Arbeitsbereich",
+  "workspaces": "Schematics-Arbeitsbereiche"
+}

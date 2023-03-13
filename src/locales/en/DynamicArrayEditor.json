@@ -1,0 +1,17 @@
+{
+    "modalHeader": "Edit Array",
+    "save": "Save",
+    "edit": "Edit",
+    "cancel": "Cancel",
+    "tagArea": {
+        "label": "Values",
+        "placeholder": "Enter array values. All values are automatically wrapped in quotes after saving."
+    },
+    "stringArrayEditor": {
+        "description": "Enter array values. Quotations are added to values after you save.",
+        "errorMsg": "Value must be a valid array of strings. For example, [\"array\"]."
+    },
+    "mixedArrayEditor": {
+        "errorMsg": "Value must be a valid array. For example, [\"array\"]."
+    }
+}

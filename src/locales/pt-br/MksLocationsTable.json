@@ -1,0 +1,11 @@
+{
+  "name": "Nome",
+  "state": "Status",
+  "metro": "Gerenciado por meio de",
+  "created": "Criado",
+  "create": "Criar localização",
+  "error": "Não é possível listar localizações.",
+  "hostUsage": "Uso do host (usado/total)",
+  "emptyStateTitle": "Localizações",
+  "emptyStateDescription": "É possível localizar suas localizações de Satélite aqui depois de criá-las."
+}

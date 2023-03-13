@@ -1,0 +1,6 @@
+{
+    "selectCountry": "Select a country",
+    "invalidText": "A valid value is required",
+    "errorLoadingCountries": "Unable to load countries",
+    "pricingCountries": "Pricing countries"
+}

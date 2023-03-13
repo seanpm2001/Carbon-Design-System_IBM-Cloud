@@ -1,0 +1,47 @@
+{
+  "COMMITMENT": "commitment",
+  "SUBSCRIPTION": "subscription",
+  "title": {
+    "COMMITMENT": "Active commitment term",
+    "SUBSCRIPTION": "Active subscription term"
+  },
+  "viewDetails": "View details",
+  "contactSales": "Contact sales",
+  "empty": {
+    "title": "Commitments & subscriptions",
+    "text": "Sign up for IBM Cloud Pay as you go with Committed Use",
+    "caption": "When you commit to spend a certain amount on IBM Cloud, you receive discounts across the platform. You are billed monthly based on your usage, and you continue to get a discount even after you reach your commitment amount."
+  },
+  "unauthorized": {
+    "text": "Looks like you don't have access to view commitment and subscription information",
+    "caption": "Contact your administrator for access."
+  },
+  "error": {
+    "text": "Unable to retrieve commitment and subscription data"
+  },
+  "enterprise": {
+    "text": "This account is managed by an enterprise",
+    "caption": "If you're a member of the enterprise, switch to the enterprise account for more information."
+  },
+  "noUpcoming": {
+    "text": "Looks like you don't have an active commitment",
+    "caption": "Sign up for a commitment today and save."
+  },
+  "upcomingTerm": "Your next {{mode}} is active on {{date}}",
+  "metadata": {
+    "daysRemaining": "Days remaining",
+    "dates": "Dates",
+    "discount": "Discount",
+    "amountPercentOff": "{{amount}}% off all usage",
+    "startingCredit": "Starting credit",
+    "remainingCredit": "Remaining credit"
+  },
+  "commitmentMeter": {
+    "spentToward": " spent toward {{total}} commitment",
+    "reachedCommitment": "You reached your commitment"
+  },
+  "tooltip" : {
+    "month": "Month",
+    "remainingCredit": "Remaining credit"
+  }
+}

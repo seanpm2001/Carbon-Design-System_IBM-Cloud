@@ -1,0 +1,37 @@
+{
+  "sidePanelTitle": "Store historical data",
+  "panelDoneButton": "Create",
+
+  "progressStep1": "Select plan",
+  "progressStep2": "Configure",
+
+  "serviceDescription": "Expect to need your scan results past more than 7 days? Add an instance of IBM Cloud Platform Analytics to store unlimited historical data and explore trends over time",
+  "pricingTitle": "Select a pricing plan",
+  "disclaimer": "Plans cannot currently be changed. If you need to switch later you will need to create a new instance of Platform Analytics.",
+
+  "configureTitle": "Configure Storage",
+  "serviceLabel": "Service name",
+  "regionLabel": "Region",
+  "groupLabel": "Select a resource group",
+  "groupEmptyLabel": "No resource group available",
+  "groupTooltipText": "Consider how you want resources organized in your account. The resource group that you select can't be changed after the service instance is created.",
+  "groupTooltipLink": "Learn more",
+  "tooltipIcon": "Info",
+  "tagsLabel": "Tags (optional)",
+  "tagsPlaceholder": "Examples: env:dev, version-1",
+
+  "permissionErrorMessage": "Looks like you don't have permission to add the instance to any resource group in this account. Contact the account owner to be assigned an Editor or Administrator role on a resource group in the account.",
+  "plansNotFoundErrorMessage": "Looks like no pricing plan is available for this account.",
+
+  "costMessage": "Estimated monthly cost",
+  "costTooltipText": "TBA",
+  "termsMessage": "I agree with the ",
+  "termsLink": "Terms and Conditions",
+
+  "successModalHeader": "Success!",
+  "successModalMessage": "You have successfully created an instance of Data Storage for Compliance. All future compliance data will now be stored and searchable by date.",
+  "errorModalHeader": "Error!",
+  "errorModalMessage": "There was an error when creating your data scope. Please try again later.",
+  "modalPrimaryButton": "Okay",
+  "modalSecondaryButton": "Cancel"
+}

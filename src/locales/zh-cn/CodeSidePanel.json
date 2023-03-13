@@ -1,0 +1,9 @@
+{
+  "backText": "返回",
+  "cancelText": "取消",
+  "doneText": "完成",
+  "nextText": "下一步",
+  "previousText": "上一步",
+  "closePanelText": "关闭面板",
+  "doneIsLoadingText": "正在装入..."
+}

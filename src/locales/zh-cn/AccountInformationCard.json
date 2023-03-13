@@ -1,0 +1,18 @@
+{
+  "SUBSCRIPTION": "预订",
+  "BASIC": "基本",
+  "FREE": "免费",
+  "TRIAL": "试用",
+  "LITE": "轻量",
+  "PAYG": "现收现付",
+  "STANDARD": "高级",
+  "PREMIUM": "高端",
+  "accountInformation": "帐单信息",
+  "type": "帐户类型",
+  "supportPlan": "支持套餐",
+  "caption": "您似乎无权查看帐户信息。",
+  "text": "请联系管理员以获取访问权。",
+  "activePromotions": "活动促销",
+  "totalAccounts": "帐户总数",
+  "enterprise": "企业"
+}

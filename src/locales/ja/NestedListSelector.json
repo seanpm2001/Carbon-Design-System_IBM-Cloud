@@ -1,0 +1,8 @@
+{
+  "clearAll": "すべてクリア",
+  "filters": "フィルター",
+  "filtersWithColon": "フィルター:",
+  "noMatch": "フィルターに一致する項目がありません。 フィルターをクリアしてから、再試行してください。",
+  "placeholder": "フィルター...",
+  "resetFilters": "フィルターのリセット"
+}

@@ -1,0 +1,42 @@
+{
+  "modalHeadingEdit": "Editer des étiquettes",
+  "modalHeadingAdd": "Ajouter des étiquettes",
+  "primaryButtonText": "Sauvegarder",
+  "savingText": "Sauvegarde en cours...",
+  "secondaryButtonText": "Annuler",
+  "subtitleEdit": "Vous éditez des étiquettes pour :",
+  "subtitleAdd": "Vous ajoutez des étiquettes à :",
+  "resourceTags": {
+    "labelText": "Etiquettes utilisateur",
+    "placeholder": "Exemples : env:dev, version-1",
+    "tooltip": {
+      "exampleOpeningLine": "Utilisez des étiquettes pour organiser vos ressources. Si vos étiquettes utilisateur sont liées à la facturation, pensez à les créer sous la forme de paires clé:valeur pour regrouper plus facilement des étiquettes connexes, comme",
+      "exampleTag": "costctr:124.",
+      "tagVisibility": "Les étiquettes utilisateur sont visibles à l'échelle du compte. Evitez d'inclure des données sensibles dans le nom des étiquettes.",
+      "learnMore": "En savoir plus."
+    }
+  },
+  "accessTags": {
+    "labelText": "Etiquettes de gestion des accès",
+    "placeholder": "Exemples : access:dev, proj:version-1",
+    "tooltip": {
+      "exampleOpeningLine": "Les étiquettes de gestion d'accès vous aident à appliquer des stratégies d'accès flexibles sur des ressources spécifiques."
+    }
+  },
+  "accessTagPrefix": "IAM",
+  "errors": {
+    "exceeds_attach_limit": "Vous avez atteint le nombre maximal d'étiquettes que vous pouvez connecter simultanément. Pour connecter plusieurs étiquettes, sauvegardez d'abord vos modifications.",
+    "exceeds_detach_limit": "Vous avez atteint le nombre maximal d'étiquettes que vous pouvez déconnecter simultanément. Pour déconnecter plusieurs étiquettes, sauvegardez d'abord vos modifications.",
+    "tag_exists": "Cette étiquette existe déjà. Entrez un autre nom pour votre étiquette.",
+    "too_many_characters": "Une étiquette ne peut pas comporter plus de 128 caractères.",
+    "more_than_one_colon": "Une étiquette ne peut pas contenir plus d'un signe deux-points.",
+    "starts_with_colon": "Une étiquette ne peut pas commencer par un signe deux-points.",
+    "ends_with_colon": "Une étiquette ne peut pas se terminer par un signe deux-points.",
+    "invalid_characters": "Une étiquette peut uniquement contenir des caractères alphanumériques, des espaces, des traits de soulignement, des tirets, des points et un signe deux-points.",
+    "not_key_value_format": "Le nom de l'étiquette doit être au format clé-valeur",
+    "unable_to_fetch": "Erreur lors de l'extraction des étiquettes",
+    "tag_not_found": "Aucune correspondance n'a été trouvée. Pour créer de nouvelles étiquettes, contactez votre administrateur d'étiquettes.",
+    "invalid_tag_name": "L'étiquette '{{tagName}}' n'a pas pu être créée car son nom n'est pas valide.",
+    "exceeds_access_tag_limit": "Les étiquettes d'accès n'ont pas pu être créées car leur nombre a dépassé la limite maximale. Seules 30 étiquettes d'accès par compte sont admises."
+  }
+}

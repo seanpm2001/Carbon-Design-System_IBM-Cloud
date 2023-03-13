@@ -1,0 +1,13 @@
+{
+  "error": "Erro",
+  "createModalHeader": "Criar um novo grupo de recursos",
+  "createModalLabel": "Nome",
+  "createModalPrimary": "Incluir",
+  "createModalSecondary": "Cancelar",
+  "upgradeRGModalHeader": "Limite do grupo de recursos atingido",
+  "upgradeRGModalBody": "Sua conta Lite é limitada a um grupo de recursos.",
+  "upgradeRGModalBodyCTA": "Pronto para incluir mais? Faça o upgrade para uma conta Pay-As-You-Go.",
+  "upgradeRGModalPrimary": "Atualizar",
+  "upgradeRGModalSecondary": "Cancelar",
+  "createResourceGroup": "Criar grupo de recursos"
+}

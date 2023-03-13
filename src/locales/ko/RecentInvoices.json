@@ -1,0 +1,17 @@
+{
+  "recentInvoices": "최근 송장",
+  "viewAll": "모두 보기",
+  "UNAUTHORIZED_CAPTION": "관리자에게 액세스 권한을 문의하십시오.",
+  "UNAUTHORIZED_TEXT": "최근 송장을 볼 수 있는 액세스 권한이 없음",
+  "ERROR_CAPTION": "이 정보를 보려면 페이지를 다시 로드하십시오.",
+  "ERROR_TEXT": "문제가 발생했습니다.",
+  "DSW_CAPTION": "공식 송장을 보려면 다음을 방문하십시오. ",
+  "DSW_CAPTION_LINK": "IBM 송장",
+  "DSW_TEXT": "이 계정은 별도의 플랫폼에서 청구됨",
+  "EMPTY_CAPTION": "다음 청구 주기의 시작부터 확인하십시오.",
+  "EMPTY_TEXT": "이 계정에 대해 아직 작성된 송장이 없음",
+  "UPGRADE_CAPTION": "최근 송장을 보려면 계정을 업그레이드하십시오.",
+  "UPGRADE_TEXT": "일부 계정 유형에는 이 보기를 사용할 수 없습니다.",
+  "ENTERPRISE_CAPTION": "계정 소유자에게 문의하거나 송장에 대한 추가 정보를 보려면 엔터프라이즈 계정으로 전환하십시오.",
+  "ENTERPRISE_TEXT": "엔터프라이즈에서 계정을 관리합니다."
+}

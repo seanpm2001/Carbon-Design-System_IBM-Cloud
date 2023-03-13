@@ -1,0 +1,21 @@
+{
+  "title": "クラスターのバージョンの更新",
+  "secondaryButton": "キャンセル",
+  "primaryButton": "更新",
+  "updating": "更新中...",
+  "inputLabel": "クラスターのバージョン",
+  "description": "更新中も、クラスター・マスター、ワーカー・ノード、アプリ、およびリソースは継続して実行されます。 更新が完了したら、ワーカー・ノードのバージョンを更新できます。 手順およびバージョン間の相違点について詳しくは、<a>資料を確認</a>してください。",
+  "versionRequiresUpdate": "{{version}} (最初に、以前のバージョンに更新します)",
+  "betaVersion": "{{version}} (このベータ版を試すための新しいクラスターを作成します)",
+  "noUpdatesAvailable": "最新バージョンの API サーバーを使用しています。 現在使用可能な更新はありません。",
+  "clusterUpdating": "API サーバーはバージョン {{version}} に更新中です! 1 時間後に戻って、ワーカー・ノードを同じバージョンに更新してください。",
+  "errorSubtitle": "クラスター・バージョンを更新できません。",
+  "dropdownLabel": "クラスター・バージョンを選択する",
+  "notificationIcon": "通知",
+  "cannotUpdateTitle": "クラスター・バージョンを更新できません。",
+  "cannotUpdateSubtitle": "有効なバージョン更新オプションがありません。",
+  "clusterErrorSubtitle": "クラスターの詳細をロードできません。",
+  "versionsErrorSubtitle": "クラスター更新バージョン・オプションをロードできません。",
+  "success": "成功!",
+  "close": "閉じる（クローズ）"
+}

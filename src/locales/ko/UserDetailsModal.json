@@ -1,0 +1,12 @@
+{
+  "welcometext": "시작합니다! 귀하에 대해서 이야기해 주십시오.",
+  "modalSubHeading": "당신의 답변은 우리의 권고를 개인화하는 데 도움이 될 것입니다.",
+  "primaryButtonText": "시작합니다!",
+  "secondaryButtonText": "이 단계 생략",
+  "interestTitleText": "당신은 무엇에 가장 관심이 있습니까?",
+  "label": "옵션을 선택하십시오.",
+  "interestOtherLabelText": "귀하의 관심사항을 설명해 주십시오.",
+  "interestOtherPlaceholder": "텍스트를 입력하려면 입력하십시오.. ",
+  "jobFunctionTitleText": "직무가 무엇입니까?",
+  "industryTitleText": "당신의 산업은 무엇입니까?"
+}

@@ -1,0 +1,19 @@
+{
+  "createTag" : "새 액세스 관리 태그를 작성해야 하는 경우 태그 섹션에서 수행하십시오.",
+  "comboBox" : "태그 이름 입력",
+  "error" : "오류 상태: ",
+  "labels" : {
+    "tags": "태그",
+    "singleresource" : "리소스",
+    "resources" : "리소스",
+    "ghost" : "ghost: ",
+    "createTag": "새 액세스 관리 태그를 작성하려면 태그 페이지를 방문하십시오."
+},
+  "heading" : {
+    "tagmap" : "볼 수 있는 태그가 지정된 리소스"
+},
+  "button" : {
+    "add" : "추가"
+},
+  "close": "닫기"
+}

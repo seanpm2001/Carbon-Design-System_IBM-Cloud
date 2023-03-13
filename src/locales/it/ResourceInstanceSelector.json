@@ -1,0 +1,10 @@
+{
+  "titleText": "Istanza",
+  "errorTitle": "Impossibile elencare le istanze della risorsa.",
+  "errorIconDescription": "Impossibile elencare le istanze della risorsa.",
+  "errorSubtitle": "Le istanze della risorsa non sono disponibili.",
+  "infoTitle": "Non esistono istanze della risorsa.",
+  "infoIconDescription": "Non esiste alcuna istanza della risorsa.",
+  "infoSubtitle": "Crea un'istanza della risorsa e riprova.",
+  "dropdownLabel": "Nome istanza..."
+}

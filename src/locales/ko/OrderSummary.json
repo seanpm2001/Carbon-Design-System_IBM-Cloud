@@ -1,0 +1,10 @@
+{
+  "summaryText": "현재 요금 총액",
+  "summaryDetails": "예상 금액",
+  "create": "작성",
+  "cancel": "취소",
+  "categoryText": "카테고리 텍스트",
+  "creating": "서비스 작성 중...",
+  "creating-success": "서비스가 작성되었습니다.",
+  "creating-iconDescription": "아이콘 로드 중"
+}

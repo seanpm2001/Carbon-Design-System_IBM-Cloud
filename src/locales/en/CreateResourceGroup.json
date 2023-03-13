@@ -1,0 +1,13 @@
+{
+  "error": "Error",
+  "createModalHeader": "Create a new resource group",
+  "createModalLabel": "Name",
+  "createModalPrimary": "Add",
+  "createModalSecondary": "Cancel",
+  "upgradeRGModalHeader": "Resource group limit reached",
+  "upgradeRGModalBody": "Your Lite account is limited to one resource group.",
+  "upgradeRGModalBodyCTA": "Ready to add more? Upgrade to a Pay-As-You-Go account.",
+  "upgradeRGModalPrimary": "Upgrade",
+  "upgradeRGModalSecondary": "Cancel",
+  "createResourceGroup": "Create Resource Group"
+}

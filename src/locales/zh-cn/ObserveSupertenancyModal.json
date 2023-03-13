@@ -1,0 +1,52 @@
+{
+  "monitoring": {
+    "allRegions": "所有区域",
+    "cancel": "取消",
+    "configure": "配置",
+    "heading": "选择要接收平台度量值的 IBM Cloud Monitoring 实例",
+    "regionLabel": "选择区域",
+    "regionTitle": "按区域过滤实例",
+    "instanceLabel": "选择实例",
+    "instanceTitle": "区域中的实例",
+    "instanceTitleWithRegion": "{{region}} 中的实例",
+    "generalDescription": "选择将从 IBM Cloud 的已启用服务实例中接收平台度量值的 IBM Cloud Monitoring 实例。",
+    "createLink": "您还可以<a>创建实例</a>。",
+    "somethingWentWrong": "出错了",
+    "updateError": "{{message}}. 错误：{{error_code}}",
+    "fetchError": "未能访存 IBM Cloud Monitoring 实例。",
+    "confirmInstanceChange": "我确认要停止从 {{instance}} 接收平台度量值"
+  },
+  "logging": {
+    "allRegions": "所有区域",
+    "cancel": "取消",
+    "configure": "配置",
+    "heading": "选择要接收平台日志的 IBM Log Analysis 实例",
+    "regionLabel": "选择区域",
+    "regionTitle": "按区域过滤实例",
+    "instanceLabel": "选择实例",
+    "instanceTitle": "区域中的实例",
+    "instanceTitleWithRegion": "{{region}} 中的实例",
+    "generalDescription": "选择将从 IBM Cloud 的已启用服务实例中接收平台日志的 IBM Log Analysis 实例。",
+    "createLink": "您还可以<a>创建实例</a>。",
+    "somethingWentWrong": "出错了",
+    "updateError": "{{message}}. 错误：{{error_code}}",
+    "fetchError": "未能访存 IBM Log Analysis 实例。",
+    "confirmInstanceChange": "我确认要停止从 {{instance}} 接收平台日志"
+  },
+  "common": {
+    "successIconDescription": "“成功”图标",
+    "errorIconDescription": "“错误”图标",
+    "au-syd": "悉尼",
+    "br-sao": "圣保罗",
+    "ca-tor": "多伦多",
+    "eu-de": "法兰克福",
+    "eu-fr2": "法国巴黎银行（欧洲）",
+    "eu-gb": "伦敦",
+    "jp-osa": "大阪",
+    "jp-tok": "东京",
+    "us-east": "华盛顿",
+    "us-south": "达拉斯",
+    "select": "选择",
+    "close": "关闭"
+  }
+}

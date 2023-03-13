@@ -1,0 +1,23 @@
+{
+  "accessTags": {
+    "labelText": "Zugriffsverwaltungstags",
+    "placeholder": "Beispiele: access:dev, proj:version-1",
+    "tooltip": {
+      "exampleOpeningLine": "Mithilfe von Zugriffsverwaltungstags können Sie flexible Zugriffsrichtlinien für bestimmte Ressourcen anwenden."
+    }
+  },
+  "accessTagPrefix": "IAM",
+  "errors": {
+    "exceeds_attach_limit": "Sie haben die maximale Anzahl an Tags erreicht, die Sie gleichzeitig zuordnen können. Wenn Sie weitere Tags hinzufügen möchten, speichern Sie zuerst die Änderungen.",
+    "exceeds_detach_limit": "Sie haben die maximale Anzahl an Tags erreicht, für die Sie gleichzeitig die Zuordnung aufheben können. Wenn Sie für weitere Tags die Zuordnung aufheben möchten, speichern Sie zuerst die Änderungen.",
+    "tag_exists": "Dieser Tag ist bereits vorhanden. Geben Sie einen anderen Namen für Ihren Tag ein.",
+    "too_many_characters": "Ein Tag darf nicht mehr als 128 Zeichen enthalten.",
+    "more_than_one_colon": "Ein Tag darf höchstens einen Doppelpunkt enthalten.",
+    "starts_with_colon": "Ein Tag darf nicht mit einem Doppelpunkt beginnen.",
+    "ends_with_colon": "Ein Tag darf nicht auf einen Doppelpunkt enden.",
+    "invalid_characters": "Ein Tag darf nur alphanumerische Zeichen, Leerzeichen, Unterstreichungszeichen und Punkte sowie höchstens einen Doppelpunkt enthalten.",
+    "not_key_value_format": "Der Tagname muss das Format 'Schlüssel:Wert' aufweisen.",
+    "tag_not_found": "Keine Übereinstimmungen gefunden. Wenn Sie neue Tags erstellen möchten, kontaktieren Sie den für Tags zuständigen Administrator.",
+    "error_creating_tags": "Fehler bei der Erstellung von Tags:"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "當月至今的用量",
+  "explore": "在 <a>Platform Analytics</a> 中進一步探索",
+  "tooltipAriaLabel": "Platform Analytics 工具提示",
+  "tooltipContent": "Platform Analytics 可讓您探索自訂日期及過濾器。",
+  "dailyUsageByService": "依服務的每日用量",
+  "dailyUsageByInstance": "依實例的服務每日用量",
+  "dailyUsageByGroup": "依群組的每日用量",
+  "date": "日期",
+  "amount": "金額 ({{currency}})",
+  "groupName": "累加用量",
+  "unauthorizedCaption": "您必須具有計費帳戶管理服務的「管理者」角色，才能檢視整個帳戶的用量。",
+  "unauthorizedText": "您似乎沒有存取權，無法檢視帳戶用量資料。",
+  "genericErrorCaption": "內部伺服器錯誤",
+  "genericErrorText": "提取圖表資料時發生問題。 請重新整理頁面，或稍後重試。",
+  "lastUpdated": "前次更新",
+  "noDataAvailable": "尚無法使用資料"
+}

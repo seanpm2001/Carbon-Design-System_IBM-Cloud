@@ -1,0 +1,53 @@
+{
+  "monitoring": {
+    "allRegions": "All regions",
+    "cancel": "Cancel",
+    "configure": "Configure",
+    "heading": "Select an IBM Cloud Monitoring instance to receive platform metrics",
+    "regionLabel": "Select a region",
+    "regionTitle": "Filter instance by region",
+    "instanceLabel": "Select an instance",
+    "instanceTitle": "Instance(s) in region",
+    "instanceTitleWithRegion": "Instance(s) in {{region}}",
+    "generalDescription": "Choose which IBM Cloud Monitoring instance will receive platform metrics from enabled service instances across IBM Cloud.",
+    "createLink": "You may also <a>create an instance</a>.",
+    "somethingWentWrong": "Something went wrong",
+    "updateError": "{{message}}. Error: {{error_code}}",
+    "fetchError": "Failed to fetch IBM Cloud Monitoring instances.",
+    "confirmInstanceChange": "I confirm that I want to stop receiving platform metrics from {{instance}}"
+  },
+  "logging": {
+    "allRegions": "All regions",
+    "cancel": "Cancel",
+    "configure": "Configure",
+    "heading": "Select an IBM Log Analysis instance to receive platform logs",
+    "regionLabel": "Select a region",
+    "regionTitle": "Filter instance by region",
+    "instanceLabel": "Select an instance",
+    "instanceTitle": "Instance(s) in region",
+    "instanceTitleWithRegion": "Instance(s) in {{region}}",
+    "generalDescription": "Choose which IBM Log Analysis instance will receive platform logs from enabled service instances across IBM Cloud.",
+    "createLink": "You may also <a>create an instance</a>.",
+    "somethingWentWrong": "Something went wrong",
+    "updateError": "{{message}}. Error: {{error_code}}",
+    "fetchError": "Failed to fetch IBM Log Analysis instances.",
+    "confirmInstanceChange": "I confirm that I want to stop receiving platform logs from {{instance}}"
+  },
+  "common": {
+    "successIconDescription": "Success icon",
+    "errorIconDescription": "Error icon",
+    "au-syd": "Sydney",
+    "br-sao": "Sao Paulo",
+    "ca-tor": "Toronto",
+    "eu-de": "Frankfurt",
+    "eu-fr2": "BNPP_EU",
+    "eu-gb": "London",
+    "jp-osa": "Osaka",
+    "jp-tok": "Tokyo",
+    "us-east": "Washington DC",
+    "us-south": "Dallas",
+    "select": "Select",
+    "close": "Close",
+    "unexpectedError": "An unexpected error occurred."
+  }
+}

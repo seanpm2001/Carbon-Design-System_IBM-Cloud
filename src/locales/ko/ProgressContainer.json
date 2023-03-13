@@ -1,0 +1,8 @@
+{
+  "back": "이전",
+  "next": "다음",
+  "carbon.progress-step.complete": "완료",
+  "carbon.progress-step.incomplete": "불완전",
+  "carbon.progress-step.current": "현재",
+  "carbon.progress-step.invalid": "올바르지 않음"
+}

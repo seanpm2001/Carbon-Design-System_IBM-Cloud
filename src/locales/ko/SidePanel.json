@@ -1,0 +1,15 @@
+{
+  "modal": {
+    "label": "확실합니까?",
+    "closeText": "닫기",
+    "header": "사이드 패널 닫기",
+    "confirmText": "사이드 패널을 닫으시겠습니까?"
+  },
+  "backText": "이전",
+  "cancelText": "취소",
+  "doneText": "완료",
+  "nextText": "다음",
+  "previousText": "이전",
+  "closePanelText": "패널 닫기",
+  "doneIsLoadingText": "로드 중..."
+}

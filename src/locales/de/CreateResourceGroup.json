@@ -1,0 +1,13 @@
+{
+  "error": "Fehler",
+  "createModalHeader": "Neue Ressourcengruppe erstellen",
+  "createModalLabel": "Name",
+  "createModalPrimary": "Hinzufügen",
+  "createModalSecondary": "Abbrechen",
+  "upgradeRGModalHeader": "Der Grenzwert für Ressourcengruppen wurde erreicht.",
+  "upgradeRGModalBody": "Ihr Lite-Konto ist auf eine Ressourcengruppe beschränkt.",
+  "upgradeRGModalBodyCTA": "Möchten Sie weitere hinzufügen? Dann können Sie ein Upgrade auf ein nutzungsabhängiges Konto durchführen.",
+  "upgradeRGModalPrimary": "Upgrade",
+  "upgradeRGModalSecondary": "Abbrechen",
+  "createResourceGroup": "Ressourcengruppe erstellen"
+}

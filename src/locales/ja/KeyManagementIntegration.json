@@ -1,0 +1,51 @@
+{
+  "description": "IBM Cloud リソース、サービス、およびアプリケーションの暗号鍵のエンコードとデコードを管理します。 <a>詳細はこちら</a>",
+  "hpcsInstanceNotificationTitle": "Hyper Protect Crypto Services インスタンスは手動で作成する必要があります。",
+  "hpcsInstanceNotificationSubtitle": "<a>サービス・インスタンスを作成</a>し、作成したらインスタンスを更新します。",
+  "hpcsKeyNotificationTitle": "Hyper Protect Crypto Services のルート鍵は手動で作成する必要があります。",
+  "hpcsKeyNotificationSubtitle": "インスタンスの<a>ルート鍵を作成</a>し、作成したら鍵を更新します。",
+  "instance": {
+    "title": "鍵管理サービス・インスタンス",
+    "label": "鍵管理サービス・インスタンス",
+    "create": "新規インスタンスの作成",
+    "createHPCS": "新しい Hyper Protect Crypto Services インスタンスの作成",
+    "createKeyProtect": "新しい Key Protect インスタンスの作成",
+    "error": {
+      "title": "鍵管理サービス・インスタンスは使用できません。",
+      "subtitle": "鍵管理サービス・インスタンスをロードできません。",
+      "description": "エラー"
+    },
+    "info": {
+      "title": "エラー",
+      "subtitle": "Key Protect のインスタンスがまだありません。 統合を開始する前に、Key Protect サービスのインスタンスを<a>作成して構成する</a>必要があります。",
+      "description": "情報"
+    }
+  },
+  "instanceName": "インスタンス名",
+  "instanceNameRequired": "インスタンス名は必須です",
+  "key": {
+    "title": "ルート鍵",
+    "label": "ルート鍵",
+    "create": "新しいルート鍵の作成",
+    "error": {
+      "title": "ルート・キーは使用できません。",
+      "subtitle": "鍵管理サービスのルート・キーをロードできません。",
+      "description": "エラー"
+    },
+    "info": {
+      "title": "失敗",
+      "subtitle": "まだルート・キーがありません。 Key Protect インスタンスに移動して<a>ルート・キーの作成</a>を行ってから、再試行してください。",
+      "description": "情報"
+    }
+  },
+  "keyName": "ルート鍵名",
+  "keyNameRequired": "ルート鍵の名前は必須です",
+  "keyProtect": "Key Protect",
+  "loading": "ロード中...",
+  "name": "鍵管理",
+  "refresh": "最新表示",
+  "save": "保存",
+  "serviceName": "サービス名",
+  "sidePanelTitle": "鍵管理の編集",
+  "warning": "警告"
+}

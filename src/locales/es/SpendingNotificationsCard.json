@@ -1,0 +1,15 @@
+{
+  "spendingNotifications": "Notificaciones de gastos",
+  "notAvailableText": "Esta vista no está disponible para algunos tipos de cuenta",
+  "notAvailableCaption": "Actualice su cuenta para acceder a las notificaciones de gastos.",
+  "notEnabledText": "Parece que no ha habilitado las notificaciones de gastos",
+  "notEnabledCaption": "Para habilitar las notificaciones de gastos, vaya a ",
+  "noAccessText": "Parece que no tiene acceso para ver las notificaciones de gastos",
+  "noAccessCaption": "Póngase en contacto con el administrador para obtener acceso.",
+  "totalAccount": "Gasto total de cuenta",
+  "totalRuntime": "Gasto total de tiempo de ejecución de Cloud Foundry",
+  "totalContainer": "Gasto total de contenedor",
+  "totalService": "Gasto total del servicio",
+  "viewAll": "Ver todo",
+  "genericError": "No se pueden cargar las notificaciones de gasto en este momento. Vuelva a intentarlo más adelante."
+}

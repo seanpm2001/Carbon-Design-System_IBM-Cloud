@@ -1,0 +1,47 @@
+{
+  "COMMITMENT": "engagement",
+  "SUBSCRIPTION": "abonnement",
+  "title": {
+    "COMMITMENT": "Durée d'engagement actif",
+    "SUBSCRIPTION": "Durée d'abonnement actif"
+  },
+  "viewDetails": "Afficher les détails",
+  "contactSales": "Contactez le service commercial",
+  "empty": {
+    "title": "Engagements & abonnements",
+    "text": "Inscrivez-vous au paiement à la carte IBM Cloud avec engagement d'utilisation",
+    "caption": "Lorsque vous vous engagez à dépenser une certaine somme d'argent sur IBM Cloud, vous bénéficiez de remises sur la plateforme. Vous recevez une facture mensuelle basée sur votre utilisation, et vous continuez à recevoir des réductions même après avoir atteint le montant de votre engagement."
+  },
+  "unauthorized": {
+    "text": "Il semble que vous n'êtes pas autorisé à afficher les informations relatives à l'engagement et à l'abonnement",
+    "caption": "Contactez votre administrateur pour y accéder."
+  },
+  "error": {
+    "text": "Impossible d'extraire les données d'engagement et d'abonnement"
+  },
+  "enterprise": {
+    "text": "Ce compte est géré par une entreprise",
+    "caption": "Si vous êtes membre de l'entreprise, passez au compte entreprise pour plus d'informations."
+  },
+  "noUpcoming": {
+    "text": "Il semble que vous ne disposiez pas d'un engagement actif",
+    "caption": "Inscrivez-vous pour un engagement aujourd'hui et sauvegardez."
+  },
+  "upcomingTerm": "Votre prochain {{mode}} démarre le {{date}}",
+  "metadata": {
+    "daysRemaining": "Jours restants",
+    "dates": "Dates",
+    "discount": "Remise",
+    "amountPercentOff": "{{amount}} % sur toutes les utilisations",
+    "startingCredit": "Crédit de départ",
+    "remainingCredit": "Crédit restant"
+  },
+  "commitmentMeter": {
+    "spentToward": " dépensés dans le cadre de l'engagement {{total}}",
+    "reachedCommitment": "Vous avez atteint le montant de votre engagement"
+  },
+  "tooltip" : {
+    "month": "Mois",
+    "remainingCredit": "Crédit restant"
+  }
+}

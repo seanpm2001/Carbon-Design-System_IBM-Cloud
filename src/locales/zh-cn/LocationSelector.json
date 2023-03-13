@@ -1,0 +1,28 @@
+{
+  "close": {
+    "menu": "关闭菜单"
+  },
+  "open": {
+    "menu": "打开菜单"
+  },
+  "collapse": {
+    "group": "折叠组"
+  },
+  "expand": {
+    "group": "展开组"
+  },
+  "clear": {
+    "all": "清除所有选定项",
+    "selection": "清除选定项"
+  },
+  "placeholder": "过滤器...",
+  "geography": "地理位置",
+  "country": "国家/地区",
+  "metro": "大都市",
+  "region": "区域",
+  "dc": "数据中心",
+  "zone": "专区",
+  "pop": "弹出",
+  "satellite": "Satellite",
+  "location": "Satellite"
+}

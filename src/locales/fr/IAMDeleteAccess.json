@@ -1,0 +1,37 @@
+{
+  "notifications": {
+    "genericTitle": "Impossible d'extraire les données",
+    "transactionId": "ID transaction",
+    "deletePolicySuccess": "ont été supprimés pour l'instance.",
+    "deletePolicyErrorTitle": "Impossible de supprimer l'accès.",
+    "deletePolicyError": "Une erreur s'est produite lors de la tentative de suppression de l'accès.",
+    "moreInfo": "Afficher les informations sur l'erreur",
+    "getGroupPolicyErrorTitle": "Impossible d'extraire les données de règles",
+    "getGroupPolicyError": "Les données de règles ne peuvent pas être extraites pour le moment. Actualisez la page ou faites une nouvelle tentative ultérieurement.",
+    "getHeaderAccountError": "Impossible d'obtenir les informations sur le compte",
+    "getHeaderAccountErrorSubtitle": "Impossible d'extraire les informations sur le compte pour le moment. Actualisez la page ou faites une nouvelle tentative ultérieurement.",
+    "deleteNotAllowedTitle": "Droits requis pour la suppression de cette règle",
+    "deleteNotAllowedText": "Vous ne disposez pas de l'accès nécessaire pour supprimer cette règle. Contactez votre administrateur pour mettre à jour votre niveau d'accès à la ressource de cette règle."
+  },
+  "deleteModal": {
+    "heading": "Supprimer les affectations d'accès à {{resourceDisplayName}}",
+    "helpText": "Passez en revue la règle de groupe d'accès suivante pour vérifier que vous supprimez le niveau d'accès approprié.",
+    "accessGroupLabel": "Groupe d'accès",
+    "rolesLabel": "{{rolesCount}} rôles",
+    "rolesLabelSingle": "{{rolesCount}} rôle",
+    "confirmBtn": "Retirer",
+    "platformAccessLabel": "Accès à la plateforme",
+    "serviceAccessLabel": "Accès au service",
+    "customAccessLabel": "Accès personnalisé"
+  },
+  "subjectUnsupportedTitle": "Impossible de retirer la règle",
+  "subjectUnsupported": "Le type de l'objet de règle spécifié ({{policySubjectId}}) n'est pas pris en charge pour la suppression contextuelle. Pour gérer les règles d'accès pour des ID de service ou des utilisateurs spécifiques, voir <a>Identity & Access Management.</a>",
+  "accessAssignments": "Affectation d'accès",
+  "transactionId": "ID transaction",
+  "genericRetrieveError": "Impossible d'extraire les données pour le moment. Actualisez la page ou faites une nouvelle tentative ultérieurement.",
+  "genericDeletePolicyError": "Impossible de modifier la règle d'accès pour le moment. Actualisez la page ou faites une nouvelle tentative ultérieurement.",
+  "yes": "Oui",
+  "no": "Non",
+  "cancel": "Annuler",
+  "close": "Fermer"
+}

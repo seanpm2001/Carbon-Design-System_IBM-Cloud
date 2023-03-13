@@ -1,0 +1,51 @@
+{
+  "description": "Se gestiona para codificar y decodificar claves criptográficas de los recursos, servicios y aplicaciones de IBM Cloud. <a>Más información</a>",
+  "hpcsInstanceNotificationTitle": "Las instancias de Hyper Protect Crypto Services se deben crear manualmente.",
+  "hpcsInstanceNotificationSubtitle": "<a>Cree la instancia de servicio</a> y renueve las instancias una vez creadas.",
+  "hpcsKeyNotificationTitle": "Las claves raíz de Hyper Protect Crypto Services deben crearse manualmente.",
+  "hpcsKeyNotificationSubtitle": "<a>Cree la clave raíz</a> para la instancia y renueve las claves una vez creadas.",
+  "instance": {
+    "title": "Instancia del servicio de gestión de claves",
+    "label": "Instancia del servicio de gestión de claves",
+    "create": "Crear nueva instancia",
+    "createHPCS": "Crear nueva instancia de Hyper Protect Crypto Services",
+    "createKeyProtect": "Crear nueva instancia de Key Protect",
+    "error": {
+      "title": "Las instancias de servicio de gestión de claves no están disponibles.",
+      "subtitle": "No se pueden cargar las instancias de servicio de gestión de claves.",
+      "description": "Error"
+    },
+    "info": {
+      "title": "¡Oh no!",
+      "subtitle": "Todavía no tiene ninguna instancia de Key Protect. Antes de empezar con la integración, debe <a>crear y configurar</a> una instancia del servicio Key Protect.",
+      "description": "Información"
+    }
+  },
+  "instanceName": "Nombre de instancia",
+  "instanceNameRequired": "Se necesita un nombre de instancia",
+  "key": {
+    "title": "Clave raíz",
+    "label": "Clave raíz",
+    "create": "Crear nueva clave raíz",
+    "error": {
+      "title": "Las claves raíz no están disponibles.",
+      "subtitle": "No se pueden cargar las claves raíz de servicio de gestión de claves.",
+      "description": "Error"
+    },
+    "info": {
+      "title": "¡Ups!",
+      "subtitle": "No tiene ninguna clave raíz todavía. Vaya a la instancia de Key Protect y <a>cree una clave raíz</a>. A continuación, inténtelo de nuevo.",
+      "description": "Información"
+    }
+  },
+  "keyName": "Nombre de clave raíz",
+  "keyNameRequired": "Se necesita un nombre de clave raíz",
+  "keyProtect": "Key Protect",
+  "loading": "Cargando...",
+  "name": "Gestión de claves",
+  "refresh": "Renovar",
+  "save": "Guardar",
+  "serviceName": "Nombre de servicio",
+  "sidePanelTitle": "Editar gestión de claves",
+  "warning": "Aviso"
+}

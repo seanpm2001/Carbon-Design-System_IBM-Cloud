@@ -1,0 +1,12 @@
+{
+  "costConfiguration": "Configurazione:",
+  "costDetails": "Dettagli di costo",
+  "estimatedCostDistance": "Costo stimato per istanza",
+  "estimatedCostInstanceTotal": "Totale stimato ({{count}} istanze)",
+  "unsupportedResourcesCost": "Risorse non incluse nel costo",
+  "resourceCount": "{{count}} risorse",
+  "resourceList": "Elenco risorse",
+  "productsMayHaveCost": "Le seguenti risorse non sono state incluse nella stima dei costi ma potrebbero avere un costo associato.",
+  "unknown": "Sconosciuto",
+  "costSummaryLabel": "Costo iniziale stimato"
+}

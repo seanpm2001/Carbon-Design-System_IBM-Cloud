@@ -1,0 +1,13 @@
+{
+    "requestToJoin": "Teilnahme bei Slack anfordern",
+    "orSignIn": "oder bei Slack anmelden",
+    "email": "E-Mail",
+    "joinUs": "Treffen Sie uns bei Slack.",
+    "confirmationModalTitle": "Dies ist ein öffentlicher Slack-Kanal für Kunden.",
+    "confirmationModalMessage": "Wenn Sie Unterstützung benötigen, <a>kontaktieren Sie den IBM Support</a>.",
+    "confirmationModalMessageWithSlack": "Wenn Sie Unterstützung benötigen, <a>kontaktieren Sie den IBM Support</a> oder versuchen Sie es mit dem internen IBM Kanal: <a>{{name}}</a>.",
+    "cancel": "Abbrechen",
+    "error": "Fehler",
+    "unknownError": "Es ist ein unbekannter Fehler aufgetreten. Wiederholen Sie die Aktion in einigen Minuten.",
+    "requestInvite": "Einladung anfordern"
+}

@@ -1,0 +1,8 @@
+{
+  "clearAll": "全部清除",
+  "filters": "过滤器",
+  "filtersWithColon": "过滤器：",
+  "noMatch": "没有匹配过滤器的项。 请清除过滤器，然后重试。",
+  "placeholder": "过滤器...",
+  "resetFilters": "重置过滤器"
+}

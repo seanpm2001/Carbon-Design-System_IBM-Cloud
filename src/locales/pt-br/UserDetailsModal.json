@@ -1,0 +1,12 @@
+{
+  "welcometext": "Bem-vindo! Conte-nos sobre você.",
+  "modalSubHeading": "Suas respostas nos ajudarão a personalizar nossas recomendações.",
+  "primaryButtonText": "Vamos começar!",
+  "secondaryButtonText": "Ignore esta etapa",
+  "interestTitleText": "Em que você está mais interessado?",
+  "label": "Selecione uma opção",
+  "interestOtherLabelText": "Descreva seu interesse",
+  "interestOtherPlaceholder": "Digite para inserir texto. ",
+  "jobFunctionTitleText": "Qual é o seu cargo?",
+  "industryTitleText": "Qual é a sua indústria?"
+}

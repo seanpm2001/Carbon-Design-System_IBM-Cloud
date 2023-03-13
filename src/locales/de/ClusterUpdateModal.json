@@ -1,0 +1,21 @@
+{
+  "title": "Clusterversion aktualisieren",
+  "secondaryButton": "Abbrechen",
+  "primaryButton": "Aktualisieren",
+  "updating": "Aktualisierung wird ausgeführt...",
+  "inputLabel": "Clusterversion",
+  "description": "Während der Aktualisierung werden der Cluster-Master, die Workerknoten, die Apps und die Ressourcen weiterhin ausgeführt. Nach dem Abschluss der Aktualisierung können Sie die Workerknotenversionen aktualisieren. Anweisungen und weitere Informationen zu den Unterschieden zwischen den Versionen <a>finden Sie in der Dokumentation</a>.",
+  "versionRequiresUpdate": "{{version}} (zuerst eine Aktualisierung auf eine frühere Version durchführen)",
+  "betaVersion": "{{version}} (einen neuen Cluster erstellen, um diese Betaversion zu testen)",
+  "noUpdatesAvailable": "Sie verwenden die neueste Version des API-Servers. Derzeit sind keine Aktualisierungen verfügbar.",
+  "clusterUpdating": "Für den API-Server wird eine Aktualisierung auf Version {{version}} durchgeführt. In ca. 1 Stunde können Sie für die Workerknoten eine Aktualisierung auf dieselbe Version durchführen.",
+  "errorSubtitle": "Die Clusterversion kann nicht aktualisiert werden.",
+  "dropdownLabel": "Clusterversion auswählen",
+  "notificationIcon": "Benachrichtigung",
+  "cannotUpdateTitle": "Clusterversion kann nicht aktualisiert werden.",
+  "cannotUpdateSubtitle": "Es sind keine gültigen Versionsaktualisierungsoptionen verfügbar.",
+  "clusterErrorSubtitle": "Clusterdetails können nicht geladen werden.",
+  "versionsErrorSubtitle": "Die Versionsoptionen für die Clusteraktualisierung können nicht geladen werden.",
+  "success": "Erfolg!",
+  "close": "Schließen"
+}

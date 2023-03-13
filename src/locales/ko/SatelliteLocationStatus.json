@@ -1,0 +1,8 @@
+{
+ "action_required": "조치 필요",
+ "provisioning": "작성 진행 중...",
+ "requestingCreation": "작성 요청 중...",
+ "preparingMaster": "마스터 준비 중...",
+ "finalizing": "완료 중...",
+ "infoIconDescription": "정보"
+}

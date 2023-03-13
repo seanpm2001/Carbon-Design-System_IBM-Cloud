@@ -1,0 +1,28 @@
+{
+  "close": {
+    "menu": "Close menu"
+  },
+  "open": {
+    "menu": "Open menu"
+  },
+  "collapse": {
+    "group": "Collapse group"
+  },
+  "expand": {
+    "group": "Expand group"
+  },
+  "clear": {
+    "all": "Clear all selected items",
+    "selection": "Clear selected item"
+  },
+  "placeholder": "Filter...",
+  "geography": "Geography",
+  "country": "Country",
+  "metro": "Metro",
+  "region": "Region",
+  "dc": "Data center",
+  "zone": "Zone",
+  "pop": "Pop",
+  "satellite": "Satellite",
+  "location": "Satellite"
+}

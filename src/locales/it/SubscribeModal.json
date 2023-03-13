@@ -1,0 +1,12 @@
+{
+  "notLoggedIn": "Devi essere connesso per sottoscrivere a un evento.",
+  "unableToSubscribe": "Non siamo stati in grado di sottoscriverti all'evento, riprova più tardi.",
+  "error": "Errore",
+  "success": "Operazione eseguita correttamente",
+  "successfullySubscribed": "Hai effettuato correttamente la sottoscrizione all'evento.",
+  "subscribe": "Sottoscrivi",
+  "cancel": "Annulla",
+  "subscribeModalHeader": "Ricevi aggiornamenti futuri?",
+  "subscribeModalHint": "Invieremo gli aggiornamenti all'e-mail di questo account quando questo incidente viene aggiornato o risolto.",
+  "email": "E-mail"
+}

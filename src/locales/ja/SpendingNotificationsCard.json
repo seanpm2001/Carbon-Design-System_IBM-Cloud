@@ -1,0 +1,15 @@
+{
+  "spendingNotifications": "使用料の通知",
+  "notAvailableText": "このビューは、一部のアカウント・タイプでは使用できません",
+  "notAvailableCaption": "使用料の通知にアクセスするには、アカウントをアップグレードしてください。",
+  "notEnabledText": "使用料の通知が有効になっていないようです",
+  "notEnabledCaption": "使用料の通知を有効化するには、以下にアクセスしてください ",
+  "noAccessText": "使用料の通知を表示するためのアクセス権限がないようです",
+  "noAccessCaption": "アクセス権限については、管理者に問い合わせてください。",
+  "totalAccount": "合計アカウント使用料",
+  "totalRuntime": "Cloud Foundry 合計ランタイム使用料",
+  "totalContainer": "合計コンテナー使用料",
+  "totalService": "合計サービス使用料",
+  "viewAll": "すべて表示",
+  "genericError": "現時点では、使用料の通知をロードできません。 後で再試行してください。"
+}

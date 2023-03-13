@@ -1,0 +1,67 @@
+{
+  "sidePanel": {
+    "reviewBtn": "檢閱",
+    "title": "編輯 {{resourceDisplayName}} 的存取權",
+    "subjectUnsupportedTitle": "無法修改原則",
+    "subjectUnsupported": "不支援所指定原則主旨 ({{policySubjectId}}) 的類型進行環境定義中修改。 若要管理特定使用者或服務 ID 的存取原則，請參閱 <a>Identity & Access Management</a>。"
+  },
+  "notifications": {
+    "genericTitle": "無法擷取資料",
+    "transactionId": "交易 ID",
+    "EditPolicySuccess": "已針對實例順利修改。",
+    "editPolicyErrorTitle": "無法編輯存取權。",
+    "editPolicyError": "嘗試編輯存取權時發生錯誤。",
+    "moreInfo": "檢視錯誤資訊",
+    "getAccessGroupError": "目前無法擷取存取群組資料。 請重新整理頁面，或稍後重試。",
+    "getAccessGroupsError": "目前無法擷取存取群組清單。 請重新整理頁面，或稍後重試。",
+    "getGroupPolicyErrorTitle": "無法擷取原則資料",
+    "getGroupPolicyError": "目前無法擷取原則資料。 請重新整理頁面，或稍後重試。",
+    "getAuthzResourceError": "目前無法擷取資源資料。 請重新整理頁面，或稍後重試。",
+    "getPubAccessGroupSettingError": "目前無法擷取公用存取群組的設定。 請重新整理頁面，或稍後重試。",
+    "getServiceError": "目前無法擷取公用存取群組的角色。 請重新整理頁面，或稍後重試。",
+    "getHeaderAccountError": "無法取得帳戶資訊",
+    "getHeaderAccountErrorSubtitle": "目前無法擷取帳戶資訊。 請重新整理頁面，或稍後重試。",
+    "viewModeTitle": "僅限檢視模式",
+    "viewModeText": "您對原則資源的存取權層次，導致您無法修改此原則。 如果您想要修改的能力，請與管理者聯絡，以更新您的資源存取權。"
+  },
+  "accessGroup": {
+    "heading": "編輯存取群組的存取權",
+    "helpText": "針對所選取存取群組的所有實體，修改此資源的存取權。",
+    "label": "選取的存取群組",
+    "tagUsersLabel": "{{totalCount}} 個使用者",
+    "tagUsersLabelSingle": "{{totalCount}} 個使用者",
+    "tagServiceIdsLabel": "{{totalCount}} 個服務 ID",
+    "tagServiceIdsLabelSingle": "{{totalCount}} 個服務 ID"
+  },
+  "roles": {
+    "heading": "存取權",
+    "noAvailableRoles": "您似乎沒有存取權，無法指派此資源的角色。 請與帳戶擁有者或此資源的管理者聯絡，以更新您的存取權。",
+    "helpText": "選取要指派的角色，以定義存取層次。",
+    "platformRolesLabel": "平台存取權",
+    "serviceRolesLabel": "服務存取權",
+    "customRolesLabel": "自訂存取權",
+    "popupHeading": "{{roleName}} 角色 ({{actionCount}}) 容許的動作",
+    "platformRolesInfo": "這些角色可對平台資源執行動作，例如建立實例、將實例連接至應用程式，以及指派使用者存取權。 選取所有適用的項目。",
+    "serviceRolesInfo": "這些角色容許使用服務以及執行服務 API 呼叫的存取權。 每個角色都是透過選取的服務進行自訂。 選取所有適用的項目。 如需詳細資料，請參閱服務的文件。",
+    "customRolesInfo": "這些角色是由帳戶的管理者所建立，以便自訂如何指派存取權給服務。 請按一下角色的動作圖示，以檢閱哪些動作對映到此角色。"
+  },
+  "confirmationModal": {
+    "heading": "檢閱對 {{resourceDisplayName}} 的存取指派",
+    "helpText": "請檢閱下列存取群組原則，以確保您指派的存取權層次是正確的。",
+    "accessGroupLabel": "存取群組",
+    "rolesLabel": "{{rolesCount}} 個角色",
+    "rolesLabelSingle": "{{rolesCount}} 個角色",
+    "confirmBtn": "儲存",
+    "platformAccessLabel": "平台存取權",
+    "serviceAccessLabel": "服務存取權",
+    "customAccessLabel": "自訂存取權"
+  },
+  "accessAssignments": "存取指派",
+  "transactionId": "交易 ID",
+  "genericRetrieveError": "目前無法擷取資料。 請重新整理頁面，或稍後重試。",
+  "genericEditPolicyError": "目前無法編輯存取原則。 請重新整理頁面，或稍後重試。",
+  "yes": "是",
+  "no": "否",
+  "cancel": "取消",
+  "close": "關閉"
+}

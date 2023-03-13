@@ -1,0 +1,20 @@
+{
+  "docsLink": "문서",
+  "keyManagementBtn": "연결",
+  "auditing": {
+    "title": "활동 추적",
+    "description": "감독, 규제 준수를 사용으로 설정하고 IBM Cloud 계정을 관리하기 위한 오퍼레이션 및 위험을 감사합니다."
+  },
+  "keymanagement": {
+    "title": "키 관리",
+    "description": "IBM Cloud 리소스, 서비스 및 애플리케이션에 사용되는 암호화 키의 라이프사이클을 관리합니다."
+  },
+  "logging": {
+    "title": "로깅",
+    "description": "IBM Cloud 로깅 데이터 및 이벤트를 저장, 검색, 분석, 모니터링하고 경보를 설정합니다."
+  },
+  "monitoring": {
+    "title": "모니터링",
+    "description": "IBM Cloud 기반 리소스 애플리케이션의 성능 및 상태에 대한 가시성을 제공합니다."
+  }
+}

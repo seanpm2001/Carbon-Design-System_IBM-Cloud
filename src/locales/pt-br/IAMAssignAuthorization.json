@@ -1,0 +1,78 @@
+{
+  "sidePanel": {
+    "reviewBtn": "Revisar",
+    "title": "Autorizar o acesso de serviço a serviço para {{resourceDisplayName}}"
+  },
+  "notifications": {
+    "genericTitle": "Não é possível recuperar dados",
+    "transactionId": "ID de transação",
+    "addPolicySuccess": "Foi designado com sucesso à instância.",
+    "addPolicyPartialSuccess": "Foi designado parcialmente à instância.",
+    "addPolicyError": "Ocorreram erros ao tentar designar o acesso.",
+    "moreInfo": "Visualizar informações de erro",
+    "getAttributesError": "Não é possível recuperar os atributos de recurso neste momento. Atualize a página ou tente novamente mais tarde.",
+    "getServicesError": "Não é possível recuperar as informações de serviço neste momento. Atualize a página ou tente novamente mais tarde.",
+    "getHeaderAccountError": "Não é possível obter as informações de conta",
+    "getHeaderAccountErrorSubtitle": "Não é possível recuperar as informações de conta neste momento. Atualize a página ou tente novamente mais tarde."
+  },
+  "targetService": {
+    "heading": "Selecione um serviço de destino",
+    "helpText": "Selecione um serviço de destino para {{resourceDisplayName}} acessar como o serviço de origem. É possível incluir apenas um serviço de cada vez.",
+    "invalidText": "O serviço de destino {{targetServiceName}} não é suportado pelo serviço de origem {{resourceDisplayName}}.",
+    "selectorLabel": "Serviço de destino",
+    "serviceFieldPlaceholder": "Selecione um serviço",
+    "childServiceLabel": "Tipo de recurso",
+    "allServiceInstances": "Todas as instâncias"
+  },
+  "resourceAttributes": {
+    "childFieldPlaceholder": "Insira ou selecione um tipo de recurso",
+    "regionFieldLabel": "Região",
+    "operatorFieldLabel": "Operador",
+    "allResourceTypes": "All resource types",
+    "learnMore": "Saiba mais",
+    "stringEquals": "igual de sequência",
+    "stringEqualsDescription": "Correspondência de sequência exata com distinção entre maiúsculas e minúsculas."
+  },
+  "roles": {
+    "heading": "Acesso",
+    "noAvailableRoles": "Parece que você não tem o acesso correto. Deve-se ter acesso ao serviço de destino para criar uma autorização entre os serviços.",
+    "helpText": "Selecione uma função para determinar o nível de acesso do serviço de origem.",
+    "platformRolesLabel": "Acesso à plataforma",
+    "serviceRolesLabel": "Acesso ao serviço",
+    "customRolesLabel": "Acesso customizado",
+    "popupHeading": "Ações permitidas para a função {{roleName}} ({{actionCount}})",
+    "platformRolesInfo": "Essas funções permitem que as ações sejam executadas nos recursos da plataforma, como criar uma instância, conectar instâncias a apps e designar acesso de usuário. Selecione todos os que se aplicarem.",
+    "serviceRolesInfo": "Essas funções permitem acesso para usar o serviço e executar chamadas da API de serviço. Cada função é customizada pelo serviço selecionado. Selecione todos os que se aplicarem. Consulte a documentação do serviço para obter mais detalhes.",
+    "customRolesInfo": "Essas funções são criadas por administradores na conta para customizar como o acesso é designado ao serviço. Clique no ícone Ações para a função para revisar quais ações estão mapeadas para essa função.",
+    "delegatorHeading": "Autorizar serviços dependentes",
+    "delegatorHelpText": "Ativar o serviço de origem para delegar seu acesso a outros serviços dependentes cria políticas de autorização automaticamente para eles. <a>Saiba mais.</a>",
+    "delegatorCheckboxLabel": "Ative as autorizações para que sejam delegadas por serviços dependentes e de origem"
+  },
+  "confirmationModal": {
+    "heading": "Revisar a autorização de serviço a serviço para {{resourceDisplayName}}",
+    "helpText": "Revise a designação antes de criar o acesso a seguir.",
+    "targetServiceLabel": "Serviço de destino",
+    "delegatorRoleLabel": "Serviço de autorização dependente",
+    "delegatorRoleValue": "Ativar",
+    "rolesLabel": "{{rolesCount}} Funções",
+    "rolesLabelSingle": "{{rolesCount}} Função",
+    "confirmBtn": "Designar",
+    "platformAccessLabel": "Acesso à plataforma",
+    "serviceAccessLabel": "Acesso ao serviço",
+    "customAccessLabel": "Acesso customizado",
+    "stringEquals": "igual de sequência"
+  },
+  "delegatorModal": {
+    "heading": "Ativar autorização a ser delegada?",
+    "helptext": "Permita que as políticas de autorização sejam criadas automaticamente pelo serviço de origem para seus serviços dependentes.",
+    "confirmBtn": "Autorizar"
+  },
+  "accessAssignments": "Designações de acesso",
+  "transactionId": "ID de transação",
+  "genericRetrieveError": "Não é possível recuperar dados neste momento. Atualize a página ou tente novamente mais tarde.",
+  "genericCreatePolicyError": "Não é possível criar a política de serviço a serviço neste momento. Atualize a página ou tente novamente mais tarde.",
+  "yes": "Sim",
+  "no": "Não",
+  "cancel": "Cancelar",
+  "close": "Fechar"
+}

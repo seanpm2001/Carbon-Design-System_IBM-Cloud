@@ -1,0 +1,28 @@
+{
+  "close": {
+    "menu": "Chiudi menu"
+  },
+  "open": {
+    "menu": "Apri menu"
+  },
+  "collapse": {
+    "group": "Comprimi gruppo"
+  },
+  "expand": {
+    "group": "Espandi gruppo"
+  },
+  "clear": {
+    "all": "Cancella tutti gli elementi selezionati",
+    "selection": "Cancella elemento selezionato"
+  },
+  "placeholder": "Filtro...",
+  "geography": "Area geografica",
+  "country": "Paese",
+  "metro": "Area metropolitana",
+  "region": "Regione",
+  "dc": "Data center",
+  "zone": "Zona",
+  "pop": "Pop",
+  "satellite": "Satellite",
+  "location": "Satellite"
+}

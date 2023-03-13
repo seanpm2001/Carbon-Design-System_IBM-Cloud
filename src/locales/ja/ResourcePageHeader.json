@@ -1,0 +1,11 @@
+{
+  "rename": "名前変更",
+  "delete": "削除",
+  "errorTitle": "何らかの問題が発生しました",
+  "resourceList": "リソース・リスト",
+  "renameModalContent": "新しい名前を以下に入力します。",
+  "deleteModalContent": "このサービスを削除しようとしています。続行しますか?",
+  "deleteModalPriButton": "はい、削除します",
+  "ModalCancelButton": "キャンセル",
+  "renameInputLabel": "名前"
+}

@@ -1,0 +1,42 @@
+{
+  "modalHeadingEdit": "タグの編集",
+  "modalHeadingAdd": "タグの追加",
+  "primaryButtonText": "保存",
+  "savingText": "保存中...",
+  "secondaryButtonText": "キャンセル",
+  "subtitleEdit": "編集するタグ:",
+  "subtitleAdd": "タグの追加先:",
+  "resourceTags": {
+    "labelText": "ユーザー・タグ",
+    "placeholder": "例: env:dev, version-1",
+    "tooltip": {
+      "exampleOpeningLine": "タグを使用してリソースを編成できます。 ユーザー・タグが請求に関連している場合は、関連したタグのグループ化に役立つよう、以下のように「キー:値」のペアとしてタグを記述することを検討してください。",
+      "exampleTag": "costctr:124",
+      "tagVisibility": "ユーザー・タグはアカウント全体で表示されます。 タグ名に機密データを含めないでください。",
+      "learnMore": "詳細はこちら。"
+    }
+  },
+  "accessTags": {
+    "labelText": "アクセス管理タグ",
+    "placeholder": "例: access:dev, proj:version-1",
+    "tooltip": {
+      "exampleOpeningLine": "アクセス管理タグを使用すると、特定のリソースに柔軟なアクセス・ポリシーを適用できます。"
+    }
+  },
+  "accessTagPrefix": "IAM",
+  "errors": {
+    "exceeds_attach_limit": "1 回で付加できるタグの最大数に達しました。 さらにタグを付加するには、まず変更を保存してください。",
+    "exceeds_detach_limit": "1 回で外すことのできるタグの最大数に達しました。 さらにタグを外すには、まず変更を保存してください。",
+    "tag_exists": "このタグは既に存在しています。 タグに別の名前を入力してください。",
+    "too_many_characters": "タグに使用できる文字数は 128 以下です。",
+    "more_than_one_colon": "タグに複数のコロンを含めることはできません。",
+    "starts_with_colon": "タグの先頭をコロンにすることはできません。",
+    "ends_with_colon": "タグの末尾をコロンにすることはできません。",
+    "invalid_characters": "タグに使用できるのは、英数字、スペース、下線、ダッシュ、ピリオド、および 1 つのコロンのみです。",
+    "not_key_value_format": "タグ名は「キー:値」の形式でなければなりません",
+    "unable_to_fetch": "タグの取り出し中にエラーが発生しました",
+    "tag_not_found": "一致するものが見つかりませんでした。 新しいタグを作成するには、タグ管理者に連絡してください。",
+    "invalid_tag_name": "名前が無効であるため、タグ '{{tagName}}' を作成できませんでした。",
+    "exceeds_access_tag_limit": "上限を超えているため、アクセス・タグを作成できませんでした。 アカウントごとに許可されているアクセス・タグは 30 個までです。"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "close": {
+    "menu": "Fechar Menu"
+  },
+  "open": {
+    "menu": "Abrir menu"
+  },
+  "collapse": {
+    "group": "Reduzir grupo"
+  },
+  "expand": {
+    "group": "Expandir grupo"
+  },
+  "clear": {
+    "all": "Limpar todos os itens selecionados",
+    "selection": "Limpar item selecionado"
+  },
+  "legend_iks": "Selecione um ou mais namespaces",
+  "legend_roks": "Selecione um ou mais projetos",
+  "allNamespaces_iks": "Todos os namespaces",
+  "allNamespaces_roks": "Todos os projetos",
+  "selectNamespaces_iks": "Selecionar namespaces",
+  "selectNamespaces_roks": "Selecionar projetos",
+  "namespacesLabel_iks": "Espaços de Tabelas",
+  "namespacesLabel_roks": "Projetos",
+  "createNamespace_iks": "Incluir namespace",
+  "createNamespace_roks": "Incluir projeto",
+  "createNamespaceDescription_iks": "Inclua um único namespace ou diversos namespaces em sua lista de namespaces específicos.",
+  "createNamespaceDescription_roks": "Inclua um único projeto ou diversos projetos em sua lista de projetos específicos.",
+  "enterNamespace_iks": "Insira namespaces separados por uma vírgula. Depois que você clicar em Incluir, os novos namespaces serão incluídos na lista e selecionados automaticamente.",
+  "enterNamespace_roks": "Insira projetos separados por uma vírgula. Depois que você clicar em Incluir, os novos projetos serão incluídos na lista e selecionados automaticamente.",
+  "namespace_iks": "Namespace:",
+  "namespace_roks": "Projeto",
+  "placeholder_iks": "nmpc-1, namespc-2",
+  "placeholder_roks": "prj-1, projct-2",
+  "targetCluster": "Destino selecionado",
+  "create": "Incluir",
+  "cancel": "Cancelar",
+  "closeLabel": "Fechar",
+  "placeholder": "Filtrar ...",
+  "allNotSupportedTitle_iks": "Todos os namespaces não suportados",
+  "allNotSupportedTitle_roks": "Todos os projetos não suportados",
+  "multiNotSupportedTitle_iks": "Namespaces específicos não suportados",
+  "multiNotSupportedTitle_roks": "Projetos específicos não suportados",
+  "invalidNamespace_iks": "O nome de um namespace pode incluir apenas letras minúsculas, números e traços. O nome não pode iniciar nem terminar com um traço e deve ter no máximo 63 caracteres.",
+  "invalidNamespace_roks": "O nome de um projeto pode incluir apenas letras minúsculas, números e traços. O nome não pode iniciar nem terminar com um traço e deve ter no máximo 63 caracteres.",
+  "duplicateNamespace": "‘{{namespace}}’ já existe. Insira outro nome.",
+  "fetchErrorTitle": "Não é possível recuperar detalhes",
+  "fetchErrorDescription_iks": "Não é possível preencher a lista de namespaces. Tente novamente mais tarde.",
+  "fetchErrorDescription_roks": "Não é possível preencher a lista de projetos. Tente novamente mais tarde."
+}

@@ -1,0 +1,15 @@
+{
+  "duplicateValue": "Este valor já existe.",
+  "tags": "Tags",
+  "label": {
+    "keyValue": "O rótulo deve estar no formato 'chave:valor'.",
+    "invalidPrefix": "Prefixo ou nome de rótulo inválido.",
+    "prefixMaxLength": "O prefixo do rótulo não deve ter mais de {{maxLength}} caracteres.",
+    "dnsMaxLength": "Os rótulos de subdomínio DNS não podem ter mais de {{maxLength}} caracteres.",
+    "dnsValidPrefix": "O prefixo do rótulo deve ser um subdomínio de DNS válido.",
+    "nameMaxLength": "O nome do rótulo não deve ter mais de {{maxLength}} caracteres.",
+    "invalidLabelName": "Nome do rótulo inválido.",
+    "valueMaxLength": "O valor do rótulo não deve ter mais de {{maxLength}} caracteres.",
+    "invalidLabelValue": "Valor do rótulo inválido."
+  }
+}

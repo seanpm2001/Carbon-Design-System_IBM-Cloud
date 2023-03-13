@@ -1,0 +1,16 @@
+{
+  "active": "Ativo",
+  "completed": "Concluído",
+  "connecting": "Conectando",
+  "inProgress": "Em andamento",
+  "created": "Criado",
+  "critical": "Crítico",
+  "disabled": "Desativado",
+  "draft": "Rascunho",
+  "failed": "Com falha",
+  "inactive": "Inativo",
+  "normal": "Normal",
+  "pending": "Pendente",
+  "scanning": "Varrendo",
+  "templateError": "Erro de modelo"
+}

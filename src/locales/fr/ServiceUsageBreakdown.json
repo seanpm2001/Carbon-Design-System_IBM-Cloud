@@ -1,0 +1,9 @@
+{
+  "totalText": "Cumul mensuel des dépenses à ce jour",
+  "errorText": "Impossible d'extraire les informations sur l'utilisation pour le moment. Réessayez ultérieurement.",
+  "unauthText": "Il semble que vous ne disposiez pas des droits d'accès permettant d'afficher les données d'utilisation du compte. <a>En savoir plus sur l'accès IAM</a>.",
+  "unauthCaption": "Vous devez détenir le rôle Administrateur sur le service de gestion des comptes de facturation pour afficher l'utilisation de l'ensemble du compte.",
+  "emptyText": "Il semble que vous ne disposiez encore d'aucune ressource.",
+  "emptyCaption": "Commencez dans le <a>catalogue</a>.",
+  "notEnough": "Il n'y a pas assez de ressources ou de coûts pour générer un graphique."
+}

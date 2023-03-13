@@ -1,0 +1,18 @@
+{
+    "requestToJoin": "Solicite unirse a Slack",
+    "orSignIn": "o inicie una sesión en Slack",
+    "email": "Correo electrónico",
+    "windowBlocked": "Es posible que se haya bloqueado la apertura de la ventana de Slack.",
+    "alreadyInvited": "Ya se ha enviado a su correo electrónico una invitación al canal de Slack. Compruebe el correo electrónico.",
+    "unknownError": "Se ha producido un error desconocido. Inténtelo de nuevo pasados unos minutos.",
+    "getInvite": "Obtener invitación",
+    "response": "Respuesta",
+    "error": "Error",
+    "success": "Correcto",
+    "inviteSent": "La invitación se ha enviado a {{emailAddress}}. Compruebe su correo electrónico.",
+    "joinUs": "Únase a nosotros en Slack.",
+    "confirmationModalTitle": "Es un canal público de Slack para los clientes",
+    "confirmationModalMessage": "Si necesita ayuda, <a>póngase en contacto con el servicio de soporte de IBM</a>.",
+    "confirmationModalMessageWithSlack": "Si necesita ayuda, <a>póngase en contacto con el equipo de soporte de IBM</a> o pruebe el canal <a>{{name}}</a> interno de IBM.",
+    "cancel": "Cancelar"
+}

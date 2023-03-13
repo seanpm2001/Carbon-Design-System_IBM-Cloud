@@ -1,0 +1,47 @@
+{
+  "COMMITMENT": "약정",
+  "SUBSCRIPTION": "구독",
+  "title": {
+    "COMMITMENT": "활성 약정 기간",
+    "SUBSCRIPTION": "활성 구독 기간"
+  },
+  "viewDetails": "세부사항 보기",
+  "contactSales": "영업 팀에 문의",
+  "empty": {
+    "title": "약정 & 구독",
+    "text": "약정 사용으로 IBM Cloud 종량과금제에 가입",
+    "caption": "IBM Cloud에서 특정 금액을 사용하기로 약정하면 플랫폼 전체에서 할인을 받습니다. 사용량에 따라 매월 청구되며 약정 금액에 도달한 후에도 계속 할인을 받습니다."
+  },
+  "unauthorized": {
+    "text": "약정 및 구독 정보를 볼 수 있는 액세스 권한이 없는 것 같습니다.",
+    "caption": "관리자에게 액세스 권한을 문의하십시오."
+  },
+  "error": {
+    "text": "약정 및 구독 데이터를 검색할 수 없습니다."
+  },
+  "enterprise": {
+    "text": "엔터프라이즈에서 계정을 관리합니다.",
+    "caption": "엔터프라이즈의 구성원이면 엔터프라이즈 계정으로 전환하여 자세한 정보를 확인하십시오."
+  },
+  "noUpcoming": {
+    "text": "활성 약정이 없는 것 같습니다.",
+    "caption": "오늘 약정에 가입하고 저장하십시오."
+  },
+  "upcomingTerm": "다음 {{mode}}이(가) {{date}}에 활성화됩니다.",
+  "metadata": {
+    "daysRemaining": "남은 일 수",
+    "dates": "날짜",
+    "discount": "할인",
+    "amountPercentOff": "모든 사용량에서 {{amount}}% 할인",
+    "startingCredit": "시작 크레딧",
+    "remainingCredit": "남은 크레딧"
+  },
+  "commitmentMeter": {
+    "spentToward": " {{total}} 약정에 대해 지출됨",
+    "reachedCommitment": "약정에 도달함"
+  },
+  "tooltip" : {
+    "month": "1개월",
+    "remainingCredit": "남은 크레딧"
+  }
+}

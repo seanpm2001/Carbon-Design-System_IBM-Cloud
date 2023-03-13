@@ -1,0 +1,13 @@
+{
+  "error": "錯誤",
+  "createModalHeader": "建立新的資源群組",
+  "createModalLabel": "名稱",
+  "createModalPrimary": "新增",
+  "createModalSecondary": "取消",
+  "upgradeRGModalHeader": "已達到資源群組限制",
+  "upgradeRGModalBody": "已將您的「精簡」帳戶限制為一個資源群組。",
+  "upgradeRGModalBodyCTA": "準備好新增更多了嗎？ 請升級至「隨收隨付制」帳戶。",
+  "upgradeRGModalPrimary": "升級",
+  "upgradeRGModalSecondary": "取消",
+  "createResourceGroup": "建立資源群組"
+}

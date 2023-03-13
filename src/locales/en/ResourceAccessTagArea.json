@@ -1,0 +1,23 @@
+{
+  "accessTags": {
+    "labelText": "Access management tags",
+    "placeholder": "Examples: access:dev, proj:version-1",
+    "tooltip": {
+      "exampleOpeningLine": "Access management tags help you apply flexible access policies on specific resources."
+    }
+  },
+  "accessTagPrefix": "IAM",
+  "errors": {
+    "exceeds_attach_limit": "You've reached the maximum number of tags that you can attach at a single time. To attach more tags, save your changes first.",
+    "exceeds_detach_limit": "You've reached the maximum number of tags that you can detach at a single time. To detach more tags, save your changes first.",
+    "tag_exists": "This tag already exists. Enter another name for your tag.",
+    "too_many_characters": "A tag cannot include more than 128 characters.",
+    "more_than_one_colon": "A tag cannot contain more than one colon.",
+    "starts_with_colon": "A tag cannot start with a colon.",
+    "ends_with_colon": "A tag cannot end with a colon.",
+    "invalid_characters": "A tag can include only alphanumeric characters, spaces, underscores, dashes, periods and one colon.",
+    "not_key_value_format": "The tag name must be in a key:value format",
+    "tag_not_found": "No matches found. To create new tags, contact your tag administrator.",
+    "error_creating_tags": "Error creating tags:"
+  }
+}

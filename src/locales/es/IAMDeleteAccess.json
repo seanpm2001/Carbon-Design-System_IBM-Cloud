@@ -1,0 +1,37 @@
+{
+  "notifications": {
+    "genericTitle": "No se pueden recuperar los datos",
+    "transactionId": "ID de transacción",
+    "deletePolicySuccess": "Se han eliminado correctamente para la instancia.",
+    "deletePolicyErrorTitle": "No se puede eliminar el acceso.",
+    "deletePolicyError": "Se ha producido un error al intentar eliminar el acceso.",
+    "moreInfo": "Ver la información de error",
+    "getGroupPolicyErrorTitle": "No se pueden recuperar datos de política",
+    "getGroupPolicyError": "Los datos de política no se pueden recuperar en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+    "getHeaderAccountError": "No se puede obtener la información de cuenta",
+    "getHeaderAccountErrorSubtitle": "La información de la cuenta no se puede recuperar en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+    "deleteNotAllowedTitle": "Permiso necesario para suprimir esta política",
+    "deleteNotAllowedText": "No tiene acceso para suprimir esta política. Póngase en contacto con el administrador para que actualice su nivel de acceso para este recurso de política."
+  },
+  "deleteModal": {
+    "heading": "Eliminar asignaciones de acceso a {{resourceDisplayName}}",
+    "helpText": "Revise la siguiente política de grupo de acceso para asegurarse de que está eliminando el nivel de acceso adecuado.",
+    "accessGroupLabel": "Grupo de acceso",
+    "rolesLabel": "{{rolesCount}} roles",
+    "rolesLabelSingle": "{{rolesCount}} rol",
+    "confirmBtn": "Eliminar",
+    "platformAccessLabel": "Acceso de plataforma",
+    "serviceAccessLabel": "Acceso de servicio",
+    "customAccessLabel": "Acceso personalizado"
+  },
+  "subjectUnsupportedTitle": "No se puede eliminar la política",
+  "subjectUnsupported": "El tipo de asunto de política especificado ({{policySubjectId}}) no recibe soporte para la eliminación en contexto. Para gestionar políticas de acceso para usuarios o ID de servicio específicos, visite <a>Identity & Access Management.</a>",
+  "accessAssignments": "Asignación de acceso",
+  "transactionId": "ID de transacción",
+  "genericRetrieveError": "No se pueden recuperar los datos en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+  "genericDeletePolicyError": "No se puede editar la política de acceso en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+  "yes": "Sí",
+  "no": "No",
+  "cancel": "Cancelar",
+  "close": "Cerrar"
+}

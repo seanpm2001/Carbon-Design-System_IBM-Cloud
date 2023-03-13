@@ -1,0 +1,37 @@
+{
+  "notifications": {
+    "genericTitle": "데이터를 검색할 수 없음",
+    "transactionId": "트랜잭션 ID",
+    "deletePolicySuccess": "인스턴스에 대해 성공적으로 제거되었습니다.",
+    "deletePolicyErrorTitle": "액세스를 제거할 수 없습니다.",
+    "deletePolicyError": "액세스를 제거하는 중에 오류가 발생했습니다.",
+    "moreInfo": "오류 정보 보기",
+    "getGroupPolicyErrorTitle": "정책 데이터를 검색할 수 없음",
+    "getGroupPolicyError": "지금은 정책 데이터를 검색할 수 없습니다. 페이지를 새로 고치거나 나중에 다시 시도하십시오.",
+    "getHeaderAccountError": "계정 정보를 가져올 수 없습니다.",
+    "getHeaderAccountErrorSubtitle": "지금은 계정 정보를 검색할 수 없습니다. 페이지를 새로 고치거나 나중에 다시 시도하십시오.",
+    "deleteNotAllowedTitle": "이 정책을 삭제하는 데 필요한 권한",
+    "deleteNotAllowedText": "이 정책을 삭제할 수 있는 액세스 권한이 부족합니다. 이 정책의 리소스에 대한 액세스 레벨을 업데이트하려면 관리자에게 문의하십시오."
+  },
+  "deleteModal": {
+    "heading": "{{resourceDisplayName}}에 대한 액세스 권한 지정 제거",
+    "helpText": "다음 액세스 그룹 정책을 검토하여 올바른 레벨의 액세스 권한을 제거하고 있는지 확인하십시오.",
+    "accessGroupLabel": "액세스 그룹",
+    "rolesLabel": "{{rolesCount}}개 역할",
+    "rolesLabelSingle": "{{rolesCount}}개 역할",
+    "confirmBtn": "제거",
+    "platformAccessLabel": "플랫폼 액세스 권한",
+    "serviceAccessLabel": "서비스 액세스 권한",
+    "customAccessLabel": "사용자 정의 액세스 권한"
+  },
+  "subjectUnsupportedTitle": "정책을 제거할 수 없음",
+  "subjectUnsupported": "지정된 정책 제목 유형({{policySubjectId}})은 컨텍스트 내 제거에서 지원되지 않습니다. 특정 사용자 또는 서비스 ID에 대한 액세스 정책을 관리하려면, <a>IAM(Identity & Access Management)</a>을 방문하십시오.",
+  "accessAssignments": "액세스 지정",
+  "transactionId": "트랜잭션 ID",
+  "genericRetrieveError": "지금은 데이터를 검색할 수 없습니다. 페이지를 새로 고치거나 나중에 다시 시도하십시오.",
+  "genericDeletePolicyError": "지금은 액세스 정책을 편집할 수 없습니다. 페이지를 새로 고치거나 나중에 다시 시도하십시오.",
+  "yes": "예",
+  "no": "아니오",
+  "cancel": "취소",
+  "close": "닫기"
+}

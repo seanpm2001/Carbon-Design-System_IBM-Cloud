@@ -1,0 +1,67 @@
+{
+  "sidePanel": {
+    "reviewBtn": "Revisar",
+    "title": "Editar acceso a {{resourceDisplayName}}",
+    "subjectUnsupportedTitle": "No se puede modificar la política",
+    "subjectUnsupported": "El tipo de asunto de política especificado ({{policySubjectId}}) no recibe soporte para la modificación en contexto. Para gestionar políticas de acceso para usuarios o ID de servicio específicos, visite <a>Identity & Access Management.</a>"
+  },
+  "notifications": {
+    "genericTitle": "No se pueden recuperar los datos",
+    "transactionId": "ID de transacción",
+    "EditPolicySuccess": "Se han modificado correctamente para la instancia.",
+    "editPolicyErrorTitle": "No se puede editar el acceso.",
+    "editPolicyError": "Se ha producido un error al intentar editar el acceso.",
+    "moreInfo": "Ver la información de error",
+    "getAccessGroupError": "Los datos de grupos de acceso no se pueden recuperar en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+    "getAccessGroupsError": "La lista de grupos de acceso no se puede recuperar en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+    "getGroupPolicyErrorTitle": "No se pueden recuperar datos de política",
+    "getGroupPolicyError": "Los datos de política no se pueden recuperar en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+    "getAuthzResourceError": "Los datos de recurso no se pueden recuperar en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+    "getPubAccessGroupSettingError": "El valor del grupo de acceso público no se puede recuperar en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+    "getServiceError": "Los roles para el grupo de acceso público no se pueden recuperar en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+    "getHeaderAccountError": "No se puede obtener la información de cuenta",
+    "getHeaderAccountErrorSubtitle": "La información de la cuenta no se puede recuperar en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+    "viewModeTitle": "Modalidad de solo visualización",
+    "viewModeText": "No puede modificar esta política debido a su nivel de acceso al recurso de la política. Si desea tener la posibilidad de modificar, póngase en contacto con el administrador para que actualice su acceso a los recursos."
+  },
+  "accessGroup": {
+    "heading": "Editar acceso al grupo de acceso",
+    "helpText": "Modificar el acceso a este recurso para todas las entidades del grupo de acceso seleccionado.",
+    "label": "Grupo de acceso seleccionado",
+    "tagUsersLabel": "{{totalCount}} usuarios",
+    "tagUsersLabelSingle": "{{totalCount}} usuario",
+    "tagServiceIdsLabel": "{{totalCount}} ID de servicio",
+    "tagServiceIdsLabelSingle": "{{totalCount}} ID de servicio"
+  },
+  "roles": {
+    "heading": "Acceso",
+    "noAvailableRoles": "Parece que no tiene acceso para asignar un rol para este recurso. Póngase en contacto con el propietario de la cuenta o con el administrador de este recurso para actualizar el acceso.",
+    "helpText": "Seleccione los roles que desea asignar para definir el nivel de acceso.",
+    "platformRolesLabel": "Acceso de plataforma",
+    "serviceRolesLabel": "Acceso de servicio",
+    "customRolesLabel": "Acceso personalizado",
+    "popupHeading": "Acciones permitidas para el rol de {{roleName}} ({{actionCount}})",
+    "platformRolesInfo": "Estos roles permiten realizar acciones en recursos de la plataforma, como crear una instancia, conectar una instancia a apps y asignar acceso de usuario. Seleccione todos los que procedan.",
+    "serviceRolesInfo": "Estos roles ofrecen acceso para utilizar el servicio y para realizar llamadas a la API de servicio. Cada rol es personalizado por el servicio seleccionado. Seleccione todos los que procedan. Consulte la documentación del servicio para obtener más información.",
+    "customRolesInfo": "Estos roles son creados por los administradores de la cuenta para personalizar el modo en que se asigna el acceso al servicio. Pulse las Acciones del icono de rol para revisar qué acciones están correlacionadas con este rol."
+  },
+  "confirmationModal": {
+    "heading": "Revisar asignaciones de acceso a {{resourceDisplayName}}",
+    "helpText": "Revise las siguientes políticas de grupo de acceso para asegurarse de que está asignando el nivel de acceso adecuado.",
+    "accessGroupLabel": "Grupo de acceso",
+    "rolesLabel": "{{rolesCount}} roles",
+    "rolesLabelSingle": "{{rolesCount}} rol",
+    "confirmBtn": "Guardar",
+    "platformAccessLabel": "Acceso de plataforma",
+    "serviceAccessLabel": "Acceso de servicio",
+    "customAccessLabel": "Acceso personalizado"
+  },
+  "accessAssignments": "Asignaciones de acceso",
+  "transactionId": "ID de transacción",
+  "genericRetrieveError": "No se pueden recuperar los datos en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+  "genericEditPolicyError": "No se puede editar la política de acceso en este momento. Renueve la página o vuelva a intentarlo más tarde.",
+  "yes": "Sí",
+  "no": "No",
+  "cancel": "Cancelar",
+  "close": "Cerrar"
+}

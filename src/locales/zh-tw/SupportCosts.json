@@ -1,0 +1,35 @@
+{
+  "title": "支援成本",
+  "supportPlan": "支援方案",
+  "supportPlans": {
+    "BASIC": "基本",
+    "STANDARD": "進階",
+    "PREMIUM": "超值",
+    "FREE": "免費"
+  },
+  "cost": "成本",
+  "validThrough": "有效期限",
+  "commitmentCost": {
+    "key": "每月成本",
+    "value": "每月消費的 10%"
+  },
+  "commitmentDetails": {
+    "belowThreshold": "您的年度支援成本包含在承諾中。",
+    "aboveThreshold": "您的支援成本是根據每月帳戶用量。"
+  },
+  "details": {
+    "FREE": "此支援方案免費隨附於您的帳戶中。",
+    "BASIC": "此支援方案免費隨附於您的帳戶中。",
+    "STANDARD": "這個金額包含您本月的支援費用加上任何超額費用。",
+    "PREMIUM": "這個金額包含您本月的支援費用加上任何超額費用。"
+  },
+  "errorText": "無法擷取支援成本資訊",
+  "enterprise": {
+    "text": "此帳戶由企業管理",
+    "caption": "如果您是企業成員，請切換至企業帳戶以取得相關資訊。"
+  },
+  "unauthorized":  {
+    "text": "您似乎沒有存取權，無法檢視您的支援成本。",
+    "caption": "若要存取，請聯絡管理者。"
+  }
+}

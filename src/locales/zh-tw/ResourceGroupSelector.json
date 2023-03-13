@@ -1,0 +1,9 @@
+{
+  "titleText": "資源群組",
+  "label": "選取資源群組",
+  "errorTitle": "載入資源群組時發生問題。",
+  "errorSubtitle": "請稍後再重試。",
+  "noGroupsTitle": "您無權存取任何資源群組。",
+  "linkText": "建立資源群組",
+  "iconDescription": "重新整理資源群組"
+}
