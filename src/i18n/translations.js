@@ -54,6 +54,4 @@ const resources = langauges.reduce(
   {}
 );
 
-console.log("resources: ", resources);
-
 export default resources;
