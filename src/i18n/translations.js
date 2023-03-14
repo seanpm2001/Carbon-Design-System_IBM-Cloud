@@ -32,7 +32,7 @@ const components = {
 
 const retrieveLanguage = (lng) =>
   Object.entries(components).reduce(
-    (acc, [key, val]) => ({ ...acc, [key]: val }),
+    (acc, [key, val]) => ({ ...acc, [key]: val[lng] }),
     {}
   );
 
@@ -53,5 +53,7 @@ const resources = langauges.reduce(
   (acc, val) => ({ ...acc, [val]: retrieveLanguage(val) }),
   {}
 );
+
+console.log("resources: ", resources);
 
 export default resources;
