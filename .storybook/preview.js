@@ -1,4 +1,4 @@
-import CarbonForCloudWrapper from "../src/CarbonForCloudWrapper";
+import CarbonForCloudWrapper from "../src/i18n/CarbonForCloudWrapper";
 import React, { Suspense } from "react";
 
 // Wrap your stories in the I18nextProvider component
@@ -41,9 +41,9 @@ export const globalTypes = {
         { value: "it", title: "Italian" },
         { value: "ja", title: "Japanese" },
         { value: "ko", title: "Korean" },
-        { value: "pt-br", title: "Portugese" },
-        { value: "zh-cn", title: "Chinese" },
-        { value: "zh-tw", title: "Chinese (Taiwan)" },
+        { value: "pt_br", title: "Portugese" },
+        { value: "zh_cn", title: "Chinese" },
+        { value: "zh_tw", title: "Chinese (Taiwan)" },
       ],
       showName: true,
     },

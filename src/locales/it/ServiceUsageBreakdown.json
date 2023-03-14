@@ -1,9 +1,0 @@
-{
-  "totalText": "Spesa da inizio mese",
-  "errorText": "Impossibile richiamare le informazioni sull'utilizzo in questo momento. Riprova più tardi.",
-  "unauthText": "Sembra che tu non disponga dell'accesso per visualizzare i dati di utilizzo dell'account. <a>Ulteriori informazioni sull'accesso IAM</a>.",
-  "unauthCaption": "Devi disporre del ruolo di amministratore nel servizio di gestione dell'account di fatturazione per visualizzare l'utilizzo per l'intero account.",
-  "emptyText": "Sembra che tu non abbia ancora alcuna risorsa.",
-  "emptyCaption": "Inizia a lavorare nel <a>catalogo</a>.",
-  "notEnough": "Non ci sono risorse o costi sufficienti per fare un grafico."
-}

@@ -1,9 +1,0 @@
-{
-  "titleText": "资源组",
-  "label": "选择资源组",
-  "errorTitle": "装入资源组时出现问题。",
-  "errorSubtitle": "请稍后重试。",
-  "noGroupsTitle": "您无权访问任何资源组。",
-  "linkText": "创建资源组",
-  "iconDescription": "刷新资源组"
-}

@@ -1,8 +1,0 @@
-{
-  "clearAll": "Borrar todo",
-  "filters": "Filtros",
-  "filtersWithColon": "Filtros:",
-  "noMatch": "No hay ningún elemento que coincida con los filtros. Borre los filtros y vuelva a intentarlo.",
-  "placeholder": "Filtrar...",
-  "resetFilters": "Restablecer filtros"
-}

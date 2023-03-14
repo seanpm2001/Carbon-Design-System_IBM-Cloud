@@ -1,9 +1,0 @@
-{
-  "titleText": "Resource group",
-  "label": "Select a resource group",
-  "errorTitle": "There was a problem loading resource groups.",
-  "errorSubtitle": "Try again later.",
-  "noGroupsTitle": "You do not have access to any resource groups.",
-  "linkText": "Create a resource group",
-  "iconDescription": "Refresh resource groups"
-}

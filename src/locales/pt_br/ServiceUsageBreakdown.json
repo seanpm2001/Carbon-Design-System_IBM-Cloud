@@ -1,9 +1,0 @@
-{
-  "totalText": "Gastos mensais",
-  "errorText": "Não é possível recuperar informações de uso neste momento. Tente novamente mais tarde.",
-  "unauthText": "Parece que você não tem acesso para visualizar os dados de uso da conta. <a>Saiba mais sobre o acesso ao IAM</a>.",
-  "unauthCaption": "Deve-se ter a função de Administrador no serviço de gerenciamento de contas de cobrança para visualizar o uso de toda a conta.",
-  "emptyText": "Parece que você não tem nenhum recurso ainda.",
-  "emptyCaption": "Introdução ao <a>catálogo</a>.",
-  "notEnough": "Não há recursos ou custos suficientes para fazer um gráfico."
-}
