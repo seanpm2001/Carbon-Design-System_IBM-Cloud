@@ -297,6 +297,13 @@ $feature-flags: (
   &--experimental &__return-link + &__title-container {
     padding: calc($spacing-06 - 2px) 0 0;
   }
+
+  // add padding right to svg icon
+  &--experimental &__return-link > svg {
+    margin-right: $spacing-03;
+    display: inline-flex;
+    align-self: center;
+  }
 }
 
 .cds--grid .pal--page-header {

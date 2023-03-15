@@ -47,6 +47,18 @@ export const Template = (args) => <PageHeader {...args} />;
 
 <Canvas>
   <Story
+    name="Experimental"
+    args={{
+      title: "Basic Page Header",
+      experimental: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
     name="Experimental - Return Link"
     args={{
       title: "Basic Page Header",

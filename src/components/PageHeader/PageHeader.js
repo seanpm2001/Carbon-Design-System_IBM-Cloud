@@ -4,6 +4,9 @@ import classNames from "classnames";
 
 // Components
 import { Button, OverflowMenuItem, Link } from "@carbon/react";
+
+//icons
+import { ArrowLeft } from "@carbon/icons-react"
 // Skeleton
 import PageHeaderSkeleton from "./skeleton";
 // Translations
@@ -102,7 +105,7 @@ const PageHeader = ({
           />
         )}
         {returnLink && (
-          <Link className='pal--page-header__return-link' href={returnLink}>{returnLinkText}</Link>
+          <Link className='pal--page-header__return-link' href={returnLink}><ArrowLeft/>{returnLinkText}</Link>
         )}
         <div className="pal--page-header__title-container">
           <div title={title} className={titleClasses}>
