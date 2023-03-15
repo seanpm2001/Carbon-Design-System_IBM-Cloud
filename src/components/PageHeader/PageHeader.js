@@ -40,6 +40,7 @@ const PageHeader = ({
   mock,
   actionButtons: actionButtonDefs,
   actionMenuItems: actionMenuItemDefs,
+  experimental
 }) => {
   const [actionButtons, setActionButtons] = useState();
   const [actionMenuItems, setActionMenuItems] = useState();
@@ -53,6 +54,7 @@ const PageHeader = ({
       "pal--page-header--provisioning": isProvisioning,
       "pal--page-header--sticky": isSticky,
       "pal--page-header--wrapped-details": wrappedDetails,
+      "pal--page-header--experimental": experimental,
     },
     className
   );
@@ -165,6 +167,7 @@ PageHeader.defaultProps = {
   actionMenuItems: undefined,
   mock: false,
   isV2: false,
+  experimental: false,
 };
 
 PageHeader.propTypes = {
@@ -176,6 +179,10 @@ PageHeader.propTypes = {
    * A custom class name to be applied to the page header's `header` element.
    */
   className: PropTypes.string,
+  /**
+  * A boolean to activate experimental design.
+  */
+  experimental: PropTypes.bool,
   /**
    * An image or SVG to use in the page header.
    */

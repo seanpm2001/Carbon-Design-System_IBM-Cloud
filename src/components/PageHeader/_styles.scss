@@ -3,6 +3,9 @@ $feature-flags: (
   enable-css-custom-properties: true,
 );
 
+// experimental
+@use '../../styles/type' as experimental-type;
+
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
 @import "@carbon/react/scss/colors";
@@ -136,7 +139,18 @@ $feature-flags: (
   }
 
   &__title-text {
+    
     @include type.type-style("productive-heading-04");
+
+    line-height: 2.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // experimental
+  &--experimental &__title-text{
+    
+    @include experimental-type.experimental-type-style("experimental-productive-heading-05");
 
     line-height: 2.5rem;
     overflow: hidden;
