@@ -147,16 +147,6 @@ $feature-flags: (
     text-overflow: ellipsis;
   }
 
-  // experimental
-  &--experimental &__title-text{
-    
-    @include experimental-type.experimental-type-style("experimental-productive-heading-05");
-
-    line-height: 2.5rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
   &__title {
     position: relative;
     padding-right: $spacing-03;
@@ -282,6 +272,30 @@ $feature-flags: (
   &--skeleton &__main {
     flex: auto;
     width: auto;
+  }
+
+
+  // experimental
+  &--experimental &__title-text{
+    @include experimental-type.experimental-type-style("experimental-productive-heading-05");
+
+    line-height: 2.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &--experimental &__title-container {
+    padding: calc($spacing-06 + 16px) 0 0; //mocking the height of breadcrumbs
+  }
+
+  // remove mock padding
+  &--experimental &__breadcrumb + &__title-container {
+    padding: $spacing-06 0 0;
+  }
+
+  // remove mock padding
+  &--experimental &__return-link + &__title-container {
+    padding: calc($spacing-06 - 2px) 0 0;
   }
 }
 

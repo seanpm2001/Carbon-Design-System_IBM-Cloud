@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 // Components
-import { Button, OverflowMenuItem } from "@carbon/react";
+import { Button, OverflowMenuItem, Link } from "@carbon/react";
 // Skeleton
 import PageHeaderSkeleton from "./skeleton";
 // Translations
@@ -40,7 +40,9 @@ const PageHeader = ({
   mock,
   actionButtons: actionButtonDefs,
   actionMenuItems: actionMenuItemDefs,
-  experimental
+  experimental,
+  returnLink,
+  returnLinkText
 }) => {
   const [actionButtons, setActionButtons] = useState();
   const [actionMenuItems, setActionMenuItems] = useState();
@@ -98,6 +100,9 @@ const PageHeader = ({
             className={className}
             linkComponent={linkComponent}
           />
+        )}
+        {returnLink && (
+          <Link className='pal--page-header__return-link' href={returnLink}>{returnLinkText}</Link>
         )}
         <div className="pal--page-header__title-container">
           <div title={title} className={titleClasses}>
@@ -168,6 +173,8 @@ PageHeader.defaultProps = {
   mock: false,
   isV2: false,
   experimental: false,
+  returnLink: undefined,
+  returnLinkText: 'Back to homepage'
 };
 
 PageHeader.propTypes = {
@@ -276,6 +283,15 @@ PageHeader.propTypes = {
    * Whether or not we should use mock data.
    */
   mock: PropTypes.bool,
+  /**
+   * Path of the products landing/home page. Using this prop adds a link back to the used path.
+   * This prop should not be used in combination with breadcrumbs.
+   */
+  returnLink: PropTypes.string,
+  /**
+   * Text to be displayed in the return link.
+   */
+  returnLinkText: PropTypes.string,
 };
 
 // components should export a skeleton
