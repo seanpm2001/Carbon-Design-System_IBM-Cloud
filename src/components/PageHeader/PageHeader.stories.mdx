@@ -96,6 +96,34 @@ export const Template = (args) => <PageHeader {...args} />;
   </Story>
 </Canvas>
 
+<Canvas>
+  <Story
+    name="Experimental - Primary Button"
+    args={{
+      title: "Basic Page Header",
+      experimental: true,
+      breadcrumbs: [
+        {
+          "href": "https://cloud.ibm.com",
+          "value": "Breadcrumb 1"
+        },
+        {
+          "href": "https://cloud.ibm.com",
+          "value": "Breadcrumb 2"
+        },
+        {
+          "value": "Breadcrumb 3",
+          "asButton": true
+        }
+      ],
+      children: <Button kind="primary" size="field"> Primary Button</Button>
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
 ## Description
 
 A component for rendering a Page Header. This should be used on every page on IBM Cloud. This component can be used on basic pages such

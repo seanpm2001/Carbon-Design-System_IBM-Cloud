@@ -304,6 +304,16 @@ $feature-flags: (
     display: inline-flex;
     align-self: center;
   }
+
+  &--experimental &__actions {
+    padding: 0;
+    margin: $spacing-06 0 0;
+    margin: $spacing-06 0 0; //mocking the height of breadcrumbs
+
+    @include breakpoint("md") {
+      margin: calc($spacing-06 + 16px) 0 0; // button jumps below title --> remove mock height of breadcrumbs
+    }
+  }
 }
 
 .cds--grid .pal--page-header {

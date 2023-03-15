@@ -104,7 +104,7 @@ const PageHeader = ({
             linkComponent={linkComponent}
           />
         )}
-        {returnLink && (
+        {experimental && returnLink && (
           <Link className='pal--page-header__return-link' href={returnLink}><ArrowLeft/>{returnLinkText}</Link>
         )}
         <div className="pal--page-header__title-container">
