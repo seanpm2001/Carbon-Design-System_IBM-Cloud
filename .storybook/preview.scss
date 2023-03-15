@@ -1,0 +1,12 @@
+@use '@carbon/react/scss/compat/themes' as compat;
+@use '@carbon/react/scss/themes';
+@use '@carbon/react/scss/theme';
+@use '@carbon/react';
+
+@import '@carbon/react';
+@import '@carbon/grid';
+
+
+:root {
+  @include theme.theme();
+}
