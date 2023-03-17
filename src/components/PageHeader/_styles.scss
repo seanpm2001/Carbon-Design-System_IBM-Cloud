@@ -20,6 +20,7 @@ $feature-flags: (
 @import "@carbon/react/scss/components/overflow-menu";
 @import "@carbon/react/scss/components/skeleton-styles";
 @import "@carbon/react/scss/components/link";
+@import '@carbon/styles/scss/grid';
 
 // children
 @import "./children/ActionsPanel/styles";
@@ -280,9 +281,84 @@ $feature-flags: (
     @include experimental-type.experimental-type-style("experimental-productive-heading-05");
 
     line-height: 2.5rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
+
+  // world
+
+  &--world {
+    @include flex-grid();
+    padding: $spacing-05  $spacing-05 $spacing-07  $spacing-07;
+  }
+  &--world &__title-text{
+    @include type.type-style('expressive-heading-05', true);
+    color: $text-primary;
+  }
+
+  &--world &__subtitle {
+    padding: $spacing-04 0 0;
+  }
+
+  &--world &__subtitle-text{
+    @include type.type-style('expressive-heading-03', true);
+    color: $text-secondary;
+  }
+
+  &--world &__title-container {
+    padding-left: $spacing-05 !important;
+    padding-right: $spacing-05  !important;
+    margin: 0;
+
+    @include breakpoint('lg') {
+      padding-left: $spacing-07 !important;
+      padding-right: $spacing-07  !important;
+    }
+  }
+
+  // world illustration
+  &--world &__illustration-container {
+    display: block;
+    height: clamp(60%, 80%, 100%);
+    width: clamp(60%, 80%, 100%);
+
+    padding-left: $spacing-05 !important;
+    padding-right: $spacing-05 !important;
+    margin: 0;
+
+    @include breakpoint('lg') {
+      padding-left: $spacing-07 !important;
+      padding-right: $spacing-07  !important;
+    }
+  }
+
+  // world illustration
+  &--world &__illustration {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+
+ }
+
+ &--world &__illustration > img:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 $spacing-05 $spacing-05 $background inset; 
+
+ }
+
+ &--world &__illustration > img {
+  @include breakpoint('lg') {
+    width: 100%;
+  }
+  @include breakpoint('sm') {
+    width: 100%;
+    padding-top: $spacing-07;
+  }
+ }
 
   &--experimental &__title-container {
     padding: calc($spacing-06 + 16px) 0 0; //mocking the height of breadcrumbs
@@ -295,7 +371,7 @@ $feature-flags: (
 
   // remove mock padding
   &--experimental &__return-link + &__title-container {
-    padding: calc($spacing-06 - 2px) 0 0;
+    padding: calc($spacing-06 - 3px) 0 0;
   }
 
   // add padding right to svg icon

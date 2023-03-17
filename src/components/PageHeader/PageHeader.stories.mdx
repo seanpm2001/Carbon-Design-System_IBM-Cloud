@@ -2,6 +2,8 @@ import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 import { OverflowMenuItem, Link, Search, Button, Tag } from "@carbon/react";
 import { Cloud as Cloud32 } from "@carbon/react/icons";
 import PageHeader from ".";
+import illustration from './illustration.svg'
+
 
 import "./_styles.scss";
 
@@ -117,6 +119,21 @@ export const Template = (args) => <PageHeader {...args} />;
         }
       ],
       children: <Button kind="primary" size="field"> Primary Button</Button>
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Experimental - World Header"
+    args={{
+      title: "A title that explains what you do in this world",
+      subtitle: "A subtitle that expands upon the title and highlights why this world is great.",
+      experimental: true,
+      isWorld: true,
+      illustration: illustration,
     }}
   >
     {Template.bind({})}

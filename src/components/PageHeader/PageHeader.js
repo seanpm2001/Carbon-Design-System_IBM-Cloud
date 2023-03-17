@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 // Components
-import { Button, OverflowMenuItem, Link } from "@carbon/react";
+import { Button, OverflowMenuItem, Link, Row, Column } from "@carbon/react";
 
 //icons
 import { ArrowLeft } from "@carbon/icons-react"
@@ -32,7 +32,7 @@ const PageHeader = ({
   isSticky,
   isProvisioning,
   isV2,
-  linkComponent,
+  linkComponent: LinkComponent,
   surfacedDetails,
   hasSurfacedDetailsList,
   title,
@@ -44,8 +44,13 @@ const PageHeader = ({
   actionButtons: actionButtonDefs,
   actionMenuItems: actionMenuItemDefs,
   experimental,
+  isWorld,
   returnLink,
-  returnLinkText
+  returnLinkText,
+  illustration,
+  illustrationAlt,
+  subtitle
+  // TODO: add locale for returnLinkText
 }) => {
   const [actionButtons, setActionButtons] = useState();
   const [actionMenuItems, setActionMenuItems] = useState();
@@ -60,12 +65,19 @@ const PageHeader = ({
       "pal--page-header--sticky": isSticky,
       "pal--page-header--wrapped-details": wrappedDetails,
       "pal--page-header--experimental": experimental,
+      "pal--page-header--world": isWorld,
     },
     className
   );
   const titleClasses = classNames(`pal--page-header__title`, {
     [`pal--page-header__title--truncated`]: truncatedTitle,
   });
+
+  const illustrationStyles = {
+    backgroundImage: 'url("'+illustration+'")',
+  }
+
+  const subtitleClasses = classNames(`pal--page-header__subtitle`);
 
   useEffect(() => {
     if (actionButtonDefs && actionButtonDefs.length > 0) {
@@ -101,11 +113,11 @@ const PageHeader = ({
           <Breadcrumbs
             breadcrumbs={breadcrumbs}
             className={className}
-            linkComponent={linkComponent}
+            linkComponent={LinkComponent}
           />
         )}
         {experimental && returnLink && (
-          <Link className='pal--page-header__return-link' href={returnLink}><ArrowLeft/>{returnLinkText}</Link>
+          <LinkComponent className='pal--page-header__return-link' href={returnLink}><ArrowLeft/>{returnLinkText}</LinkComponent>
         )}
         <div className="pal--page-header__title-container">
           <div title={title} className={titleClasses}>
@@ -143,7 +155,24 @@ const PageHeader = ({
 
   return (
     <header className={headerClasses}>
-      {isProvisioningV2 ? (
+      {isWorld ? (
+        <Row>
+          <Column lg={8} md={4} sm={4} className="pal--page-header__title-container">
+              <div className={titleClasses}>
+                <h1 className="pal--page-header__title-text">{title}</h1>
+              </div>
+              <div className={subtitleClasses}>
+                <p className="pal--page-header__subtitle-text">{subtitle}</p>
+              </div>
+          </Column>
+          <Column className="pal--page-header__illustration-container" lg={8} md={4} sm={4}>
+            <div className="pal--page-header__illustration" >
+            {illustration && <img src={illustration}  alt={illustrationAlt}/>}
+
+            </div>
+            </Column>
+      </Row>
+      ) : isProvisioningV2 ? (
         <div className="cds--row">
           <div className="pal--page-header__icon-container cds--col-md-2 cds--col-lg-2">
             {icon && <div className="pal--page-header__icon">{icon}</div>}
@@ -165,7 +194,7 @@ PageHeader.defaultProps = {
   icon: undefined,
   isSticky: false,
   isProvisioning: false,
-  linkComponent: "a",
+  linkComponent: Link,
   surfacedDetails: undefined,
   hasSurfacedDetailsList: false,
   truncatedTitle: false,
@@ -177,7 +206,8 @@ PageHeader.defaultProps = {
   isV2: false,
   experimental: false,
   returnLink: undefined,
-  returnLinkText: 'Back to homepage'
+  returnLinkText: 'Back to homepage',
+  isWorld: false,
 };
 
 PageHeader.propTypes = {
@@ -213,6 +243,10 @@ PageHeader.propTypes = {
    *  A title describing the page the user is on.
    */
   title: PropTypes.string.isRequired,
+  /**
+   *  A subtitle describing the page the user is on.
+   */
+  subtitle: PropTypes.string,
   /**
    * Whether or not the title should apply truncation. This is useful for headers with dynamic titles.
    */
@@ -295,6 +329,14 @@ PageHeader.propTypes = {
    * Text to be displayed in the return link.
    */
   returnLinkText: PropTypes.string,
+  /**
+   * Text to be displayed in the return link.
+   */
+  isWorld: PropTypes.bool,
+  /**
+   * An illustration that can be added to a world level page header. It is recommened to use an .svg with an transparent background.
+   */
+  illustration: PropTypes.element,
 };
 
 // components should export a skeleton
