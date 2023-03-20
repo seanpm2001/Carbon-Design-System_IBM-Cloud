@@ -1,12 +1,8 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { FormGroup, Checkbox } from "@carbon/react";
+import { useTranslation } from "react-i18next";
 import TableSettingsOption from "./TableSettingsOption";
-
-// Translations
-// import translations from '../translations';
-// import getLocale, { documentLanguage } from '../../../utils/getLocale';
-// import translationUtils from '../../../utils/translate';
 
 const TableSettingsColumns = React.forwardRef(
   (
@@ -20,10 +16,9 @@ const TableSettingsColumns = React.forwardRef(
     },
     ref
   ) => {
-    const [selected, setSelected] = useState(initialCols);
+    const { t } = useTranslation("EnhancedDataTable");
 
-    // const defaultLocale = getLocale(locale);
-    const translate = (str) => str;
+    const [selected, setSelected] = useState(initialCols);
 
     const onChange = (checked, id) => {
       const selectedSet = new Set(selected);
@@ -38,7 +33,7 @@ const TableSettingsColumns = React.forwardRef(
 
     return (
       <TableSettingsOption ref={ref}>
-        <FormGroup legendText={translate("settingsColumnsTitle")}>
+        <FormGroup legendText={t("settingsColumnsTitle")}>
           {headerOptions
             .filter((header) => header.header) // exclude columns without label
             .map((header) => {

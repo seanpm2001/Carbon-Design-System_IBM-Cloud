@@ -1,12 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Restart as Restart16 } from "@carbon/react/icons";
 import { Button } from "@carbon/react";
-
-// Translations
-// import translations from '../translations';
-// import getLocale, { documentLanguage } from '../../../utils/getLocale';
-// import translationUtils from '../../../utils/translate';
 
 const TableSettingsReset = React.forwardRef(
   (
@@ -19,8 +15,7 @@ const TableSettingsReset = React.forwardRef(
     },
     ref
   ) => {
-    // const defaultLocale = getLocale(locale);
-    const translate = (str) => str;
+    const { t } = useTranslation("EnhancedDataTable");
 
     const onClick = () => {
       onClickProp(defaultSettings);
@@ -32,12 +27,12 @@ const TableSettingsReset = React.forwardRef(
         ref={ref}
         data-table-settings-item-focusable
         renderIcon={Restart16}
-        iconDescription={translate("settingsReset")}
+        iconDescription={t("settingsReset")}
         disabled={false}
         onClick={onClick}
         onKeyDown={handleMenuItemFocus}
       >
-        {translate("settingsReset")}
+        {t("settingsReset")}
       </Button>
     );
   }

@@ -2,21 +2,15 @@ import PropTypes from "prop-types";
 import React, { useState, forwardRef } from "react";
 import { RadioButtonGroup, RadioButton } from "@carbon/react";
 import TableSettingsOption from "./TableSettingsOption";
-
-// Translations
-// import translations from '../translations';
-// import getLocale, { documentLanguage } from '../../../utils/getLocale';
-// import translationUtils from '../../../utils/translate';
+import { useTranslation } from "react-i18next";
 
 const TableSettingsSize = forwardRef(
   (
     { size, sizeOptions, handleMenuItemFocus, onChange: onChangeProp, locale },
     ref
   ) => {
+    const { t } = useTranslation("EnhancedDataTable");
     const [selected, setSelected] = useState(size);
-
-    // const defaultLocale = getLocale(locale);
-    const translate = (str) => str;
 
     const onChange = (id) => {
       setSelected(id);
@@ -28,7 +22,7 @@ const TableSettingsSize = forwardRef(
         <RadioButtonGroup
           labelPosition="right"
           name="row-height-radio-button-group"
-          legendText={translate("settingsSizeTitle")}
+          legendText={t("settingsSizeTitle")}
           onChange={onChange}
           orientation="vertical"
           valueSelected={selected}
@@ -37,7 +31,7 @@ const TableSettingsSize = forwardRef(
             <RadioButton
               key={option}
               id={option}
-              labelText={translate(`settingsSize.${option}`)}
+              labelText={t(`settingsSize.${option}`)}
               value={option}
               onKeyDown={handleMenuItemFocus}
               data-table-settings-item-focusable

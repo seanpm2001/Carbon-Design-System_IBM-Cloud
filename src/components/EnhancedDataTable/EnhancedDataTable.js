@@ -42,6 +42,8 @@ import {
   Column,
 } from "@carbon/react";
 
+import { useTranslation } from "react-i18next";
+
 import {
   DataTableHOC,
   TableSettingsSize,
@@ -319,12 +321,7 @@ const EnhancedDataTable = ({
   onDisplayedRowsChange,
   light,
 }) => {
-  // const defaultLocale = getLocale(locale);
-  // const translate = translationUtils.getTranslateFunction(
-  //   translationStrings,
-  //   defaultLocale,
-  // );
-  const translate = (strKey) => strKey;
+  const { t: translate } = useTranslation("EnhancedDataTable");
 
   const [defaultCols] = useState(
     (initialCols || allHeaders.map((h) => h.key)).sort()

@@ -2,12 +2,8 @@ import PropTypes from "prop-types";
 import React, { useEffect } from "react";
 import { Tag, Button } from "@carbon/react";
 import { Close as Close16 } from "@carbon/react/icons";
+import { useTranslation } from "react-i18next";
 import { match, Enter } from "../../../../utils/keyboard";
-
-// Translations
-// import translations from '../translations';
-// import getLocale, { documentLanguage } from '../../../utils/getLocale';
-// import translationUtils from '../../../utils/translate';
 
 const renderPanel = (args) => {
   const {
@@ -102,8 +98,8 @@ const renderSelectionTags = (args) => {
     filterSelections,
     onFilterChange,
     onClearAllFilters,
-    t,
     disabled,
+    t,
   } = args;
 
   const headerLabels = headers.reduce((acc, curr) => {
@@ -208,9 +204,7 @@ const TableToolbarFilterPanel = ({
   disablePrimaryButton,
   disabled,
 }) => {
-  // const defaultLocale = getLocale(locale);
-  const translate = (str) => str;
-
+  const { t } = useTranslation("EnhancedDataTable");
   // close filter panel when clicked outside data table
   useEffect(() => {
     const handler = (evt) => {
@@ -245,7 +239,7 @@ const TableToolbarFilterPanel = ({
           mode,
           disablePrimaryButton,
           disabled,
-          t: translate,
+          t,
         })}
       {!isOpen &&
         renderSelectionTags({
@@ -255,7 +249,7 @@ const TableToolbarFilterPanel = ({
           onFilterChange,
           onClearAllFilters,
           disabled,
-          t: translate,
+          t,
         })}
     </>
   );

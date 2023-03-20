@@ -7,11 +7,7 @@ import {
   Renew as Renew16,
 } from "@carbon/react/icons";
 import { Button } from "@carbon/react";
-
-// Translations
-// import translations from '../translations';
-// import getLocale, { documentLanguage } from '../../../utils/getLocale';
-// import translationUtils from '../../../utils/translate';
+import { useTranslation } from "react-i18next";
 
 const TableToolbarButton = ({
   type,
@@ -23,8 +19,7 @@ const TableToolbarButton = ({
   className,
   ...others
 }) => {
-  // const defaultLocale = getLocale(locale);
-  const translate = (str) => str;
+  const { t } = useTranslation("EnhancedDataTable");
 
   const metadata = {
     filter: {
@@ -49,8 +44,8 @@ const TableToolbarButton = ({
     const { css, description, icon } = metadata[type];
     return (
       <Button
-        iconDescription={description && translate(description)}
-        title={description && translate(description)}
+        iconDescription={description && t(description)}
+        title={description && t(description)}
         kind="ghost"
         size="field"
         className={classNames("cds--table-toolbar-button", css, className)}

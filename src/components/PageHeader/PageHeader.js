@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-
+import { useTranslation } from "react-i18next";
 // Components
 import { Button, OverflowMenuItem } from "@carbon/react";
 // Skeleton
 import PageHeaderSkeleton from "./skeleton";
-// Translations
-// import translations from './translations';
-//
+
 // Children
 import ActionsPanel from "./children/ActionsPanel";
 import Breadcrumbs from "./children/Breadcrumbs";
 import SurfacedDetails from "./children/SurfacedDetails";
-// utils
-// import { documentLanguage } from '../../utils/getLocale';
 
 /**
  * The Page Header Component that can be used across IBM Cloud micro-services and pages built by service teams.
@@ -41,6 +37,7 @@ const PageHeader = ({
   actionButtons: actionButtonDefs,
   actionMenuItems: actionMenuItemDefs,
 }) => {
+  const { t } = useTranslation("PageHeader");
   const [actionButtons, setActionButtons] = useState();
   const [actionMenuItems, setActionMenuItems] = useState();
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Tag as CarbonTag } from "@carbon/react";
+import { useTranslation } from "react-i18next";
 
 const TYPES = {
   functional: "Functional",
@@ -29,6 +30,8 @@ const Tag = ({
   title,
   ...other
 }) => {
+  const { t } = useTranslation("Tag");
+
   const [removed, setRemoved] = useState(false);
   const tagClasses = classNames("pal--tag", {
     "pal--tag__removed": removed,
@@ -65,7 +68,7 @@ const Tag = ({
       childrenTextLength > maxCharacters ? "pal--tag-truncate" : "";
   }
 
-  const detachDescription = `"detachDescription" ${children}`;
+  const detachDescription = `${t("detachDescription")} ${children}`;
 
   const onClose = () => {
     setRemoved(true);

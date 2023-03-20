@@ -1,9 +1,6 @@
 import React from "react";
 import { DatePicker, DatePickerInput } from "@carbon/react";
-
-// import translations from '../translations';
-// import getLocale from '../../../utils/getLocale';
-// import translationUtils from '../../../utils/translate';
+import { useTranslation } from "react-i18next";
 import useId from "../../../../utils/useId";
 
 /* eslint-disable react/prop-types */
@@ -18,6 +15,8 @@ const hoc = (WrappedComponent) => {
     initialSelectedItems = [],
     ...passthroughProps
   }) => {
+    const { t } = useTranslation("EnhancedDataTable");
+
     const datePickerId =
       passthroughProps?.id || useId("datatable-filter-datepicker");
     const disabled = passthroughProps?.disabled;
@@ -26,12 +25,10 @@ const hoc = (WrappedComponent) => {
       onChange({ selectedItems: args, columnKey, isDateRange: true, mode });
     };
 
-    // const defaultLocale = getLocale(locale);
-    const translate = (str) => str;
     // Adapter for Carbon's translation ids with our translation ids
     const translateWithId = (id) => {
       const translationId = `carbon.dateselect.${id}`;
-      return translate(translationId);
+      return t(translationId);
     };
 
     let start;

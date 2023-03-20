@@ -1,9 +1,6 @@
 import React from "react";
 import { Dropdown } from "@carbon/react";
-
-// import translations from '../translations';
-// import getLocale from '../../../utils/getLocale';
-// import translationUtils from '../../../utils/translate';
+import { useTranslation } from "react-i18next";
 
 /* eslint-disable react/prop-types */
 
@@ -19,12 +16,13 @@ const hoc = (WrappedComponent) => {
     light = true,
     ...passthroughProps
   }) => {
-    // const defaultLocale = getLocale(locale);
-    const translate = (str) => str;
+    const { t } = useTranslation("EnhancedDataTable");
+
+    // change this to useCallback or - BETTER - remove it
     // Adapter for Carbon's translation ids with our translation ids
     const translateWithId = (id) => {
       const translationId = `carbon.dropdown.${id}`;
-      return translate(translationId);
+      return t(translationId);
     };
 
     const augmentedOnChange = (args) => {
