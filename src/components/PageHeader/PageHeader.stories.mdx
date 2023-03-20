@@ -1,5 +1,5 @@
 import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
-import { OverflowMenuItem, Link, Search, Button, Tag } from "@carbon/react";
+import { OverflowMenuItem, Link, Search, Button, Tag , Tabs, Tab, TabList, TabPanels, TabPanel, Theme} from "@carbon/react";
 import { Cloud as Cloud32 } from "@carbon/react/icons";
 import PageHeader from ".";
 import illustration from './illustration.svg'
@@ -137,6 +137,67 @@ export const Template = (args) => <PageHeader {...args} />;
     }}
   >
     {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Provisioning Page Header
+
+<Canvas>
+  <Story
+    name="Experimental - Provisioning Page Header"
+    args={{
+      title: 'Cloudant',
+      icon:  <Cloud32 />,
+      isProvisioning: true,
+      experimental:true,
+      breadcrumbs: [
+        { href: 'https://cloud.ibm.com/catalog', value: 'Catalog' }
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Provisioning Page Header with tabs
+
+<Canvas>
+  <Story
+    name="Experimental - Provisioning Page Header with Tabs"
+    args={{
+      title: 'Cloudant',
+      icon:  <Cloud32 />,
+      isProvisioning: true,
+      experimental:true,
+      breadcrumbs: [
+        { href: 'https://cloud.ibm.com/catalog', value: 'Catalog' }
+      ]
+    }}
+  >
+    <PageHeader 
+      title='Cloudant'
+      icon= {<Cloud32 />}
+      isProvisioning
+      experimental
+      breadcrumbs= {[
+        { href: 'https://cloud.ibm.com/catalog', value: 'Catalog' }
+      ]}
+    />
+    <Theme theme="white" >
+      <div style={{marginLeft: '16px'}}>
+      <Tabs >
+        <TabList aria-label="List of tabs" >
+          <Tab>Tab Label 1</Tab>
+          <Tab>Tab Label 2</Tab>
+          <Tab>Tab Label 3</Tab>
+          <Tab>
+              Tab Label 4 with a very long long title
+          </Tab>
+          <Tab>Tab Label 5</Tab>
+        </TabList>
+      </Tabs>
+      </div>
+    </Theme>
   </Story>
 </Canvas>
 

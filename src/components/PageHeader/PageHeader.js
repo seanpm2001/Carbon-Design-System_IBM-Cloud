@@ -31,7 +31,6 @@ const PageHeader = ({
   icon,
   isSticky,
   isProvisioning,
-  isV2,
   linkComponent: LinkComponent,
   surfacedDetails,
   hasSurfacedDetailsList,
@@ -55,12 +54,10 @@ const PageHeader = ({
   const [actionButtons, setActionButtons] = useState();
   const [actionMenuItems, setActionMenuItems] = useState();
 
-  const isProvisioningV2 = isV2 && isProvisioning;
 
   const headerClasses = classNames(
     `pal--page-header`,
     {
-      "pal--page-header--v2": isProvisioningV2,
       "pal--page-header--provisioning": isProvisioning,
       "pal--page-header--sticky": isSticky,
       "pal--page-header--wrapped-details": wrappedDetails,
@@ -73,9 +70,6 @@ const PageHeader = ({
     [`pal--page-header__title--truncated`]: truncatedTitle,
   });
 
-  const illustrationStyles = {
-    backgroundImage: 'url("'+illustration+'")',
-  }
 
   const subtitleClasses = classNames(`pal--page-header__subtitle`);
 
@@ -121,7 +115,7 @@ const PageHeader = ({
         )}
         <div className="pal--page-header__title-container">
           <div title={title} className={titleClasses}>
-            {!isProvisioningV2 && icon && (
+            {!isProvisioning && icon && (
               <div className="pal--page-header__icon">{icon}</div>
             )}
             <h1 className="pal--page-header__title-text">{title}</h1>
@@ -155,9 +149,9 @@ const PageHeader = ({
 
   return (
     <header className={headerClasses}>
-      {isWorld ? (
+      {isWorld && experimental ? (
         <Row>
-          <Column lg={8} md={4} sm={4} className="pal--page-header__title-container">
+          <Column lg={8} md={4} sm={4} xlg={8} max={8} className="pal--page-header__title-container">
               <div className={titleClasses}>
                 <h1 className="pal--page-header__title-text">{title}</h1>
               </div>
@@ -165,20 +159,19 @@ const PageHeader = ({
                 <p className="pal--page-header__subtitle-text">{subtitle}</p>
               </div>
           </Column>
-          <Column className="pal--page-header__illustration-container" lg={8} md={4} sm={4}>
+          <Column className="pal--page-header__illustration-container" lg={8} md={4} sm={4} xlg={8} max={8} >
             <div className="pal--page-header__illustration" >
-            {illustration && <img src={illustration}  alt={illustrationAlt}/>}
-
+              {illustration && <img src={illustration}  alt={illustrationAlt}/>}
             </div>
             </Column>
       </Row>
-      ) : isProvisioningV2 ? (
-        <div className="cds--row">
-          <div className="pal--page-header__icon-container cds--col-md-2 cds--col-lg-2">
+      ) : isProvisioning && experimental ? (
+        <>
+          <Column lg={14} md={6} sm={2} xlg={14} max={14}  className="pal--page-header__main-container">{content}</Column>
+          <div className="pal--page-header__icon-container">
             {icon && <div className="pal--page-header__icon">{icon}</div>}
           </div>
-          <div className="pal--page-header__main-container">{content}</div>
-        </div>
+        </>
       ) : (
         content
       )}
@@ -203,10 +196,10 @@ PageHeader.defaultProps = {
   actionButtons: undefined,
   actionMenuItems: undefined,
   mock: false,
-  isV2: false,
   experimental: false,
   returnLink: undefined,
   returnLinkText: 'Back to homepage',
+  // TODO: add locale
   isWorld: false,
 };
 
@@ -235,10 +228,6 @@ PageHeader.propTypes = {
    * Whether or not the provisioning page header should be used here.
    */
   isProvisioning: PropTypes.bool,
-  /**
-   * `True` to use V2 styles. Only applicable when `isProvisioning` is `True`.
-   */
-  isV2: PropTypes.bool,
   /**
    *  A title describing the page the user is on.
    */
