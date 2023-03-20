@@ -5,3 +5,18 @@
 
 @import '@carbon/react';
 @import '@carbon/grid';
+:root {
+  @include theme($white);
+}
+
+[data-carbon-theme='g10'] {
+  @include theme($g10);
+}
+
+[data-carbon-theme='g90'] {
+  @include theme($g90);
+}
+
+[data-carbon-theme='g100'] {
+  @include theme($g100);
+}
