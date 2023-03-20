@@ -5,6 +5,7 @@ import { Button, Link, SelectableTile, Tag } from "@carbon/react";
 import FeaturedImage from "./children/FeaturedImage";
 import HighlightText from "./children/HighlightText";
 import { SoftwareResourceCluster } from "@carbon/react/icons";
+import { useTranslation } from "react-i18next";
 
 // Skeleton
 import CatalogTileSkeleton from "./skeleton";
@@ -33,6 +34,8 @@ const CatalogTile = ({
   headerTag,
   ...rest
 }) => {
+  const { t } = useTranslation("CatalogTile");
+
   const isSelectable = mode === "select";
   const isListMode = mode === "list";
   const isConsultingMode = mode === "consulting";
@@ -116,7 +119,9 @@ const CatalogTile = ({
         )}
         {!isConsultingMode && providerName && (
           <ul className="pal--catalog-tile__tag-container">
-            <li className="pal--catalog-tile__tag">By {providerName}</li>
+            <li className="pal--catalog-tile__tag">
+              {t("by", { name: providerName })}
+            </li>
           </ul>
         )}
       </div>

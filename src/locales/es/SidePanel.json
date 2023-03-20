@@ -1,0 +1,15 @@
+{
+  "modal": {
+    "label": "¿Está seguro?",
+    "closeText": "Cerrar",
+    "header": "Cerrando el panel lateral",
+    "confirmText": "¿Seguro de que desea cerrar el panel lateral?"
+  },
+  "backText": "Atrás",
+  "cancelText": "Cancelar",
+  "doneText": "Listo",
+  "nextText": "Siguiente",
+  "previousText": "Anterior",
+  "closePanelText": "Cerrar panel",
+  "doneIsLoadingText": "Cargando..."
+}

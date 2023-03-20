@@ -1,0 +1,15 @@
+{
+  "modal": {
+    "label": "Sind Sie sicher?",
+    "closeText": "Schließen",
+    "header": "Seitlichen Bereich schließen",
+    "confirmText": "Soll der seitliche Bereich tatsächlich geschlossen werden?"
+  },
+  "backText": "Zurück",
+  "cancelText": "Abbrechen",
+  "doneText": "Fertig",
+  "nextText": "Weiter",
+  "previousText": "Zurück",
+  "closePanelText": "Anzeige schließen",
+  "doneIsLoadingText": "Ladevorgang wird ausgeführt..."
+}

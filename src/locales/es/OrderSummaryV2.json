@@ -1,0 +1,17 @@
+{
+  "addToEstimate": "Añadir a estimación",
+  "create": "Crear",
+  "estimateCosts": "Costes estimados",
+  "estimated": "estimado",
+  "free": "Gratuito",
+  "loading": "Cargando...",
+  "creating": "Creando...",
+  "loginText": "¿Ya dispone de una cuenta? <a>Iniciar sesión</a>",
+  "showMore": "Mostrar más detalles",
+  "signUp": "Regístrese para crear",
+  "summaryHeader": "Resumen",
+  "totalEstimated": "Coste total estimado",
+  "monthShort": "me",
+  "upgrade": "Actualizar",
+  "viewTerms": "Ver términos y condiciones"
+}

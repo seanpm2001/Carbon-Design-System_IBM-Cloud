@@ -1,24 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Tooltip } from "@carbon/react";
-
-// import translationStrings from "../translations";
-// import getLocale, { documentLanguage } from "../../../utils/getLocale";
-// import translationUtils from "../../../utils/translate";
+import { useTranslation } from "react-i18next";
 
 const OrderSummaryTotals = ({
   subTotalItems,
   totalCost,
   totalCostSuffix,
   totalCostText,
-  // locale,
   tooltipText,
 }) => {
-  // const translate = translationUtils.getTranslateFunction(
-  //   translationStrings,
-  //   getLocale(locale)
-  // );
-  const defaultSuffix = totalCostText ? "" : `/${"monthShort"}`; // for backward compatibility
+  const { t } = useTranslation("OrderSummaryV2");
+
+  const defaultSuffix = totalCostText ? "" : `/${t("monthShort")}`; // for backward compatibility
   const suffix =
     totalCostSuffix === undefined ? defaultSuffix : totalCostSuffix;
   const totalCostWithSuffix = `${totalCost}${suffix}`;
@@ -37,7 +31,7 @@ const OrderSummaryTotals = ({
             <li className="pal--order-summary-v2__row pal--order-summary-v2__total-cost">
               <div>
                 <span className="pal--order-summary-v2__heading">
-                  {totalCostText || "totalEstimated"}
+                  {totalCostText || t("totalEstimated")}
                 </span>
                 {tooltipText && (
                   <Tooltip
