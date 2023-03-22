@@ -102,7 +102,8 @@ export const Template = (args) => <PageHeader {...args} />;
   <Story
     name="Experimental - Primary Button"
     args={{
-      title: "Basic Page Header",
+      title: "Basic Page Header Primary Button",
+      truncatedTitle: "Basic",
       experimental: true,
       breadcrumbs: [
         {
@@ -146,7 +147,8 @@ export const Template = (args) => <PageHeader {...args} />;
   <Story
     name="Experimental - Provisioning Page Header"
     args={{
-      title: 'Cloudant',
+      title: 'Cloudant Provisioning',
+      truncatedTitle: true,
       icon:  <Cloud32 />,
       isProvisioning: true,
       experimental:true,
@@ -164,18 +166,10 @@ export const Template = (args) => <PageHeader {...args} />;
 <Canvas>
   <Story
     name="Experimental - Provisioning Page Header with Tabs"
-    args={{
-      title: 'Cloudant',
-      icon:  <Cloud32 />,
-      isProvisioning: true,
-      experimental:true,
-      breadcrumbs: [
-        { href: 'https://cloud.ibm.com/catalog', value: 'Catalog' }
-      ]
-    }}
   >
     <PageHeader 
-      title='Cloudant'
+      title='Provision Cloudant'
+      truncatedTitle
       icon= {<Cloud32 />}
       isProvisioning
       experimental

@@ -372,8 +372,10 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   }
 
   // provisioning
-  &--provisioning {
+  &--experimental.pal--page-header--provisioning {
     @include flex-grid();
+
+    justify-content: space-between;
   }
 
   &--experimental.pal--page-header--provisioning &__main-container {
@@ -391,8 +393,10 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     padding-top: $spacing-05;
   }
 
-  &--experimental.pal--page-header--provisioning &__icon-container{
-    padding: calc($header-spacing + $breadcrumb-spacing) $spacing-05 0; //always mock breadcrumbs
+  &--experimental.pal--page-header--provisioning &__icon-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: calc($header-spacing + $breadcrumb-spacing) 0 0; //always mock breadcrumbs
     width:auto;
 
     padding-left: $spacing-05 !important;
