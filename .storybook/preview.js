@@ -8,7 +8,6 @@
 import './preview.scss';
 import { configureActions } from '@storybook/addon-actions';
 import { white, g10, g90, g100 } from '@carbon/themes';
-import React from 'react';
 import { breakpoints } from '@carbon/layout';
 import { Theme } from '@carbon/react';
 import CarbonForCloudWrapper from "../src/i18n/CarbonForCloudWrapper";
