@@ -1,0 +1,15 @@
+{
+  "modal": {
+    "label": "Confirmez-vous ?",
+    "closeText": "Fermer",
+    "header": "Fermeture du panneau latéral",
+    "confirmText": "Êtes-vous sûr de vouloir fermer le panneau latéral ?"
+  },
+  "backText": "Retour",
+  "cancelText": "Annuler",
+  "doneText": "Terminé",
+  "nextText": "Suivant",
+  "previousText": "Précédent",
+  "closePanelText": "Fermer le panneau",
+  "doneIsLoadingText": "Chargement en cours..."
+}

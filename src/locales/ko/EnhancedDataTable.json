@@ -1,0 +1,78 @@
+{
+  "description": "추가 아이콘",
+  "settingsColumnsTitle": "열 편집",
+  "settingsSizeTitle": "행 높이",
+  "settingsSize": {
+    "tall": "높음(64픽셀)",
+    "normal": "보통(48픽셀)",
+    "short": "낮음(32픽셀)",
+    "compact": "최소(24픽셀)"
+  },
+  "settingsReset": "기본값으로 재설정",
+  "settingsLabel": "설정",
+  "filtersLabel": "필터",
+  "filtersApply": "적용",
+  "filtersDone": "완료",
+  "filtersClear": "지우기",
+  "filtersClearFilters": "필터 지우기",
+  "noItems": "현재 필터와 일치하는 항목이 없습니다.",
+  "previousPage": "이전 페이지",
+  "nextPage": "다음 페이지",
+  "itemRange": "{{min}} – {{max}}/{{total}}개의 항목",
+  "itemRangeSingle": "1–1/1개 항목",
+  "itemsPerPage": "페이지당 항목 수:",
+  "pageNumber": "페이지 번호",
+  "pageRange": "{{current}}/{{total}} 페이지",
+  "pageRangeSingle": "1/1 페이지",
+  "itemText": "{{min}} – {{max}}개의 항목",
+  "pageText": "페이지 {{pageNumber}}",
+  "all": "모두",
+  "carbon.table.batch.cancel": "취소",
+  "carbon.table.batch.items.selected": "{{count}}개의 항목이 선택됨",
+  "carbon.table.batch.item.selected": "1개의 항목이 선택됨",
+  "carbon.table.toolbar.search.label": "검색",
+  "carbon.table.toolbar.search.placeholder": "검색",
+  "carbon.table.row.expand": "행 펼치기",
+  "carbon.table.row.collapse": "행 접기",
+  "carbon.table.all.expand": "행 모두 펼치기",
+  "carbon.table.all.collapse": "행 모두 접기",
+  "carbon.table.all.select": "페이지의 모든 행 선택",
+  "carbon.table.all.unselect": "모든 행 선택 취소",
+  "carbon.table.row.select": "행 선택",
+  "carbon.table.row.unselect": "행 선택 취소",
+  "carbon": {
+    "dropdown": {
+      "open": {
+        "menu": "메뉴 열기"
+      },
+      "close": {
+        "menu": "메뉴 닫기"
+      }
+    },
+    "multiselect": {
+      "open": {
+        "menu": "메뉴 열기"
+      },
+      "close": {
+        "menu": "메뉴 닫기"
+      },
+      "clear": {
+        "all": "모두 지우기"
+      }
+    },
+    "dateselect": {
+      "start": "시작 날짜",
+      "end": "종료 날짜"
+    }
+  },
+  "sortAscending": "오름차순 정렬",
+  "sortDescending": "내림차순 정렬",
+  "removeSort": "정렬 제거",
+  "overflowMenu": "오버플로우 메뉴",
+  "emptyStateTitle": "리소스",
+  "emptyStateDescription": "리소스를 작성하고 나면 여기서 이를 찾을 수 있습니다.",
+  "multiselectPlaceholder": "필터...",
+  "download": "다운로드",
+  "refresh": "새로 고치기",
+  "selectAllRows": "모든 {{totalRowCount}}개 항목 선택"
+}

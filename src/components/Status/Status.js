@@ -9,6 +9,7 @@ import {
 } from "@carbon/react/icons";
 import { Tooltip } from "@carbon/react";
 import Skeleton from "./skeleton";
+import { useTranslation } from "react-i18next";
 
 // The transition state is similar enough to the inline loading indicator that
 // we can use the same class names to get the style, but the icon itself is a
@@ -114,8 +115,11 @@ export function renderStatus(status) {
   return <div className={circleClasses} />;
 }
 
-function Status({ className, label, status, locale, tooltipMsg }) {
+const Status = ({ className, label, status, locale, tooltipMsg }) => {
+  const { t } = useTranslation("Status");
+
   const classes = classnames("pal--status", className);
+
   return (
     <div className={classes} data-status={status}>
       {renderStatus(status)}
@@ -123,14 +127,14 @@ function Status({ className, label, status, locale, tooltipMsg }) {
       {tooltipMsg && (
         <Tooltip
           renderIcon={Information16}
-          iconDescription={"infoIconDescription"}
+          iconDescription={t("infoIconDescription")}
         >
           {typeof tooltipMsg === "string" ? <p>{tooltipMsg}</p> : tooltipMsg}
         </Tooltip>
       )}
     </div>
   );
-}
+};
 
 Status.defaultProps = {
   className: "",

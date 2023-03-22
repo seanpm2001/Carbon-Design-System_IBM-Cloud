@@ -6,15 +6,57 @@
  */
 
 import './preview.scss';
-
 import { configureActions } from '@storybook/addon-actions';
 import { white, g10, g90, g100 } from '@carbon/themes';
 import React from 'react';
 import { breakpoints } from '@carbon/layout';
 import { Theme } from '@carbon/react';
+import CarbonForCloudWrapper from "../src/i18n/CarbonForCloudWrapper";
+import React, { Suspense } from "react";
+
+configureActions({
+  depth: 3,
+  limit: 10,
+});
+
+
+const withTheme = (Story, context) => {
+  const { locale, theme } = context.globals;
+
+  React.useEffect(() => {
+    document.documentElement.setAttribute('data-carbon-theme', theme);
+  }, [theme]);
+
+  React.useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
+
+  return (
+    <Theme theme={ theme }>
+      <Story {...context} />
+    </Theme>
+  );
+}
+
+
+// Wrap your stories in the I18nextProvider component
+const withI18next = (Story, context) => {
+  const { locale } = context.globals;
+  return (
+    // This catches the suspense from components not yet ready (still loading translations)
+    // Alternative: set useSuspense to false on i18next.options.react when initializing i18next
+    <Suspense fallback={<div>loading translations...</div>}>
+      <CarbonForCloudWrapper locale={locale}>
+        <Story />
+      </CarbonForCloudWrapper>
+    </Suspense>
+  );
+};
+
+export const decorators = [withI18next, withTheme];
 
 export const parameters = {
-  backgrounds: {
+  theme: {
     // https://storybook.js.org/docs/react/essentials/backgrounds#grid
     grid: {
       cellSize: 8,
@@ -114,27 +156,34 @@ export const parameters = {
   },
 };
 
-configureActions({
-  depth: 3,
-  limit: 10,
-});
-
-export const decorators = [
-  (Story, context) => {
-    const { locale, theme } = context.globals;
-
-    React.useEffect(() => {
-      document.documentElement.setAttribute('data-carbon-theme', theme);
-    }, [theme]);
-
-    React.useEffect(() => {
-      document.documentElement.lang = locale;
-    }, [locale]);
-
-    return (
-      <Theme theme={ theme }>
-        <Story {...context} />
-      </Theme>
-    );
+export const globalTypes = {
+  locale: {
+    name: "Locale",
+    description: "Internationalization locale",
+    toolbar: {
+      icon: "globe",
+      items: [
+        { value: "en", title: "English" },
+        { value: "de", title: "Deutsch" },
+        { value: "es", title: "Spanish" },
+        { value: "fr", title: "French" },
+        { value: "it", title: "Italian" },
+        { value: "ja", title: "Japanese" },
+        { value: "ko", title: "Korean" },
+        { value: "pt_br", title: "Portugese" },
+        { value: "zh_cn", title: "Chinese" },
+        { value: "zh_tw", title: "Chinese (Taiwan)" },
+      ],
+      showName: true,
+    },
   },
-];
+  theme: {
+    name: 'Theme',
+    description: 'Set the global theme for displaying components',
+    defaultValue: 'white',
+    toolbar: {
+      icon: 'circlehollow',
+      items: ['white', 'g10', 'g90', 'g100'],
+    },
+  },
+};
