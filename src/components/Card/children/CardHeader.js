@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Button } from "@carbon/react";
 import { Edit, Save } from "@carbon/react/icons";
 import cx from "classnames";
+import { useTranslation } from "react-i18next";
 
 const CardHeaderActions = ({
   cancelDisabled,
@@ -15,6 +16,7 @@ const CardHeaderActions = ({
   saveDisabled,
   saveText,
   cancelText,
+  t,
 }) => {
   if ((internal || external) && onCancelClick) {
     return (
@@ -25,7 +27,7 @@ const CardHeaderActions = ({
           disabled={cancelDisabled}
           onClick={onCancelButtonClick}
         >
-          {cancelText}
+          {t("cancel")}
         </Button>
         <Button
           kind="ghost"
@@ -33,7 +35,7 @@ const CardHeaderActions = ({
           disabled={saveDisabled}
           onClick={onSaveButtonClick}
         >
-          {saveText}
+          {saveText || t("save")}
           <Save className="cds--btn__icon" />
         </Button>
       </>
@@ -47,7 +49,7 @@ const CardHeaderActions = ({
       disabled={saveDisabled}
       onClick={onSaveButtonClick}
     >
-      {saveText}
+      {saveText || t("save")}
       <Save className="cds--btn__icon" />
     </Button>
   );
@@ -79,6 +81,7 @@ const CardHeader = ({
   linkIcon,
   ...rest
 }) => {
+  const { t } = useTranslation("Card");
   const [internalEditing, setInternalEditing] = useState(false);
   // Whether or not to rely on external or internal state for editing
   const external = onSaveClick && typeof editing === "boolean";
@@ -165,6 +168,7 @@ const CardHeader = ({
                 onSaveButtonClick={onSaveButtonClick}
                 saveDisabled={saveDisabled}
                 saveText={saveText}
+                t={t}
               />
             ) : (
               <Button
@@ -173,7 +177,7 @@ const CardHeader = ({
                 onClick={onEditButtonClick}
                 disabled={editDisabled}
               >
-                {editText}
+                {t("edit")}
                 <Edit className="cds--btn__icon" />
               </Button>
             )}

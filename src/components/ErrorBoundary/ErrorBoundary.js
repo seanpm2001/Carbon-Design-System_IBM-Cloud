@@ -1,19 +1,9 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
+import { withTranslation } from "react-i18next";
 
 // Components
 import Message from "../Message";
-
-// Pal analytics
-// import trackComponentEvent from '../../utils/analytics';
-
-// // Translations
-// import translationStrings from './translations';
-// import getLocale from '../../utils/getLocale';
-// import translationUtils from '../../utils/translate';
-
-// Utilities
-// import requestUtils from "../../utils/request";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -30,49 +20,11 @@ class ErrorBoundary extends Component {
     return { error: true };
   }
 
-  // componentDidCatch(error, errorInfo) {
-  //   const { loggingEndpoint } = this.props;
-  //   const errorId = new Date().toISOString().replace(/[-:.]/g, '');
-  //   this.setState({ errorId });
-  //
-  //   // You can also log the error to an error reporting service
-  //   trackComponentEvent('Error Boundary triggered', {
-  //     palComponent: 'Component - Error Boundary',
-  //     error,
-  //     errorInfo,
-  //   });
-  //   if (loggingEndpoint) {
-  //     requestUtils.post(loggingEndpoint, {
-  //       body: {
-  //         id: errorId,
-  //         error,
-  //         errorInfo,
-  //         name: error.name,
-  //         message: error.message,
-  //         stack: error.stack,
-  //         userAgent: typeof navigator !== 'undefined' && navigator.userAgent,
-  //       },
-  //     });
-  //   }
-  // }
-
   render() {
-    const {
-      // locale,
-      children,
-      text,
-      caption,
-      // loggingEndpoint,
-    } = this.props;
+    const { children, text, caption, t } = this.props;
     const { error, errorId } = this.state;
 
-    // const defaultLocale = getLocale(locale);
-    // const translate = translationUtils.getTranslateFunction(
-    //   translationStrings,
-    //   defaultLocale,
-    // );
-
-    let formattedCaption = caption;
+    let formattedCaption = caption || t("contactSupport");
 
     // If error show a generic error message
     if (error) {
@@ -81,7 +33,7 @@ class ErrorBoundary extends Component {
           id="generic-error-message"
           icon="ERROR"
           caption={formattedCaption}
-          text={text}
+          text={text || t("genericError")}
           isTileWrapped
         />
       );
@@ -111,15 +63,8 @@ ErrorBoundary.propTypes = {
 };
 
 ErrorBoundary.defaultProps = {
-  // locale:
-  //   (typeof document !== "undefined" &&
-  //     !!document &&
-  //     !!document.documentElement &&
-  //     document.documentElement.lang) ||
-  //   "en",
-  // loggingEndpoint: undefined,
   text: undefined,
   caption: undefined,
 };
 
-export default ErrorBoundary;
+export default withTranslation("ErrorBoundary")(ErrorBoundary);

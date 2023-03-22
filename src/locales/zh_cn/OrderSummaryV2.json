@@ -1,0 +1,17 @@
+{
+  "addToEstimate": "添加到估算",
+  "create": "创建",
+  "estimateCosts": "估算成本",
+  "estimated": "估算",
+  "free": "免费",
+  "loading": "正在装入...",
+  "creating": "正在创建...",
+  "loginText": "已有帐户？ <a>登录</a>",
+  "showMore": "显示更多详细信息",
+  "signUp": "注册以创建",
+  "summaryHeader": "摘要",
+  "totalEstimated": "估算的总成本",
+  "monthShort": "月",
+  "upgrade": "升级",
+  "viewTerms": "查看条款和条件"
+}

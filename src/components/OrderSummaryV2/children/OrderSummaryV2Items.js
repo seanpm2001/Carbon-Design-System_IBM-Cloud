@@ -4,10 +4,7 @@ import classnames from "classnames";
 import { Accordion, AccordionItem } from "@carbon/react";
 import separateByProp from "../utils/separateByProp";
 import OrderSummaryItemText from "./OrderSummaryV2ItemText";
-
-// import translationStrings from '../translations';
-// import getLocale from '../../../utils/getLocale';
-// import translationUtils from '../../../utils/translate';
+import { useTranslation } from "react-i18next";
 
 const OrderSummaryItem = ({
   accordionText,
@@ -17,8 +14,9 @@ const OrderSummaryItem = ({
   details,
   items,
   indented,
-  translate,
 }) => {
+  const { t } = useTranslation("OrderSummaryV2");
+
   const [hiddenDetails, visibleDetails] = separateByProp(
     details,
     "isHidden",
@@ -50,40 +48,22 @@ const OrderSummaryItem = ({
           items={visibleDetails}
           type="details-list"
           leftPad={hiddenDetails.length > 0 || indented}
-          // translate={translate}
         />
       ) : null}
       {hiddenDetails.length > 0 ? (
         <Accordion align="end">
-          <AccordionItem title={accordionText || "showMore"}>
-            <OrderSummaryItems
-              items={hiddenDetails}
-              type="details-list"
-              // translate={translate}
-            />
+          <AccordionItem title={accordionText || t("showMore")}>
+            <OrderSummaryItems items={hiddenDetails} type="details-list" />
           </AccordionItem>
         </Accordion>
       ) : null}
-      {items ? (
-        <OrderSummaryItems
-          items={items}
-          // translate={translate}
-        />
-      ) : null}
+      {items ? <OrderSummaryItems items={items} /> : null}
     </li>
   );
 };
 
-const OrderSummaryItems = ({
-  items,
-  indented,
-  type,
-  // locale
-}) => {
-  // const translate = translationUtils.getTranslateFunction(
-  //   translationStrings,
-  //   getLocale(locale)
-  // );
+const OrderSummaryItems = ({ items, indented, type }) => {
+  const { t } = useTranslation("OrderSummaryV2");
 
   return items.length > 0 ? (
     <ul
@@ -98,7 +78,6 @@ const OrderSummaryItems = ({
           name={name}
           id={id}
           key={key || id || name} // TODO: remove name to reduce possible duplicates (e.g. when name is undefined)
-          // translate={translate}
           accordionText={accordionText}
         />
       ))}

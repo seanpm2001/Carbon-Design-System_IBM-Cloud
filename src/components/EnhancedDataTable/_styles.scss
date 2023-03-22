@@ -1,0 +1,499 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/grid";
+
+@import "@carbon/react/scss/components/search";
+@import "@carbon/react/scss/components/date-picker";
+
+@import "@carbon/react/scss/components/data-table";
+@import "@carbon/react/scss/components/data-table/action";
+@import "@carbon/react/scss/components/data-table/action/data-table-action";
+@import "@carbon/react/scss/components/data-table/sort";
+@import "@carbon/react/scss/components/data-table/sort/data-table-sort";
+@import "@carbon/react/scss/components/data-table/expandable";
+@import "@carbon/react/scss/components/data-table/expandable/data-table-expandable";
+@import "@carbon/react/scss/components/data-table/skeleton";
+@import "@carbon/react/scss/components/data-table/skeleton/data-table-skeleton";
+
+@import "@carbon/react/scss/components/checkbox";
+@import "@carbon/react/scss/components/button";
+@import "@carbon/react/scss/components/overflow-menu";
+@import "@carbon/react/scss/components/pagination";
+@import "@carbon/react/scss/components/skeleton-styles";
+@import "@carbon/react/scss/components/link";
+@import "@carbon/react/scss/components/combo-box";
+@import "@carbon/react/scss/components/radio-button";
+@import "@carbon/react/scss/components/text-input";
+@import "@carbon/react/scss/components/multiselect";
+@import "@carbon/react/scss/components/tooltip";
+@import "@carbon/react/scss/components/dropdown";
+@import "@carbon/react/scss/components/tag";
+
+/*
+ * table settings styles
+ */
+.cds--table-settings {
+  &-menu__option {
+    .cds--fieldset {
+      padding: 0;
+      margin: 0;
+    }
+
+    legend {
+      @include type.type-style("heading-compact-01");
+
+      padding: 1rem 0 0.5rem 0;
+    }
+
+    padding: 0 1.25rem 2rem 1.25rem;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+
+  &-menu__body {
+    &.cds--overflow-menu-options {
+      &--open {
+        width: 14.625rem;
+      }
+
+      &[data-floating-menu-direction="bottom"]::after {
+        width: 3rem;
+      }
+
+      button:last-child {
+        margin-top: 1rem;
+        width: 100%;
+        position: sticky;
+        bottom: 0;
+        background-color: $button-secondary;
+      }
+    }
+  }
+}
+
+/*
+ * table styles needed for filters
+ */
+.cds--table-with-filters {
+  &.cds--data-table-container {
+    overflow: visible;
+  }
+
+  .cds--table-toolbar {
+    overflow: visible;
+    flex-direction: row;
+    background-color: $layer-01;
+    border-bottom: 1px solid $layer-03;
+
+    // external filters (in toolbar)
+    .cds--multi-select__wrapper {
+      .cds--combo-box {
+        border: none;
+      }
+
+      .cds--text-input {
+        background-color: $layer-01;
+        border: none;
+      }
+    }
+
+    .cds--multi-select__wrapper,
+    .cds--dropdown__wrapper {
+      display: flex;
+      align-items: center;
+      border-right: 1px solid $layer-03;
+      margin-right: 0;
+      padding-right: $spacing-03;
+      white-space: nowrap;
+
+      .cds--label {
+        padding-left: $spacing-05;
+      }
+
+      .cds--text-input {
+        padding: 0 $spacing-07 0 $spacing-03;
+      }
+
+      .cds--list-box__menu-icon {
+        right: $spacing-03;
+      }
+
+      .cds--dropdown,
+      .cds--multi-select {
+        width: 10rem;
+      }
+
+      .cds--multi-select--inline,
+      .cds--list-box--inline {
+        background-color: $layer-01;
+        height: 100%;
+        max-height: 3rem;
+      }
+
+      /* stylelint-disable max-nesting-depth */
+      .cds--list-box__field {
+        height: 100%;
+
+        input.cds--text-input {
+          &:placeholder-shown {
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      /* stylelint-enable max-nesting-depth */
+
+      &.cds--dropdown__wrapper--inline .cds--label {
+        padding-left: 1rem;
+      }
+
+      /* stylelint-disable max-nesting-depth */
+      @media (max-width: 672px) {
+        &.cds--list-box__wrapper--inline .cds--label {
+          display: none;
+        }
+      }
+
+      // Make sure blue outline is visible when focused
+      /* stylelint-enable max-nesting-depth */
+      .cds--multi-select--filterable--input-focused .cds--list-box__field {
+        padding: 2px;
+      }
+    }
+
+    .cds--batch-actions--active ~ .cds--multi-select__wrapper,
+    .cds--batch-actions--active ~ .cds--dropdown__wrapper {
+      display: none;
+    }
+  }
+}
+
+/*
+ * toolbar buttons
+ */
+.cds--table-toolbar-button {
+  border: none !important;
+  width: 3rem !important;
+  justify-content: center !important;
+
+  svg path {
+    fill: $text-secondary !important;
+  }
+
+  &:focus {
+    outline: 2px solid $focus !important;
+    outline-offset: -2px !important;
+  }
+
+  &.cds--table-toolbar-filter-button {
+    &.panel-open {
+      border-left: 1px solid $layer-03 !important;
+
+      &:not(:last-child) {
+        border-right: 1px solid $layer-03 !important;
+      }
+
+      border-bottom: 1px solid $layer-01 !important;
+    }
+  }
+}
+
+/*
+ * filter panel
+ */
+.cds--table-toolbar-filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  background: $layer-01;
+
+  .cds--filters-button-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin: 1rem 1rem 1rem 0;
+    }
+  }
+
+  .cds--list-box__wrapper,
+  .cds--multi-select__wrapper {
+    margin: 1.5rem 1rem 1rem 1rem;
+    min-width: 15rem;
+  }
+
+  .cds--form-item {
+    margin: 1.5rem 1rem 1rem 1rem;
+    min-width: 15rem;
+    max-width: fit-content;
+
+    .cds--date-picker-container {
+      justify-content: end;
+      margin-top: $spacing-01;
+    }
+  }
+}
+
+/*
+ * filter selection tags
+ */
+.cds--table-toolbar-filter-tags {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $layer-01;
+  padding-left: 1rem;
+
+  button.cds--tag {
+    margin: 0.75rem 0.5rem 0.75rem 0;
+
+    .cds--tag__label {
+      font-size: 12px;
+    }
+  }
+
+  .cds--filters-clear {
+    &,
+    &:hover {
+      svg path {
+        fill: $button-secondary;
+      }
+    }
+  }
+}
+
+/*
+ * table styles needed for toolbar buttons
+ */
+.cds--table-with-toolbar-buttons {
+  &.cds--data-table-container {
+    overflow: visible;
+  }
+
+  .cds--table-toolbar {
+    overflow: visible;
+
+    &-button.cds--btn--disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.pal--data-table {
+  .pal--data-table__table-wrapper {
+    overflow-x: auto;
+  }
+
+  .cds--data-table-container {
+    .cds--toolbar-content {
+      width: 100%;
+      min-width: min-content;
+    }
+
+    .cds--data-table-header {
+      background: transparent;
+    }
+  }
+
+  .cds--data-table-container:not(.cds--table-with-filters) {
+    overflow: hidden;
+  }
+
+  .pal--data-table__pagination--sm {
+    overflow-x: visible;
+
+    .cds--pagination__left > *,
+    .cds--pagination__right > * {
+      display: none;
+    }
+
+    .cds--pagination__items-count,
+    .cds--pagination__control-buttons {
+      display: initial;
+    }
+
+    .cds--pagination__items-count {
+      margin-left: 0;
+    }
+
+    .cds--pagination__control-buttons {
+      white-space: nowrap;
+    }
+  }
+
+  // Make sure the row actions menu is always aligned to the right edge of the table
+  // and has proper margins so does not throw off the row height.
+  td.pal--data-table__row-actions-cell {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    button.cds--overflow-menu {
+      margin: 0;
+      margin-left: auto;
+    }
+  }
+
+  .cds--data-table--tall
+    td.pal--data-table__row-actions-cell
+    button.cds--overflow-menu {
+    margin-top: 0.5rem;
+  }
+
+  // Tweak vertical alignment of row expand button. We want all row content to maintain
+  // the same vertical alignment.
+  td.cds--table-expand {
+    height: unset;
+
+    .cds--table-expand__button {
+      height: 47px;
+    }
+  }
+
+  .cds--data-table--compact .cds--table-expand .cds--table-expand__button {
+    height: 23px;
+  }
+
+  .cds--data-table--short .cds--table-expand .cds--table-expand__button {
+    height: 31px;
+  }
+
+  // Make sure clickable rows have the right cursor
+  .pal--data-table__row-clickable {
+    cursor: pointer;
+  }
+
+  // Adjust padding in the row detail expanded area
+  .cds--data-table
+    tr.cds--parent-row.cds--expandable-row
+    + tr[data-child-row]
+    td {
+    padding-left: 3rem;
+  }
+
+  // Tags inside table cells should not wrap and have no top or bottom margin
+  .cds--data-table td .cds--tag {
+    white-space: nowrap;
+    margin: 0 0.25rem 0 0;
+  }
+
+  // Paragraphs inside table cells should use the same font as the table cells
+  .cds--data-table tr:not([data-child-row="true"]) td p {
+    @include type.type-style("body-short-01");
+  }
+
+  // The DataTable styles for some reason are applying a different padding to the
+  // checkbox header when the expand header is also present. That don't work.
+  th.cds--table-expand + .cds--table-column-checkbox + th {
+    padding-left: 0;
+  }
+
+  td.cds--table-expand + .cds--table-column-checkbox + td {
+    padding-left: $spacing-05;
+  }
+
+  th.cds--table-expand + .cds--table-column-checkbox,
+  td.cds--table-expand + .cds--table-column-checkbox {
+    padding-right: $spacing-02;
+    padding-left: $spacing-05;
+  }
+
+  tr.cds--expandable-row .pal--data-list__row {
+    padding-left: $spacing-04;
+  }
+
+  .pal--data-table__empty-state {
+    padding: $spacing-12 $spacing-07;
+    color: $text-helper;
+
+    .pal--data-table__empty-state-col {
+      flex: unset;
+    }
+
+    .pal--data-table__empty-state-icon {
+      width: 4rem;
+    }
+
+    h3 {
+      margin-top: $spacing-04;
+      margin-bottom: $spacing-02;
+    }
+
+    .pal--data-table__empty-state-description {
+      max-width: 18rem;
+    }
+  }
+
+  .cds--data-table tbody tr.pal--data-table__no-hover,
+  .cds--data-table tbody tr.pal--data-table__no-hover td {
+    background: $layer-01;
+  }
+
+  // Handle the case where the Select All button appears in the batch action summary
+  .cds--batch-actions {
+    min-height: 3rem;
+
+    .cds--batch-summary__para {
+      margin-right: 12px;
+    }
+
+    // Match style of the batch action buttons
+    .cds--btn {
+      min-width: 0;
+      padding: calc(0.875rem - 3px) 12px;
+    }
+  }
+}
+
+.cds--table-toolbar-filter-panel {
+  .cds--form-item {
+    margin: 1.5rem 1rem 1rem 1rem;
+    min-width: 15rem;
+    max-width: fit-content;
+
+    .cds--date-picker-container {
+      justify-content: end;
+    }
+  }
+}
+
+.pal--data-table--no-header {
+  .cds--data-table-header {
+    display: none;
+  }
+}
+
+.cds--skeleton.cds--data-table-container {
+  padding-top: 0;
+}
+
+.pal--data-table--actions-dropdown.cds--overflow-menu {
+  width: auto;
+  height: auto;
+
+  &:focus .cds--btn {
+    box-shadow: inset 0 0 0 $button-outline-width $focus,
+      inset 0 0 0 $button-border-width $background;
+  }
+}
+
+.pal--data-table--actions-dropdown-list.cds--overflow-menu-options::after {
+  content: none;
+}
+
+body:not(.cds--dark-theme) {
+  .pal--data-table--light {
+    @include theme($white, true);
+  }
+}
+
+body.cds--dark-theme {
+  .pal--data-table--light {
+    @include theme($g90, true);
+  }
+}

@@ -1,13 +1,11 @@
 import React, { Children } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 // Carbon Components
 import { OverflowMenu } from "@carbon/react";
 import { ChevronDown as ChevronDown16 } from "@carbon/react/icons";
-// Translations
-// import translationStrings from '../../translations';
-// import getLocale, { documentLanguage } from '../../../../utils/getLocale';
-// import translationUtils from '../../../../utils/translate';
+
 /**
  * Renders the title for actions panel.
  * @param {string} locale The language the user's browser is configured to use.
@@ -25,15 +23,11 @@ const renderPanelButtonText = (text) => (
 const ActionsPanel = ({
   children,
   className,
-  // locale,
   id,
   selectorPrimaryFocus,
   ...rest
 }) => {
-  // const translate = translationUtils.getTranslateFunction(
-  //   translationStrings,
-  //   getLocale(locale)
-  // );
+  const { t } = useTranslation("PageHeader");
   return (
     <div
       className={classNames("pal--actions-panel-wrap", className)}
@@ -42,11 +36,11 @@ const ActionsPanel = ({
     >
       <OverflowMenu
         className="pal--actions-panel"
-        renderIcon={() => renderPanelButtonText("actionsButton")}
+        renderIcon={() => renderPanelButtonText(t("actionsButton"))}
         direction="bottom"
         flipped
         selectorPrimaryFocus={selectorPrimaryFocus}
-        ariaLabel={"actionsButton"}
+        ariaLabel={t("actionsButton")}
         menuOptionsClass={classNames("pal--actions-panel-menu")}
         {...rest}
       >
@@ -62,9 +56,9 @@ const ActionsPanel = ({
           direction="bottom"
           flipped
           selectorPrimaryFocus={selectorPrimaryFocus}
-          ariaLabel={"actionsButton"}
+          ariaLabel={t("actionsButton")}
           menuOptionsClass={classNames("pal--actions-panel-menu")}
-          iconDescription={"actionsButton"}
+          iconDescription={t("actionsButton")}
           {...rest}
         >
           {children}

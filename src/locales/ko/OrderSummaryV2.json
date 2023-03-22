@@ -1,0 +1,17 @@
+{
+  "addToEstimate": "예상 금액에 추가",
+  "create": "작성",
+  "estimateCosts": "예상 비용",
+  "estimated": "예상 금액",
+  "free": "무료",
+  "loading": "로드 중...",
+  "creating": "작성 중...",
+  "loginText": "이미 계정이 있으십니까? <a>로그인</a>",
+  "showMore": "세부사항 표시",
+  "signUp": "회원가입하기",
+  "summaryHeader": "요약",
+  "totalEstimated": "총 예상 비용",
+  "monthShort": "개월",
+  "upgrade": "업그레이드",
+  "viewTerms": "이용 약관 보기"
+}
