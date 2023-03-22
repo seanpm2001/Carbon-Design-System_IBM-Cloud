@@ -13,18 +13,6 @@ import React from 'react';
 import { breakpoints } from '@carbon/layout';
 import { Theme } from '@carbon/react';
 
-export const globalTypes = {
-  theme: {
-    name: 'Theme',
-    description: 'Set the global theme for displaying components',
-    defaultValue: 'white',
-    toolbar: {
-      icon: 'circlehollow',
-      items: ['white', 'g10', 'g90', 'g100'],
-    },
-  },
-};
-
 export const parameters = {
   backgrounds: {
     // https://storybook.js.org/docs/react/essentials/backgrounds#grid
@@ -50,6 +38,20 @@ export const parameters = {
         value: g100.background,
       },
     ],
+  },
+  status: {
+    statuses: {
+      experimental: {
+        background: '#ec942c',
+        color: '#ffffff',
+        description: 'This component is experimental',
+      },
+      core: {
+        background: '#339902',
+        color: '#ffffff',
+        description: 'This component is a Cloud PAL core component',
+      },
+    },
   },
   controls: {
     // https://storybook.js.org/docs/react/essentials/controls#show-full-documentation-for-each-property
