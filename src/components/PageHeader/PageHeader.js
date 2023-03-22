@@ -172,7 +172,15 @@ const PageHeader = ({
             {icon && <div className="pal--page-header__icon">{icon}</div>}
           </Column>
         </>
-      ) : (
+      ) : isProvisioning ? (
+        <div className="cds--row">
+          <div className="pal--page-header__icon-container cds--col-md-2 cds--col-lg-2 cds--col-sm-1 cds--col-xlg-2 cds--col-max-2">
+            {icon && <div className="pal--page-header__icon">{icon}</div>}
+          </div>
+          <div className="pal--page-header__main-container">{content}</div>
+        </div>
+      ) :
+      (
         content
       )}
     </header>

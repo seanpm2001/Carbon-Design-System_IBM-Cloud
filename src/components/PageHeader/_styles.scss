@@ -44,15 +44,26 @@ $header-spacing: 28px; // mocks l2 nav height
 $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
 .pal--page-header {
+  @include flex-grid();
   background-color: $background;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
+  padding: $spacing-05 $spacing-05 $spacing-07;
+
+  .cds--row {
+    justify-content: space-between;
+    width: calc(100% + 2rem);
+  }
 
   @include breakpoint("960px") {
     flex-wrap: nowrap;
     flex-direction: row;
+  }
+
+  @include breakpoint("md") {
+    padding: $spacing-05 $spacing-07 $spacing-07;
   }
 
   // PageHeader Main Content
@@ -187,8 +198,9 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
     &-container {
       align-items: center;
-      display: flex;
+      display: flex !important;
       width: 104px;
+      max-width: none !important; // need to override grid specs
     }
 
     .pal--page-header--provisioning & {
@@ -289,7 +301,6 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   // world
 
   &--world {
-    @include flex-grid();
     padding: $spacing-05  $spacing-05 $spacing-07  $spacing-07;
   }
   &--world &__title-text{
@@ -307,27 +318,12 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   }
 
   &--world &__title-container {
-    padding-left: $spacing-05 !important;
-    padding-right: $spacing-05  !important;
     margin: 0;
-
-    @include breakpoint('lg') {
-      padding-left: $spacing-07 !important;
-      padding-right: $spacing-07  !important;
-    }
   }
 
   // world illustration
   &--world &__illustration-container {
-
-    padding-left: $spacing-05 !important;
-    padding-right: $spacing-05 !important;
     margin: 0;
-
-    @include breakpoint('lg') {
-      padding-left: $spacing-07 !important;
-      padding-right: $spacing-07  !important;
-    }
   }
 
   // world illustration
@@ -373,42 +369,23 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
   // provisioning
   &--experimental.pal--page-header--provisioning {
-    @include flex-grid();
-
     justify-content: space-between;
   }
 
   &--experimental.pal--page-header--provisioning &__main-container {
-    padding-left: $spacing-05 !important;
-    padding-right: $spacing-05  !important;
     margin: 0;
-
-    @include breakpoint('lg') {
-      padding-left: $spacing-07 !important;
-      padding-right: $spacing-07  !important;
-    }
+    padding:0
   }
 
-  &--experimental.pal--page-header--provisioning &__breadcrumb{
-    padding-top: $spacing-05;
-  }
+
 
   &--experimental.pal--page-header--provisioning &__icon-container {
     display: flex;
     justify-content: flex-end;
-    padding: calc($header-spacing + $breadcrumb-spacing) 0 0; //always mock breadcrumbs
+    padding: $breadcrumb-spacing 0 0; //always mock breadcrumbs
     width:auto;
 
-    padding-left: $spacing-05 !important;
-    padding-right: $spacing-05  !important;
     margin: 0;
-
-    @include breakpoint('lg') {
-      padding: calc($header-spacing + $breadcrumb-spacing) $spacing-05 0; //always mock breadcrumbs
-
-      padding-left: $spacing-07 !important;
-      padding-right: $spacing-07  !important;
-    }
 
     @include breakpoint("md") {
       padding-top: calc($header-spacing) 0 0; // button jumps below title --> remove mock height of breadcrumbs

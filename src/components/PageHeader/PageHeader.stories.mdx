@@ -147,11 +147,14 @@ export const Template = (args) => <PageHeader {...args} />;
   <Story
     name="Experimental - Provisioning Page Header"
     args={{
-      title: 'Cloudant Provisioning',
+      title: 'Cloudant',
       truncatedTitle: true,
       icon:  <Cloud32 />,
       isProvisioning: true,
       experimental:true,
+      surfacedDetails: (<p>A scalable JSON document database for web, mobile, IoT, and serverless applications.</p>),
+      hasSurfacedDetailsList: true,
+      wrappedDetails: true,
       breadcrumbs: [
         { href: 'https://cloud.ibm.com/catalog', value: 'Catalog' }
       ]
