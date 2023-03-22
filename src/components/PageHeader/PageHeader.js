@@ -73,6 +73,11 @@ const PageHeader = ({
 
   const subtitleClasses = classNames(`pal--page-header__subtitle`);
 
+  const titleContainerClasses = classNames(`pal--page-header__title-container`, {
+    [`cds--col-sm-4 cds--col-md-8 cds--col-lg-12 cds--col-xlg-12  cds--col-max-12`]: experimental,
+  });
+
+
   useEffect(() => {
     if (actionButtonDefs && actionButtonDefs.length > 0) {
       setActionButtons(
@@ -113,7 +118,7 @@ const PageHeader = ({
         {experimental && returnLink && (
           <LinkComponent className='pal--page-header__return-link' href={returnLink}><ArrowLeft/>{returnLinkText}</LinkComponent>
         )}
-        <div className="pal--page-header__title-container">
+        <div className={titleContainerClasses}>
           <div title={title} className={titleClasses}>
             {!isProvisioning && icon && (
               <div className="pal--page-header__icon">{icon}</div>

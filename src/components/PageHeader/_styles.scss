@@ -40,6 +40,20 @@ $feature-flags: (
   }
 }
 
+@mixin max-breakpoint($size) {
+  @if map-has-key($grid-breakpoints, $size) {
+    $breakpoint-key: map-get($grid-breakpoints, $size);
+
+    @media screen and (max-width: map-get($breakpoint-key, "width")) {
+      @content;
+    }
+  } @else {
+    @media all and (max-width: $size) {
+      @content;
+    }
+  }
+}
+
 $header-spacing: 28px; // mocks l2 nav height
 $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
@@ -362,6 +376,15 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     padding: 0;
     margin: $header-spacing 0 0;
 
+
+    @include max-breakpoint('sm') {
+      width: 100%; // span button across container
+
+      .cds--btn {
+        width: 100%; // span button across container
+      }
+    }
+
     @include breakpoint("md") {
       margin: calc($header-spacing + $breadcrumb-spacing) 0 0; // button jumps below title --> remove mock height of breadcrumbs
     }
@@ -374,7 +397,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
   &--experimental.pal--page-header--provisioning &__main-container {
     margin: 0;
-    padding:0
+    padding: 0;
   }
 
 
@@ -382,10 +405,11 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   &--experimental.pal--page-header--provisioning &__icon-container {
     display: flex;
     justify-content: flex-end;
-    padding: $breadcrumb-spacing 0 0; //always mock breadcrumbs
+    align-items: center;
     width:auto;
 
     margin: 0;
+    padding: 0;
 
     @include breakpoint("md") {
       padding-top: calc($header-spacing) 0 0; // button jumps below title --> remove mock height of breadcrumbs
