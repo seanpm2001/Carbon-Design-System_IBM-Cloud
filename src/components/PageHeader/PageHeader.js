@@ -211,6 +211,8 @@ PageHeader.defaultProps = {
   returnLinkText: 'Back to homepage',
   // TODO: add locale
   isWorld: false,
+  illustration: undefined,
+  illustrationAlt: undefined
 };
 
 PageHeader.propTypes = {
@@ -243,7 +245,7 @@ PageHeader.propTypes = {
    */
   title: PropTypes.string.isRequired,
   /**
-   *  A subtitle describing the page the user is on.
+   *  A subtitle describing the page the user is on. This prop is only visible when 'isWorld' is true.
    */
   subtitle: PropTypes.string,
   /**
@@ -329,13 +331,17 @@ PageHeader.propTypes = {
    */
   returnLinkText: PropTypes.string,
   /**
-   * Text to be displayed in the return link.
+   * Boolean to determine whether page header is supposed to be in world level design.
    */
   isWorld: PropTypes.bool,
   /**
    * An illustration that can be added to a world level page header. It is recommened to use an .svg with an transparent background.
    */
   illustration: PropTypes.element,
+    /**
+   * Text to describe the world level illustration.
+   */
+  illustrationAlt: PropTypes.string,
 };
 
 // components should export a skeleton

@@ -338,17 +338,37 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   // world illustration
   &--world &__illustration-container {
     margin: 0;
+    @include max-breakpoint('sm') {
+      padding-left: 0;
+      padding-top: $spacing-07;
+    }
+  }
+
+  &--world &__illustration {
+    position: relative;
+    overflow: hidden;
   }
 
   // world illustration
  &--world &__illustration > img {
-  @include breakpoint('lg') {
-    width: 100%;
+  object-fit: cover;
+  object-position: 0 0; /*top left position (optional)*/
+  min-width: 600px;
+  max-width: 100%;
+
+  @include max-breakpoint('sm') {
+    min-width:  100%;
+    max-width:  100%;
   }
-  @include breakpoint('sm') {
-    width: 100%;
-    padding-top: $spacing-07;
-  }
+ }
+
+ &--world &__illustration:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 -10px $spacing-04 $spacing-04 $background inset;
+  
  }
 
   &--experimental &__title-container {
