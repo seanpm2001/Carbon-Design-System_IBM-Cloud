@@ -1,9 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import { Button, InlineLoading } from "@carbon/react";
-import { ChevronUp as ChevronUp16 } from "@carbon/react/icons";
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { Button, InlineLoading } from '@carbon/react';
+import { ChevronUp as ChevronUp16 } from '@carbon/react/icons';
 import {
   OrderSummaryV2Container,
   OrderSummaryV2Header,
@@ -15,7 +14,7 @@ import {
   OrderSummaryV2Footnotes,
   OrderSummaryV2Terms,
   OrderSummaryV2FooterLinks,
-} from "../../OrderSummaryV2";
+} from '../../OrderSummaryV2';
 
 const MiniOrderSummaryArrow = ({ className, ...props }) => (
   <ChevronUp16
@@ -32,7 +31,7 @@ MiniOrderSummaryArrow.propTypes = {
 };
 
 MiniOrderSummaryArrow.defaultProps = {
-  className: "",
+  className: '',
 };
 
 const MiniOrderSummaryV2 = ({
@@ -62,7 +61,10 @@ const MiniOrderSummaryV2 = ({
   collapseIconDescription,
   expandIconDescription,
 }) => {
-  const { t } = useTranslation("MiniOrderSummarySidePanel");
+  // const translate = translationUtils.getTranslateFunction(
+  //   translationStrings,
+  //   getLocale(locale),
+  // );
 
   const singleDetail = details ? [details] : [];
   const detailsArr = Array.isArray(details) ? details : singleDetail;
@@ -70,9 +72,9 @@ const MiniOrderSummaryV2 = ({
     ({ quantity, items: nestedItems }) => quantity || nestedItems
   );
 
-  const onEstimateClick = (e) => {
+  const onEstimateClick = e => {
     if (
-      typeof window !== "undefined" &&
+      typeof window !== 'undefined' &&
       window.header &&
       window.header.loadEstimatorJS &&
       estimateData
@@ -94,8 +96,8 @@ const MiniOrderSummaryV2 = ({
   const expandHandler = () => onExpandClick(!expanded);
 
   const iconDescription = expanded
-    ? collapseIconDescription || t("collapseSummary")
-    : expandIconDescription || t("expandSummary");
+    ? collapseIconDescription || 'collapseSummary'
+    : expandIconDescription || 'expandSummary';
 
   let summaryHeader;
   let summaryContent;
@@ -104,19 +106,17 @@ const MiniOrderSummaryV2 = ({
   let summaryEstimateButton;
   let summaryLinks;
   const summaryNotifications =
-    typeof onNotificationsClick === "function" ? (
+    typeof onNotificationsClick === 'function' ? (
       <div
         aria-hidden="true"
         onClick={onNotificationsClick}
-        className="pal--mini-order-summary__notifications"
-      >
+        className="pal--mini-order-summary__notifications">
         {notifications}
       </div>
     ) : (
       <div
         aria-hidden="true"
-        className="pal--mini-order-summary__notifications"
-      >
+        className="pal--mini-order-summary__notifications">
         {notifications}
       </div>
     );
@@ -160,12 +160,12 @@ const MiniOrderSummaryV2 = ({
 
     summaryEstimateButton = estimateButtonLoading ? (
       <div className="pal--order-summary-v2__inline-loading">
-        <InlineLoading status="active" description={t("loading")} />
+        <InlineLoading status="active" description={'loading'} />
       </div>
     ) : (
       <div className="pal--mini-order-summary__estimate">
         <Button {...internalEstimateProps} size="field" kind="tertiary">
-          {t("addToEstimate")}
+          {'addToEstimate'}
         </Button>
       </div>
     );
@@ -181,16 +181,14 @@ const MiniOrderSummaryV2 = ({
 
   return (
     <div
-      className={classNames("pal--mini-order-summary", {
-        "pal--mini-order-summary--expanded": expanded,
-      })}
-    >
+      className={classNames('pal--mini-order-summary', {
+        'pal--mini-order-summary--expanded': expanded,
+      })}>
       <OrderSummaryV2Container className={className}>
         {summaryHeader}
         {summaryContent}
         <OrderSummaryV2Footer
-          noDivider={!expanded || !(details || items.length !== 0)}
-        >
+          noDivider={!expanded || !(details || items.length !== 0)}>
           {summarySubmitPromo}
           <OrderSummaryV2Totals
             subTotalItems={expanded ? subTotalItems : []}
@@ -204,10 +202,9 @@ const MiniOrderSummaryV2 = ({
           {summaryLinks}
           <OrderSummaryV2Terms>
             <div
-              className={classNames("pal--mini-order-summary__terms", {
-                "pal--mini-order-summary__terms--invalid": termsCheckboxInvalid,
-              })}
-            >
+              className={classNames('pal--mini-order-summary__terms', {
+                'pal--mini-order-summary__terms--invalid': termsCheckboxInvalid,
+              })}>
               {termsCheckbox}
             </div>
           </OrderSummaryV2Terms>
@@ -406,15 +403,15 @@ MiniOrderSummaryV2.propTypes = {
 };
 
 MiniOrderSummaryV2.defaultProps = {
-  className: "",
+  className: '',
   estimateButtonLoading: false,
   estimateButtonProps: {},
   isFree: false,
   items: [],
   // locale: documentLanguage,
-  loginLink: "",
-  termsText: "",
-  totalCostText: "",
+  loginLink: '',
+  termsText: '',
+  totalCostText: '',
   // expandIconDescription: 'expand summary',
   // collapseIconDescription: 'collapse summary',
 };

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Close } from "@carbon/react/icons";
-import { useTranslation } from "react-i18next";
 
 import Skeleton from "./skeleton";
 
@@ -13,10 +12,9 @@ const Banner = ({
   dismissible,
   closeButtonLabel,
 }) => {
-  const { t } = useTranslation("Banner");
   const [dismissed, setDismissed] = useState(false);
 
-  const closeButtonLabelText = closeButtonLabel || t("close");
+  const closeButtonLabelText = closeButtonLabel;
   return (
     !dismissed && (
       <div

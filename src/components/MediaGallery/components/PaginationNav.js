@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { withTranslation } from "react-i18next";
+
+// import translationStrings from '../translations';
+// import getTranslations from '../../../utils/getTranslations';
+// import getLocale, { documentLanguage } from '../../../utils/getLocale';
 
 /**
  * A pagination component that can be used to select a numerical value that corresponds to a visible item on the page
@@ -226,7 +229,6 @@ class PaginationNav extends Component {
       previousLabel,
       selectLabel,
       visibleListMax,
-      t,
       ...other
     } = this.props;
     // const defaultLocale = getLocale(locale);
@@ -254,7 +256,7 @@ class PaginationNav extends Component {
     return (
       <nav
         className={`cds--pagination-nav${navClasses}`}
-        aria-label={t("pageNavigation")}
+        aria-label={"pageNavigation"}
         {...other}
       >
         <ul className="cds--pagination-nav__list">
@@ -351,4 +353,4 @@ class PaginationNav extends Component {
   }
 }
 
-export default withTranslation("MediaGallery")(PaginationNav);
+export default PaginationNav;

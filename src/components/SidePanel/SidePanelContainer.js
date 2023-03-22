@@ -8,7 +8,6 @@ import React, {
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Modal } from "@carbon/react";
-import { useTranslation } from "react-i18next";
 
 import { getPanelId, getPanelDetails } from "./utils/getPanelDetails";
 // import trackComponentEvent from "../../utils/analytics";
@@ -89,8 +88,11 @@ const SidePanelContainer = ({
   dismissalModalLabel,
   ...containerPanelProps
 }) => {
-  const { t } = useTranslation("SidePanel");
-
+  // const defaultLocale = getLocale(locale);
+  // const translate = translationUtils.getTranslateFunction(
+  //   translationStrings,
+  //   defaultLocale
+  // );
   const sidePanels = Children.toArray(children);
   // Shared State
   const [panelsOpen, setPanelsOpen] = useState(isOpen);
@@ -122,6 +124,23 @@ const SidePanelContainer = ({
   useEffect(() => {
     return () => timeoutRef.current && clearTimeout(timeoutRef.current);
   }, []);
+
+  useEffect(() => {
+    const eventPayload = {
+      action: "SidePanelContainer Open",
+      title: typeof title === "string" ? title : "", // TODO: include a prop for analytics title for node titles?
+      palComponent: "SidePanelContainer",
+      category: "Offering Interface",
+    };
+    if (isOpen && !prevIsOpen) {
+      // trackComponentEvent("User Form", eventPayload);
+    } else if (!isOpen && prevIsOpen) {
+      // trackComponentEvent("User Form", {
+      //   ...eventPayload,
+      //   action: "SidePanelContainer Close",
+      // });
+    }
+  }, [isOpen, prevIsOpen, title]);
 
   // TODO: Deprecate these externally facing refs in the next release of PAL.
   useEffect(() => {
@@ -277,20 +296,20 @@ const SidePanelContainer = ({
       </div>
       {modalOnDismiss && (
         <Modal
-          modalHeading={dismissalModalHeader || t("modal.header")}
-          aria-label={dismissalModalLabel || t("modal.label")}
-          modalLabel={dismissalModalLabel || t("modal.label")}
+          modalHeading={dismissalModalHeader || "modal.header"}
+          aria-label={dismissalModalLabel || "modal.label"}
+          modalLabel={dismissalModalLabel || "modal.label"}
           onRequestClose={() => setModalOpen(false)}
           onRequestSubmit={() => {
             setModalOpen(false);
             modalCloseFunc();
           }}
-          secondaryButtonText={t("cancelText")}
-          primaryButtonText={t("modal.closeText")}
+          secondaryButtonText={"cancelText"}
+          primaryButtonText={"modal.closeText"}
           danger
           open={modalOpen}
         >
-          {dismissalModalBody || t("modal.confirmText")}
+          {dismissalModalBody || "modal.confirmText"}
         </Modal>
       )}
     </>

@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Button } from "@carbon/react";
-import { useTranslation } from "react-i18next";
 
 const OrderSummaryDetails = ({
   attributes,
@@ -11,14 +10,17 @@ const OrderSummaryDetails = ({
   // locale,
   title,
 }) => {
-  const { t } = useTranslation("OrderSummaryV2");
+  // const translate = translationUtils.getTranslateFunction(
+  //   translationStrings,
+  //   getLocale(locale),
+  // );
 
   return (
     <div className="pal--order-summary-v2__meta-details">
       <div className="pal--order-summary-v2__row">
         <h3 className="pal--order-summary-v2__heading">{title}</h3>
         {isFree && (
-          <span className="pal--order-summary-v2__item-value">{t("free")}</span>
+          <span className="pal--order-summary-v2__item-value">{"free"}</span>
         )}
         {estimateButtonProps && !isFree && (
           <div className="pal--order-summary-v2__item-value">
@@ -31,7 +33,7 @@ const OrderSummaryDetails = ({
               kind="ghost"
               size="small"
             >
-              {t("estimateCosts")}
+              {"estimateCosts"}
             </Button>
           </div>
         )}

@@ -1,14 +1,19 @@
 import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
-import { useTranslation } from "react-i18next";
+// import translationStrings from '../translations';
+// import getLocale from '../../../utils/getLocale';
+// import translationUtils from '../../../utils/translate';
 
 const OrderSummaryHeader = ({
   countrySwitcher,
   currencySwitcher,
   // locale
 }) => {
-  const { t } = useTranslation("OrderSummaryV2");
+  // const translate = translationUtils.getTranslateFunction(
+  //   translationStrings,
+  //   getLocale(locale),
+  // );
 
   return (
     <div
@@ -21,7 +26,7 @@ const OrderSummaryHeader = ({
         }
       )}
     >
-      <h2 className="pal--order-summary-v2__heading">{t("summaryHeader")}</h2>
+      <h2 className="pal--order-summary-v2__heading">{"summaryHeader"}</h2>
       <div className="pal--order-summary-v2__switchers">
         {countrySwitcher && (
           <div className="pal--order-summary-v2__dropdown pal--order-summary-v2__country-switcher">

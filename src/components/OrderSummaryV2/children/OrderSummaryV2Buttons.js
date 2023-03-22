@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Button, InlineLoading } from "@carbon/react";
-import { useTranslation } from "react-i18next";
 
 const OrderSummaryButtons = ({
   primaryButtonLoading,
@@ -16,7 +15,10 @@ const OrderSummaryButtons = ({
   estimateButtonProps,
   // locale,
 }) => {
-  const { t } = useTranslation("OrderSummaryV2");
+  // const translate = translationUtils.getTranslateFunction(
+  //   translationStrings,
+  //   getLocale(locale),
+  // );
 
   return (
     <div className="pal--order-summary-v2__button-group">
@@ -24,7 +26,7 @@ const OrderSummaryButtons = ({
         <div className="pal--order-summary-v2__inline-loading">
           <InlineLoading
             status="active"
-            description={primaryButtonLoadingText || t("creating")}
+            description={primaryButtonLoadingText || "creating"}
           />
         </div>
       ) : (
@@ -36,7 +38,7 @@ const OrderSummaryButtons = ({
         <div className="pal--order-summary-v2__inline-loading">
           <InlineLoading
             status="active"
-            description={secondaryButtonLoadingText || t("loading")}
+            description={secondaryButtonLoadingText || "loading"}
           />
         </div>
       )}
@@ -47,11 +49,11 @@ const OrderSummaryButtons = ({
       ) : null}
       {estimateButtonLoading ? (
         <div className="pal--order-summary-v2__inline-loading">
-          <InlineLoading status="active" description={t("loading")} />
+          <InlineLoading status="active" description={"loading"} />
         </div>
       ) : (
         <Button {...estimateButtonProps} kind="tertiary">
-          {t("addToEstimate")}
+          {"addToEstimate"}
         </Button>
       )}
     </div>

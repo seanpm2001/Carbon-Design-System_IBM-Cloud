@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import { useTranslation } from "react-i18next";
 
 // Child Components
 import NavItems from "./children/NavItems";
@@ -49,14 +48,16 @@ const SideNav = ({
   onTitleClick,
   ...rest
 }) => {
-  const { t } = useTranslation("SideNav");
   const initialActive = getInitialActiveHref(activeOverride);
-
+  // const translate = translationUtils.getTranslateFunction(
+  //   translationStrings,
+  //   getLocale(locale)
+  // );
   // Component state
   const [open, setOpen] = useState(initialOpen);
   const [activeHref, setActiveHref] = useState(initialActive);
 
-  const collapseButtonLabel = open ? t("navCloseLabel") : t("navOpenLabel");
+  const collapseButtonLabel = open ? "navCloseLabel" : "navOpenLabel";
 
   const activeItem = findActiveItem(items, activeHref);
 
@@ -101,7 +102,7 @@ const SideNav = ({
 
   return (
     <nav
-      aria-label={t("navLabel")}
+      aria-label={"navLabel"}
       className={classnames(
         "pal--side-nav",
         {

@@ -8,8 +8,6 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { useTranslation } from "react-i18next";
-
 import { ProgressIndicator, ProgressStep } from "@carbon/react";
 import SidePanelContainer from "./SidePanelContainer";
 import SidePanelBreadcrumbs from "./children/SidePanelBreadcrumbs";
@@ -122,7 +120,6 @@ const SidePanel = (props) => {
     title,
     doneIsLoadingText,
   };
-  const { t } = useTranslation("SidePanel");
   // const defaultStrings = getTranslations(translationStrings, defaultLocale);
   // let translations = {};
   // translations = JSON.parse(JSON.stringify(translationStrings));
@@ -448,7 +445,7 @@ const SidePanel = (props) => {
             <SidePanelCloseButton
               activePanelId={activePanelId}
               focusOnLast={!breadcrumbs && hasOverlay}
-              iconDescription={t("closePanelText")}
+              iconDescription={"closePanelText"}
               onClose={onClose}
               panelId={id}
               onTabToPrev={onTabToLast}
@@ -499,16 +496,16 @@ const SidePanel = (props) => {
         </div>
         {!hideBottomNav && (
           <SidePanelControls
-            cancelText={t("cancelText")}
-            doneText={t("doneText")}
+            cancelText={"cancelText"}
+            doneText={"doneText"}
             hasOverlay={hasOverlay}
             nextId={isMultiStep ? nextIdMultiStep : nextId}
-            nextText={t("nextText")}
+            nextText={"nextText"}
             onCancel={onCancel}
             onNext={onNext}
             onDone={onDone}
             onPrevious={onPrevious}
-            previousText={t("previousText")}
+            previousText={"previousText"}
             primaryButtonDisabled={
               primaryButtonDisabled || id !== activePanelId
             }
@@ -519,7 +516,7 @@ const SidePanel = (props) => {
             }
             previousId={isMultiStep ? previousIdMultiStep : previousId}
             doneIsLoading={doneIsLoading}
-            doneIsLoadingText={t("doneIsLoadingText")}
+            doneIsLoadingText={"doneIsLoadingText"}
           />
         )}
       </div>

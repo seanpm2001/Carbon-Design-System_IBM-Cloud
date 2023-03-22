@@ -2,6 +2,9 @@ import React, { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
+// utils
+// import { documentLanguage } from '../../../../utils/getLocale';
+
 const SurfacedDetails = ({
   mock,
   // locale,

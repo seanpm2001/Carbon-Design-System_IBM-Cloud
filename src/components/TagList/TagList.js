@@ -7,8 +7,10 @@ import classNames from "classnames";
 
 import { Tooltip } from "@carbon/react";
 import { Edit as Edit16 } from "@carbon/react/icons";
+// import translations from "./translations";
+// import getLocale, { documentLanguage } from '../../utils/getLocale';
 import Tag from "../Tag";
-import { useTranslation } from "react-i18next";
+// import translationUtils from '../../utils/translate';
 
 const TagList = ({
   /* Declare any props that this pattern can use */
@@ -27,7 +29,11 @@ const TagList = ({
   wrap,
   ...rest
 }) => {
-  const { t } = useTranslation("TagList");
+  // const defaultLocale = getLocale(locale);
+  // const translate = translationUtils.getTranslateFunction(
+  //   translations,
+  //   defaultLocale
+  // );
 
   const overflowNode = () => {
     const counterTagClassNames = classNames(
@@ -70,7 +76,7 @@ const TagList = ({
         return (
           <div key={name} title={name} className={tooltipTagClassName}>
             {tagValue}
-            {tag.isAccessTag ? ` (${t("accessTagPrefix")})` : null}
+            {tag.isAccessTag ? ` (${"accessTagPrefix"})` : null}
           </div>
         );
       });
@@ -89,8 +95,8 @@ const TagList = ({
           {overflowTagsNode}
           {tooltipOverflowCount === 0 ? undefined : (
             <div
-              title={`${tooltipOverflowCount} ${t("more")} ${
-                tooltipOverflowCount === 1 ? t("tag") : t("tags")
+              title={`${tooltipOverflowCount} ${"more"} ${
+                tooltipOverflowCount === 1 ? "tag" : "tags"
               }`}
             >
               {`(+${tooltipOverflowCount})`}
@@ -123,8 +129,8 @@ const TagList = ({
   });
 
   const iconText = tags.length
-    ? iconDescription || t("editIconInformation")
-    : t("addIconInformation");
+    ? iconDescription || "editIconInformation"
+    : "addIconInformation";
 
   return (
     // eslint-disable-next-line jsx-a11y/interactive-supports-focus
@@ -136,13 +142,13 @@ const TagList = ({
           className="pal--tag-list--tag"
           type={tag.type || "functional"}
           title={
-            tag.isAccessTag ? `${t("accessTagPrefix")} | ${tag.name}` : tag.name
+            tag.isAccessTag ? `${"accessTagPrefix"} | ${tag.name}` : tag.name
           }
           onClick={onIconClick}
           maxCharacters={maxCharacters}
           {...tag.otherProps}
         >
-          {tag.isAccessTag ? `${t("accessTagPrefix")} | ` : null}
+          {tag.isAccessTag ? `${"accessTagPrefix"} | ` : null}
           {tag.name}
         </Tag>
       ))}

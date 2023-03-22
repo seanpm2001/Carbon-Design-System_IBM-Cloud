@@ -1,14 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Translate from "../../Translate";
-import { useTranslation } from "react-i18next";
+
+// import translationStrings from '../translations';
+// import getLocale from '../../../utils/getLocale';
+// import translationUtils from '../../../utils/translate';
 
 const OrderSummaryFooterText = ({
   termsText,
   loginLink,
   // locale
 }) => {
-  const { t } = useTranslation("OrderSummaryV2");
+  // const translate = translationUtils.getTranslateFunction(
+  //   translationStrings,
+  //   getLocale(locale),
+  // );
 
   return (
     <>
@@ -17,7 +23,7 @@ const OrderSummaryFooterText = ({
           {termsText}
           {loginLink && (
             <Translate tagProps={[{ href: loginLink }]}>
-              {t("loginText")}
+              {"loginText"}
             </Translate>
           )}
         </div>
