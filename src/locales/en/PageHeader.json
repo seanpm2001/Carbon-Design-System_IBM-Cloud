@@ -1,4 +1,5 @@
 {
   "actionsButton": "Actions...",
-  "detailsButton": "Details"
+  "detailsButton": "Details",
+  "returnLinkDefault": "Back to homepage"
 }
