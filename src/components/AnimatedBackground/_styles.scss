@@ -1,4 +1,11 @@
-@import '../../styles';
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/grid";
 
 .cds--white, .cds--g10 {
   --custom-animated-background-set-cyan-magenta-purple-1:  #{$cyan-20};
@@ -47,7 +54,7 @@ $min-scale: var(--min-scale);
   @return  nth($list, $i % $length);
 };
 
-.pal--animated-background-svg {
+.pal--animated-background {
   background-color: transparent;
   height: 100%;
   width: 100%;
@@ -81,7 +88,7 @@ $min-scale: var(--min-scale);
   
       }
       50% {
-        transform: scale($scale-x,$scale-y) translateY(var(--translate-y));
+        transform: scale($scale-x,$scale-y) translateY(var(--bop));
   
       }
       100% {
