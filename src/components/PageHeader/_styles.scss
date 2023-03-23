@@ -395,7 +395,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   &--experimental &__actions {
     padding: 0;
     margin: $header-spacing 0 0;
-
+    margin: calc($header-spacing + $breadcrumb-spacing) 0 0;
 
     @include max-breakpoint('sm') {
       width: 100%; // span button across container
@@ -405,8 +405,8 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
       }
     }
 
-    @include breakpoint("md") {
-      margin: calc($header-spacing + $breadcrumb-spacing) 0 0; // button jumps below title --> remove mock height of breadcrumbs
+    @include max-breakpoint("sm") {
+      margin: $header-spacing 0 0; // button jumps below title --> remove mock height of breadcrumbs
     }
   }
 

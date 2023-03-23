@@ -45,7 +45,6 @@ const PageHeader = ({
   illustration,
   illustrationAlt,
   subtitle
-  // TODO: add locale for returnLinkText
 }) => {
   const { t } = useTranslation("PageHeader");
   const [actionButtons, setActionButtons] = useState();
@@ -113,7 +112,7 @@ const PageHeader = ({
           />
         )}
         {experimental && returnLink && (
-          <LinkComponent className='pal--page-header__return-link' href={returnLink}><ArrowLeft/>{returnLinkText}</LinkComponent>
+          <LinkComponent className='pal--page-header__return-link' href={returnLink}><ArrowLeft/>{returnLinkText || t('returnLinkDefault')}</LinkComponent>
         )}
         <div className={titleContainerClasses}>
           <div title={title} className={titleClasses}>
@@ -208,8 +207,7 @@ PageHeader.defaultProps = {
   mock: false,
   experimental: false,
   returnLink: undefined,
-  returnLinkText: 'Back to homepage',
-  // TODO: add locale
+  returnLinkText: undefined,
   isWorld: false,
   illustration: undefined,
   illustrationAlt: undefined
