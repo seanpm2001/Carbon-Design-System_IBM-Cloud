@@ -1,26 +1,11 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 import AnimatedBackground from './AnimatedBackground';
 import "./_styles.scss";
 
 <Meta
-  title="Components/AnimatedBackground"
+  title="Experimental/AnimatedBackground"
   component={AnimatedBackground}
   argTypes={{
-    locale: {
-      control: { type: "select" },
-      options: [
-        "de",
-        "en",
-        "es",
-        "fr",
-        "it",
-        "ja",
-        "ko",
-        "pt-br",
-        "zh-cn",
-        "zh-tw",
-      ],
-      defaultValue: "en",
-    },
     children: { control: false },
     duration: { control: { type: 'range', min: 100, max: 20000, step: 100 }},
     scaleX: { control: { type: 'range', min: 1, max: 3, step: 0.1 }},
@@ -28,7 +13,7 @@ import "./_styles.scss";
     minScale: { control: { type: 'range', min: 0, max: 1, step: 0.1 }},
     minOpacity: { control: { type: 'range', min: 0, max: 1, step: 0.01 }},
     maxOpacity: { control: { type: 'range', min: 0, max: 1, step: 0.01 }},
-    translateY: { control: { type: 'range', min: -100, max: 0, step: 1 }},
+    bop: { control: { type: 'range', min: 0, max: 100, step: 1 }},
   }}
   parameters={{ status: { type: "experimental" } }}
 />
@@ -44,6 +29,7 @@ export const Template = (args) => (
 <Canvas>
   <Story
     name="Demo"
+    height='400px'
     args={{
       motion: true,
       maxOpacity: 1,
@@ -51,7 +37,7 @@ export const Template = (args) => (
       minScale: .8,
       scaleX: 1.1,
       scaleY: 1.3,
-      translateY: -5,
+      bop: 5,
       colorSet: 'set-cyan-magenta-purple',
       duration: 13500
     }}
@@ -62,7 +48,9 @@ export const Template = (args) => (
 
 ## Description
 
-Banner is a component used for important notifications that stretch across the entire width of the screen to draw the user's attention. Buttons rendered as children of this component will be colored to contrast appropriately with the gradient background.
+AnimatedBackground is a component used as a background of world level pages in Cloud PAL experimental style. It can be rendered with or without motion and offers two color-sets.
+
+All properties to control the animation are exposed to consumers, but it is advised to only alter them if needed.
 
 ## Usage
 
@@ -70,13 +58,13 @@ Banner is a component used for important notifications that stretch across the e
 2.  Import the styles:
 
     ```js
-    @import '@console/pal/Components/Banner/styles';
+    @import '@console/pal/Components/AnimatedBackground/styles';
     ```
 
 3.  Import the component:
 
     ```js
-    import { Banner } from "@console/pal/Components";
+    import { AnimatedBackground } from "@console/pal/Components";
     ```
 
 4.  Render the component.
@@ -85,14 +73,16 @@ For general component usage review the [Components Docs](https://pages.github.ib
 
 ## Props
 
-<ArgsTable of={Banner} />
+<ArgsTable of={AnimatedBackground} />
 
+## Other variations
 
 ### No motion
 
 <Canvas>
   <Story
-    name="Demo"
+    name="No motion"
+    height='400px'
     args={{
       motion: false,
       colorSet: 'set-cyan-magenta-purple',
