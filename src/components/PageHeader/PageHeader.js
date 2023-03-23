@@ -152,19 +152,24 @@ const PageHeader = ({
     <header className={headerClasses}>
       {isWorld && experimental ? (
         <Row>
-          <Column lg={8} md={4} sm={4} xlg={8} max={8} className="pal--page-header__title-container">
-              <div className={titleClasses}>
-                <h1 className="pal--page-header__title-text">{title}</h1>
+          <Column lg={8} md={4} sm={4} xlg={8} max={8} className="pal--page-header__main-container">
+          <div className="pal--page-header__main">
+            <div lg={8} md={4} sm={4} xlg={8} max={8} className="pal--page-header__title-container">
+                <div className={titleClasses}>
+                  <h1 className="pal--page-header__title-text">{title}</h1>
+                </div>
+                <div className={subtitleClasses}>
+                  <p className="pal--page-header__subtitle-text">{subtitle}</p>
+                </div>
               </div>
-              <div className={subtitleClasses}>
-                <p className="pal--page-header__subtitle-text">{subtitle}</p>
-              </div>
+            </div>
           </Column>
-          <Column className="pal--page-header__illustration-container" lg={8} md={4} sm={4} xlg={8} max={8} >
+          {illustration && <Column className="pal--page-header__illustration-container" lg={8} md={4} sm={4} xlg={8} max={8} >
             <div className="pal--page-header__illustration" >
-              {illustration && <img src={illustration}  alt={illustrationAlt}/>}
+              <img src={illustration}  alt={illustrationAlt}/>
             </div>
             </Column>
+}
       </Row>
       ) : isProvisioning && experimental ? (
         <>
