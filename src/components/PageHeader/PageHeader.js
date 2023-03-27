@@ -126,6 +126,11 @@ const PageHeader = ({
             />
           )}
         </div>
+        { tabs && (
+              // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
+              <div className="pal--page-header__tabs"> {tabs}</div>
+            )
+          }
       </div>
       {(children || actionButtons || actionMenuItems) && (
         <div className="pal--page-header__actions">
@@ -170,21 +175,11 @@ const PageHeader = ({
         <>
         <Row>
           <Column lg={14} md={6} sm={2} xlg={14} max={14}  className="pal--page-header__main-container">{content}
-          { tabs && (
-              // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
-              <div className="pal--page-header__tabs"> {tabs}</div>
-            )
-          }
           </Column>
           <Column lg={1} md={1} sm={1} xlg={1} max={1} className="pal--page-header__icon-container">
           {icon && <div className="pal--page-header__icon">{icon}</div>}
           </Column>
         </Row>
-          { tabs && (
-              // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
-              <div className="pal--page-header__tabs--sm"> {tabs}</div>
-            )
-          }
       </>
       ) : isProvisioning ? (
         <Row>
@@ -197,6 +192,11 @@ const PageHeader = ({
       (
         content
       )}
+      { tabs && (
+              // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
+              <div className="pal--page-header__tabs--sm"> {tabs}</div>
+            )
+          }
     </header>
   );
 };

@@ -398,11 +398,19 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   }
 
   &--experimental.pal--page-header--provisioning &__tabs {
-    margin: $spacing-04 0 calc(-1 * $spacing-05) calc(-1 * $spacing-05); // to align text with header
-
+    &--sm {
+      .cds--tabs, .cds--tab--list, .cds--tabs__nav-item {
+        width: calc(100% + $spacing-05);
+      }
+    }
+    
     .cds--tabs, .cds--tab--list, .cds--tabs__nav-item {
       width: 100%;
     }
+  }
+
+  &--experimental &__tabs {
+    margin: $spacing-07 0 calc(-1 * $spacing-05) calc(-1 * $spacing-05); // to align text with header
 
     // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
     @include hide-at-sm();
@@ -411,13 +419,9 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
   }
 
-  &--experimental.pal--page-header--provisioning &__tabs--sm {
+  &--experimental &__tabs--sm {
 
     margin: $spacing-04 0 calc(-1 * $spacing-05) calc(-1 * $spacing-05); // to align text with header
-
-    .cds--tabs, .cds--tab--list, .cds--tabs__nav-item {
-      width: calc(100% + $spacing-05);
-    }
 
     // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
     @include hide-at-md();
@@ -434,6 +438,26 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    @include breakpoint-down('md') {
+      padding-top: $header-spacing
+    }
+  }
+
+  &--experimental.pal--page-header--provisioning &__icon {
+    width: 64px;
+    height: 64px;
+    padding: 6px;
+    border: 1px solid $layer-accent-01;
+    border-radius: 8px;
+    justify-content: center;
+
+    > svg,
+    & > img,
+    & > * {
+      width: 52px;
+      height: 52px;
+    }
   }
 }
 .cds--grid .pal--page-header {

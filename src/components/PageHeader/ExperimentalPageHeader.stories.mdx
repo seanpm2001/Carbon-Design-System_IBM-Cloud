@@ -126,6 +126,16 @@ export const Skeleton = (args) => <PageHeader.skeleton {...args} />;
       title: "Resource Level Page Header",
       truncatedTitle:true,
       experimental: true,
+      tabs: (
+        <Tabs onChange={({selectedIndex}) => {console.log(selectedIndex)}}>
+          <TabList aria-label="List of tabs">
+            <Tab>Tab label</Tab>
+            <Tab>Tab label</Tab>
+            <Tab>Tab label</Tab>
+            <Tab>Tab label</Tab>
+          </TabList>
+        </Tabs>
+      ),
       breadcrumbs: [
         {
           "href": "https://cloud.ibm.com",
