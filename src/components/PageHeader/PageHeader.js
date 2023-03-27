@@ -20,7 +20,6 @@ import SurfacedDetails from "./children/SurfacedDetails";
  * The Page Header Component can also be expanded upon to create connected components.
  */
 const PageHeader = ({
-  // locale,
   breadcrumbs,
   children,
   className,
@@ -44,7 +43,8 @@ const PageHeader = ({
   returnLinkText,
   illustration,
   illustrationAlt,
-  subtitle
+  subtitle,
+  tabs,
 }) => {
   const { t } = useTranslation("PageHeader");
   const [actionButtons, setActionButtons] = useState();
@@ -138,7 +138,6 @@ const PageHeader = ({
           {actionMenuItems && (
             <ActionsPanel
               selectorPrimaryFocus={selectorPrimaryFocus}
-              // locale={locale}
             >
               {actionMenuItems}
             </ActionsPanel>
@@ -173,11 +172,26 @@ const PageHeader = ({
       </Row>
       ) : isProvisioning && experimental ? (
         <>
-          <Column lg={14} md={6} sm={3} xlg={14} max={14}  className="pal--page-header__main-container">{content}</Column>
-          <Column lg={1} md={1} sm={1} xlg={1} max={1} className="pal--page-header__icon-container">
-            {icon && <div className="pal--page-header__icon">{icon}</div>}
+        <Row>
+          <Column lg={14} md={6} sm={2} xlg={14} max={14}  className="pal--page-header__main-container">{content}
+          { tabs && (
+              // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
+              <div className="pal--page-header__tabs"> {tabs}</div>
+            )
+          }
           </Column>
-        </>
+          <Column lg={1} md={1} sm={1} xlg={1} max={1} className="pal--page-header__icon-container">
+          {icon &&<div className="pal--page-header__icon-wrapper">
+             <div className="pal--page-header__icon">{icon}</div>
+            </div>}
+          </Column>
+        </Row>
+          { tabs && (
+              // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
+              <div className="pal--page-header__tabs--sm"> {tabs}</div>
+            )
+          }
+      </>
       ) : isProvisioning ? (
         <div className="cds--row">
           <div className="pal--page-header__icon-container cds--col-md-2 cds--col-lg-2 cds--col-sm-1 cds--col-xlg-2 cds--col-max-2">
@@ -194,7 +208,6 @@ const PageHeader = ({
 };
 
 PageHeader.defaultProps = {
-  // locale: documentLanguage,
   breadcrumbs: undefined,
   children: undefined,
   className: undefined,
@@ -215,14 +228,11 @@ PageHeader.defaultProps = {
   returnLinkText: undefined,
   isWorld: false,
   illustration: undefined,
-  illustrationAlt: undefined
+  illustrationAlt: undefined,
+  tabs: undefined,
 };
 
 PageHeader.propTypes = {
-  /**
-   * The locale used for translating the strings.
-   */
-  // locale: PropTypes.string,
   /**
    * A custom class name to be applied to the page header's `header` element.
    */
@@ -341,10 +351,15 @@ PageHeader.propTypes = {
    * An illustration that can be added to a world level page header. It is recommened to use an .svg with an transparent background.
    */
   illustration: PropTypes.element,
-    /**
+  /**
    * Text to describe the world level illustration.
    */
   illustrationAlt: PropTypes.string,
+  /**
+   * Tabs element group that can be used to control page content. It is advised to use carbons Tab component and controlt the selected index with the `onChange` prop.
+   * See the code example in `Provisioning Page Header`
+   */
+   tabs: PropTypes.node,
 };
 
 // components should export a skeleton

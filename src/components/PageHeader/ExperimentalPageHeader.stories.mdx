@@ -175,6 +175,18 @@ export const Skeleton = (args) => <PageHeader.skeleton {...args} />;
 
 ### Provisioning Page Header
 
+The experimental page header includes a tab layout. To achieve this design add the carbon or your custom `Tabs` component to the `tabs` prop
+The prop should look like this:
+```jsx
+<Tabs onChange={({selectedIndex}) => {console.log(selectedIndex)}}>
+  <TabList aria-label="List of tabs">
+    <Tab>Create</Tab>
+    <Tab>About</Tab>
+  </TabList>
+</Tabs>
+```
+It is necessary to add an onChange handler to be able to control the page content shown below the header.
+
 <Canvas>
   <Story
     name="Provisioning Page Header"
@@ -184,12 +196,18 @@ export const Skeleton = (args) => <PageHeader.skeleton {...args} />;
       icon:  <Cloud32 />,
       isProvisioning: true,
       experimental:true,
-      surfacedDetails: (<p>A scalable JSON document database for web, mobile, IoT, and serverless applications.</p>),
-      hasSurfacedDetailsList: true,
       wrappedDetails: true,
       breadcrumbs: [
         { href: 'https://cloud.ibm.com/catalog', value: 'Catalog' }
-      ]
+      ],
+      tabs: (
+        <Tabs onChange={({selectedIndex}) => {console.log(selectedIndex)}}>
+          <TabList aria-label="List of tabs">
+            <Tab>Create</Tab>
+            <Tab>About</Tab>
+          </TabList>
+        </Tabs>
+      )
     }}
   >
     {Template.bind({})}
