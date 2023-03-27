@@ -3,11 +3,8 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 const SurfacedDetails = ({
-  mock,
-  // locale,
   surfacedDetails,
   hasSurfacedDetailsList,
-  // crn,
 }) => {
   const [reloadTags, setReloadTags] = useState(false);
   const [tagModalOpen, setTagModalOpen] = useState(false);

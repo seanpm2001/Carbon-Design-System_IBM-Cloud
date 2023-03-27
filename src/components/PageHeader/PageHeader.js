@@ -33,8 +33,6 @@ const PageHeader = ({
   truncatedTitle,
   wrappedDetails,
   selectorPrimaryFocus,
-  crn,
-  mock,
   actionButtons: actionButtonDefs,
   actionMenuItems: actionMenuItemDefs,
   experimental,
@@ -121,12 +119,10 @@ const PageHeader = ({
             )}
             <h1 className="pal--page-header__title-text">{title}</h1>
           </div>
-          {(surfacedDetails || crn) && (
+          {(surfacedDetails) && (
             <SurfacedDetails
-              mock={mock}
               hasSurfacedDetailsList={hasSurfacedDetailsList}
               surfacedDetails={surfacedDetails}
-              crn={crn}
             />
           )}
         </div>
@@ -181,9 +177,7 @@ const PageHeader = ({
           }
           </Column>
           <Column lg={1} md={1} sm={1} xlg={1} max={1} className="pal--page-header__icon-container">
-          {icon &&<div className="pal--page-header__icon-wrapper">
-             <div className="pal--page-header__icon">{icon}</div>
-            </div>}
+          {icon && <div className="pal--page-header__icon">{icon}</div>}
           </Column>
         </Row>
           { tabs && (
@@ -193,12 +187,12 @@ const PageHeader = ({
           }
       </>
       ) : isProvisioning ? (
-        <div className="cds--row">
-          <div className="pal--page-header__icon-container cds--col-md-2 cds--col-lg-2 cds--col-sm-1 cds--col-xlg-2 cds--col-max-2">
+        <Row>
+          <Column sm={1} md={2} lg={2} xlg={2} max={2} className="pal--page-header__icon-container">
             {icon && <div className="pal--page-header__icon">{icon}</div>}
-          </div>
+          </Column>
           <div className="pal--page-header__main-container">{content}</div>
-        </div>
+        </Row>
       ) :
       (
         content
@@ -219,10 +213,8 @@ PageHeader.defaultProps = {
   hasSurfacedDetailsList: false,
   truncatedTitle: false,
   wrappedDetails: false,
-  crn: "",
   actionButtons: undefined,
   actionMenuItems: undefined,
-  mock: false,
   experimental: false,
   returnLink: undefined,
   returnLinkText: undefined,
@@ -308,10 +300,6 @@ PageHeader.propTypes = {
    */
   wrappedDetails: PropTypes.bool,
   /**
-   * Provide a CRN to automatically show resource tags and allow editing them.
-   */
-  crn: PropTypes.string,
-  /**
    * Button property objects that define the action buttons to show in the header. Each object must contain a `label` property for the button label.
    */
   actionButtons: PropTypes.arrayOf(
@@ -330,10 +318,6 @@ PageHeader.propTypes = {
    * Specify a CSS selector that matches the DOM element that should be focused on when OverflowMenu opens
    */
   selectorPrimaryFocus: PropTypes.string,
-  /**
-   * Whether or not we should use mock data.
-   */
-  mock: PropTypes.bool,
   /**
    * Path of the products landing/home page. Using this prop adds a link back to the used path.
    * This prop should not be used in combination with breadcrumbs.
