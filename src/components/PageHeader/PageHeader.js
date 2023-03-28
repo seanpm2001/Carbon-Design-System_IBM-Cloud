@@ -67,9 +67,7 @@ const PageHeader = ({
 
   const subtitleClasses = classNames(`pal--page-header__subtitle`);
 
-  const titleContainerClasses = classNames(`pal--page-header__title-container`, {
-    [`cds--col-sm-4 cds--col-md-8 cds--col-lg-12 cds--col-xlg-12  cds--col-max-12`]: experimental,
-  });
+  const titleContainerClasses = classNames(`pal--page-header__title-container`);
 
 
   useEffect(() => {

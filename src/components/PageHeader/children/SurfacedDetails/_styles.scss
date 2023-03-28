@@ -5,6 +5,7 @@
 @import "@carbon/react/scss/themes";
 @import "@carbon/react/scss/theme";
 @import "@carbon/react/scss/config";
+@import '@carbon/styles/scss/breakpoint';
 
 .pal--page-header__surfaced-details {
   display: flex;
@@ -54,5 +55,19 @@
 
   .pal--page-header--wrapped-details & {
     min-width: 100%;
+  }
+}
+
+// experimental
+.pal--page-header--experimental .pal--page-header__surfaced-details {
+  @include breakpoint-down('lg') {
+    padding-top: $spacing-03;
+    .pal--tag-list {
+      display: none;
+    }
+
+    > * {
+      margin: 0 0;
+    }
   }
 }

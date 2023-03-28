@@ -8,19 +8,8 @@
 @import "@carbon/react/scss/components/overflow-menu";
 @import "@carbon/react/scss/components/button";
 
-@mixin breakpoint($size) {
-  @if map-has-key($grid-breakpoints, $size) {
-    $breakpoint-key: map-get($grid-breakpoints, $size);
-
-    @media screen and (min-width: map-get($breakpoint-key, "width")) {
-      @content;
-    }
-  } @else {
-    @media all and (min-width: $size) {
-      @content;
-    }
-  }
-}
+$header-spacing: 28px; // mocks l2 nav height
+$breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
 .pal--actions-panel-sm {
   display: block;
@@ -40,7 +29,7 @@
   height: auto;
   display: none;
 
-  @include breakpoint("md") {
+  @include breakpoint-up("md") {
     display: block;
   }
 
@@ -92,4 +81,40 @@
 
 .pal--actions-panel-menu::after {
   display: none;
+}
+
+// experimental
+.pal--page-header--experimental .pal--page-header__actions {
+  padding: 0;
+  margin: calc($header-spacing + $breadcrumb-spacing) 0 0;
+
+  &:not(:has(.pal--actions-panel-wrap)) {
+    @include breakpoint-down('md') {
+      width: 100%; // span button across container
+      margin: $header-spacing 0 0; // button jumps below title --> remove mock height of breadcrumbs
+
+      .cds--btn {
+        width: 100%; // span button across container
+      }
+   }
+  }
+}
+
+.pal--page-header--experimental .pal--page-header__actions:has(.pal--actions-panel-wrap) *:not(.pal--actions-panel-wrap):not(.pal--actions-panel-wrap *) {
+  @include breakpoint-down('lg') {
+    display: none;
+  }
+}
+
+.pal--page-header--experimental .pal--actions-panel-sm {
+    @include breakpoint-down('lg') {
+      display: block;
+    }
+}
+
+.pal--page-header--experimental .pal--actions-panel.#{$prefix}--overflow-menu {
+    display: none;
+    @include breakpoint-up('lg') {
+      display: block;
+    }
 }

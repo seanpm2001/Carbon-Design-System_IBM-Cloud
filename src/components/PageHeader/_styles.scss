@@ -8,7 +8,6 @@ $feature-flags: (
 
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
-@import '@carbon/react/scss/utilities/hide-at-breakpoint';
 @import '@carbon/styles/scss/breakpoint';
 @import "@carbon/react/scss/colors";
 @import "@carbon/react/scss/spacing";
@@ -30,6 +29,8 @@ $feature-flags: (
 
 $header-spacing: 28px; // mocks l2 nav height
 $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
+
+
 
 .pal--page-header {
   @include flex-grid();
@@ -280,6 +281,10 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
 
   // experimental
+  &--experimental &__main {
+    width: 100%;
+  }
+
   &--experimental &__title-text{
     @include experimental-type.experimental-type-style("experimental-productive-heading-05");
 
@@ -312,7 +317,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   // world illustration
   &--world &__illustration-container {
     margin: 0;
-    @include breakpoint-down('sm') {
+    @include breakpoint-down('md') {
       padding-left: 0;
       padding-top: $spacing-07;
     }
@@ -330,7 +335,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   min-width: 600px;
   max-width: 100%;
 
-  @include breakpoint-down('sm') {
+  @include breakpoint-down('md') {
     min-width:  100%;
     max-width:  100%;
   }
@@ -347,6 +352,10 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
   &--experimental &__title-container {
     padding: calc($header-spacing + $breadcrumb-spacing) 0 0; //mocking the height of breadcrumbs
+    @include breakpoint-down('lg') {
+      display: block;
+      flex-direction: column;
+    }
   }
 
   // remove mock padding
@@ -366,24 +375,6 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     align-self: center;
   }
 
-  &--experimental &__actions {
-    padding: 0;
-    margin: $header-spacing 0 0;
-    margin: calc($header-spacing + $breadcrumb-spacing) 0 0;
-
-    @include breakpoint-down('sm') {
-      width: 100%; // span button across container
-
-      .cds--btn {
-        width: 100%; // span button across container
-      }
-    }
-
-    @include breakpoint-down("sm") {
-      margin: $header-spacing 0 0; // button jumps below title --> remove mock height of breadcrumbs
-    }
-  }
-
   // provisioning
   &--experimental.pal--page-header--provisioning .cds--row {
     width: 100%;
@@ -397,41 +388,49 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     padding: 0;
   }
 
+  &:has(.pal--page-header__tabs) {
+    padding-bottom: 0;
+  }
+  // strech tabs to fit provisioning design spec
   &--experimental.pal--page-header--provisioning &__tabs {
-    &--sm {
-      .cds--tabs, .cds--tab--list, .cds--tabs__nav-item {
-        width: calc(100% + $spacing-05);
-      }
-    }
-    
-    .cds--tabs, .cds--tab--list, .cds--tabs__nav-item {
+
+    .cds--tabs, .cds--tab--list {
       width: 100%;
+    }
+
+    &--sm {
+      .cds--tabs__nav-item {
+        width: max-content;
+      }
     }
   }
 
   &--experimental &__tabs {
-    margin: $spacing-07 0 calc(-1 * $spacing-05) calc(-1 * $spacing-05); // to align text with header
+    margin: $spacing-07 0 0 calc(-1 * $spacing-05); // to align text with header
 
     // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
-    @include hide-at-sm();
+    @include breakpoint-down('md') {
+      display: none;
+    };
     background-color: inherit;
-    padding: inherit;
+    padding: 0;
 
   }
 
   &--experimental &__tabs--sm {
 
-    margin: $spacing-04 0 calc(-1 * $spacing-05) calc(-1 * $spacing-05); // to align text with header
-
+    margin: $spacing-04 0 0 calc(-1 * $spacing-05); // to align text with header
     // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
-    @include hide-at-md();
-    @include hide-at-lg();
-    @include hide-at-xlg();
-    @include hide-at-max();
+    @include breakpoint-up('md') {
+      display: none;
+    };
     background-color: inherit;
     padding: 0;
 
     width: calc(100% + $spacing-05);
+    .cds--tabs, .cds--tab--list {
+      width: calc(100% + $spacing-05);
+    }
   }
 
   &--experimental.pal--page-header--provisioning &__icon-container {
@@ -439,7 +438,8 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     justify-content: flex-end;
     align-items: center;
 
-    @include breakpoint-down('md') {
+    // align icon container with header text
+    @include breakpoint-between('sm', 'md') {
       padding-top: $header-spacing
     }
   }
