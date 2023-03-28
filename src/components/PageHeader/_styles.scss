@@ -82,11 +82,13 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   &__breadcrumb {
     z-index: 1;
     position: relative;
+    overflow: hidden;
   }
 
   .#{$prefix}--breadcrumb {
     display: flex;
     flex-wrap: nowrap;
+
 
     // Override the link here because font-sizes differ.
     .#{$prefix}--link,
@@ -352,7 +354,8 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
   &--experimental &__title-container {
     padding: calc($header-spacing + $breadcrumb-spacing) 0 0; //mocking the height of breadcrumbs
-    @include breakpoint-down('lg') {
+    // realign surfacted details to be displayed below title
+    @include breakpoint-down('md') {
       display: block;
       flex-direction: column;
     }
@@ -382,8 +385,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     padding: 0;
   }
 
-  &--experimental.pal--page-header--provisioning &__main-container,
-  &--experimental.pal--page-header--provisioning &__icon-container  {
+  &--experimental.pal--page-header--provisioning &__main-container  {
     margin: 0;
     padding: 0;
   }
@@ -419,7 +421,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
   &--experimental &__tabs--sm {
 
-    margin: $spacing-04 0 0 calc(-1 * $spacing-05); // to align text with header
+    margin: $spacing-06 0 0 calc(-1 * $spacing-05); // to align text with header
     // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
     @include breakpoint-up('md') {
       display: none;
@@ -434,13 +436,13 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   }
 
   &--experimental.pal--page-header--provisioning &__icon-container {
-    display: flex;
     justify-content: flex-end;
-    align-items: center;
-
+    margin-top: -1rem;
+    height: calc(100% + $spacing-05);
     // align icon container with header text
-    @include breakpoint-between('sm', 'md') {
-      padding-top: $header-spacing
+    @include breakpoint-down('md') {
+      margin-top: $header-spacing;
+      height: 100%;
     }
   }
 

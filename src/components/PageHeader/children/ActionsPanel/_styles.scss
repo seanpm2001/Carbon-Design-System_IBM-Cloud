@@ -86,7 +86,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 // experimental
 .pal--page-header--experimental .pal--page-header__actions {
   padding: 0;
-  margin: calc($header-spacing + $breadcrumb-spacing) 0 0;
+  margin: calc($header-spacing + $breadcrumb-spacing - $spacing-03) 0 0;
 
   &:not(:has(.pal--actions-panel-wrap)) {
     @include breakpoint-down('md') {
@@ -101,20 +101,20 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 }
 
 .pal--page-header--experimental .pal--page-header__actions:has(.pal--actions-panel-wrap) *:not(.pal--actions-panel-wrap):not(.pal--actions-panel-wrap *) {
-  @include breakpoint-down('lg') {
+  @include breakpoint-down('md') {
     display: none;
   }
 }
 
 .pal--page-header--experimental .pal--actions-panel-sm {
-    @include breakpoint-down('lg') {
+    @include breakpoint-down('md') {
       display: block;
     }
 }
 
 .pal--page-header--experimental .pal--actions-panel.#{$prefix}--overflow-menu {
     display: none;
-    @include breakpoint-up('lg') {
+    @include breakpoint-up('md') {
       display: block;
     }
 }

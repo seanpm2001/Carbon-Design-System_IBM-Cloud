@@ -174,9 +174,9 @@ const PageHeader = ({
         <Row>
           <Column lg={14} md={6} sm={2} xlg={14} max={14}  className="pal--page-header__main-container">{content}
           </Column>
-          <Column lg={1} md={1} sm={1} xlg={1} max={1} className="pal--page-header__icon-container">
+          <div className="pal--page-header__icon-container">
           {icon && <div className="pal--page-header__icon">{icon}</div>}
-          </Column>
+          </div>
         </Row>
       </>
       ) : isProvisioning ? (
