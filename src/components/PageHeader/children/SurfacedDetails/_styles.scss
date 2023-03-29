@@ -61,7 +61,6 @@
 // experimental
 .pal--page-header--experimental .pal--page-header__surfaced-details {
   @include breakpoint-down('lg') {
-    padding-top: $spacing-03;
     .pal--tag-list {
       display: none;
     }
@@ -69,5 +68,8 @@
     > * {
       margin: 0 0;
     }
+  }
+  @include breakpoint-down('md') {
+    padding-top: $spacing-03;
   }
 }

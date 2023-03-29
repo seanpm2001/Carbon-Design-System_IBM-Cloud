@@ -83,6 +83,10 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     z-index: 1;
     position: relative;
     overflow: hidden;
+    &  * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .#{$prefix}--breadcrumb {
@@ -285,6 +289,9 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   // experimental
   &--experimental &__main {
     width: 100%;
+    &:has(.pal--page-header__title--truncated) {
+      overflow: hidden;
+    }
   }
 
   &--experimental &__title--truncated{

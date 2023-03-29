@@ -83,7 +83,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   display: none;
 }
 
-.pal--page-header--experimental:has(.pal--page-header__tabs) .pal--page-header__actions  {
+.pal--page-header--experimental:has(.pal--page-header__tabs) .pal--page-header__actions {
   margin: calc($header-spacing + $breadcrumb-spacing - $spacing-03) 0 0;
 }
 
