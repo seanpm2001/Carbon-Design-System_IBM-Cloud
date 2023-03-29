@@ -287,6 +287,10 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     width: 100%;
   }
 
+  &--experimental &__title--truncated{
+    overflow:hidden;
+  }
+
   &--experimental &__title-text{
     @include experimental-type.experimental-type-style("experimental-productive-heading-05");
 
@@ -352,7 +356,8 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   
  }
 
-  &--experimental &__title-container {
+  &--experimental &__title-container:has(&__title--truncated) {
+    flex-wrap: inherit;
     padding: calc($header-spacing + $breadcrumb-spacing) 0 0; //mocking the height of breadcrumbs
     // realign surfacted details to be displayed below title
     @include breakpoint-down('md') {
