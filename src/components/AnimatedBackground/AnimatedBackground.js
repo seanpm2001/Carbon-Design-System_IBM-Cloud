@@ -59,12 +59,6 @@ const AnimatedBackground = ({
 
   const styles = {
     "--duration": `${duration}ms`,
-    "--scale-x": scaleX,
-    "--scale-y": scaleY,
-    "--min-opacity": minOpacity,
-    "--max-opacity": maxOpacity,
-    "--bop": `${(-1)*bop}%`, // need a negative value
-    "--min-scale": minScale,
   }
 
   return (
@@ -80,12 +74,6 @@ const AnimatedBackground = ({
 AnimatedBackground.defaultProps = {
   motion: true,
   className: undefined,
-  maxOpacity: 1,
-  minOpacity: .8,
-  minScale: .8,
-  scaleX: 1.1,
-  scaleY: 1.3,
-  bop: 5,
   colorSet: 'set-cyan-magenta-purple',
   duration: 13500
 };
@@ -107,30 +95,6 @@ AnimatedBackground.propTypes = {
    * A number to determine the speed of the animation.
    */
   duration: PropTypes.number,
-  /**
-   * A number to determine the max. scale value on the x-axis for the gradient blob animation.
-   */
-  scaleX: PropTypes.number,
-  /**
-   * A number to determine the max. scale value on the y-axis for the gradient blob animation.
-   */
-  scaleY: PropTypes.number,
-  /**
-   * A number to determine the min. scale value on the y-axis and x-axis for the gradient blob animation.
-   */
-  minScale: PropTypes.number,
-  /**
-   * A number to determine the min. opacity value of the gradient blob animation.
-   */
-  minOpacity: PropTypes.number,
-  /**
-   * A number to determine the max. opacity value of the gradient blob animation.
-   */
-  maxOpacity: PropTypes.number,
-  /**
-   * A number to determine how much the gradient blobs should move on the y-axis during animation.
-   */
-  bop: PropTypes.number,
 };
 
 export default AnimatedBackground;

@@ -40,9 +40,12 @@
   --custom-animated-background-set-cyan-teal-5:  #{$teal-90};
 }
 
-$scale-x: var(--scale-x);
-$scale-y: var(--scale-y);
-$min-scale: var(--min-scale);
+$scale-x: 1.1;
+$scale-y: 1.3;
+$min-scale: .8;
+$bop: -5%;
+$max-opacity: 1;
+$min-opacity: .8;
 
 @function next-value($list,$i) {
   $length: length($list);
@@ -88,7 +91,7 @@ $min-scale: var(--min-scale);
   
       }
       50% {
-        transform: scale($scale-x,$scale-y) translateY(var(--bop));
+        transform: scale($scale-x,$scale-y) translateY($bop);
   
       }
       100% {
@@ -98,15 +101,15 @@ $min-scale: var(--min-scale);
     
     @keyframes illuminate {
       0% {
-        opacity: var(--min-opacity);
+        opacity: $min-opacity;
   
       }
       50% {
-        opacity: var(--max-opacity);
+        opacity: $max-opacity;
   
       }
       100% {
-        opacity: var(--min-opacity);
+        opacity: $min-opacity;
       }
     }
     
@@ -129,7 +132,7 @@ $min-scale: var(--min-scale);
 
       svg ellipse {
         transform: scale($min-scale,$min-scale);
-        opacity: var(--min-opacity);
+        opacity: $min-opacity;
         mix-blend-mode: luminosity;
         will-change: transform, fill, opacity; // https://developer.mozilla.org/en-US/docs/Web/CSS/will-change
       }
