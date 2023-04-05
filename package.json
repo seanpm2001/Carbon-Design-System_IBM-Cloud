@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@carbon/react": "^1.16.0",
+    "@etchteam/storybook-addon-status": "^4.2.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -70,7 +71,6 @@
     "prop-types": "^15.8.1",
     "sass": "^1.55.0",
     "source-map-explorer": "^2.5.3",
-    "webpack": "^5.74.0",
-    "@etchteam/storybook-addon-status": "^4.2.2"
+    "webpack": "^5.74.0"
   }
 }
