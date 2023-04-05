@@ -1,0 +1,18 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@use '@carbon/grid';
+
+@use "@carbon/react/scss/components/skeleton-styles";
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+
+@import "../ExperimentalTile/styles";
+
+
+
+.pal--experimental-tile-group {
+  @include grid.css-grid();
+}

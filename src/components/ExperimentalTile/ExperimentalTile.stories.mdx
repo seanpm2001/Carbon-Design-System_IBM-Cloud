@@ -1,0 +1,120 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { OverflowMenu, OverflowMenuItem } from "@carbon/react";
+import { Rocket } from '@carbon/react/icons';
+import ExperimentalTile, { ExperimentalTileHeader, ExperimentalTileDetails, ExperimentalTileTags, ExperimentalTileDescription, ExperimentalTileIcon } from ".";
+
+import "./_styles.scss";
+
+<Meta
+  title="Experimental/ExperimentalTile"
+  component={ExperimentalTile}
+  subcomponents={{ ExperimentalTileHeader, ExperimentalTileDetails, ExperimentalTileTags, ExperimentalTileDescription, ExperimentalTileIcon }}
+  argTypes={{
+    children: { control: false },
+  }}
+  parameters={{ status: { type: "experimental" } }}
+/>
+
+# Card
+
+export const Template = (args) => (
+  <ExperimentalTile style={{maxWidth: '400px'}} size='md' href= '.' {...args}>
+    <ExperimentalTileHeader type='Product'>
+      Title
+      </ExperimentalTileHeader>
+    <ExperimentalTileDescription>
+      A subtitle that expands upon the title and highlights why this world is great.
+    </ExperimentalTileDescription>
+    <ExperimentalTileDetails details={[]} />
+    <ExperimentalTileTags tags={[]} />
+    <ExperimentalTileIcon>
+      <Rocket size='32' />
+    </ExperimentalTileIcon>
+  </ExperimentalTile>
+);
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="With Details"
+  >
+    <ExperimentalTile style={{maxWidth: '400px'}} size='md' icon={Rocket} href= '.'>
+    <ExperimentalTileHeader>
+      Title
+      </ExperimentalTileHeader>
+    <ExperimentalTileDescription>
+      A subtitle that expands upon the title and highlights why this world is great.
+    </ExperimentalTileDescription>
+    <ExperimentalTileDetails details={[{value:'Detail 1'}, {value: 'Detail 2'}, {value:'Detail 2'}, {value: 'Detail 3'}]} />
+    <ExperimentalTileIcon>
+      <Rocket size='32' />
+    </ExperimentalTileIcon>
+  </ExperimentalTile>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="With Tags"
+  >
+    <ExperimentalTile style={{maxWidth: '400px'}} size='md' icon={Rocket} href= '.'>
+    <ExperimentalTileHeader>
+      Title
+      </ExperimentalTileHeader>
+    <ExperimentalTileDescription>
+      A subtitle that expands upon the title and highlights why this world is great.
+    </ExperimentalTileDescription>
+    <ExperimentalTileDetails details={[{value:'Detail 1'}, {value: 'Detail 2'}, {value:'Detail 2'}, {value: 'Detail 3'}]} />
+    <ExperimentalTileTags tags={[
+    { name: "tag 1", type: "red" },
+    { name: "tag 2", type: "red" },
+    { name: "tag 1", type: "red" },
+    { name: "tag 1", type: "red" },
+    { name: "tag 2", type: "red" },
+    { name: "tag 1", type: "red" },
+  ]} />
+   <ExperimentalTileIcon>
+      <Rocket size='32' />
+    </ExperimentalTileIcon>
+  </ExperimentalTile>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="With Content Type"
+  >
+    <ExperimentalTile style={{maxWidth: '400px'}} size='md' icon={Rocket} href= '.'>
+    <ExperimentalTileHeader type='Product'>
+      Title
+      </ExperimentalTileHeader>
+    <ExperimentalTileDescription>
+      A subtitle that expands upon the title and highlights why this world is great.
+    </ExperimentalTileDescription>
+    <ExperimentalTileDetails details={[{value:'Detail 1'}, {value: 'Detail 2'}, {value:'Detail 2'}, {value: 'Detail 3'}]} />
+  </ExperimentalTile>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="With Truncation"
+  >
+    <ExperimentalTile style={{maxWidth: '400px'}} size='md' href= '.'>
+    <ExperimentalTileHeader>
+      Title
+      </ExperimentalTileHeader>
+    <ExperimentalTileDescription>
+      A subtitle that expands upon the title and highlights why this world is great. This text is artifically extended to span across more then two lines and trigger truncation.    </ExperimentalTileDescription>
+  </ExperimentalTile>
+  </Story>
+</Canvas>
