@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./Counter.scss";
+// import { useTranslation } from "react-i18next";
 
 // Uses inclusive bounds.
 function keepInBounds(value, lowerBound, upperBound) {
@@ -29,6 +30,8 @@ const Counter = ({
     }
   }, [initialStep]);
 
+//   const { t } = useTranslation("Counter");
+
   return (
       <div className="pal--counter" role="status">
       <div className="pal--counter__numbers">
@@ -40,6 +43,7 @@ const Counter = ({
         <h1 className="pal--counter__total-steps">/ {totalSteps}</h1>
       </div>
       <p className="pal--counter__label" aria-labelledby>Steps complete</p>
+      {/* <p className="pal--counter__label" aria-labelledby>{t("Steps Complete")}</p> */}
       <hr className="pal--counter__divider"></hr>
       </div>
   );
@@ -47,8 +51,6 @@ const Counter = ({
 
 // components should export a skeleton
 Counter.Skeleton = () => {
-  /* Build skeleton component structure here */
-  // TODO Update Below!
   return <div className="pal--counter__skeleton>">
           <h1 className="pal--counter__total-steps">0 / 5</h1>
           <p className="pal--counter__label">Steps complete</p>
