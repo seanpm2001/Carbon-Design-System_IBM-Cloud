@@ -2,7 +2,11 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { OverflowMenuItem, Link, Search, Button, Tag } from '@carbon/react';
 import { Cloud as Cloud32 } from "@carbon/react/icons";
 import { PageHeader, PageHeaderActionsPanel } from './';
+
 import './_styles.scss';
+
+import { TagList } from '../TagList';
+import { ResourceStatusIndicator } from '../ResourceStatusIndicator';
 
 
 
@@ -268,7 +272,18 @@ export const Skeleton = (args) => (
 </Canvas>
 
 ### Page Header with tag management and defined actions
+**Disclaimer:** Since this component lives in a repository that supports no connected cloud experiences the `ResourceTagList` & `ResourceTagModal` components are not built in to the `PageHeader` anymore. You can see in the following example how you can incoporate a tag list component into the `surfacedDetails` property.
+You need to import the corresponding components of the `@console/pal` package and nest them inside the `surfacedDetails` prop.
+```jsx
+import { ResourceTagList, ResourceTagModal } from '@console/pal/Connected';
+...
 
+<PageHeader ...
+  surfacedDetails={
+    [(<ResourceTagModal .../>),
+    (<ResourceTagList  .../>)]}
+  />
+```
 <Canvas>
   <Story
     name="PageHeader with tag management and defined actions"
@@ -297,7 +312,18 @@ export const Skeleton = (args) => (
         {
           itemText: 'Action 2',
         }
-      ]
+      ],
+      hasSurfacedDetailsList: true,
+      surfacedDetails: 
+          [(<ResourceStatusIndicator
+            width='3rem'
+            statusIndicator='success'
+            label='Running'
+          />),
+          (<TagList  tags={[
+        { name: "tag 1", type: "functional" },
+        { name: "tag 2", type: "functional" },
+      ]} isEditable='always' />)]
     }}
   >
     {Template.bind({})}

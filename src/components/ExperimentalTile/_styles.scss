@@ -1,0 +1,149 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@use "@carbon/react/scss/components/tile";
+@use "@carbon/react/scss/components/link";
+
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+// import pal styles
+@import '../TagList/styles';
+
+// import tile styles
+
+.pal--experimental-tile {
+  position: relative; 
+  box-shadow: 0 0 0 1px $border-subtle-01;
+
+  &--xs {
+    aspect-ratio: 2 / 1;
+  }
+
+  &--sm {
+    aspect-ratio: 3 / 2;
+  }
+
+  &--md {
+    aspect-ratio: 1 / 1;
+  }
+
+  &--lg {
+    aspect-ratio: 3 / 4;
+  }
+
+  &__container-link {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  &:hover .pal--experimental-tile__arrow {
+    visibility: visible;
+  }
+
+  &__content {
+    position: relative;
+    height: 100%;
+    padding-bottom: 1.5rem;
+  }
+
+  &__image {
+    position: absolute;
+    object-fit: contain;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__header {
+    @include type.type-style('productive-heading-02');
+    overflow: hidden;
+    position: relative;
+    display: block;
+  }
+
+  &__description {
+    @include type.type-style('body-long-01');
+    color: $text-secondary;
+    margin: 0 0 $spacing-05;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  &__details {
+    @include type.type-style('label-01');
+    color: $text-secondary;
+    margin-bottom: $spacing-03;
+    // limit list of details to 3 bullet points
+    li:nth-of-type(1n+4) {
+      display: none;
+    } 
+    &--overflow:after {
+      content: '...'
+    }
+  }
+
+  &__details-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__detail-item svg {
+    margin-right: $spacing-02;
+  }
+
+  &__content > *:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  &__arrow {
+    color: $interactive;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+  &__overflow-text {
+    display: inline;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cds--tile {
+    height: 100%;
+  }
+
+  // Override carbon's natural behavior here to align the tags to the left.
+  .cds--tag:first-child {
+    margin-left: 0;
+  }
+  
+  &__header__content-type {
+    display: flex;
+    @include type.type-style('label-01');
+    color: $text-secondary;
+    margin-bottom: $spacing-05;
+  }
+
+  &__tags {
+    margin-top: $spacing-04;
+    margin-bottom: $spacing-09;
+    flex-wrap: wrap;
+  }
+
+  &__icon svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}

@@ -2,9 +2,12 @@ import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 import { OverflowMenuItem, Link, Search, Button, Tag , Tabs, Tab, TabList, TabPanels, TabPanel, Theme} from "@carbon/react";
 import { Cloud as Cloud32 } from "@carbon/react/icons";
 import PageHeader, { PageHeaderActionsPanel } from ".";
-import illustration from './illustration.svg'
+import illustration from '../../assets/illustration.svg';
 
 import "./_styles.scss";
+
+import { TagList } from '../TagList';
+import { ResourceStatusIndicator } from '../ResourceStatusIndicator';
 
 <Meta
   title="Experimental/PageHeader"
@@ -118,6 +121,18 @@ export const Skeleton = (args) => <PageHeader.skeleton {...args} />;
 </Canvas>
 
 ### Resource Level Page Header
+**Disclaimer:** Since this component lives in a repository that supports no connected cloud experiences the `ResourceTagList` & `ResourceTagModal` components are not built in to the `PageHeader` anymore. You can see in the following example how you can incoporate a tag list component into the `surfacedDetails` property.
+You need to import the corresponding components of the `@console/pal` package and nest them inside the `surfacedDetails` prop.
+```jsx
+import { ResourceTagList, ResourceTagModal } from '@console/pal/Connected';
+...
+
+<PageHeader ...
+  surfacedDetails={
+    [(<ResourceTagModal .../>),
+    (<ResourceTagList  .../>)]}
+  />
+```
 
 <Canvas>
   <Story
@@ -126,6 +141,76 @@ export const Skeleton = (args) => <PageHeader.skeleton {...args} />;
       title: "Resource Level Page Header",
       truncatedTitle:true,
       experimental: true,
+      hasSurfacedDetailsList: true,
+      
+      surfacedDetails: [(<ResourceStatusIndicator
+            width='3rem'
+            statusIndicator='success'
+            label='Running'
+          />),
+          (<TagList  tags={[
+        { name: "tag 1", type: "functional" },
+        { name: "tag 2", type: "functional" },
+      ]} isEditable='always' />)],
+      breadcrumbs: [
+        {
+          "href": "https://cloud.ibm.com",
+          "value": "Breadcrumb 1"
+        },
+        {
+          "href": "https://cloud.ibm.com",
+          "value": "Breadcrumb 2"
+        },
+        {
+          "value": "Breadcrumb 3",
+          "asButton": true
+        }
+      ],
+      children: (
+        <>
+          <Button kind="ghost" size="md">Details</Button>
+          <PageHeaderActionsPanel selectorPrimaryFocus="#example-action-panel-item-1">
+            <OverflowMenuItem itemText="action 1" id="example-action-panel-item-1" />
+            <OverflowMenuItem itemText="action 2" id="example-action-panel-item-2" />
+            <OverflowMenuItem itemText="action 3" visibleBreakpoint="medium" id="example-action-panel-item-3" />
+          </PageHeaderActionsPanel>
+        </>
+      )
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Resource Level Page Header with tabs
+
+The experimental page header includes a tab layout. To achieve this design add the carbon or your custom `Tabs` component to the `tabs` prop
+The prop should look like this:
+```jsx
+<Tabs onChange={({selectedIndex}) => {console.log(selectedIndex)}}>
+  <TabList aria-label="List of tabs">
+    <Tab>Create</Tab>
+    <Tab>About</Tab>
+  </TabList>
+</Tabs>
+```
+It is necessary to add an onChange handler to be able to control the page content shown below the header.
+
+<Canvas>
+  <Story
+    name="Resource Level Page Header with tabs"
+    args={{
+      title: "Resource Level Page Header",
+      truncatedTitle:true,
+      experimental: true,
+      hasSurfacedDetailsList: true,
+      
+      surfacedDetails: [(<ResourceStatusIndicator
+            width='3rem'
+            statusIndicator='success'
+            label='Running'
+          />),
+          (<ResourceTagList mock resourceId='testResourceId' isEditable='always' />)],
       tabs: (
         <Tabs onChange={({selectedIndex}) => {console.log(selectedIndex)}}>
           <TabList aria-label="List of tabs">
@@ -152,11 +237,11 @@ export const Skeleton = (args) => <PageHeader.skeleton {...args} />;
       ],
       children: (
         <>
-          <Button kind="ghost" size="field">Details</Button>
+          <Button kind="ghost" size="md">Details</Button>
           <PageHeaderActionsPanel selectorPrimaryFocus="#example-action-panel-item-1">
             <OverflowMenuItem itemText="action 1" id="example-action-panel-item-1" />
             <OverflowMenuItem itemText="action 2" id="example-action-panel-item-2" />
-            <OverflowMenuItem itemText="action 3" visibleBreakpoint="small" id="example-action-panel-item-3" />
+            <OverflowMenuItem itemText="action 3" visibleBreakpoint="medium" id="example-action-panel-item-3" />
           </PageHeaderActionsPanel>
         </>
       )
