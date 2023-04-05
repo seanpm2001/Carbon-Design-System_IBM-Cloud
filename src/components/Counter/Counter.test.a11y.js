@@ -7,8 +7,8 @@ describe('Counter a11y', () => {
     const main = document.createElement('main');
     const { container } = render(
       <Counter
-        totalSteps="5"
-        currentStep="0"
+        totalSteps={5}
+        currentStep={0}
       />,
       { container: document.body.appendChild(main) },
     );
