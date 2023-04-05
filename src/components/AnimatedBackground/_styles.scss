@@ -1,0 +1,175 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/grid";
+
+.cds--white, .cds--g10 {
+  --custom-animated-background-set-cyan-magenta-purple-1:  #{$cyan-20};
+  --custom-animated-background-set-cyan-magenta-purple-2:  #{$purple-20};
+  --custom-animated-background-set-cyan-magenta-purple-3:  #{$magenta-20};
+  --custom-animated-background-set-cyan-magenta-purple-4:  #{$purple-20};
+  --custom-animated-background-set-cyan-magenta-purple-5:  #{$cyan-20};
+  --custom-animated-background-set-cyan-magenta-purple-6:  #{$magenta-20};
+
+
+  --custom-animated-background-set-cyan-teal-1:  #{$cyan-20};
+  --custom-animated-background-set-cyan-teal-2:  #{$teal-10};
+  --custom-animated-background-set-cyan-teal-3:  #{$cyan-20};
+  --custom-animated-background-set-cyan-teal-4:  #{$cyan-20};
+  --custom-animated-background-set-cyan-teal-5:  #{$teal-10};
+}
+
+
+.cds--g100, .cds--g90 {
+  --custom-animated-background-set-cyan-magenta-purple-1:  #{$cyan-90};
+  --custom-animated-background-set-cyan-magenta-purple-2:  #{$purple-90};
+  --custom-animated-background-set-cyan-magenta-purple-3:  #{$magenta-90};
+  --custom-animated-background-set-cyan-magenta-purple-4:  #{$purple-90};
+  --custom-animated-background-set-cyan-magenta-purple-5:  #{$cyan-90};
+  --custom-animated-background-set-cyan-magenta-purple-6:  #{$magenta-90};
+
+
+  --custom-animated-background-set-cyan-teal-1:  #{$cyan-90};
+  --custom-animated-background-set-cyan-teal-2:  #{$teal-90};
+  --custom-animated-background-set-cyan-teal-3:  #{$cyan-90};
+  --custom-animated-background-set-cyan-teal-4:  #{$cyan-90};
+  --custom-animated-background-set-cyan-teal-5:  #{$teal-90};
+}
+
+$scale-x: 1.1;
+$scale-y: 1.3;
+$min-scale: .8;
+$bop: -5%;
+$max-opacity: 1;
+$min-opacity: .8;
+
+@function next-value($list,$i) {
+  $length: length($list);
+  $next-index: $i % $length;
+
+  @if  $next-index == 0 {
+    @return nth($list, $i);
+  }
+  @return  nth($list, $i % $length);
+};
+
+.pal--animated-background {
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+
+  $color-sets: (
+    set-cyan-magenta-purple: (
+      var(--custom-animated-background-set-cyan-magenta-purple-1),
+      var(--custom-animated-background-set-cyan-magenta-purple-2),
+      var(--custom-animated-background-set-cyan-magenta-purple-3),
+      var(--custom-animated-background-set-cyan-magenta-purple-4),
+      var(--custom-animated-background-set-cyan-magenta-purple-5),
+      var(--custom-animated-background-set-cyan-magenta-purple-6),
+    ),
+    set-cyan-teal: (
+      var(--custom-animated-background-set-cyan-teal-1),
+      var(--custom-animated-background-set-cyan-teal-2),
+      var(--custom-animated-background-set-cyan-teal-3),
+      var(--custom-animated-background-set-cyan-teal-4),
+      var(--custom-animated-background-set-cyan-teal-5),
+    )
+  );
+
+  @each $color-set-key in map-keys($color-sets) {
+    $color-set: map-get($color-sets, $color-set-key);
+    $color-set-length: length($color-set);
+
+    @keyframes scale-bop {
+      0% {
+        transform: scale($min-scale,$min-scale) translateY(0%);
+  
+      }
+      50% {
+        transform: scale($scale-x,$scale-y) translateY($bop);
+  
+      }
+      100% {
+        transform: scale($min-scale,$min-scale) translateY(0%);
+      }
+    } 
+    
+    @keyframes illuminate {
+      0% {
+        opacity: $min-opacity;
+  
+      }
+      50% {
+        opacity: $max-opacity;
+  
+      }
+      100% {
+        opacity: $min-opacity;
+      }
+    }
+    
+    @for $i from 1 through $color-set-length {
+      @keyframes rotate-#{$color-set-key}-#{$i} {
+        @for $j from 0 through $color-set-length - 1 { 
+          $color: next-value($color-set, $i + $j);
+          $steps: $color-set-length;
+          $pos: $j * (100 / $steps);
+    
+          #{$pos}% {
+            fill: $color;
+          } 
+        }
+      }  
+    }
+
+    &.#{$color-set-key} {
+      $blob-count: 5;
+
+      svg ellipse {
+        transform: scale($min-scale,$min-scale);
+        opacity: $min-opacity;
+        mix-blend-mode: luminosity;
+        will-change: transform, fill, opacity; // https://developer.mozilla.org/en-US/docs/Web/CSS/will-change
+      }
+
+      @for $i from 1 through $blob-count {
+        $color: nth($color-set, $i);
+        svg ellipse:nth-child(#{$i}) {
+          fill: $color;
+          transform-origin: calc(($i - 1) * 25%)  100%; // move origin for every blob accordingly
+        }
+      } 
+    }
+    
+    // only add animation when motion prop is given
+    &--motion.#{$color-set-key} {
+      $blob-count: 5;
+      $duration: var(--duration);
+      $offset: calc($duration / $blob-count);
+
+      @for $i from 1 through $blob-count {
+        svg ellipse:nth-child(#{$i}) {
+        animation: scale-bop $duration infinite ease, illuminate $duration infinite alternate ease,  rotate-#{$color-set-key}-#{$i} calc($blob-count * $duration) ease infinite;
+        animation-delay: calc($offset * calc($i - 1)); // start at 0 so that first animation starts right away
+        }
+      } 
+    }
+  }
+
+  &__container {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: center center;
+    overflow: hidden;
+    transition: all .3s ease-in;
+  }
+}

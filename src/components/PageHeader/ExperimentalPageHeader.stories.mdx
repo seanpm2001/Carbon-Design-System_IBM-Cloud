@@ -1,0 +1,205 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { OverflowMenuItem, Link, Search, Button, Tag , Tabs, Tab, TabList, TabPanels, TabPanel, Theme} from "@carbon/react";
+import { Cloud as Cloud32 } from "@carbon/react/icons";
+import PageHeader, { PageHeaderActionsPanel } from ".";
+import illustration from './illustration.svg'
+
+import "./_styles.scss";
+
+<Meta
+  title="Experimental/PageHeader"
+  component={PageHeader}
+  argTypes={{
+    locale: {
+      control: { type: "select" },
+      options: [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "ja",
+        "ko",
+        "pt-br",
+        "zh-cn",
+        "zh-tw",
+      ],
+      defaultValue: "en",
+    },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: "experimental" } }}
+/>
+
+# Experimental PageHeader
+
+export const Template = (args) => <PageHeader {...args} />;
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      title: "Basic Page Header",
+      experimental: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+## Description
+
+A component for rendering a Page Header. This should be used on every page on IBM Cloud. This component can be used on basic pages such
+as a manage page or a complex resource details page.
+
+This is an experimental design kit for the `PageHeader` component. It can be applied by adding the prop `experimental` to it.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/PageHeader/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { PageHeader } from "@console/pal/Components";
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={PageHeader} />
+
+## PageHeaderActionsPanel Props
+
+<ArgsTable of={PageHeaderActionsPanel} />
+
+## Loading State
+
+export const Skeleton = (args) => <PageHeader.skeleton {...args} />;
+
+<Canvas>
+  <Story
+    name="Loading State"
+    args={{
+      breadcrumbs: true,
+      actions: true,
+      title: true,
+      experimental: true
+    }}
+  >
+    {Skeleton.bind({})}
+  </Story>
+</Canvas>
+
+## Other Examples
+
+### L2 Navigation Page Header
+<Canvas>
+  <Story
+    name="L2 Navigation Header"
+    args={{
+      title: "Page title that can span up to two lines",
+      experimental: true,
+      returnLink: "../",
+      children: <Button kind="primary" size="field"> Primary Button</Button>
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Resource Level Page Header
+
+<Canvas>
+  <Story
+    name="Resource Level Page Header"
+    args={{
+      title: "Resource Level Page Header",
+      truncatedTitle:true,
+      experimental: true,
+      breadcrumbs: [
+        {
+          "href": "https://cloud.ibm.com",
+          "value": "Breadcrumb 1"
+        },
+        {
+          "href": "https://cloud.ibm.com",
+          "value": "Breadcrumb 2"
+        },
+        {
+          "value": "Breadcrumb 3",
+          "asButton": true
+        }
+      ],
+      children: (
+        <>
+          <Button kind="ghost" size="field">Details</Button>
+          <PageHeaderActionsPanel selectorPrimaryFocus="#example-action-panel-item-1">
+            <OverflowMenuItem itemText="action 1" id="example-action-panel-item-1" />
+            <OverflowMenuItem itemText="action 2" id="example-action-panel-item-2" />
+            <OverflowMenuItem itemText="action 3" visibleBreakpoint="small" id="example-action-panel-item-3" />
+          </PageHeaderActionsPanel>
+        </>
+      )
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### World Page Header
+
+<Canvas>
+  <Story
+    name="World Header"
+    args={{
+      title: "A title that explains what you do in this world",
+      subtitle: "A subtitle that expands upon the title and highlights why this world is great.",
+      experimental: true,
+      isWorld: true,
+      illustration: illustration,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Provisioning Page Header
+
+<Canvas>
+  <Story
+    name="Provisioning Page Header"
+    args={{
+      title: 'Provision [resource name]',
+      truncatedTitle: true,
+      icon:  <Cloud32 />,
+      isProvisioning: true,
+      experimental:true,
+      surfacedDetails: (<p>A scalable JSON document database for web, mobile, IoT, and serverless applications.</p>),
+      hasSurfacedDetailsList: true,
+      wrappedDetails: true,
+      breadcrumbs: [
+        { href: 'https://cloud.ibm.com/catalog', value: 'Catalog' }
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Contributors
+
+- Josh Johnson
+- Trevor Wong
+- Attila Bartha
+- Flannan Lo
+- Max Hammer

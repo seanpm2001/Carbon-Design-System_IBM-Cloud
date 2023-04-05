@@ -10,6 +10,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/preset-create-react-app",
+    '@etchteam/storybook-addon-status',
   ],
   framework: "@storybook/react",
   core: {
