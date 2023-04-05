@@ -1,0 +1,43 @@
+
+// stylelint-disable number-max-precision
+@forward  "@carbon/react/scss/type";
+@use  "@carbon/type";
+@use 'sass:map';
+@use '@carbon/layout';
+@use '@carbon/grid/scss/config' as gridconfig;
+
+/// @type Map
+/// @access public
+$experimental-productive-heading-05: (
+  font-size: type.type-scale(8),
+  font-weight: type.font-weight('light'),
+  line-height: 2.5rem,
+  letter-spacing: 0,
+) ;
+
+
+$experimental-tokens: (
+  experimental-productive-heading-05: $experimental-productive-heading-05
+);
+
+@mixin experimental-custom-properties($name, $value) {
+  @each $property, $value in $value {
+    #{$property}: var(
+      --cloud-#{$name}-#{$property},
+      #{$value}
+    );
+  }
+}
+
+@mixin experimental-type-style(
+  $name,
+  $fluid: false,
+  $breakpoints: gridconfig.$grid-breakpoints
+) {
+  @if not map.has-key($experimental-tokens, $name) {
+    @include type.type-style($name, $fluid, $breakpoints);
+  } @else {
+    $token: map.get($experimental-tokens, $name);
+    @include experimental-custom-properties($name, $token);
+  }
+}

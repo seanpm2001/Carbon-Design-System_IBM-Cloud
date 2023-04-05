@@ -10,14 +10,15 @@ const PageHeaderSkeleton = ({
   title,
   actions,
   icon,
-  isProvisioningV2,
+  isProvisioning,
+  experimental
 }) => {
   const headerClassNames = classNames(
     "pal--page-header",
     "pal--page-header--skeleton",
     {
-      "pal--page-header--v2": isProvisioningV2,
-      "pal--page-header--provisioning": isProvisioningV2,
+      "pal--page-header--provisioning": isProvisioning,
+      "pal--page-header--experimental": experimental,
     }
   );
   const content = (
@@ -50,7 +51,7 @@ const PageHeaderSkeleton = ({
   );
   return (
     <div className={headerClassNames}>
-      {isProvisioningV2 ? (
+      {isProvisioning ? (
         <div className="cds--row">
           {icon && (
             <div className="pal--page-header__icon-container cds--col-md-2 cds--col-lg-2">
@@ -73,7 +74,9 @@ PageHeaderSkeleton.defaultProps = {
   title: true,
   actions: false,
   icon: false,
-  isProvisioningV2: false,
+  isProvisioning: false,
+  experimental: false,
+
 };
 
 PageHeaderSkeleton.propTypes = {
@@ -81,7 +84,8 @@ PageHeaderSkeleton.propTypes = {
   title: PropTypes.bool,
   actions: PropTypes.bool,
   icon: PropTypes.bool,
-  isProvisioningV2: PropTypes.bool,
+  isProvisioning: PropTypes.bool,
+  experimental: PropTypes.bool,
 };
 
 export default PageHeaderSkeleton;
