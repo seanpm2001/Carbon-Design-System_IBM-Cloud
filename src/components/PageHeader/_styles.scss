@@ -8,6 +8,7 @@ $feature-flags: (
 
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
+@import '@carbon/styles/scss/breakpoint';
 @import "@carbon/react/scss/colors";
 @import "@carbon/react/scss/spacing";
 @import "@carbon/react/scss/themes";
@@ -26,36 +27,10 @@ $feature-flags: (
 @import "./children/ActionsPanel/styles";
 @import "./children/SurfacedDetails/styles";
 
-@mixin breakpoint($size) {
-  @if map-has-key($grid-breakpoints, $size) {
-    $breakpoint-key: map-get($grid-breakpoints, $size);
-
-    @media screen and (min-width: map-get($breakpoint-key, "width")) {
-      @content;
-    }
-  } @else {
-    @media all and (min-width: $size) {
-      @content;
-    }
-  }
-}
-
-@mixin max-breakpoint($size) {
-  @if map-has-key($grid-breakpoints, $size) {
-    $breakpoint-key: map-get($grid-breakpoints, $size);
-
-    @media screen and (max-width: map-get($breakpoint-key, "width")) {
-      @content;
-    }
-  } @else {
-    @media all and (max-width: $size) {
-      @content;
-    }
-  }
-}
-
 $header-spacing: 28px; // mocks l2 nav height
 $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
+
+
 
 .pal--page-header {
   @include flex-grid();
@@ -71,12 +46,12 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     width: calc(100% + 2rem);
   }
 
-  @include breakpoint("960px") {
+  @include breakpoint-up(960px) {
     flex-wrap: nowrap;
     flex-direction: row;
   }
 
-  @include breakpoint("md") {
+  @include breakpoint-up("md") {
     padding: $spacing-05 $spacing-07 $spacing-07;
   }
 
@@ -97,7 +72,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
       width: calc(100% - 136px);
     }
 
-    @include breakpoint("md") {
+    @include breakpoint-up("md") {
       min-width: 17.125rem;
       max-width: 100%;
     }
@@ -107,11 +82,17 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   &__breadcrumb {
     z-index: 1;
     position: relative;
+    overflow: hidden;
+    &  * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .#{$prefix}--breadcrumb {
     display: flex;
     flex-wrap: nowrap;
+
 
     // Override the link here because font-sizes differ.
     .#{$prefix}--link,
@@ -180,7 +161,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     position: relative;
     padding-right: $spacing-03;
 
-    @include breakpoint("980px") {
+    @include breakpoint-up(960px) {
       max-width: 100%;
     }
   }
@@ -288,7 +269,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
       .pal--page-header__surfaced-details {
       margin-left: 0;
 
-      @include breakpoint("lg") {
+      @include breakpoint-up("lg") {
         margin-left: 0;
       }
     }
@@ -306,6 +287,17 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
 
   // experimental
+  &--experimental &__main {
+    width: 100%;
+    &:has(.pal--page-header__title--truncated) {
+      overflow: hidden;
+    }
+  }
+
+  &--experimental &__title--truncated{
+    overflow:hidden;
+  }
+
   &--experimental &__title-text{
     @include experimental-type.experimental-type-style("experimental-productive-heading-05");
 
@@ -338,7 +330,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   // world illustration
   &--world &__illustration-container {
     margin: 0;
-    @include max-breakpoint('sm') {
+    @include breakpoint-down('md') {
       padding-left: 0;
       padding-top: $spacing-07;
     }
@@ -356,7 +348,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   min-width: 600px;
   max-width: 100%;
 
-  @include max-breakpoint('sm') {
+  @include breakpoint-down('md') {
     min-width:  100%;
     max-width:  100%;
   }
@@ -371,8 +363,14 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   
  }
 
-  &--experimental &__title-container {
+  &--experimental &__title-container:has(&__title--truncated) {
+    flex-wrap: inherit;
     padding: calc($header-spacing + $breadcrumb-spacing) 0 0; //mocking the height of breadcrumbs
+    // realign surfacted details to be displayed below title
+    @include breakpoint-down('md') {
+      display: block;
+      flex-direction: column;
+    }
   }
 
   // remove mock padding
@@ -392,51 +390,90 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     align-self: center;
   }
 
-  &--experimental &__actions {
+  // provisioning
+  &--experimental.pal--page-header--provisioning .cds--row {
+    width: 100%;
+    margin: 0;
     padding: 0;
-    margin: $header-spacing 0 0;
-    margin: calc($header-spacing + $breadcrumb-spacing) 0 0;
+  }
 
-    @include max-breakpoint('sm') {
-      width: 100%; // span button across container
+  &--experimental.pal--page-header--provisioning &__main-container  {
+    margin: 0;
+    padding: 0;
+  }
 
-      .cds--btn {
-        width: 100%; // span button across container
+  &:has(.pal--page-header__tabs) {
+    padding-bottom: 0;
+  }
+  // strech tabs to fit provisioning design spec
+  &--experimental.pal--page-header--provisioning &__tabs {
+
+    .cds--tabs__nav-item {
+      width: 150px;
+    }
+
+    &--sm {
+      .cds--tabs__nav-item {
+        width: max-content;
       }
     }
+  }
 
-    @include max-breakpoint("sm") {
-      margin: $header-spacing 0 0; // button jumps below title --> remove mock height of breadcrumbs
+  &--experimental &__tabs {
+    margin: $spacing-07 0 0 calc(-1 * $spacing-05); // to align text with header
+
+    // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
+    @include breakpoint-down('md') {
+      display: none;
+    };
+    background-color: inherit;
+    padding: 0;
+
+  }
+
+  &--experimental &__tabs--sm {
+
+    margin: $spacing-06 0 0 calc(-1 * $spacing-05); // to align text with header
+    // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
+    @include breakpoint-up('md') {
+      display: none;
+    };
+    background-color: inherit;
+    padding: 0;
+
+    width: calc(100% + $spacing-05);
+    .cds--tabs, .cds--tab--list {
+      width: calc(100% + $spacing-05);
     }
   }
 
-  // provisioning
-  &--experimental.pal--page-header--provisioning {
-    justify-content: space-between;
-  }
-
-  &--experimental.pal--page-header--provisioning &__main-container {
-    margin: 0;
-    padding: 0;
-  }
-
-
-
   &--experimental.pal--page-header--provisioning &__icon-container {
-    display: flex;
     justify-content: flex-end;
-    align-items: center;
-    width:auto;
+    margin-top: -1rem;
+    height: calc(100% + $spacing-05);
+    // align icon container with header text
+    @include breakpoint-down('md') {
+      margin-top: $header-spacing;
+      height: 100%;
+    }
+  }
 
-    margin: 0;
-    padding: 0;
+  &--experimental.pal--page-header--provisioning &__icon {
+    width: 64px;
+    height: 64px;
+    padding: 6px;
+    border: 1px solid $layer-accent-01;
+    border-radius: 8px;
+    justify-content: center;
 
-    @include breakpoint("md") {
-      padding-top: calc($header-spacing) 0 0; // button jumps below title --> remove mock height of breadcrumbs
+    > svg,
+    & > img,
+    & > * {
+      width: 52px;
+      height: 52px;
     }
   }
 }
-
 .cds--grid .pal--page-header {
   padding-left: 0;
   padding-right: 0;

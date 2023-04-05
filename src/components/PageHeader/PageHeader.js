@@ -20,7 +20,6 @@ import SurfacedDetails from "./children/SurfacedDetails";
  * The Page Header Component can also be expanded upon to create connected components.
  */
 const PageHeader = ({
-  // locale,
   breadcrumbs,
   children,
   className,
@@ -34,8 +33,6 @@ const PageHeader = ({
   truncatedTitle,
   wrappedDetails,
   selectorPrimaryFocus,
-  crn,
-  mock,
   actionButtons: actionButtonDefs,
   actionMenuItems: actionMenuItemDefs,
   experimental,
@@ -44,7 +41,8 @@ const PageHeader = ({
   returnLinkText,
   illustration,
   illustrationAlt,
-  subtitle
+  subtitle,
+  tabs,
 }) => {
   const { t } = useTranslation("PageHeader");
   const [actionButtons, setActionButtons] = useState();
@@ -69,9 +67,7 @@ const PageHeader = ({
 
   const subtitleClasses = classNames(`pal--page-header__subtitle`);
 
-  const titleContainerClasses = classNames(`pal--page-header__title-container`, {
-    [`cds--col-sm-4 cds--col-md-8 cds--col-lg-12 cds--col-xlg-12  cds--col-max-12`]: experimental,
-  });
+  const titleContainerClasses = classNames(`pal--page-header__title-container`);
 
 
   useEffect(() => {
@@ -121,15 +117,18 @@ const PageHeader = ({
             )}
             <h1 className="pal--page-header__title-text">{title}</h1>
           </div>
-          {(surfacedDetails || crn) && (
+          {(surfacedDetails) && (
             <SurfacedDetails
-              mock={mock}
               hasSurfacedDetailsList={hasSurfacedDetailsList}
               surfacedDetails={surfacedDetails}
-              crn={crn}
             />
           )}
         </div>
+        { tabs && (
+              // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
+              <div className="pal--page-header__tabs"> {tabs}</div>
+            )
+          }
       </div>
       {(children || actionButtons || actionMenuItems) && (
         <div className="pal--page-header__actions">
@@ -138,7 +137,6 @@ const PageHeader = ({
           {actionMenuItems && (
             <ActionsPanel
               selectorPrimaryFocus={selectorPrimaryFocus}
-              // locale={locale}
             >
               {actionMenuItems}
             </ActionsPanel>
@@ -173,28 +171,35 @@ const PageHeader = ({
       </Row>
       ) : isProvisioning && experimental ? (
         <>
-          <Column lg={14} md={6} sm={3} xlg={14} max={14}  className="pal--page-header__main-container">{content}</Column>
-          <Column lg={1} md={1} sm={1} xlg={1} max={1} className="pal--page-header__icon-container">
+        <Row>
+          <Column lg={14} md={6} sm={2} xlg={14} max={14}  className="pal--page-header__main-container">{content}
+          </Column>
+          <div className="pal--page-header__icon-container">
+          {icon && <div className="pal--page-header__icon">{icon}</div>}
+          </div>
+        </Row>
+      </>
+      ) : isProvisioning ? (
+        <Row>
+          <Column sm={1} md={2} lg={2} xlg={2} max={2} className="pal--page-header__icon-container">
             {icon && <div className="pal--page-header__icon">{icon}</div>}
           </Column>
-        </>
-      ) : isProvisioning ? (
-        <div className="cds--row">
-          <div className="pal--page-header__icon-container cds--col-md-2 cds--col-lg-2 cds--col-sm-1 cds--col-xlg-2 cds--col-max-2">
-            {icon && <div className="pal--page-header__icon">{icon}</div>}
-          </div>
           <div className="pal--page-header__main-container">{content}</div>
-        </div>
+        </Row>
       ) :
       (
         content
       )}
+      { tabs && (
+              // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
+              <div className="pal--page-header__tabs--sm"> {tabs}</div>
+            )
+          }
     </header>
   );
 };
 
 PageHeader.defaultProps = {
-  // locale: documentLanguage,
   breadcrumbs: undefined,
   children: undefined,
   className: undefined,
@@ -206,23 +211,18 @@ PageHeader.defaultProps = {
   hasSurfacedDetailsList: false,
   truncatedTitle: false,
   wrappedDetails: false,
-  crn: "",
   actionButtons: undefined,
   actionMenuItems: undefined,
-  mock: false,
   experimental: false,
   returnLink: undefined,
   returnLinkText: undefined,
   isWorld: false,
   illustration: undefined,
-  illustrationAlt: undefined
+  illustrationAlt: undefined,
+  tabs: undefined,
 };
 
 PageHeader.propTypes = {
-  /**
-   * The locale used for translating the strings.
-   */
-  // locale: PropTypes.string,
   /**
    * A custom class name to be applied to the page header's `header` element.
    */
@@ -298,10 +298,6 @@ PageHeader.propTypes = {
    */
   wrappedDetails: PropTypes.bool,
   /**
-   * Provide a CRN to automatically show resource tags and allow editing them.
-   */
-  crn: PropTypes.string,
-  /**
    * Button property objects that define the action buttons to show in the header. Each object must contain a `label` property for the button label.
    */
   actionButtons: PropTypes.arrayOf(
@@ -321,10 +317,6 @@ PageHeader.propTypes = {
    */
   selectorPrimaryFocus: PropTypes.string,
   /**
-   * Whether or not we should use mock data.
-   */
-  mock: PropTypes.bool,
-  /**
    * Path of the products landing/home page. Using this prop adds a link back to the used path.
    * This prop should not be used in combination with breadcrumbs.
    */
@@ -341,10 +333,15 @@ PageHeader.propTypes = {
    * An illustration that can be added to a world level page header. It is recommened to use an .svg with an transparent background.
    */
   illustration: PropTypes.element,
-    /**
+  /**
    * Text to describe the world level illustration.
    */
   illustrationAlt: PropTypes.string,
+  /**
+   * Tabs element group that can be used to control page content. It is advised to use carbons Tab component and controlt the selected index with the `onChange` prop.
+   * See the code example in `Provisioning Page Header`
+   */
+   tabs: PropTypes.node,
 };
 
 // components should export a skeleton
