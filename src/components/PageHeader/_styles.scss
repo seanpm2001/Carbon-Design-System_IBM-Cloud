@@ -408,8 +408,8 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   // strech tabs to fit provisioning design spec
   &--experimental.pal--page-header--provisioning &__tabs {
 
-    .cds--tabs, .cds--tab--list {
-      width: 100%;
+    .cds--tabs__nav-item {
+      width: 150px;
     }
 
     &--sm {
