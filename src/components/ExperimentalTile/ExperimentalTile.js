@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { ExperimentalTileHeader, ExperimentalTileDescription, ExperimentalTileDetails, ExperimentalTileTags } from './children';
+import { ExperimentalTileHeader, ExperimentalTileDescription, ExperimentalTileDetails, ExperimentalTileTags, ExperimentalTileIcon } from './children';
 import { ClickableTile } from '@carbon/react';
 import { ArrowRight } from '@carbon/react/icons';
 
 const baseClass = 'pal--experimental-tile';
 
-const ExperimentalTile = ({ children, size, href, description, title, type, icon: Icon, tags, details, onClick, ...rest}) => {
+const ExperimentalTile = ({ children, size, href, onClick, ...rest}) => {
   
   const classes = classNames(
     baseClass,
@@ -18,7 +18,6 @@ const ExperimentalTile = ({ children, size, href, description, title, type, icon
     <ClickableTile
       className={classes}
       href={href} 
-      title={title}
       onClick={onClick}
       {...rest}
     >
@@ -33,7 +32,6 @@ const ExperimentalTile = ({ children, size, href, description, title, type, icon
 ExperimentalTile.defaultProps = {
   onClick: () => {},
   href: undefined,
-  icon: undefined,
   size: 'md'
 }
 
@@ -41,12 +39,9 @@ ExperimentalTile.header = ExperimentalTileHeader;
 ExperimentalTile.description = ExperimentalTileDescription;
 ExperimentalTile.details = ExperimentalTileDetails;
 ExperimentalTile.tags = ExperimentalTileTags;
+ExperimentalTile.icon = ExperimentalTileIcon;
 
 ExperimentalTile.propTypes = {
-  /**
-   * The icon node to render.
-   */
-  icon: PropTypes.any,
   /**
    * The link the tile should take the user to when clicked.
    */

@@ -1,17 +1,7 @@
 @use "@carbon/react/scss/type";
-@use '@carbon/react/scss/reset';
-@use "@carbon/react/scss/components/tile";
-@use "@carbon/react/scss/components/link";
-
 @import "@carbon/react/scss/colors";
 @import "@carbon/react/scss/spacing";
-@import "@carbon/react/scss/themes";
 @import "@carbon/react/scss/theme";
-@import "@carbon/react/scss/config";
-// import pal styles
-@import '../TagList/styles';
-
-// import tile styles
 
 .pal--experimental-tile {
   position: relative; 
