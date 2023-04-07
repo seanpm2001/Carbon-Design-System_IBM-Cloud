@@ -34,6 +34,7 @@ const Template = args => {
 }
 
 //👇 Each story then reuses that template
-export const Hovers = Template.bind({});
+export const Default = Template.bind({});
 
-Hovers.args = {totalSteps:5, currentStep:0};
+Default.args = {totalSteps:5, currentStep:0};
+

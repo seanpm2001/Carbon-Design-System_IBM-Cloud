@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import "./Counter.scss";
+import "./_styles.scss";
 // import { useTranslation } from "react-i18next";
 
 // Uses inclusive bounds.
@@ -59,8 +59,14 @@ Counter.Skeleton = () => {
 };
 
 Counter.propTypes = {
-  totalSteps: PropTypes.number.isRequired, // Total steps in the flow
-  currentStep: PropTypes.number, // Optional prop for changing starting step number
+  /**
+   * The total number of steps in the process.
+   */
+  totalSteps: PropTypes.number.isRequired, // 
+  /**
+   * The number of steps the user is currently on, or the starting number if not 0. Use this to increase the current step number.
+   */
+  currentStep: PropTypes.number, // 
 };
 
 Counter.defaultProps = {
