@@ -4,8 +4,8 @@ import classnames from "classnames";
 import { Button } from "@carbon/react";
 
 // Icons
-import { ReactComponent as HIERARCHY } from "./icons/hierarchy.svg";
-import { ReactComponent as MONEY } from "./icons/money.svg";
+import HIERARCHY from "./icons/Hierarchy";
+import MONEY from "./icons/Money";
 import USAGE from "./icons/Usage";
 
 import IsometricIcon from "../IsometricIcon";

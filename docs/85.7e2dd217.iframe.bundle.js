@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknew_pal=self.webpackChunknew_pal||[]).push([[85],{"./src/components/OrderSummaryV2/_docs-styles.scss":function(__unused_webpack_module,__webpack_exports__,__webpack_require__){__webpack_require__.r(__webpack_exports__),__webpack_exports__.default={}}}]);

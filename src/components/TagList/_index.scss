@@ -12,7 +12,7 @@ $feature-flags: (
 @import "@carbon/react/scss/config";
 @import "@carbon/react/scss/grid";
 @import "@carbon/react/scss/motion";
-@import "../Tag/styles";
+@import "../Tag";
 
 @mixin breakpoint($size) {
   @if map-has-key($grid-breakpoints, $size) {

@@ -14,14 +14,6 @@ const RenderMiniOrderSummaryPanel = ({
   showSidePanel,
   setShowSidePanel,
 }) => {
-  useEffect(() => {
-    async function loadStyles() {
-      // eslint-disable-next-line no-unused-expressions
-      import("../_styles.scss");
-    }
-    loadStyles();
-  }, []);
-
   const onPanelClose = () => {
     setShowSidePanel(false);
     return true;

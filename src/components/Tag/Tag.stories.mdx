@@ -1,23 +1,36 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
-import Tag from '.';
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import Tag from ".";
 
-import './_styles.scss';
+import "./_index.scss";
 
 <Meta
   title="Components/Tag"
   component={Tag}
   argTypes={{
-    locale: { control: { type: 'select' }, options: ['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'zh-cn', 'zh-tw'], defaultValue: 'en' },
+    locale: {
+      control: { type: "select" },
+      options: [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "ja",
+        "ko",
+        "pt-br",
+        "zh-cn",
+        "zh-tw",
+      ],
+      defaultValue: "en",
+    },
     children: { control: false },
   }}
-  parameters={{ status: { type: 'core' }}}
+  parameters={{ status: { type: "core" } }}
 />
 
 # Tag
 
-export const Template = (args) => (
-  <Tag {...args} />
-);
+export const Template = (args) => <Tag {...args} />;
 
 <Canvas>
   <Story
@@ -26,8 +39,10 @@ export const Template = (args) => (
       className: "test",
       maxCharacters: 12,
       type: "functional",
-      onClick: () => { console.log("Clicked tag"); },
-      children: "Clickable Tag"
+      onClick: () => {
+        console.log("Clicked tag");
+      },
+      children: "Clickable Tag",
     }}
   >
     {Template.bind({})}
@@ -50,7 +65,9 @@ export const Template = (args) => (
       className: "test",
       maxCharacters: 12,
       type: "functional",
-      onRemove: () => { console.log("Removing tag"); },
+      onRemove: () => {
+        console.log("Removing tag");
+      },
       children: "Removable Tag",
     }}
   >
@@ -63,8 +80,12 @@ export const Template = (args) => (
       className: "test",
       maxCharacters: 64,
       type: "red",
-      onRemove: () => { console.log("Removing tag"); },
-      onClick: () => { console.log("Clicked tag"); },
+      onRemove: () => {
+        console.log("Removing tag");
+      },
+      onClick: () => {
+        console.log("Clicked tag");
+      },
       children: "Removable Tag with large character limit",
     }}
   >
@@ -77,8 +98,12 @@ export const Template = (args) => (
       className: "test",
       maxCharacters: 64,
       type: "blue",
-      onRemove: () => { console.log("Removing tag"); },
-      onClick: () => { console.log("Clicked tag"); },
+      onRemove: () => {
+        console.log("Removing tag");
+      },
+      onClick: () => {
+        console.log("Clicked tag");
+      },
       children: "Blue tag special",
     }}
   >
@@ -102,7 +127,7 @@ The Tag component is a wrapper around Carbon's tag component. It is used for ren
 3.  Import the component:
 
     ```js
-    import { Tag } from '@console/pal/Components';
+    import { Tag } from "@console/pal/Components";
     ```
 
 4.  Render the component.

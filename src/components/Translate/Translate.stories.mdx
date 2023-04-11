@@ -1,22 +1,39 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
-import Translate from '.';
-import './_styles.scss';
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import Translate from ".";
+import "./_index.scss";
 
 <Meta
   title="Community components/Translate"
   component={Translate}
   argTypes={{
-    locale: { control: { type: 'select' }, options: ['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'zh-cn', 'zh-tw'], defaultValue: 'en' },
+    locale: {
+      control: { type: "select" },
+      options: [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "ja",
+        "ko",
+        "pt-br",
+        "zh-cn",
+        "zh-tw",
+      ],
+      defaultValue: "en",
+    },
     children: { control: false },
   }}
-  parameters={{ status: { type: 'community' }}}
+  parameters={{ status: { type: "community" } }}
 />
 
 # Translate
 
 export const Template = (args) => (
   <Translate {...args}>
-    {"Try waiting a few minutes and perform the action again to see if the problem persists. If so, check the <a>status page</a> to see if something else is going on. If you're still experiencing an issue reach out to <a>support</a> for help."}
+    {
+      "Try waiting a few minutes and perform the action again to see if the problem persists. If so, check the <a>status page</a> to see if something else is going on. If you're still experiencing an issue reach out to <a>support</a> for help."
+    }
   </Translate>
 );
 
@@ -25,9 +42,9 @@ export const Template = (args) => (
     name="Demo"
     args={{
       tagProps: [
-        { href: '/status', target: '_blank' },
-        { href: '/unifiedsupport/supportcenter', target: '_blank' },
-      ]
+        { href: "/status", target: "_blank" },
+        { href: "/unifiedsupport/supportcenter", target: "_blank" },
+      ],
     }}
   >
     {Template.bind({})}
@@ -35,6 +52,7 @@ export const Template = (args) => (
 </Canvas>
 
 ## Description
+
 Translate is a component used for embedding HTML or React components inside a translated string. It serves the same purpose as the react-i18next Trans component but behaves a bit differently. You wrap the relevant text inside the string with a tag and then provide the properties to apply to the element / component created by that tag. Three tags are currently supported: `a`, `code`, and `span`. Use the `a` tag to embed links in the text, `code` to embed inline code, and `span` to apply any classes or styling to certain words.
 
 ## Usage
@@ -49,7 +67,7 @@ Translate is a component used for embedding HTML or React components inside a tr
 3.  Import the component:
 
     ```js
-    import { Translate } from '@console/pal/Components';
+    import { Translate } from "@console/pal/Components";
     ```
 
 4.  Render the component.
@@ -60,15 +78,15 @@ For general component usage review the [Components Docs](https://pages.github.ib
 
 <ArgsTable of={Translate} />
 
-
 ## Other Examples
 
 ### Render an inline code block
+
 <Canvas>
   <Story
     name="Demo-inline"
     args={{
-      tagProps: [{ className: 'inline-code-block' }]
+      tagProps: [{ className: "inline-code-block" }],
     }}
   >
     {Template.bind({})}
@@ -76,12 +94,17 @@ For general component usage review the [Components Docs](https://pages.github.ib
 </Canvas>
 
 ### Render a react-router Link component (tagMap={{ a: Link }})
+
 <Canvas>
   <Story
     name="Demo-router-link"
     args={{
-      tagProps: [{ to: '/kubernetes/registry/main/start', className: 'cds--link' }],
-      tagMap: { /* a: Link */ }
+      tagProps: [
+        { to: "/kubernetes/registry/main/start", className: "cds--link" },
+      ],
+      tagMap: {
+        /* a: Link */
+      },
     }}
   >
     {Template.bind({})}
@@ -89,11 +112,12 @@ For general component usage review the [Components Docs](https://pages.github.ib
 </Canvas>
 
 ### Add some styling
+
 <Canvas>
   <Story
     name="Demo-styling"
     args={{
-      tagProps: [{ style: { fontSize: '150%', fontWeight: 600 } }]
+      tagProps: [{ style: { fontSize: "150%", fontWeight: 600 } }],
     }}
   >
     {Template.bind({})}
@@ -101,4 +125,5 @@ For general component usage review the [Components Docs](https://pages.github.ib
 </Canvas>
 
 ## Contributors
+
 - Argonauts UI dev team (@squids)

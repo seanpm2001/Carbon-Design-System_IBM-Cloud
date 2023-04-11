@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Modal, ModalBody } from "@carbon/react";
-import { ChevronLeft32, ChevronRight32 } from "@carbon/react/icons";
+import {
+  ChevronLeft as ChevronLeft32,
+  ChevronRight as ChevronRight32,
+} from "@carbon/react/icons";
 import PaginationNav from "./components/PaginationNav";
 import MediaDisplay from "./components/MediaDisplay";
 // import { documentLanguage } from "../../utils/getLocale";

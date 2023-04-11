@@ -14,14 +14,9 @@ import AsyncSidePanel from "./AsyncSidePanel";
 import MultiStepSidePanel from "./MultiStepSidePanel";
 import MultiNestedSidePanel from "./MultiNestedSidePanel";
 import ModalSidePanel from "./ModalSidePanel";
-import("../_styles.scss");
 
 // eslint-disable-next-line react/prop-types
 const RenderPanel = ({ variation, showSidePanel, setShowSidePanel }) => {
-  // useEffect(() => {
-  //   // eslint-disable-next-line no-unused-expressions
-  //   import("../_styles.scss");
-  // }, []);
   const onPanelClose = () => {
     setShowSidePanel(false);
     return true;

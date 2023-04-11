@@ -8,7 +8,7 @@
 @import "@carbon/react/scss/grid";
 @import "@carbon/react/scss/motion";
 
-@import "../SideNav/styles";
+@import "../SideNav";
 
 @media screen and (max-width: "671px") {
   :not(.pal-docs--renderer__component)
