@@ -3,8 +3,12 @@ $feature-flags: (
   enable-css-custom-properties: true,
 );
 
+// experimental
+@use '../../styles/type' as experimental-type;
+
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
+@import '@carbon/styles/scss/breakpoint';
 @import "@carbon/react/scss/colors";
 @import "@carbon/react/scss/spacing";
 @import "@carbon/react/scss/themes";
@@ -17,35 +21,38 @@ $feature-flags: (
 @import "@carbon/react/scss/components/overflow-menu";
 @import "@carbon/react/scss/components/skeleton-styles";
 @import "@carbon/react/scss/components/link";
+@import '@carbon/styles/scss/grid';
 
 // children
 @import "./children/ActionsPanel/styles";
 @import "./children/SurfacedDetails/styles";
 
-@mixin breakpoint($size) {
-  @if map-has-key($grid-breakpoints, $size) {
-    $breakpoint-key: map-get($grid-breakpoints, $size);
+$header-spacing: 28px; // mocks l2 nav height
+$breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
-    @media screen and (min-width: map-get($breakpoint-key, "width")) {
-      @content;
-    }
-  } @else {
-    @media all and (min-width: $size) {
-      @content;
-    }
-  }
-}
+
 
 .pal--page-header {
+  @include flex-grid();
   background-color: $background;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
+  padding: $spacing-05 $spacing-05 $spacing-07;
 
-  @include breakpoint("960px") {
+  .cds--row {
+    justify-content: space-between;
+    width: calc(100% + 2rem);
+  }
+
+  @include breakpoint-up(960px) {
     flex-wrap: nowrap;
     flex-direction: row;
+  }
+
+  @include breakpoint-up("md") {
+    padding: $spacing-05 $spacing-07 $spacing-07;
   }
 
   // PageHeader Main Content
@@ -65,7 +72,7 @@ $feature-flags: (
       width: calc(100% - 136px);
     }
 
-    @include breakpoint("md") {
+    @include breakpoint-up("md") {
       min-width: 17.125rem;
       max-width: 100%;
     }
@@ -75,11 +82,17 @@ $feature-flags: (
   &__breadcrumb {
     z-index: 1;
     position: relative;
+    overflow: hidden;
+    &  * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .#{$prefix}--breadcrumb {
     display: flex;
     flex-wrap: nowrap;
+
 
     // Override the link here because font-sizes differ.
     .#{$prefix}--link,
@@ -116,10 +129,10 @@ $feature-flags: (
     }
   }
 
-  .#{$prefix}--row {
-    justify-content: space-between;
-    width: calc(100% + 2rem);
-  }
+  // .#{$prefix}--row {
+  //   justify-content: space-between;
+  //   width: calc(100% + 2rem);
+  // }
 
   // PageHeader Title
   &__title-container {
@@ -136,6 +149,7 @@ $feature-flags: (
   }
 
   &__title-text {
+    
     @include type.type-style("productive-heading-04");
 
     line-height: 2.5rem;
@@ -147,7 +161,7 @@ $feature-flags: (
     position: relative;
     padding-right: $spacing-03;
 
-    @include breakpoint("980px") {
+    @include breakpoint-up(960px) {
       max-width: 100%;
     }
   }
@@ -179,11 +193,12 @@ $feature-flags: (
 
     &-container {
       align-items: center;
-      display: flex;
+      display: flex !important;
       width: 104px;
+      max-width: none !important; // need to override grid specs
     }
 
-    .pal--page-header--v2 & {
+    .pal--page-header--provisioning & {
       border: 1px solid $layer-accent-01;
       border-radius: 6px;
       justify-content: center;
@@ -199,7 +214,7 @@ $feature-flags: (
     width: 32px;
     height: 32px;
 
-    .pal--page-header--v2 & {
+    .pal--page-header--provisioning & {
       width: 48px;
       height: 48px;
     }
@@ -244,17 +259,17 @@ $feature-flags: (
       margin-left: 2.5rem;
     }
 
-    &.pal--page-header--v2 .pal--page-header__breadcrumb {
+    &.pal--page-header--provisioning .pal--page-header__breadcrumb {
       padding-bottom: $spacing-02;
     }
 
-    &.pal--page-header--v2 .pal--page-header__breadcrumb,
-    &.pal--page-header--v2 .pal--page-header__title-text,
-    &.pal--page-header--v2.pal--page-header--wrapped-details
+    & .pal--page-header__breadcrumb,
+    & .pal--page-header__title-text,
+    &.pal--page-header--wrapped-details
       .pal--page-header__surfaced-details {
       margin-left: 0;
 
-      @include breakpoint("lg") {
+      @include breakpoint-up("lg") {
         margin-left: 0;
       }
     }
@@ -269,8 +284,196 @@ $feature-flags: (
     flex: auto;
     width: auto;
   }
-}
 
+
+  // experimental
+  &--experimental &__main {
+    width: 100%;
+    &:has(.pal--page-header__title--truncated) {
+      overflow: hidden;
+    }
+  }
+
+  &--experimental &__title--truncated{
+    overflow:hidden;
+  }
+
+  &--experimental &__title-text{
+    @include experimental-type.experimental-type-style("experimental-productive-heading-05");
+
+    line-height: 2.5rem;
+  }
+
+  // world
+
+  &--world {
+    padding: $spacing-05  $spacing-05 $spacing-07  $spacing-07;
+  }
+  &--world &__title-text{
+    @include type.type-style('expressive-heading-05', true);
+    color: $text-primary;
+  }
+
+  &--world &__subtitle {
+    padding: $spacing-04 0 0;
+  }
+
+  &--world &__subtitle-text{
+    @include type.type-style('expressive-heading-03', true);
+    color: $text-secondary;
+  }
+
+  &--world &__main-container {
+    margin: 0;
+  }
+
+  // world illustration
+  &--world &__illustration-container {
+    margin: 0;
+    @include breakpoint-down('md') {
+      padding-left: 0;
+      padding-top: $spacing-07;
+    }
+  }
+
+  &--world &__illustration {
+    position: relative;
+    overflow: hidden;
+  }
+
+  // world illustration
+ &--world &__illustration > img {
+  object-fit: cover;
+  object-position: 0 0; /*top left position (optional)*/
+  min-width: 600px;
+  max-width: 100%;
+
+  @include breakpoint-down('md') {
+    min-width:  100%;
+    max-width:  100%;
+  }
+ }
+
+ &--world &__illustration:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 -10px $spacing-04 $spacing-04 $background inset;
+  
+ }
+
+  &--experimental &__title-container:has(&__title--truncated) {
+    flex-wrap: inherit;
+    padding: calc($header-spacing + $breadcrumb-spacing) 0 0; //mocking the height of breadcrumbs
+    // realign surfacted details to be displayed below title
+    @include breakpoint-down('md') {
+      display: block;
+      flex-direction: column;
+    }
+  }
+
+  // remove mock padding
+  &--experimental &__breadcrumb + &__title-container {
+    padding: $header-spacing 0 0;
+  }
+
+  // remove mock padding
+  &--experimental &__return-link + &__title-container {
+    padding: calc($header-spacing - 3px) 0 0;
+  }
+
+  // add padding right to svg icon
+  &--experimental &__return-link > svg {
+    margin-right: $spacing-03;
+    display: inline-flex;
+    align-self: center;
+  }
+
+  // provisioning
+  &--experimental.pal--page-header--provisioning .cds--row {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  &--experimental.pal--page-header--provisioning &__main-container  {
+    margin: 0;
+    padding: 0;
+  }
+
+  &:has(.pal--page-header__tabs) {
+    padding-bottom: 0;
+  }
+  // strech tabs to fit provisioning design spec
+  &--experimental.pal--page-header--provisioning &__tabs {
+
+    .cds--tabs__nav-item {
+      width: 150px;
+    }
+
+    &--sm {
+      .cds--tabs__nav-item {
+        width: max-content;
+      }
+    }
+  }
+
+  &--experimental &__tabs {
+    margin: $spacing-07 0 0 calc(-1 * $spacing-05); // to align text with header
+
+    // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
+    @include breakpoint-down('md') {
+      display: none;
+    };
+    background-color: inherit;
+    padding: 0;
+
+  }
+
+  &--experimental &__tabs--sm {
+
+    margin: $spacing-06 0 0 calc(-1 * $spacing-05); // to align text with header
+    // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
+    @include breakpoint-up('md') {
+      display: none;
+    };
+    background-color: inherit;
+    padding: 0;
+
+    width: calc(100% + $spacing-05);
+    .cds--tabs, .cds--tab--list {
+      width: calc(100% + $spacing-05);
+    }
+  }
+
+  &--experimental.pal--page-header--provisioning &__icon-container {
+    justify-content: flex-end;
+    margin-top: -1rem;
+    height: calc(100% + $spacing-05);
+    // align icon container with header text
+    @include breakpoint-down('md') {
+      margin-top: $header-spacing;
+      height: 100%;
+    }
+  }
+
+  &--experimental.pal--page-header--provisioning &__icon {
+    width: 64px;
+    height: 64px;
+    padding: 6px;
+    border: 1px solid $layer-accent-01;
+    border-radius: 8px;
+    justify-content: center;
+
+    > svg,
+    & > img,
+    & > * {
+      width: 52px;
+      height: 52px;
+    }
+  }
+}
 .cds--grid .pal--page-header {
   padding-left: 0;
   padding-right: 0;

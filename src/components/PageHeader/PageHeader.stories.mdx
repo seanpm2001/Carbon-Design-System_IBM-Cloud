@@ -1,9 +1,12 @@
 import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 import { OverflowMenuItem, Link, Search, Button, Tag } from "@carbon/react";
 import { Cloud as Cloud32 } from "@carbon/react/icons";
-import PageHeader from ".";
+import { PageHeader, PageHeaderActionsPanel } from "./";
 
 import "./_index.scss";
+
+import { TagList } from "../TagList";
+import { ResourceStatusIndicator } from "../ResourceStatusIndicator";
 
 <Meta
   title="Components/PageHeader"
@@ -91,6 +94,302 @@ export const Skeleton = (args) => <PageHeader.skeleton {...args} />;
     }}
   >
     {Skeleton.bind({})}
+  </Story>
+</Canvas>
+
+## Other Examples
+
+### Page Header with Breadcrumbs
+
+<Canvas>
+  <Story
+    name="PageHeader with breadcrumbs"
+    args={{
+      breadcrumbs: [
+        {
+          href: "https://cloud.ibm.com",
+          value: "Breadcrumb 1",
+        },
+        {
+          href: "https://cloud.ibm.com",
+          value: "Breadcrumb 2",
+        },
+        {
+          value: "Breadcrumb 3",
+          asButton: true,
+          onClick: () => {
+            console.log("button clicked");
+          },
+        },
+      ],
+      title: "Create Cloud Foundry App",
+      children: (
+        <Button kind="tertiary" size="field">
+          Tertiary Button
+        </Button>
+      ),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### PageHeader with primary Button
+
+<Canvas>
+  <Story
+    name="PageHeader with primary Button"
+    args={{
+      title: "Create a Cloud Foundry App Today",
+      children: (
+        <Button kind="primary" size="field">
+          {" "}
+          Primary Button
+        </Button>
+      ),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### PageHeader with ActionsPanel and ghost Button
+
+<Canvas>
+  <Story
+    name="PageHeader with ActionsPanel and ghost Button"
+    args={{
+      title: "Create a Cloud Foundry Virtual Service",
+      breadcrumbs: [
+        {
+          href: "https://cloud.ibm.com",
+          value: "Breadcrumb 1",
+        },
+        {
+          href: "https://cloud.ibm.com",
+          value: "Breadcrumb 2",
+        },
+        {
+          href: "https://cloud.ibm.com",
+          value: "Breadcrumb 3",
+        },
+      ],
+      children: (
+        <>
+          <Button kind="ghost" size="field">
+            Details
+          </Button>
+          <PageHeaderActionsPanel selectorPrimaryFocus="#example-action-panel-item-1">
+            <OverflowMenuItem
+              itemText="action 1"
+              id="example-action-panel-item-1"
+            />
+            <OverflowMenuItem
+              itemText="action 2"
+              id="example-action-panel-item-2"
+            />
+            <OverflowMenuItem
+              itemText="action 3"
+              visibleBreakpoint="small"
+              id="example-action-panel-item-3"
+            />
+          </PageHeaderActionsPanel>
+        </>
+      ),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Page Header with Tertiary Button
+
+<Canvas>
+  <Story
+    name="PageHeader with tertiary Button"
+    args={{
+      title: "Create a Cloud Foundry Service",
+      children: (
+        <Button kind="tertiary" size="field">
+          Tertiary Button
+        </Button>
+      ),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Page Header with a Truncated Title
+
+<Canvas>
+  <Story
+    name="PageHeader with a truncated Title"
+    args={{
+      title:
+        "An IBM Cloud page header with a longer title than we would typically expect it to be. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      truncatedTitle: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Page Header with Surfaced Details
+
+<Canvas>
+  <Story
+    name="Page Header with Surfaced Details"
+    args={{
+      title: "The Name of a Service",
+      truncatedTitle: true,
+      surfacedDetails: <div>Tags and status go here</div>,
+      children: (
+        <PageHeaderActionsPanel selectorPrimaryFocus="example-surfaced-details-item-1">
+          <OverflowMenuItem
+            itemText="action 1"
+            id="example-surfaced-details-item-1"
+          />
+          <OverflowMenuItem
+            itemText="action 2"
+            id="example-surfaced-details-item-2"
+          />
+        </PageHeaderActionsPanel>
+      ),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Provisioning Page Header with List
+
+<Canvas>
+  <Story
+    name="Provisioning Page Header with Description"
+    args={{
+      title: "Cloudant",
+      icon: <Cloud32 />,
+      isProvisioning: true,
+      wrappedDetails: true,
+      hasSurfacedDetailsList: true,
+      surfacedDetails: (
+        <p>
+          A scalable JSON document database for web, mobile, IoT, and serverless
+          applications.
+        </p>
+      ),
+      breadcrumbs: [
+        { href: "https://cloud.ibm.com/catalog", value: "Catalog" },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Page Header with Secondary Button, Primary Button and Actions Panel
+
+<Canvas>
+  <Story
+    name="PageHeader with secondary Button, primary Button and ActionsPanel"
+    args={{
+      title: "Create a Cloud Foundry App",
+      breadcrumbs: [
+        {
+          href: "https://cloud.ibm.com",
+          value: "Breadcrumb 1",
+        },
+      ],
+      children: (
+        <>
+          <Button kind="secondary" size="field">
+            Some action
+          </Button>
+          <Button kind="ghost" size="field">
+            Some action
+          </Button>
+          <PageHeaderActionsPanel selectorPrimaryFocus="#example-action-panel-buttons-item-1">
+            <OverflowMenuItem
+              itemText="action 1"
+              id="example-action-panel-buttons-item-1"
+            />
+            <OverflowMenuItem
+              itemText="action 2"
+              id="example-action-panel-buttons-item-2"
+            />
+          </PageHeaderActionsPanel>
+        </>
+      ),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Page Header with tag management and defined actions
+
+**Disclaimer:** Since this component lives in a repository that supports no connected cloud experiences the `ResourceTagList` & `ResourceTagModal` components are not built in to the `PageHeader` anymore. You can see in the following example how you can incoporate a tag list component into the `surfacedDetails` property.
+You need to import the corresponding components of the `@console/pal` package and nest them inside the `surfacedDetails` prop.
+
+```jsx
+import { ResourceTagList, ResourceTagModal } from '@console/pal/Connected';
+...
+
+<PageHeader ...
+  surfacedDetails={
+    [(<ResourceTagModal .../>),
+    (<ResourceTagList  .../>)]}
+  />
+```
+
+<Canvas>
+  <Story
+    name="PageHeader with tag management and defined actions"
+    args={{
+      title: "Create a Cloud Foundry App",
+      breadcrumbs: [
+        {
+          href: "https://cloud.ibm.com",
+          value: "Breadcrumb 1",
+        },
+      ],
+      actionButtons: [
+        {
+          kind: "primary",
+          label: "Action 1",
+        },
+        {
+          kind: "secondary",
+          label: "Action 2",
+        },
+      ],
+      actionMenuItems: [
+        {
+          itemText: "Action 1",
+        },
+        {
+          itemText: "Action 2",
+        },
+      ],
+      hasSurfacedDetailsList: true,
+      surfacedDetails: [
+        <ResourceStatusIndicator
+          width="3rem"
+          statusIndicator="success"
+          label="Running"
+        />,
+        <TagList
+          tags={[
+            { name: "tag 1", type: "functional" },
+            { name: "tag 2", type: "functional" },
+          ]}
+          isEditable="always"
+        />,
+      ],
+    }}
+  >
+    {Template.bind({})}
   </Story>
 </Canvas>
 

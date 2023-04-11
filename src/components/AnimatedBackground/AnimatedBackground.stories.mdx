@@ -1,0 +1,86 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import AnimatedBackground from './AnimatedBackground';
+import "./_styles.scss";
+
+<Meta
+  title="Experimental/AnimatedBackground"
+  component={AnimatedBackground}
+  argTypes={{
+    duration: { control: { type: 'range', min: 10000, max: 20000, step: 100 }},
+  }}
+  parameters={{ status: { type: "experimental" } }}
+/>
+
+# AnimatedBackground
+
+export const Template = (args) => (
+  <AnimatedBackground {...args} />
+);
+
+### Demo
+
+<Canvas>
+  <Story
+    name="Demo"
+    height='400px'
+    args={{
+      motion: true,
+      colorSet: 'set-cyan-magenta-purple',
+      duration: 13500
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+AnimatedBackground is a component used as a background of world level pages in Cloud PAL experimental style. It can be rendered with or without motion and offers two color-sets.
+
+All properties to control the animation are exposed to consumers, but it is advised to only alter them if needed.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@console/pal/Components/AnimatedBackground/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { AnimatedBackground } from "@console/pal/Components";
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={AnimatedBackground} />
+
+## Other variations
+
+### No motion
+
+<Canvas>
+  <Story
+    name="No motion"
+    height='400px'
+    args={{
+      motion: false,
+      colorSet: 'set-cyan-magenta-purple',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Contributors
+
+- Max Hammer
+- Jeeyoung Yang
+- Asha Newsom

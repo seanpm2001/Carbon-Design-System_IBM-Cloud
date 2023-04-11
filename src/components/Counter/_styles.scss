@@ -1,0 +1,118 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/motion";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+
+// @include component('pal--counter') {
+.pal--counter {
+    text-align: left;
+    margin: 16px;
+    transition: width 100ms;
+
+    &__numbers {
+        display: flex;
+        margin-bottom: $spacing-05;
+        align-items: baseline;
+    }
+
+    &__previous-step {
+        @include type.type-style('productive-heading-07');
+        // font-family: 'IBM Plex Sans';
+        // font-style: normal;
+        font-weight: 300;
+        // font-size: 54px;
+        // line-height: 64px;
+        color: $text-primary;
+        position: relative;
+        width: 0;
+        height: 0;
+    }
+
+    &__current-step {
+        @include type.type-style('productive-heading-07');
+        // font-family: 'IBM Plex Sans';
+        // font-style: normal;
+        font-weight: 300;
+        // font-size: 54px;
+        // line-height: 64px;
+        color: $text-primary;
+    }
+
+    &__number-exit {
+        @media (prefers-reduced-motion: reduce) {
+            animation-duration: 600ms;
+        }
+
+        animation: 400ms motion(exit, expressive) 0ms 1 forwards numberExit;
+
+        @keyframes numberExit {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(-4.5rem);
+                opacity: 0;
+                display: none;
+                visibility: hidden;
+            }
+
+        }
+    }
+
+    &__number-enter {
+        @media (prefers-reduced-motion: reduce) {
+            animation-duration: 600ms;
+        }
+
+        animation: 450ms motion(entrance, expressive) 0ms 1 forwards numberEnter;
+
+        @keyframes numberEnter {
+            0% {
+                transform: translateY(4.5rem);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+        }
+    }
+
+    &__total-steps {
+        @include type.type-style('heading-04');
+        color: $text-secondary;
+        margin-left: 6px;
+    }
+
+    &__label {
+        @include type.type-style('label-02');
+        color: $text-primary;
+    }
+
+    &__divider {
+        border: 0;
+        margin: 14px 0 20px 0;
+        text-align: left;
+        width: 216px;
+        height: 1px;
+        background: $border-subtle-01;
+    }
+}
+
+// }
