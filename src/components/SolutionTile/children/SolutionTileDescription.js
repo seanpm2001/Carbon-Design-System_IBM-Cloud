@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const baseClass = 'pal--experimental-tile__description';
+const baseClass = 'pal--solution-tile__description';
 /**
  * The SolutionTileDescription is used to render text based content
  * within a summary tile.

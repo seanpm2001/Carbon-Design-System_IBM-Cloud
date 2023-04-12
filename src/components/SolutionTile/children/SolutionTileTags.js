@@ -2,7 +2,7 @@ import { TagList } from '../../TagList';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const baseClass = 'pal--experimental-tile__tags';
+const baseClass = 'pal--solution-tile__tags';
 
 const SolutionTileTags = ({ tags, ...rest}) => {
   

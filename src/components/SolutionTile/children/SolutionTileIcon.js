@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
-const baseClass = 'pal--experimental-tile__icon';
+const baseClass = 'pal--solution-tile__icon';
 
 const SolutionTileIcon = ({ children }) => {
   if (!children) {

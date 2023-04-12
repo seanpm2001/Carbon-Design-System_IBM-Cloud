@@ -2,7 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import classNames from 'classnames';
 
-const baseClass = 'pal--experimental-tile__details';
+const baseClass = 'pal--solution-tile__details';
 
 const SolutionTileDetails = ({ details }) => {
   const classes = classNames(baseClass,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
-const baseClass = 'pal--experimental-tile__header';
+const baseClass = 'pal--solution-tile__header';
 
 /**
  * The SolutionTileHeader is used to render headers within a Experimental tile.

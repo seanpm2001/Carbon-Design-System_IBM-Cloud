@@ -4,8 +4,9 @@ import classNames from 'classnames';
 import { SolutionTileHeader, SolutionTileDescription, SolutionTileDetails, SolutionTileTags, SolutionTileIcon } from './children';
 import { ClickableTile } from '@carbon/react';
 import { ArrowRight } from '@carbon/react/icons';
+import SolutionTileSkeleton from './skeleton';
 
-const baseClass = 'pal--experimental-tile';
+const baseClass = 'pal--solution-tile';
 
 const SolutionTile = ({ children, size, href, onClick, ...rest}) => {
   
@@ -40,6 +41,7 @@ SolutionTile.description = SolutionTileDescription;
 SolutionTile.details = SolutionTileDetails;
 SolutionTile.tags = SolutionTileTags;
 SolutionTile.icon = SolutionTileIcon;
+SolutionTile.skeleton = SolutionTileSkeleton;
 
 SolutionTile.propTypes = {
   /**

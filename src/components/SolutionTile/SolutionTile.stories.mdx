@@ -1,7 +1,7 @@
 import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 import { OverflowMenu, OverflowMenuItem, Grid, Column } from "@carbon/react";
 import { Rocket } from '@carbon/react/icons';
-import SolutionTile, { SolutionTileHeader, SolutionTileDetails, SolutionTileTags, SolutionTileDescription, SolutionTileIcon } from ".";
+import SolutionTile, { SolutionTileSkeleton, SolutionTileHeader, SolutionTileDetails, SolutionTileTags, SolutionTileDescription, SolutionTileIcon } from ".";
 
 import "./_styles.scss";
 
@@ -15,7 +15,7 @@ import "./_styles.scss";
   parameters={{ status: { type: "experimental" } }}
 />
 
-# Card
+# Solution Tile
 
 export const Template = (args) => (
   <SolutionTile style={{maxWidth: '400px'}} size='md' href= '.' {...args}>
@@ -43,6 +43,42 @@ export const Template = (args) => (
   </Story>
 </Canvas>
 
+## Description
+The Solution tile can be used to refer to offerings/solutions on cloud or display other content.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@carbon/ibm-cloud/components/SolutionTile/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { SolutionTile, SolutionTileHeader, SolutionTileDescription, SolutionTileDetails, SolutionTileTags, SolutionTileIcon } from '@carbon/ibm-cloud/components';
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={SolutionTile} />
+
+## Loading State
+<Canvas>
+  <Story
+    name="Skeleton"
+  >
+    <SolutionTileSkeleton />
+  </Story>
+</Canvas>
+
+# Other Examples
 <Canvas>
   <Story
     name="With Details"
@@ -161,3 +197,7 @@ export const Template = (args) => (
     </Grid>
   </Story>
 </Canvas>
+
+
+## Contributors
+- Max Hammer
