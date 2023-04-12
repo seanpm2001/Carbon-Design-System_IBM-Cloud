@@ -5,7 +5,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import { Tooltip } from "@carbon/react";
+import { Toggletip, ToggletipButton, ToggletipContent, Tooltip } from "@carbon/react";
 import { Edit as Edit16 } from "@carbon/react/icons";
 import Tag from "../Tag";
 import { useTranslation } from "react-i18next";
@@ -81,22 +81,26 @@ const TagList = ({
       const tooltipOverflowCount = tags.length - totalTagsDisplayed;
       overflowCountNode = (
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-        <Tooltip
-          triggerClassName="pal--cell--tooltip"
+        <Toggletip
+          ClassName="pal--cell--tooltip"
           showIcon={false}
-          triggerText={overflowCountNode}
         >
-          {overflowTagsNode}
-          {tooltipOverflowCount === 0 ? undefined : (
-            <div
-              title={`${tooltipOverflowCount} ${t("more")} ${
-                tooltipOverflowCount === 1 ? t("tag") : t("tags")
-              }`}
-            >
-              {`(+${tooltipOverflowCount})`}
-            </div>
-          )}
-        </Tooltip>
+          <ToggletipButton>
+            {overflowCountNode}
+          </ToggletipButton>
+          <ToggletipContent>
+            {overflowTagsNode}
+              {tooltipOverflowCount === 0 ? undefined : (
+                <div
+                  title={`${tooltipOverflowCount} ${t("more")} ${
+                    tooltipOverflowCount === 1 ? t("tag") : t("tags")
+                  }`}
+                >
+                  {`(+${tooltipOverflowCount})`}
+                </div>
+            )}
+          </ToggletipContent>
+        </Toggletip>
       );
     }
 
