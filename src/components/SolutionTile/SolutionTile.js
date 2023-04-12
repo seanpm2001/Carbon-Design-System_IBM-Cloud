@@ -8,10 +8,11 @@ import SolutionTileSkeleton from './skeleton';
 
 const baseClass = 'pal--solution-tile';
 
-const SolutionTile = ({ children, size, href, onClick, ...rest}) => {
+const SolutionTile = ({ className, children, size, href, onClick, ...rest}) => {
   
   const classes = classNames(
     baseClass,
+    className,
     `${baseClass}--${size}`,
   )
   
@@ -33,7 +34,8 @@ const SolutionTile = ({ children, size, href, onClick, ...rest}) => {
 SolutionTile.defaultProps = {
   onClick: () => {},
   href: undefined,
-  size: 'md'
+  size: 'md',
+  className: undefined,
 }
 
 SolutionTile.header = SolutionTileHeader;
@@ -44,6 +46,10 @@ SolutionTile.icon = SolutionTileIcon;
 SolutionTile.skeleton = SolutionTileSkeleton;
 
 SolutionTile.propTypes = {
+  /**
+   * Provide class name to add styling.
+   */
+  className: PropTypes.string,
   /**
    * The link the tile should take the user to when clicked.
    */

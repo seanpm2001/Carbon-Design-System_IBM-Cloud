@@ -4,6 +4,8 @@
 @import "@carbon/react/scss/spacing";
 @import "@carbon/react/scss/theme";
 
+@import "@carbon/react/scss/components/tile";
+
 .pal--solution-tile {
   position: relative; 
   display: block;
@@ -25,13 +27,13 @@
     aspect-ratio: 3 / 4;
   }
 
-  // skeleton or disabled state
-  &--skeleton:hover .pal--solution-tile__arrow {
-    visibility: none;
-  }
-
   &:hover .pal--solution-tile__arrow {
     visibility: visible;
+  }
+
+  // skeleton or disabled state
+  &--skeleton:hover .pal--solution-tile__arrow {
+    display: none;
   }
 
   &__content {
