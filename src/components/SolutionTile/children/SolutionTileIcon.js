@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 
 const baseClass = 'pal--experimental-tile__icon';
 
-const ExperimentalTileIcon = ({ children }) => {
+const SolutionTileIcon = ({ children }) => {
   if (!children) {
     return null;
   }
@@ -15,8 +15,8 @@ const ExperimentalTileIcon = ({ children }) => {
   )
 }
 
-ExperimentalTileIcon.propTypes = {
+SolutionTileIcon.propTypes = {
   children: PropTypes.node
 }
 
-export default ExperimentalTileIcon;
+export default SolutionTileIcon;

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 const baseClass = 'pal--experimental-tile__details';
 
-const ExperimentalTileDetails = ({ details }) => {
+const SolutionTileDetails = ({ details }) => {
   const classes = classNames(baseClass,
     details?.length > 3 && `${baseClass}--overflow`)
 
@@ -32,11 +32,11 @@ const ExperimentalTileDetails = ({ details }) => {
   )
 }
 
-ExperimentalTileDetails.propTypes = {
+SolutionTileDetails.propTypes = {
   details: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.node,
     key: PropTypes.string.isRequired,
   }))
 }
 
-export default ExperimentalTileDetails;
+export default SolutionTileDetails;

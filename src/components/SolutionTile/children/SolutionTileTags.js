@@ -4,7 +4,7 @@ import React from 'react';
 
 const baseClass = 'pal--experimental-tile__tags';
 
-const ExperimentalTileTags = ({ tags, ...rest}) => {
+const SolutionTileTags = ({ tags, ...rest}) => {
   
   if(!tags || !tags.length) {
     return null;
@@ -15,11 +15,11 @@ const ExperimentalTileTags = ({ tags, ...rest}) => {
   );
 }
 
-ExperimentalTileTags.defaultProps = {
+SolutionTileTags.defaultProps = {
   tags: [],
 }
 
-ExperimentalTileTags.propTypes = {
+SolutionTileTags.propTypes = {
   /**
    * An array of objects representing tags.
    */
@@ -42,4 +42,4 @@ ExperimentalTileTags.propTypes = {
 
 }
 
-export default ExperimentalTileTags;
+export default SolutionTileTags;

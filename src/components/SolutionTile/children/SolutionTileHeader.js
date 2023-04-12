@@ -4,9 +4,9 @@ import { PropTypes } from 'prop-types';
 const baseClass = 'pal--experimental-tile__header';
 
 /**
- * The ExperimentalTileHeader is used to render headers within a Experimental tile.
+ * The SolutionTileHeader is used to render headers within a Experimental tile.
  */
-const ExperimentalTileHeader = ({ children, type, ...rest }) => {
+const SolutionTileHeader = ({ children, type, ...rest }) => {
   if(!children) {
     return null;
   }
@@ -19,7 +19,7 @@ const ExperimentalTileHeader = ({ children, type, ...rest }) => {
   )
 }
 
-ExperimentalTileHeader.propTypes = {
+SolutionTileHeader.propTypes = {
   /**
    * The children to render within the header element.
    */
@@ -30,4 +30,4 @@ ExperimentalTileHeader.propTypes = {
   type: PropTypes.string
 }
 
-export default ExperimentalTileHeader;
+export default SolutionTileHeader;

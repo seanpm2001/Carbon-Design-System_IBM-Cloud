@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 const baseClass = 'pal--experimental-tile__description';
 /**
- * The ExperimentalTileDescription is used to render text based content
+ * The SolutionTileDescription is used to render text based content
  * within a summary tile.
  */
-const ExperimentalTileDescription = ({ children }) => {
+const SolutionTileDescription = ({ children }) => {
   if (!children) {
     return null;
   }
@@ -18,15 +18,15 @@ const ExperimentalTileDescription = ({ children }) => {
   )
 };
 
-ExperimentalTileDescription.propTypes = {
+SolutionTileDescription.propTypes = {
   /**
    * The children to render within the description.
    */
   children: PropTypes.node,
 }
 
-ExperimentalTileDescription.defaultProps = {
+SolutionTileDescription.defaultProps = {
   children: undefined,
 }
 
-export default ExperimentalTileDescription;
+export default SolutionTileDescription;
