@@ -52,7 +52,7 @@ const TagList = ({
 
     if (numTagsDisplayed === 0) {
       overflowCountNode = (
-        <Tag type="functional" className={counterTagClassNames}>
+        <Tag size={size} type={type} className={counterTagClassNames}>
           {String(tags.length)}
         </Tag>
       );
