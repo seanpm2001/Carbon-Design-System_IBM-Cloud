@@ -25,6 +25,8 @@ const TagList = ({
   maxCharactersTooltip,
   maxTagsTooltip,
   wrap,
+  size,
+  type,
   ...rest
 }) => {
   const { t } = useTranslation("TagList");
@@ -42,7 +44,7 @@ const TagList = ({
 
     if (numTagsDisplayed > 0 && numTagsDisplayed < tags.length) {
       overflowCountNode = (
-        <Tag type="functional" className={counterTagClassNames}>
+        <Tag size={size} type={type} className={counterTagClassNames}>
           {`+${overflowCount}`}
         </Tag>
       );
@@ -138,12 +140,13 @@ const TagList = ({
         <Tag
           key={tag.name}
           className="pal--tag-list--tag"
-          type={tag.type || "functional"}
+          type={tag.type || type || "functional"}
           title={
             tag.isAccessTag ? `${t("accessTagPrefix")} | ${tag.name}` : tag.name
           }
           onClick={onIconClick}
           maxCharacters={maxCharacters}
+          size={tag.size || size}
           {...tag.otherProps}
         >
           {tag.isAccessTag ? `${t("accessTagPrefix")} | ` : null}
@@ -243,6 +246,14 @@ TagList.propTypes = {
    * Whether the tags in the list should wrap when they reach the end of their container.
    */
   wrap: PropTypes.bool,
+  /**
+   * Whether the tags in the list should small or medium sized. Can be overridden by setting the size prop on individual tags.
+   */
+  size: PropTypes.oneOf(['sm', 'md']),
+   /**
+   * Decides the tags color in the list. Can be overridden by setting the type prop on individual tags.
+   */
+  type: PropTypes.string
 };
 
 TagList.defaultProps = {
@@ -257,6 +268,8 @@ TagList.defaultProps = {
   maxCharactersTooltip: 15,
   maxTagsTooltip: 8,
   wrap: false,
+  size: undefined,
+  type: 'functional'
 };
 
 export default TagList;

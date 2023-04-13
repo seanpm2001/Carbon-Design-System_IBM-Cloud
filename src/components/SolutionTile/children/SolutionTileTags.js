@@ -11,12 +11,13 @@ const SolutionTileTags = ({ tags, ...rest}) => {
   }
 
   return (
-    <TagList isEditable='never' numTagsDisplayed={10} tags={tags.map((tag)=>{return { ...tag, otherProps: { size:'sm' }}})} className={baseClass} {...rest} />
+    <TagList isEditable='never' wrap tags={tags} className={baseClass} {...rest} />
   );
 }
 
 SolutionTileTags.defaultProps = {
   tags: [],
+  size: 'sm'
 }
 
 SolutionTileTags.propTypes = {
