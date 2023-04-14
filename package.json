@@ -26,7 +26,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -o docs-build -s public "
+    "build-storybook": "build-storybook -o docs-build -s public ",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -69,6 +70,10 @@
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "babel-preset-carbon": "^0.0.14",
+    "eslint": "^8.38.0",
+    "eslint-config-carbon": "^3.1.0",
+    "eslint-plugin-react": "^7.32.2",
     "prop-types": "^15.8.1",
     "sass": "^1.55.0",
     "source-map-explorer": "^2.5.3",
