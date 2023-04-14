@@ -27,23 +27,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -o docs-build -s public ",
-    "lint": "eslint ."
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
+    "lint": "eslint src"
   },
   "browserslist": {
     "production": [
@@ -74,6 +58,7 @@
     "eslint": "^8.38.0",
     "eslint-config-carbon": "^3.1.0",
     "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "prop-types": "^15.8.1",
     "sass": "^1.55.0",
     "source-map-explorer": "^2.5.3",

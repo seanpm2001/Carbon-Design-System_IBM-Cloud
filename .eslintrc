@@ -13,8 +13,13 @@
       "sourceType": "module"
   },
   "plugins": [
-      "react"
+      "react",
+      "react-hooks",
+      "jsx-a11y"
   ],
   "rules": {
+    "curly": "off",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "error"
   }
 }
