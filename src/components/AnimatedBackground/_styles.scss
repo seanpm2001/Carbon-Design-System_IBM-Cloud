@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "sass:list";
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
 @import "@carbon/react/scss/colors";
@@ -14,8 +16,6 @@
   --custom-animated-background-set-cyan-magenta-purple-4:  #{$purple-20};
   --custom-animated-background-set-cyan-magenta-purple-5:  #{$cyan-20};
   --custom-animated-background-set-cyan-magenta-purple-6:  #{$magenta-20};
-
-
   --custom-animated-background-set-cyan-teal-1:  #{$cyan-20};
   --custom-animated-background-set-cyan-teal-2:  #{$teal-10};
   --custom-animated-background-set-cyan-teal-3:  #{$cyan-20};
@@ -31,8 +31,6 @@
   --custom-animated-background-set-cyan-magenta-purple-4:  #{$purple-90};
   --custom-animated-background-set-cyan-magenta-purple-5:  #{$cyan-90};
   --custom-animated-background-set-cyan-magenta-purple-6:  #{$magenta-90};
-
-
   --custom-animated-background-set-cyan-teal-1:  #{$cyan-90};
   --custom-animated-background-set-cyan-teal-2:  #{$teal-90};
   --custom-animated-background-set-cyan-teal-3:  #{$cyan-90};
@@ -48,13 +46,14 @@ $max-opacity: 1;
 $min-opacity: .8;
 
 @function next-value($list,$i) {
-  $length: length($list);
+  $length: list.length($list);
   $next-index: $i % $length;
 
   @if  $next-index == 0 {
-    @return nth($list, $i);
+    @return list.nth($list, $i);
   }
-  @return  nth($list, $i % $length);
+
+  @return list.nth($list, $i % $length);
 };
 
 .pal--animated-background {
@@ -82,18 +81,20 @@ $min-opacity: .8;
   );
 
   @each $color-set-key in map-keys($color-sets) {
-    $color-set: map-get($color-sets, $color-set-key);
-    $color-set-length: length($color-set);
+    $color-set: map.get($color-sets, $color-set-key);
+    $color-set-length: list.length($color-set);
 
     @keyframes scale-bop {
       0% {
         transform: scale($min-scale,$min-scale) translateY(0%);
   
       }
+
       50% {
         transform: scale($scale-x,$scale-y) translateY($bop);
   
       }
+
       100% {
         transform: scale($min-scale,$min-scale) translateY(0%);
       }
@@ -104,10 +105,12 @@ $min-opacity: .8;
         opacity: $min-opacity;
   
       }
+
       50% {
         opacity: $max-opacity;
   
       }
+
       100% {
         opacity: $min-opacity;
       }
@@ -115,11 +118,11 @@ $min-opacity: .8;
     
     @for $i from 1 through $color-set-length {
       @keyframes rotate-#{$color-set-key}-#{$i} {
+        /* stylelint-disable max-nesting-depth */
         @for $j from 0 through $color-set-length - 1 { 
           $color: next-value($color-set, $i + $j);
           $steps: $color-set-length;
           $pos: $j * (100 / $steps);
-    
           #{$pos}% {
             fill: $color;
           } 
@@ -138,7 +141,7 @@ $min-opacity: .8;
       }
 
       @for $i from 1 through $blob-count {
-        $color: nth($color-set, $i);
+        $color: list.nth($color-set, $i);
         svg ellipse:nth-child(#{$i}) {
           fill: $color;
           transform-origin: calc(($i - 1) * 25%)  100%; // move origin for every blob accordingly

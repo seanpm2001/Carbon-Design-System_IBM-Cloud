@@ -1,6 +1,5 @@
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
-
 @use "@carbon/react/scss/components/skeleton-styles";
 @import "@carbon/react/scss/colors";
 @import "@carbon/react/scss/spacing";
@@ -18,7 +17,7 @@
 .pal--catalog-tile {
   display: block;
   cursor: pointer;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1); // sass-lint:disable-line no-color-literals
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%); // sass-lint:disable-line no-color-literals
   background-color: $layer-01;
   padding: 1rem;
   text-decoration: none;
@@ -29,7 +28,7 @@
     outline: 2px solid $focus;
   }
 
-  &:not(.pal--catalog-tile__list-view):not(.pal--catalog-tile__consulting-view) {
+  &:not(.pal--catalog-tile__list-view, .pal--catalog-tile__consulting-view) {
     max-width: 30rem;
   }
 

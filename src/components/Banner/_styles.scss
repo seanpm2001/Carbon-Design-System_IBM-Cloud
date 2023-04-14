@@ -1,6 +1,5 @@
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
-
 @use "@carbon/react/scss/components/skeleton-styles";
 @import "@carbon/react/scss/colors";
 @import "@carbon/react/scss/spacing";
@@ -43,11 +42,11 @@
   }
 
   &--with-gradient {
-    background: rgb(2, 45, 157);
+    background: rgb(2 45 157);
     background: linear-gradient(
       294deg,
-      rgba(2, 45, 157, 1) 0%,
-      rgba(88, 74, 207, 1) 35%
+      rgb(2 45 157 / 100%) 0%,
+      rgb(88 74 207 / 100%) 35%
     );
     color: $text-on-color;
 

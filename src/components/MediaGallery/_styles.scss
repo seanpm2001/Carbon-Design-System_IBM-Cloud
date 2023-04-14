@@ -9,6 +9,7 @@
 @import "@carbon/react/scss/motion";
 @import "@carbon/react/scss/components/modal";
 @import "@carbon/react/scss/components/pagination-nav";
+
 /* Make sure to import any Carbon Component's styles that this component uses */
 
 .pal--media-gallery {
@@ -68,7 +69,7 @@
   }
 
   .cds--pagination-nav__page--select {
-    -webkit-appearance: none;
+    appearance: none;
 
     option {
       display: inline;

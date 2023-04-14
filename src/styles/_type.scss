@@ -14,8 +14,6 @@ $experimental-productive-heading-05: (
   line-height: 2.5rem,
   letter-spacing: 0,
 ) ;
-
-
 $experimental-tokens: (
   experimental-productive-heading-05: $experimental-productive-heading-05
 );
@@ -38,6 +36,7 @@ $experimental-tokens: (
     @include type.type-style($name, $fluid, $breakpoints);
   } @else {
     $token: map.get($experimental-tokens, $name);
+
     @include experimental-custom-properties($name, $token);
   }
 }

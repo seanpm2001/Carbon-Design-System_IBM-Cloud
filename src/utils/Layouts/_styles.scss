@@ -3,12 +3,13 @@ $feature-flags: (
   enable-css-custom-properties: true,
 );
 
+@use "sass:map";
 @import "@carbon/react/scss/grid";
 @import "@carbon/react/scss/components/button";
 
 @mixin breakpoint($size) {
   @if map-has-key($grid-breakpoints, $size) {
-    $breakpoint-key: map-get($grid-breakpoints, $size);
+    $breakpoint-key: map.get($grid-breakpoints, $size);
 
     @media screen and (min-width: map-get($breakpoint-key, "width")) {
       @content;

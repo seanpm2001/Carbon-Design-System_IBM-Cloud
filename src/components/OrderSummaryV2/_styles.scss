@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
 @use '@carbon/react/scss/spacing';
@@ -28,7 +29,7 @@ $pal-order-summary-switcher-max-width: 12rem;
 
 @mixin breakpoint($size) {
   @if map-has-key($grid-breakpoints, $size) {
-    $breakpoint-key: map-get($grid-breakpoints, $size);
+    $breakpoint-key: map.get($grid-breakpoints, $size);
 
     @media screen and (min-width: map-get($breakpoint-key, "width")) {
       @content;
@@ -42,6 +43,7 @@ $pal-order-summary-switcher-max-width: 12rem;
 
 .pal-docs--renderer .pal--order-summary-v2 {
   @include theme($g90, true);
+  
   position: relative;
 }
 

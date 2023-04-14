@@ -3,6 +3,7 @@ $feature-flags: (
   enable-css-custom-properties: true,
 );
 
+@use "sass:map";
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
 @import "@carbon/react/scss/colors";
@@ -16,9 +17,9 @@ $feature-flags: (
 
 @mixin breakpoint($size) {
   @if map-has-key($grid-breakpoints, $size) {
-    $breakpoint-key: map-get($grid-breakpoints, $size);
+    $breakpoint-key: map.get($grid-breakpoints, $size);
 
-    @media screen and (min-width: map-get($breakpoint-key, "width")) {
+    @media screen and (min-width: map.get($breakpoint-key, "width")) {
       @content;
     }
   } @else {
@@ -44,7 +45,7 @@ $feature-flags: (
   }
 
   .pal--tag-list--tag:hover {
-    //over the tag
+    // over the tag
     cursor: pointer;
   }
 }
@@ -136,8 +137,6 @@ $feature-flags: (
   &:focus {
     outline: none;
     box-shadow: 0 0 0 2px $support-info;
-    -webkit-box-shadow: 0 0 0 2px $support-info;
-    -moz-box-shadow: 0 0 0 2px $support-info;
 
     .pal--tag-list--edit--icon {
       fill: $button-primary;
@@ -151,14 +150,10 @@ $feature-flags: (
 
     &:focus {
       box-shadow: 0 0 0 2px $support-info;
-      -webkit-box-shadow: 0 0 0 2px $support-info;
-      -moz-box-shadow: 0 0 0 2px $support-info;
     }
 
     &:active {
       box-shadow: 0 0 0 2px $support-info;
-      -webkit-box-shadow: 0 0 0 2px $support-info;
-      -moz-box-shadow: 0 0 0 2px $support-info;
     }
 
     .pal--tag-list--edit--icon {

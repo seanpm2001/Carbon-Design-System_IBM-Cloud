@@ -5,7 +5,6 @@ $feature-flags: (
 
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
-
 @use "@carbon/react/scss/components/skeleton-styles";
 @import "@carbon/react/scss/colors";
 @import "@carbon/react/scss/spacing";
@@ -38,8 +37,7 @@ $progress-bar-gray-secondary: $gray-40;
   border-radius: 2rem;
   background-color: $layer-03;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-flow: row nowrap;
   align-content: stretch;
   overflow: hidden;
 }
@@ -59,9 +57,7 @@ $progress-bar-gray-secondary: $gray-40;
 .pal--progress-bar__section {
   position: relative;
   height: 100%;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 0;
+  flex: 0 0 0;
   overflow: hidden;
   background-color: transparent;
 }

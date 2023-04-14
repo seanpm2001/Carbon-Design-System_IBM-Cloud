@@ -1,3 +1,5 @@
+
+@use "sass:map";
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
 @import "@carbon/react/scss/colors";
@@ -25,7 +27,7 @@ $side-panel-layer: 5100;
 
 @mixin breakpoint($size) {
   @if map-has-key($grid-breakpoints, $size) {
-    $breakpoint-key: map-get($grid-breakpoints, $size);
+    $breakpoint-key: map.get($grid-breakpoints, $size);
 
     @media screen and (min-width: map-get($breakpoint-key, "width")) {
       @content;
@@ -180,7 +182,7 @@ body.pal--no-scroll {
     position: absolute;
     bottom: 0;
     height: 2rem;
-    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), $layer-01);
+    background-image: linear-gradient(to bottom, rgb(255 0 0 / 0%), $layer-01);
     width: calc(100% - 4rem);
   }
 
@@ -284,11 +286,11 @@ body.pal--no-scroll {
 .pal--side-panel-container--open:not(.pal--side-panel-container--overlay)
   .pal--side-panel {
   body:not(.cds--dark-theme) & {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
   }
 
   body.cds--dark-theme & {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 70%);
   }
 }
 
