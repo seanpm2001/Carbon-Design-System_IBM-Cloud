@@ -1,0 +1,16 @@
+name: Run lint on PR
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install
+        run: | # Install npm packages
+          npm ci
+      - name: Lint 🚀
+        - run: npm lint
