@@ -26,7 +26,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -o docs-build -s public ",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "lint:style": "stylelint 'src/**/*.scss'"
   },
   "browserslist": {
     "production": [
@@ -55,9 +56,12 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
+    "postcss": "^8.4.21",
     "prop-types": "^15.8.1",
     "sass": "^1.55.0",
     "source-map-explorer": "^2.5.3",
+    "stylelint": "^15.4.0",
+    "stylelint-config-standard-scss": "^8.0.0",
     "webpack": "^5.74.0"
   }
 }
