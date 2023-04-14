@@ -19,4 +19,4 @@ jobs:
           npm ci
       - name: Lint 🚀
         run: | # Run eslint
-          npm lint
+          npm run lint
