@@ -14,8 +14,10 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Install
+      - name: Install 🔧
         run: | # Install npm packages
           npm ci
-      - name: Lint 🚀
+      - name: Lint 🚨
         run: npm run lint
+      - name: Style Lint 💅
+        run: npm run lint:style
