@@ -27,7 +27,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -o docs-build -s public ",
     "lint": "eslint src",
-    "lint:style": "stylelint 'src/**/*.scss'"
+    "lint:style": "stylelint 'src/**/*.scss'",
+    "postinstall": "husky install"
   },
   "browserslist": {
     "production": [
@@ -42,6 +43,8 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
     "@etchteam/storybook-addon-status": "^4.2.2",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
@@ -56,6 +59,7 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
     "postcss": "^8.4.21",
     "prop-types": "^15.8.1",
     "sass": "^1.55.0",
