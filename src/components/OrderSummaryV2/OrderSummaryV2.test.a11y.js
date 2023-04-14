@@ -123,13 +123,13 @@ describe.skip('Order Summary V2 - items a11y', () => {
               ]}
             />
           }
-          submitPromoCode={
-            <SubmitPromo
-              accountId="ADD ACCOUNT ID HERE"
-              handleSubmit={() => {}}
-              mock
-            />
-          }
+          // submitPromoCode={
+          //   <SubmitPromo
+          //     accountId="ADD ACCOUNT ID HERE"
+          //     handleSubmit={() => {}}
+          //     mock
+          //   />
+          // }
           termsText={<Link href="/">View Terms and Conditions</Link>}
         />
       </section>,

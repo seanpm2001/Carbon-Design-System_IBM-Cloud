@@ -152,7 +152,7 @@ const PageHeader = ({
         <Row>
           <Column lg={8} md={4} sm={4} xlg={8} max={8} className="pal--page-header__main-container">
           <div className="pal--page-header__main">
-            <div lg={8} md={4} sm={4} xlg={8} max={8} className="pal--page-header__title-container">
+            <div max={8} className="pal--page-header__title-container">
                 <div className={titleClasses}>
                   <h1 className="pal--page-header__title-text">{title}</h1>
                 </div>

@@ -13,7 +13,7 @@ const selectionKeys = ["Enter", " ", "Spacebar"];
 
 /**
  * Checks whether the event type was a click event or the user seleted with enter or space.
- * @param {Object} evt An event object.
+ * @param {object} evt An event object.
  */
 const isSelectEvent = (evt) =>
   evt.type === "click" || selectionKeys.includes(evt.key);

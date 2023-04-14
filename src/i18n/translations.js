@@ -1,6 +1,7 @@
 import Banner from "./components/Banner";
 import Card from "./components/Card";
 import CatalogTile from "./components/CatalogTile";
+import Counter from "./components/Counter";
 import EnhancedDataTable from "./components/EnhancedDataTable";
 import ErrorBoundary from "./components/ErrorBoundary";
 import MediaGallery from "./components/MediaGallery";
@@ -17,6 +18,7 @@ const components = {
   Banner,
   Card,
   CatalogTile,
+  Counter,
   EnhancedDataTable,
   ErrorBoundary,
   MediaGallery,

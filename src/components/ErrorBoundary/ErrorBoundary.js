@@ -60,6 +60,10 @@ ErrorBoundary.propTypes = {
    * Override the caption to show in the Message component. If loggingEndpoint is provided the error ID will be appended below this.
    */
   caption: PropTypes.string,
+  /**
+   * propagated translation function
+   */
+  t: PropTypes.func
 };
 
 ErrorBoundary.defaultProps = {

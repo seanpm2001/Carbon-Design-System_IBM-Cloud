@@ -115,7 +115,7 @@ export function renderStatus(status) {
   return <div className={circleClasses} />;
 }
 
-const Status = ({ className, label, status, locale, tooltipMsg }) => {
+const Status = ({ className, label, status, tooltipMsg }) => {
   const { t } = useTranslation("Status");
 
   const classes = classnames("pal--status", className);

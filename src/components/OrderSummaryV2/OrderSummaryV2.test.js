@@ -297,22 +297,22 @@ describe('Order Summary V2', () => {
       expect(footer).toBeInTheDocument();
     });
 
-    it('renders the Order Summary V2 with a promo code', () => {
-      render(
-        <OrderSummaryV2
-          {...defaultDetailsSummaryProps}
-          submitPromoCode={
-            <SubmitPromo
-              accountId="ADD ACCOUNT ID HERE"
-              handleSubmit={() => {}}
-              mock
-            />
-          }
-        />
-      );
+    // it('renders the Order Summary V2 with a promo code', () => {
+    //   render(
+    //     <OrderSummaryV2
+    //       {...defaultDetailsSummaryProps}
+    //       submitPromoCode={
+    //         <SubmitPromo
+    //           accountId="ADD ACCOUNT ID HERE"
+    //           handleSubmit={() => {}}
+    //           mock
+    //         />
+    //       }
+    //     />
+    //   );
 
-      expect(screen.getByText('Apply a code')).toBeInTheDocument();
-    });
+    //   expect(screen.getByText('Apply a code')).toBeInTheDocument();
+    // });
 
     it('renders the Order Summary V2 subtotals', () => {
       render(

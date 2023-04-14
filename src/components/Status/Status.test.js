@@ -102,13 +102,13 @@ describe('Status', () => {
 
   describe('tooltipMsg prop', () => {
     it('renders string tooltipmsg properly', async () => {
-      const { container, getByRole } = render(<Status status={StatusType.HEALTHY} tooltipMsg='my tooltip msg'/>);
+      const { getByRole } = render(<Status status={StatusType.HEALTHY} tooltipMsg='my tooltip msg'/>);
       fireEvent.click(getByRole('button', {class: 'cds--tooltip__trigger'}));
       await waitFor(() => expect(document.querySelector('.cds--tooltip__content >p')).toBeInTheDocument());
     });
 
     it('renders node tooltipmsg properly', async () => {
-      const { container, getByRole } = render(<Status status={StatusType.HEALTHY} tooltipMsg={<div>my tooltip div</div>}/>);
+      const { getByRole } = render(<Status status={StatusType.HEALTHY} tooltipMsg={<div>my tooltip div</div>}/>);
       fireEvent.click(getByRole('button', {class: 'cds--tooltip__trigger'}));
       await waitFor(() => expect(document.querySelector('.cds--tooltip__content >p')).not.toBeInTheDocument());
       await waitFor(() => expect(document.querySelector('.cds--tooltip__content >div')).toBeInTheDocument());

@@ -1,13 +1,12 @@
+import classNames from "classnames";
+import PropTypes from "prop-types";
 import React, {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
   Children,
   createRef,
+  useEffect,
+  useRef,
+  useState
 } from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import { ProgressIndicator, ProgressStep } from "@carbon/react";
@@ -16,18 +15,17 @@ import SidePanelBreadcrumbs from "./children/SidePanelBreadcrumbs";
 import SidePanelCloseButton from "./children/SidePanelCloseButton";
 import SidePanelContent from "./children/SidePanelContent";
 import SidePanelControls from "./children/SidePanelControls";
-import SidePanelNestedPanels from "./children/SidePanelNestedPanels";
 import SidePanelMultiStep from "./children/SidePanelMultiStep";
+import SidePanelNestedPanels from "./children/SidePanelNestedPanels";
 // import getLocale from "../../utils/getLocale";
 // import translationStrings from "./translations";
 // import getTranslations from "../../utils/getTranslations";
-import { getPanelId } from "./utils/getPanelDetails";
 import callIf from "./utils/callIf";
-import cloneWithDefaults from "./utils/cloneWithDefaults";
+import { getPanelId } from "./utils/getPanelDetails";
 // import translationUtils from "../../utils/translate";
 // import trackComponentEvent from "../../utils/analytics";
-import getAllTabElements from "./utils/getAllTabElements";
 import SidePanelFocusTrap from "./children/SidePanelFocusTrap";
+import getAllTabElements from "./utils/getAllTabElements";
 
 /**
  * A custom hook to return the previous state.
@@ -56,7 +54,6 @@ const SidePanel = (props) => {
     setStep,
     getCurrentStepInfo,
     nestedPanels,
-    nextText,
     onBreadCrumbClick,
     onCancelClick,
     onCloseClick,
@@ -64,7 +61,6 @@ const SidePanel = (props) => {
     onDoneClick,
     onNextClick,
     onPreviousClick,
-    previousText,
     primaryButtonDisabled,
     primaryButtonDanger,
     secondaryButtonDisabled,
@@ -72,7 +68,6 @@ const SidePanel = (props) => {
     title,
     willClose,
     doneIsLoading,
-    doneIsLoadingText,
     internal: {
       panelSize,
       containerPanelProps,
@@ -86,7 +81,6 @@ const SidePanel = (props) => {
       renderPrimary,
       breadcrumbs,
       isOpen,
-      isActive,
       hasOverlay,
       modalOnDismiss,
     },
@@ -112,16 +106,6 @@ const SidePanel = (props) => {
 
   // Translation strings
   // const defaultLocale = getLocale(locale);
-  const passedStrings = {
-    breadCrumbText,
-    cancelText,
-    closePanelText,
-    doneText,
-    nextText,
-    previousText,
-    title,
-    doneIsLoadingText,
-  };
   const { t } = useTranslation("SidePanel");
   // const defaultStrings = getTranslations(translationStrings, defaultLocale);
   // let translations = {};
@@ -135,8 +119,8 @@ const SidePanel = (props) => {
   //   defaultLocale
   // );
   const prevNestedLength = usePrevious(nestedPanels.length);
-  const prevIsActive = usePrevious(isActive);
-  const prevIsOpen = usePrevious(isOpen);
+  // const prevIsActive = usePrevious(isActive);
+  // const prevIsOpen = usePrevious(isOpen);
 
   const focusOnLast = () => {
     const tabElements = getAllTabElements(thisPanel.current);

@@ -14,7 +14,7 @@ newInstance.use(LanguageDetector).init(
       escapeValue: false,
     },
   },
-  (err, t) => {
+  (err) => {
     if (err) return console.log(err);
   }
 );

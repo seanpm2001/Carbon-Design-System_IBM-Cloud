@@ -48,6 +48,10 @@ class PaginationNav extends Component {
      * The maximum number of items to show on the visible list.
      */
     visibleListMax: PropTypes.number,
+    /**
+     * propagated translation function
+     */
+    t: PropTypes.func
   };
 
   static defaultProps = {
