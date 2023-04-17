@@ -105,4 +105,15 @@
       background-color: $icon-secondary;
     }
   }
+
+  .pal--status__tooltip-trigger {
+   background-color: transparent; 
+   border: none;
+   vertical-align: middle;
+   color: inherit;
+
+   svg {
+    vertical-align: middle;
+   }
+  }
 }

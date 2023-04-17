@@ -30,6 +30,19 @@ export const Template = (args) => (
   </Story>
 </Canvas>
 
+<Canvas>
+  <Story
+    name="With tooltip"
+    args={{
+      label: 'Test label',
+      status: 'success',
+      tooltipMsg: 'foo'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 ## Description
 The Status component is used to indicate the status of a service, API call, health check, etc.
 

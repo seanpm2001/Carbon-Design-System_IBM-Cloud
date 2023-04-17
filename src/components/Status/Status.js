@@ -126,11 +126,14 @@ const Status = ({ className, label, status, tooltipMsg }) => {
       <div className="pal--status__label">{label}</div>
       {tooltipMsg && (
         <Tooltip
-          renderIcon={Information16}
-          iconDescription={t("infoIconDescription")}
-        >
-          {typeof tooltipMsg === "string" ? <p>{tooltipMsg}</p> : tooltipMsg}
-        </Tooltip>
+        iconDescription={t("infoIconDescription")}
+        label={typeof tooltipMsg === "string" ? <p>{tooltipMsg}</p> : tooltipMsg}
+        align='bottom'
+      >
+        <button type='button' className="pal--status__tooltip-trigger"> 
+          <Information16 />
+        </button>
+      </Tooltip>
       )}
     </div>
   );

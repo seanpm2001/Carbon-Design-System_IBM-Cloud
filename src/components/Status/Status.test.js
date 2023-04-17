@@ -103,15 +103,15 @@ describe('Status', () => {
   describe('tooltipMsg prop', () => {
     it('renders string tooltipmsg properly', async () => {
       const { getByRole } = render(<Status status={StatusType.HEALTHY} tooltipMsg='my tooltip msg'/>);
-      fireEvent.click(getByRole('button', {class: 'cds--tooltip__trigger'}));
-      await waitFor(() => expect(document.querySelector('.cds--tooltip__content >p')).toBeInTheDocument());
+      fireEvent.click(getByRole('button', {class: 'pal--status__tooltip-trigger'}));
+      await waitFor(() => expect(document.querySelector('.cds--tooltip-content >p')).toBeInTheDocument());
     });
 
     it('renders node tooltipmsg properly', async () => {
       const { getByRole } = render(<Status status={StatusType.HEALTHY} tooltipMsg={<div>my tooltip div</div>}/>);
-      fireEvent.click(getByRole('button', {class: 'cds--tooltip__trigger'}));
-      await waitFor(() => expect(document.querySelector('.cds--tooltip__content >p')).not.toBeInTheDocument());
-      await waitFor(() => expect(document.querySelector('.cds--tooltip__content >div')).toBeInTheDocument());
+      fireEvent.click(getByRole('button', {class: 'pal--status__tooltip-trigger'}));
+      await waitFor(() => expect(document.querySelector('.cds--tooltip-content >p')).not.toBeInTheDocument());
+      await waitFor(() => expect(document.querySelector('.cds--tooltip-content >div')).toBeInTheDocument());
     });
 
   });
