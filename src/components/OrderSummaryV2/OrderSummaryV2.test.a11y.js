@@ -1,11 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '../../../test-utils';
 import {
   Dropdown,
   Checkbox,
   Link,
   InlineNotification,
-} from 'carbon-components-react';
+} from '@carbon/react';
 import OrderSummaryV2 from './OrderSummaryV2';
 
 const defaultProps = {

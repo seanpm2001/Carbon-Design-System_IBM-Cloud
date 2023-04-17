@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render } from '@testing-library/react';
+import { act, render } from '../../../test-utils';
 import MediaGallery from './MediaGallery';
 
 const props = {

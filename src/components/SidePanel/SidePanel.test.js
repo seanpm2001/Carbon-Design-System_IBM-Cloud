@@ -6,7 +6,7 @@ import {
   fireEvent,
   waitFor,
   act,
-} from '@testing-library/react';
+} from '../../../test-utils';
 import userEvent from '@testing-library/user-event';
 import SidePanel from './SidePanel';
 import SidePanelContainer from './SidePanelContainer';

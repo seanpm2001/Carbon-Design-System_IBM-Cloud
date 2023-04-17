@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor } from '../../../test-utils';
 import useWindowResize from '.';
 
 // eslint-disable-next-line react/prop-types

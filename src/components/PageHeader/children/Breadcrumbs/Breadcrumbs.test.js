@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '../../../test-utils';
 import Breadcrumbs from '.';
 
 const breadcrumbs = [

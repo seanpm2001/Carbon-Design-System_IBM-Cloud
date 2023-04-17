@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test-utils';
 import { act } from 'react-dom/test-utils';
 import ResourceStatusIndicator from './ResourceStatusIndicator';
 import ResourceStatusIndicatorSkeleton from './skeleton';

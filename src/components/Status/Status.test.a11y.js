@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '../../../test-utils';
 // Components, constants, helper functions
 import Status, { StatusType } from './Status';
 

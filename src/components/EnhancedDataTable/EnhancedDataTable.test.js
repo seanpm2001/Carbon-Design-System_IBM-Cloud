@@ -1,8 +1,8 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '../../../test-utils';
 import userEvent from '@testing-library/user-event';
 import useResizeObserver from 'use-resize-observer/polyfilled';
-import { OverflowMenuItem } from 'carbon-components-react';
+import { OverflowMenuItem } from '@carbon/react';
 import EnhancedDataTable from './EnhancedDataTable';
 
 jest.mock('use-resize-observer/polyfilled');

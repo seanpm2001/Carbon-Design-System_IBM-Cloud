@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types, object-shorthand, func-names */
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '../../../test-utils';
 import userEvent from '@testing-library/user-event';
 import {
   Dropdown,
   Checkbox,
   InlineNotification,
-} from 'carbon-components-react';
+} from '@carbon/react';
 import MiniOrderSummarySidePanel from './MiniOrderSummarySidePanel';
 import MiniOrderSummary from './children/MiniOrderSummary';
 

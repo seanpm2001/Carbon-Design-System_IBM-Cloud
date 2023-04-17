@@ -1,7 +1,7 @@
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-import { mount } from 'enzyme';
-import { Dropdown, FilterableMultiSelect, Tag, DatePickerInput } from 'carbon-components-react';
+import { render } from '../../../../../test-utils';
+import { Dropdown, FilterableMultiSelect, Tag, DatePickerInput } from '@carbon/react';
 import {
   DataTableWithFilterPanel,
   DataTableWithFilterPanelNoFilterItemsFilterKeys,
@@ -10,7 +10,7 @@ import {
 import { initialRows } from '../examples/params';
 
 const renderWrapper = ({ initialFilters, mode, disabledGroupFilter }) =>
-  mount(<DataTableWithFilterPanel initialFilters={initialFilters} mode={mode} disabledGroupFilter={disabledGroupFilter} />);
+  render(<DataTableWithFilterPanel initialFilters={initialFilters} mode={mode} disabledGroupFilter={disabledGroupFilter} />);
 
 /*
  * NOTE: this test case corresponds to the example in the examples folder.
@@ -916,7 +916,7 @@ describe('DataTable.TableFilterPanel - no filter items, no filter keys (backward
   beforeEach(() => {
     jest.clearAllMocks();
 
-    wrapper = mount(<DataTableWithFilterPanelNoFilterItemsFilterKeys />);
+    wrapper = render(<DataTableWithFilterPanelNoFilterItemsFilterKeys />);
   });
 
   it('initial selection tags', () => {
@@ -1024,7 +1024,7 @@ describe('DataTable.TableFilterPanel - one filter only', () => {
   beforeEach(() => {
     jest.clearAllMocks();
 
-    wrapper = mount(<DataTableWithFilterPanelWithSingleFilter initialFilters={{
+    wrapper = render(<DataTableWithFilterPanelWithSingleFilter initialFilters={{
       status: ['Active'],
     }} />);
   });

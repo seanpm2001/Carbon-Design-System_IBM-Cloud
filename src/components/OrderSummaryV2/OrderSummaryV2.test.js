@@ -4,8 +4,8 @@ import {
   Checkbox,
   Link,
   InlineNotification,
-} from 'carbon-components-react';
-import { render, screen, waitFor } from '@testing-library/react';
+} from '@carbon/react';
+import { render, screen, waitFor } from '../../../test-utils';
 import userEvent from '@testing-library/user-event';
 import OrderSummaryV2 from './OrderSummaryV2';
 

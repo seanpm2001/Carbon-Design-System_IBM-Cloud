@@ -2,7 +2,7 @@
   This is a a11y testing file for the Banner connected component
  */
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '../../../test-utils';
 import Banner from './Banner';
 
 describe('Banner a11y', () => {

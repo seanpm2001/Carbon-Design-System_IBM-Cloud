@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test-utils';
 import ErrorBoundary from './ErrorBoundary';
 import ErrorExample from './examples/Error';
 import requestUtils from '../../utils/request';
