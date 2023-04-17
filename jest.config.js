@@ -9,9 +9,12 @@ const config = {
     "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/config/jest/__mocks__/fileMock.js",
     "\\.scss$": "<rootDir>/config/jest/__mocks__/styleMock.js",
   },
-  verbose: true,
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.js'],
+  testMatch: [
+    "<rootDir>/**/?(*.)(spec|test).js?(x)",
+    "<rootDir>/**/?(*.)test.a11y.js?(x)"
+  ],
   transform: {
     "^.+\\.js$": "<rootDir>/config/jest/jsTransform.js",
   },
