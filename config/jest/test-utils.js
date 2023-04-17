@@ -1,13 +1,13 @@
 import React from 'react'
 import {render} from '@testing-library/react'
 import { Theme } from '@carbon/react';
-import CarbonForCloudWrapper from "./src/i18n/CarbonForCloudWrapper";
+import CarbonForCloudWrapper from "../../src/i18n/CarbonForCloudWrapper";
 
 
 // eslint-disable-next-line react/prop-types
 const TestWrapper = ({ children }) => {
   return (
-    <Theme theme="light">
+    <Theme theme="white">
       <CarbonForCloudWrapper locale='en'>
         {children}
       </CarbonForCloudWrapper>
