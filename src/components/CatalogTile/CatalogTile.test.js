@@ -531,7 +531,7 @@ describe('CatalogTile', () => {
         '.pal--catalog-tile.cds--tile.cds--tile--selectable',
       );
       const checkboxButton = container.querySelector(
-        '.cds--tile-input[type="checkbox"]',
+        '.cds--tile[role="checkbox"]',
       );
       expect(catalogTileContainer).toBeInTheDocument();
       expect(checkboxButton).toBeInTheDocument();
