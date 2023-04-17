@@ -11,9 +11,12 @@ const config = {
   },
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.js'],
+  testPathIgnorePatterns: [
+    "<rootDir>/(?!src)",
+  ],
   testMatch: [
     "<rootDir>/**/?(*.)(spec|test).js?(x)",
-    "<rootDir>/**/?(*.)test.a11y.js?(x)"
+    // "<rootDir>/**/?(*.)test.a11y.js?(x)"
   ],
   transform: {
     "^.+\\.js$": "<rootDir>/config/jest/jsTransform.js",
