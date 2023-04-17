@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import "./_styles.scss";
 import { useTranslation } from "react-i18next";
+import Skeleton from "./skeleton";
 
 // Uses inclusive bounds.
 function keepInBounds(value, lowerBound, upperBound) {
@@ -49,13 +49,7 @@ const Counter = ({
 };
 
 // components should export a skeleton
-Counter.Skeleton = () => {
-  return <div className="pal--counter__skeleton>">
-          <h1 className="pal--counter__total-steps">0 / 5</h1>
-          <p className="pal--counter__label">Steps complete</p>
-          <hr className="pal--counter__divider"></hr>
-      </div>;
-};
+Counter.Skeleton = Skeleton;
 
 Counter.propTypes = {
   /**
