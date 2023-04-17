@@ -4,7 +4,7 @@ exports[`IsometricIcon render classes as expected for IsometricIcon component re
 <body>
   <div>
     <div
-      class="cds--layer-one"
+      class="cds--white cds--layer-one"
     >
       <svg
         class="pal--isometric-icon"

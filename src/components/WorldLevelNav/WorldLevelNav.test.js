@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "../../../test-utils";
+import { render } from "../../../config/jest/test-utils";
 import userEvent from "@testing-library/user-event";
 import { IbmCloud as IbmCloud16 } from "@carbon/react/icons";
 import { act } from "react-dom/test-utils";

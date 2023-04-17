@@ -362,7 +362,7 @@ exports[`MediaGallery render classes as expected for MediaGallery component it r
 <body>
   <div>
     <div
-      class="cds--layer-one"
+      class="cds--white cds--layer-one"
     >
       <div
         class="pal--media-gallery"

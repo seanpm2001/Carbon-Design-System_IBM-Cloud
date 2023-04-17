@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { render } from '../../../test-utils';
+import { render } from '../../../config/jest/test-utils';
 import ActionsPanel from '.';
 
 // eslint-disable-next-line react/prefer-stateless-function

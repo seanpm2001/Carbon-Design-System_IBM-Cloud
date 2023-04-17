@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 import React from 'react';
-import { render, screen, fireEvent } from '../../../test-utils';
+import { render, screen, fireEvent } from '../../../config/jest/test-utils';
 import userEvent from '@testing-library/user-event';
 import Tag from './Tag';
 

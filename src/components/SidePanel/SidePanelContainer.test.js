@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { render, fireEvent, act, waitFor } from '../../../test-utils';
+import { render, fireEvent, act, waitFor } from '../../../config/jest/test-utils';
 import SidePanel from './SidePanel';
 import SidePanelContainer from './SidePanelContainer';
 

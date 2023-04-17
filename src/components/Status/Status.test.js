@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '../../../test-utils';
+import { fireEvent, render, screen, waitFor } from '../../../config/jest/test-utils';
 import Status, { StatusType, getStatusColor } from './Status';
 import StatusSkeleton from './skeleton';
 

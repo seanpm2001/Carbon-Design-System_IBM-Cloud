@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import React from 'react';
-import { render } from '../../../test-utils';
+import { render } from '../../../config/jest/test-utils';
 import AnimatedBackground from './AnimatedBackground';
 
 describe('AnimatedBackground', () => {

@@ -3,7 +3,7 @@
   This is a a11y testing file for the MiniOrderSummarySidePanel connected component
  */
 import React from 'react';
-import { render, fireEvent } from '../../../test-utils';
+import { render, fireEvent } from '../../../config/jest/test-utils';
 import {
   Dropdown,
   Checkbox,

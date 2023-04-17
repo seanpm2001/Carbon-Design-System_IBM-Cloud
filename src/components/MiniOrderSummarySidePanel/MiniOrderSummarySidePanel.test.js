@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types, object-shorthand, func-names */
 import React from 'react';
-import { render, screen, waitFor } from '../../../test-utils';
+import { render, screen, waitFor } from '../../../config/jest/test-utils';
 import userEvent from '@testing-library/user-event';
 import {
   Dropdown,

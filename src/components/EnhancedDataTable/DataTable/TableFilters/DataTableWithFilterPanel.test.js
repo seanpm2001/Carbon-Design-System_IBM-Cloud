@@ -1,6 +1,6 @@
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-import { render } from '../../../../../test-utils';
+import { render } from '../../../../../config/jest/test-utils';
 import { Dropdown, FilterableMultiSelect, Tag, DatePickerInput } from '@carbon/react';
 import {
   DataTableWithFilterPanel,

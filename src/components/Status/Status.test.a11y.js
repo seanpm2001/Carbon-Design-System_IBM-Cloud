@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '../../../test-utils';
+import { render } from '../../../config/jest/test-utils';
 // Components, constants, helper functions
 import Status, { StatusType } from './Status';
 

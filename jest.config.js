@@ -12,6 +12,9 @@ const config = {
   verbose: true,
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.js'],
+  transform: {
+    "^.+\\.js$": "<rootDir>/config/jest/jsTransform.js",
+  },
 };
 
 module.exports = config;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '../../../test-utils';
+import { render, screen } from '../../../config/jest/test-utils';
 import TagList from './TagList';
 
 describe('TagList', () => {
