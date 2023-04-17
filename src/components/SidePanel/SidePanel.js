@@ -42,6 +42,7 @@ const SidePanel = (props) => {
   const {
     breadCrumbText,
     cancelText,
+    previousText,
     children,
     className,
     closePanelText,
@@ -68,6 +69,7 @@ const SidePanel = (props) => {
     title,
     willClose,
     doneIsLoading,
+    nextText,
     internal: {
       panelSize,
       containerPanelProps,
@@ -483,16 +485,16 @@ const SidePanel = (props) => {
         </div>
         {!hideBottomNav && (
           <SidePanelControls
-            cancelText={t("cancelText")}
-            doneText={t("doneText")}
+            cancelText={cancelText || t("cancelText")}
+            doneText={doneText || t("doneText")}
             hasOverlay={hasOverlay}
             nextId={isMultiStep ? nextIdMultiStep : nextId}
-            nextText={t("nextText")}
+            nextText={nextText || t("nextText")}
             onCancel={onCancel}
             onNext={onNext}
             onDone={onDone}
             onPrevious={onPrevious}
-            previousText={t("previousText")}
+            previousText={previousText || t("previousText")}
             primaryButtonDisabled={
               primaryButtonDisabled || id !== activePanelId
             }
