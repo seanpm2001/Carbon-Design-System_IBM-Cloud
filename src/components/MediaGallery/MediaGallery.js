@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { Modal, ModalBody } from "@carbon/react";
-import { ChevronLeft32, ChevronRight32 } from "@carbon/react/icons";
-import PaginationNav from "./components/PaginationNav";
+import { ChevronLeft, ChevronRight } from "@carbon/react/icons";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
 import MediaDisplay from "./components/MediaDisplay";
+import PaginationNav from "./components/PaginationNav";
 // import { documentLanguage } from "../../utils/getLocale";
 
 class MediaGallery extends Component {
@@ -151,6 +151,7 @@ class MediaGallery extends Component {
             passiveModal
             size="lg"
           >
+            <div>
             {openModal && (
               <MediaDisplay
                 type={item.type}
@@ -166,7 +167,7 @@ class MediaGallery extends Component {
                 className="pal--media-gallery__modal-left"
                 onClick={this.onPrevClick}
               >
-                <ChevronLeft32 />
+                <ChevronLeft size={32} />
               </button>
             )}
             {selectedIndex < media.length - 1 && (
@@ -176,9 +177,10 @@ class MediaGallery extends Component {
                 className="pal--media-gallery__modal-right"
                 onClick={this.onNextClick}
               >
-                <ChevronRight32 />
+                <ChevronRight size={32}/>
               </button>
             )}
+            </div>
           </Modal>
         )}
       </div>
