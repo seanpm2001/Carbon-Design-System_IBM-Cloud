@@ -106,7 +106,7 @@ describe('ResourceStatusIndicator', () => {
     expect(
       container.querySelector('.pal--resource-status-indicator__progress'),
     ).toBeTruthy();
-    await rerender(
+    rerender(
       <ResourceStatusIndicator
         value={50}
         fatalError
@@ -115,9 +115,8 @@ describe('ResourceStatusIndicator', () => {
         width="3rem"
       />,
     );
-    act(() => {
-      jest.advanceTimersByTime(2000);
-    });
+    jest.runAllTimers();
+
     expect(
       container.querySelector('.pal--resource-status-indicator__progress'),
     ).toBeNull();
