@@ -58,7 +58,7 @@ const ActionsPanel = ({
           selectorPrimaryFocus={selectorPrimaryFocus}
           ariaLabel={t("actionsButton")}
           menuOptionsClass={classNames("pal--actions-panel-menu")}
-          iconDescription={t("actionsButton")}
+          iconDescription={`${t("actionsButton")} icon`}
           {...rest}
         >
           {children}

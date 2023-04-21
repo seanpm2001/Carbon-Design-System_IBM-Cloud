@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React from 'react';
-import { render } from '../../../config/jest/test-utils';
+import { render } from '../../../../../config/jest/test-utils';
 import Breadcrumbs from '.';
 
 const breadcrumbs = [
