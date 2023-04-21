@@ -108,32 +108,32 @@ describe(`Side Panel Container`, () => {
     fireEvent.click(getAllByText('Next')[0]);
     await findByText('Panel One');
 
-    expect(getByText('Panel One')).toBeInTheDocument();
-    expect(getByText('Panel Two')).toBeInTheDocument();
-    expect(getByTestId('panel-two')).toHaveAttribute('data-is-active', 'true');
-    expect(getByText('Panel Three')).toBeInTheDocument();
+    await waitFor(() => expect(getByText('Panel One')).toBeInTheDocument());
+    await waitFor(() => expect(getByText('Panel Two')).toBeInTheDocument());
+    await waitFor(() => expect(getByTestId('panel-two')).toHaveAttribute('data-is-active', 'true'));
+    await waitFor(() => expect(getByText('Panel Three')).toBeInTheDocument());
 
     // Move forward to panel three
     fireEvent.click(getAllByText('Next')[1]);
     await findByText('Panel Three');
 
-    expect(queryByText('Panel One')).not.toBeInTheDocument();
-    expect(getByText('Panel Two')).toBeInTheDocument();
-    expect(getByText('Panel Three')).toBeInTheDocument();
-    expect(getByTestId('panel-three')).toHaveAttribute(
+    await waitFor(() => expect(queryByText('Panel One')).not.toBeInTheDocument());
+    await waitFor(() => expect(getByText('Panel Two')).toBeInTheDocument());
+    await waitFor(() => expect(getByText('Panel Three')).toBeInTheDocument());
+    await waitFor(() => { expect(getByTestId('panel-three')).toHaveAttribute(
       'data-is-active',
       'true',
-    );
-    expect(getByText('Done')).toBeInTheDocument();
+    )});
+    await waitFor(() => expect(getByText('Done')).toBeInTheDocument());
 
     // Move backward to panel two
     fireEvent.click(getAllByText('Previous')[1]);
     await findByText('Panel One');
 
-    expect(getByText('Panel One')).toBeInTheDocument();
-    expect(getByText('Panel Two')).toBeInTheDocument();
-    expect(getByTestId('panel-two')).toHaveAttribute('data-is-active', 'true');
-    expect(getByText('Panel Three')).toBeInTheDocument();
+    await waitFor(() => expect(getByText('Panel One')).toBeInTheDocument());
+    await waitFor(() => expect(getByText('Panel Two')).toBeInTheDocument());
+    await waitFor(() => expect(getByTestId('panel-two')).toHaveAttribute('data-is-active', 'true'));
+    await waitFor(() => expect(getByText('Panel Three')).toBeInTheDocument());
   });
 
   it('Navigates through multiple nested side panels using setActivePanelById', async () => {
@@ -164,70 +164,70 @@ describe(`Side Panel Container`, () => {
     );
 
     // Renders the initial panels
-    expect(getByText('render nested-panel-one')).toBeInTheDocument();
-    expect(getByTestId('panel-one')).toHaveAttribute('data-is-active', 'true');
-    expect(getByText('Panel Two')).toBeInTheDocument();
-    expect(getByText('render nested-panel-two')).toBeInTheDocument();
-    expect(getByText('Nested Two')).toBeInTheDocument();
-    expect(queryByText('Panel Three')).not.toBeInTheDocument();
+    await waitFor(() => expect(getByText('render nested-panel-one')).toBeInTheDocument());
+    await waitFor(() => expect(getByTestId('panel-one')).toHaveAttribute('data-is-active', 'true'));
+    await waitFor(() => expect(getByText('Panel Two')).toBeInTheDocument());
+    await waitFor(() => expect(getByText('render nested-panel-two')).toBeInTheDocument());
+    await waitFor(() => expect(getByText('Nested Two')).toBeInTheDocument());
+    await waitFor(() => expect(queryByText('Panel Three')).not.toBeInTheDocument());
 
     // Navigate to first nested panel
     fireEvent.click(getByText('render nested-panel-one'));
     await findByText('render nested-panel-two');
 
-    expect(getByTestId('nested-panel-one')).toHaveAttribute(
+    await waitFor(() => { expect(getByTestId('nested-panel-one')).toHaveAttribute(
       'data-is-active',
       'true',
-    );
-    expect(queryByText('Panel Two')).not.toBeInTheDocument();
+    )});
+    await waitFor(() => expect(queryByText('Panel Two')).not.toBeInTheDocument());
 
     // Navigate to second nested panel
     fireEvent.click(getAllByText('render nested-panel-two')[0]);
     await findByText('Nested Two');
 
-    expect(getByTestId('nested-panel-two')).toHaveAttribute(
+    await waitFor(() => { expect(getByTestId('nested-panel-two')).toHaveAttribute(
       'data-is-active',
       'true',
-    );
+    )});
 
     // Navigate to previous nested panel
     fireEvent.click(getAllByText('Previous')[1]);
     await findByText('render nested-panel-one');
 
-    expect(getByTestId('nested-panel-one')).toHaveAttribute(
+    await waitFor(() => { expect(getByTestId('nested-panel-one')).toHaveAttribute(
       'data-is-active',
       'true',
-    );
-    expect(queryByText('Panel Two')).not.toBeInTheDocument();
+    )});
+    await waitFor(() => expect(queryByText('Panel Two')).not.toBeInTheDocument());
 
     // Navigate back to the original panel
     fireEvent.click(getAllByText('Previous')[0]);
     await findByText('Panel Two');
 
-    expect(getByTestId('panel-one')).toHaveAttribute('data-is-active', 'true');
-    expect(getByText('Panel Two')).toBeInTheDocument();
+    await waitFor(() => expect(getByTestId('panel-one')).toHaveAttribute('data-is-active', 'true'));
+    await waitFor(() => expect(getByText('Panel Two')).toBeInTheDocument());
 
     // Navigate to second panel
     fireEvent.click(getAllByText('Next')[0]);
     await findByText('Panel Two');
 
-    expect(getByText('render nested-panel-one')).toBeInTheDocument();
-    expect(getByText('Panel Two')).toBeInTheDocument();
-    expect(getByTestId('panel-two')).toHaveAttribute('data-is-active', 'true');
+    await waitFor(() => expect(getByText('render nested-panel-one')).toBeInTheDocument());
+    await waitFor(() => expect(getByText('Panel Two')).toBeInTheDocument());
+    await waitFor(() => expect(getByTestId('panel-two')).toHaveAttribute('data-is-active', 'true'));
 
     // Navigate to third panel
     fireEvent.click(getAllByText('Next')[1]);
     await findByText('Panel Three');
 
-    expect(queryByText('render nested-panel-one')).not.toBeInTheDocument();
-    expect(queryByText('render nested-panel-two')).not.toBeInTheDocument();
-    expect(queryByText('Nested Two')).not.toBeInTheDocument();
-    expect(getByText('Panel Two')).toBeInTheDocument();
-    expect(getByText('Panel Three')).toBeInTheDocument();
-    expect(getByTestId('panel-three')).toHaveAttribute(
+    await waitFor(() => expect(queryByText('render nested-panel-one')).not.toBeInTheDocument());
+    await waitFor(() => expect(queryByText('render nested-panel-two')).not.toBeInTheDocument());
+    await waitFor(() => expect(queryByText('Nested Two')).not.toBeInTheDocument());
+    await waitFor(() => expect(getByText('Panel Two')).toBeInTheDocument());
+    await waitFor(() => expect(getByText('Panel Three')).toBeInTheDocument());
+    await waitFor(() => { expect(getByTestId('panel-three')).toHaveAttribute(
       'data-is-active',
       'true',
-    );
+    )});
   });
 
   it('Sets the active panel to the previous panel if done is clicked on a nested panel and onDoneClick is provided', async () => {
@@ -546,27 +546,27 @@ describe(`Side Panel Container`, () => {
     fireEvent.click(getAllByText('render nested-panel-two')[0]);
     await findByText('Nested Two');
 
-    expect(getByTestId('nested-panel-two')).toHaveAttribute(
+    await waitFor(() => { expect(getByTestId('nested-panel-two')).toHaveAttribute(
       'data-is-active',
       'true',
-    );
+    )});
 
     // Navigate to previous nested panel
     fireEvent.click(getAllByText('nested breadcrumb one')[0]);
     await findByText('render nested-panel-one');
 
-    expect(getByTestId('nested-panel-one')).toHaveAttribute(
+    await waitFor(() => { expect(getByTestId('nested-panel-one')).toHaveAttribute(
       'data-is-active',
       'true',
-    );
-    expect(queryByText('Panel Two')).not.toBeInTheDocument();
+    )});
+    await waitFor(() => expect(queryByText('Panel Two')).not.toBeInTheDocument());
 
     // Navigate to original panel
     fireEvent.click(getAllByText('first panel breadcrumb')[0]);
     await findByText('render nested-panel-one');
 
-    expect(getByTestId('panel-one')).toHaveAttribute('data-is-active', 'true');
-    expect(getByText('Panel Two')).toBeInTheDocument();
+    await waitFor(() => expect(getByTestId('panel-one')).toHaveAttribute('data-is-active', 'true'));
+    await waitFor(() => expect(getByText('Panel Two')).toBeInTheDocument());
   });
 
   it('opens the side panel when the isOpen prop changes', () => {
@@ -730,7 +730,7 @@ describe(`Side Panel Container`, () => {
     });
 
     await findByText('Panel Two');
-    expect(getByTestId('panel-two')).toHaveAttribute('data-is-active', 'true');
+    await waitFor(() => expect(getByTestId('panel-two')).toHaveAttribute('data-is-active', 'true'));
 
     act(() => {
       fireEvent.click(getByText('Done'));
@@ -761,7 +761,7 @@ describe(`Side Panel Container`, () => {
     });
 
     await findByText('Panel Two');
-    expect(getByTestId('panel-two')).toHaveAttribute('data-is-active', 'true');
+    await waitFor(()=>{expect(getByTestId('panel-two')).toHaveAttribute('data-is-active', 'true')});
 
     rerender(
       <SidePanelContainer data-testid="panel-container" isOpen={false}>
