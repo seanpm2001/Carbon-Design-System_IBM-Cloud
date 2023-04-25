@@ -14,7 +14,6 @@ $feature-flags: (
 @import "@carbon/react/scss/grid";
 @import "@carbon/react/scss/motion";
 @import "../Tag/styles";
-
 @import "@carbon/react/scss/components/toggletip";
 
 @mixin breakpoint($size) {
@@ -66,10 +65,6 @@ $feature-flags: (
   &:focus {
     outline: 1px solid transparent;
   }
-}
-
-.cds--tooltip__label:focus {
-  outline: none;
 }
 
 .cds--tooltip__label:focus {
