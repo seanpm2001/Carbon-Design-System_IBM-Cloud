@@ -53,7 +53,7 @@ TableSettingsSize.propTypes = {
    * Provide an array of size options
    */
   sizeOptions: PropTypes.arrayOf(
-    PropTypes.oneOf(["compact", "short", "normal", "tall"])
+    PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"])
   ).isRequired,
 
   /**

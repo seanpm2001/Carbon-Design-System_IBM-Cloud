@@ -10,6 +10,8 @@ import {
   TableToolbarMultiSelect,
   TableToolbarFilterPanel,
   TableToolbarDateRangeSelect,
+  TableToolbarTextInput,
+  TableToolbarComboBox
 } from './TableFilters';
 
 import TableToolbarButton from './TableToolbarButton';
@@ -28,6 +30,8 @@ export {
   TableToolbarDropdown,
   TableToolbarMultiSelect,
   TableToolbarDateRangeSelect,
+  TableToolbarTextInput,
+  TableToolbarComboBox,
   TableToolbarFilterPanel,
   TableToolbarButton,
 };
