@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import useThemePreference, {
   themes,
-} from "../../../utilities/useThemePreference/useThemePreference";
+} from "../../../Utilities/useThemePreference/useThemePreference";
 import sanitizeIds from "../../../utils/sanitizeIds";
 
 function lightEmpty(id, className) {
