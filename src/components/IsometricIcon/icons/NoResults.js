@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useThemePreference, {
   themes,
-} from '../../../Utilities/useThemePreference/useThemePreference';
+} from '../../../utilities/useThemePreference/useThemePreference';
 import sanitizeIds from '../../../utils/sanitizeIds';
 
 function lightNoResults(id, className) {
