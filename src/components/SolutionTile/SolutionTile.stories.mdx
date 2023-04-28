@@ -1,0 +1,209 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { OverflowMenu, OverflowMenuItem, Grid, Column } from "@carbon/react";
+import { Rocket } from '@carbon/react/icons';
+import SolutionTile, { SolutionTileSkeleton, SolutionTileHeader, SolutionTileDetails, SolutionTileTags, SolutionTileDescription, SolutionTileIcon } from ".";
+
+import "./_styles.scss";
+
+<Meta
+  title="Experimental/SolutionTile"
+  component={SolutionTile}
+  subcomponents={{ SolutionTileHeader, SolutionTileDetails, SolutionTileTags, SolutionTileDescription, SolutionTileIcon }}
+  argTypes={{
+    children: { control: false },
+  }}
+  parameters={{ status: { type: "experimental" } }}
+/>
+
+# Solution Tile
+
+export const Template = (args) => (
+  <SolutionTile style={{maxWidth: '400px'}} size='md' href= '.' {...args}>
+    <SolutionTileHeader type='Product'>
+      Title
+      </SolutionTileHeader>
+    <SolutionTileDescription>
+      A subtitle that expands upon the title and highlights why this world is great.
+    </SolutionTileDescription>
+    <SolutionTileDetails details={[]} />
+    <SolutionTileTags tags={[]} />
+    <SolutionTileIcon>
+      <Rocket size='32' />
+    </SolutionTileIcon>
+  </SolutionTile>
+);
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+The Solution tile can be used to refer to offerings/solutions on cloud or display other content.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import '@carbon/ibm-cloud/components/SolutionTile/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { SolutionTile, SolutionTileHeader, SolutionTileDescription, SolutionTileDetails, SolutionTileTags, SolutionTileIcon } from '@carbon/ibm-cloud/components';
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={SolutionTile} />
+
+## Loading State
+<Canvas>
+  <Story
+    name="Skeleton"
+  >
+    <SolutionTileSkeleton style={{maxWidth: '400px'}} />
+  </Story>
+</Canvas>
+
+# Other Examples
+<Canvas>
+  <Story
+    name="With Details"
+  >
+    <SolutionTile style={{maxWidth: '400px'}} size='md' icon={Rocket} href= '.'>
+    <SolutionTileHeader>
+      Title
+      </SolutionTileHeader>
+    <SolutionTileDescription>
+      A subtitle that expands upon the title and highlights why this world is great.
+    </SolutionTileDescription>
+    <SolutionTileDetails details={[{value:'Detail 1'}, {value: 'Detail 2'}, {value:'Detail 2'}, {value: 'Detail 3'}]} />
+    <SolutionTileIcon>
+      <Rocket size='32' />
+    </SolutionTileIcon>
+  </SolutionTile>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="With Tags"
+  >
+    <SolutionTile style={{maxWidth: '400px'}} size='md' icon={Rocket} href= '.'>
+    <SolutionTileHeader>
+      Title
+      </SolutionTileHeader>
+    <SolutionTileDescription>
+      A subtitle that expands upon the title and highlights why this world is great.
+    </SolutionTileDescription>
+    <SolutionTileDetails details={[{value:'Detail 1'}, {value: 'Detail 2'}, {value:'Detail 2'}, {value: 'Detail 3'}]} />
+    <SolutionTileTags type='purple' tags={[
+    { name: "tag 1"},
+    { name: "tag 2"},
+    { name: "tag 3"},
+    { name: "tag 1"},
+    { name: "tag 2"},
+    { name: "tag 3"},
+    { name: "tag 1"},
+    { name: "tag 2"},
+    { name: "tag 3"},
+    { name: "tag 1" },
+    { name: "tag 2"},
+    { name: "tag 3" },
+  ]} />
+   <SolutionTileIcon>
+      <Rocket size='32' />
+    </SolutionTileIcon>
+  </SolutionTile>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="With Content Type"
+  >
+    <SolutionTile style={{maxWidth: '400px'}} size='md' icon={Rocket} href= '.'>
+    <SolutionTileHeader type='Product'>
+      Title
+      </SolutionTileHeader>
+    <SolutionTileDescription>
+      A subtitle that expands upon the title and highlights why this world is great.
+    </SolutionTileDescription>
+    <SolutionTileDetails details={[{value:'Detail 1'}, {value: 'Detail 2'}, {value:'Detail 2'}, {value: 'Detail 3'}]} />
+  </SolutionTile>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="With Truncation"
+  >
+    <SolutionTile style={{maxWidth: '400px'}} size='md' href= '.'>
+    <SolutionTileHeader>
+      Title
+      </SolutionTileHeader>
+    <SolutionTileDescription>
+      A subtitle that expands upon the title and highlights why this world is great. This text is artifically extended to span across more then two lines and trigger truncation.A subtitle that expands upon the title and highlights why this world is great. This text is artifically extended to span across more then two lines and trigger truncation    </SolutionTileDescription>
+  </SolutionTile>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="In mixed dense grid"
+  >
+    <Grid condensed>
+      <Column m={4} md={4} lg={4} xlg={4} max={4}>
+        <SolutionTile size='lg' icon={Rocket} href= '.'>
+          <SolutionTileHeader type='Product'>
+            Title
+            </SolutionTileHeader>
+          <SolutionTileDescription>
+            A subtitle that expands upon the title and highlights why this world is great.
+          </SolutionTileDescription>
+        </SolutionTile>
+        </Column>
+      <Column m={4} md={4} lg={4} xlg={4} max={4}>  
+        <Grid condensed>
+          <Column m={4} md={4} lg={4} xlg={4} max={4}>
+            <SolutionTile  size='sm' icon={Rocket} href= '.'>
+              <SolutionTileHeader type='Product'>
+                Title
+                </SolutionTileHeader>
+              <SolutionTileDescription>
+                A subtitle that expands upon the title and highlights why this world is great.
+              </SolutionTileDescription>
+            </SolutionTile>
+          </Column>
+          <Column m={4} md={4} lg={4} xlg={4} max={4}>
+            <SolutionTile size='sm' icon={Rocket} href= '.'>
+              <SolutionTileHeader type='Product'>
+                Title
+                </SolutionTileHeader>
+              <SolutionTileDescription>
+                A subtitle that expands upon the title and highlights why this world is great.
+              </SolutionTileDescription>
+            </SolutionTile>
+          </Column>
+        </Grid>
+      </Column>
+    </Grid>
+  </Story>
+</Canvas>
+
+
+## Contributors
+- Max Hammer

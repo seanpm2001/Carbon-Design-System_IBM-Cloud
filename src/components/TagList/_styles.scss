@@ -14,6 +14,8 @@ $feature-flags: (
 @import "@carbon/react/scss/motion";
 @import "../Tag/styles";
 
+@import "@carbon/react/scss/components/toggletip";
+
 @mixin breakpoint($size) {
   @if map-has-key($grid-breakpoints, $size) {
     $breakpoint-key: map-get($grid-breakpoints, $size);
@@ -69,6 +71,10 @@ $feature-flags: (
   outline: none;
 }
 
+.cds--tooltip__label:focus {
+  outline: none;
+}
+
 .pal--cell--tooltip > .pal--tag {
   margin: 0;
 }
@@ -76,6 +82,11 @@ $feature-flags: (
 .pal--cell--tooltip:focus {
   border-radius: 20%;
   box-shadow: 0 0 0 2px $support-info;
+}
+
+// remove spacing inbetween elements in toggle tip content
+.cds--toggletip-content {
+  row-gap: 0;
 }
 
 .pal--tag-list--tag-tooltip {

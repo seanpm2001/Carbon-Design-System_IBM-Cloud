@@ -1,20 +1,14 @@
 @use "@carbon/react/scss/type";
-@use '@carbon/react/scss/reset';
-@use "@carbon/react/scss/components/tile";
-@use "@carbon/react/scss/components/link";
 
 @import "@carbon/react/scss/colors";
 @import "@carbon/react/scss/spacing";
-@import "@carbon/react/scss/themes";
 @import "@carbon/react/scss/theme";
-@import "@carbon/react/scss/config";
-// import pal styles
-@import '../TagList/styles';
 
-// import tile styles
+@import "@carbon/react/scss/components/tile";
 
-.pal--experimental-tile {
+.pal--solution-tile {
   position: relative; 
+  display: block;
   box-shadow: 0 0 0 1px $border-subtle-01;
 
   &--xs {
@@ -33,31 +27,20 @@
     aspect-ratio: 3 / 4;
   }
 
-  &__container-link {
-    top: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    cursor: pointer;
+  &:hover .pal--solution-tile__arrow {
+    visibility: visible;
   }
 
-  &:hover .pal--experimental-tile__arrow {
-    visibility: visible;
+  // skeleton or disabled state
+  &--skeleton:hover .pal--solution-tile__arrow {
+    display: none;
   }
 
   &__content {
     position: relative;
     height: 100%;
-    padding-bottom: 1.5rem;
-  }
-
-  &__image {
-    position: absolute;
-    object-fit: contain;
-    top: 0;
     width: 100%;
-    height: 100%;
+    padding-bottom: 1.5rem;
   }
 
   &__header {
@@ -141,7 +124,7 @@
     flex-wrap: wrap;
   }
 
-  &__icon svg {
+  &__icon, &__icon svg {
     position: absolute;
     bottom: 0;
     left: 0;

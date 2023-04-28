@@ -5,7 +5,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import { Tooltip } from "@carbon/react";
+import { Toggletip, ToggletipButton, ToggletipContent, Tooltip } from "@carbon/react";
 import { Edit as Edit16 } from "@carbon/react/icons";
 import Tag from "../Tag";
 import { useTranslation } from "react-i18next";
@@ -25,6 +25,8 @@ const TagList = ({
   maxCharactersTooltip,
   maxTagsTooltip,
   wrap,
+  size,
+  type,
   ...rest
 }) => {
   const { t } = useTranslation("TagList");
@@ -42,7 +44,7 @@ const TagList = ({
 
     if (numTagsDisplayed > 0 && numTagsDisplayed < tags.length) {
       overflowCountNode = (
-        <Tag type="functional" className={counterTagClassNames}>
+        <Tag size={size} type={type} className={counterTagClassNames}>
           {`+${overflowCount}`}
         </Tag>
       );
@@ -50,7 +52,7 @@ const TagList = ({
 
     if (numTagsDisplayed === 0) {
       overflowCountNode = (
-        <Tag type="functional" className={counterTagClassNames}>
+        <Tag size={size} type={type} className={counterTagClassNames}>
           {String(tags.length)}
         </Tag>
       );
@@ -81,22 +83,26 @@ const TagList = ({
       const tooltipOverflowCount = tags.length - totalTagsDisplayed;
       overflowCountNode = (
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-        <Tooltip
-          triggerClassName="pal--cell--tooltip"
+        <Toggletip
+          ClassName="pal--cell--tooltip"
           showIcon={false}
-          triggerText={overflowCountNode}
         >
-          {overflowTagsNode}
-          {tooltipOverflowCount === 0 ? undefined : (
-            <div
-              title={`${tooltipOverflowCount} ${t("more")} ${
-                tooltipOverflowCount === 1 ? t("tag") : t("tags")
-              }`}
-            >
-              {`(+${tooltipOverflowCount})`}
-            </div>
-          )}
-        </Tooltip>
+          <ToggletipButton>
+            {overflowCountNode}
+          </ToggletipButton>
+          <ToggletipContent>
+            {overflowTagsNode}
+              {tooltipOverflowCount === 0 ? undefined : (
+                <div
+                  title={`${tooltipOverflowCount} ${t("more")} ${
+                    tooltipOverflowCount === 1 ? t("tag") : t("tags")
+                  }`}
+                >
+                  {`(+${tooltipOverflowCount})`}
+                </div>
+            )}
+          </ToggletipContent>
+        </Toggletip>
       );
     }
 
@@ -134,12 +140,13 @@ const TagList = ({
         <Tag
           key={tag.name}
           className="pal--tag-list--tag"
-          type={tag.type || "functional"}
+          type={tag.type || type || "functional"}
           title={
             tag.isAccessTag ? `${t("accessTagPrefix")} | ${tag.name}` : tag.name
           }
           onClick={onIconClick}
           maxCharacters={maxCharacters}
+          size={tag.size || size}
           {...tag.otherProps}
         >
           {tag.isAccessTag ? `${t("accessTagPrefix")} | ` : null}
@@ -239,6 +246,14 @@ TagList.propTypes = {
    * Whether the tags in the list should wrap when they reach the end of their container.
    */
   wrap: PropTypes.bool,
+  /**
+   * Whether the tags in the list should small or medium sized. Can be overridden by setting the size prop on individual tags.
+   */
+  size: PropTypes.oneOf(['sm', 'md']),
+   /**
+   * Decides the tags color in the list. Can be overridden by setting the type prop on individual tags.
+   */
+  type: PropTypes.string
 };
 
 TagList.defaultProps = {
@@ -253,6 +268,8 @@ TagList.defaultProps = {
   maxCharactersTooltip: 15,
   maxTagsTooltip: 8,
   wrap: false,
+  size: undefined,
+  type: 'functional'
 };
 
 export default TagList;
