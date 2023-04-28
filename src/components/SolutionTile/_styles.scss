@@ -1,9 +1,7 @@
 @use "@carbon/react/scss/type";
-
 @import "@carbon/react/scss/colors";
 @import "@carbon/react/scss/spacing";
 @import "@carbon/react/scss/theme";
-
 @import "@carbon/react/scss/components/tile";
 
 .pal--solution-tile {
@@ -45,6 +43,7 @@
 
   &__header {
     @include type.type-style('productive-heading-02');
+
     overflow: hidden;
     position: relative;
     display: block;
@@ -52,6 +51,7 @@
 
   &__description {
     @include type.type-style('body-long-01');
+
     color: $text-secondary;
     margin: 0 0 $spacing-05;
     overflow: hidden;
@@ -63,14 +63,17 @@
 
   &__details {
     @include type.type-style('label-01');
+
     color: $text-secondary;
     margin-bottom: $spacing-03;
+
     // limit list of details to 3 bullet points
     li:nth-of-type(1n+4) {
       display: none;
     } 
-    &--overflow:after {
-      content: '...'
+
+    &--overflow::after {
+      content: "..."
     }
   }
 
@@ -111,9 +114,10 @@
     margin-left: 0;
   }
   
-  &__header__content-type {
-    display: flex;
+  &__header__content-type {    
     @include type.type-style('label-01');
+
+    display: flex;
     color: $text-secondary;
     margin-bottom: $spacing-05;
   }

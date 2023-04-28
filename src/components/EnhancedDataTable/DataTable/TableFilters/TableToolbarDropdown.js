@@ -9,7 +9,6 @@ const hoc = (WrappedComponent) => {
     columnKey,
     mode = "live",
     filterAllLabel,
-    locale,
     items,
     initialSelectedItem,
     onChange,

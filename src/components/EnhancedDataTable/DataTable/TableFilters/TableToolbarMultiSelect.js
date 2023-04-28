@@ -7,7 +7,6 @@ import { useTranslation } from "react-i18next";
 const hoc = (WrappedComponent) => {
   return ({
     columnKey,
-    locale,
     onChange,
     mode = "live",
     light = true,

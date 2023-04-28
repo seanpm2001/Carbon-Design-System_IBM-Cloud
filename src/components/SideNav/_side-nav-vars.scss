@@ -6,8 +6,7 @@ $pal-side-nav-icon-offset: 0.125rem;
 $pal-side-nav-collapse-transition-top: calc(
   100% - #{$pal-side-nav-closed-height}
 );
-$pal-side-nav-collapse-transition-side: -#{$pal-side-nav-width - $pal-side-nav-closed-width +
-  $pal-side-nav-icon-offset};
+$pal-side-nav-collapse-transition-side: -#{$pal-side-nav-width - $pal-side-nav-closed-width + $pal-side-nav-icon-offset};
 
 // Inverse Colors
 $pal-inverse-side-nav-background: $background;

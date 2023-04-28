@@ -29,7 +29,7 @@
     height: 2rem;
     width: 100%;
     background-image: linear-gradient(
-      rgba(255, 255, 255, 0) 0%,
+      rgb(255 255 255 / 0%) 0%,
       $icon-inverse 100%
     );
   }
@@ -43,6 +43,7 @@
   .pal--side-panel__content {
     transition: height $duration-moderate-01 motion(standard, productive);
   }
+
   @include theme($g90, true);
   .pal--side-panel__btn-set.#{$prefix}--btn-set {
     @include inline-loading;

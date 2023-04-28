@@ -1,10 +1,7 @@
-/**
- * @jest-environment jsdom
- */
 import '@testing-library/jest-dom'
 
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '../../../config/jest/test-utils';
 import PageHeader from './PageHeader';
 import PageHeaderSkeleton from './skeleton';
 

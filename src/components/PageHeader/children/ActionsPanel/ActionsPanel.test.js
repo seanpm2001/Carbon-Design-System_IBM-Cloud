@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { render } from '@testing-library/react';
+import { queryAllByLabelText, render } from '../../../../../config/jest/test-utils';
 import ActionsPanel from '.';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -14,8 +14,9 @@ class ListItem extends Component {
 
 describe('ActionsPanel', () => {
   it('renders the action panel', () => {
-    const { queryAllByText } = render(<ActionsPanel className="custom" />);
-    const actionsElements = queryAllByText('Actions...');
+    const { queryAllByLabelText, debug } = render(<ActionsPanel className="custom" />);
+    const actionsElements = queryAllByLabelText('Actions...');
+    debug()
     expect(actionsElements.length).toBe(2);
     expect(actionsElements[0]).toBeInTheDocument();
     expect(actionsElements[1]).toBeInTheDocument();

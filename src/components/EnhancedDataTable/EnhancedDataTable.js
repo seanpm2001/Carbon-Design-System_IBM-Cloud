@@ -11,7 +11,6 @@ import {
   Pagination,
   DataTableSkeleton,
   DataTable,
-  // DataTableHOC,
   Table,
   TableBatchAction,
   TableBody,
@@ -29,14 +28,6 @@ import {
   TableToolbarContent,
   TableToolbarSearch,
   TableToolbarMenu,
-  // TableSettingsColumns,
-  // TableSettingsSize,
-  // TableSettingsReset,
-  // TableToolbarFilterPanel,
-  // TableToolbarButton,
-  // TableToolbarDropdown,
-  // TableToolbarMultiSelect,
-  // TableToolbarDateRangeSelect,
   Grid,
   Row,
   Column,
@@ -183,24 +174,6 @@ const formatCell = (rows, rowId, cell) => {
   const row = rows.find((r) => r.id === rowId);
   return (row && row[`${cell.info.header}__format`]) || cell.value;
 };
-
-// const translateWithId = (id, translate, interpolation, options) => {
-//   if (id === "carbon.table.header.icon.description") {
-//     if (options.isSortHeader) {
-//       if (options.sortDirection === options.sortStates.NONE) {
-//         return translate("sortAscending");
-//       }
-//       if (options.sortDirection === options.sortStates.ASC) {
-//         return translate("sortDescending");
-//       }
-//       return translate("removeSort");
-//     }
-//     return translate("sortAscending");
-//   }
-//   const value = translate(id, { isDotSeparator: false });
-//   if (value) return interpolation ? interpolate(value, interpolation) : value;
-//   return "--";
-// };
 
 const shouldShowPagination = (rowCount, hidePagination) => {
   if (!rowCount) return false;
@@ -552,6 +525,22 @@ const EnhancedDataTable = ({
     return filteredRowIds;
   };
 
+  const translateWithId = (id, interpolation, options) => {
+    if (id === "carbon.table.header.icon.description") {
+      if (options?.isSortHeader) {
+        if (options.sortDirection === options.sortStates.NONE) {
+          return translate("sortAscending");
+        }
+        if (options.sortDirection === options.sortStates.ASC) {
+          return translate("sortDescending");
+        }
+        return translate("removeSort");
+      }
+      return translate("sortAscending");
+    }
+    return translate(id, interpolation, options);
+  };
+
   const onSelectAll = (rows) => {
     const selection = currentSelection || [];
     const rowIds = (rows || []).map((r) => r.id);
@@ -723,7 +712,7 @@ const EnhancedDataTable = ({
     >
       <WrappedDataTable
         locale={locale}
-        translateWithId={translate}
+        translateWithId={translateWithId}
         rows={sortedRows || []}
         headers={allHeaders}
         sortRow={sortRow}
@@ -787,7 +776,7 @@ const EnhancedDataTable = ({
                           )
                         }
                         hideSelectAll={disableSelectAll}
-                        translateWithId={translate}
+                        translateWithId={translateWithId}
                       >
                         {batchActions(
                           mapToDataItems(currentSelection, allRows)
@@ -834,7 +823,7 @@ const EnhancedDataTable = ({
                           defaultValue={defaultSearchValue}
                           disabled={!allRows || forceSkeletonToShow}
                           persistent
-                          translateWithId={translate}
+                          translateWithId={translateWithId}
                           tabIndex={shouldShowBatchActions ? -1 : 0}
                           placeholder={filterPlaceholder}
                           labelText={`${filterPlaceholder || "Search"} ${uid}`}
@@ -1001,7 +990,7 @@ const EnhancedDataTable = ({
                               {...getHeaderProps({
                                 header,
                               })}
-                              translateWithId={translate}
+                              translateWithId={translateWithId}
                               sortDirection={sortDirectionForThisCell}
                               isSortHeader={header.key === sortInfo?.header}
                               isSortable={
@@ -1291,12 +1280,12 @@ EnhancedDataTable.propTypes = {
   /**
    * Initial row size.
    */
-  initialSize: PropTypes.oneOf(["compact", "short", "normal", "tall"]),
+  initialSize: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"]),
   /**
    * Available row size options.
    */
   sizeOptions: PropTypes.arrayOf(
-    PropTypes.oneOf(["compact", "short", "normal", "tall"])
+    PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"])
   ),
   /**
    * Initial filters to set. For example, if you have a multiselect filter on a `status` field then it might look like this: { status: ['Active', 'Starting'] }. If initial filters are provided then any persisted filters are ignored.
@@ -1533,8 +1522,8 @@ EnhancedDataTable.defaultProps = {
   description: undefined,
   rows: undefined,
   initialCols: undefined,
-  initialSize: "normal",
-  sizeOptions: ["compact", "short", "normal", "tall"],
+  initialSize: "lg",
+  sizeOptions: ["xs", "sm", "md", "lg", "xl"],
   initialFilters: undefined,
   filters: undefined,
   filterPanel: false,

@@ -1,0 +1,23 @@
+name: Lint
+
+on:
+  # Triggers the workflow on push or pull request events but only for the develop branch
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install 🔧
+        run: | # Install npm packages
+          npm ci
+      - name: Lint 🚨
+        run: npm run lint
+      - name: Style Lint 💅
+        run: npm run lint:style

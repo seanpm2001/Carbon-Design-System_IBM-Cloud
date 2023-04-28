@@ -8,7 +8,7 @@ import { ChevronDown as ChevronDown16 } from "@carbon/react/icons";
 
 /**
  * Renders the title for actions panel.
- * @param {string} locale The language the user's browser is configured to use.
+ * @param {string} text The language the user's browser is configured to use.
  */
 const renderPanelButtonText = (text) => (
   <span className="cds--btn cds--btn--tertiary cds--btn--field">
@@ -58,7 +58,7 @@ const ActionsPanel = ({
           selectorPrimaryFocus={selectorPrimaryFocus}
           ariaLabel={t("actionsButton")}
           menuOptionsClass={classNames("pal--actions-panel-menu")}
-          iconDescription={t("actionsButton")}
+          iconDescription={`${t("actionsButton")} icon`}
           {...rest}
         >
           {children}

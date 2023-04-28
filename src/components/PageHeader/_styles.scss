@@ -5,7 +5,6 @@ $feature-flags: (
 
 // experimental
 @use '../../styles/type' as experimental-type;
-
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
 @import '@carbon/styles/scss/breakpoint';
@@ -15,7 +14,6 @@ $feature-flags: (
 @import "@carbon/react/scss/theme";
 @import "@carbon/react/scss/config";
 @import "@carbon/react/scss/grid";
-
 @import "@carbon/react/scss/components/breadcrumb";
 @import "@carbon/react/scss/components/button";
 @import "@carbon/react/scss/components/overflow-menu";
@@ -33,7 +31,8 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
 
 .pal--page-header {
-  @include flex-grid();
+  @include flex-grid;
+
   background-color: $background;
   display: flex;
   flex-wrap: wrap;
@@ -47,8 +46,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   }
 
   @include breakpoint-up(960px) {
-    flex-wrap: nowrap;
-    flex-direction: row;
+    flex-flow: row nowrap;
   }
 
   @include breakpoint-up("md") {
@@ -83,6 +81,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     z-index: 1;
     position: relative;
     overflow: hidden;
+
     &  * {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -149,7 +148,6 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   }
 
   &__title-text {
-    
     @include type.type-style("productive-heading-04");
 
     line-height: 2.5rem;
@@ -289,6 +287,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   // experimental
   &--experimental &__main {
     width: 100%;
+
     &:has(.pal--page-header__title--truncated) {
       overflow: hidden;
     }
@@ -309,8 +308,10 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   &--world {
     padding: $spacing-05  $spacing-05 $spacing-07  $spacing-07;
   }
+
   &--world &__title-text{
     @include type.type-style('expressive-heading-05', true);
+
     color: $text-primary;
   }
 
@@ -320,6 +321,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
   &--world &__subtitle-text{
     @include type.type-style('expressive-heading-03', true);
+
     color: $text-secondary;
   }
 
@@ -330,6 +332,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   // world illustration
   &--world &__illustration-container {
     margin: 0;
+
     @include breakpoint-down('md') {
       padding-left: 0;
       padding-top: $spacing-07;
@@ -344,7 +347,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   // world illustration
  &--world &__illustration > img {
   object-fit: cover;
-  object-position: 0 0; /*top left position (optional)*/
+  object-position: 0 0; /* top left position (optional) */
   min-width: 600px;
   max-width: 100%;
 
@@ -354,7 +357,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   }
  }
 
- &--world &__illustration:before {
+ &--world &__illustration::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -365,7 +368,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
   &--experimental &__title-container:has(&__title--truncated) {
     flex-wrap: inherit;
-    padding: calc($header-spacing + $breadcrumb-spacing) 0 0; //mocking the height of breadcrumbs
+    padding: calc($header-spacing + $breadcrumb-spacing) 0 0; // mocking the height of breadcrumbs
     // realign surfacted details to be displayed below title
     @include breakpoint-down('md') {
       display: block;
@@ -405,9 +408,9 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   &:has(.pal--page-header__tabs) {
     padding-bottom: 0;
   }
+
   // strech tabs to fit provisioning design spec
   &--experimental.pal--page-header--provisioning &__tabs {
-
     .cds--tabs__nav-item {
       width: 150px;
     }
@@ -426,22 +429,23 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     @include breakpoint-down('md') {
       display: none;
     };
+
     background-color: inherit;
     padding: 0;
 
   }
 
   &--experimental &__tabs--sm {
-
     margin: $spacing-06 0 0 calc(-1 * $spacing-05); // to align text with header
     // to achieve the tab component to span the whole header width two tabs components are in play that depending on the screen size are hidden or shown
     @include breakpoint-up('md') {
       display: none;
     };
+
     background-color: inherit;
     padding: 0;
-
     width: calc(100% + $spacing-05);
+
     .cds--tabs, .cds--tab--list {
       width: calc(100% + $spacing-05);
     }
@@ -451,6 +455,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     justify-content: flex-end;
     margin-top: -1rem;
     height: calc(100% + $spacing-05);
+
     // align icon container with header text
     @include breakpoint-down('md') {
       margin-top: $header-spacing;
@@ -474,6 +479,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     }
   }
 }
+
 .cds--grid .pal--page-header {
   padding-left: 0;
   padding-right: 0;

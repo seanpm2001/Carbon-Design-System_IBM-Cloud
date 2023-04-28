@@ -1,7 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render } from "../../../config/jest/test-utils";
 import userEvent from "@testing-library/user-event";
-import { mount } from "enzyme";
 import { IbmCloud as IbmCloud16 } from "@carbon/react/icons";
 import { act } from "react-dom/test-utils";
 import WorldLevelNav from "./WorldLevelNav";
@@ -57,7 +56,7 @@ describe("WorldLevel Nav", () => {
   describe("fire resize event calling onToggle function", () => {
     it("from bigger(enzyme default window size 1024px width) to small size", async () => {
       const callback = jest.fn();
-      mount(<WorldLevelNav onToggle={callback} {...props} />);
+      render(<WorldLevelNav onToggle={callback} {...props} />);
       act(() => {
         resizeWindow(500, 768);
       });
@@ -71,7 +70,7 @@ describe("WorldLevel Nav", () => {
       });
 
       const callback = jest.fn();
-      mount(<WorldLevelNav onToggle={callback} {...props} />);
+      render(<WorldLevelNav onToggle={callback} {...props} />);
       act(() => {
         resizeWindow(1024, 768);
       });

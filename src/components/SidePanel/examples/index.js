@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
 import {
   Button,
-  RadioButton,
   FormGroup,
+  RadioButton,
   RadioButtonGroup,
 } from "@carbon/react";
+import React, { useState } from "react";
+import AsyncSidePanel from "./AsyncSidePanel";
+import CustomTextSidePanel from "./CustomTextSidePanel";
+import ExtraLargeSidePanel from "./ExtraLargeSidePanel";
+import HideBottomNav from "./HideBottomNavSidePanel";
+import ModalSidePanel from "./ModalSidePanel";
+import MultiNestedSidePanel from "./MultiNestedSidePanel";
+import MultiStepSidePanel from "./MultiStepSidePanel";
 import NestedSidePanel from "./NestedSidePanel";
 import SmallSidePanel from "./SmallSidePanel";
-import ExtraLargeSidePanel from "./ExtraLargeSidePanel";
-import CustomTextSidePanel from "./CustomTextSidePanel";
-import HideBottomNav from "./HideBottomNavSidePanel";
-import AsyncSidePanel from "./AsyncSidePanel";
-import MultiStepSidePanel from "./MultiStepSidePanel";
-import MultiNestedSidePanel from "./MultiNestedSidePanel";
-import ModalSidePanel from "./ModalSidePanel";
 import("../_styles.scss");
 
 // eslint-disable-next-line react/prop-types

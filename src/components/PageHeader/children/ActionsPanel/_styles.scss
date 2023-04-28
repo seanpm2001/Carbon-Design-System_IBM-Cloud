@@ -104,7 +104,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   }
 }
 
-.pal--page-header--experimental .pal--page-header__actions:has(.pal--actions-panel-wrap) *:not(.pal--actions-panel-wrap):not(.pal--actions-panel-wrap *) {
+.pal--page-header--experimental .pal--page-header__actions:has(.pal--actions-panel-wrap) *:not(.pal--actions-panel-wrap, .pal--actions-panel-wrap *) {
   @include breakpoint-down('md') {
     display: none;
   }
@@ -118,6 +118,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
 .pal--page-header--experimental .pal--actions-panel.#{$prefix}--overflow-menu {
     display: none;
+
     @include breakpoint-up('md') {
       display: block;
     }

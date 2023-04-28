@@ -62,13 +62,13 @@ const useInitialFocus = (selector) => {
 /**
  * A custom hook to return the previous state.
  */
-const usePrevious = (value) => {
-  const ref = useRef();
-  useEffect(() => {
-    ref.current = value;
-  });
-  return ref.current;
-};
+// const usePrevious = (value) => {
+//   const ref = useRef();
+//   useEffect(() => {
+//     ref.current = value;
+//   });
+//   return ref.current;
+// };
 
 const SidePanelContainer = ({
   isMultiStep,
@@ -78,9 +78,7 @@ const SidePanelContainer = ({
   children,
   getPageRef,
   setPageRef,
-  // locale,
   panelSize,
-  title,
   focusOnCloseSelector,
   "data-testid": testId,
   modalOnDismiss,
@@ -116,7 +114,7 @@ const SidePanelContainer = ({
     }
   }, [sidePanels]);
 
-  const prevIsOpen = usePrevious(isOpen);
+  // const prevIsOpen = usePrevious(isOpen);
 
   // Clear the timeout if we're unmounting.
   useEffect(() => {

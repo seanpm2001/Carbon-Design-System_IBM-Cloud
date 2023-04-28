@@ -199,7 +199,6 @@ const TableToolbarFilterPanel = ({
   onClearAllFilters,
   onCommitFilters,
   onCloseFilterPanel,
-  locale,
   children,
   disablePrimaryButton,
   disabled,

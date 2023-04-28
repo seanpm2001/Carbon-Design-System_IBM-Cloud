@@ -3,12 +3,12 @@
   This is a a11y testing file for the MiniOrderSummarySidePanel connected component
  */
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '../../../config/jest/test-utils';
 import {
   Dropdown,
   Checkbox,
   InlineNotification,
-} from 'carbon-components-react';
+} from '@carbon/react';
 import MiniOrderSummarySidePanel from './MiniOrderSummarySidePanel';
 import MiniOrderSummary from './children/MiniOrderSummary';
 

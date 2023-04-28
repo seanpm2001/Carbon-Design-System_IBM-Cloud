@@ -1,13 +1,12 @@
+import classNames from "classnames";
+import PropTypes from "prop-types";
 import React, {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
   Children,
   createRef,
+  useEffect,
+  useRef,
+  useState
 } from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import { ProgressIndicator, ProgressStep } from "@carbon/react";
@@ -16,18 +15,17 @@ import SidePanelBreadcrumbs from "./children/SidePanelBreadcrumbs";
 import SidePanelCloseButton from "./children/SidePanelCloseButton";
 import SidePanelContent from "./children/SidePanelContent";
 import SidePanelControls from "./children/SidePanelControls";
-import SidePanelNestedPanels from "./children/SidePanelNestedPanels";
 import SidePanelMultiStep from "./children/SidePanelMultiStep";
+import SidePanelNestedPanels from "./children/SidePanelNestedPanels";
 // import getLocale from "../../utils/getLocale";
 // import translationStrings from "./translations";
 // import getTranslations from "../../utils/getTranslations";
-import { getPanelId } from "./utils/getPanelDetails";
 import callIf from "./utils/callIf";
-import cloneWithDefaults from "./utils/cloneWithDefaults";
+import { getPanelId } from "./utils/getPanelDetails";
 // import translationUtils from "../../utils/translate";
 // import trackComponentEvent from "../../utils/analytics";
-import getAllTabElements from "./utils/getAllTabElements";
 import SidePanelFocusTrap from "./children/SidePanelFocusTrap";
+import getAllTabElements from "./utils/getAllTabElements";
 
 /**
  * A custom hook to return the previous state.
@@ -44,6 +42,7 @@ const SidePanel = (props) => {
   const {
     breadCrumbText,
     cancelText,
+    previousText,
     children,
     className,
     closePanelText,
@@ -56,7 +55,6 @@ const SidePanel = (props) => {
     setStep,
     getCurrentStepInfo,
     nestedPanels,
-    nextText,
     onBreadCrumbClick,
     onCancelClick,
     onCloseClick,
@@ -64,7 +62,6 @@ const SidePanel = (props) => {
     onDoneClick,
     onNextClick,
     onPreviousClick,
-    previousText,
     primaryButtonDisabled,
     primaryButtonDanger,
     secondaryButtonDisabled,
@@ -72,7 +69,7 @@ const SidePanel = (props) => {
     title,
     willClose,
     doneIsLoading,
-    doneIsLoadingText,
+    nextText,
     internal: {
       panelSize,
       containerPanelProps,
@@ -86,7 +83,6 @@ const SidePanel = (props) => {
       renderPrimary,
       breadcrumbs,
       isOpen,
-      isActive,
       hasOverlay,
       modalOnDismiss,
     },
@@ -112,16 +108,6 @@ const SidePanel = (props) => {
 
   // Translation strings
   // const defaultLocale = getLocale(locale);
-  const passedStrings = {
-    breadCrumbText,
-    cancelText,
-    closePanelText,
-    doneText,
-    nextText,
-    previousText,
-    title,
-    doneIsLoadingText,
-  };
   const { t } = useTranslation("SidePanel");
   // const defaultStrings = getTranslations(translationStrings, defaultLocale);
   // let translations = {};
@@ -135,8 +121,8 @@ const SidePanel = (props) => {
   //   defaultLocale
   // );
   const prevNestedLength = usePrevious(nestedPanels.length);
-  const prevIsActive = usePrevious(isActive);
-  const prevIsOpen = usePrevious(isOpen);
+  // const prevIsActive = usePrevious(isActive);
+  // const prevIsOpen = usePrevious(isOpen);
 
   const focusOnLast = () => {
     const tabElements = getAllTabElements(thisPanel.current);
@@ -499,16 +485,16 @@ const SidePanel = (props) => {
         </div>
         {!hideBottomNav && (
           <SidePanelControls
-            cancelText={t("cancelText")}
-            doneText={t("doneText")}
+            cancelText={cancelText || t("cancelText")}
+            doneText={doneText || t("doneText")}
             hasOverlay={hasOverlay}
             nextId={isMultiStep ? nextIdMultiStep : nextId}
-            nextText={t("nextText")}
+            nextText={nextText || t("nextText")}
             onCancel={onCancel}
             onNext={onNext}
             onDone={onDone}
             onPrevious={onPrevious}
-            previousText={t("previousText")}
+            previousText={previousText || t("previousText")}
             primaryButtonDisabled={
               primaryButtonDisabled || id !== activePanelId
             }

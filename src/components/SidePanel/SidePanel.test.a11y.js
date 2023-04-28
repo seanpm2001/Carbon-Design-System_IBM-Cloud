@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '../../../config/jest/test-utils';
 import SidePanel from './SidePanel';
 import SidePanelContainer from './SidePanelContainer';
 

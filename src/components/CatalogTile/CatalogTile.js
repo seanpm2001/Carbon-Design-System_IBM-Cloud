@@ -227,7 +227,7 @@ const CatalogTile = ({
       return (
         <SelectableTile
           className={className}
-          value={href}
+          value={href || ''}
           selected={selected}
           onChange={handleClick}
         >

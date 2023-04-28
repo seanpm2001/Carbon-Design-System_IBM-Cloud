@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../config/jest/test-utils';
 import userEvent from '@testing-library/user-event';
 import CatalogTile from './CatalogTile';
 
@@ -531,7 +531,7 @@ describe('CatalogTile', () => {
         '.pal--catalog-tile.cds--tile.cds--tile--selectable',
       );
       const checkboxButton = container.querySelector(
-        '.cds--tile-input[type="checkbox"]',
+        '.cds--tile[role="checkbox"]',
       );
       expect(catalogTileContainer).toBeInTheDocument();
       expect(checkboxButton).toBeInTheDocument();

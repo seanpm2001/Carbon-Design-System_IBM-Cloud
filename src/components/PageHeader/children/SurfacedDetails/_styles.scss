@@ -66,9 +66,10 @@
     }
 
     > * {
-      margin: 0 0;
+      margin: 0;
     }
   }
+
   @include breakpoint-down('md') {
     padding-top: $spacing-03;
   }

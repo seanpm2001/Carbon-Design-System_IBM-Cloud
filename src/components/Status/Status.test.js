@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '../../../config/jest/test-utils';
 import Status, { StatusType, getStatusColor } from './Status';
 import StatusSkeleton from './skeleton';
 
@@ -102,16 +102,16 @@ describe('Status', () => {
 
   describe('tooltipMsg prop', () => {
     it('renders string tooltipmsg properly', async () => {
-      const { container, getByRole } = render(<Status status={StatusType.HEALTHY} tooltipMsg='my tooltip msg'/>);
-      fireEvent.click(getByRole('button', {class: 'cds--tooltip__trigger'}));
-      await waitFor(() => expect(document.querySelector('.cds--tooltip__content >p')).toBeInTheDocument());
+      const { getByRole } = render(<Status status={StatusType.HEALTHY} tooltipMsg='my tooltip msg'/>);
+      fireEvent.click(getByRole('button', {class: 'pal--status__tooltip-trigger'}));
+      await waitFor(() => expect(document.querySelector('.cds--tooltip-content >p')).toBeInTheDocument());
     });
 
     it('renders node tooltipmsg properly', async () => {
-      const { container, getByRole } = render(<Status status={StatusType.HEALTHY} tooltipMsg={<div>my tooltip div</div>}/>);
-      fireEvent.click(getByRole('button', {class: 'cds--tooltip__trigger'}));
-      await waitFor(() => expect(document.querySelector('.cds--tooltip__content >p')).not.toBeInTheDocument());
-      await waitFor(() => expect(document.querySelector('.cds--tooltip__content >div')).toBeInTheDocument());
+      const { getByRole } = render(<Status status={StatusType.HEALTHY} tooltipMsg={<div>my tooltip div</div>}/>);
+      fireEvent.click(getByRole('button', {class: 'pal--status__tooltip-trigger'}));
+      await waitFor(() => expect(document.querySelector('.cds--tooltip-content >p')).not.toBeInTheDocument());
+      await waitFor(() => expect(document.querySelector('.cds--tooltip-content >div')).toBeInTheDocument());
     });
 
   });

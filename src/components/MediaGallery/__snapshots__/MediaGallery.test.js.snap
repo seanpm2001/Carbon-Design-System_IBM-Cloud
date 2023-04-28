@@ -6,352 +6,358 @@ exports[`MediaGallery enable enlarge feature it renders the MediaGallery with mo
 >
   <div>
     <div
-      class="pal--media-gallery"
+      class="cds--white cds--layer-one"
     >
       <div
-        class="pal--media-gallery__display"
+        class="pal--media-gallery"
       >
         <div
-          class="pal--media-gallery__media-wrap"
-        >
-          <button
-            class="pal--media-gallery__image-container pal--media-gallery__image-clickable"
-            type="button"
-          >
-            <img
-              alt="A random image"
-              class="pal--media-gallery__image"
-              src="https://picsum.photos/id/167/600/400"
-            />
-          </button>
-        </div>
-        <div
-          class="pal--media-gallery__controls"
-        >
-          <nav
-            aria-label="Page Navigation"
-            class="cds--pagination-nav"
-          >
-            <ul
-              class="cds--pagination-nav__list"
-            >
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  class="cds--pagination-nav__page cds--pagination-nav__page--direction cds--pagination-nav__page--disabled"
-                  disabled=""
-                  title="Previous Media"
-                  type="button"
-                >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
-                  >
-                    Previous Media
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    class="cds--pagination-nav__icon"
-                    focusable="false"
-                    height="8"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 5 8"
-                    width="5"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5 8L0 4l5-4z"
-                    />
-                  </svg>
-                </button>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  aria-current="step"
-                  class="cds--pagination-nav__page cds--pagination-nav__page--active"
-                  data-page="1"
-                  disabled=""
-                  title="Media Number 1"
-                  type="button"
-                >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
-                  >
-                    Media Number 
-                  </span>
-                  1
-                </button>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  class="cds--pagination-nav__page"
-                  data-page="2"
-                  title="Media Number 2"
-                  type="button"
-                >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
-                  >
-                    Media Number 
-                  </span>
-                  2
-                </button>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  class="cds--pagination-nav__page"
-                  data-page="3"
-                  title="Media Number 3"
-                  type="button"
-                >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
-                  >
-                    Media Number 
-                  </span>
-                  3
-                </button>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  class="cds--pagination-nav__page"
-                  data-page="4"
-                  title="Media Number 4"
-                  type="button"
-                >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
-                  >
-                    Media Number 
-                  </span>
-                  4
-                </button>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <div
-                  class="cds--pagination-nav__select"
-                >
-                  <select
-                    aria-label="Select Media"
-                    class="cds--pagination-nav__page cds--pagination-nav__page--select"
-                    title="Select Media"
-                  >
-                    <option
-                      hidden=""
-                      value=" "
-                    >
-                       
-                    </option>
-                    <option
-                      value="5"
-                    >
-                      5
-                    </option>
-                    <option
-                      value="6"
-                    >
-                      6
-                    </option>
-                  </select>
-                  <div
-                    class="cds--pagination-nav__select-icon-wrapper"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="cds--pagination-nav__select-icon"
-                      focusable="false"
-                      height="16"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx="3"
-                        cy="8"
-                        r="1"
-                      />
-                      <circle
-                        cx="8"
-                        cy="8"
-                        r="1"
-                      />
-                      <circle
-                        cx="13"
-                        cy="8"
-                        r="1"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  class="cds--pagination-nav__page"
-                  data-page="7"
-                  title="Media Number 7"
-                  type="button"
-                >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
-                  >
-                    Media Number 
-                  </span>
-                  7
-                </button>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  class="cds--pagination-nav__page cds--pagination-nav__page--direction"
-                  data-page="2"
-                  title="Next Media"
-                  type="button"
-                >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
-                  >
-                    Next Media
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    class="cds--pagination-nav__icon"
-                    focusable="false"
-                    height="8"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 5 8"
-                    width="5"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0 0l5 4-5 4z"
-                    />
-                  </svg>
-                </button>
-              </li>
-            </ul>
-          </nav>
-          <p>
-            A random image
-          </p>
-        </div>
-      </div>
-      <div
-        aria-label="media modal"
-        class="cds--modal is-visible pal--media-gallery__modal"
-        role="presentation"
-      >
-        <span
-          class="cds--visually-hidden"
-          role="link"
-          tabindex="0"
-        >
-          Focus sentinel
-        </span>
-        <div
-          aria-label="media modal"
-          aria-modal="true"
-          class="cds--modal-container cds--modal-container--lg"
-          role="dialog"
-          tabindex="-1"
+          class="pal--media-gallery__display"
         >
           <div
-            class="cds--modal-header"
+            class="pal--media-gallery__media-wrap"
           >
             <button
-              aria-label="close"
-              class="cds--modal-close"
+              class="pal--media-gallery__image-container pal--media-gallery__image-clickable"
               type="button"
             >
-              <svg
-                aria-hidden="true"
-                class="cds--modal-close__icon"
-                fill="currentColor"
-                focusable="false"
-                height="20"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width="20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                />
-              </svg>
+              <img
+                alt="A random image"
+                class="pal--media-gallery__image"
+                src="https://picsum.photos/id/167/600/400"
+              />
             </button>
-            
-            <h3
-              class="cds--modal-header__heading"
-              id="cds--modal-header__heading--modal-1"
-            >
-              A random image
-            </h3>
           </div>
           <div
-            aria-labelledby="cds--modal-header__heading--modal-1"
-            class="cds--modal-content"
-            id="cds--modal-body--modal-1"
+            class="pal--media-gallery__controls"
+          >
+            <nav
+              aria-label="Page Navigation"
+              class="cds--pagination-nav"
+              i18n="[object Object]"
+            >
+              <ul
+                class="cds--pagination-nav__list"
+              >
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page cds--pagination-nav__page--direction cds--pagination-nav__page--disabled"
+                    disabled=""
+                    title="Previous Media"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Previous Media
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      class="cds--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 8L0 4l5-4z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="step"
+                    class="cds--pagination-nav__page cds--pagination-nav__page--active"
+                    data-page="1"
+                    disabled=""
+                    title="Media Number 1"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    1
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="2"
+                    title="Media Number 2"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    2
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="3"
+                    title="Media Number 3"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    3
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="4"
+                    title="Media Number 4"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    4
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <div
+                    class="cds--pagination-nav__select"
+                  >
+                    <select
+                      aria-label="Select Media"
+                      class="cds--pagination-nav__page cds--pagination-nav__page--select"
+                      title="Select Media"
+                    >
+                      <option
+                        hidden=""
+                        value=" "
+                      >
+                         
+                      </option>
+                      <option
+                        value="5"
+                      >
+                        5
+                      </option>
+                      <option
+                        value="6"
+                      >
+                        6
+                      </option>
+                    </select>
+                    <div
+                      class="cds--pagination-nav__select-icon-wrapper"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="cds--pagination-nav__select-icon"
+                        focusable="false"
+                        height="16"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="3"
+                          cy="8"
+                          r="1"
+                        />
+                        <circle
+                          cx="8"
+                          cy="8"
+                          r="1"
+                        />
+                        <circle
+                          cx="13"
+                          cy="8"
+                          r="1"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="7"
+                    title="Media Number 7"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    7
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page cds--pagination-nav__page--direction"
+                    data-page="2"
+                    title="Next Media"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Next Media
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      class="cds--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0l5 4-5 4z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <p>
+              A random image
+            </p>
+          </div>
+        </div>
+        <div
+          aria-label="media modal"
+          class="cds--modal is-visible pal--media-gallery__modal"
+          role="presentation"
+        >
+          <span
+            class="cds--visually-hidden"
+            role="link"
+            tabindex="0"
+          >
+            Focus sentinel
+          </span>
+          <div
+            aria-label="media modal"
+            aria-modal="true"
+            class="cds--modal-container cds--modal-container--lg"
+            role="dialog"
+            tabindex="-1"
           >
             <div
-              class="pal--media-gallery__display"
+              class="cds--modal-header"
             >
-              <div
-                class="pal--media-gallery__media-wrap"
+              <button
+                aria-label="close"
+                class="cds--modal-close"
+                type="button"
               >
+                <svg
+                  aria-hidden="true"
+                  class="cds--modal-close__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height="20"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+              <h3
+                class="cds--modal-header__heading"
+                id="cds--modal-header__heading--modal-2"
+              >
+                A random image
+              </h3>
+            </div>
+            <div
+              aria-labelledby="cds--modal-header__heading--modal-2"
+              class="cds--modal-content"
+              id="cds--modal-body--modal-2"
+            >
+              <div>
+                <div
+                  class="pal--media-gallery__display"
+                >
+                  <div
+                    class="pal--media-gallery__media-wrap"
+                  >
+                    <button
+                      class="pal--media-gallery__image-container"
+                      type="button"
+                    >
+                      <img
+                        alt="A random image"
+                        class="pal--media-gallery__image"
+                        src="https://picsum.photos/id/167/600/400"
+                      />
+                    </button>
+                  </div>
+                </div>
                 <button
-                  class="pal--media-gallery__image-container"
+                  aria-label="next media"
+                  class="pal--media-gallery__modal-right"
                   type="button"
                 >
-                  <img
-                    alt="A random image"
-                    class="pal--media-gallery__image"
-                    src="https://picsum.photos/id/167/600/400"
-                  />
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    height="32"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
-            <button
-              aria-label="next media"
-              class="pal--media-gallery__modal-right"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                focusable="false"
-                height="32"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width="32"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"
-                />
-              </svg>
-            </button>
           </div>
+          <span
+            class="cds--visually-hidden"
+            role="link"
+            tabindex="0"
+          >
+            Focus sentinel
+          </span>
         </div>
-        <span
-          class="cds--visually-hidden"
-          role="link"
-          tabindex="0"
-        >
-          Focus sentinel
-        </span>
       </div>
     </div>
   </div>
@@ -362,247 +368,252 @@ exports[`MediaGallery render classes as expected for MediaGallery component it r
 <body>
   <div>
     <div
-      class="pal--media-gallery"
+      class="cds--white cds--layer-one"
     >
       <div
-        class="pal--media-gallery__display"
+        class="pal--media-gallery"
       >
         <div
-          class="pal--media-gallery__media-wrap"
+          class="pal--media-gallery__display"
         >
-          <button
-            class="pal--media-gallery__image-container"
-            type="button"
+          <div
+            class="pal--media-gallery__media-wrap"
           >
-            <img
-              alt="A random image"
-              class="pal--media-gallery__image"
-              src="https://picsum.photos/id/167/600/400"
-            />
-          </button>
-        </div>
-        <div
-          class="pal--media-gallery__controls"
-        >
-          <nav
-            aria-label="Page Navigation"
-            class="cds--pagination-nav"
-          >
-            <ul
-              class="cds--pagination-nav__list"
+            <button
+              class="pal--media-gallery__image-container"
+              type="button"
             >
-              <li
-                class="cds--pagination-nav__list-item"
+              <img
+                alt="A random image"
+                class="pal--media-gallery__image"
+                src="https://picsum.photos/id/167/600/400"
+              />
+            </button>
+          </div>
+          <div
+            class="pal--media-gallery__controls"
+          >
+            <nav
+              aria-label="Page Navigation"
+              class="cds--pagination-nav"
+              i18n="[object Object]"
+            >
+              <ul
+                class="cds--pagination-nav__list"
               >
-                <button
-                  class="cds--pagination-nav__page cds--pagination-nav__page--direction cds--pagination-nav__page--disabled"
-                  disabled=""
-                  title="Previous Media"
-                  type="button"
+                <li
+                  class="cds--pagination-nav__list-item"
                 >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
+                  <button
+                    class="cds--pagination-nav__page cds--pagination-nav__page--direction cds--pagination-nav__page--disabled"
+                    disabled=""
+                    title="Previous Media"
+                    type="button"
                   >
-                    Previous Media
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    class="cds--pagination-nav__icon"
-                    focusable="false"
-                    height="8"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 5 8"
-                    width="5"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5 8L0 4l5-4z"
-                    />
-                  </svg>
-                </button>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  aria-current="step"
-                  class="cds--pagination-nav__page cds--pagination-nav__page--active"
-                  data-page="1"
-                  disabled=""
-                  title="Media Number 1"
-                  type="button"
-                >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
-                  >
-                    Media Number 
-                  </span>
-                  1
-                </button>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  class="cds--pagination-nav__page"
-                  data-page="2"
-                  title="Media Number 2"
-                  type="button"
-                >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
-                  >
-                    Media Number 
-                  </span>
-                  2
-                </button>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  class="cds--pagination-nav__page"
-                  data-page="3"
-                  title="Media Number 3"
-                  type="button"
-                >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
-                  >
-                    Media Number 
-                  </span>
-                  3
-                </button>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  class="cds--pagination-nav__page"
-                  data-page="4"
-                  title="Media Number 4"
-                  type="button"
-                >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
-                  >
-                    Media Number 
-                  </span>
-                  4
-                </button>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <div
-                  class="cds--pagination-nav__select"
-                >
-                  <select
-                    aria-label="Select Media"
-                    class="cds--pagination-nav__page cds--pagination-nav__page--select"
-                    title="Select Media"
-                  >
-                    <option
-                      hidden=""
-                      value=" "
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
                     >
-                       
-                    </option>
-                    <option
-                      value="5"
-                    >
-                      5
-                    </option>
-                    <option
-                      value="6"
-                    >
-                      6
-                    </option>
-                  </select>
-                  <div
-                    class="cds--pagination-nav__select-icon-wrapper"
-                  >
+                      Previous Media
+                    </span>
                     <svg
                       aria-hidden="true"
-                      class="cds--pagination-nav__select-icon"
+                      class="cds--pagination-nav__icon"
                       focusable="false"
-                      height="16"
+                      height="8"
                       preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width="16"
+                      viewBox="0 0 5 8"
+                      width="5"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <circle
-                        cx="3"
-                        cy="8"
-                        r="1"
-                      />
-                      <circle
-                        cx="8"
-                        cy="8"
-                        r="1"
-                      />
-                      <circle
-                        cx="13"
-                        cy="8"
-                        r="1"
+                      <path
+                        d="M5 8L0 4l5-4z"
                       />
                     </svg>
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="step"
+                    class="cds--pagination-nav__page cds--pagination-nav__page--active"
+                    data-page="1"
+                    disabled=""
+                    title="Media Number 1"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    1
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="2"
+                    title="Media Number 2"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    2
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="3"
+                    title="Media Number 3"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    3
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="4"
+                    title="Media Number 4"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    4
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <div
+                    class="cds--pagination-nav__select"
+                  >
+                    <select
+                      aria-label="Select Media"
+                      class="cds--pagination-nav__page cds--pagination-nav__page--select"
+                      title="Select Media"
+                    >
+                      <option
+                        hidden=""
+                        value=" "
+                      >
+                         
+                      </option>
+                      <option
+                        value="5"
+                      >
+                        5
+                      </option>
+                      <option
+                        value="6"
+                      >
+                        6
+                      </option>
+                    </select>
+                    <div
+                      class="cds--pagination-nav__select-icon-wrapper"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="cds--pagination-nav__select-icon"
+                        focusable="false"
+                        height="16"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="3"
+                          cy="8"
+                          r="1"
+                        />
+                        <circle
+                          cx="8"
+                          cy="8"
+                          r="1"
+                        />
+                        <circle
+                          cx="13"
+                          cy="8"
+                          r="1"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  class="cds--pagination-nav__page"
-                  data-page="7"
-                  title="Media Number 7"
-                  type="button"
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
                 >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="7"
+                    title="Media Number 7"
+                    type="button"
                   >
-                    Media Number 
-                  </span>
-                  7
-                </button>
-              </li>
-              <li
-                class="cds--pagination-nav__list-item"
-              >
-                <button
-                  class="cds--pagination-nav__page cds--pagination-nav__page--direction"
-                  data-page="2"
-                  title="Next Media"
-                  type="button"
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    7
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
                 >
-                  <span
-                    class="cds--pagination-nav__accessibility-label"
+                  <button
+                    class="cds--pagination-nav__page cds--pagination-nav__page--direction"
+                    data-page="2"
+                    title="Next Media"
+                    type="button"
                   >
-                    Next Media
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    class="cds--pagination-nav__icon"
-                    focusable="false"
-                    height="8"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 5 8"
-                    width="5"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0 0l5 4-5 4z"
-                    />
-                  </svg>
-                </button>
-              </li>
-            </ul>
-          </nav>
-          <p>
-            A random image
-          </p>
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Next Media
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      class="cds--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0l5 4-5 4z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <p>
+              A random image
+            </p>
+          </div>
         </div>
       </div>
     </div>

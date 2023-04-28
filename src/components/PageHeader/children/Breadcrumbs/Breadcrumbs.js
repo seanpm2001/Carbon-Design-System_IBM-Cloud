@@ -7,8 +7,8 @@ import { Breadcrumb } from "@carbon/react";
 
 /**
  * Checks the type of breadcrumb and returns the appropriate component
- * @param {Object} breadcrumb props
- * @param {Object} LinkComponent
+ * @param {object} breadcrumb props
+ * @param {object} LinkComponent
  */
 const getBreadcrumbValue = (breadcrumb, LinkComponent) => {
   const { href, onClick, value, asButton, asCustomComponent, ...rest } =

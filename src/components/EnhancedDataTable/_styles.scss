@@ -6,10 +6,8 @@
 @import "@carbon/react/scss/theme";
 @import "@carbon/react/scss/config";
 @import "@carbon/react/scss/grid";
-
 @import "@carbon/react/scss/components/search";
 @import "@carbon/react/scss/components/date-picker";
-
 @import "@carbon/react/scss/components/data-table";
 @import "@carbon/react/scss/components/data-table/action";
 @import "@carbon/react/scss/components/data-table/action/data-table-action";
@@ -19,7 +17,6 @@
 @import "@carbon/react/scss/components/data-table/expandable/data-table-expandable";
 @import "@carbon/react/scss/components/data-table/skeleton";
 @import "@carbon/react/scss/components/data-table/skeleton/data-table-skeleton";
-
 @import "@carbon/react/scss/components/checkbox";
 @import "@carbon/react/scss/components/button";
 @import "@carbon/react/scss/components/overflow-menu";
@@ -47,10 +44,10 @@
     legend {
       @include type.type-style("heading-compact-01");
 
-      padding: 1rem 0 0.5rem 0;
+      padding: 1rem 0 0.5rem;
     }
 
-    padding: 0 1.25rem 2rem 1.25rem;
+    padding: 0 1.25rem 2rem;
 
     &:last-of-type {
       padding-bottom: 0;
@@ -224,12 +221,12 @@
 
   .cds--list-box__wrapper,
   .cds--multi-select__wrapper {
-    margin: 1.5rem 1rem 1rem 1rem;
+    margin: 1.5rem 1rem 1rem;
     min-width: 15rem;
   }
 
   .cds--form-item {
-    margin: 1.5rem 1rem 1rem 1rem;
+    margin: 1.5rem 1rem 1rem;
     min-width: 15rem;
     max-width: fit-content;
 
@@ -446,18 +443,6 @@
     .cds--btn {
       min-width: 0;
       padding: calc(0.875rem - 3px) 12px;
-    }
-  }
-}
-
-.cds--table-toolbar-filter-panel {
-  .cds--form-item {
-    margin: 1.5rem 1rem 1rem 1rem;
-    min-width: 15rem;
-    max-width: fit-content;
-
-    .cds--date-picker-container {
-      justify-content: end;
     }
   }
 }

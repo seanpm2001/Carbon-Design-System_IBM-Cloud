@@ -1,11 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '../../../config/jest/test-utils';
 import {
   Dropdown,
   Checkbox,
   Link,
   InlineNotification,
-} from 'carbon-components-react';
+} from '@carbon/react';
 import OrderSummaryV2 from './OrderSummaryV2';
 
 const defaultProps = {
@@ -123,13 +123,13 @@ describe.skip('Order Summary V2 - items a11y', () => {
               ]}
             />
           }
-          submitPromoCode={
-            <SubmitPromo
-              accountId="ADD ACCOUNT ID HERE"
-              handleSubmit={() => {}}
-              mock
-            />
-          }
+          // submitPromoCode={
+          //   <SubmitPromo
+          //     accountId="ADD ACCOUNT ID HERE"
+          //     handleSubmit={() => {}}
+          //     mock
+          //   />
+          // }
           termsText={<Link href="/">View Terms and Conditions</Link>}
         />
       </section>,

@@ -1,9 +1,9 @@
 @use "@carbon/react/scss/type";
 @use '@carbon/react/scss/reset';
-
 @use "@carbon/react/scss/components/skeleton-styles";
 @import "@carbon/styles/scss/components/tag/mixins";
 @import "@carbon/react/scss/components/tag";
+
 // @import "@carbon/react/scss/components/tag/mixins";
 @import "@carbon/react/scss/components/tooltip";
 @import "@carbon/react/scss/components/button";
@@ -16,7 +16,7 @@
 
 /* Make sure to import any Carbon Component's styles that this component uses */
 
-@include filter-fix();
+@include filter-fix;
 
 .pal--tag {
   white-space: nowrap;
