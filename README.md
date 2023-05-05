@@ -86,6 +86,9 @@ We're always looking for contributors to help us fix bugs, build new features,
 or help us improve the project documentation. If you're interested, definitely
 check out our [Contributing Guide](/.github/CONTRIBUTING.md)! 👀
 
+## ❓ Questions and Support
+If you have any questions about `carbon-for-ibm-cloud` or need support please feel free to reach out to us via Slack using the #cloud-pal channel.
+
 ## 📝 License
 
 Licensed under the [Apache 2.0 License](/LICENSE).
