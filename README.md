@@ -73,6 +73,10 @@ styles from the project or include the styles for a specific component:
 For a full list of components available, checkout our
 [Storybook](https://carbon-design-system.github.io/ibm-cloud).
 
+## Migration
+
+If you are migrating from using the [Cloud PAL](https://github.ibm.com/ibmcloud/pal) package to this package, please refer to the [migration guide](https://pages.github.ibm.com/cdai-design/cloud-pal/cloudpal-guidance/cloudpal-v2/migration-guides/).
+
 ## 📖 Documentation
 
 If you're looking for `carbon-for-ibm-cloud` component and pattern documentation, check out:
