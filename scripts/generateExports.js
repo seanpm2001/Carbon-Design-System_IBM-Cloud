@@ -5,14 +5,12 @@ const readdir = util.promisify(fs.readdir);
 
 // Get all component types
 const patternsTypes = [
-  readdir(`${__dirname}/../src/Components`),
-  readdir(`${__dirname}/../src/Connected`),
-  readdir(`${__dirname}/../src/DataHooks`),
-  readdir(`${__dirname}/../src/Layouts`),
-  readdir(`${__dirname}/../src/Utilities`),
-  readdir(`${__dirname}/../src/Hosted`),
+  readdir(`${__dirname}/../src/components`),
+  readdir(`${__dirname}/../src/layouts`),
+  readdir(`${__dirname}/../src/utilities`),
 ];
 
+//need to update scss file to be in new styles folder
 // Create index.js files
 const generateIndexFileForDefaults = async (name, patterns) => {
   console.log(`Generating index.js for ${name}...`);
@@ -92,21 +90,14 @@ Promise.all(patternsTypes).then(patterns => {
   // Filter out non folders
   const [
     Components,
-    Connected,
-    DataHooks,
     Layouts,
     Utilities,
-    Hosted,
   ] = patterns.map(pattern => pattern.filter(file => !file.includes('.')));
   generateIndexFileForNamed('Components', Components);
-  generateIndexFileForNamed('Connected', Connected);
-  generateIndexFileForDefaults('DataHooks', DataHooks);
   generateIndexFileForNamed('Layouts', Layouts);
   generateIndexFileForDefaults('Utilities', Utilities);
-  generateIndexFileForDefaults('Hosted', Hosted);
 
   generateStyleExports('Components', Components);
-  generateStyleExports('Connected', Connected);
   generateStyleExports('Layouts', Layouts);
 
   generateStyleExports('Layouts', Layouts, '_docs-styles.scss');
