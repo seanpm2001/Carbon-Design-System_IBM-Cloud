@@ -1,0 +1,22 @@
+name: Add comment
+on:
+  issues:
+    types:
+      - created
+jobs:
+  add-comment:
+    if: |
+      contains(github.event.issue.labels.*.name, 'bug') ||
+      contains(github.event.issue.labels.*.name, 'enhancement')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            _<-- This is an automated message. Please disregard if not relevant -->_
+            Thank you for making an issue! While we are working on addressing all bugs and enhancement requests, we always welcome and appreciate any contributions! It is likely the fastest path to getting the bug resolved or the enhancement added.
+            If you haven\'t already, directions to set up `carbon-for-ibm-cloud` can be found [here](https://github.com/carbon-design-system/ibm-cloud#getting-started). If you have any questions about contributing to `carbon-for-ibm-cloud`, feel free to reach out via Slack or read more about our process [here](https://github.com/carbon-design-system/ibm-cloud/blob/main/.github/CONTRIBUTING.md)!
