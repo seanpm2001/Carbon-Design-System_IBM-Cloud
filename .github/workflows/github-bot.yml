@@ -19,8 +19,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 
-            `_<-- This is an automated message. Please disregard if not relevant -->_
-            Thank you for making an issue! While we are working on addressing all bugs and enhancement requests, we always welcome and appreciate any contributions! It is likely the fastest path to getting the bug resolved or the enhancement added.
-            If you haven\'t already, directions to set up `carbon-for-ibm-cloud` can be found [here](https://github.com/carbon-design-system/ibm-cloud#getting-started). If you have any questions about contributing to `carbon-for-ibm-cloud`, feel free to reach out via Slack or read more about our process [here](https://github.com/carbon-design-system/ibm-cloud/blob/main/.github/CONTRIBUTING.md)!`
+              body: "Thank you for creating an issue"
             })
