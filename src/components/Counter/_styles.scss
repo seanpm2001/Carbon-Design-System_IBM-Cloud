@@ -21,13 +21,7 @@
 
     &__previous-step {
         @include type.type-style('productive-heading-07');
-
-        // font-family: 'IBM Plex Sans';
-        // font-style: normal;
         font-weight: 300;
-
-        // font-size: 54px;
-        // line-height: 64px;
         color: $text-primary;
         position: relative;
         width: 0;
@@ -36,13 +30,7 @@
 
     &__current-step {
         @include type.type-style('productive-heading-07');
-
-        // font-family: 'IBM Plex Sans';
-        // font-style: normal;
         font-weight: 300;
-
-        // font-size: 54px;
-        // line-height: 64px;
         color: $text-primary;
     }
 
