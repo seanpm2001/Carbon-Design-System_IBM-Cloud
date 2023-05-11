@@ -34,7 +34,7 @@
         color: $text-primary;
     }
 
-    &__number-exit {
+    &__increase_number-exit {
         @media (prefers-reduced-motion: reduce) {
             animation-duration: 600ms;
         }
@@ -61,7 +61,7 @@
         }
     }
 
-    &__number-enter {
+    &__increase_number-enter {
         @media (prefers-reduced-motion: reduce) {
             animation-duration: 600ms;
         }
@@ -71,6 +71,58 @@
         @keyframes numberEnter {
             0% {
                 transform: translateY(4.5rem);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+        }
+    }
+
+    &__decrease_number-exit {
+        @media (prefers-reduced-motion: reduce) {
+            animation-duration: 600ms;
+        }
+
+        animation: 400ms motion(exit, expressive) 0ms 1 forwards numberExit;
+
+        @keyframes numberExit {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(4.5rem);
+                opacity: 0;
+                display: none;
+                visibility: hidden;
+            }
+
+        }
+    }
+
+    &__decrease_number-enter {
+        @media (prefers-reduced-motion: reduce) {
+            animation-duration: 600ms;
+        }
+
+        animation: 450ms motion(entrance, expressive) 0ms 1 forwards numberEnter;
+
+        @keyframes numberEnter {
+            0% {
+                transform: translateY(-4.5rem);
                 opacity: 0;
             }
 
