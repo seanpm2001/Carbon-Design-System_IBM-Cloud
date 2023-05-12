@@ -1,7 +1,7 @@
 ---
 name: Usability and user feedback
 about: 'Use this template to share any user research, insights and feedback you received
-  regarding Cloud PAL components and patterns. '
+  regarding carbon-for-ibm-cloud components and patterns. '
 title: ''
 labels: ''
 assignees: ''
@@ -10,7 +10,7 @@ assignees: ''
 
 # Usability and user feedback
 
-Use this template to share any user research, insights and feedback you received regarding Cloud PAL components and patterns.
+Use this template to share any user research, insights and feedback you received regarding `carbon-for-ibm-cloud` components and patterns.
 
 ## Detailed Description 
 ### Is this issue related to a specific component / pattern / user flow?
@@ -18,7 +18,7 @@ Use this template to share any user research, insights and feedback you received
 - Patterns (for example: Create flow, provisioning, world overview pages)
 - Page template (world overview, resource detail)
  
-> Note: the `ibmcloud / pal` repo should  be used for core and community patterns and components that live in Cloud PAL. 
+> Note: the `ibmcloud / pal` repo should  be used for core and community patterns and components that live in `carbon-for-ibm-cloud`. 
 > 
 > **Is this related to global experiences?** 
 >
@@ -26,7 +26,7 @@ Use this template to share any user research, insights and feedback you received
 
 > **Is this a Carbon issue?:**
 >
-> Sometimes, the users run into issues with Carbon components. The Cloud PAL team will review the issue and check if it should be brought up to Carbon.
+> Sometimes, the users run into issues with Carbon components. The `carbon-for-ibm-cloud` team will review the issue and check if it should be brought up to Carbon.
 
 ### Summary of user feedback
 > Please describe the user feedback or usability issue. Please include info on:

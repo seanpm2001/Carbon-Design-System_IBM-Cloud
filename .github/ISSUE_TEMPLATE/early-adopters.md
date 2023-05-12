@@ -1,6 +1,6 @@
 ---
 name: Early adopters template
-about: 'Interested in adopting Cloud PAL 2.0 and Carbon v11 early? Join the early
+about: 'Interested in adopting carbon-for-ibm-cloud and Carbon v11 early? Join the early
   adopter program! '
 title: "[Early Adopter] <Service Name>"
 labels: Early adopter

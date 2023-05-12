@@ -12,7 +12,7 @@ assignees: ''
 
 ## Components / Docs Affected
 
-<!-- List components, docs, data hooks, etc. that have been affected by this issue --> 
+<!-- List components, docs, etc. that have been affected by this issue --> 
 - Component one
 - Component two
 - Doc one

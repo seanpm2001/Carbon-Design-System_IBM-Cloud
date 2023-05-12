@@ -18,7 +18,7 @@ Use this section to write a short one to two sentance summary of the guidance yo
 
 - [ ] I have brand new guidance I want to contribute
 - [ ] I have guidance I want to add to an existing page
-- [ ] I request the Cloud PAL team creates this missing guidance
+- [ ] I request the `carbon-for-ibm-cloud` team creates this missing guidance
 
 **Links to Documentation**
 

@@ -1,5 +1,5 @@
 ---
-name: "New Cloud PAL Proposal \U0001F381"
+name: "New carbon-for-ibm-cloud Proposal \U0001F381"
 about: Suggest an idea for this project
 title: ''
 labels: 'Contribution Proposal: Submitted' 'New' 'Q1'
@@ -17,7 +17,7 @@ assignees: ''
 
 *Proposals are reviewed at the beginning of every quarter*
 
-Use this template if you want to contribute a **new** component, pattern, data hook, etc.
+Use this template if you want to contribute a **new** component, pattern, etc.
 
 
 
@@ -32,7 +32,6 @@ Please describe your new contribution in one or two sentences.
 **Which best describes your contribution:**
 - [ ] New component
 - [ ] New pattern
-- [ ] New data hook
 - [ ] Other
 
 

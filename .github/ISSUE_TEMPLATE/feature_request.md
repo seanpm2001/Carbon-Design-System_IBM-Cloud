@@ -20,10 +20,7 @@ What you would like to see enhanced? Provide a summary.
 **Please select any of the following that this request pertains to:**
 
 - [ ] Component
-- [ ] Connected Component
-- [ ] Hosted Component
 - [ ] Pattern
-- [ ] Add-ons to Cloud PAL documentation
 - [ ] Dev Experience
 - [ ] Other
 
