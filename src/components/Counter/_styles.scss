@@ -39,9 +39,9 @@
             animation-duration: 600ms;
         }
 
-        animation: 400ms motion(exit, expressive) 0ms 1 forwards numberExit;
+        animation: 400ms motion(exit, expressive) 0ms 1 forwards increaseNumberExit;
 
-        @keyframes numberExit {
+        @keyframes increaseNumberExit {
             0% {
                 transform: translateY(0);
                 opacity: 1;
@@ -66,9 +66,9 @@
             animation-duration: 600ms;
         }
 
-        animation: 450ms motion(entrance, expressive) 0ms 1 forwards numberEnter;
+        animation: 450ms motion(entrance, expressive) 0ms 1 forwards increaseNumberEnter;
 
-        @keyframes numberEnter {
+        @keyframes increaseNumberEnter {
             0% {
                 transform: translateY(4.5rem);
                 opacity: 0;
@@ -91,9 +91,9 @@
             animation-duration: 600ms;
         }
 
-        animation: 400ms motion(exit, expressive) 0ms 1 forwards numberExit;
+        animation: 400ms motion(exit, expressive) 0ms 1 forwards decreaseNumberExit;
 
-        @keyframes numberExit {
+        @keyframes decreaseNumberExit {
             0% {
                 transform: translateY(0);
                 opacity: 1;
@@ -118,9 +118,9 @@
             animation-duration: 600ms;
         }
 
-        animation: 450ms motion(entrance, expressive) 0ms 1 forwards numberEnter;
+        animation: 450ms motion(entrance, expressive) 0ms 1 forwards decreaseNumberEnter;
 
-        @keyframes numberEnter {
+        @keyframes decreaseNumberEnter {
             0% {
                 transform: translateY(-4.5rem);
                 opacity: 0;
