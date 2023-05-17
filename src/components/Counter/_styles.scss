@@ -21,13 +21,8 @@
 
     &__previous-step {
         @include type.type-style('productive-heading-07');
-
-        // font-family: 'IBM Plex Sans';
-        // font-style: normal;
+        
         font-weight: 300;
-
-        // font-size: 54px;
-        // line-height: 64px;
         color: $text-primary;
         position: relative;
         width: 0;
@@ -37,23 +32,18 @@
     &__current-step {
         @include type.type-style('productive-heading-07');
 
-        // font-family: 'IBM Plex Sans';
-        // font-style: normal;
         font-weight: 300;
-
-        // font-size: 54px;
-        // line-height: 64px;
         color: $text-primary;
     }
 
-    &__number-exit {
+    &__increase_number-exit {
         @media (prefers-reduced-motion: reduce) {
             animation-duration: 600ms;
         }
 
-        animation: 400ms motion(exit, expressive) 0ms 1 forwards numberExit;
+        animation: 400ms motion(exit, expressive) 0ms 1 forwards increaseNumberExit;
 
-        @keyframes numberExit {
+        @keyframes increaseNumberExit {
             0% {
                 transform: translateY(0);
                 opacity: 1;
@@ -73,16 +63,68 @@
         }
     }
 
-    &__number-enter {
+    &__increase_number-enter {
         @media (prefers-reduced-motion: reduce) {
             animation-duration: 600ms;
         }
 
-        animation: 450ms motion(entrance, expressive) 0ms 1 forwards numberEnter;
+        animation: 450ms motion(entrance, expressive) 0ms 1 forwards increaseNumberEnter;
 
-        @keyframes numberEnter {
+        @keyframes increaseNumberEnter {
             0% {
                 transform: translateY(4.5rem);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+        }
+    }
+
+    &__decrease_number-exit {
+        @media (prefers-reduced-motion: reduce) {
+            animation-duration: 600ms;
+        }
+
+        animation: 400ms motion(exit, expressive) 0ms 1 forwards decreaseNumberExit;
+
+        @keyframes decreaseNumberExit {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(4.5rem);
+                opacity: 0;
+                display: none;
+                visibility: hidden;
+            }
+
+        }
+    }
+
+    &__decrease_number-enter {
+        @media (prefers-reduced-motion: reduce) {
+            animation-duration: 600ms;
+        }
+
+        animation: 450ms motion(entrance, expressive) 0ms 1 forwards decreaseNumberEnter;
+
+        @keyframes decreaseNumberEnter {
+            0% {
+                transform: translateY(-4.5rem);
                 opacity: 0;
             }
 
