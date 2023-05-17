@@ -21,6 +21,7 @@
 
     &__previous-step {
         @include type.type-style('productive-heading-07');
+        
         font-weight: 300;
         color: $text-primary;
         position: relative;
@@ -30,6 +31,7 @@
 
     &__current-step {
         @include type.type-style('productive-heading-07');
+
         font-weight: 300;
         color: $text-primary;
     }
