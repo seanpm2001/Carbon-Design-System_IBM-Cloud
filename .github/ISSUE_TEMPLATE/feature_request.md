@@ -3,7 +3,7 @@ name: Feature / Enhancement Proposal 🎁
 about: Do you have a new feature or enhancement you would like to see? Open a feature
   request and let us know!
 title: ''
-labels: 'Contribution Proposal: Submitted' 'Enhancement' 'Q1'
+labels: ['Contribution Proposal: Submitted', 'Enhancement', 'Q1']
 assignees: ''
 
 ---
