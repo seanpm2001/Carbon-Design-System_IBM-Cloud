@@ -11,7 +11,7 @@ import { ChevronDown as ChevronDown16 } from "@carbon/react/icons";
  * @param {string} text The language the user's browser is configured to use.
  */
 const renderPanelButtonText = (text) => (
-  <span className="cds--btn cds--btn--tertiary cds--btn--field">
+  <span className="pal--actions-panel__content">
     {text}
     <ChevronDown16 className="pal--actions-panel-icon" />
   </span>

@@ -254,7 +254,6 @@ exports[`MediaGallery enable enlarge feature it renders the MediaGallery with mo
           </div>
         </div>
         <div
-          aria-label="media modal"
           class="cds--modal is-visible pal--media-gallery__modal"
           role="presentation"
         >
@@ -278,6 +277,7 @@ exports[`MediaGallery enable enlarge feature it renders the MediaGallery with mo
               <button
                 aria-label="close"
                 class="cds--modal-close"
+                title="media modal"
                 type="button"
               >
                 <svg
