@@ -15,7 +15,7 @@ class ListItem extends Component {
 describe('ActionsPanel', () => {
   it('renders the action panel', () => {
     const { queryAllByLabelText, debug } = render(<ActionsPanel className="custom" />);
-    const actionsElements = queryAllByLabelText('Actions...');
+    const actionsElements = queryAllByLabelText('Actions... icon'); // in test svg icon is not rendered
     debug()
     expect(actionsElements.length).toBe(2);
     expect(actionsElements[0]).toBeInTheDocument();

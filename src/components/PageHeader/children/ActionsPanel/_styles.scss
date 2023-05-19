@@ -39,7 +39,8 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
 
   .pal--actions-panel-icon {
     margin-left: 60px;
-    fill: $button-tertiary;
+    vertical-align: middle;
+    // fill: $button-tertiary;
   }
 
   &:focus .#{$prefix}--btn--tertiary {
@@ -63,15 +64,21 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
     transform: rotate(180deg);
   }
 
-  &--open .#{$prefix}--btn--tertiary {
-    color: $icon-inverse;
+  // &--open .#{$prefix}--btn--tertiary {
+  //   color: $icon-inverse;
+  //   background-color: $button-tertiary;
+  // }
+
+  &--open, &--open:hover  {
     background-color: $button-tertiary;
   }
+
 }
 
 .pal--actions-panel-wrap {
   position: relative;
 }
+
 
 .pal--actions-panel-menu {
   right: 0 !important;
