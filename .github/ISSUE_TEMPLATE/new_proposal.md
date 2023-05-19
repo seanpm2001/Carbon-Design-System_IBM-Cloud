@@ -2,7 +2,7 @@
 name: "New carbon-for-ibm-cloud Proposal \U0001F381"
 about: Suggest an idea for this project
 title: ''
-labels: 'Contribution Proposal: Submitted' 'New' 'Q1'
+labels: ['Contribution Proposal: Submitted', 'New', 'Q1']
 assignees: ''
 
 ---
