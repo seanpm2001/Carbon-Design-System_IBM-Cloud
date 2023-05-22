@@ -360,6 +360,14 @@
     height: 31px;
   }
 
+  .bx--data-table--tall .bx--table-expand .bx--table-expand__button {
+    height: rem(32px);
+  }
+
+  .bx--data-table--normal .bx--table-expand .bx--table-expand__button {
+    height: rem(32px);
+  }
+
   // Make sure clickable rows have the right cursor
   .pal--data-table__row-clickable {
     cursor: pointer;
