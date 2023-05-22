@@ -46,35 +46,38 @@
   }
 
   &__text {
-    @include type.type-style("body-short-02");
+    @include type.type-style("body-compact-02");
 
-    padding-top: $spacing-03;
+    color: $text-primary;
+    padding-top: $spacing-05;
 
     &--large {
-      @include type.type-style("productive-heading-03");
+      @include type.type-style("heading-03");
     }
   }
 
   &__caption {
-    padding-top: $spacing-03;
+    color: $text-secondary;
+    
+    @include type.type-style("label-01");
 
     a {
-      @include type.type-style("helper-text-01");
+      @include type.type-style("label-01");
 
       line-height: 1.5;
     }
 
     &--large {
-      @include type.type-style("body-short-01");
+      @include type.type-style("body-01");
     }
   }
 
   &__button-container {
-    padding-top: $spacing-03;
+    padding-top: $spacing-05;
   }
 
   &__child-container {
-    padding-top: $spacing-03;
+    padding-top: $spacing-05;
 
     .cds--btn--ghost {
       margin-left: -12px;
