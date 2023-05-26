@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 import { InlineLoading } from "@carbon/react";
+import { TransformComponent } from 'react-zoom-pan-pinch';
 
 const MediaDisplay = ({
   type,
@@ -10,6 +11,7 @@ const MediaDisplay = ({
   children,
   onError,
   onImageClick,
+  canZoom
 }) => {
   const isEmbededVideo =
     type === "youtube" || type === "vimeo" || type === "embedvideo";
@@ -53,33 +55,53 @@ const MediaDisplay = ({
                 alt={firstSource.alt || firstSource.caption || ""}
               />
             )}
-            <button
-              className={cx("pal--media-gallery__image-container", {
-                "pal--media-gallery__image-clickable": !!onImageClick,
-                "pal--media-gallery--loaded":
-                  isLoading && firstSource.blurredUrl,
-              })}
-              onClick={onImageClick}
-              type="button"
-            >
-              <img
-                className={cx(
-                  {
-                    "pal--media-gallery--loaded":
-                      isLoading && firstSource.blurredUrl,
-                  },
-                  "pal--media-gallery__image"
-                )}
-                src={firstSource.url}
-                alt={firstSource.alt || firstSource.caption || ""}
-                onLoad={() =>
-                  setTimeout(() => {
-                    setIsLoading(false);
-                  }, 200)
-                }
-                onError={onError}
-              />
-            </button>
+            {(!onImageClick && canZoom) ? 
+              <TransformComponent>
+                <img
+                  className={cx(
+                    {
+                      'pal--media-gallery--loaded':
+                        isLoading && firstSource.blurredUrl,
+                    },
+                    'pal--media-gallery__image',
+                  )}
+                  src={firstSource.url}
+                  alt={firstSource.alt || firstSource.caption || ''}
+                  onLoad={() =>
+                    setTimeout(() => {
+                      setIsLoading(false);
+                    }, 200)
+                  }
+                  onError={onError}
+                />
+              </TransformComponent> :
+              <button
+                className={cx('pal--media-gallery__image-container', {
+                  'pal--media-gallery__image-clickable': !!onImageClick,
+                  'pal--media-gallery--loaded': isLoading && firstSource.blurredUrl,
+                })}
+                onClick={onImageClick}
+                type="button"
+              >
+                <img
+                  className={cx(
+                    {
+                      'pal--media-gallery--loaded':
+                        isLoading && firstSource.blurredUrl,
+                    },
+                    'pal--media-gallery__image',
+                  )}
+                  src={firstSource.url}
+                  alt={firstSource.alt || firstSource.caption || ''}
+                  onLoad={() =>
+                    setTimeout(() => {
+                      setIsLoading(false);
+                    }, 200)
+                  }
+                  onError={onError}
+                />
+              </button>
+            }
           </>
         )}
         {isEmbededVideo && firstSource && (
@@ -197,6 +219,12 @@ MediaDisplay.propTypes = {
    * A function to be ran if an image resource is clicked
    */
   onImageClick: PropTypes.func,
+
+  /**
+   * A boolean to allow zooming in or out of an enlarged version of the image in a modal when clicking it.
+   * Is only available when canClickToEnlarge is true as well.
+   */
+  canZoom: PropTypes.bool,
 
   /**
    * If the element is a video sources can be provided.
