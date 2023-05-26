@@ -300,7 +300,7 @@ exports[`MediaGallery enable enlarge feature it renders the MediaGallery with mo
                 class="cds--modal-header__heading"
                 id="cds--modal-header__heading--modal-2"
               >
-                A random image
+                (1/7) | A random image
               </h3>
             </div>
             <div
@@ -344,6 +344,986 @@ exports[`MediaGallery enable enlarge feature it renders the MediaGallery with mo
                   >
                     <path
                       d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <span
+            class="cds--visually-hidden"
+            role="link"
+            tabindex="0"
+          >
+            Focus sentinel
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MediaGallery enable enlarged item index it renders the modal heading with the index and alt text 1`] = `
+<body
+  class="cds--body--with-modal-open"
+>
+  <div>
+    <div
+      class="cds--white cds--layer-one"
+    >
+      <div
+        class="pal--media-gallery"
+      >
+        <div
+          class="pal--media-gallery__display"
+        >
+          <div
+            class="pal--media-gallery__media-wrap"
+          >
+            <div
+              aria-live="assertive"
+              class="cds--inline-loading pal--media-gallery__inline-loading"
+            >
+              <div
+                class="cds--inline-loading__animation"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="assertive"
+                  class="cds--loading cds--loading--small"
+                >
+                  <svg
+                    class="cds--loading__svg"
+                    viewBox="0 0 100 100"
+                  >
+                    <title>
+                      Loading indicator
+                    </title>
+                    <circle
+                      class="cds--loading__background"
+                      cx="50%"
+                      cy="50%"
+                      r="44"
+                    />
+                    <circle
+                      class="cds--loading__stroke"
+                      cx="50%"
+                      cy="50%"
+                      r="44"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="cds--inline-loading__text"
+              >
+                Loading...
+              </div>
+            </div>
+            <video
+              class="pal--media-gallery--loaded pal--media-gallery__video"
+              controls=""
+              id="lightBoxVideo"
+            >
+              <source
+                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div
+            class="pal--media-gallery__controls"
+          >
+            <nav
+              aria-label="Page Navigation"
+              class="cds--pagination-nav"
+              i18n="[object Object]"
+            >
+              <ul
+                class="cds--pagination-nav__list"
+              >
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page cds--pagination-nav__page--direction"
+                    data-page="1"
+                    title="Previous Media"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Previous Media
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      class="cds--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 8L0 4l5-4z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="1"
+                    title="Media Number 1"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    1
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="step"
+                    class="cds--pagination-nav__page cds--pagination-nav__page--active"
+                    data-page="2"
+                    disabled=""
+                    title="Media Number 2"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    2
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="3"
+                    title="Media Number 3"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    3
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page cds--pagination-nav__page--direction"
+                    data-page="3"
+                    title="Next Media"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Next Media
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      class="cds--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0l5 4-5 4z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <p />
+          </div>
+        </div>
+        <div
+          class="cds--modal is-visible pal--media-gallery__modal"
+          role="presentation"
+        >
+          <span
+            class="cds--visually-hidden"
+            role="link"
+            tabindex="0"
+          >
+            Focus sentinel
+          </span>
+          <div
+            aria-label="media modal"
+            aria-modal="true"
+            class="cds--modal-container cds--modal-container--lg"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cds--modal-header"
+            >
+              <button
+                aria-label="close"
+                class="cds--modal-close"
+                title="media modal"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="cds--modal-close__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height="20"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+              <h3
+                class="cds--modal-header__heading"
+                id="cds--modal-header__heading--modal-16"
+              >
+                (2/3) | A random video
+              </h3>
+            </div>
+            <div
+              aria-labelledby="cds--modal-header__heading--modal-16"
+              class="cds--modal-content"
+              id="cds--modal-body--modal-16"
+            >
+              <div>
+                <div
+                  class="pal--media-gallery__display"
+                >
+                  <div
+                    class="pal--media-gallery__media-wrap"
+                  >
+                    <div
+                      aria-live="assertive"
+                      class="cds--inline-loading pal--media-gallery__inline-loading"
+                    >
+                      <div
+                        class="cds--inline-loading__animation"
+                      >
+                        <div
+                          aria-atomic="true"
+                          aria-live="assertive"
+                          class="cds--loading cds--loading--small"
+                        >
+                          <svg
+                            class="cds--loading__svg"
+                            viewBox="0 0 100 100"
+                          >
+                            <title>
+                              Loading indicator
+                            </title>
+                            <circle
+                              class="cds--loading__background"
+                              cx="50%"
+                              cy="50%"
+                              r="44"
+                            />
+                            <circle
+                              class="cds--loading__stroke"
+                              cx="50%"
+                              cy="50%"
+                              r="44"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="cds--inline-loading__text"
+                      >
+                        Loading...
+                      </div>
+                    </div>
+                    <video
+                      class="pal--media-gallery--loaded pal--media-gallery__video"
+                      controls=""
+                      id="lightBoxVideo"
+                    >
+                      <source
+                        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                  </div>
+                </div>
+                <button
+                  aria-label="previous media"
+                  class="pal--media-gallery__modal-left"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    height="32"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  aria-label="next media"
+                  class="pal--media-gallery__modal-right"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    height="32"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <span
+            class="cds--visually-hidden"
+            role="link"
+            tabindex="0"
+          >
+            Focus sentinel
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MediaGallery enable enlarged item index it renders the modal heading with the index and caption text 1`] = `
+<body
+  class="cds--body--with-modal-open"
+>
+  <div>
+    <div
+      class="cds--white cds--layer-one"
+    >
+      <div
+        class="pal--media-gallery"
+      >
+        <div
+          class="pal--media-gallery__display"
+        >
+          <div
+            class="pal--media-gallery__media-wrap"
+          >
+            <button
+              class="pal--media-gallery__image-container pal--media-gallery__image-clickable"
+              type="button"
+            >
+              <img
+                alt="A random image"
+                class="pal--media-gallery__image"
+                src="https://picsum.photos/id/167/600/400"
+              />
+            </button>
+          </div>
+          <div
+            class="pal--media-gallery__controls"
+          >
+            <nav
+              aria-label="Page Navigation"
+              class="cds--pagination-nav"
+              i18n="[object Object]"
+            >
+              <ul
+                class="cds--pagination-nav__list"
+              >
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page cds--pagination-nav__page--direction cds--pagination-nav__page--disabled"
+                    disabled=""
+                    title="Previous Media"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Previous Media
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      class="cds--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 8L0 4l5-4z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="step"
+                    class="cds--pagination-nav__page cds--pagination-nav__page--active"
+                    data-page="1"
+                    disabled=""
+                    title="Media Number 1"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    1
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="2"
+                    title="Media Number 2"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    2
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="3"
+                    title="Media Number 3"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    3
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page cds--pagination-nav__page--direction"
+                    data-page="2"
+                    title="Next Media"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Next Media
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      class="cds--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0l5 4-5 4z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <p>
+              A random image
+            </p>
+          </div>
+        </div>
+        <div
+          class="cds--modal is-visible pal--media-gallery__modal"
+          role="presentation"
+        >
+          <span
+            class="cds--visually-hidden"
+            role="link"
+            tabindex="0"
+          >
+            Focus sentinel
+          </span>
+          <div
+            aria-label="media modal"
+            aria-modal="true"
+            class="cds--modal-container cds--modal-container--lg"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cds--modal-header"
+            >
+              <button
+                aria-label="close"
+                class="cds--modal-close"
+                title="media modal"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="cds--modal-close__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height="20"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+              <h3
+                class="cds--modal-header__heading"
+                id="cds--modal-header__heading--modal-13"
+              >
+                (1/3) | A random image
+              </h3>
+            </div>
+            <div
+              aria-labelledby="cds--modal-header__heading--modal-13"
+              class="cds--modal-content"
+              id="cds--modal-body--modal-13"
+            >
+              <div>
+                <div
+                  class="pal--media-gallery__display"
+                >
+                  <div
+                    class="pal--media-gallery__media-wrap"
+                  >
+                    <button
+                      class="pal--media-gallery__image-container"
+                      type="button"
+                    >
+                      <img
+                        alt="A random image"
+                        class="pal--media-gallery__image"
+                        src="https://picsum.photos/id/167/600/400"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <button
+                  aria-label="next media"
+                  class="pal--media-gallery__modal-right"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    height="32"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <span
+            class="cds--visually-hidden"
+            role="link"
+            tabindex="0"
+          >
+            Focus sentinel
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MediaGallery enable enlarged item index it renders the modal heading with the index only 1`] = `
+<body
+  class="cds--body--with-modal-open"
+>
+  <div>
+    <div
+      class="cds--white cds--layer-one"
+    >
+      <div
+        class="pal--media-gallery"
+      >
+        <div
+          class="pal--media-gallery__display media-gallery__display--is-video"
+        >
+          <div
+            class="pal--media-gallery__media-wrap"
+          >
+            <div
+              aria-live="assertive"
+              class="cds--inline-loading pal--media-gallery__inline-loading"
+            >
+              <div
+                class="cds--inline-loading__animation"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="assertive"
+                  class="cds--loading cds--loading--small"
+                >
+                  <svg
+                    class="cds--loading__svg"
+                    viewBox="0 0 100 100"
+                  >
+                    <title>
+                      Loading indicator
+                    </title>
+                    <circle
+                      class="cds--loading__background"
+                      cx="50%"
+                      cy="50%"
+                      r="44"
+                    />
+                    <circle
+                      class="cds--loading__stroke"
+                      cx="50%"
+                      cy="50%"
+                      r="44"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="cds--inline-loading__text"
+              >
+                Loading...
+              </div>
+            </div>
+            <iframe
+              allowfullscreen=""
+              class="pal--media-gallery--loaded pal--media-gallery__video"
+              frameborder="0"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Media gallery video"
+            />
+          </div>
+          <div
+            class="pal--media-gallery__controls"
+          >
+            <nav
+              aria-label="Page Navigation"
+              class="cds--pagination-nav"
+              i18n="[object Object]"
+            >
+              <ul
+                class="cds--pagination-nav__list"
+              >
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page cds--pagination-nav__page--direction"
+                    data-page="2"
+                    title="Previous Media"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Previous Media
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      class="cds--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 8L0 4l5-4z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="1"
+                    title="Media Number 1"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    1
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page"
+                    data-page="2"
+                    title="Media Number 2"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    2
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="step"
+                    class="cds--pagination-nav__page cds--pagination-nav__page--active"
+                    data-page="3"
+                    disabled=""
+                    title="Media Number 3"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Media Number 
+                    </span>
+                    3
+                  </button>
+                </li>
+                <li
+                  class="cds--pagination-nav__list-item"
+                >
+                  <button
+                    class="cds--pagination-nav__page cds--pagination-nav__page--direction cds--pagination-nav__page--disabled"
+                    disabled=""
+                    title="Next Media"
+                    type="button"
+                  >
+                    <span
+                      class="cds--pagination-nav__accessibility-label"
+                    >
+                      Next Media
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      class="cds--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0l5 4-5 4z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <p />
+          </div>
+        </div>
+        <div
+          class="cds--modal is-visible pal--media-gallery__modal"
+          role="presentation"
+        >
+          <span
+            class="cds--visually-hidden"
+            role="link"
+            tabindex="0"
+          >
+            Focus sentinel
+          </span>
+          <div
+            aria-label="media modal"
+            aria-modal="true"
+            class="cds--modal-container cds--modal-container--lg"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cds--modal-header"
+            >
+              <button
+                aria-label="close"
+                class="cds--modal-close"
+                title="media modal"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="cds--modal-close__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height="20"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+              <h3
+                class="cds--modal-header__heading"
+                id="cds--modal-header__heading--modal-20"
+              >
+                (3/3)
+              </h3>
+            </div>
+            <div
+              aria-labelledby="cds--modal-header__heading--modal-20"
+              class="cds--modal-content"
+              id="cds--modal-body--modal-20"
+            >
+              <div>
+                <div
+                  class="pal--media-gallery__display media-gallery__display--is-video"
+                >
+                  <div
+                    class="pal--media-gallery__media-wrap"
+                  >
+                    <div
+                      aria-live="assertive"
+                      class="cds--inline-loading pal--media-gallery__inline-loading"
+                    >
+                      <div
+                        class="cds--inline-loading__animation"
+                      >
+                        <div
+                          aria-atomic="true"
+                          aria-live="assertive"
+                          class="cds--loading cds--loading--small"
+                        >
+                          <svg
+                            class="cds--loading__svg"
+                            viewBox="0 0 100 100"
+                          >
+                            <title>
+                              Loading indicator
+                            </title>
+                            <circle
+                              class="cds--loading__background"
+                              cx="50%"
+                              cy="50%"
+                              r="44"
+                            />
+                            <circle
+                              class="cds--loading__stroke"
+                              cx="50%"
+                              cy="50%"
+                              r="44"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="cds--inline-loading__text"
+                      >
+                        Loading...
+                      </div>
+                    </div>
+                    <iframe
+                      allowfullscreen=""
+                      class="pal--media-gallery--loaded pal--media-gallery__video"
+                      frameborder="0"
+                      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                      title="Media gallery video"
+                    />
+                  </div>
+                </div>
+                <button
+                  aria-label="previous media"
+                  class="pal--media-gallery__modal-left"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    height="32"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"
                     />
                   </svg>
                 </button>

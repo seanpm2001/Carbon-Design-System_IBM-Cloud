@@ -139,13 +139,14 @@
 
   &__modal .cds--modal-content {
     margin-top: 0.5rem;
-    padding: 0 2.5rem;
+    padding: 0 3rem;
   }
 
   &__modal .pal--media-gallery__display {
     height: 100%;
     margin: 0;
     width: 100%;
+    flex-direction: column;
   }
 
   &__modal .pal--media-gallery__media-wrap {
@@ -202,5 +203,36 @@
 
   &__modal-right {
     right: 0.5rem;
+  }
+
+  &__modal-zoom-image-controls-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 2rem);
+  }
+
+  .react-transform-component {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  &__modal-zoom-controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+  }
+
+  &__modal-zoom-control {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: $text-primary;
   }
 }
