@@ -30,6 +30,11 @@ const addScrollLock = () => document.body.classList.add("pal--no-scroll");
 const removeScrollLock = () => document.body.classList.remove("pal--no-scroll");
 
 /**
+ * Used to match the media-query in our CSS
+ */
+const animationsOn = window.matchMedia && window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
+
+/**
  * Manages the focus state for the initial focused element.
  */
 const useInitialFocus = (selector) => {
@@ -78,6 +83,7 @@ const SidePanelContainer = ({
   children,
   getPageRef,
   setPageRef,
+  afterClose,
   panelSize,
   focusOnCloseSelector,
   "data-testid": testId,
@@ -106,11 +112,17 @@ const SidePanelContainer = ({
   const resetActivePanel = useCallback(() => {
     /* istanbul ignore next */
     if (!timeoutRef.current) {
-      const ref = setTimeout(() => {
-        setActivePanelById(getPanelId(sidePanels[0], 0));
-        timeoutRef.current = null;
-      }, 400);
+      let ref;
+      const timeoutValue = animationsOn ? 400 : 0;
+
+      const faded = new Promise(resolveFaded => {
+        ref = setTimeout(() => {
+          setActivePanelById(getPanelId(sidePanels[0], 0));
+          timeoutRef.current = null;
+          resolveFaded();
+      }, timeoutValue)});
       timeoutRef.current = ref;
+      return faded;
     }
   }, [sidePanels]);
 
@@ -177,12 +189,14 @@ const SidePanelContainer = ({
   }, [panelsOpen, hasOverlay]);
 
   // Closes the panel and reasserts focus on the initially focused element.
-  const closePanel = () => {
+  const closePanel = async () => {
     setPanelsOpen(false);
-    resetActivePanel();
+    await resetActivePanel();
     if (hasOverlay) {
       initialFocus.focus();
     }
+
+    afterClose();
   };
 
   // Closes the side panel and calls the child panels close event.
@@ -337,6 +351,11 @@ SidePanelContainer.propTypes = {
   hasOverlay: PropTypes.bool,
 
   /**
+     * Function to call after the SidepanelContainer has fully closed, post-animation. If using a boolean statement to control rendering, this callback would be a good place to toggle it to false.
+     */
+  afterClose: PropTypes.func,
+
+  /**
    * Enables Multi Step Side Panel with Progress Indicator,
    */
   isMultiStep: PropTypes.bool,
@@ -488,6 +507,7 @@ SidePanelContainer.defaultProps = {
   onNextClick: () => true,
   onPreviousClick: () => true,
   onBreadCrumbClick: () => true,
+  afterClose: () => {},
   // locale: documentLanguage,
   hideBottomNav: false,
   modalOnDismiss: false,
