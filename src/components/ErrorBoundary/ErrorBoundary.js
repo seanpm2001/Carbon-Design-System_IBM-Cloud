@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { withTranslation } from "react-i18next";
+import Translate from '../Translate';
 
 // Components
 import Message from "../Message";
@@ -24,7 +25,17 @@ class ErrorBoundary extends Component {
     const { children, text, caption, t } = this.props;
     const { error, errorId } = this.state;
 
-    let formattedCaption = caption || t("contactSupport");
+    let formattedCaption = caption || (
+      <Translate
+        tagProps={[
+          { href: '/docs/overview?topic=overview-prereqs-platform#browsers-platform', target: '_blank' },
+          { href: '/status', target: '_blank' },
+          { href: '/unifiedsupport/supportcenter', target: '_blank' },
+        ]}
+      >
+        {t('contactSupport')}
+      </Translate>
+    );
 
     // If error show a generic error message
     if (error) {
