@@ -154,6 +154,14 @@ const filters = [
       { id: '1.15.2', label: '1.15.2' },
     ],
   },
+  {
+    columnKey: 'name',
+    filterKey: 'id',
+    filterType: 'dropdown',
+    id: 'filter-with-internal-props',
+    items: [],
+    label: '',
+  },
 ];
 
 describe('EnhancedDataTable', () => {
@@ -614,5 +622,18 @@ describe('EnhancedDataTable', () => {
       const base = container.querySelector('.pal--data-table');
       expect(base.classList).toContain('pal--data-table--light');
     });
+  });
+
+  test('it does not pass internal filter props down to child filter components', async () => {
+    const filter = render(
+      <EnhancedDataTable
+        filters={[filters.find((filter) => filter.id == 'filter-with-internal-props')]}
+        headers={headers}
+        id="table-with-filter-with-internal-props"
+        rows={rows}
+      />,
+    ).container.querySelector('#filter-with-internal-props');
+    expect(filter).not.toHaveAttribute('filterKey');
+    expect(filter).not.toHaveAttribute('filterType');
   });
 });
