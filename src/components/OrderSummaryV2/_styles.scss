@@ -41,13 +41,9 @@ $pal-order-summary-switcher-max-width: 12rem;
   }
 }
 
-.pal-docs--renderer .pal--order-summary-v2 {
-  @include theme($g90, true);
-  
-  position: relative;
-}
-
 .pal--order-summary-v2 {
+  @include theme($g90, true);
+
   background-color: $pal-order-summary-background;
   color: $text-on-color;
   z-index: 1;
@@ -277,8 +273,8 @@ $pal-order-summary-switcher-max-width: 12rem;
     top: $spacing-03;
     position: absolute;
     left: -1.0875rem;
-    background-color: white;
-    width: 0.125rem;
+    background-color: $gray-50;
+    width: 1px;
   }
 
   &__row--nest::after,
@@ -286,10 +282,10 @@ $pal-order-summary-switcher-max-width: 12rem;
     content: "";
     height: 0.125rem;
     width: 0.5rem;
-    background-color: white;
+    background-color: $gray-50;
     position: absolute;
     left: -1.0875rem;
-    top: $spacing-06;
+    top: calc($spacing-06 + 1px);
   }
 
   &__row--nest::after {
@@ -350,6 +346,9 @@ $pal-order-summary-switcher-max-width: 12rem;
   &__item-quantity {
     // @include type.type-style("caption-01");
 
+    border-top: $spacing-03 solid $pal-order-summary-background;
+    border-bottom: $spacing-03 solid $pal-order-summary-background;
+    margin-top: -$spacing-03;
     position: absolute;
     left: -1.5rem;
     width: $spacing-06;
