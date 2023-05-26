@@ -70,7 +70,6 @@ const OrderSummaryItems = ({ items, indented, type }) => {
       className={classnames(`pal--order-summary-v2__${type}`, {
         "pal--order-summary-v2__list--left-pad": indented,
       })}
-      tabIndex={0} // eslint-disable-line jsx-a11y/no-noninteractive-tabindex
     >
       {items.map(({ id, key, name, accordionText, ...props }) => (
         <OrderSummaryItem
