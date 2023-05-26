@@ -91,6 +91,7 @@ const ResourceStatusIndicator = ({
   );
   useEffect(() => {
     if (statusIndicator) setIconState(true);
+    else setIconState(false);
   }, [statusIndicator]);
 
   // On success state change
