@@ -126,6 +126,7 @@ const filters = [
   },
   {
     columnKey: 'location',
+    filterType: 'combobox',
     id: 'location-filter',
     items: [
       {
@@ -399,6 +400,7 @@ describe('EnhancedDataTable', () => {
       expect(screen.getByText('Done')).toBeInTheDocument();
       expect(baseClass.querySelector('.cds--text-input')).toBeInTheDocument();
       expect(baseClass.querySelector('.cds--multi-select')).toBeInTheDocument();
+      expect(baseClass.querySelector('.cds--combo-box')).toBeInTheDocument();
       expect(baseClass.querySelector('.cds--dropdown')).toBeInTheDocument();
       userEvent.click(screen.getByText('Clear'));
       expect(
@@ -412,7 +414,7 @@ describe('EnhancedDataTable', () => {
           rows={rows}
           headers={headers}
           id="t6"
-          filters={[filters[2]]}
+          filters={[filters[3]]}
         />,
       );
       const baseClass = container.querySelector('.pal--data-table');
@@ -431,7 +433,7 @@ describe('EnhancedDataTable', () => {
           rows={rows}
           headers={headers}
           id="t11"
-          filters={[filters[2]]}
+          filters={[filters[3]]}
         />,
       );
       const baseClass = container.querySelector('.pal--data-table');

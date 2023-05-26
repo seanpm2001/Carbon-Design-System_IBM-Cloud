@@ -180,7 +180,8 @@ For general component usage review the [Components Docs](https://pages.github.ib
         id: 'location-filter',
         columnKey: 'location',
         titleText: 'Location:',
-        label: 'Location',
+        label: 'Location:',
+        filterType: 'combobox',
         items: [{ id: 'london', label: 'london' }, { id: 'dal12', label: 'dal12' }, { id: 'tor01', label: 'tor01' }],
       }, {
         id: 'version-filter',
@@ -473,7 +474,8 @@ export const withActions = args => (
         id: 'location-filter',
         columnKey: 'location',
         titleText: 'Location:',
-        label: 'Location',
+        label: 'Location:',
+        filterType: 'combobox',
         items: [
           { id: 'london', label: 'london' },
           { id: 'dal12', label: 'dal12' },

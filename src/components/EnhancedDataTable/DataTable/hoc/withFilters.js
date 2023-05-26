@@ -34,7 +34,7 @@ export const computeFilters = (current = {}, input) => {
 };
 
 /*
- * transform filters for MultiSelect and DropDown
+ * transform filters for DropDown, ComboBox, and MultiSelect
  * filterItems: {
  *    attached_groups: [
  *      { id: 'g1', label: 'Kevins VM Groups' },

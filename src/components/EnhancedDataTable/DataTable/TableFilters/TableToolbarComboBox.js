@@ -32,12 +32,6 @@ const hoc = WrappedComponent => {
       }
       return e.item.label.toLowerCase().includes(e.inputValue.toLowerCase());
     }
-
-    const defaultLocale = getLocale(locale);
-    const translate = translationUtils.getTranslateFunction(
-      translations,
-      defaultLocale
-    );
     // Adapter for Carbon's translation ids with our translation ids
     const translateWithId = id => {
       const translationId = `carbon.combobox.${id}`;

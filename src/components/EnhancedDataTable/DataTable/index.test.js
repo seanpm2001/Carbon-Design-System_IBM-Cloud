@@ -10,6 +10,7 @@ const pal = [
   'TableToolbarMultiSelect',
   'TableToolbarButton',
   'TableToolbarFilterPanel',
+  'TableToolbarComboBox',
 ];
 
 const carbon = [
