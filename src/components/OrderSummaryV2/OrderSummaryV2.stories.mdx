@@ -475,6 +475,41 @@ generating different views, like the upgrade button below.
   </Story>
 </Canvas>
 
+### Order Summary with accordion details
+You can hide details within an accordion with accordionText and hidden props. 
+Note: this is not an example of a good use case, just useful for testing.
+
+<Canvas>
+  <Story
+    name="Demo-accordion"
+    args={{
+      primaryButtonText: 'Create',
+      footnotes: '*Some Terms and conditions may apply',
+      items: [
+        { name: 'Application',
+          quantity: 1,
+        },
+        {
+          name: '',
+          accordionText: 'Pricing details',
+          indented: false,
+          details: [
+            { name: 'Here\'s a bunch of pricing information surfaced only as hidden details. This is not an approved pattern and you shouldn\'t follow it. This example is for testing only', value: null, isHidden: true },
+            { name: 'Network SVI-Cloud-1', value: '$0.01', isHidden: true },
+            { name: 'Name Frankfurt-XC00', value: '$0.02',isHidden: true },
+            { name: 'User IP 172.16.10.1/32', value: '$0.03', isHidden: true },
+            { name: 'IBM IP 172.16.10.2/32', value: '$0.04', isHidden: true },
+            { name: 'Location NA West - Equinix', value: '$0.05', isHidden: true },
+            { name: 'BGP ASN Customer IP 645556', value: '$0.06', isHidden: true },
+          ],
+        },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 ## Props
 
 <ArgsTable of={OrderSummaryV2} />
