@@ -233,7 +233,9 @@
     .cds--date-picker-container {
       justify-content: end;
       margin-top: $spacing-01;
+      
       .cds--date-picker__input {
+
         /* stylelint-disable max-nesting-depth */
         &:disabled {
           background-color: $field-02;
@@ -303,6 +305,7 @@
 
 .pal--data-table {
   @include flex-grid;
+
   .pal--data-table__table-wrapper {
     overflow-x: auto;
   }
