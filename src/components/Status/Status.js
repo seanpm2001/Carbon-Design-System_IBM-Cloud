@@ -162,9 +162,9 @@ Status.propTypes = {
     StatusType.UNKNOWN,
     StatusType.WARNING,
   ]),
-  label: PropTypes.string,
+  label: PropTypes.node,
   locale: PropTypes.string,
-  tooltipMsg: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  tooltipMsg: PropTypes.node,
 };
 
 Status.skeleton = Skeleton;
