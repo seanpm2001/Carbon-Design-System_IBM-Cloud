@@ -703,7 +703,7 @@ describe(`Side Panel Container`, () => {
     );
 
     act(() => {
-      fireEvent.keyUp(getByTestId('panel-container'), { key: 'Escape' });
+      fireEvent.keyDown(getByTestId('panel-container'), { key: 'Escape' });
     });
 
     await waitFor(() =>
