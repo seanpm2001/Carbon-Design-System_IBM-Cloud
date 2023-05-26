@@ -5,7 +5,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import { Toggletip, ToggletipButton, ToggletipContent, Tooltip } from "@carbon/react";
+import { Toggletip, ToggletipButton, ToggletipContent, Tooltip, Button } from "@carbon/react";
 import { Edit as Edit16 } from "@carbon/react/icons";
 import Tag from "../Tag";
 import { useTranslation } from "react-i18next";
@@ -27,6 +27,7 @@ const TagList = ({
   wrap,
   size,
   type,
+  tooltipPosition,
   ...rest
 }) => {
   const { t } = useTranslation("TagList");
@@ -116,13 +117,13 @@ const TagList = ({
     {
       "pal--tag-list": true,
       "pal--tag-list--wrap": wrap,
-      "pal--tag-list-editable": isEditable !== "never",
+      'pal--tag-list--editable': isEditable !== 'never',
       "pal--tag-list--is-empty": !tags.length && showAddLabelText,
     },
     className
   );
 
-  const editButtonClasses = classNames({
+  const editButtonClasses = classNames(`${isEditable}-editable`,{
     "pal--tag-list--edit--button": true,
     "always-editable": isEditable === "always",
     "never-editable": isEditable === "never",
@@ -155,23 +156,22 @@ const TagList = ({
       ))}
       {overflowNode()}
       {
-        <button
+        <Button
+          kind='ghost'
           className={editButtonClasses}
-          tabIndex={onIconClick ? 0 : -1}
-          type="button"
           onClick={onIconClick}
-          title={
-            !tags.length && showAddLabelText ? "" : iconDescription || iconText
-          }
+          hasIconOnly={!(!tags.length && showAddLabelText)}
+          size='sm'
+          renderIcon={Edit16}
+          tooltipPosition={tooltipPosition}
+          iconDescription={!tags.length && showAddLabelText ? null : iconDescription || iconText}
           aria-label={
-            !tags.length && showAddLabelText ? "" : iconDescription || iconText
-          }
-        >
+            !tags.length && showAddLabelText ? '' : iconDescription || iconText
+          }>
           {showAddLabelText && displayList.length === 0 ? (
             <span className="pal--tag-list--label-empty">{iconText}</span>
           ) : null}
-          <Edit16 className="pal--tag-list--edit--icon" />
-        </button>
+        </Button>
       }
     </div>
   );
@@ -239,6 +239,15 @@ TagList.propTypes = {
    */
   maxCharactersTooltip: PropTypes.number,
   /**
+   * The tooltip position of the edit tag icon.
+   */
+  tooltipPosition: PropTypes.oneOf([
+    'bottom',
+    'left',
+    'right',
+    'top'
+  ]),
+  /**
    * The maximum number of tags to display in the tool tip.
    */
   maxTagsTooltip: PropTypes.number,
@@ -269,7 +278,8 @@ TagList.defaultProps = {
   maxTagsTooltip: 8,
   wrap: false,
   size: undefined,
-  type: 'functional'
+  type: 'functional',
+  tooltipPosition: 'bottom',
 };
 
 export default TagList;
