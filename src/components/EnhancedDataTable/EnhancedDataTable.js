@@ -1059,7 +1059,7 @@ const EnhancedDataTable = ({
                                   <div className="pal--data-table__empty-state-icon">
                                     {emptyStateIcon}
                                   </div>
-                                  <h3>
+                                  <h3 className="pal--data-table__empty-state-header">
                                     {emptyStateTitle ||
                                       translate("emptyStateTitle")}
                                   </h3>
