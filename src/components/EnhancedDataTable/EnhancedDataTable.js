@@ -545,7 +545,7 @@ const EnhancedDataTable = ({
 
   const onSelectAll = (rows) => {
     const selection = currentSelection || [];
-    const rowIds = (rows || []).map((r) => r.id);
+    const rowIds = (rows || []).filter(row => !row.disabled).map(r => r.id);
     const someSelected = rowIds.some((rid) => selection.includes(rid));
     if (someSelected) {
       // If some rows on this page are selected then remove them from the selection
@@ -796,11 +796,11 @@ const EnhancedDataTable = ({
                         totalSelected={
                           currentSelection ? currentSelection.length : 0
                         }
-                        totalRowCount={rows ? rows.length : 0}
+                        totalRowCount={rows ? rows.filter(row => !row.disabled).length : 0}
                         onCancel={() => setCurrentSelection([])}
                         onSelectAll={() =>
                           setCurrentSelection(
-                            (rows || []).map((r) => r.id).sort()
+                            (rows || []).filter(row => !row.disabled).map(r => r.id).sort(),
                           )
                         }
                         hideSelectAll={disableSelectAll}
