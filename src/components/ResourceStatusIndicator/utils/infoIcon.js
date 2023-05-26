@@ -3,12 +3,7 @@ import React from 'react';
 const infoIcon = (
   <div
     aria-hidden="true"
-    style={{
-      backgroundColor: '#0F62FE',
-      width: '14px',
-      height: '14px',
-      borderRadius: '50%',
-    }}
+    className='pal--resource-status-indicator__circle pal--resource-status-indicator__circle--info'
   />
 );
 
