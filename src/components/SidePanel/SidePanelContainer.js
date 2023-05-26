@@ -220,7 +220,9 @@ const SidePanelContainer = ({
 
   const onCloseWithModalHandler = (closeFunc) => {
     setModalOpen(true);
-    setModalCloseFunc(() => closeFunc);
+    setModalCloseFunc(() => () => {
+      if(closeFunc()) closePanel(); // behave like the typical flow in handleOverlayEvents above
+    });
   };
 
   return (
