@@ -114,5 +114,125 @@ describe('MediaGallery', () => {
       fireEvent.click(container.querySelector('.cds--modal-close'));
       expect(container.querySelector('.is-visible.pal--media-gallery__modal')).not.toBeInTheDocument();
     });
+
+    it('does not render the zoom controls by default', () => {
+      const { container } = render(<MediaGallery {...modifiedProps} />);
+      fireEvent.click(container.querySelector('.pal--media-gallery__image'));
+
+      expect(container.querySelector('.pal--media-gallery__modal-zoom-controls')).not.toBeInTheDocument();
+      expect(container.querySelector('.react-transform-wrapper')).not.toBeInTheDocument();
+      expect(container.querySelector('.react-transform-component')).not.toBeInTheDocument();
+    });
   });
+
+  describe('enable enlarged item index', () => {
+    const modifiedMedia = [
+      {
+        type: 'image',
+        url: 'https://picsum.photos/id/167/600/400',
+        alt: 'A random image',
+        caption: 'A random image',
+      },
+      {
+        type: 'video/mp4',
+        url: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+        alt: 'A random video',
+        onError: (event) => {console.log('Wont be called', event.target.src)}
+      },
+      {
+        type: 'youtube',
+        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      },
+    ];
+    const modifiedProps = {
+      ...props,
+      media: [...modifiedMedia],
+      canClickToEnlarge: true,
+      showEnlargeItemIndex: true,
+    };
+
+    it('it renders the modal heading with the index and caption text', () => {
+      const { baseElement, container,  getByTitle  } = render(<MediaGallery {...modifiedProps} />);
+      fireEvent.click(container.querySelector('.pal--media-gallery__image'));
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('it renders the modal heading with the index and alt text', () => {
+      const { baseElement, container,  getByTitle  } = render(<MediaGallery {...modifiedProps} />);
+      fireEvent.click(container.querySelector('.pal--media-gallery__image'));
+      fireEvent.click(container.querySelector('.pal--media-gallery__modal-right'));
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('it renders the modal heading with the index only', () => {
+      const { baseElement, container, getByTitle  } = render(<MediaGallery {...modifiedProps} />);
+      fireEvent.click(container.querySelector('.pal--media-gallery__image'));
+      fireEvent.click(container.querySelector('.pal--media-gallery__modal-right'));
+      fireEvent.click(container.querySelector('.pal--media-gallery__modal-right'));
+      expect(baseElement).toMatchSnapshot();
+    });
+  });
+
+  describe('enable zoom feature', () => {
+    const modifiedMedia = [
+      {
+        type: 'image',
+        url: 'https://picsum.photos/id/167/600/400',
+        alt: 'A random image',
+        caption: 'A random image',
+      },
+      {
+        type: 'video/mp4',
+        url: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+        alt: 'A random video',
+        onError: (event) => {console.log('Wont be called', event.target.src)}
+      },
+      {
+        type: 'youtube',
+        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      },
+    ];
+    const modifiedProps = {
+      ...props,
+      media: [...modifiedMedia],
+      canClickToEnlarge: true,
+      canZoom: true,
+    };
+
+    it('renders zoom controls only in the modal', () => {
+      const { container } = render(<MediaGallery {...modifiedProps} />);
+
+      expect(container.querySelector('.pal--media-gallery__modal-zoom-controls')).not.toBeInTheDocument();
+      expect(container.querySelector('.react-transform-wrapper')).not.toBeInTheDocument();
+      expect(container.querySelector('.react-transform-component')).not.toBeInTheDocument();
+
+      fireEvent.click(container.querySelector('.pal--media-gallery__image'));
+
+      expect(container.querySelector('.pal--media-gallery__modal-zoom-controls')).toBeInTheDocument();
+      expect(container.querySelector('.react-transform-wrapper')).toBeInTheDocument();
+      expect(container.querySelector('.react-transform-component')).toBeInTheDocument();
+    });
+
+    it('render zoom controls only for image type', () => {
+      const { container } = render(<MediaGallery {...modifiedProps} />);
+
+      fireEvent.click(container.querySelector('.pal--media-gallery__image'));
+      expect(container.querySelector('.pal--media-gallery__modal-zoom-controls')).toBeInTheDocument();
+      expect(container.querySelector('.react-transform-wrapper')).toBeInTheDocument();
+      expect(container.querySelector('.react-transform-component')).toBeInTheDocument();
+
+      fireEvent.click(container.querySelector('.pal--media-gallery__modal-right'));
+      expect(container.querySelector('.pal--media-gallery__video')).toBeInTheDocument();
+      expect(container.querySelector('.pal--media-gallery__modal-zoom-controls')).not.toBeInTheDocument();
+      expect(container.querySelector('.react-transform-wrapper')).not.toBeInTheDocument();
+      expect(container.querySelector('.react-transform-component')).not.toBeInTheDocument();
+
+      fireEvent.click(container.querySelector('.pal--media-gallery__modal-right'));
+      expect(container.querySelector('.pal--media-gallery__video')).toBeInTheDocument();
+      expect(container.querySelector('.pal--media-gallery__modal-zoom-controls')).not.toBeInTheDocument();
+      expect(container.querySelector('.react-transform-wrapper')).not.toBeInTheDocument();
+      expect(container.querySelector('.react-transform-component')).not.toBeInTheDocument();
+    });
+  })
+
 });
