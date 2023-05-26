@@ -350,6 +350,8 @@ $pal-order-summary-switcher-max-width: 12rem;
   &__item-quantity {
     // @include type.type-style("caption-01");
 
+    margin-top: calc($spacing-03 * -1);
+
     position: absolute;
     left: -1.5rem;
     width: $spacing-06;
