@@ -1150,7 +1150,7 @@ const EnhancedDataTable = ({
                                             "overflowMenu"
                                           )}
                                         >
-                                          {rowItemActions.map((action) => {
+                                          {rowItemActions.map((action, index) => {
                                             if (React.isValidElement(action)) {
                                               return action;
                                             }
@@ -1163,7 +1163,7 @@ const EnhancedDataTable = ({
                                               : null;
                                             return (
                                               <OverflowMenuItem
-                                                key={action.itemText}
+                                                key={index}
                                                 {...action}
                                                 onClick={onClick}
                                                 requireTitle
