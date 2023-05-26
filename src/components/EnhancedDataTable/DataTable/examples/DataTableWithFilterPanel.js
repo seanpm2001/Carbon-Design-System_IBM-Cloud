@@ -116,14 +116,14 @@ const Example = ({ rows: rowsProp, initialFilters: initialFiltersProp, mode, dis
             initialSelectedItem={filterSelections.rule}
             onChange={onFilterChange}
           />
-          <TableToolbarMultiSelect
+          <TableToolbarComboBox
             id="status-column"
             columnKey="status"
             items={filterItems.status}
             type="default"
             placeholder="Status"
             titleText="Status"
-            initialSelectedItems={filterSelections.status}
+            initialSelectedItem={filterSelections.status}
             onChange={onFilterChange}
           />
           <TableToolbarMultiSelect

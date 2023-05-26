@@ -218,7 +218,22 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //         />,
 //       ),
 //     ).toBe(true);
-
+// render Rule combobox filter
+// expect(wrapper.find('TableToolbarFilterPanel').find('ComboBox')).toHaveLength(1);
+// expect(wrapper.find('TableToolbarFilterPanel').find('ComboBox').props()).toMatchObject({
+//   id: 'rule-column',
+//   items: [
+//     { id: 'Round robin', label: 'Round robin' },
+//     { id: 'DNS delegation', label: 'DNS delegation' }
+//   ],
+//   type: 'default',
+//   placeholder: 'Rule',
+//   titleText: 'Rule',
+//   columnKey: 'rule',
+//   initialSelectedItem: undefined,
+//   disabled: false,
+//   light: true,
+// });
 //     // render Status multiselect filter
 //     expect(
 //       wrapper.container.querySelector('TableToolbarFilterPanel').containsMatchingElement(
@@ -386,7 +401,7 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //   expect(wrapper.find('TableBody TableRow').length).toEqual(0);
 // });
 
-//   it('should update table upon clicking Apply - Single Select', () => {
+//   it('should update table upon clicking Apply - Dropdown', () => {
 //     // open panel
 //     wrapper
 //       .container.querySelector('TableToolbar button.cds--table-toolbar-filter-button')
@@ -416,6 +431,37 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     // changes after Apply is clicked
 //     expect(wrapper.container.querySelector('TableBody TableRow').length).toEqual(0);
 //   });
+
+// it('should update table upon clicking Apply - ComboBox', () => {
+//   // open panel
+//   wrapper
+//     .find('TableToolbar button.bx--table-toolbar-filter-button')
+//     .simulate('click');
+
+//   // open Rule combobox
+//   wrapper
+//     .find(
+//       'TableToolbarFilterPanel ComboBox[id="rule-column"] ListBoxTrigger',
+//     )
+//     .simulate('click');
+
+//   // Round robin, DNS deligation
+//   wrapper
+//     .find(
+//       'TableToolbarFilterPanel ComboBox[id="rule-column"] .bx--list-box__menu-item__option',
+//     )
+//     .at(1)
+//     .simulate('click');
+
+//   // no changes before Apply is clicked
+//   expect(wrapper.find('TableBody TableRow').length).toEqual(2);
+//   wrapper
+//     .find('TableToolbarFilterPanel .bx--filters-button-bar .bx--btn--primary')
+//     .simulate('click');
+
+//   // changes after Apply is clicked
+//   expect(wrapper.find('TableBody TableRow').length).toEqual(1);
+// });
 
 //   it('should update table upon clicking Apply - Multi Select', () => {
 //     // open panel
@@ -679,7 +725,7 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //   expect(wrapper.find('TableBody TableRow').length).toEqual(0);
 // });
 
-//   it('should update table upon filter changes - Single Select', () => {
+//   it('should update table upon filter changes - Dropdown', () => {
 //     expect(wrapper.container.querySelector('TableBody TableRow').length).toEqual(2);
 
 //     // open panel
@@ -687,7 +733,7 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //       .container.querySelector('TableToolbar button.cds--table-toolbar-filter-button')
 //       .simulate('click');
 
-//     // open single select dropdown
+//     // open dropdown
 //     wrapper
 //       .container.querySelector(
 //         'TableToolbarFilterPanel Dropdown[id="port-column"] .cds--list-box__field',
@@ -705,6 +751,33 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     // changes reflected upon filter change
 //     expect(wrapper.container.querySelector('TableBody TableRow').length).toEqual(0);
 //   });
+
+// it('should update table upon filter changes - ComboBox', () => {
+//   expect(wrapper.find('TableBody TableRow').length).toEqual(2);
+
+//   // open panel
+//   wrapper
+//     .find('TableToolbar button.bx--table-toolbar-filter-button')
+//     .simulate('click');
+
+//   // open Rule combobox
+//   wrapper
+//     .find(
+//       'TableToolbarFilterPanel ComboBox[id="rule-column"] ListBoxTrigger',
+//     )
+//     .simulate('click');
+
+//   // Round robin, DNS deligation
+//   wrapper
+//     .find(
+//       'TableToolbarFilterPanel ComboBox[id="rule-column"] .bx--list-box__menu-item__option',
+//     )
+//     .at(1)
+//     .simulate('click');
+
+//   // changes reflected upon filter change
+//   expect(wrapper.find('TableBody TableRow').length).toEqual(1);
+// });
 
 //   it('should update table upon filter changes - Multi Select', () => {
 //     expect(wrapper.container.querySelector('TableBody TableRow').length).toEqual(2);
@@ -764,6 +837,13 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     .exists(),
 // ).toBe(true);
 
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
+//     .find(ComboBox)
+//     .exists(),
+// ).toBe(true);
+
 //     expect(
 //       wrapper
 //         .container.querySelector('TableToolbarFilterPanel')
@@ -788,6 +868,13 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     wrapper
 //       .container.querySelector('TableToolbarFilterPanel .cds--filters-button-bar .cds--btn--primary')
 //       .simulate('click');
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
+//     .find(ComboBox)
+//     .exists(),
+// ).toBe(false);
+
 
 // expect(
 //   wrapper
@@ -846,6 +933,13 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 // expect(
 //   wrapper
 //     .find('TableToolbarFilterPanel')
+//     .find(ComboBox)
+//     .exists(),
+// ).toBe(true);
+
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
 //     .find(TextInput)
 //     .exists(),
 // ).toBe(false);
@@ -881,6 +975,13 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //   wrapper
 //     .find('TableToolbarFilterPanel')
 //     .find(TextInput)
+//     .exists(),
+// ).toBe(true);
+
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
+//     .find(ComboBox)
 //     .exists(),
 // ).toBe(true);
 
@@ -944,6 +1045,14 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     .exists(),
 // ).toBe(true);
 
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
+//     .find(ComboBox)
+//     .exists(),
+// ).toBe(true);
+
+
 //   expect(
 //     wrapper
 //       .container.querySelector('TableToolbarFilterPanel')
@@ -983,7 +1092,12 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //         .container.querySelector(FilterableMultiSelect)
 //         .exists(),
 //     ).toBe(false);
-
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
+//     .find(ComboBox)
+//     .exists(),
+// ).toBe(false);
 //     expect(
 //       wrapper
 //         .container.querySelector('TableToolbarFilterPanel')
@@ -1129,7 +1243,7 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     expect(wrapper.container.querySelector('TableBody TableRow').length).toEqual(6);
 //   });
 
-//   it('should update table upon filter changes - Single Select', () => {
+//   it('should update table upon filter changes - Dropdown', () => {
 //     expect(wrapper.container.querySelector('TableBody TableRow').length).toEqual(2);
 
 //     // open panel
@@ -1137,7 +1251,7 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //       .container.querySelector('TableToolbar button.cds--table-toolbar-filter-button')
 //       .simulate('click');
 
-//     // open single select dropdown
+//     // open dropdown
 //     wrapper
 //       .container.querySelector(
 //         'TableToolbarFilterPanel Dropdown[id="port-column"] .cds--list-box__field',
@@ -1155,6 +1269,32 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     // changes reflected upon filter change
 //     expect(wrapper.container.querySelector('TableBody TableRow').length).toEqual(0);
 //   });
+// it('should update table upon filter changes - ComboBox', () => {
+//   expect(wrapper.find('TableBody TableRow').length).toEqual(2);
+
+//   // open panel
+//   wrapper
+//     .find('TableToolbar button.bx--table-toolbar-filter-button')
+//     .simulate('click');
+
+//   // open Rule combobox
+//   wrapper
+//     .find(
+//       'TableToolbarFilterPanel ComboBox[id="rule-column"] ListBoxTrigger',
+//     )
+//     .simulate('click');
+
+//   // Round robin, DNS deligation
+//   wrapper
+//     .find(
+//       'TableToolbarFilterPanel ComboBox[id="rule-column"] .bx--list-box__menu-item__option',
+//     )
+//     .at(1)
+//     .simulate('click');
+
+//   // changes reflected upon filter change
+//   expect(wrapper.find('TableBody TableRow').length).toEqual(0);
+// });
 
 //   it('should update table upon filter changes - Multi Select', () => {
 //     expect(wrapper.container.querySelector('TableBody TableRow').length).toEqual(2);

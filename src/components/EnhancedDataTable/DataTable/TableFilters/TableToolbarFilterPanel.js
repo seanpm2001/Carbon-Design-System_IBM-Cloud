@@ -141,7 +141,7 @@ const renderSelectionTags = (args) => {
 
         return (
           <Tag
-            key={`${filter}-${selection}`}
+            key={`${filter}-${id}`}
             filter
             disabled={disabledTag}
             type="gray"

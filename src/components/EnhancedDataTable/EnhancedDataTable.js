@@ -41,6 +41,7 @@ import {
   TableSettingsColumns,
   TableSettingsReset,
   TableToolbarDropdown,
+  TableToolbarComboBox,
   TableToolbarMultiSelect,
   TableToolbarTextInput,
   TableToolbarDateRangeSelect,
@@ -622,6 +623,16 @@ const EnhancedDataTable = ({
         initialSelectedItem: filterSelections[field.columnKey],
         light: true,
       };
+
+      if (field.filterType === 'combobox') {
+        FieldComponent = TableToolbarComboBox;
+        fieldProps = {
+          initialSelectedItem: filterSelections[field.columnKey],
+          light: true,
+          placeholder: translate('comboboxPlaceholder'),
+        };
+      }
+
       if (field.filterType === "multiselect") {
         FieldComponent = TableToolbarMultiSelect;
         fieldProps = {
@@ -1306,7 +1317,7 @@ EnhancedDataTable.propTypes = {
    */
   initialFilters: PropTypes.shape({}),
   /**
-   * Array of property objects that define the filter components to display. The TableToolbarDropdown, TableToolbarMultiSelect, TableToolbarDateRangeSelect, and TableToolbarTextInput components are supported, and each object can contain any property supported by the component being used. By default the TableToolbarDropdown is assumed, but the TableToolbarMultiSelect, TableToolbarDateRangeSelect, or TableToolbarTextInput can be used instead by setting the `filterType` property to "multiselect", "daterangeselect", or "textinput" respectively. Some of the properties are provided automatically and do not need to be specified here. These include `filterAllLabel` and `initialSelectedItem` used by TableToolbarDropdown, and `initialSelectedItems` used by TableToolbarMultiSelect. In addition, the `onChange` prop is always set automatically and does not need to be provided, but if one is provided it will be called with the selected filter values. The `filterKey` prop can be provided to specify the actual row property to filter on if it's different from `columnKey` which is used to get the display value for the filter tag label. If two or less filters are provided they will be displayed in the toolbar. If more than two filters are provided they will be displayed in the filter panel, accessible by clicking on the Filters button in the toolbar. The default width for the toolbar filter dropdown is set to 10rem. Apply a width to the dropdown element using the specified filter id in your stylesheet to set a width that makes sense for each filter. Filter selections are persisted in local storage. See examples below.
+   * Array of property objects that define the filter components to display. The TableToolbarDropdown, TableToolbarComboBox, TableToolbarMultiSelect, TableToolbarDateRangeSelect, and TableToolbarTextInput components are supported, and each object can contain any property supported by the component being used. By default the TableToolbarDropdown is assumed, but the TableToolbarComboBox, TableToolbarMultiSelect, TableToolbarDateRangeSelect, or TableToolbarTextInput can be used instead by setting the `filterType` property to "combobox", "multiselect", "daterangeselect", or "textinput" respectively. Some of the properties are provided automatically and do not need to be specified here. These include `filterAllLabel` used by TableToolbarDropdown, `initialSelectedItem` used by TableToolbarDropdown and TableToolbarComboBox, `initialSelectedItems` used by TableToolbarMultiSelect, and `defaultValue` used by TableToolbarTextInput. In addition, the `onChange` prop is always set automatically and does not need to be provided, but if one is provided it will be called with the selected filter values. The `filterKey` prop can be provided to specify the actual row property to filter on if it's different from `columnKey` which is used to get the display value for the filter tag label. If two or less filters are provided they will be displayed in the toolbar. If more than two filters are provided they will be displayed in the filter panel, accessible by clicking on the Filters button in the toolbar. The default width for the toolbar filter dropdown is set to 10rem. Apply a width to the dropdown element using the specified filter id in your stylesheet to set a width that makes sense for each filter. Filter selections are persisted in local storage. See examples below.
    */
   filters: PropTypes.arrayOf(PropTypes.shape({})),
   /**
