@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from 'react';
 import { DatePicker, DatePickerInput } from "@carbon/react";
 import { useTranslation } from "react-i18next";
 import useId from "../../../../utils/useId";
@@ -17,6 +17,7 @@ const hoc = (WrappedComponent) => {
   }) => {
     const { t } = useTranslation("EnhancedDataTable");
 
+    const datepickerRef = useRef(null);
     const datePickerId =
       passthroughProps?.id || useId("datatable-filter-datepicker");
     const disabled = passthroughProps?.disabled;
@@ -43,6 +44,14 @@ const hoc = (WrappedComponent) => {
       end = initialSelectedItems[0].end;
     }
 
+    if (Array.isArray(datepickerRef.current?.cal?.selectedDates)
+      && !datepickerRef.current.cal.selectedDates.length
+      && initialSelectedItems.length
+    ) {
+      datepickerRef.current.cal.setDate([start, end], false);
+    }
+
+
     return (
       <WrappedComponent
         {...passthroughProps}
@@ -54,6 +63,7 @@ const hoc = (WrappedComponent) => {
         datePickerType="range"
         dateFormat="m/d/Y"
         className="cds--dropdown_wrapper"
+        ref={datepickerRef}
       >
         <DatePickerInput
           id={`${datePickerId}-start`}

@@ -643,6 +643,9 @@ const EnhancedDataTable = ({
       }
       if (field.filterType === "daterangeselect") {
         FieldComponent = TableToolbarDateRangeSelect;
+        fieldProps = {
+          initialSelectedItems: filterSelections[field.columnKey],
+        }
       }
       if (field.filterType === 'textinput') {
         FieldComponent = TableToolbarTextInput;
