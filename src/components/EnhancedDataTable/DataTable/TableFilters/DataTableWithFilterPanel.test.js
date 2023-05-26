@@ -9,6 +9,8 @@ import {
 } from '../examples';
 import { initialRows } from '../examples/params';
 
+jest.useFakeTimers();
+
 const renderWrapper = ({ initialFilters, mode, disabledGroupFilter }) =>
   render(<DataTableWithFilterPanel initialFilters={initialFilters} mode={mode} disabledGroupFilter={disabledGroupFilter} />);
 
@@ -185,6 +187,16 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     // open panel
 //     wrapper.container.querySelector('TableToolbar TableToolbarButton button').simulate('click');
 
+      // // render Name textinput filter
+      // expect(
+      //   wrapper.find('TableToolbarFilterPanel').containsMatchingElement(
+      //     <TextInput
+      //       id="name-column"
+      //       labelText="Name"
+      //       light
+      //     />,
+      //   ),
+      // ).toBe(true);
 //     // render Port dropdown filter
 //     expect(
 //       wrapper.container.querySelector('TableToolbarFilterPanel').containsMatchingElement(
@@ -341,6 +353,39 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     ).toBe(true);
 //   });
 
+// it('should update table upon clicking Apply - TextInput', () => {
+//   // open panel
+//   wrapper
+//     .find('TableToolbar button.bx--table-toolbar-filter-button')
+//     .simulate('click');
+
+//   // Load Balancer 1
+//   const event = {
+//     target: {
+//       value: 'Load Balancer 10',
+//     },
+//   };
+//   wrapper
+//     .find(
+//       'TableToolbarFilterPanel [id="name-column"].bx--text-input',
+//     )
+//     .simulate('change', event);
+
+//   act(() => {
+//     jest.advanceTimersByTime(1);
+//     wrapper.update();
+//   });
+
+//   // no changes before Apply is clicked
+//   expect(wrapper.find('TableBody TableRow').length).toEqual(2);
+//   wrapper
+//     .find('TableToolbarFilterPanel .bx--filters-button-bar .bx--btn--primary')
+//     .simulate('click');
+
+//   // changes after Apply is clicked
+//   expect(wrapper.find('TableBody TableRow').length).toEqual(0);
+// });
+
 //   it('should update table upon clicking Apply - Single Select', () => {
 //     // open panel
 //     wrapper
@@ -486,6 +531,17 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //       .container.querySelector('TableToolbar button.cds--table-toolbar-filter-button')
 //       .simulate('click');
 
+// render Status textinput filter
+// expect(
+//   wrapper.find('TableToolbarFilterPanel').containsMatchingElement(
+//     <TextInput
+//       id="name-column"
+//       labelText="Name"
+//       light
+//     />,
+//   ),
+// ).toBe(true);
+
 //     const dropdownProps = wrapper
 //       .container.querySelector('TableToolbarFilterPanel Dropdown')
 //       .props();
@@ -594,6 +650,35 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     ).toBe(true);
 //   });
 
+// it('should update table upon filter changes - TextInput', () => {
+//   expect(wrapper.find('TableBody TableRow').length).toEqual(2);
+
+//   // open panel
+//   wrapper
+//     .find('TableToolbar button.bx--table-toolbar-filter-button')
+//     .simulate('click');
+
+//   // Load Balancer 1
+//   const event = {
+//     target: {
+//       value: 'Load Balancer 10',
+//     },
+//   };
+//   wrapper
+//     .find(
+//       'TableToolbarFilterPanel [id="name-column"].bx--text-input',
+//     )
+//     .simulate('change', event);
+
+//   act(() => {
+//     jest.advanceTimersByTime(301);
+//     wrapper.update();
+//   });
+
+//   // changes reflected upon filter change
+//   expect(wrapper.find('TableBody TableRow').length).toEqual(0);
+// });
+
 //   it('should update table upon filter changes - Single Select', () => {
 //     expect(wrapper.container.querySelector('TableBody TableRow').length).toEqual(2);
 
@@ -672,6 +757,13 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //       .container.querySelector('TableToolbar button.cds--table-toolbar-filter-button')
 //       .simulate('click');
 
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
+//     .find(TextInput)
+//     .exists(),
+// ).toBe(true);
+
 //     expect(
 //       wrapper
 //         .container.querySelector('TableToolbarFilterPanel')
@@ -696,6 +788,13 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     wrapper
 //       .container.querySelector('TableToolbarFilterPanel .cds--filters-button-bar .cds--btn--primary')
 //       .simulate('click');
+
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
+//     .find(TextInput)
+//     .exists(),
+// ).toBe(false);
 
 //     expect(
 //       wrapper
@@ -744,6 +843,14 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //       .container.querySelector('TableToolbar button.cds--table-toolbar-filter-button')
 //       .simulate('click');
 
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
+//     .find(TextInput)
+//     .exists(),
+// ).toBe(false);
+
+
 //     expect(
 //       wrapper
 //         .container.querySelector('TableToolbarFilterPanel')
@@ -769,6 +876,13 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     wrapper
 //       .container.querySelector('TableToolbar button.cds--table-toolbar-filter-button')
 //       .simulate('click');
+
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
+//     .find(TextInput)
+//     .exists(),
+// ).toBe(true);
 
 //     expect(
 //       wrapper
@@ -816,6 +930,20 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //   });
 //   wrapper.update();
 
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
+//     .find(TextInput)
+//     .exists(),
+// ).toBe(true);
+
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
+//     .find(TextInput)
+//     .exists(),
+// ).toBe(true);
+
 //   expect(
 //     wrapper
 //       .container.querySelector('TableToolbarFilterPanel')
@@ -842,6 +970,13 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //     });
 //     wrapper.update();
 
+// expect(
+//   wrapper
+//     .find('TableToolbarFilterPanel')
+//     .find(TextInput)
+//     .exists(),
+// ).toBe(false);
+
 //     expect(
 //       wrapper
 //         .container.querySelector('TableToolbarFilterPanel')
@@ -856,6 +991,35 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 //         .exists(),
 //     ).toBe(false);
 //   });
+
+// it('should update table upon filter changes - TextInput', () => {
+//   expect(wrapper.find('TableBody TableRow').length).toEqual(2);
+
+//   // open panel
+//   wrapper
+//     .find('TableToolbar button.bx--table-toolbar-filter-button')
+//     .simulate('click');
+
+//   // Load Balancer 1
+//   const event = {
+//     target: {
+//       value: 'Load Balancer 10',
+//     },
+//   };
+//   wrapper
+//     .find(
+//       'TableToolbarFilterPanel [id="name-column"].bx--text-input',
+//     )
+//     .simulate('change', event);
+
+//   act(() => {
+//     jest.advanceTimersByTime(301);
+//     wrapper.update();
+//   });
+
+//   // changes reflected upon filter change
+//   expect(wrapper.find('TableBody TableRow').length).toEqual(0);
+// });
 
 //   it('should handle change in rows prop', async () => {
 //     // prop changes, a new row not matching the filter is added
@@ -1069,4 +1233,4 @@ describe('DataTable.TableFilterPanel - collapsed', () => {
 
 //     expect(wrapper.container.querySelector('TableBody TableRow').length).toEqual(4);
 //   });
-});
+})

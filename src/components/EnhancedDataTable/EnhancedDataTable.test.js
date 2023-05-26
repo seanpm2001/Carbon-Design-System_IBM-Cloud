@@ -98,6 +98,12 @@ const rowActions = rowId =>
 
 const filters = [
   {
+    columnKey: 'name',
+    filterType: 'textinput',
+    id: 'name-filter',
+    labelText: 'Name:',
+  },
+  {
     columnKey: 'status',
     filterType: 'multiselect',
     id: 'status-filter',
@@ -383,6 +389,7 @@ describe('EnhancedDataTable', () => {
       ).toBeInTheDocument();
       expect(screen.getByText('Clear')).toBeInTheDocument();
       expect(screen.getByText('Done')).toBeInTheDocument();
+      expect(baseClass.querySelector('.cds--text-input')).toBeInTheDocument();
       expect(baseClass.querySelector('.cds--multi-select')).toBeInTheDocument();
       expect(baseClass.querySelector('.cds--dropdown')).toBeInTheDocument();
       userEvent.click(screen.getByText('Clear'));
@@ -397,7 +404,7 @@ describe('EnhancedDataTable', () => {
           rows={rows}
           headers={headers}
           id="t6"
-          filters={[filters[1]]}
+          filters={[filters[2]]}
         />,
       );
       const baseClass = container.querySelector('.pal--data-table');
@@ -416,7 +423,7 @@ describe('EnhancedDataTable', () => {
           rows={rows}
           headers={headers}
           id="t11"
-          filters={[filters[1]]}
+          filters={[filters[2]]}
         />,
       );
       const baseClass = container.querySelector('.pal--data-table');

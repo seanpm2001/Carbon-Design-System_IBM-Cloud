@@ -81,13 +81,16 @@ const createClearSelection = ({
   onFilterChange,
 }) => {
   return () => {
-    onFilterChange({
+    const args = {
       columnKey: filter,
-      selectedItems: filterSelections[filter].filter(
-        (item) => item.id !== selectionId
-      ),
       mode: "live",
-    });
+    };
+    if (Array.isArray(filterSelections[filter])) {
+      args.selectedItems = filterSelections[filter].filter?.(
+        item => item.id !== selectionId,
+      );
+    }
+    onFilterChange(args);
   };
 };
 
@@ -123,8 +126,14 @@ const renderSelectionTags = (args) => {
   };
 
   const tags = Object.keys(filterSelections)
-    .map((filter) =>
-      filterSelections[filter].map((selection) => {
+    .map(filter => {
+      let selections = filterSelections[filter];
+      if (typeof filterSelections[filter] === 'string') {
+        selections = [filterSelections[filter]];
+      }
+    return selections.map(selection => {
+      const id = selection.id ?? selection;
+      const label = selection.label ?? selection;
         const disabledTag =
           disabled ||
           childrenWithProps.find((child) => child.props.columnKey === filter)
@@ -132,7 +141,7 @@ const renderSelectionTags = (args) => {
 
         return (
           <Tag
-            key={`${filter}-${selection.id}`}
+            key={`${filter}-${selection}`}
             filter
             disabled={disabledTag}
             type="gray"
@@ -141,7 +150,7 @@ const renderSelectionTags = (args) => {
                 ? undefined
                 : createClearSelection({
                     filter,
-                    selectionId: selection.id,
+                    selectionId: id,
                     filterSelections,
                     onFilterChange,
                   })
@@ -151,19 +160,17 @@ const renderSelectionTags = (args) => {
                 ? undefined
                 : createClearSelection({
                     filter,
-                    selectionId: selection.id,
+                    selectionId: id,
                     filterSelections,
                     onFilterChange,
                   })
             }
           >
-            {`${(headerLabels && headerLabels[filter]) || filter}:${
-              selection.label
-            }`}
+            {`${(headerLabels && headerLabels[filter]) || filter}:${label}`}
           </Tag>
         );
       })
-    )
+    })
     .reduce((acc, cur) => acc.concat(cur), []); // flatten array
 
   const disabledClearButton =
@@ -270,7 +277,12 @@ TableToolbarFilterPanel.propTypes = {
   /**
    * Provide `filterSelections` from render prop
    */
-  filterSelections: PropTypes.objectOf(PropTypes.array),
+  filterSelections: PropTypes.objectOf(
+    PropTypes.oneOfType([
+      PropTypes.array,
+      PropTypes.string,
+    ]),
+  ),
   /**
    * Provide `onFilterChange` from render prop
    */
