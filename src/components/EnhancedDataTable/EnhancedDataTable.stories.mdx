@@ -2,11 +2,6 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import EnhancedDataTable from '.';
 
 import './_styles.scss';
-const initialSortInfo = {
-  header: "version",
-  direction: "DESC",
-};
-
 <Meta
   title="Components/EnhancedDataTable"
   component={EnhancedDataTable}
@@ -171,6 +166,11 @@ For general component usage review the [Components Docs](https://pages.github.ib
         },
       ]}
       filters={[{
+        id: 'name-filter',
+        columnKey: 'name',
+        titleText: 'Name:',
+        filterType: 'textinput',
+        }, {
         id: 'status-filter',
         columnKey: 'status',
         titleText: 'Status:',
@@ -202,7 +202,11 @@ For general component usage review the [Components Docs](https://pages.github.ib
 export const withActions = args => (
   <EnhancedDataTable
       id="table-with-actions"
-      initialSortInfo={initialSortInfo}
+      initialSortInfo={{
+        header: "version",
+        direction: "DESC",
+      }
+      }
       rows={[
         {
           id: 'c1',
@@ -448,6 +452,12 @@ export const withActions = args => (
       },
     ]}
     filters={[
+      {
+        id: 'name-filter',
+        columnKey: 'name',
+        labelText: 'Name:',
+        filterType: 'textinput',
+      },
       {
         id: 'status-filter',
         columnKey: 'status',
