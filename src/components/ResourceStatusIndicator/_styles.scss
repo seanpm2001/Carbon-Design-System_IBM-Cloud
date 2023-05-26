@@ -20,14 +20,6 @@ $resource-status-indicator-green-secondary: $green-30;
 $resource-status-indicator-red-primary: $support-error;
 $resource-status-indicator-red-secondary: $red-40;
 
-.red-failure-icon {
-  fill: $support-error;
-}
-
-.green-checkmark-icon {
-  fill: $support-success;
-}
-
 .pal--resource-status-indicator {
   /* All styles for this Component should go here */
   display: inline-flex;
@@ -51,8 +43,50 @@ $resource-status-indicator-red-secondary: $red-40;
     width: 100%;
   }
 
+  &__icon--red-failure {
+    fill: $resource-status-indicator-red-primary;
+  }
+
+  &__icon--green-checkmark {
+    fill: $resource-status-indicator-green-primary;
+  }
+
+  // &__icon--warning {
+  //   fill: $support-03;
+  // }
+
+  // &__icon--warning [data-icon-path='inner-path'] {
+  //   fill: $icon-01;
+  //   opacity: 1;
+  // }
+
+  &__circle {
+    width: 14px;
+    height: 14px;
+    margin: 1px;
+    border-radius: 50%;
+
+    &--inactive {
+      background-color: $layer-active-03;
+    }
+
+    &--info {
+      background-color: $interactive;
+    }
+  }
+
   &__icon--inprogress {
     fill: $support-info;
+  }
+
+  &__icon--incomplete {
+    fill: $icon-secondary;
+  }
+
+  &__unknown {
+    width: 14px;
+    height: 14px;
+    margin: 0 0 $spacing-01 $spacing-01;
   }
 
   &__label {

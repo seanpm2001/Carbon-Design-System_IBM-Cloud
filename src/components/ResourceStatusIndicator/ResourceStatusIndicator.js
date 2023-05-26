@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
+import PropTypes from "prop-types";
+import React, { useEffect, useState } from "react";
 // Carbon Components
 /* Import all Carbon Components Here */
 import {
-  CheckmarkFilled as CheckmarkFilled16,
-  ErrorFilled as ErrorFilled16,
-  InProgress as InProgress16,
+  CheckmarkFilled,
+  ErrorFilled,
+  InProgress,
+  Incomplete
 } from "@carbon/react/icons";
-import warningIcon from "./utils/warningIcon";
 import inactiveIcon from "./utils/inactiveIcon";
 import infoIcon from "./utils/infoIcon";
 // Skeleton
@@ -83,12 +83,16 @@ const ResourceStatusIndicator = ({
 }) => {
   const [success, setSuccess] = useState(false);
   const [iconState, setIconState] = useState(false);
+
+  const errorIcon = <ErrorFilled size={16} className="pal--resource-status-indicator__icon--red-failure" />;
+  const successIcon = <CheckmarkFilled size={16} className="pal--resource-status-indicator__icon--green-checkmark" />;
   // lazy colors
   let icon = fatalError ? (
-    <ErrorFilled16 style={{ fill: "red" }} />
+    errorIcon
   ) : (
-    <CheckmarkFilled16 style={{ fill: "green" }} />
+    successIcon
   );
+
   useEffect(() => {
     if (statusIndicator) setIconState(true);
     else setIconState(false);
@@ -121,24 +125,11 @@ const ResourceStatusIndicator = ({
     switch (statusIndicator) {
       case "success":
         icon = (
-          <CheckmarkFilled16
-            className="green-checkmark-icon"
-            // lazy colors
-            style={{ fill: "$support-success" }}
-          />
+          successIcon
         );
         break;
       case "failure":
-        icon = (
-          <ErrorFilled16
-            className="red-failure-icon"
-            // lazy colors
-            style={{ fill: "$support-error" }}
-          />
-        );
-        break;
-      case "warning":
-        icon = warningIcon;
+        icon = errorIcon
         break;
       case "inactive":
         icon = inactiveIcon;
@@ -148,11 +139,20 @@ const ResourceStatusIndicator = ({
         break;
       case "in-progress":
         icon = (
-          <InProgress16 className="pal--resource-status-indicator__icon--inprogress" />
+          <InProgress size={16} className="pal--resource-status-indicator__icon--inprogress" />
         );
         break;
+      case 'incomplete':
+        icon = <Incomplete size={16} className='pal--resource-status-indicator__icon--incomplete' />;
+        break;
       case "unknown":
-        icon = "—";
+        icon =
+          <div
+            aria-hidden="true"
+            className='pal--resource-status-indicator__unknown'
+          >
+            —
+          </div>;
         break;
       default:
         break;
@@ -226,10 +226,10 @@ ResourceStatusIndicator.propTypes = {
   statusIndicator: PropTypes.oneOf([
     "success",
     "failure",
-    "warning",
     "inactive",
     "information",
     "in-progress",
+    'incomplete',
     "unknown",
   ]),
   /**
