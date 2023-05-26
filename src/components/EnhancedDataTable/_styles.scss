@@ -425,7 +425,7 @@
     }
 
     .pal--data-table__empty-state-header {
-      @include carbon--type-style('productive-heading-03');
+      @include type.type-style('productive-heading-03');
 
       margin-top: $spacing-04;
       margin-bottom: $spacing-02;
