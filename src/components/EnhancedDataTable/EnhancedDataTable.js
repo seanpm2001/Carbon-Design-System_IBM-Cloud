@@ -1052,7 +1052,7 @@ const EnhancedDataTable = ({
                           <TableCell
                             colSpan={headers.length + extraColumnCount}
                           >
-                            <Grid className="pal--data-table__empty-state">
+                            <div className="pal--data-table__empty-state">
                               <Row>
                                 <Column
                                   sm={4}
@@ -1071,7 +1071,7 @@ const EnhancedDataTable = ({
                                   </div>
                                 </Column>
                               </Row>
-                            </Grid>
+                            </div>
                           </TableCell>
                         </TableRow>
                       )}

@@ -1,35 +1,35 @@
-@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/type';
 @use '@carbon/react/scss/reset';
-@import "@carbon/react/scss/colors";
-@import "@carbon/react/scss/spacing";
-@import "@carbon/react/scss/themes";
-@import "@carbon/react/scss/theme";
-@import "@carbon/react/scss/config";
-@import "@carbon/react/scss/grid";
-@import "@carbon/react/scss/components/search";
-@import "@carbon/react/scss/components/date-picker";
-@import "@carbon/react/scss/components/data-table";
-@import "@carbon/react/scss/components/data-table/action";
-@import "@carbon/react/scss/components/data-table/action/data-table-action";
-@import "@carbon/react/scss/components/data-table/sort";
-@import "@carbon/react/scss/components/data-table/sort/data-table-sort";
-@import "@carbon/react/scss/components/data-table/expandable";
-@import "@carbon/react/scss/components/data-table/expandable/data-table-expandable";
-@import "@carbon/react/scss/components/data-table/skeleton";
-@import "@carbon/react/scss/components/data-table/skeleton/data-table-skeleton";
-@import "@carbon/react/scss/components/checkbox";
-@import "@carbon/react/scss/components/button";
-@import "@carbon/react/scss/components/overflow-menu";
-@import "@carbon/react/scss/components/pagination";
-@import "@carbon/react/scss/components/skeleton-styles";
-@import "@carbon/react/scss/components/link";
-@import "@carbon/react/scss/components/combo-box";
-@import "@carbon/react/scss/components/radio-button";
-@import "@carbon/react/scss/components/text-input";
-@import "@carbon/react/scss/components/multiselect";
-@import "@carbon/react/scss/components/tooltip";
-@import "@carbon/react/scss/components/dropdown";
-@import "@carbon/react/scss/components/tag";
+@import '@carbon/react/scss/colors';
+@import '@carbon/react/scss/spacing';
+@import '@carbon/react/scss/themes';
+@import '@carbon/react/scss/theme';
+@import '@carbon/react/scss/config';
+@import '@carbon/react/scss/grid';
+@import '@carbon/react/scss/components/search';
+@import '@carbon/react/scss/components/date-picker';
+@import '@carbon/react/scss/components/data-table';
+@import '@carbon/react/scss/components/data-table/action';
+@import '@carbon/react/scss/components/data-table/action/data-table-action';
+@import '@carbon/react/scss/components/data-table/sort';
+@import '@carbon/react/scss/components/data-table/sort/data-table-sort';
+@import '@carbon/react/scss/components/data-table/expandable';
+@import '@carbon/react/scss/components/data-table/expandable/data-table-expandable';
+@import '@carbon/react/scss/components/data-table/skeleton';
+@import '@carbon/react/scss/components/data-table/skeleton/data-table-skeleton';
+@import '@carbon/react/scss/components/checkbox';
+@import '@carbon/react/scss/components/button';
+@import '@carbon/react/scss/components/overflow-menu';
+@import '@carbon/react/scss/components/pagination';
+@import '@carbon/react/scss/components/skeleton-styles';
+@import '@carbon/react/scss/components/link';
+@import '@carbon/react/scss/components/combo-box';
+@import '@carbon/react/scss/components/radio-button';
+@import '@carbon/react/scss/components/text-input';
+@import '@carbon/react/scss/components/multiselect';
+@import '@carbon/react/scss/components/tooltip';
+@import '@carbon/react/scss/components/dropdown';
+@import '@carbon/react/scss/components/tag';
 
 /*
  * table settings styles
@@ -42,7 +42,7 @@
     }
 
     legend {
-      @include type.type-style("heading-compact-01");
+      @include type.type-style('heading-compact-01');
 
       padding: 1rem 0 0.5rem;
     }
@@ -60,7 +60,7 @@
         width: 14.625rem;
       }
 
-      &[data-floating-menu-direction="bottom"]::after {
+      &[data-floating-menu-direction='bottom']::after {
         width: 3rem;
       }
 
@@ -233,6 +233,27 @@
     .cds--date-picker-container {
       justify-content: end;
       margin-top: $spacing-01;
+      
+      .cds--date-picker__input {
+
+        /* stylelint-disable max-nesting-depth */
+        &:disabled {
+          background-color: $field-02;
+        }
+        /* stylelint-enable max-nesting-depth */
+      }
+    }
+  }
+
+  .cds--multi-select--filterable {
+    &.cds--list-box--disabled {
+      &:hover {
+        /* stylelint-disable max-nesting-depth */
+        .cds--text-input {
+          background-color: $field-02;
+        }
+        /* stylelint-enable max-nesting-depth */
+      }
     }
   }
 }
@@ -283,6 +304,8 @@
 }
 
 .pal--data-table {
+  @include flex-grid;
+
   .pal--data-table__table-wrapper {
     overflow-x: auto;
   }
@@ -360,11 +383,11 @@
     height: 31px;
   }
 
-  .bx--data-table--tall .bx--table-expand .bx--table-expand__button {
+  .cds--data-table--tall .cds--table-expand .cds--table-expand__button {
     height: rem(32px);
   }
 
-  .bx--data-table--normal .bx--table-expand .bx--table-expand__button {
+  .cds--data-table--normal .cds--table-expand .cds--table-expand__button {
     height: rem(32px);
   }
 
@@ -388,8 +411,8 @@
   }
 
   // Paragraphs inside table cells should use the same font as the table cells
-  .cds--data-table tr:not([data-child-row="true"]) td p {
-    @include type.type-style("body-short-01");
+  .cds--data-table tr:not([data-child-row='true']) td p {
+    @include type.type-style('body-short-01');
   }
 
   // The DataTable styles for some reason are applying a different padding to the
@@ -425,7 +448,7 @@
     }
 
     .pal--data-table__empty-state-header {
-      @include carbon--type-style('productive-heading-03');
+      @include type.type-style('productive-heading-03');
 
       margin-top: $spacing-04;
       margin-bottom: $spacing-02;
@@ -453,6 +476,14 @@
     .cds--btn {
       min-width: 0;
       padding: calc(0.875rem - 3px) 12px;
+    }
+  }
+
+  .cds--table-toolbar-filter-tags {
+    .cds--tag--disabled,
+    .cds--tag--filter.cds--tag--disabled,
+    .cds--tag--interactive.cds--tag--disabled {
+      background-color: $field-02;
     }
   }
 }
