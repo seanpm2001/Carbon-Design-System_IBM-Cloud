@@ -232,7 +232,7 @@ const SidePanelContainer = ({
         data-id="pal-side-panel-container"
         className={panelContainerClasses}
         onMouseDown={handleOverlayEvents}
-        onKeyUp={handleOverlayEvents}
+        onKeyDown={handleOverlayEvents}
         data-testid={testId}
       >
         <div className="pal--side-panel-container__panels">
