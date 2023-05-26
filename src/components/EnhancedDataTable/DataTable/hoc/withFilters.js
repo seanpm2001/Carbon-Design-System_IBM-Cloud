@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from 'react';
 import debounce from "../../../../utils/debounce";
 
 /* eslint-disable react/prop-types */
@@ -147,6 +147,7 @@ const withFilters = (WrappedDataTable) => {
     onExternalFilterRows,
     ...passthroughProps
   }) => {
+    const [prevInitialFilters, sePrevInitialFilters] = useState(initialFilters || {});
     const [filters, setFilters] = useState(initialFilters || {});
     const [batchFilters, setBatchFilters] = useState(initialFilters || {});
     const [isFilterPanelOpen, setFilterPanelOpen] = useState(false);
@@ -155,22 +156,12 @@ const withFilters = (WrappedDataTable) => {
         ? filterRows({ rows, filterKeys, filters })
         : undefined
     );
-    const [filterCallback, setFilterCallback] = useState();
 
-    // Set a debounced filter callback function whenever the external filter
-    // callback function changes.
-    useEffect(() => {
-      if (onExternalFilterChange) {
-        setFilterCallback(() => debounce(onExternalFilterChange, 300));
-      } else {
-        setFilterCallback(undefined);
-      }
-    }, [onExternalFilterChange]);
-
-    // Call the filter callback function whenever the filters change
-    useEffect(() => {
-      if (filterCallback) filterCallback(filters);
-    }, [filterCallback, filters]);
+    // Reset the applied filters when initialFilters changes
+    if (initialFilters !== prevInitialFilters) {
+      changeFilters(initialFilters);
+      sePrevInitialFilters(initialFilters);
+    };
 
     // If an external filter function is provided then do not filter the rows
     // here. Otherwise do the internal filtering when the rows or filters change.
@@ -186,10 +177,31 @@ const withFilters = (WrappedDataTable) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filters]);
 
-    // Reset the applied filters if initialFilters changes
-    useEffect(() => {
-      setFilters(initialFilters || {});
-    }, [initialFilters]);
+    const handleFilterChange = value => {
+      if (value.mode === 'batch') {
+        const newBatchFilters = computeFilters(filters, value)
+        setBatchFilters(newBatchFilters);
+      } else {
+        const newFilters = computeFilters(filters, value)
+        changeFilters(newFilters)
+      }
+    }
+
+    const changeFilters = useCallback((filters) => {
+      setFilters(filters);
+      if(onExternalFilterChange) debounce(onExternalFilterChange(filters), 300);
+    }, [onExternalFilterChange])
+
+    const handleFilterClear = preservedFilterKeys => {
+      const clearedFilters = Object.fromEntries(
+        Object.entries(filters).filter(entry => preservedFilterKeys.includes(entry[0]))
+      );
+      changeFilters(clearedFilters)
+    }
+
+    const handleCommitFilters = () => {
+      changeFilters(batchFilters)
+    }
 
     const augmentedRender = (renderProps) => {
       const augmentedRenderProps = {
@@ -200,26 +212,9 @@ const withFilters = (WrappedDataTable) => {
         isFilterPanelOpen,
         onOpenFilterPanel: () => setFilterPanelOpen(!isFilterPanelOpen),
         onCloseFilterPanel: () => setFilterPanelOpen(false),
-        onFilterChange: (value) => {
-          if (value.mode === "batch") {
-            setBatchFilters(computeFilters(batchFilters, value));
-          } else {
-            setFilters(computeFilters(filters, value));
-          }
-        },
-        onClearAllFilters: (preservedFilterKeys) => {
-          const clearedFilters = Object.fromEntries(
-            Object.entries(filters).filter((entry) =>
-              preservedFilterKeys.includes(entry[0])
-            )
-          );
-
-          setFilters(clearedFilters);
-          setBatchFilters(clearedFilters);
-        },
-        onCommitFilters: () => {
-          setFilters(batchFilters);
-        },
+        onFilterChange: handleFilterChange,
+        onClearAllFilters: handleFilterClear,
+        onCommitFilters: handleCommitFilters,
         filterAllLabel,
       };
       return render(augmentedRenderProps);
