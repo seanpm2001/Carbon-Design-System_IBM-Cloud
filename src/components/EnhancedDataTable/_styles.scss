@@ -414,17 +414,19 @@
 
   .pal--data-table__empty-state {
     padding: $spacing-12 $spacing-07;
-    color: $text-helper;
+    color: $text-primary;
 
     .pal--data-table__empty-state-col {
       flex: unset;
     }
 
     .pal--data-table__empty-state-icon {
-      width: 4rem;
+      width: 5rem;
     }
 
-    h3 {
+    .pal--data-table__empty-state-header {
+      @include carbon--type-style('productive-heading-03');
+
       margin-top: $spacing-04;
       margin-bottom: $spacing-02;
     }
