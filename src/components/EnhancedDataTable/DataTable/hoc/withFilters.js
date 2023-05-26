@@ -10,7 +10,7 @@ import debounce from "../../../../utils/debounce";
 export const computeFilters = (current = {}, input) => {
   if (input && input.columnKey) {
     let selected = [];
-    const { selectedItem, selectedItems } = input;
+    const { selectedItem, selectedItems, value } = input;
     if (input.isDateRange) {
       selected = selectedItems; // array with 2 date objects for start date and end date
     } else if (Object.prototype.hasOwnProperty.call(input, "selectedItem")) {
@@ -19,8 +19,9 @@ export const computeFilters = (current = {}, input) => {
       }
     } else if (Object.prototype.hasOwnProperty.call(input, "selectedItems")) {
       selected = selectedItems.map((item) => item.id);
+    } else if (Object.prototype.hasOwnProperty.call(input, 'value')) {
+      selected = value;
     }
-
     const key = input.columnKey;
 
     return {
@@ -55,11 +56,13 @@ export const computeFilters = (current = {}, input) => {
 const transform = (input, filterItems) => {
   const output = {};
   Object.keys(input).forEach((key) => {
-    output[key] = input[key]
-      .map((item, i) => {
+    if (typeof input[key] === 'string') {
+      output[key] = input[key];
+    } else {
+      output[key] = input[key].map((item, i) => {
         if (item instanceof Date) {
           const start = item;
-          const end = input[key][i + 1];
+          const end = input[key][i+1];
           if (end instanceof Date) {
             return {
               id: `${start.getTime()}-${end.getTime()}`,
@@ -70,17 +73,15 @@ const transform = (input, filterItems) => {
           }
           return null;
         } else if (filterItems && Array.isArray(filterItems[key])) {
-          const filterItem = filterItems[key].find(
-            (entry) => entry.id === item
-          );
+          const filterItem = filterItems[key].find(entry => entry.id === item);
           const { id, label } = filterItem || {};
           if (id && label) {
             return { id, label };
           }
         }
         return { id: item, label: item };
-      })
-      .filter((e) => e);
+      }).filter(e => e);
+    }
   });
   return output;
 };
@@ -119,6 +120,10 @@ const filterRows = ({ rows, filterKeys, filters }) => {
             valObj.getTime() >= start.getTime() &&
             valObj.getTime() <= end.getTime()
           );
+        }
+        // rename selections? so it's more accurate with the new field
+        if (selections && typeof selections === 'string') {
+          return selections === value;
         }
 
         // no selections (all) or a match

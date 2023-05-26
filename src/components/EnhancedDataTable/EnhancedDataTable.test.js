@@ -98,6 +98,12 @@ const rowActions = rowId =>
 
 const filters = [
   {
+    columnKey: 'name',
+    filterType: 'textinput',
+    id: 'name-filter',
+    labelText: 'Name:',
+  },
+  {
     columnKey: 'status',
     filterType: 'multiselect',
     id: 'status-filter',
@@ -147,6 +153,14 @@ const filters = [
       { id: '1.14.3', label: '1.14.3' },
       { id: '1.15.2', label: '1.15.2' },
     ],
+  },
+  {
+    columnKey: 'name',
+    filterKey: 'id',
+    filterType: 'dropdown',
+    id: 'filter-with-internal-props',
+    items: [],
+    label: '',
   },
 ];
 
@@ -383,6 +397,7 @@ describe('EnhancedDataTable', () => {
       ).toBeInTheDocument();
       expect(screen.getByText('Clear')).toBeInTheDocument();
       expect(screen.getByText('Done')).toBeInTheDocument();
+      expect(baseClass.querySelector('.cds--text-input')).toBeInTheDocument();
       expect(baseClass.querySelector('.cds--multi-select')).toBeInTheDocument();
       expect(baseClass.querySelector('.cds--dropdown')).toBeInTheDocument();
       userEvent.click(screen.getByText('Clear'));
@@ -397,7 +412,7 @@ describe('EnhancedDataTable', () => {
           rows={rows}
           headers={headers}
           id="t6"
-          filters={[filters[1]]}
+          filters={[filters[2]]}
         />,
       );
       const baseClass = container.querySelector('.pal--data-table');
@@ -416,7 +431,7 @@ describe('EnhancedDataTable', () => {
           rows={rows}
           headers={headers}
           id="t11"
-          filters={[filters[1]]}
+          filters={[filters[2]]}
         />,
       );
       const baseClass = container.querySelector('.pal--data-table');
@@ -607,5 +622,18 @@ describe('EnhancedDataTable', () => {
       const base = container.querySelector('.pal--data-table');
       expect(base.classList).toContain('pal--data-table--light');
     });
+  });
+
+  test('it does not pass internal filter props down to child filter components', async () => {
+    const filter = render(
+      <EnhancedDataTable
+        filters={[filters.find((filter) => filter.id == 'filter-with-internal-props')]}
+        headers={headers}
+        id="table-with-filter-with-internal-props"
+        rows={rows}
+      />,
+    ).container.querySelector('#filter-with-internal-props');
+    expect(filter).not.toHaveAttribute('filterKey');
+    expect(filter).not.toHaveAttribute('filterType');
   });
 });

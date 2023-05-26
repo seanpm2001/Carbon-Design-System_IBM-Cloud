@@ -30,7 +30,7 @@ import {
   TableToolbarMenu,
   Grid,
   Row,
-  Column,
+  Column
 } from "@carbon/react";
 
 import { useTranslation } from "react-i18next";
@@ -42,6 +42,7 @@ import {
   TableSettingsReset,
   TableToolbarDropdown,
   TableToolbarMultiSelect,
+  TableToolbarTextInput,
   TableToolbarDateRangeSelect,
   TableToolbarFilterPanel,
   TableToolbarButton,
@@ -574,6 +575,7 @@ const EnhancedDataTable = ({
   const onChangeExternalFilter = ({
     selectedItem,
     selectedItems,
+    value,
     columnKey,
   }) => {
     const newFilters = { ...currentExternalFilters };
@@ -585,8 +587,10 @@ const EnhancedDataTable = ({
       }
     } else if (selectedItem) {
       newFilters[columnKey] = [selectedItem.id];
+    } else if (value) {
+      newFilters[columnKey] = value;
     } else {
-      delete newFilters[columnKey];
+        delete newFilters[columnKey];
     }
     setCurrentExternalFilters(newFilters);
   };
@@ -629,10 +633,20 @@ const EnhancedDataTable = ({
       if (field.filterType === "daterangeselect") {
         FieldComponent = TableToolbarDateRangeSelect;
       }
+      if (field.filterType === 'textinput') {
+        FieldComponent = TableToolbarTextInput;
+        fieldProps = {
+          defaultValue: filterSelections[field.columnKey],
+          debounceTime,
+          light: true,
+        };
+      }
       return (
         <FieldComponent
           {...fieldProps}
-          {...field}
+          // Filter out internal props that are not consumed--or known--by child filter components, preventing React
+          // warnings caused by such props getting passed all the way down to DOM elements where they do not belong.
+          {...Object.fromEntries(Object.entries(field).filter(([key]) => !['filterKey', 'filterType'].includes(key)))}
           {...additionalProps}
           locale={locale}
           key={field.id}
@@ -1292,7 +1306,7 @@ EnhancedDataTable.propTypes = {
    */
   initialFilters: PropTypes.shape({}),
   /**
-   * Array of property objects that define the filter components to display. The TableToolbarDropdown, TableToolbarMultiSelect, and TableToolbarDateRangeSelect components are supported, and each object can contain any property supported by the component being used. By default the TableToolbarDropdown is assumed, but the TableToolbarMultiSelect or TableToolbarDateRangeSelect can be used instead by setting the `filterType` property to "multiselect" or "daterangeselect", respectively. Some of the properties are provided automatically and do not need to be specified here. These include `filterAllLabel` and `initialSelectedItem` used by TableToolbarDropdown, and `initialSelectedItems` used by TableToolbarMultiSelect. In addition, the `onChange` prop is always set automatically and does not need to be provided, but if one is provided it will be called with the selected filter values. The `filterKey` prop can be provided to specify the actual row property to filter on if it's different from `columnKey` which is used to get the display value for the filter tag label. If two or less filters are provided they will be displayed in the toolbar. If more than two filters are provided they will be displayed in the filter panel, accessible by clicking on the Filters button in the toolbar. The default width for the toolbar filter dropdown is set to 10rem. Apply a width to the dropdown element using the specified filter id in your stylesheet to set a width that makes sense for each filter. Filter selections are persisted in local storage. See examples below.
+   * Array of property objects that define the filter components to display. The TableToolbarDropdown, TableToolbarMultiSelect, TableToolbarDateRangeSelect, and TableToolbarTextInput components are supported, and each object can contain any property supported by the component being used. By default the TableToolbarDropdown is assumed, but the TableToolbarMultiSelect, TableToolbarDateRangeSelect, or TableToolbarTextInput can be used instead by setting the `filterType` property to "multiselect", "daterangeselect", or "textinput" respectively. Some of the properties are provided automatically and do not need to be specified here. These include `filterAllLabel` and `initialSelectedItem` used by TableToolbarDropdown, and `initialSelectedItems` used by TableToolbarMultiSelect. In addition, the `onChange` prop is always set automatically and does not need to be provided, but if one is provided it will be called with the selected filter values. The `filterKey` prop can be provided to specify the actual row property to filter on if it's different from `columnKey` which is used to get the display value for the filter tag label. If two or less filters are provided they will be displayed in the toolbar. If more than two filters are provided they will be displayed in the filter panel, accessible by clicking on the Filters button in the toolbar. The default width for the toolbar filter dropdown is set to 10rem. Apply a width to the dropdown element using the specified filter id in your stylesheet to set a width that makes sense for each filter. Filter selections are persisted in local storage. See examples below.
    */
   filters: PropTypes.arrayOf(PropTypes.shape({})),
   /**
@@ -1427,7 +1441,7 @@ EnhancedDataTable.propTypes = {
    */
   onFilterChange: PropTypes.func,
   /**
-   * When using the onFilterChange function, this sets the number of ms the debounce feature uses before filtering. Defaults to 300ms.
+   * When using the onFilterChange function, this sets the number of ms the debounce feature uses before filtering. It is also used for debouncing any TextInput in the filter panel while filterPanelMode is 'live'. Defaults to 300ms.
    */
   debounceTime: PropTypes.number,
   /**
