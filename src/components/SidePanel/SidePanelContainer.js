@@ -30,11 +30,6 @@ const addScrollLock = () => document.body.classList.add("pal--no-scroll");
 const removeScrollLock = () => document.body.classList.remove("pal--no-scroll");
 
 /**
- * Used to match the media-query in our CSS
- */
-const animationsOn = window.matchMedia && window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
-
-/**
  * Manages the focus state for the initial focused element.
  */
 const useInitialFocus = (selector) => {
@@ -107,13 +102,14 @@ const SidePanelContainer = ({
   const childCloseRef = useRef();
   const initialFocus = useInitialFocus(focusOnCloseSelector);
   const timeoutRef = useRef(null);
+  const animationsOn = useRef();
 
   // Resets the active panel to the first side panel after the animations finish.
   const resetActivePanel = useCallback(() => {
     /* istanbul ignore next */
     if (!timeoutRef.current) {
       let ref;
-      const timeoutValue = animationsOn ? 400 : 0;
+      const timeoutValue = animationsOn.current ? 400 : 0;
 
       const faded = new Promise(resolveFaded => {
         ref = setTimeout(() => {
@@ -130,6 +126,8 @@ const SidePanelContainer = ({
 
   // Clear the timeout if we're unmounting.
   useEffect(() => {
+    // Used to match the media-query in our CSS
+    animationsOn.current = window.matchMedia && window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
     return () => timeoutRef.current && clearTimeout(timeoutRef.current);
   }, []);
 
