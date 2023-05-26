@@ -632,7 +632,9 @@ const EnhancedDataTable = ({
       return (
         <FieldComponent
           {...fieldProps}
-          {...field}
+          // Filter out internal props that are not consumed--or known--by child filter components, preventing React
+          // warnings caused by such props getting passed all the way down to DOM elements where they do not belong.
+          {...Object.fromEntries(Object.entries(field).filter(([key]) => !['filterKey', 'filterType'].includes(key)))}
           {...additionalProps}
           locale={locale}
           key={field.id}
