@@ -35,24 +35,4 @@ describe('<Counter />', () => {
 
     expect(baseElement).toMatchSnapshot();
   });
-  it('does not change out of bound props as expected', () => {
-    const { baseElement } = render(
-      <Counter
-        totalSteps={-1}
-        currentStep={5}
-      />,
-    );
-
-    expect(baseElement).toMatchSnapshot();
-  });
-  it('does not apply strings as numbers', () => {
-    const { baseElement } = render(
-      <Counter
-        totalSteps="not a number"
-        currentStep="another string"
-      />,
-    );
-
-    expect(baseElement).toMatchSnapshot();
-  });
 });

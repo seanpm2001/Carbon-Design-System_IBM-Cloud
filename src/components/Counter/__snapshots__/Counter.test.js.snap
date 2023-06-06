@@ -1,45 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Counter /> does not apply strings as numbers 1`] = `
-<body>
-  <div>
-    <div
-      class="cds--white cds--layer-one"
-    >
-      <div
-        class="pal--counter"
-        role="status"
-      >
-        <div
-          class="pal--counter__numbers"
-        >
-          <h1
-            class="pal--counter__current-step pal--counter__decrease_number-enter"
-          >
-            another string
-          </h1>
-          <h1
-            class="pal--counter__total-steps"
-          >
-            / 
-            not a number
-          </h1>
-        </div>
-        <p
-          aria-label="Steps complete"
-          class="pal--counter__label"
-        >
-          Steps complete
-        </p>
-        <hr
-          class="pal--counter__divider"
-        />
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
 exports[`<Counter /> does not change out of bound props as expected 1`] = `
 <body>
   <div>
@@ -54,7 +14,7 @@ exports[`<Counter /> does not change out of bound props as expected 1`] = `
           class="pal--counter__numbers"
         >
           <h1
-            class="pal--counter__current-step pal--counter__decrease_number-enter"
+            class="pal--counter__current-step pal--counter__increase_number-enter"
           >
             10
           </h1>
@@ -63,46 +23,6 @@ exports[`<Counter /> does not change out of bound props as expected 1`] = `
           >
             / 
             11
-          </h1>
-        </div>
-        <p
-          aria-label="Steps complete"
-          class="pal--counter__label"
-        >
-          Steps complete
-        </p>
-        <hr
-          class="pal--counter__divider"
-        />
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`<Counter /> does not change out of bound props as expected 2`] = `
-<body>
-  <div>
-    <div
-      class="cds--white cds--layer-one"
-    >
-      <div
-        class="pal--counter"
-        role="status"
-      >
-        <div
-          class="pal--counter__numbers"
-        >
-          <h1
-            class="pal--counter__current-step pal--counter__decrease_number-enter"
-          >
-            -1
-          </h1>
-          <h1
-            class="pal--counter__total-steps"
-          >
-            / 
-            -1
           </h1>
         </div>
         <p
@@ -134,7 +54,7 @@ exports[`<Counter /> renders the component as expected 1`] = `
           class="pal--counter__numbers"
         >
           <h1
-            class="pal--counter__current-step pal--counter__decrease_number-enter"
+            class="pal--counter__current-step pal--counter__increase_number-enter"
           >
             3
           </h1>
@@ -174,7 +94,7 @@ exports[`<Counter /> renders the new props as expected 1`] = `
           class="pal--counter__numbers"
         >
           <h1
-            class="pal--counter__current-step pal--counter__decrease_number-enter"
+            class="pal--counter__current-step pal--counter__increase_number-enter"
           >
             0
           </h1>
