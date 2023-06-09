@@ -60,15 +60,13 @@ import { local as storage } from "../../utils/storage";
 // import translationUtils from '../../utils/translate';
 // import interpolate from '../../utils/interpolate';
 
-// Icons
-import EmptyStateIcon from "../IsometricIcon";
-
 // Child components
 import ActionsDropdown from "./children/ActionsDropdown";
 import TableBatchActions from "./children/TableBatchActions";
 import { TABLE_SORT_DIRECTION } from "./misc/constants";
 import { useSortInfo } from "./hooks/useSortInfo";
 import { useSortedRows } from "./hooks/useSortedRows";
+import Message from "../Message/Message";
 
 const { withSettings, withMenuFocus, withFilters } = DataTableHOC;
 const WrappedDataTable = withSettings(withFilters(DataTable));
@@ -275,7 +273,7 @@ const EnhancedDataTable = ({
   className,
   emptyStateTitle,
   emptyStateDescription: emptyStateDescriptionProp,
-  emptyStateIcon: emptyStateIconProp,
+  emptyStateIcon,
   onSortChange,
   onFilterChange: onFilterChangeProp,
   debounceTime,
@@ -350,13 +348,6 @@ const EnhancedDataTable = ({
       filterItems[f.columnKey] = f.items;
       filterKeys[f.columnKey] = f.filterKey || f.columnKey;
     });
-  }
-
-  let emptyStateIcon = <EmptyStateIcon id={id} icon="EMPTY" />;
-  if (typeof emptyStateIconProp === "string") {
-    emptyStateIcon = <img src={emptyStateIconProp} alt="" />;
-  } else if (emptyStateIconProp) {
-    emptyStateIcon = emptyStateIconProp;
   }
 
   let emptyStateDescription = <p>{translate("emptyStateDescription")}</p>;
@@ -1052,26 +1043,17 @@ const EnhancedDataTable = ({
                           <TableCell
                             colSpan={headers.length + extraColumnCount}
                           >
-                            <div className="pal--data-table__empty-state">
-                              <Row>
-                                <Column
-                                  sm={4}
-                                  lg={{ offset: 1, span: 15 }}
-                                  className="pal--data-table__empty-state-col"
-                                >
-                                  <div className="pal--data-table__empty-state-icon">
-                                    {emptyStateIcon}
-                                  </div>
-                                  <h3 className="pal--data-table__empty-state-header">
-                                    {emptyStateTitle ||
-                                      translate("emptyStateTitle")}
-                                  </h3>
-                                  <div className="pal--data-table__empty-state-description">
-                                    {emptyStateDescription}
-                                  </div>
-                                </Column>
-                              </Row>
-                            </div>
+                            <Message    
+                              id="pal--data-table__empty"
+                              className="pal--data-table__empty-state"
+                              icon={emptyStateIcon}
+                              isTileWrapped
+                              caption={emptyStateDescription}
+                              text={emptyStateTitle ||
+                                translate("emptyStateTitle")}
+                              isLarge
+                              />
+
                           </TableCell>
                         </TableRow>
                       )}
@@ -1449,7 +1431,7 @@ EnhancedDataTable.propTypes = {
   /**
    * Icon to show on the empty state. If not provided a default empty state icon is used.
    */
-  emptyStateIcon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  emptyStateIcon: Message.propTypes.icon,
   /**
    * Function to call when the string filter is changed. Use this to override the built-in string filtering to either do your own custom filtering or to call an API to get new data based on the filter. It is passed the value entered into the table filter input. Make sure this is a function that does not change on every render or it will cause an infinite loop. For example, set it as a state property or use useCallback.
    */
@@ -1579,7 +1561,7 @@ EnhancedDataTable.defaultProps = {
   className: undefined,
   emptyStateTitle: undefined,
   emptyStateDescription: undefined,
-  emptyStateIcon: undefined,
+  emptyStateIcon: "EMPTY",
   onFilterChange: undefined,
   debounceTime: 300,
   onExternalFilterChange: undefined,

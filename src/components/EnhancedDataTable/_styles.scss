@@ -438,25 +438,6 @@
   .pal--data-table__empty-state {
     padding: $spacing-12 $spacing-07;
     color: $text-primary;
-
-    .pal--data-table__empty-state-col {
-      flex: unset;
-    }
-
-    .pal--data-table__empty-state-icon {
-      width: 5rem;
-    }
-
-    .pal--data-table__empty-state-header {
-      @include type.type-style('productive-heading-03');
-
-      margin-top: $spacing-04;
-      margin-bottom: $spacing-02;
-    }
-
-    .pal--data-table__empty-state-description {
-      max-width: 18rem;
-    }
   }
 
   .cds--data-table tbody tr.pal--data-table__no-hover,
