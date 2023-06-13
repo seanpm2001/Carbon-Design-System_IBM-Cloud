@@ -1,0 +1,94 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { useState } from 'react';
+import { Button } from "@carbon/react";
+import BigNumbers from './BigNumbers';
+import "./_styles.scss";
+
+<Meta
+  title="Experimental/BigNumbers"
+  component={BigNumbers}
+  argTypes={{
+    currentNumber: { type: { name: 'number' } },
+  }}
+  parameters={{ status: { type: "experimental" } }}
+/>
+
+# BigNumbers
+
+export const Template = args => {
+  const {currentNumber} = args;
+  const [number, setNumber] = useState(currentNumber);
+  function addNumber(delta) {
+    let newNumber = number + delta;
+    // Limit our number to what can be displayed,
+    // otherwise button clicks may take more increments/decrements than is visible.
+    if (newNumber < 0) {
+      newNumber = 0;
+    }
+    setNumber(newNumber);
+  }
+  return <>
+    <BigNumbers currentNumber={number}/>
+    <Button kind='tertiary' size='sm' onClick={() => addNumber(100)}>
+        Increase
+    </Button>
+    <Button kind='tertiary' size='sm'onClick={() => addNumber(-100)}>
+        Decrease
+    </Button>
+    </>
+}
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{totalNumbers:5, currentNumber:0}}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+BigNumbers is a component in the Cloud PAL Experimental style. BigNumbers animates an increase or decrease in cost. 
+
+Motion can be reduced with system or browser settings.
+
+## Usage
+
+1.  Install the [@carbon/carbon-for-ibm-cloud](https://pages.github.ibm.com/cdai-design/cloud-pal/cloudpal-guidance/cloudpal-v2/migration-guides/#installing-and-using-the-new-packages) library
+2.  Import the styles:
+
+    ```js
+    @import '@carbon/carbon-for-ibm-cloud/components/BigNumbers/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { BigNumbers } from "@carbon/carbon-for-ibm-cloud/components";
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={BigNumbers} />
+
+## Loading State
+
+<Canvas>
+  <Story
+    name="Skeleton"
+  >
+    <BigNumbers.Skeleton />
+  </Story>
+</Canvas>
+
+## Contributors
+
+- Stephanie Cree
+- Kevin Camelo

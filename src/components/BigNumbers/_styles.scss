@@ -1,0 +1,144 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/motion";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+
+// @include component('pal--big-numbers') {
+    .pal--big-numbers {
+        margin: 16px;
+        transition: width 100ms;
+        text-align: left;
+    
+        &__numbers {
+            display: flex;
+            margin-bottom: $spacing-05;
+            align-items: baseline;
+            text-align: left;
+        }
+    
+        &__previous-number {
+            @include type.type-style('heading-03');
+            
+            font-weight: 300;
+            color: $text-primary;
+            position: relative;
+            width: 0;
+            height: 0;
+        }
+    
+        &__current-number {
+            @include type.type-style('heading-03');
+    
+            font-weight: 300;
+            color: $text-primary;
+        }
+    
+        &__increase_number-exit {
+            @media (prefers-reduced-motion: reduce) {
+                animation-duration: 600ms;
+            }
+    
+            animation: 200ms motion(exit, expressive) 0ms 1 forwards increaseNumberExit;
+    
+            @keyframes increaseNumberExit {
+                0% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+    
+                60% {
+                    opacity: 0;
+                }
+    
+                100% {
+                    transform: translateY(2rem);
+                    opacity: 0;
+                    display: none;
+                    visibility: hidden;
+                }
+    
+            }
+        }
+    
+        &__increase_number-enter {
+            @media (prefers-reduced-motion: reduce) {
+                animation-duration: 600ms;
+            }
+    
+            animation: 200ms motion(entrance, expressive) 0ms 1 forwards increaseNumberEnter;
+    
+            @keyframes increaseNumberEnter {
+                0% {
+                    transform: translateY(2rem);
+                    opacity: 0;
+                }
+    
+                20% {
+                    opacity: 0;
+                }
+    
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+    
+            }
+        }
+    
+        &__decrease_number-exit {
+            @media (prefers-reduced-motion: reduce) {
+                animation-duration: 600ms;
+            }
+    
+            animation: 200ms motion(exit, expressive) 0ms 1 forwards decreaseNumberExit;
+    
+            @keyframes decreaseNumberExit {
+                0% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+    
+                60% {
+                    opacity: 0;
+                }
+    
+                100% {
+                    transform: translateY(2rem);
+                    opacity: 0;
+                    display: none;
+                    visibility: hidden;
+                }
+    
+            }
+        }
+    
+        &__decrease_number-enter {
+            @media (prefers-reduced-motion: reduce) {
+                animation-duration: 600ms;
+            }
+    
+            animation: 200ms motion(entrance, expressive) 0ms 1 forwards decreaseNumberEnter;
+    
+            @keyframes decreaseNumberEnter {
+                0% {
+                    transform: translateY(-2rem);
+                    opacity: 0;
+                }
+    
+                20% {
+                    opacity: 0;
+                }
+    
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+    
+            }
+        }
+    }
+// }
