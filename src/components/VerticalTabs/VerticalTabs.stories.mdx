@@ -1,0 +1,100 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { useState } from 'react';
+import { Button, Tab, TabList, TabPanels, TabPanel } from "@carbon/react";
+import { Add } from '@carbon/icons-react';
+import VerticalTabs, { VerticalTab, VerticalTabList } from '.';
+import "./_styles.scss";
+
+<Meta
+  title="Experimental/VerticalTabs"
+  component={VerticalTabs}
+  parameters={{ status: { type: "experimental" } }}
+/>
+
+# VerticalTabs
+
+export const Template = args => (
+  <VerticalTabs {...args}>
+    <VerticalTabList contained aria-label="test">
+      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 1</VerticalTab>
+      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 2</VerticalTab>
+    </VerticalTabList>
+    <TabPanels className='test-panels'>
+      <TabPanel style={{ height: '400px', width: '400px' }}>1</TabPanel>
+      <TabPanel style={{ height: '400px', width: '400px' }}>2</TabPanel>
+    </TabPanels>
+  </VerticalTabs>
+)
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Many tabs
+
+<Canvas>
+  <Story
+    name="Many Tabs"
+  >
+    <VerticalTabs fullHeight>
+    <VerticalTabList contained aria-label="test">
+      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 1</VerticalTab>
+      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 2</VerticalTab>
+      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 3</VerticalTab>
+      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 4</VerticalTab>
+      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 5</VerticalTab>
+      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 6</VerticalTab>
+      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 7</VerticalTab>
+      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 8</VerticalTab>
+    </VerticalTabList>
+    <TabPanels className='test-panels'>
+      <TabPanel style={{ height: '400px', width: '400px' }}>1</TabPanel>
+      <TabPanel style={{ height: '400px', width: '400px' }}>2</TabPanel>
+    </TabPanels>
+  </VerticalTabs>
+  </Story>
+</Canvas>
+
+## Description
+
+VerticalTabs is a component in the Cloud PAL Experimental style. The VerticalTabs monitors the user’s progress through a series of steps. 
+
+It guides them toward the completion of a specific process and shows the numeric value of the completed steps in relation to how many steps there are in total.
+
+Motion can be reduced with system or browser settings.
+
+## Usage
+
+1.  Install the [@carbon/carbon-for-ibm-cloud](https://pages.github.ibm.com/cdai-design/cloud-pal/cloudpal-guidance/cloudpal-v2/migration-guides/#installing-and-using-the-new-packages) library
+2.  Import the styles:
+
+    ```js
+    @import '@carbon/carbon-for-ibm-cloud/components/VerticalTabs/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { VerticalTabs } from "@carbon/carbon-for-ibm-cloud/components";
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={VerticalTabs} />
+
+## Contributors
+
+- Stephanie Cree
+- Lisa Kaiser
+- Asha Newsom
+- Max Hammer

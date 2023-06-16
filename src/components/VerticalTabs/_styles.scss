@@ -1,0 +1,96 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@use "@carbon/react/scss/components/skeleton-styles";
+
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+
+.pal--vertical-tabs {
+  display: flex;
+  align-items: flex-start;
+
+  .pal--vertical-tab-list {
+    max-height: 100%;
+    width: auto;
+    border-right: solid 2px transparent;
+    overflow-y: auto;
+    flex-direction: column;
+  }
+
+  &--full-height  .cds--tabs.cds--tabs--contained.cds--tabs--tall .cds--tabs__nav-link {
+    flex-grow: 1;
+  }
+
+  &--full-height {
+    align-items: stretch;
+  }
+
+  &--full-height .pal--vertical-tab-list .cds--tab--list {
+    align-items: stretch;
+    height: 100%;
+  }
+
+  &--full-height .pal--vertical-tab-list {
+    align-items: stretch;
+  }
+
+  .pal--vertical-tab-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pal--vertical-tab-list .cds--tab--list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cds--tab-content {
+    background-color: $layer-01;
+  }
+
+  // vertical tab
+  .cds--tabs.cds--tabs--contained .pal--vertical-tab.cds--tabs__nav-item--selected {
+    border-bottom: 0;
+    box-shadow: inset 0 0 0 0;
+    border-left: 2px solid var(--cds-border-interactive, #0f62fe);
+  }
+
+  .pal--vertical-tab {
+    border-bottom: 0;
+    border-left: 2px solid var(--cds-border-subtle);
+    min-width: 250px;
+
+    .cds--tabs__nav-item-label {
+      display: flex;
+    }
+
+    .cds--tabs__nav-item-secondary-label {
+      margin-left: $spacing-06;
+    }
+  }
+
+  .pal--vertical-tab__icon {
+    margin-right: $spacing-03;
+  }
+
+  .pal--vertical-tab.cds--tabs__nav-item:not(.cds--tabs__nav-item--selected):not(.cds--tabs__nav-item--disabled):hover {
+    border-bottom: 0;
+    border-left: 2px solid var(--cds-border-strong);
+  }
+
+  .pal--vertical-tab.cds--tabs__nav-item + .cds--tabs__nav-item {
+    margin-top: 0.0625rem;
+    margin-left: 0;
+  }
+}
+
+.pal--vertical-tabs.cds--tabs.cds--tabs--contained .pal--vertical-tab.cds--tabs__nav-item--selected {
+  border-bottom: 0;
+  box-shadow: inset 0 0 0 0;
+  border-left: 2px solid var(--cds-border-interactive, #0f62fe);
+}
+
+
