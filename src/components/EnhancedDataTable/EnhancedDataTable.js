@@ -1043,17 +1043,24 @@ const EnhancedDataTable = ({
                           <TableCell
                             colSpan={headers.length + extraColumnCount}
                           >
-                            <Message    
-                              id="pal--data-table__empty"
-                              className="pal--data-table__empty-state"
-                              icon={emptyStateIcon}
-                              isTileWrapped
-                              caption={emptyStateDescription}
-                              text={emptyStateTitle ||
-                                translate("emptyStateTitle")}
-                              isLarge
-                              />
-
+                            <Row>
+                              <Column
+                                sm={4}
+                                lg={{ offset: 1, span: 15 }}
+                                className="pal--data-table__empty-state-col"
+                              >
+                                <Message    
+                                  id="pal--data-table__empty"
+                                  className="pal--data-table__empty-state"
+                                  icon={emptyStateIcon}
+                                  isTileWrapped
+                                  caption={emptyStateDescription}
+                                  text={emptyStateTitle ||
+                                    translate("emptyStateTitle")}
+                                  isLarge
+                                  />
+                              </Column>
+                            </Row>
                           </TableCell>
                         </TableRow>
                       )}
