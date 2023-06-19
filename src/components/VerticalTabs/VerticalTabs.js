@@ -1,22 +1,19 @@
-import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import React from "react";
 import {
-  Layer,
   Tabs
 } from "@carbon/react";
 import classNames from "classnames";
-import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
 
 /**
  * 
  * TODO:
- * - scroll behavior on overflow
- * - pagination
+ * - pagination button tooltips
  * - panel styles
  * - search bar
  * - mobile view
+ * - resource status indicator
  */
 const VerticalTabs = props => {
 
@@ -26,16 +23,6 @@ const VerticalTabs = props => {
   "pal--vertical-tabs",
   { 'pal--vertical-tabs--full-height': fullHeight },
   className );
-  const { t } = useTranslation();
-  const [pageId, setPageId] = useState(0);
-
-  const onPageChange = id => {
-    setPageId(id);
-  };
-
-  const onTabClick = () => {
-    setPageId(0);
-  };
 
   return (
     <Tabs className={classes} {...rest}>

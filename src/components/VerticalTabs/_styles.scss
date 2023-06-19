@@ -11,40 +11,41 @@
 .pal--vertical-tabs {
   display: flex;
   align-items: flex-start;
+  max-height: 100%;
+  overflow-y: hidden;
+  overflow-x: visible;
+
+  .pal--vertical-tab-list__container {
+    display: flex;
+    max-height: 100%;
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+    flex-direction: column;
+    overflow-x: visible;
+
+  }
 
   .pal--vertical-tab-list {
+    display: flex;
     max-height: 100%;
     width: auto;
     border-right: solid 2px transparent;
     overflow-y: auto;
     flex-direction: column;
-  }
+    overflow-x: visible;
 
-  &--full-height  .cds--tabs.cds--tabs--contained.cds--tabs--tall .cds--tabs__nav-link {
-    flex-grow: 1;
-  }
 
-  &--full-height {
-    align-items: stretch;
-  }
-
-  &--full-height .pal--vertical-tab-list .cds--tab--list {
-    align-items: stretch;
-    height: 100%;
-  }
-
-  &--full-height .pal--vertical-tab-list {
-    align-items: stretch;
-  }
-
-  .pal--vertical-tab-list {
-    display: flex;
-    flex-direction: column;
+    &--pagination {
+      margin-bottom: 41px; // height of pagination
+    }
   }
 
   .pal--vertical-tab-list .cds--tab--list {
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    flex-shrink: 0;
   }
 
   .cds--tab-content {
@@ -68,7 +69,7 @@
     }
 
     .cds--tabs__nav-item-secondary-label {
-      margin-left: $spacing-06;
+      // margin-left: $spacing-06;
     }
   }
 
@@ -85,12 +86,60 @@
     margin-top: 0.0625rem;
     margin-left: 0;
   }
+
+
+  &--full-height  .cds--tabs.cds--tabs--contained.cds--tabs--tall .cds--tabs__nav-link {
+    flex-grow: 1;
+  }
+
+  &--full-height {
+    align-items: stretch;
+  }
+
+  &--full-height .pal--vertical-tab-list .cds--tab--list {
+    align-items: stretch;
+    height: 100%;
+  }
+
+  &--full-height .pal--vertical-tab-list {
+    align-items: stretch;
+  }
+
+  
+  &--full-height .pal--vertical-tab-list__container  {
+    align-items: stretch;
+    flex-direction: row;
+    height: auto;
+  }
 }
 
 .pal--vertical-tabs.cds--tabs.cds--tabs--contained .pal--vertical-tab.cds--tabs__nav-item--selected {
   border-bottom: 0;
   box-shadow: inset 0 0 0 0;
   border-left: 2px solid var(--cds-border-interactive, #0f62fe);
+}
+
+// vertical pagination
+.pal--vertical-pagination {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid $border-subtle-02;
+  align-items:center;
+  padding-left: $spacing-05;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  
+  .cds--btn {
+   border-left: 1px solid $border-subtle-02; 
+  }
+
+  .cds--btn--disabled {
+    border-left: 1px solid $border-subtle-02 !important; // force border color
+  }
+
+  
 }
 
 

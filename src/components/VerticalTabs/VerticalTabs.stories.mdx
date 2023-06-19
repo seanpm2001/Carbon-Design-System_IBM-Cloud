@@ -15,13 +15,17 @@ import "./_styles.scss";
 
 export const Template = args => (
   <VerticalTabs {...args}>
-    <VerticalTabList contained aria-label="test">
+    <VerticalTabList contained aria-label="vertical-tab-list">
       <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 1</VerticalTab>
+      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 2</VerticalTab>
+      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 2</VerticalTab>
       <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 2</VerticalTab>
     </VerticalTabList>
     <TabPanels className='test-panels'>
       <TabPanel style={{ height: '400px', width: '400px' }}>1</TabPanel>
       <TabPanel style={{ height: '400px', width: '400px' }}>2</TabPanel>
+      <TabPanel style={{ height: '400px', width: '400px' }}>3</TabPanel>
+      <TabPanel style={{ height: '400px', width: '400px' }}>4</TabPanel>
     </TabPanels>
   </VerticalTabs>
 )
@@ -40,24 +44,22 @@ export const Template = args => (
 
 <Canvas>
   <Story
-    name="Many Tabs"
+    name="Uncontrolled"
   >
-    <VerticalTabs fullHeight>
-    <VerticalTabList contained aria-label="test">
-      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 1</VerticalTab>
-      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 2</VerticalTab>
-      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 3</VerticalTab>
-      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 4</VerticalTab>
-      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 5</VerticalTab>
-      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 6</VerticalTab>
-      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 7</VerticalTab>
-      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 8</VerticalTab>
-    </VerticalTabList>
-    <TabPanels className='test-panels'>
-      <TabPanel style={{ height: '400px', width: '400px' }}>1</TabPanel>
-      <TabPanel style={{ height: '400px', width: '400px' }}>2</TabPanel>
-    </TabPanels>
-  </VerticalTabs>
+    <div style={{maxHeight:'400px', display: 'flex'}}>
+      <VerticalTabs >
+        <VerticalTabList withPagination contained aria-label="test">
+          {Array.from(Array(100).keys()).map((value, index) => (
+            <VerticalTab secondaryLabel="Label">Tab label {index}</VerticalTab>
+          ))}
+        </VerticalTabList>
+        <TabPanels className='test-panels'>
+          {Array.from(Array(100).keys()).map((value, index) => (
+            <TabPanel style={{ height: '400px', width: '400px' }}>{index}</TabPanel>
+          ))}
+        </TabPanels>
+      </VerticalTabs>
+  </div>
   </Story>
 </Canvas>
 
