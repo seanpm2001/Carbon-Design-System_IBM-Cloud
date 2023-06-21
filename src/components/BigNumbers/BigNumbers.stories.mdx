@@ -38,12 +38,23 @@ export const Template = args => {
     </>
 }
 
-### Default
+### Chunked numbers
 
 <Canvas>
   <Story
-    name="Default"
-    args={{totalNumbers:5, currentNumber:0}}
+    name="Chunked"
+    args={{currentNumber:0}}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Staggered
+
+<Canvas>
+  <Story
+    name="Staggered"
+    args={{currentNumber:0}}
   >
     {Template.bind({})}
   </Story>

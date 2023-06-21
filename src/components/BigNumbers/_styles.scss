@@ -140,5 +140,11 @@
     
             }
         }
+
+        @for $i from 1 through 5 {
+            .pal--big-numbers__digit-#{$i} {
+                animation-delay: #{$i * 60}ms;
+            }
+        }   
     }
 // }

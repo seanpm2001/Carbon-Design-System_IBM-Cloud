@@ -11,26 +11,100 @@ function keepInBounds(value, lowerBound) {
   return value
 }
 
+function divideDigits(digitString, currentDigit, currentNumber, previousNumber) {
+    console.log(digitString);
+    let digitSet = "";
+    let classString = "";
+    let loopLength = 0;
+    loopLength = digitString.length;
+    // set current or previous class
+    if (currentDigit) {
+        classString = "pal--big-numbers__current-number ";
+        // loopLength = digitString.length;
+        // set increase or decrease class
+        if (currentNumber < previousNumber) {
+            //add to string
+            classString = classString + "pal--big-numbers__decrease_number-enter";
+        }
+        else {
+            //add to string
+            classString = classString + "pal--big-numbers__increase_number-enter";
+        }
+    }
+    //could also check if string != current number
+    else if (!currentDigit) {
+        classString = "pal--big-numbers__previous-number ";
+        // loopLength = previousNumber.toString.length;
+        // set increase or decrease class
+        if (currentNumber > previousNumber) {
+            //add to string
+            classString = classString + "pal--big-numbers__increase_number-exit";
+        }
+        //what to do if prev and current are same?
+        else if (currentNumber < previousNumber) {
+            //add to string
+            classString = classString + "pal--big-numbers__decrease_number-exit"
+        }
+    }
+    console.log(classString);
+    for (let i = 0; i < loopLength; i++) {
+        let digit = digitString.charAt(i);
+        //construct span with class and digit
+        let digitSpan = `<span className="${classString} pal--big-numbers__digit-${i}">${digit}</span>`;
+        //add to set
+        digitSet = digitSet + digitSpan;
+    }
+    console.log(digitSet);
+    // digitSet = <>${digitSet} <>
+    return digitSet;
+}
+
 const BigNumbers = ({
     /* Declare any props that this pattern can use */
-    currentNumber: initialNumber,
+    currentNumber: initialNumber, staggeredAnimation,
   }) => {
   const [currentNumber, setcurrentNumber] = useState(keepInBounds(initialNumber, 0));
   const [previousNumber, setpreviousNumber] = useState(currentNumber);
+//   const [currentNumberString, setcurrentNumberString] = useState(currentNumber.toString);
+//   const [previousNumberString, setpreviousNumberString] = useState(previousNumber.toString);
+  const [previousSet, setpreviousSet] = useState();
+  const [currentSet, setcurrentSet] = useState();
 
   useEffect(() => {
+    //update numbers
     let newNumber = keepInBounds(initialNumber, 0);
     if (newNumber !== currentNumber) {
-      setpreviousNumber(currentNumber);
-      setcurrentNumber(newNumber);
+        setpreviousNumber(Number(currentNumber));
+        setcurrentNumber(Number(newNumber));
+        console.log("previous num:" + previousNumber + " current num:" + currentNumber);
+        //set Strings
+        // let previousNumberString = previousNumber.toString;
+        // let currentNumberString = currentNumber.toString;
+        // console.log("previous string:" + previousNumberString + " current string:" + currentNumberString);
+        //construct spans from strings
+        // let previousNumberString = "555";
+        // let currentNumberString = "777";
+        setpreviousSet(divideDigits(`${previousNumber}`, false, currentNumber, previousNumber));
+        setcurrentSet(divideDigits(`${currentNumber}`, true, currentNumber, previousNumber));
     }
-  }, [initialNumber, currentNumber]);
+ }, [initialNumber, currentNumber, previousNumber]);
+//   }, [initialNumber, currentNumber, previousNumber, currentNumberString, previousNumberString]);
 
 //   const { t } = useTranslation("BigNumbers");
 
   return (
       <div className="pal--big-numbers" role="status">
         <div className="pal--big-numbers__numbers">
+            {/* Animation without stagger */}
+            {/* {currentNumber > previousNumber
+            ? <h1 key={previousNumber} className="pal--big-numbers__previous-number pal--big-numbers__increase_number-exit">{previousNumber}</h1>
+            : null
+            }
+            {currentNumber < previousNumber
+            ? <h1 key={previousNumber} className="pal--big-numbers__previous-number pal--big-numbers__decrease_number-exit">{previousNumber}</h1>
+            : null
+            }
+            <h1 key={currentNumber} className={`pal--big-numbers__current-number ${currentNumber < previousNumber ? "pal--big-numbers__decrease_number-enter" : "pal--big-numbers__increase_number-enter"}`}>{currentNumber}</h1> */}
             {currentNumber > previousNumber
             ? <h1 key={previousNumber} className="pal--big-numbers__previous-number pal--big-numbers__increase_number-exit">{previousNumber}</h1>
             : null
@@ -39,7 +113,10 @@ const BigNumbers = ({
             ? <h1 key={previousNumber} className="pal--big-numbers__previous-number pal--big-numbers__decrease_number-exit">{previousNumber}</h1>
             : null
             }
-            <h1 key={currentNumber} className={`pal--big-numbers__current-number ${currentNumber < previousNumber ? "pal--big-numbers__decrease_number-enter" : "pal--big-numbers__increase_number-enter"}`}>{currentNumber}</h1>
+            <h1 key={currentNumber} className={`pal--big-numbers__current-number ${currentNumber < previousNumber ? "pal--big-numbers__decrease_number-enter" : "pal--big-numbers__increase_number-enter"} pal--big-numbers__digit-#2}`}>{currentNumber}</h1>      
+            {/* <>{currentSet}</> 
+            <>{previousSet}</>  */}
+            <div className="pal--big-numbers__numbers"  dangerouslySetInnerHTML={{__html: currentSet}}></div>
         </div>
       </div>
   );
@@ -50,14 +127,19 @@ BigNumbers.Skeleton = Skeleton;
 
 BigNumbers.propTypes = {
   /**
-   * The number of numbers the user is currently on, or the starting number if not 0. Use this to increase the current number number.
+   * The number to display to the user, or the number to change to.
    */
   currentNumber: PropTypes.number, // 
+    /**
+  * Whether the animation is chunked or staggered.
+   */
+  staggeredAnimation: PropTypes.bool, // 
 };
 
 BigNumbers.defaultProps = {
   /* Default value for any non required props for this pattern */
   currentNumber: 0,
+  staggeredAnimation: false,
 };
 
 export default BigNumbers;
