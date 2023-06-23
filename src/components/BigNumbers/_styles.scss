@@ -36,13 +36,16 @@
             font-weight: 300;
             color: $text-primary;
         }
-    
+        
+
+        // staggered motion
+
         &__increase_number-exit {
             @media (prefers-reduced-motion: reduce) {
                 animation-duration: 600ms;
             }
     
-            animation: 200ms motion(exit, expressive) 0ms 1 forwards increaseNumberExit;
+            animation: 750ms motion(exit, productive) 0ms 1 forwards increaseNumberExit;
     
             @keyframes increaseNumberExit {
                 0% {
@@ -69,7 +72,7 @@
                 animation-duration: 600ms;
             }
     
-            animation: 200ms motion(entrance, expressive) 0ms 1 forwards increaseNumberEnter;
+            animation: 750ms motion(entrance, productive) 0ms 1 forwards increaseNumberEnter;
     
             @keyframes increaseNumberEnter {
                 0% {
@@ -94,7 +97,7 @@
                 animation-duration: 600ms;
             }
     
-            animation: 200ms motion(exit, expressive) 0ms 1 forwards decreaseNumberExit;
+            animation: 750ms motion(exit, productive) 0ms 1 forwards decreaseNumberExit;
     
             @keyframes decreaseNumberExit {
                 0% {
@@ -121,7 +124,7 @@
                 animation-duration: 600ms;
             }
     
-            animation: 200ms motion(entrance, expressive) 0ms 1 forwards decreaseNumberEnter;
+            animation: 750ms motion(entrance, productive) 0ms 1 forwards decreaseNumberEnter;
     
             @keyframes decreaseNumberEnter {
                 0% {
@@ -143,8 +146,113 @@
 
         @for $i from 1 through 5 {
             .pal--big-numbers__digit-#{$i} {
-                animation-delay: #{$i * 60}ms;
+                animation-delay: #{$i * 30}ms;
             }
-        }   
+        }
+
+        //for chunked motion - not staggered
+        &__chunked_increase_number-exit {
+            @media (prefers-reduced-motion: reduce) {
+                animation-duration: 600ms;
+            }
+    
+            animation: 200ms motion(exit, expressive) 0ms 1 forwards increaseNumberExitChunked;
+    
+            @keyframes increaseNumberExitChunked {
+                0% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+    
+                60% {
+                    opacity: 0;
+                }
+    
+                100% {
+                    transform: translateY(2rem);
+                    opacity: 0;
+                    display: none;
+                    visibility: hidden;
+                }
+    
+            }
+        }
+    
+        &__chunked_increase_number-enter {
+            @media (prefers-reduced-motion: reduce) {
+                animation-duration: 600ms;
+            }
+    
+            animation: 200ms motion(entrance, expressive) 0ms 1 forwards increaseNumberEnterChunked;
+    
+            @keyframes increaseNumberEnterChunked {
+                0% {
+                    transform: translateY(2rem);
+                    opacity: 0;
+                }
+    
+                20% {
+                    opacity: 0;
+                }
+    
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+    
+            }
+        }
+    
+        &__chunked_decrease_number-exit {
+            @media (prefers-reduced-motion: reduce) {
+                animation-duration: 600ms;
+            }
+    
+            animation: 200ms motion(exit, expressive) 0ms 1 forwards decreaseNumberExitChunked;
+    
+            @keyframes decreaseNumberExitChunked {
+                0% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+    
+                60% {
+                    opacity: 0;
+                }
+    
+                100% {
+                    transform: translateY(2rem);
+                    opacity: 0;
+                    display: none;
+                    visibility: hidden;
+                }
+    
+            }
+        }
+    
+        &__chunked_decrease_number-enter {
+            @media (prefers-reduced-motion: reduce) {
+                animation-duration: 600ms;
+            }
+    
+            animation: 200ms motion(entrance, expressive) 0ms 1 forwards decreaseNumberEnterChunked;
+    
+            @keyframes decreaseNumberEnterChunked {
+                0% {
+                    transform: translateY(-2rem);
+                    opacity: 0;
+                }
+    
+                20% {
+                    opacity: 0;
+                }
+    
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+    
+            }
+        }
     }
 // }

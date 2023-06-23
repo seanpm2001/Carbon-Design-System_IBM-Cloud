@@ -50,7 +50,8 @@ function divideDigits(digitString, currentDigit, currentNumber, previousNumber) 
     for (let i = 0; i < loopLength; i++) {
         let digit = digitString.charAt(i);
         //construct span with class and digit
-        let digitSpan = `<span className="${classString} pal--big-numbers__digit-${i}">${digit}</span>`;
+        // let digitSpan = `<span className="${classString} pal--big-numbers__digit-${i}">${digit}</span>`;
+        let digitSpan = `<span class="${classString} pal--big-numbers__digit-${i}">${digit}</span>`;
         //add to set
         digitSet = digitSet + digitSpan;
     }
@@ -105,7 +106,7 @@ const BigNumbers = ({
             : null
             }
             <h1 key={currentNumber} className={`pal--big-numbers__current-number ${currentNumber < previousNumber ? "pal--big-numbers__decrease_number-enter" : "pal--big-numbers__increase_number-enter"}`}>{currentNumber}</h1> */}
-            {currentNumber > previousNumber
+            {/* {currentNumber > previousNumber
             ? <h1 key={previousNumber} className="pal--big-numbers__previous-number pal--big-numbers__increase_number-exit">{previousNumber}</h1>
             : null
             }
@@ -114,9 +115,11 @@ const BigNumbers = ({
             : null
             }
             <h1 key={currentNumber} className={`pal--big-numbers__current-number ${currentNumber < previousNumber ? "pal--big-numbers__decrease_number-enter" : "pal--big-numbers__increase_number-enter"} pal--big-numbers__digit-#2}`}>{currentNumber}</h1>      
+             */}
             {/* <>{currentSet}</> 
             <>{previousSet}</>  */}
-            <div className="pal--big-numbers__numbers"  dangerouslySetInnerHTML={{__html: currentSet}}></div>
+            {/* <div key={previousNumber} className="pal--big-numbers__numbers"  dangerouslySetInnerHTML={{__html: previousSet}}></div> */}
+            <div key={currentNumber} className="pal--big-numbers__numbers"  dangerouslySetInnerHTML={{__html: currentSet}}></div>
         </div>
       </div>
   );
