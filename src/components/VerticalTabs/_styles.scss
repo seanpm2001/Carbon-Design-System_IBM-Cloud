@@ -17,11 +17,10 @@
   max-height: 100%;
   overflow-y: hidden;
   overflow-x: hidden;
+  align-items: stretch;
 
-  .pal--vertical-tab-list__container, .pal--vertical-tab-list--sm, .pal--vertical-tab-list--lg {
-    display: flex;
-    max-height: 100%;
-    height: 100%;
+
+  .pal--vertical-tab-list, .pal--vertical-tab-list--sm, .pal--vertical-tab-list--lg {
     position: relative;
     overflow-y: auto;
     flex-direction: column;
@@ -41,28 +40,18 @@
     height:100%;
   }
 
-  .pal--vertical-tab-list__container {
-    border-right: solid 2px transparent;
-  }
-
-  .pal--vertical-tab-list {
+  .cds--tabs {
     display: flex;
     max-height: 100%;
     width: auto;
     overflow-y: auto;
     flex-direction: column;
-
-
-    &--search {
-      margin-bottom: 2em;
-    }
   }
 
-  .pal--vertical-tab-list .cds--tab--list {
+  .cds--tab--list {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    flex-shrink: 0;
     height: 100%;
   }
 
@@ -73,7 +62,6 @@
 
   // vertical tab
   .cds--tabs.cds--tabs--contained .pal--vertical-tab.cds--tabs__nav-item--selected {
-    border-bottom: 0;
     box-shadow: inset 0 0 0 0;
     border-left: 2px solid var(--cds-border-interactive, #0f62fe);
   }
@@ -82,18 +70,16 @@
     position: relative;
   }
 
-  .pal--vertical-tab {
-    border-bottom: 0;
-    border-left: 2px solid var(--cds-border-subtle);
-    min-width: 250px;
+  .pal--vertical-tab.cds--tabs__nav-link {
+    border-bottom: 1px solid $border-subtle-02;
+  }
 
+
+  .pal--vertical-tab {
+    min-width: 250px;
 
     .cds--tabs__nav-item-label {
       display: flex;
-    }
-
-    .cds--tabs__nav-item-secondary-label {
-      // margin-left: $spacing-06;
     }
   }
 
@@ -106,47 +92,36 @@
   }
 
   .pal--vertical-tab.cds--tabs__nav-item:not(.cds--tabs__nav-item--selected):not(.cds--tabs__nav-item--disabled):hover {
-    border-bottom: 0;
     border-left: 2px solid var(--cds-border-strong);
-  }
-
-  .pal--vertical-tab.cds--tabs__nav-item + .cds--tabs__nav-item {
-    margin-top: 0.0625rem;
-    margin-left: 0;
   }
 
   .pal--vertical-tab-list__search {
     margin-bottom: 2px;
-
     .cds--search-input {
       border-bottom: 0px solid transparent;
     }
   }
-
-  &--full-height  .cds--tabs.cds--tabs--contained.cds--tabs--tall .cds--tabs__nav-link {
-    flex-grow: 1;
-  }
-
-  &--full-height {
-    align-items: stretch;
-  }
-
-  &--full-height .pal--vertical-tab-list .cds--tab--list {
-    align-items: stretch;
-    height: 100%;
-  }
-
-  &--full-height .pal--vertical-tab-list {
-    align-items: stretch;
-    height: 100%;
-  }
   
-  &--full-height .pal--vertical-tab-list__container  {
-    align-items: stretch;
-    flex-direction: row;
-    height: auto;
+  .pal--vertical-tab-list  {
+    display: block;
+    background-color: $layer-accent;
+    border-right: solid 2px transparent;
+    position: relative;
+    overflow-y: hidden;
+    min-width: 250px;
+
+    &--search {
+      padding-bottom: 72px;
+    }
   }
 
+  &--full-height .pal--vertical-tab-list{
+    display: grid;
+  }
+
+  &--full-height .pal--vertical-tab.cds--tabs__nav-link:last-child {
+    border-bottom: 0px solid transparent;
+  }
 
 
  .cds--tab--overflow-nav-button {
@@ -157,11 +132,9 @@
   @include breakpoint-down('md') {
 
     flex-direction: column;
-    .pal--vertical-tab-list--lg{
-      display: none;
-    }
+ 
 
-    .pal--vertical-tab-list__container {
+    .pal--vertical-tab-list {
       display: flex;
       position: relative;
       overflow-y: auto;
@@ -196,7 +169,6 @@
 }
 
 .pal--vertical-tabs.cds--tabs.cds--tabs--contained .pal--vertical-tab.cds--tabs__nav-item--selected {
-  border-bottom: 0;
   box-shadow: inset 0 0 0 0;
   border-left: 2px solid var(--cds-border-interactive, #0f62fe);
   position: sticky;
@@ -206,11 +178,10 @@
 // vertical pagination
 .pal--vertical-tab-list__footer {
   display: flex;
-  justify-content: space-between;
   border-top: 1px solid $border-subtle-02;
   align-items:center;
   padding-left: $spacing-05;
-  position: absolute;
+  position:absolute;
   bottom: 0;
   left: 0;
   width: 100%;

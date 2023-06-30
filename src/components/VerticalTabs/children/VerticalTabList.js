@@ -45,9 +45,18 @@ const VerticalTabList = React.forwardRef((props, ref) => {
       SearchProps.onChange(event)
     }
   }
-  
+
+
   const searchedChildren = withSearch && filter !== "" ? fuzzySearchChildren(filter, children) : undefined
   const totalItems = searchedChildren?.length || children.length
+
+  const renderChildren = () => {
+    // filter children
+    if (!searchedChildren) return children
+
+    const searchedChildrenIndices = searchedChildren.map((child) => child.refIndex)
+    return children.filter((child, index) => searchedChildrenIndices.includes(index))
+  }
 
   const tabsWithProps = children.map((tab, index) => {
     const tabIndex = 0;
@@ -85,23 +94,21 @@ const VerticalTabList = React.forwardRef((props, ref) => {
   }
 
   return (
-    <div className="pal--vertical-tab-list__container">
+    <div className={classes}>
       {withSearch && <Search className="pal--vertical-tab-list__search" {...searchProps} />}
-      <div className="pal--vertical-tab-list--lg">
-        <TabList contained ref={ref} className={classes} {...rest}>
-          {tabsWithProps}
+        <TabList contained ref={ref} {...rest}>
+          {renderChildren()}
         </TabList>
-        {withSearch && <div className="pal--vertical-tab-list__footer"> Showing {totalItems} items </div>}
-      </div>
 
-      <div className="pal--vertical-tab-list--sm">
+      {/* <div className="pal--vertical-tab-list--sm">
         <OverflowMenu>
           <TabList ref={ref} className={classes} {...rest}>
             {tabsWithProps}
           </TabList>
           {withSearch && <div> Showing {totalItems} items </div>}
         </OverflowMenu>
-      </div>
+      </div> */}
+      {withSearch && <div className="pal--vertical-tab-list__footer"> Showing {totalItems} items </div>}
 
     </div>
   );
