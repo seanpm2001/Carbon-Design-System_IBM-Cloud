@@ -1,58 +1,123 @@
-import React, { useMemo, useState } from "react";
-import PropTypes from "prop-types";
+import { OverflowMenu, Search, TabList } from "@carbon/react";
 import classnames from "classnames";
-import { TabList } from "@carbon/react";
-import VerticalPagination from "./VerticalPagination";
-import lodash from 'lodash'
+import PropTypes from "prop-types";
+import React, { useRef, useState } from "react";
+import { getRecursiveChildText, search } from "../utils";
 
 
 const VerticalTabList = React.forwardRef((props, ref) => {
 
-  const {children, className, withPagination, PaginationProps, ...rest} = props;
-  const copiedChildren = lodash.cloneDeep(children)
-  const [page, setPage] = useState(PaginationProps.page)
-  // const visibleChildren = useMemo(()=> {
-  //   return copiedChildren.slice((page - 1) * PaginationProps.pageSize, page * PaginationProps.pageSize)
-  // }, [copiedChildren, page, PaginationProps.pageSize])
- 
+  const {children, className, withSearch, SearchProps, OverflowMenuProps, disabled, ...rest} = props;
+  const [filter, setFilter] = useState("")
   const classes  = classnames(
     "pal--vertical-tab-list", 
-    { "pal--vertical-tab-list--pagination": withPagination },
+    { "pal--vertical-tab-list--search": withSearch },
     className)
 
+  const tabsRef = useRef({})
 
-  const countChildren = children.length
+  
+  const fuzzySearchChildren = (filter, children) => {
+    const searchableTexts = children.map((child, idx) => {
+      return getRecursiveChildText(child)
+    })
 
-  const visibleChildren = children.slice((page - 1) * PaginationProps.pageSize, page * PaginationProps.pageSize)
+    const results = search(searchableTexts, filter)
+    // unveil filtered children
+    return results
+  } 
 
-
-  const handleChange = ({ page: newPage, pageSize}) => {
-    setPage(newPage)
+  const exactSearchChildren = (filter) => {
+    return children.filter((child, idx) => {
+      const searchableText = getRecursiveChildText(child)
+      return searchableText.toLowerCase().includes(filter.toLowerCase());
+    })
   }
 
-  const paginationProps = {
-    ...PaginationProps,
-    totalItems: PaginationProps.totalItems ? PaginationProps.totalItems : countChildren,
-    onChange: handleChange
+  const setTabAt = (index, tabRef) => {
+    tabsRef.current[`tab${index}`] = tabRef;
+  };
+
+  
+  const handleSearch  = (event) => {
+    setFilter(event.target.value)
+    if (SearchProps?.onChange) {
+      SearchProps.onChange(event)
+    }
+  }
+  
+  const searchedChildren = withSearch && filter !== "" ? fuzzySearchChildren(filter, children) : undefined
+  const totalItems = searchedChildren?.length || children.length
+
+  const tabsWithProps = children.map((tab, index) => {
+    const tabIndex = 0;
+    const className = classnames(
+      tab.props.className,
+      "pal--vertical-tab--hidden"
+    );
+    const cn = searchedChildren?.find((item) => item.refIndex !== index) ? className : tab.props.className
+    const newTab = React.cloneElement(tab, {
+      index,
+      handleTabClick: props.onSelectionChange,
+      tabIndex,
+      className: cn,
+      ref: (e) => {
+        console.log(e)
+        setTabAt(index, e);
+      },
+      handleTabKeyDown: props.onSelectionChange,
+      ...tab.props
+    });
+
+    return newTab;
+  });
+
+  const searchProps = {
+    ...SearchProps,
+    disabled: disabled,
+    onChange: handleSearch
+  }
+
+  const overflowMenuProps = {
+    ...OverflowMenuProps,
+    disabled: disabled,
+    onChange: handleSearch
   }
 
   return (
     <div className="pal--vertical-tab-list__container">
-      <TabList ref={ref} className={classes} {...rest}>{visibleChildren}</TabList>
-      {withPagination && <VerticalPagination  {...paginationProps}/>}
+      {withSearch && <Search className="pal--vertical-tab-list__search" {...searchProps} />}
+      <div className="pal--vertical-tab-list--lg">
+        <TabList contained ref={ref} className={classes} {...rest}>
+          {tabsWithProps}
+        </TabList>
+        {withSearch && <div className="pal--vertical-tab-list__footer"> Showing {totalItems} items </div>}
+      </div>
+
+      <div className="pal--vertical-tab-list--sm">
+        <OverflowMenu>
+          <TabList ref={ref} className={classes} {...rest}>
+            {tabsWithProps}
+          </TabList>
+          {withSearch && <div> Showing {totalItems} items </div>}
+        </OverflowMenu>
+      </div>
+
     </div>
   );
 });
 
 VerticalTabList.propTypes = {
-  withPagination: PropTypes.bool,
-  PaginationProps: VerticalPagination.propTypes,
+  withSearch: PropTypes.bool,
+  SearchProps: Search.propTypes,
+  OverflowMenuProps: OverflowMenu.propTypes,
   ...TabList.propTypes
 };
 
 VerticalTabList.defaultProps = {
-  withPagination: false,
-  PaginationProps: VerticalPagination.defaultProps,
+  withSearch: false,
+  SearchProps: Search.defaultProps,
+  OverflowMenuProps: OverflowMenu.defaultProps,
   ...TabList.defaultProps
 };
 

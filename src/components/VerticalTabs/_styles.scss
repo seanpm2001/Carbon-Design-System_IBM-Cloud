@@ -2,20 +2,23 @@
 @use '@carbon/react/scss/reset';
 @use "@carbon/react/scss/components/skeleton-styles";
 
+@import "@carbon/react/scss/components/overflow-menu";
 @import "@carbon/react/scss/colors";
 @import "@carbon/react/scss/spacing";
 @import "@carbon/react/scss/themes";
 @import "@carbon/react/scss/theme";
 @import "@carbon/react/scss/config";
+@import '@carbon/styles/scss/breakpoint';
 
-.pal--vertical-tabs {
+
+.pal--vertical-tabs, .cds--overflow-menu-options--open {
   display: flex;
   align-items: flex-start;
   max-height: 100%;
   overflow-y: hidden;
-  overflow-x: visible;
+  overflow-x: hidden;
 
-  .pal--vertical-tab-list__container {
+  .pal--vertical-tab-list__container, .pal--vertical-tab-list--sm, .pal--vertical-tab-list--lg {
     display: flex;
     max-height: 100%;
     height: 100%;
@@ -23,21 +26,35 @@
     overflow-y: auto;
     flex-direction: column;
     overflow-x: visible;
+  }
 
+  .pal--vertical-tab-list--sm, .pal--vertical-tab-list--lg {
+    display: flex;
+    position: relative;
+    overflow-y: auto;
+    flex-direction: row;
+    overflow-x: visible;
+    height:auto;
+  }
+
+  .pal--vertical-tab-list--search .pal--vertical-tab-list--sm, .pal--vertical-tab-list--search .pal--vertical-tab-list--lg {
+    height:100%;
+  }
+
+  .pal--vertical-tab-list__container {
+    border-right: solid 2px transparent;
   }
 
   .pal--vertical-tab-list {
     display: flex;
     max-height: 100%;
     width: auto;
-    border-right: solid 2px transparent;
     overflow-y: auto;
     flex-direction: column;
-    overflow-x: visible;
 
 
-    &--pagination {
-      margin-bottom: 41px; // height of pagination
+    &--search {
+      margin-bottom: 2em;
     }
   }
 
@@ -46,10 +63,12 @@
     flex-direction: column;
     overflow-y: auto;
     flex-shrink: 0;
+    height: 100%;
   }
 
   .cds--tab-content {
-    background-color: $layer-01;
+    background-color: $layer;
+    padding: $spacing-05;
   }
 
   // vertical tab
@@ -59,10 +78,15 @@
     border-left: 2px solid var(--cds-border-interactive, #0f62fe);
   }
 
+  .cds--tabs {
+    position: relative;
+  }
+
   .pal--vertical-tab {
     border-bottom: 0;
     border-left: 2px solid var(--cds-border-subtle);
     min-width: 250px;
+
 
     .cds--tabs__nav-item-label {
       display: flex;
@@ -71,6 +95,10 @@
     .cds--tabs__nav-item-secondary-label {
       // margin-left: $spacing-06;
     }
+  }
+
+  .pal--vertical-tab--hidden {
+    display: none;
   }
 
   .pal--vertical-tab__icon {
@@ -87,6 +115,13 @@
     margin-left: 0;
   }
 
+  .pal--vertical-tab-list__search {
+    margin-bottom: 2px;
+
+    .cds--search-input {
+      border-bottom: 0px solid transparent;
+    }
+  }
 
   &--full-height  .cds--tabs.cds--tabs--contained.cds--tabs--tall .cds--tabs__nav-link {
     flex-grow: 1;
@@ -103,24 +138,73 @@
 
   &--full-height .pal--vertical-tab-list {
     align-items: stretch;
+    height: 100%;
   }
-
   
   &--full-height .pal--vertical-tab-list__container  {
     align-items: stretch;
     flex-direction: row;
     height: auto;
   }
+
+
+
+ .cds--tab--overflow-nav-button {
+  display: none;
+ }
+
+ // responsive design
+  @include breakpoint-down('md') {
+
+    flex-direction: column;
+    .pal--vertical-tab-list--lg{
+      display: none;
+    }
+
+    .pal--vertical-tab-list__container {
+      display: flex;
+      position: relative;
+      overflow-y: auto;
+      flex-direction: row-reverse;
+      overflow-x: visible;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+      height: 15%;
+    }
+
+    .pal--vertical-tab-list__search {
+      width: auto;
+    }
+
+    .cds--overflow-menu {
+      width: 100%;
+      height: 100%;
+      background-color: $layer;
+    }
+  }
+  @include breakpoint-up('md') {
+    .pal--vertical-tab-list--sm{
+      display: none;
+    }
+  }
+}
+
+.cds--overflow-menu-options--open {
+  width: auto;
+  height: auto;
 }
 
 .pal--vertical-tabs.cds--tabs.cds--tabs--contained .pal--vertical-tab.cds--tabs__nav-item--selected {
   border-bottom: 0;
   box-shadow: inset 0 0 0 0;
   border-left: 2px solid var(--cds-border-interactive, #0f62fe);
+  position: sticky;
+  top: 0;
 }
 
 // vertical pagination
-.pal--vertical-pagination {
+.pal--vertical-tab-list__footer {
   display: flex;
   justify-content: space-between;
   border-top: 1px solid $border-subtle-02;
@@ -130,16 +214,9 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  
-  .cds--btn {
-   border-left: 1px solid $border-subtle-02; 
-  }
-
-  .cds--btn--disabled {
-    border-left: 1px solid $border-subtle-02 !important; // force border color
-  }
-
-  
+  height: 2em;
+  background-color: $layer;
+  overflow: hidden;  
 }
 
 

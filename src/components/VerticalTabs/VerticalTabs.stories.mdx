@@ -16,16 +16,18 @@ import "./_styles.scss";
 export const Template = args => (
   <VerticalTabs {...args}>
     <VerticalTabList contained aria-label="vertical-tab-list">
-      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 1</VerticalTab>
-      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 2</VerticalTab>
-      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 2</VerticalTab>
-      <VerticalTab secondaryLabel="Label" renderIcon={Add}>Tab label 2</VerticalTab>
+      <VerticalTab secondaryLabel="Label">Tab label 1</VerticalTab>
+      <VerticalTab secondaryLabel="Label">Tab label 2</VerticalTab>
+      <VerticalTab secondaryLabel="Label">Tab label 3</VerticalTab>
+      <VerticalTab secondaryLabel="Label">Tab label 4</VerticalTab>
+      <VerticalTab secondaryLabel="Label">Tab label 5</VerticalTab>
     </VerticalTabList>
     <TabPanels className='test-panels'>
       <TabPanel style={{ height: '400px', width: '400px' }}>1</TabPanel>
       <TabPanel style={{ height: '400px', width: '400px' }}>2</TabPanel>
       <TabPanel style={{ height: '400px', width: '400px' }}>3</TabPanel>
       <TabPanel style={{ height: '400px', width: '400px' }}>4</TabPanel>
+      <TabPanel style={{ height: '400px', width: '400px' }}>5</TabPanel>
     </TabPanels>
   </VerticalTabs>
 )
@@ -34,7 +36,7 @@ export const Template = args => (
 
 <Canvas>
   <Story
-    name="Default"
+    name="Default/Controlled"
   >
     {Template.bind({})}
   </Story>
@@ -48,14 +50,14 @@ export const Template = args => (
   >
     <div style={{maxHeight:'400px', display: 'flex'}}>
       <VerticalTabs >
-        <VerticalTabList withPagination contained aria-label="test">
-          {Array.from(Array(100).keys()).map((value, index) => (
-            <VerticalTab secondaryLabel="Label">Tab label {index}</VerticalTab>
+        <VerticalTabList withSearch  aria-label="test">
+          {Array.from(Array(30).keys()).map((value, index) => (
+            <VerticalTab secondaryLabel="foo" index={index}>Tab label {index}</VerticalTab>
           ))}
         </VerticalTabList>
         <TabPanels className='test-panels'>
-          {Array.from(Array(100).keys()).map((value, index) => (
-            <TabPanel style={{ height: '400px', width: '400px' }}>{index}</TabPanel>
+          {Array.from(Array(30).keys()).map((value, index) => (
+            <TabPanel index={index} style={{ height: '400px', width: '400px' }}>{index}</TabPanel>
           ))}
         </TabPanels>
       </VerticalTabs>
