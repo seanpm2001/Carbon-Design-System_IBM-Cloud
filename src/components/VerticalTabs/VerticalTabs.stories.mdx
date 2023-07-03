@@ -75,7 +75,7 @@ export const Template = args => (
       <VerticalTabs >
         <VerticalTabList withSearch withAdd  aria-label="test">
           {Array.from(Array(30).keys()).map((value, index) => (
-            <VerticalTab secondaryLabel="foo" index={index}>Tab label {index}</VerticalTab>
+            <VerticalTab secondaryLabel="foo" index={index} statusIndicator='success'>Tab label {index}</VerticalTab>
           ))}
         </VerticalTabList>
         <TabPanels className='test-panels'>

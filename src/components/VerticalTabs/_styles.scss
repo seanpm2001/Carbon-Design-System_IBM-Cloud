@@ -78,15 +78,19 @@
 
     .cds--tabs__nav-item-label {
       display: flex;
+      position: relative;
+      width:100%;
+
+      .pal--resource-status-indicator {
+        position: absolute;
+        right: 0;
+
+      }
     }
   }
 
   .pal--vertical-tab--hidden {
     display: none;
-  }
-
-  .pal--vertical-tab__icon {
-    margin-right: $spacing-03;
   }
 
   .pal--vertical-tab.cds--tabs__nav-item:not(.cds--tabs__nav-item--selected):not(.cds--tabs__nav-item--disabled):hover {
@@ -132,38 +136,38 @@
  }
 
  // responsive design
-  @include breakpoint-down('md') {
+//   @include breakpoint-down('md') {
 
-    flex-direction: column;
+//     flex-direction: column;
  
 
-    .pal--vertical-tab-list {
-      display: flex;
-      position: relative;
-      overflow-y: auto;
-      flex-direction: row-reverse;
-      overflow-x: visible;
-      align-items: flex-start;
-      justify-content: space-between;
-      width: 100%;
-      height: 15%;
-    }
+//     .pal--vertical-tab-list {
+//       display: flex;
+//       position: relative;
+//       overflow-y: auto;
+//       flex-direction: row-reverse;
+//       overflow-x: visible;
+//       align-items: flex-start;
+//       justify-content: space-between;
+//       width: 100%;
+//       height: 15%;
+//     }
 
-    .pal--vertical-tab-list__search {
-      width: auto;
-    }
+//     .pal--vertical-tab-list__search {
+//       width: auto;
+//     }
 
-    .cds--overflow-menu {
-      width: 100%;
-      height: 100%;
-      background-color: $layer;
-    }
-  }
-  @include breakpoint-up('md') {
-    .pal--vertical-tab-list--sm{
-      display: none;
-    }
-  }
+//     .cds--overflow-menu {
+//       width: 100%;
+//       height: 100%;
+//       background-color: $layer;
+//     }
+//   }
+//   @include breakpoint-up('md') {
+//     .pal--vertical-tab-list--sm{
+//       display: none;
+//     }
+//   }
 }
 
 .cds--overflow-menu-options--open {

@@ -1,32 +1,31 @@
 import React from "react";
 import classnames from "classnames";
 import { Tab } from "@carbon/react";
+import ResourceStatusIndicator from "../../ResourceStatusIndicator/ResourceStatusIndicator";
 
 
 const VerticalTab = React.forwardRef((props, ref) => {
 
-  const {children, className, renderIcon: Icon, ...rest} = props;
+  const {children, className, statusIndicator, ...rest} = props;
  
   const classes  = classnames("pal--vertical-tab", className)
 
   return (
     <Tab ref={ref} className={classes} {...rest}>
-      {Icon && (
-        <div className="pal--vertical-tab__icon">
-          <Icon />
-        </div>
-      )}
       {children}
+      {statusIndicator && <ResourceStatusIndicator statusIndicator={statusIndicator} />}
       </Tab>
   );
 });
 
 VerticalTab.propTypes = {
+  statusIndicator: ResourceStatusIndicator.propTypes.statusIndicator,
   ...Tab.propTypes
 };
 
 VerticalTab.defaultProps = {
   disabled: false,
+  statusIndicator: undefined,
   ...Tab.defaultProps
 };
 
