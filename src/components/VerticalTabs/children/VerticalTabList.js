@@ -1,22 +1,22 @@
-import { OverflowMenu, Search, TabList } from "@carbon/react";
+import { IconButton, OverflowMenu, Search, TabList } from "@carbon/react";
+import { Add, ArrowsVertical } from '@carbon/react/icons';
 import classnames from "classnames";
 import PropTypes from "prop-types";
-import React, { useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { getRecursiveChildText, search } from "../utils";
 
 
 const VerticalTabList = React.forwardRef((props, ref) => {
 
-  const {children, className, withSearch, SearchProps, OverflowMenuProps, disabled, ...rest} = props;
+  const {children, className, withSearch, withAdd, fullHeight, SearchProps, OverflowMenuProps, disabled, ...rest} = props;
   const [filter, setFilter] = useState("")
+  const [tabs, setTabs] = useState(children)
   const classes  = classnames(
     "pal--vertical-tab-list", 
     { "pal--vertical-tab-list--search": withSearch },
+    { "pal--vertical-tab-list--full-height": fullHeight },
     className)
 
-  const tabsRef = useRef({})
-
-  
   const fuzzySearchChildren = (filter, children) => {
     const searchableTexts = children.map((child, idx) => {
       return getRecursiveChildText(child)
@@ -26,60 +26,49 @@ const VerticalTabList = React.forwardRef((props, ref) => {
     // unveil filtered children
     return results
   } 
-
-  const exactSearchChildren = (filter) => {
-    return children.filter((child, idx) => {
-      const searchableText = getRecursiveChildText(child)
-      return searchableText.toLowerCase().includes(filter.toLowerCase());
-    })
-  }
-
-  const setTabAt = (index, tabRef) => {
-    tabsRef.current[`tab${index}`] = tabRef;
-  };
-
+  const renderTabs = useCallback((filter) => {
+    // filter children
+    const searchedChildren = filter!== "" ? fuzzySearchChildren(filter, tabs) : undefined
+    if (!searchedChildren) return children
+    
+    const searchedChildrenIndices = searchedChildren.map((child) => child.refIndex)
+    return tabs.filter((child, index) => searchedChildrenIndices.includes(index))
+  }, [tabs, children])
   
   const handleSearch  = (event) => {
     setFilter(event.target.value)
+
+    const newTabs = renderTabs(event.target.value)
+    setTabs(newTabs)
     if (SearchProps?.onChange) {
       SearchProps.onChange(event)
     }
   }
 
+  const handleClear = () => {
+    setFilter("")
 
-  const searchedChildren = withSearch && filter !== "" ? fuzzySearchChildren(filter, children) : undefined
-  const totalItems = searchedChildren?.length || children.length
-
-  const renderChildren = () => {
-    // filter children
-    if (!searchedChildren) return children
-
-    const searchedChildrenIndices = searchedChildren.map((child) => child.refIndex)
-    return children.filter((child, index) => searchedChildrenIndices.includes(index))
+    const newTabs = renderTabs("")
+    setTabs(newTabs)
+    if (SearchProps?.onChange) {
+      SearchProps.onClear()
+    }
   }
 
-  const tabsWithProps = children.map((tab, index) => {
-    const tabIndex = 0;
-    const className = classnames(
-      tab.props.className,
-      "pal--vertical-tab--hidden"
-    );
-    const cn = searchedChildren?.find((item) => item.refIndex !== index) ? className : tab.props.className
-    const newTab = React.cloneElement(tab, {
-      index,
-      handleTabClick: props.onSelectionChange,
-      tabIndex,
-      className: cn,
-      ref: (e) => {
-        console.log(e)
-        setTabAt(index, e);
-      },
-      handleTabKeyDown: props.onSelectionChange,
-      ...tab.props
-    });
+  const handleAdd = () => {
+    if (props.onAdd) {
+      props.onAdd()
+    }
+  }
 
-    return newTab;
-  });
+  const handleSort = () => {
+    const copiedTabs = [...tabs]
+    const reversedTabs = copiedTabs.reverse()
+    setTabs([...reversedTabs])
+    if (props.onSort) {
+      props.onSort()
+    }
+  }
 
   const searchProps = {
     ...SearchProps,
@@ -93,11 +82,25 @@ const VerticalTabList = React.forwardRef((props, ref) => {
     onChange: handleSearch
   }
 
+  useEffect(() => {
+      const newTabs = renderTabs(filter);
+      setTabs(newTabs)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter])
+
+  const totalItems = tabs?.length || tabs.length
+
   return (
     <div className={classes}>
-      {withSearch && <Search className="pal--vertical-tab-list__search" {...searchProps} />}
+      {!fullHeight &&
+        <div className="pal--vertical-tab-list__header">
+          {withSearch && <Search onClear={handleClear} className="pal--vertical-tab-list__search" {...searchProps} />}
+          <IconButton onClick={handleSort}kind='ghost'><ArrowsVertical /></IconButton>
+          {withAdd && <IconButton onClick={handleAdd} kind='primary'><Add /></IconButton>}
+        </div>
+      }
         <TabList contained ref={ref} {...rest}>
-          {renderChildren()}
+          {tabs}
         </TabList>
 
       {/* <div className="pal--vertical-tab-list--sm">
@@ -118,6 +121,13 @@ VerticalTabList.propTypes = {
   withSearch: PropTypes.bool,
   SearchProps: Search.propTypes,
   OverflowMenuProps: OverflowMenu.propTypes,
+  withAdd: PropTypes.bool,
+  onAdd: PropTypes.func,
+  onSort: PropTypes.func,
+  /**
+   * Determines whether Tabs span whole height or not.
+   */
+  fullHeight: PropTypes.bool,
   ...TabList.propTypes
 };
 
@@ -125,6 +135,10 @@ VerticalTabList.defaultProps = {
   withSearch: false,
   SearchProps: Search.defaultProps,
   OverflowMenuProps: OverflowMenu.defaultProps,
+  fullHeight: false,
+  onSort: undefined,
+  onAdd: undefined,
+  withAdd: false,
   ...TabList.defaultProps
 };
 

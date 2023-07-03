@@ -36,13 +36,36 @@ export const Template = args => (
 
 <Canvas>
   <Story
-    name="Default/Controlled"
+    name="Default"
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-### Many tabs
+### Uncontrolled
+
+<Canvas>
+  <Story
+    name="Controlled"
+  >
+    <div style={{maxHeight:'400px', display: 'flex'}}>
+      <VerticalTabs >
+        <VerticalTabList fullHeight aria-label="test">
+          {Array.from(Array(5).keys()).map((value, index) => (
+            <VerticalTab secondaryLabel="foo" index={index}>Tab label {index}</VerticalTab>
+          ))}
+        </VerticalTabList>
+        <TabPanels className='test-panels'>
+          {Array.from(Array(5).keys()).map((value, index) => (
+            <TabPanel index={index} style={{ height: '400px', width: '400px' }}>{index}</TabPanel>
+          ))}
+        </TabPanels>
+      </VerticalTabs>
+  </div>
+  </Story>
+</Canvas>
+
+### Uncontrolled
 
 <Canvas>
   <Story
@@ -50,7 +73,7 @@ export const Template = args => (
   >
     <div style={{maxHeight:'400px', display: 'flex'}}>
       <VerticalTabs >
-        <VerticalTabList withSearch  aria-label="test">
+        <VerticalTabList withSearch withAdd  aria-label="test">
           {Array.from(Array(30).keys()).map((value, index) => (
             <VerticalTab secondaryLabel="foo" index={index}>Tab label {index}</VerticalTab>
           ))}

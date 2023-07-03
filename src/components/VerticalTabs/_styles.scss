@@ -15,8 +15,6 @@
   display: flex;
   align-items: flex-start;
   max-height: 100%;
-  overflow-y: hidden;
-  overflow-x: hidden;
   align-items: stretch;
 
 
@@ -72,7 +70,7 @@
 
   .pal--vertical-tab.cds--tabs__nav-link {
     border-bottom: 1px solid $border-subtle-02;
-  }
+    }
 
 
   .pal--vertical-tab {
@@ -96,7 +94,6 @@
   }
 
   .pal--vertical-tab-list__search {
-    margin-bottom: 2px;
     .cds--search-input {
       border-bottom: 0px solid transparent;
     }
@@ -105,7 +102,7 @@
   .pal--vertical-tab-list  {
     display: block;
     background-color: $layer-accent;
-    border-right: solid 2px transparent;
+    border-right: solid 1px transparent;
     position: relative;
     overflow-y: hidden;
     min-width: 250px;
@@ -115,14 +112,20 @@
     }
   }
 
-  &--full-height .pal--vertical-tab-list{
+  .pal--vertical-tab-list--full-height{
     display: grid;
+
+    .pal--vertical-tab.cds--tabs__nav-link:last-child {
+      border-bottom: 0px solid transparent;
+    }
   }
 
-  &--full-height .pal--vertical-tab.cds--tabs__nav-link:last-child {
-    border-bottom: 0px solid transparent;
+  .pal--vertical-tab-list__header {
+    background-color: $layer;
+    margin-bottom: 1px;
+    display: flex;
+    justify-content: flex-end;
   }
-
 
  .cds--tab--overflow-nav-button {
   display: none;
