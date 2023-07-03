@@ -1,0 +1,111 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import SideNav from '.';
+import './_styles.scss';
+
+<Meta
+  title="Experimental/SideNav"
+  component={SideNav}
+  argTypes={{
+    locale: { control: { type: 'select' }, options: ['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'zh-cn', 'zh-tw'], defaultValue: 'en' },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: 'core' }}}
+/>
+
+# SideNav
+
+export const Template = (args) => (
+  <SideNav {...args} />
+);
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      items: [
+        { href: '#example-item-1A', label: 'Link 1A'},
+        { href: '#example-item-1B', label: 'Link 1B'},
+        { label: ' Nav List', items: [
+            {href: '#example-item-2A', label: 'Link 2A'},
+            {href: '#example-item-2B', label: 'Link 2B'}
+          ]},
+        { href: '#example-item-3A', label: 'Link 3A'}
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+SideNav is an internal navigation component used to render the ResourceLevelNav and the WorldLevelNav components.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import 'carbon-for-ibm-cloud/components/SideNav/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { SideNav } from 'carbon-for-ibm-cloud/components';
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={SideNav} />
+
+## Other examples
+### Side Nav with many elements and flyouts
+You can include a nested flyout array to sub-items to render a 3rd level of nesting via a flyout menu.
+
+<Canvas>
+  <Story
+    name="Demo-2"
+    args={{
+      items: [
+        { href: '#example-item-1A', label: 'Link 1A' },
+        { href: '#example-item-1B', label: 'Link 1B' },
+        { label: 'Sub menu 1', items: [
+            { label: 'Sub Link 1A', flyoutItems: [
+                { href: '#sub-menu-flyout-1A-1', label: 'Sub Flyout Link 1A' },
+                { href: '#sub-menu-flyout-1A-2', label: 'Sub Flyout Link 1B' }] },
+            { href: '#sub-item-1C', label: 'Sub Link 1B' },
+            { label: 'Sub menu flyout',
+              flyoutItems: [
+                { href: '#sub-menu-flyout-1', label: 'Sub Flyout Link 1A' },
+              ]},
+            { href: '#sub-item-1D', label: 'Sub Link 1D' },
+          ] },
+        {
+          label: 'Sub Menu 2',
+          items: [
+            { href: '#sub-item-2B', label: 'Sub Link 1A' },
+            { label: 'Sub menu flyout 2',
+              flyoutItems: [
+                { href: '#sub-menu-flyout-21', label: 'Sub Flyout Link 1A' },
+                { href: '#sub-menu-flyout-22', label: 'Sub Flyout Link 1B' },
+                { href: '#sub-menu-flyout-23', label: 'Sub Flyout Link 1C' },
+              ]},
+            { href: '#sub-item-2C', label: 'Sub Link 1B' },
+            { href: '#sub-item-2D', label: 'Sub Link 1D' },
+          ],
+        },
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Contributors
+- Trevor Wong
+- Alex Kim

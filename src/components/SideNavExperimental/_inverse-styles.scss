@@ -1,0 +1,64 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@use "@carbon/react/scss/components/skeleton-styles";
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "./side-nav-vars";
+
+.pal--side-nav {
+  &--inverse {
+    @include theme($g90, true);
+
+    background-color: $pal-inverse-side-nav-background;
+  }
+
+  &--inverse &__menu,
+  &--inverse &__item:not(.pal--side-nav__item--with-menu),
+  &--inverse &__menu-button {
+    background-color: $pal-inverse-side-nav-background;
+  }
+
+  &--inverse &__link,
+  &--inverse &__menu-button {
+    color: $pal-inverse-side-nav-text;
+  }
+
+  &--inverse &__collapse-button {
+    background-color: $layer-01;
+  }
+
+  &--inverse.pal--side-nav--collapsed &__collapse-button {
+    animation-name: side-nav-collapse-button-fade;
+  }
+
+  &--inverse &__item:not(.pal--side-nav__item--with-menu):hover,
+  &--inverse &__item &__menu-button:hover {
+    background-color: $pal-inverse-side-nav-hover;
+  }
+
+  &--inverse &__item--active &__menu-button,
+  &--inverse &__link[aria-current="page"] {
+    background-color: $pal-inverse-side-nav-active;
+  }
+
+  &--inverse &__menu-icon {
+    fill: $pal-inverse-side-nav-text;
+  }
+
+  &--inverse > .pal--side-nav__header .pal--side-nav__link svg {
+    fill: $pal-inverse-side-nav-text;
+  }
+
+  @keyframes side-nav-collapse-button-fade {
+    from {
+      background-color: $pal-inverse-side-nav-background;
+    }
+
+    to {
+      background-color: $layer-01;
+    }
+  }
+}
