@@ -7,8 +7,8 @@
 @import "@carbon/react/scss/theme";
 @import "@carbon/react/scss/config";
 
-// @include component('pal--big-numbers') {
-    .pal--big-numbers {
+// @include component('pal--animated-numbers') {
+    .pal--animated-numbers {
         margin: 16px;
         transition: width 100ms;
         text-align: left;
@@ -145,7 +145,7 @@
         }
 
         @for $i from 1 through 5 {
-            .pal--big-numbers__digit-#{$i} {
+            .pal--animated-numbers__digit-#{$i} {
                 animation-delay: #{$i * 30}ms;
             }
         }

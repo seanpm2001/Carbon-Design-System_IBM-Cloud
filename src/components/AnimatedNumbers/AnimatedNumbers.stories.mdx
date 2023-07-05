@@ -1,19 +1,19 @@
 import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 import { useState } from 'react';
 import { Button } from "@carbon/react";
-import BigNumbers from './BigNumbers';
+import AnimatedNumbers from './AnimatedNumbers';
 import "./_styles.scss";
 
 <Meta
-  title="Experimental/BigNumbers"
-  component={BigNumbers}
+  title="Experimental/AnimatedNumbers"
+  component={AnimatedNumbers}
   argTypes={{
     currentNumber: { type: { name: 'number' } },
   }}
   parameters={{ status: { type: "experimental" } }}
 />
 
-# BigNumbers
+# AnimatedNumbers
 
 export const Template = args => {
   const {currentNumber} = args;
@@ -28,7 +28,7 @@ export const Template = args => {
     setNumber(newNumber);
   }
   return <>
-    <BigNumbers currentNumber={number}/>
+    <AnimatedNumbers currentNumber={number}/>
     <Button kind='tertiary' size='sm' onClick={() => addNumber(100)}>
         Increase
     </Button>
@@ -62,7 +62,7 @@ export const Template = args => {
 
 ## Description
 
-BigNumbers is a component in the Cloud PAL Experimental style. BigNumbers animates an increase or decrease in cost. 
+AnimatedNumbers is a component in the Cloud PAL Experimental style. AnimatedNumbers animates an increase or decrease in cost. 
 
 Motion can be reduced with system or browser settings.
 
@@ -72,13 +72,13 @@ Motion can be reduced with system or browser settings.
 2.  Import the styles:
 
     ```js
-    @import '@carbon/carbon-for-ibm-cloud/components/BigNumbers/styles';
+    @import '@carbon/carbon-for-ibm-cloud/components/AnimatedNumbers/styles';
     ```
 
 3.  Import the component:
 
     ```js
-    import { BigNumbers } from "@carbon/carbon-for-ibm-cloud/components";
+    import { AnimatedNumbers } from "@carbon/carbon-for-ibm-cloud/components";
     ```
 
 4.  Render the component.
@@ -87,7 +87,7 @@ For general component usage review the [Components Docs](https://pages.github.ib
 
 ## Props
 
-<ArgsTable of={BigNumbers} />
+<ArgsTable of={AnimatedNumbers} />
 
 ## Loading State
 
@@ -95,7 +95,7 @@ For general component usage review the [Components Docs](https://pages.github.ib
   <Story
     name="Skeleton"
   >
-    <BigNumbers.Skeleton />
+    <AnimatedNumbers.Skeleton />
   </Story>
 </Canvas>
 

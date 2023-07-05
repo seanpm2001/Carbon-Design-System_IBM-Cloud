@@ -19,39 +19,39 @@ function divideDigits(digitString, currentDigit, currentNumber, previousNumber) 
     loopLength = digitString.length;
     // set current or previous class
     if (currentDigit) {
-        classString = "pal--big-numbers__current-number ";
+        classString = "pal--animated-numbers__current-number ";
         // loopLength = digitString.length;
         // set increase or decrease class
         if (currentNumber < previousNumber) {
             //add to string
-            classString = classString + "pal--big-numbers__decrease_number-enter";
+            classString = classString + "pal--animated-numbers__decrease_number-enter";
         }
         else {
             //add to string
-            classString = classString + "pal--big-numbers__increase_number-enter";
+            classString = classString + "pal--animated-numbers__increase_number-enter";
         }
     }
     //could also check if string != current number
     else if (!currentDigit) {
-        classString = "pal--big-numbers__previous-number ";
+        classString = "pal--animated-numbers__previous-number ";
         // loopLength = previousNumber.toString.length;
         // set increase or decrease class
         if (currentNumber > previousNumber) {
             //add to string
-            classString = classString + "pal--big-numbers__increase_number-exit";
+            classString = classString + "pal--animated-numbers__increase_number-exit";
         }
         //what to do if prev and current are same?
         else if (currentNumber < previousNumber) {
             //add to string
-            classString = classString + "pal--big-numbers__decrease_number-exit"
+            classString = classString + "pal--animated-numbers__decrease_number-exit"
         }
     }
     console.log(classString);
     for (let i = 0; i < loopLength; i++) {
         let digit = digitString.charAt(i);
         //construct span with class and digit
-        // let digitSpan = `<span className="${classString} pal--big-numbers__digit-${i}">${digit}</span>`;
-        let digitSpan = `<span class="${classString} pal--big-numbers__digit-${i}">${digit}</span>`;
+        // let digitSpan = `<span className="${classString} pal--animated-numbers__digit-${i}">${digit}</span>`;
+        let digitSpan = `<span class="${classString} pal--animated-numbers__digit-${i}">${digit}</span>`;
         //add to set
         digitSet = digitSet + digitSpan;
     }
@@ -60,7 +60,7 @@ function divideDigits(digitString, currentDigit, currentNumber, previousNumber) 
     return digitSet;
 }
 
-const BigNumbers = ({
+const AnimatedNumbers = ({
     /* Declare any props that this pattern can use */
     currentNumber: initialNumber, staggeredAnimation,
   }) => {
@@ -91,44 +91,44 @@ const BigNumbers = ({
  }, [initialNumber, currentNumber, previousNumber]);
 //   }, [initialNumber, currentNumber, previousNumber, currentNumberString, previousNumberString]);
 
-//   const { t } = useTranslation("BigNumbers");
+//   const { t } = useTranslation("AnimatedNumbers");
 
   return (
-      <div className="pal--big-numbers" role="status">
-        <div className="pal--big-numbers__numbers">
+      <div className="pal--animated-numbers" role="status">
+        <div className="pal--animated-numbers__numbers">
             {/* Animation without stagger */}
             {/* {currentNumber > previousNumber
-            ? <h1 key={previousNumber} className="pal--big-numbers__previous-number pal--big-numbers__increase_number-exit">{previousNumber}</h1>
+            ? <h1 key={previousNumber} className="pal--animated-numbers__previous-number pal--animated-numbers__increase_number-exit">{previousNumber}</h1>
             : null
             }
             {currentNumber < previousNumber
-            ? <h1 key={previousNumber} className="pal--big-numbers__previous-number pal--big-numbers__decrease_number-exit">{previousNumber}</h1>
+            ? <h1 key={previousNumber} className="pal--animated-numbers__previous-number pal--animated-numbers__decrease_number-exit">{previousNumber}</h1>
             : null
             }
-            <h1 key={currentNumber} className={`pal--big-numbers__current-number ${currentNumber < previousNumber ? "pal--big-numbers__decrease_number-enter" : "pal--big-numbers__increase_number-enter"}`}>{currentNumber}</h1> */}
+            <h1 key={currentNumber} className={`pal--animated-numbers__current-number ${currentNumber < previousNumber ? "pal--animated-numbers__decrease_number-enter" : "pal--animated-numbers__increase_number-enter"}`}>{currentNumber}</h1> */}
             {/* {currentNumber > previousNumber
-            ? <h1 key={previousNumber} className="pal--big-numbers__previous-number pal--big-numbers__increase_number-exit">{previousNumber}</h1>
+            ? <h1 key={previousNumber} className="pal--animated-numbers__previous-number pal--animated-numbers__increase_number-exit">{previousNumber}</h1>
             : null
             }
             {currentNumber < previousNumber
-            ? <h1 key={previousNumber} className="pal--big-numbers__previous-number pal--big-numbers__decrease_number-exit">{previousNumber}</h1>
+            ? <h1 key={previousNumber} className="pal--animated-numbers__previous-number pal--animated-numbers__decrease_number-exit">{previousNumber}</h1>
             : null
             }
-            <h1 key={currentNumber} className={`pal--big-numbers__current-number ${currentNumber < previousNumber ? "pal--big-numbers__decrease_number-enter" : "pal--big-numbers__increase_number-enter"} pal--big-numbers__digit-#2}`}>{currentNumber}</h1>      
+            <h1 key={currentNumber} className={`pal--animated-numbers__current-number ${currentNumber < previousNumber ? "pal--animated-numbers__decrease_number-enter" : "pal--animated-numbers__increase_number-enter"} pal--animated-numbers__digit-#2}`}>{currentNumber}</h1>      
              */}
             {/* <>{currentSet}</> 
             <>{previousSet}</>  */}
-            {/* <div key={previousNumber} className="pal--big-numbers__numbers"  dangerouslySetInnerHTML={{__html: previousSet}}></div> */}
-            <div key={currentNumber} className="pal--big-numbers__numbers"  dangerouslySetInnerHTML={{__html: currentSet}}></div>
+            {/* <div key={previousNumber} className="pal--animated-numbers__numbers"  dangerouslySetInnerHTML={{__html: previousSet}}></div> */}
+            <div key={currentNumber} className="pal--animated-numbers__numbers"  dangerouslySetInnerHTML={{__html: currentSet}}></div>
         </div>
       </div>
   );
 };
 
 // components should export a skeleton
-BigNumbers.Skeleton = Skeleton;
+AnimatedNumbers.Skeleton = Skeleton;
 
-BigNumbers.propTypes = {
+AnimatedNumbers.propTypes = {
   /**
    * The number to display to the user, or the number to change to.
    */
@@ -139,10 +139,10 @@ BigNumbers.propTypes = {
   staggeredAnimation: PropTypes.bool, // 
 };
 
-BigNumbers.defaultProps = {
+AnimatedNumbers.defaultProps = {
   /* Default value for any non required props for this pattern */
   currentNumber: 0,
   staggeredAnimation: false,
 };
 
-export default BigNumbers;
+export default AnimatedNumbers;
