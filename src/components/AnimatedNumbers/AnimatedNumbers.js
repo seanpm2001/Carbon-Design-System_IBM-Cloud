@@ -12,15 +12,13 @@ function keepInBounds(value, lowerBound) {
 }
 
 function divideDigits(digitString, currentDigit, currentNumber, previousNumber) {
-    console.log(digitString);
+    // console.log(digitString);
     let digitSet = "";
     let classString = "";
-    let loopLength = 0;
-    loopLength = digitString.length;
+    let loopLength = digitString.length;
     // set current or previous class
     if (currentDigit) {
         classString = "pal--animated-numbers__current-number ";
-        // loopLength = digitString.length;
         // set increase or decrease class
         if (currentNumber < previousNumber) {
             //add to string
@@ -34,7 +32,6 @@ function divideDigits(digitString, currentDigit, currentNumber, previousNumber) 
     //could also check if string != current number
     else if (!currentDigit) {
         classString = "pal--animated-numbers__previous-number ";
-        // loopLength = previousNumber.toString.length;
         // set increase or decrease class
         if (currentNumber > previousNumber) {
             //add to string
@@ -46,16 +43,15 @@ function divideDigits(digitString, currentDigit, currentNumber, previousNumber) 
             classString = classString + "pal--animated-numbers__decrease_number-exit"
         }
     }
-    console.log(classString);
+
     for (let i = 0; i < loopLength; i++) {
         let digit = digitString.charAt(i);
         //construct span with class and digit
-        // let digitSpan = `<span className="${classString} pal--animated-numbers__digit-${i}">${digit}</span>`;
         let digitSpan = `<span class="${classString} pal--animated-numbers__digit-${i}">${digit}</span>`;
         //add to set
         digitSet = digitSet + digitSpan;
     }
-    console.log(digitSet);
+    // console.log(digitSet);
     // digitSet = <>${digitSet} <>
     return digitSet;
 }
@@ -66,8 +62,6 @@ const AnimatedNumbers = ({
   }) => {
   const [currentNumber, setcurrentNumber] = useState(keepInBounds(initialNumber, 0));
   const [previousNumber, setpreviousNumber] = useState(currentNumber);
-//   const [currentNumberString, setcurrentNumberString] = useState(currentNumber.toString);
-//   const [previousNumberString, setpreviousNumberString] = useState(previousNumber.toString);
   const [previousSet, setpreviousSet] = useState();
   const [currentSet, setcurrentSet] = useState();
 
@@ -77,7 +71,7 @@ const AnimatedNumbers = ({
     if (newNumber !== currentNumber) {
         setpreviousNumber(Number(currentNumber));
         setcurrentNumber(Number(newNumber));
-        console.log("previous num:" + previousNumber + " current num:" + currentNumber);
+        // console.log("previous num:" + previousNumber + " current num:" + currentNumber);
         //set Strings
         // let previousNumberString = previousNumber.toString;
         // let currentNumberString = currentNumber.toString;
@@ -118,7 +112,7 @@ const AnimatedNumbers = ({
              */}
             {/* <>{currentSet}</> 
             <>{previousSet}</>  */}
-            {/* <div key={previousNumber} className="pal--animated-numbers__numbers"  dangerouslySetInnerHTML={{__html: previousSet}}></div> */}
+            <div key={previousNumber} className=" pal--animated-numbers__numbers pal--animated-numbers__numbers-float"  dangerouslySetInnerHTML={{__html: previousSet}}></div>
             <div key={currentNumber} className="pal--animated-numbers__numbers"  dangerouslySetInnerHTML={{__html: currentSet}}></div>
         </div>
       </div>

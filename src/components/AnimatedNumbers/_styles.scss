@@ -7,17 +7,23 @@
 @import "@carbon/react/scss/theme";
 @import "@carbon/react/scss/config";
 
+
 // @include component('pal--animated-numbers') {
     .pal--animated-numbers {
-        margin: 16px;
-        transition: width 100ms;
-        text-align: left;
+        --duration: 667ms;
+        --delay: 42;
+
+        margin: $spacing-05 $spacing-05 $spacing-07 $spacing-05;
+        //if you need to make more room, keep spacing-05 at the bottom
     
         &__numbers {
             display: flex;
-            margin-bottom: $spacing-05;
             align-items: baseline;
-            text-align: left;
+            
+            &-float{
+                width: 0;
+                height: 0;
+            }
         }
     
         &__previous-number {
@@ -26,8 +32,7 @@
             font-weight: 300;
             color: $text-primary;
             position: relative;
-            width: 0;
-            height: 0;
+            display: flex;
         }
     
         &__current-number {
@@ -45,7 +50,7 @@
                 animation-duration: 600ms;
             }
     
-            animation: 750ms motion(exit, productive) 0ms 1 forwards increaseNumberExit;
+            animation: var(--duration) motion(exit, productive) 0ms 1 forwards increaseNumberExit;
     
             @keyframes increaseNumberExit {
                 0% {
@@ -72,7 +77,7 @@
                 animation-duration: 600ms;
             }
     
-            animation: 750ms motion(entrance, productive) 0ms 1 forwards increaseNumberEnter;
+            animation: var(--duration) motion(entrance, productive) 0ms 1 forwards increaseNumberEnter;
     
             @keyframes increaseNumberEnter {
                 0% {
@@ -97,7 +102,7 @@
                 animation-duration: 600ms;
             }
     
-            animation: 750ms motion(exit, productive) 0ms 1 forwards decreaseNumberExit;
+            animation: var(--duration) motion(exit, productive) 0ms 1 forwards decreaseNumberExit;
     
             @keyframes decreaseNumberExit {
                 0% {
@@ -124,7 +129,7 @@
                 animation-duration: 600ms;
             }
     
-            animation: 750ms motion(entrance, productive) 0ms 1 forwards decreaseNumberEnter;
+            animation: var(--duration) motion(entrance, productive) 0ms 1 forwards decreaseNumberEnter;
     
             @keyframes decreaseNumberEnter {
                 0% {
@@ -146,7 +151,7 @@
 
         @for $i from 1 through 5 {
             .pal--animated-numbers__digit-#{$i} {
-                animation-delay: #{$i * 30}ms;
+                animation-delay: #{$i * 42}ms;
             }
         }
 

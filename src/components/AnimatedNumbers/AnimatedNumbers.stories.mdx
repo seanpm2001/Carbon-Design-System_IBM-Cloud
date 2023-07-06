@@ -9,6 +9,7 @@ import "./_styles.scss";
   component={AnimatedNumbers}
   argTypes={{
     currentNumber: { type: { name: 'number' } },
+    staggeredAnimation:  { control: 'boolean' }
   }}
   parameters={{ status: { type: "experimental" } }}
 />
@@ -16,7 +17,7 @@ import "./_styles.scss";
 # AnimatedNumbers
 
 export const Template = args => {
-  const {currentNumber} = args;
+  const {currentNumber, ...otherArgs} = args;
   const [number, setNumber] = useState(currentNumber);
   function addNumber(delta) {
     let newNumber = number + delta;
@@ -28,7 +29,7 @@ export const Template = args => {
     setNumber(newNumber);
   }
   return <>
-    <AnimatedNumbers currentNumber={number}/>
+    <AnimatedNumbers currentNumber={number} {...otherArgs}  />
     <Button kind='tertiary' size='sm' onClick={() => addNumber(100)}>
         Increase
     </Button>
