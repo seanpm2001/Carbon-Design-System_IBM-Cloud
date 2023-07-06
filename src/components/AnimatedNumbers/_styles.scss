@@ -10,8 +10,21 @@
 
 // @include component('pal--animated-numbers') {
     .pal--animated-numbers {
-        --duration: 667ms;
-        --delay: 42;
+       
+        //slow - heading-compact-01
+        --duration: 400ms;
+        --delay: 30;
+        --distance: 0.05rem;
+
+       //slow - heading-03
+        // --duration: 667ms;
+        // --delay: 42;
+        // --distance: 2rem;
+
+        //fast - heading-03
+        // --duration: 550ms;
+        // --delay: 30;
+        // --distance: 2rem;
 
         margin: $spacing-05 $spacing-05 $spacing-07 $spacing-05;
         //if you need to make more room, keep spacing-05 at the bottom
@@ -27,7 +40,7 @@
         }
     
         &__previous-number {
-            @include type.type-style('heading-03');
+            @include type.type-style('heading-compact-01');
             
             font-weight: 300;
             color: $text-primary;
@@ -36,7 +49,7 @@
         }
     
         &__current-number {
-            @include type.type-style('heading-03');
+            @include type.type-style('heading-compact-01');
     
             font-weight: 300;
             color: $text-primary;
@@ -50,7 +63,7 @@
                 animation-duration: 600ms;
             }
     
-            animation: var(--duration) motion(exit, productive) 0ms 1 forwards increaseNumberExit;
+            animation: var(--duration) motion(standard, productive) 0ms 1 forwards increaseNumberExit;
     
             @keyframes increaseNumberExit {
                 0% {
@@ -63,7 +76,7 @@
                 }
     
                 100% {
-                    transform: translateY(2rem);
+                    transform: translateY(var(--distance));
                     opacity: 0;
                     display: none;
                     visibility: hidden;
@@ -77,11 +90,11 @@
                 animation-duration: 600ms;
             }
     
-            animation: var(--duration) motion(entrance, productive) 0ms 1 forwards increaseNumberEnter;
+            animation: var(--duration) motion(standard, productive) 0ms 1 forwards increaseNumberEnter;
     
             @keyframes increaseNumberEnter {
                 0% {
-                    transform: translateY(2rem);
+                    transform: translateY(var(--distance));
                     opacity: 0;
                 }
     
@@ -102,7 +115,7 @@
                 animation-duration: 600ms;
             }
     
-            animation: var(--duration) motion(exit, productive) 0ms 1 forwards decreaseNumberExit;
+            animation: var(--duration) motion(standard, productive) 0ms 1 forwards decreaseNumberExit;
     
             @keyframes decreaseNumberExit {
                 0% {
@@ -115,7 +128,7 @@
                 }
     
                 100% {
-                    transform: translateY(2rem);
+                    transform: translateY(var(--distance));
                     opacity: 0;
                     display: none;
                     visibility: hidden;
@@ -133,7 +146,7 @@
     
             @keyframes decreaseNumberEnter {
                 0% {
-                    transform: translateY(-2rem);
+                    transform: translateY(-var(--distance));
                     opacity: 0;
                 }
     
@@ -151,7 +164,7 @@
 
         @for $i from 1 through 5 {
             .pal--animated-numbers__digit-#{$i} {
-                animation-delay: #{$i * 42}ms;
+                animation-delay: #{$i * 10}ms;
             }
         }
 

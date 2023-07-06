@@ -112,7 +112,7 @@ const AnimatedNumbers = ({
              */}
             {/* <>{currentSet}</> 
             <>{previousSet}</>  */}
-            <div key={previousNumber} className=" pal--animated-numbers__numbers pal--animated-numbers__numbers-float"  dangerouslySetInnerHTML={{__html: previousSet}}></div>
+            <div key={previousNumber} className=" pal--animated-numbers__numbers pal--animated-numbers__numbers-float" aria-hidden="true" dangerouslySetInnerHTML={{__html: previousSet}}></div>
             <div key={currentNumber} className="pal--animated-numbers__numbers"  dangerouslySetInnerHTML={{__html: currentSet}}></div>
         </div>
       </div>

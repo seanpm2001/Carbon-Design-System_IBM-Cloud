@@ -36,11 +36,11 @@ const Counter = ({
       <div className="pal--counter" role="status">
       <div className="pal--counter__numbers">
         {currentStep > previousStep
-          ? <h1 key={previousStep} className="pal--counter__previous-step pal--counter__increase_number-exit">{previousStep}</h1>
+          ? <h1 key={previousStep} className="pal--counter__previous-step pal--counter__increase_number-exit" aria-hidden="true">{previousStep}</h1>
           : null
         }
         {currentStep < previousStep
-          ? <h1 key={previousStep} className="pal--counter__previous-step pal--counter__decrease_number-exit">{previousStep}</h1>
+          ? <h1 key={previousStep} className="pal--counter__previous-step pal--counter__decrease_number-exit" aria-hidden="true">{previousStep}</h1>
           : null
         }
         <h1 key={currentStep} className={`pal--counter__current-step ${currentStep > previousStep ? "pal--counter__increase_number-enter" : "pal--counter__decrease_number-enter"}`}>{currentStep}</h1>
