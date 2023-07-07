@@ -120,7 +120,6 @@ $pal-side-nav-item-active: $layer-selected-01;
     margin-right: $spacing-03;
   }
 
-
   &__menu-button__label {
     align-items: center;
     color: $pal-inverse-side-nav-text;
@@ -128,9 +127,11 @@ $pal-side-nav-item-active: $layer-selected-01;
     justify-content: flex-start;
     text-decoration: none;
   } 
+
   &__menu-button {
     justify-content: space-between;
   }
+
   // General styles for any clickable link or expandable menu.
   &__link,
   &__menu-button {
@@ -165,7 +166,7 @@ $pal-side-nav-item-active: $layer-selected-01;
     &:focus-within {
       .cpx--side-nav__flyout {
         display: block;
-        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.30);
+        box-shadow: 0 2px 6px 0 rgba(0 0 0 / 30%);
       }
     }
   }
@@ -305,6 +306,7 @@ $pal-side-nav-item-active: $layer-selected-01;
   &__item:not(.cpx--side-nav__item--with-menu, .cpx--side-nav__header):hover,
   &__item &__menu-button:hover {
     background: linear-gradient(90deg, $layer-hover-01 43.75%, transparent 100%);
+
     .cpx--side-nav__link,
     .cpx--side-nav__menu-button {
       color: $pal-inverse-side-nav-hover-text;
@@ -362,10 +364,7 @@ $pal-side-nav-item-active: $layer-selected-01;
   > .cpx--side-nav__header .cpx--side-nav__link {
     flex-direction: column;
     align-items: flex-start;
-    padding-top: $spacing-05;
-    padding-bottom: $spacing-05;
-    padding-left: $spacing-05;
-    padding-right: $spacing-05;
+    padding: $spacing-05;
 
     &::after {
       content: "";
@@ -419,9 +418,9 @@ $pal-side-nav-item-active: $layer-selected-01;
     background-color: $layer-accent-01;
   }
 
-
   &__header &__link {
     @include type.type-style("heading-01");
+
     position: relative;
     padding: $spacing-05;
   }

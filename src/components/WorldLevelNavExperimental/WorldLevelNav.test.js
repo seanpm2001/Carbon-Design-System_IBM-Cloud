@@ -28,7 +28,7 @@ describe("WorldLevel Nav", () => {
   describe("render classes", () => {
     it("render base class", () => {
       const { container } = render(<WorldLevelNav {...props} />);
-      const baseClass = container.querySelector(".pal--world-level-nav");
+      const baseClass = container.querySelector(".cpx--world-level-nav");
       expect(baseClass).toBeInTheDocument();
     });
   });
@@ -45,7 +45,7 @@ describe("WorldLevel Nav", () => {
         />
       );
       const titleLink = container.querySelector(
-        ".pal--side-nav__header button"
+        ".cpx--side-nav__header button"
       );
       expect(mockFunction).toHaveBeenCalledTimes(0);
       userEvent.click(titleLink);
@@ -82,13 +82,13 @@ describe("WorldLevel Nav", () => {
   describe("Changes on open prop", () => {
     it("When a user toggles the open prop to false the nav collapses", () => {
       const { container } = render(<WorldLevelNav open={false} {...props} />);
-      const baseClass = container.querySelector(".pal--side-nav--collapsed");
+      const baseClass = container.querySelector(".cpx--side-nav--collapsed");
       expect(baseClass).toBeInTheDocument();
     });
 
     it("When a user toggles the open prop to true the nav opens", () => {
       const { container } = render(<WorldLevelNav {...props} />);
-      const baseClass = container.querySelector(".pal--side-nav--collapsed");
+      const baseClass = container.querySelector(".cpx--side-nav--collapsed");
       expect(baseClass).toBe(null);
     });
   });
@@ -99,7 +99,7 @@ describe("WorldLevel Nav", () => {
       act(() => {
         resizeWindow(300, 768);
       });
-      const baseClass = container.querySelector(".pal--side-nav--collapsed");
+      const baseClass = container.querySelector(".cpx--side-nav--collapsed");
       expect(baseClass).toBeInTheDocument();
     });
 
@@ -110,7 +110,7 @@ describe("WorldLevel Nav", () => {
 
         resizeWindow(1024, 768);
       });
-      const baseClass = container.querySelector(".pal--side-nav--collapsed");
+      const baseClass = container.querySelector(".cpx--side-nav--collapsed");
       expect(baseClass).toBe(null);
     });
   });
