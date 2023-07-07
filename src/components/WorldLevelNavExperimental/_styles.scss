@@ -43,11 +43,12 @@
 }
 
 .cpx--world-level-nav .cpx--side-nav__menu-button.cpx--side-nav__menu-flyout {
-  padding-left: $spacing-06;
+  padding-left: $spacing-05;
 }
 
-.cpx--world-level-nav .cpx--side-nav__menu .cpx--side-nav__link {
-  padding-left: $spacing-06;
+.cpx--world-level-nav .cpx--side-nav__menu .cpx--side-nav__link,
+ .cpx--world-level-nav .cpx--side-nav__menu .cpx--side-nav__menu-button {
+  padding-left: $spacing-08;
 }
 
 .cpx--world-level-nav .cpx--side-nav__link[aria-current="page"],
