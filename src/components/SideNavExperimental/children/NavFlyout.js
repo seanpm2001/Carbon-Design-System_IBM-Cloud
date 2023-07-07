@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 // Carbon Components
 import { ChevronRight as ChevronRight16 } from "@carbon/react/icons";
-// PAL Components
+// cpx Components
 import NavItem from "./NavItem";
 import { isActiveItem } from "../utils/findActiveItem";
 
@@ -23,7 +23,7 @@ const NavFlyout = ({
   React.useLayoutEffect(() => {
     if (flyoutButtonRef.current) {
       const findNavItemsComponents = (element) => {
-        if (element?.className === "pal--side-nav-experimental__items") {
+        if (element?.className === "cpx--side-nav__items") {
           return element;
         }
         if (element.parentElement && element.parentElement.nodeName !== "NAV") {
@@ -63,18 +63,18 @@ const NavFlyout = ({
       onFocus={() => setHover(true)}
       onBlur={() => setHover(false)}
       type="button"
-      className="pal--side-nav-experimental__menu-button pal--side-nav-experimental__menu-flyout"
+      className="cpx--side-nav__menu-button cpx--side-nav__menu-flyout"
       id={id}
     >
       {menuButtonLabel}
-      <ChevronRight16 className="pal--side-nav-experimental__menu-icon" />
+      <ChevronRight16 className="cpx--side-nav__menu-icon" />
       <span
-        className="pal--side-nav-experimental__flyout-box"
+        className="cpx--side-nav__flyout-box"
         style={{ top: boxPosition }}
       />
       <ul
         ref={flyoutContentRef}
-        className="pal--side-nav-experimental__flyout"
+        className="cpx--side-nav__flyout"
         style={{ top: position }}
       >
         {items.map((item) => {

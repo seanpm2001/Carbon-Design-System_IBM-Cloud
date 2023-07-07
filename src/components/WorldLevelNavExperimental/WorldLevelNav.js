@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import SideNav from "../SideNav";
+import SideNav from "../SideNavExperimental";
 import debounce from "../../utils/debounce";
 
 const WorldLevelNav = ({ className, open, onToggle, ...props }) => {
@@ -46,7 +46,7 @@ const WorldLevelNav = ({ className, open, onToggle, ...props }) => {
     <SideNav
       {...props}
       onToggle={onToggle}
-      className={classNames("pal--world-level-nav", className)}
+      className={classNames("cpx--world-level-nav", className)}
       collapseButtonLocation="right"
       showMenuItems
       showDropdown={false}

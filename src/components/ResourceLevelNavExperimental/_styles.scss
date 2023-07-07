@@ -1,0 +1,42 @@
+@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/reset';
+@import "@carbon/react/scss/colors";
+@import "@carbon/react/scss/spacing";
+@import "@carbon/react/scss/themes";
+@import "@carbon/react/scss/theme";
+@import "@carbon/react/scss/config";
+@import "@carbon/react/scss/grid";
+@import "@carbon/react/scss/motion";
+@import "../SideNav/styles";
+
+@media screen and (max-width: "671px") {
+  :not(.pal-docs--renderer__component)
+    > .cpx--side-nav.cpx--resource-level-nav {
+    position: fixed;
+    overflow-y: auto;
+    max-height: calc(100% - 3.125rem);
+    min-width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+  }
+}
+
+@media screen and (max-width: "671px") {
+  .cpx--side-nav.cpx--resource-level-nav.cpx--resource-level-nav--skeleton {
+    display: none;
+  }
+}
+
+.cpx--resource-level-nav--skeleton {
+  .cpx--side-nav__item:not(.cpx--side-nav__item--with-menu),
+  .cpx--side-nav__menu-button {
+    background-color: $background;
+    cursor: default;
+  }
+
+  .cds--skeleton__text {
+    margin-bottom: 0;
+  }
+}

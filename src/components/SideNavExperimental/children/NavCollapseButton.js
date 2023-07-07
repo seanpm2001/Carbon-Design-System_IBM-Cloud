@@ -18,19 +18,19 @@ const NavCollapseButton = ({
     <button
       aria-haspopup="true"
       aria-expanded={open}
-      className={`pal--side-nav-experimental__collapse-button ${
-        activeLabel ? "pal--side-nav-experimental__collapse-button--active" : ""
+      className={`cpx--side-nav__collapse-button ${
+        activeLabel ? "cpx--side-nav__collapse-button--active" : ""
       }`}
       type="button"
       onClick={onClick}
     >
       <span className="cds--assistive-text">{label}</span>
       {activeLabel && (
-        <span className="pal--side-nav-experimental__collapse-button-active-item">
+        <span className="cpx--side-nav__collapse-button-active-item">
           {activeLabel}
         </span>
       )}
-      <CollapseIcon className="pal--side-nav-experimental__collapse-button-icon" />
+      <CollapseIcon className="cpx--side-nav__collapse-button-icon" />
     </button>
   );
 };

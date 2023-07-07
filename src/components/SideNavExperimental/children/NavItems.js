@@ -12,7 +12,7 @@ const NavItems = ({
   linkComponent: LinkComponent,
   onSelect,
 }) => (
-  <ul className="pal--side-nav-experimental__items">
+  <ul className="cpx--side-nav__items">
     {items.map(item => {
       const {
         items: subItems,

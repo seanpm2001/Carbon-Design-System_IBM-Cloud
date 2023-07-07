@@ -5,7 +5,6 @@ import NavItem from './NavItem';
 const NavHeader = ({
   active,
   href,
-  icon,
   linkComponent: LinkComponent,
   onClick,
   onKeyDown,
@@ -14,9 +13,8 @@ const NavHeader = ({
 }) =>
   showHeader ? (
     <NavItem
-      className="pal--side-nav-experimental__header"
+      className="cpx--side-nav__header"
       itemComponent="h2"
-      linkComponent={LinkComponent}
       href={LinkComponent !== 'a' ? undefined : href}
       to={LinkComponent !== 'a' ? href : undefined}
       active={active}
@@ -24,7 +22,6 @@ const NavHeader = ({
       onKeyDown={evt => onKeyDown(evt, href)}
       label={
         <>
-          {icon}
           {title}
         </>
       }
@@ -44,10 +41,6 @@ NavHeader.propTypes = {
    * The title of the currently selected page.
    */
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  /**
-   * The icon to render above the title on the page.
-   */
-  icon: PropTypes.node,
   /**
    * The component to use as the link component.
    */
@@ -72,7 +65,6 @@ NavHeader.defaultProps = {
   linkComponent: undefined,
   href: undefined,
   showHeader: false,
-  icon: undefined,
 };
 
 export default NavHeader;

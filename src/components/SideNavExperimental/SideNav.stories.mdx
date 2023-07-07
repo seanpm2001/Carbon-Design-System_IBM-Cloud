@@ -1,6 +1,8 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import SideNav from '.';
+import { Bee } from '@carbon/react/icons'
 import './_styles.scss';
+import { ChevronDown, ChevronUp } from "@carbon/react/icons";
 
 <Meta
   title="Experimental/SideNav"
@@ -23,14 +25,27 @@ export const Template = (args) => (
     name="Demo"
     args={{
       items: [
-        { href: '#example-item-1A', label: 'Link 1A'},
-        { href: '#example-item-1B', label: 'Link 1B'},
-        { label: ' Nav List', items: [
+        { href: '#example-item-1A', label: 'Link 1A', icon: Bee },
+        { href: '#example-item-1B', label: 'Link 1B', icon: Bee},
+        { icon: Bee, label: ' Nav List', items: [
             {href: '#example-item-2A', label: 'Link 2A'},
             {href: '#example-item-2B', label: 'Link 2B'}
           ]},
-        { href: '#example-item-3A', label: 'Link 3A'}
-      ]
+        { href: '#example-item-3A', label: 'Link 3A', icon: Bee},
+        {  icon: Bee, label: 'Sub menu 1', items: [
+            { label: 'Sub Link 1A', flyoutItems: [
+                { href: '#sub-menu-flyout-1A-1', label: 'Sub Flyout Link 1A' },
+                { href: '#sub-menu-flyout-1A-2', label: 'Sub Flyout Link 1B' }] },
+            { href: '#sub-item-1C', label: 'Sub Link 1B' },
+            { label: 'Sub menu flyout',
+              flyoutItems: [
+                { href: '#sub-menu-flyout-1', label: 'Sub Flyout Link 1A' },
+              ]},
+            { href: '#sub-item-1D', label: 'Sub Link 1D' },
+          ] },
+      ],
+      title: 'Header',
+      showHeader: true
     }}
   >
     {Template.bind({})}
@@ -100,6 +115,64 @@ You can include a nested flyout array to sub-items to render a 3rd level of nest
           ],
         },
       ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## L2
+<Canvas>
+  <Story
+    name="L2"
+    args={{
+      items: [
+        { href: '#example-item-1A', label: 'Link 1A', icon: Bee },
+        { href: '#example-item-1B', label: 'Link 1B', icon: Bee},
+        { icon: Bee, label: ' Nav List', items: [
+            {href: '#example-item-2A', label: 'Link 2A'},
+            {href: '#example-item-2B', label: 'Link 2B'}
+          ]},
+        { href: '#example-item-3A', label: 'Link 3A', icon: Bee},
+        {  icon: Bee, label: 'Sub menu 1', items: [
+            { label: 'Sub Link 1A', flyoutItems: [
+                { href: '#sub-menu-flyout-1A-1', label: 'Sub Flyout Link 1A' },
+                { href: '#sub-menu-flyout-1A-2', label: 'Sub Flyout Link 1B' }] },
+            { href: '#sub-item-1C', label: 'Sub Link 1B' },
+            { label: 'Sub menu flyout',
+              flyoutItems: [
+                { href: '#sub-menu-flyout-1', label: 'Sub Flyout Link 1A' },
+              ]},
+            { href: '#sub-item-1D', label: 'Sub Link 1D' },
+          ] },
+      ],
+      title: 'Header',
+      showHeader: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## L3
+<Canvas>
+  <Story
+    name="L3"
+    args={{
+      items: [
+        { label: 'Link 1A' },
+        { label: 'Link 1B' },
+        { label: ' Nav List', items: [
+            {href: '#example-item-2A', label: 'Link 2A'},
+            {href: '#example-item-2B', label: 'Link 2B'}
+          ]},
+        { label: 'Link 3A' },
+        { label: 'Sub menu 1', items: [
+            { href: '#sub-item-1C', label: 'Sub Link 1B' },
+            { href: '#sub-item-1D', label: 'Sub Link 1D' },
+          ] },
+      ],
+      title: 'Header',
     }}
   >
     {Template.bind({})}

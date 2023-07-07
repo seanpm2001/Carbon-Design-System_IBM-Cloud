@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 // Carbon Components
-import { ChevronDown as ChevronDown16 } from "@carbon/react/icons";
-// PAL Components
+import { ChevronDown, ChevronUp } from "@carbon/react/icons";
+// cpx Components
 import NavItem from "./NavItem";
 import { findActiveItem, isActiveItem } from "../utils/findActiveItem";
 import NavFlyout from "./NavFlyout";
@@ -20,10 +20,19 @@ const NavMenu = ({
   onItemSelect,
   open: controlledOpen,
   linkComponent: LinkComponent,
+  icon: Icon,
   ...rest
 }) => {
   // Component State
   const [open, setOpen] = useState(controlledOpen || navMenuActive);
+
+  const iconItem = !Icon ? null : (
+    <Icon
+      aria-label="icon"
+      className="cpx--side-nav__item-icon"
+      aria-hidden="true"
+    />
+  );
 
   // Event Handlers
   const toggleOpen = (...args) => {
@@ -38,9 +47,9 @@ const NavMenu = ({
   return (
     <li
       className={classnames(
-        "pal--side-nav-experimental__item",
-        "pal--side-nav-experimental__item--with-menu",
-        { "pal--side-nav-experimental__item--active": navMenuActive && !open },
+        "cpx--side-nav__item",
+        "cpx--side-nav__item--with-menu",
+        { "cpx--side-nav__item--active": navMenuActive && !open },
         className
       )}
       {...rest}
@@ -49,14 +58,17 @@ const NavMenu = ({
         aria-haspopup="true"
         aria-expanded={open}
         type="button"
-        className="pal--side-nav-experimental__menu-button"
+        className="cpx--side-nav__menu-button"
         id={id}
         onClick={toggleOpen}
       >
-        {menuButtonLabel}
-        <ChevronDown16 className="pal--side-nav-experimental__menu-icon" />
+        <div className="cpx--side-nav__menu-button__label">
+          {iconItem}
+          {menuButtonLabel}
+        </div>
+        <ChevronDown className="cpx--side-nav__menu-icon" />
       </MenuButtonComponent>
-      <ul className="pal--side-nav-experimental__menu">
+      <ul className="cpx--side-nav__menu">
         {items.map((item) => {
           const {
             onClick: onItemClick,
@@ -158,6 +170,10 @@ NavMenu.propTypes = {
       ),
     })
   ).isRequired,
+  /**
+   * Icon of the item
+   */
+  icon: NavItem.icon
 };
 
 NavMenu.defaultProps = {
@@ -167,6 +183,7 @@ NavMenu.defaultProps = {
   menuButtonComponent: "button",
   open: false,
   onClick: () => {},
+  icon: undefined,
 };
 
 export default NavMenu;

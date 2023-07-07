@@ -36,7 +36,6 @@ const SideNav = ({
   className,
   collapseButtonLocation,
   inverse,
-  icon,
   items,
   linkComponent: LinkComponent,
   locale,
@@ -103,10 +102,10 @@ const SideNav = ({
     <nav
       aria-label={t("navLabel")}
       className={classnames(
-        "pal--side-nav-experimental",
+        "cpx--side-nav",
         {
-          "pal--side-nav-experimental--collapsed": !open,
-          "pal--side-nav-experimental--inverse": inverse,
+          "cpx--side-nav--collapsed": !open,
+          "cpx--side-nav--inverse": inverse,
         },
         className
       )}
@@ -117,7 +116,6 @@ const SideNav = ({
         active={isActiveItem({ href: titleHref }, activeHref)}
         href={titleHref}
         title={title}
-        icon={icon}
         linkComponent={LinkComponent}
         onClick={(evt) => onSelect(evt, titleHref, onTitleClick)}
         onKeyDown={(evt) => onSelect(evt, titleHref)}
@@ -150,10 +148,6 @@ SideNav.propTypes = {
    * Whether or not the side nav should be collapsible.
    */
   collapseButtonLocation: PropTypes.oneOf(["top", "right"]),
-  /**
-   * The icon to render when using the nav header is visible.
-   */
-  icon: PropTypes.node,
   /**
    * Whether or not the side nav should render the inverse color theme (g90).
    */
@@ -210,7 +204,6 @@ SideNav.defaultProps = {
   showMenuItems: true,
   className: "",
   collapseButtonLocation: "top",
-  icon: undefined,
   inverse: false,
   linkComponent: "a",
   // locale: documentLanguage,
