@@ -24,15 +24,6 @@ const NavItem = ({
     />
   );
 
-  // const trackCursorGradient = (e) => {
-  //   let rect = e.target.getBoundingClientRect();
-  //   let x = e.clientX - rect.left - rect.width/2
-  //   let y = e.clientY - rect.top + rect.y/2 - rect.height/2
-
-  //   ref.current.style.setProperty('--x', x + 'px');
-  //   ref.current.style.setProperty('--y', y + 'px');
-  // }
-
   return (
     <ItemComponent
       ref={ref}
