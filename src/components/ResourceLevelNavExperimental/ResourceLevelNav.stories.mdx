@@ -1,0 +1,83 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import ResourceLevelNav from '.';
+import './_styles.scss';
+
+<Meta
+  title="Experimental/ResourceLevelNav"
+  component={ResourceLevelNav}
+  argTypes={{
+    locale: { control: { type: 'select' }, options: ['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'zh-cn', 'zh-tw'], defaultValue: 'en' },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: 'core' }}}
+/>
+
+# ResourceLevelNav
+
+export const Template = (args) => (
+  <ResourceLevelNav {...args} />
+);
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      items: [
+        { label: 'Link 1A' },
+        { label: 'Link 1B' },
+        { label: ' Nav List', items: [
+            {href: '#example-item-2A', label: 'Link 2A'},
+            {href: '#example-item-2B', label: 'Link 2B'}
+          ]},
+        { label: 'Link 3A' },
+        { label: 'Sub menu 1', items: [
+            { href: '#sub-item-1C', label: 'Sub Link 1B' },
+            { href: '#sub-item-1D', label: 'Sub Link 1D' },
+          ] },
+      ],
+      title: 'Header',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+A component used for the navigation of pages within a resource on a resource details page. It should be used as outlined in the Resource Page Template. This component DOES NOT have nested elements
+the convention is to use Level 4 (L4) Horizontal tabs instead. [Here](/ibm-cloud-concepts/navigation-on-cloud/usage#navigation-levels) a good resource on using the horizontal navigation on the cloud.
+Skeleton states on the resource level nav do not display below 672px as it transforms into a collapsible drawer on small view-ports.
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import 'carbon-for-ibm-cloud/components/ResourceLevelNav/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { ResourceLevelNav } from 'carbon-for-ibm-cloud/components';
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={ResourceLevelNav} />
+
+## Loading State
+
+<Canvas>
+  <Story name="Skeleton">
+    <ResourceLevelNav.skeleton />
+  </Story>
+</Canvas>
+
+## Contributors
+- Alex Kim
+- Tony Wu

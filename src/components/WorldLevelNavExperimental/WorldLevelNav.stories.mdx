@@ -1,0 +1,186 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import WorldLevelNav from ".";
+import "./_styles.scss";
+import { Bee, IbmCloud as IbmCloud16 } from "@carbon/react/icons";
+
+<Meta
+  title="Experimental/WorldLevelNav"
+  component={WorldLevelNav}
+  argTypes={{
+    locale: {
+      control: { type: "select" },
+      options: [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "ja",
+        "ko",
+        "pt-br",
+        "zh-cn",
+        "zh-tw",
+      ],
+      defaultValue: "en",
+    },
+    children: { control: false },
+  }}
+  parameters={{ status: { type: "core" } }}
+/>
+
+# WorldLevelNav
+
+export const Template = (args) => <WorldLevelNav {...args} />;
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      title: "Cloud PAL",
+      titleHref: "/ibmcloud/pal/components/world-level-nav/code",
+      icon: <IbmCloud16 />,
+      items: [
+        { icon: Bee, href: "#example-item-1A", label: "Link 1A" },
+        { icon: Bee, href: "#example-item-1B", label: "Link 1B" },
+        { icon: Bee, 
+          label: "Sub menu 1",
+          items: [
+            {
+              label: "Sub Link 1A",
+              flyoutItems: [
+                { href: "#sub-menu-flyout-1A-1", label: "Sub Flyout Link 1A" },
+                { href: "#sub-menu-flyout-1A-2", label: "Sub Flyout Link 1B" },
+              ],
+            },
+            { href: "#sub-item-1C", label: "Sub Link 1B" },
+            {
+              label: "Sub menu flyout",
+              flyoutItems: [
+                { href: "#sub-menu-flyout-1", label: "Sub Flyout Link 1A" },
+              ],
+            },
+            { href: "#sub-item-1D", label: "Sub Link 1D" },
+          ],
+        },
+        {
+          icon: Bee, 
+          label: "Sub Menu 2",
+          items: [
+            { href: "#sub-item-2B", label: "Sub Link 1B" },
+            {
+              label: "Sub menu flyout 2",
+              flyoutItems: [
+                { href: "#sub-menu-flyout-21", label: "Sub Flyout Link 1A" },
+                { href: "#sub-menu-flyout-22", label: "Sub Flyout Link 1B" },
+                { href: "#sub-menu-flyout-23", label: "Sub Flyout Link 1C" },
+                { href: "#sub-menu-flyout-24", label: "Sub Flyout Link 1D" },
+                { href: "#sub-menu-flyout-25", label: "Sub Flyout Link 1E" },
+              ],
+            },
+            { href: "#sub-item-2C", label: "Sub Link 1C" },
+            { href: "#sub-item-2D", label: "Sub Link 1D" },
+            { href: "#sub-item-2E", label: "Sub Link 1E" },
+            { href: "#sub-item-2F", label: "Sub Link 1F" },
+          ],
+        },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+A component used for navigation of a world pages. It is used for switching page views within a world. The World Level Nav (L2) supports
+menus by adding an `items` array to an item. Each World Level Nav (L2) should include a 16 pixel icon above its title.
+
+## WorldLevelNav with React Router
+
+A custom Link component to be used with React Router (or just the Link component itself) can be added via `linkComponent` prop. In this case, make sure the `items` do not have `href` property, as it will make the used tag by default an `<a>` tag and it will disregard the `linkComponent`.
+
+1.  Create the custom Link component if needed (with whatever attribute needed for the `to` parameter, like `href`, `to`, etc.)
+
+```jsx
+const CustomLinkComponent = ({ to, label, ...props }) => (
+  <Link hrefToAttribute={to} {...props}>
+    {label}
+  </Link>
+);
+```
+
+2.  Create the `items` list - make sure there is no `href` property
+
+```jsx
+const items = [
+  { to: "example-item-1A", label: "Link 1A" },
+  { to: "example-item-1B", label: "Link 1B" },
+  { to: "example-item-1C", label: "Link 1C" },
+];
+```
+
+3.  Pass the correct props to `WorldLevelNav`
+
+```jsx
+<WorldLevelNav items={items} linkComponent={CustomLinkComponent} />
+```
+
+## Usage
+
+1.  Install the [@console/pal](https://github.ibm.com/ibmcloud/pal#how-to-install-and-use) library
+2.  Import the styles:
+
+    ```js
+    @import 'carbon-for-ibm-cloud/components/WorldLevelNav/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { WorldLevelNav } from "carbon-for-ibm-cloud/components";
+    ```
+
+4.  Render the component.
+
+For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+<ArgsTable of={WorldLevelNav} />
+
+## Other examples
+
+### WorldLevelNav with default opened submenu
+
+Providing an `open: true` property to a submenu will render the given submenu open by default.
+
+<Canvas>
+  <Story
+    name="Demo-default-opened"
+    args={{
+      title: "Cloud PAL",
+      titleHref: "/ibmcloud/pal/components/world-level-nav/code",
+      icon: <IbmCloud16 />,
+      items: [
+        { icon: Bee, href: "#example-item-1A", label: "Link 1A" },
+        { icon: Bee, href: "#example-item-1B", label: "Link 1B" },
+        {
+          icon: Bee, 
+          label: "Nav Menu",
+          open: true,
+          items: [
+            { href: "#example-item-2A", label: "Link 2A" },
+            { href: "#example-item-2B", label: "Link 2B" },
+          ],
+        },
+        { icon: Bee, href: "#example-item-1C", label: "Link 1C" },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Contributors
+
+- Trevor Wong
