@@ -45,7 +45,7 @@ describe("WorldLevel Nav", () => {
         />
       );
       const titleLink = container.querySelector(
-        ".cpx--side-nav__header button"
+        ".cpx--side-nav__header .cpx--side-nav__link"
       );
       expect(mockFunction).toHaveBeenCalledTimes(0);
       userEvent.click(titleLink);

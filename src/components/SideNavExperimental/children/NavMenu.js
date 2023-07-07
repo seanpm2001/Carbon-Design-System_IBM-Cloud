@@ -173,7 +173,7 @@ NavMenu.propTypes = {
   /**
    * Icon of the item
    */
-  icon: NavItem.icon
+  icon: NavItem.propTypes.icon
 };
 
 NavMenu.defaultProps = {
