@@ -34,11 +34,6 @@ const NavFlyout = ({
       };
       const parent = findNavItemsComponents(flyoutButtonRef.current);
       const parentScroll = parent ? parent.scrollTop : 0;
-      const buttonHalfHeight =
-        (flyoutButtonRef.current?.getBoundingClientRect().height ?? 0) / 2;
-      const flyoutHeight =
-        flyoutContentRef.current?.getBoundingClientRect().height ?? 0;
-      const flyoutHalfHeight = flyoutHeight / 2;
       // We need to manually position the flyout since it is absolutely positioned relative to the whole Nav element (versus button)
       // Due to how we need to preserve the overflow.
       // First we get the height offset of the flyout menu (the button). Then we substract the scroll position of the container if there is any.
@@ -47,9 +42,7 @@ const NavFlyout = ({
       // adding half of the flyout height, and half of the flyout menu button height.
       const centeredPosition =
         flyoutButtonRef.current.offsetTop -
-        parentScroll -
-        flyoutHalfHeight +
-        buttonHalfHeight;
+        parentScroll
       setPosition(centeredPosition);
       setBoxPosition(flyoutButtonRef.current.offsetTop - parentScroll);
     }
