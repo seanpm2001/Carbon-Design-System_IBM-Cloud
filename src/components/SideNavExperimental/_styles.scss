@@ -227,10 +227,6 @@ $pal-side-nav-item-active: $layer-selected-01;
     }
   }
 
-  > .cpx--side-nav__header {
-    margin-bottom: $spacing-03;
-  }
-
   // Active item styles
   &__item--active &__menu-button,
   &__link[aria-current="page"] {
@@ -249,6 +245,7 @@ $pal-side-nav-item-active: $layer-selected-01;
 
   &__collapse-button {
     @include type.type-style("productive-heading-01");
+
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -326,6 +323,7 @@ $pal-side-nav-item-active: $layer-selected-01;
   &__item &__menu-button:hover, &__menu-flyout:hover {
     background: $pal-hover-gradient;
     color: $pal-inverse-side-nav-hover-text;
+
     .cpx--side-nav__link,
     .cpx--side-nav__menu-button__label {
       color: $pal-inverse-side-nav-hover-text;
@@ -348,6 +346,7 @@ $pal-side-nav-item-active: $layer-selected-01;
   &__item &__menu-button:active {
     background: $layer-selected-01;
     color: $pal-inverse-side-nav-hover-text;
+
     .cpx--side-nav__link,
     .cpx--side-nav__menu-button__label {
       color: $pal-inverse-side-nav-hover-text;
@@ -402,6 +401,7 @@ $pal-side-nav-item-active: $layer-selected-01;
   }
 
   > .cpx--side-nav__header {
+    margin-bottom: $spacing-03;
     flex-direction: column;
     align-items: flex-start;
     padding: $spacing-05;
