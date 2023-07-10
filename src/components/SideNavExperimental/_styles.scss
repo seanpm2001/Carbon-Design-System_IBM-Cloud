@@ -281,6 +281,11 @@ $pal-side-nav-item-active: $layer-selected-01;
     background: $pal-hover-gradient;
   }
 
+  &__collapse-button:active,
+  &--collapsed &__collapse-button:active {
+    background: $layer-selected-01;
+  }
+
   &__collapse-button-icon {
     fill: $icon-secondary;
     margin-left: auto;
@@ -316,7 +321,7 @@ $pal-side-nav-item-active: $layer-selected-01;
     outline: 2px solid $button-primary; 
   }
 
-  // Active link hover styles
+  // link hover styles
   &__item:not(.cpx--side-nav__item--with-menu):hover,
   &__item &__menu-button:hover {
     background: $pal-hover-gradient;
@@ -329,6 +334,27 @@ $pal-side-nav-item-active: $layer-selected-01;
     @include breakpoint("md") {
       // background-color: $pal-side-nav-item-hover;
       background-color: transparent;
+
+      .cpx--side-nav__link,
+      .cpx--side-nav__menu-button {
+        color: $pal-inverse-side-nav-hover-text;
+  
+      }
+    }
+  }
+
+  // Active link hover styles
+  &__item:not(.cpx--side-nav__item--with-menu):active,
+  &__item &__menu-button:active {
+    background: $layer-selected-01;
+    color: $pal-inverse-side-nav-hover-text;
+    .cpx--side-nav__link,
+    .cpx--side-nav__menu-button__label {
+      color: $pal-inverse-side-nav-hover-text;
+    }
+
+    @include breakpoint("md") {
+      background: $layer-selected-01;
 
       .cpx--side-nav__link,
       .cpx--side-nav__menu-button {
