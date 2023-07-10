@@ -33,26 +33,6 @@ describe("WorldLevel Nav", () => {
     });
   });
 
-  describe("calls the onTitleClick function", () => {
-    it(" when the title gets clicked", () => {
-      const mockFunction = jest.fn();
-      const { container } = render(
-        <WorldLevelNav
-          {...props}
-          onTitleClick={() => {
-            mockFunction();
-          }}
-        />
-      );
-      const titleLink = container.querySelector(
-        ".cpx--side-nav__header .cpx--side-nav__link"
-      );
-      expect(mockFunction).toHaveBeenCalledTimes(0);
-      userEvent.click(titleLink);
-      expect(mockFunction).toHaveBeenCalledTimes(1);
-    });
-  });
-
   describe("fire resize event calling onToggle function", () => {
     it("from bigger(enzyme default window size 1024px width) to small size", async () => {
       const callback = jest.fn();

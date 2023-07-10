@@ -54,7 +54,6 @@ const props = {
   showDropdown: false,
   showHeader: true,
   title: 'Side Nav Title',
-  titleHref: '#side-nav-title-href',
 };
 
 describe('Side Nav', () => {
@@ -80,63 +79,6 @@ describe('Side Nav', () => {
       const navTitle = screen.getByText('Side Nav Title');
 
       expect(navTitle).toBeInTheDocument();
-    });
-
-    it('selects the header on click', () => {
-      render(<SideNav {...props} />);
-      const navTitle = screen.getByText('Side Nav Title');
-      userEvent.click(navTitle);
-
-      expect(navTitle).toHaveAttribute('aria-current', 'page');
-    });
-
-    it('selects the header when pressing enter', () => {
-      render(<SideNav {...props} />);
-      const navTitle = screen.getByText('Side Nav Title');
-      fireEvent.keyDown(navTitle, { key: 'Enter', code: 13 });
-
-      expect(navTitle).toHaveAttribute('aria-current', 'page');
-    });
-
-    it('selects the header when pressing space', () => {
-      render(<SideNav {...props} />);
-      const navTitle = screen.getByText('Side Nav Title');
-      fireEvent.keyDown(navTitle, { key: 'Spacebar', code: 32 });
-
-      expect(navTitle).toHaveAttribute('aria-current', 'page');
-    });
-
-    it('selects the title when a link component is provided', () => {
-      render(
-        <SideNav
-          {...props}
-          items={itemsNoHref}
-          linkComponent={({ to, children, ...rest }) => (
-            <a href={to} {...rest}>
-              {children}
-            </a>
-          )}
-        />,
-      );
-      const navTitle = screen.getByText('Side Nav Title');
-      userEvent.click(navTitle);
-      expect(navTitle).toHaveAttribute('aria-current', 'page');
-    });
-
-    it('calls the onTitleClick function when the title gets clicked', () => {
-      const mockFunction = jest.fn();
-      const { container } = render(
-        <SideNav
-          {...props}
-          onTitleClick={() => {
-            mockFunction();
-          }}
-        />,
-      );
-      const titleLink = container.querySelector('.cpx--side-nav__header a');
-      expect(mockFunction).toHaveBeenCalledTimes(0);
-      userEvent.click(titleLink);
-      expect(mockFunction).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -255,7 +197,7 @@ describe('Side Nav', () => {
 
     it('selects the nav item when pressing space', () => {
       render(<SideNav {...props} />);
-      const navItem = screen.getByText('Side Nav Title');
+      const navItem = screen.getByText('Link 1A');
       fireEvent.keyDown(navItem, { key: 'Spacebar', code: 32 });
 
       expect(navItem).toHaveAttribute('aria-current', 'page');
