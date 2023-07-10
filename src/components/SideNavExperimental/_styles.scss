@@ -323,7 +323,7 @@ $pal-side-nav-item-active: $layer-selected-01;
 
   // link hover styles
   &__item:not(.cpx--side-nav__item--with-menu):hover,
-  &__item &__menu-button:hover {
+  &__item &__menu-button:hover, &__menu-flyout:hover {
     background: $pal-hover-gradient;
     color: $pal-inverse-side-nav-hover-text;
     .cpx--side-nav__link,
