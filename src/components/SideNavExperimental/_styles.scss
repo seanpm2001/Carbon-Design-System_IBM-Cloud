@@ -86,7 +86,7 @@ $pal-side-nav-item-active: $layer-selected-01;
   }
 
   // General styles for any nav item.
-  &__item:not(.cpx--side-nav__item--with-menu, .cpx--side-nav__header),
+  &__item:not(.cpx--side-nav__item--with-menu),
   &__menu-button {
     /* All styles for this Component should go here */
     @include type.type-style("body-short-01");
@@ -227,10 +227,6 @@ $pal-side-nav-item-active: $layer-selected-01;
     }
   }
 
-  > .cpx--side-nav__item.cpx--side-nav__header {
-    margin-bottom: $spacing-03;
-  }
-
   // Active item styles
   &__item--active &__menu-button,
   &__link[aria-current="page"] {
@@ -250,7 +246,7 @@ $pal-side-nav-item-active: $layer-selected-01;
   &__collapse-button {
     @include type.type-style("productive-heading-01");
 
-    background-color: $layer-02;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     color: $icon-secondary;
@@ -260,15 +256,31 @@ $pal-side-nav-item-active: $layer-selected-01;
     outline: 2px solid transparent;
     padding: $spacing-05 $spacing-05 $spacing-05 $spacing-07;
     width: 100%;
+    position: relative;
 
     @include breakpoint("md") {
       display: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $border-subtle-00;
+      left: 0;
     }
   }
 
   &__collapse-button:hover,
   &--collapsed &__collapse-button:hover {
-    background-color: $gray-80;
+    background: $pal-hover-gradient;
+  }
+
+  &__collapse-button:active,
+  &--collapsed &__collapse-button:active {
+    background: $layer-selected-01;
   }
 
   &__collapse-button-icon {
@@ -295,6 +307,10 @@ $pal-side-nav-item-active: $layer-selected-01;
     transform: rotate(180deg);
   }
 
+  &--collapsed &__collapse-button::after {
+    display: none;
+  }
+
   // Active link focus styles
   &__link:focus,
   &__menu-button:focus,
@@ -302,13 +318,14 @@ $pal-side-nav-item-active: $layer-selected-01;
     outline: 2px solid $button-primary; 
   }
 
-  // Active link hover styles
-  &__item:not(.cpx--side-nav__item--with-menu, .cpx--side-nav__header):hover,
-  &__item &__menu-button:hover {
-    background: linear-gradient(90deg, $layer-hover-01 43.75%, transparent 100%);
+  // link hover styles
+  &__item:not(.cpx--side-nav__item--with-menu):hover,
+  &__item &__menu-button:hover, &__menu-flyout:hover {
+    background: $pal-hover-gradient;
+    color: $pal-inverse-side-nav-hover-text;
 
     .cpx--side-nav__link,
-    .cpx--side-nav__menu-button {
+    .cpx--side-nav__menu-button__label {
       color: $pal-inverse-side-nav-hover-text;
     }
 
@@ -324,13 +341,35 @@ $pal-side-nav-item-active: $layer-selected-01;
     }
   }
 
+  // Active link hover styles
+  &__item:not(.cpx--side-nav__item--with-menu):active,
+  &__item &__menu-button:active {
+    background: $layer-selected-01;
+    color: $pal-inverse-side-nav-hover-text;
+
+    .cpx--side-nav__link,
+    .cpx--side-nav__menu-button__label {
+      color: $pal-inverse-side-nav-hover-text;
+    }
+
+    @include breakpoint("md") {
+      background: $layer-selected-01;
+
+      .cpx--side-nav__link,
+      .cpx--side-nav__menu-button {
+        color: $pal-inverse-side-nav-hover-text;
+  
+      }
+    }
+  }
+
   // Adds a divider between elements.
   &__menu::before,
   :not(.cpx--side-nav__menu) > &__item::before {
     content: "";
     width: 100%;
     height: 1px;
-    background-color: $gray-80;
+    background-color: $background-inverse;
     position: absolute;
     top: 0;
     left: 0;
@@ -361,7 +400,8 @@ $pal-side-nav-item-active: $layer-selected-01;
     top: 0;
   }
 
-  > .cpx--side-nav__header .cpx--side-nav__link {
+  > .cpx--side-nav__header {
+    margin-bottom: $spacing-03;
     flex-direction: column;
     align-items: flex-start;
     padding: $spacing-05;
@@ -375,15 +415,6 @@ $pal-side-nav-item-active: $layer-selected-01;
       background-color: $border-subtle-00;
       left: 0;
     }
-
-    &:hover::after {
-      display: none;
-    }
-  }
-
-  > .cpx--side-nav__header.cpx--side-nav__item--active
-    .cpx--side-nav__link::after {
-    display: none;
   }
 
   // Immediately hide the indicator for motion transition.
@@ -414,11 +445,11 @@ $pal-side-nav-item-active: $layer-selected-01;
     transform: rotate(180deg);
   }
 
-  &__header:hover {
-    background-color: $layer-accent-01;
-  }
+  // &__header:hover {
+  //   background-color: $layer-accent-01;
+  // }
 
-  &__header &__link {
+  &__header {
     @include type.type-style("heading-01");
 
     position: relative;

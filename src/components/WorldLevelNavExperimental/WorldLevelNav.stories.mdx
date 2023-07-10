@@ -40,18 +40,31 @@ export const Template = (args) => <WorldLevelNav {...args} />;
       titleHref: "/ibmcloud/pal/components/world-level-nav/code",
       icon: <IbmCloud16 />,
       items: [
+        {
+          icon: Bee,
+          label: "Sub menu flyout 2",
+          flyoutItems: [
+            { href: "#sub-menu-flyout-21", label: "Sub Flyout Link 1A" },
+            { href: "#sub-menu-flyout-22", label: "Sub Flyout Link 1B" },
+            { href: "#sub-menu-flyout-23", label: "Sub Flyout Link 1C" },
+            { href: "#sub-menu-flyout-24", label: "Sub Flyout Link 1D" },
+            { href: "#sub-menu-flyout-25", label: "Sub Flyout Link 1E" },
+          ],
+        },
         { icon: Bee, href: "#example-item-1A", label: "Link 1A" },
         { icon: Bee, href: "#example-item-1B", label: "Link 1B" },
+        {
+          icon: Bee,
+          label: "Sub Link 1A",
+          flyoutItems: [
+            { href: "#sub-menu-flyout-1A-1", label: "Sub Flyout Link 1A" },
+            { href: "#sub-menu-flyout-1A-2", label: "Sub Flyout Link 1B" },
+          ],
+        },
         { icon: Bee, 
           label: "Sub menu 1",
           items: [
-            {
-              label: "Sub Link 1A",
-              flyoutItems: [
-                { href: "#sub-menu-flyout-1A-1", label: "Sub Flyout Link 1A" },
-                { href: "#sub-menu-flyout-1A-2", label: "Sub Flyout Link 1B" },
-              ],
-            },
+            
             { href: "#sub-item-1C", label: "Sub Link 1B" },
             {
               label: "Sub menu flyout",
@@ -174,6 +187,88 @@ Providing an `open: true` property to a submenu will render the given submenu op
           ],
         },
         { icon: Bee, href: "#example-item-1C", label: "Link 1C" },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Menu Variant
+<Canvas>
+  <Story
+    name="Menu Variant"
+    args={{
+      title: "Cloud PAL",
+      titleHref: "/ibmcloud/pal/components/world-level-nav/code",
+      icon: <IbmCloud16 />,
+      items: [
+        {
+          icon: Bee,
+          label: "Sub menu flyout 2",
+        },
+        { icon: Bee, href: "#example-item-1A", label: "Link 1A" },
+        { icon: Bee, href: "#example-item-1B", label: "Link 1B" },
+        { icon: Bee, 
+          label: "Sub menu 1",
+          items: [
+            
+            { href: "#sub-item-1C", label: "Sub Link 1B" },
+            { href: "#sub-item-1D", label: "Sub Link 1D" },
+          ],
+        },
+        {
+          icon: Bee, 
+          label: "Sub Menu 2",
+          items: [
+            { href: "#sub-item-2B", label: "Sub Link 1B" },
+            { href: "#sub-item-2C", label: "Sub Link 1C" },
+            { href: "#sub-item-2D", label: "Sub Link 1D" },
+            { href: "#sub-item-2E", label: "Sub Link 1E" },
+            { href: "#sub-item-2F", label: "Sub Link 1F" },
+          ],
+        },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Flyout Variant
+<Canvas>
+  <Story
+    name="Flyout Variant"
+    args={{
+      title: "Cloud PAL",
+      titleHref: "/ibmcloud/pal/components/world-level-nav/code",
+      icon: <IbmCloud16 />,
+      items: [
+        {
+          icon: Bee,
+          label: "Sub menu flyout 2",
+        },
+        { icon: Bee, href: "#example-item-1A", label: "Link 1A" },
+        { icon: Bee, href: "#example-item-1B", label: "Link 1B" },
+        { icon: Bee, 
+          label: "Sub menu 1",
+          flyoutItems: [
+            
+            { href: "#sub-item-1C", label: "Sub Link 1B" },
+            { href: "#sub-item-1D", label: "Sub Link 1D" },
+          ],
+        },
+        {
+          icon: Bee, 
+          label: "Sub Menu 2",
+          flyoutItems: [
+            { href: "#sub-item-2B", label: "Sub Link 1B" },
+            { href: "#sub-item-2C", label: "Sub Link 1C" },
+            { href: "#sub-item-2D", label: "Sub Link 1D" },
+            { href: "#sub-item-2E", label: "Sub Link 1E" },
+            { href: "#sub-item-2F", label: "Sub Link 1F" },
+          ],
+        },
       ],
     }}
   >

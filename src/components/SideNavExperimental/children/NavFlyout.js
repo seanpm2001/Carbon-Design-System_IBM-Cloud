@@ -14,6 +14,7 @@ const NavFlyout = ({
   menuButtonComponent: MenuButtonComponent,
   onItemSelect,
   linkComponent: LinkComponent,
+  icon: Icon,
 }) => {
   const flyoutButtonRef = React.useRef(null);
   const flyoutContentRef = React.useRef(null);
@@ -54,54 +55,69 @@ const NavFlyout = ({
     }
   }, [position, hover]);
 
+  const iconItem = !Icon ? null : (
+    <Icon
+      aria-label="icon"
+      className="cpx--side-nav__item-icon"
+      aria-hidden="true"
+    />
+  );
+
   return (
-    <MenuButtonComponent
-      aria-haspopup="true"
-      ref={flyoutButtonRef}
-      onMouseOver={() => setHover(true)}
-      onMouseOut={() => setHover(false)}
-      onFocus={() => setHover(true)}
-      onBlur={() => setHover(false)}
-      type="button"
-      className="cpx--side-nav__menu-button cpx--side-nav__menu-flyout"
-      id={id}
+    <li
+      className="cpx--side-nav__item"
     >
-      {menuButtonLabel}
-      <ChevronRight16 className="cpx--side-nav__menu-icon" />
-      <span
-        className="cpx--side-nav__flyout-box"
-        style={{ top: boxPosition }}
-      />
-      <ul
-        ref={flyoutContentRef}
-        className="cpx--side-nav__flyout"
-        style={{ top: position }}
-      >
-        {items.map((item) => {
-          const {
-            onClick: onItemClick,
-            onKeyDown: onItemKeyDown,
-            href,
-            to,
-            label,
-            ...props
-          } = item;
-          return (
-            <NavItem
-              key={`${href}-${label}`}
-              active={isActiveItem(item, activeHref)}
-              {...props}
-              linkComponent={href ? "a" : LinkComponent}
-              label={label}
-              to={to}
-              href={href}
-              onClick={(evt) => onItemSelect(evt, to || href, onItemClick)}
-              onKeyDown={(evt) => onItemSelect(evt, to || href, onItemKeyDown)}
-            />
-          );
-        })}
-      </ul>
-    </MenuButtonComponent>
+      <MenuButtonComponent
+        aria-haspopup="true"
+        ref={flyoutButtonRef}
+        onMouseOver={() => setHover(true)}
+        onMouseOut={() => setHover(false)}
+        onFocus={() => setHover(true)}
+        onBlur={() => setHover(false)}
+        type="button"
+        className="cpx--side-nav__menu-button cpx--side-nav__menu-flyout"
+        id={id}
+      > 
+        <div className="cpx--side-nav__menu-button__label">
+          {iconItem}
+          {menuButtonLabel}
+        </div>
+        <ChevronRight16 className="cpx--side-nav__menu-icon" />
+        <span
+          className="cpx--side-nav__flyout-box"
+          style={{ top: boxPosition }}
+        />
+        <ul
+          ref={flyoutContentRef}
+          className="cpx--side-nav__flyout"
+          style={{ top: position }}
+        >
+          {items.map((item) => {
+            const {
+              onClick: onItemClick,
+              onKeyDown: onItemKeyDown,
+              href,
+              to,
+              label,
+              ...props
+            } = item;
+            return (
+              <NavItem
+                key={`${href}-${label}`}
+                active={isActiveItem(item, activeHref)}
+                {...props}
+                linkComponent={href ? "a" : LinkComponent}
+                label={label}
+                to={to}
+                href={href}
+                onClick={(evt) => onItemSelect(evt, to || href, onItemClick)}
+                onKeyDown={(evt) => onItemSelect(evt, to || href, onItemKeyDown)}
+              />
+            );
+          })}
+        </ul>
+      </MenuButtonComponent>
+    </li>
   );
 };
 
@@ -141,12 +157,17 @@ NavFlyout.propTypes = {
       label: PropTypes.string,
     })
   ).isRequired,
+  /**
+   * Icon of the item
+   */
+  icon: NavItem.propTypes.icon
 };
 
 NavFlyout.defaultProps = {
   id: undefined,
   linkComponent: "a",
   menuButtonComponent: "button",
+  icon: undefined,
 };
 
 export default NavFlyout;
