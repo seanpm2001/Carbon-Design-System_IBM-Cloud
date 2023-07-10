@@ -113,12 +113,7 @@ const SideNav = ({
     >
       {collapseButtonLocation === "top" && collapseButton}
       <NavHeader
-        active={isActiveItem({ href: titleHref }, activeHref)}
-        href={titleHref}
         title={title}
-        linkComponent={LinkComponent}
-        onClick={(evt) => onSelect(evt, titleHref, onTitleClick)}
-        onKeyDown={(evt) => onSelect(evt, titleHref)}
         showHeader={showHeader}
       />
       <NavItems

@@ -14,6 +14,7 @@ const NavFlyout = ({
   menuButtonComponent: MenuButtonComponent,
   onItemSelect,
   linkComponent: LinkComponent,
+  icon: Icon,
 }) => {
   const flyoutButtonRef = React.useRef(null);
   const flyoutContentRef = React.useRef(null);
@@ -54,6 +55,14 @@ const NavFlyout = ({
     }
   }, [position, hover]);
 
+  const iconItem = !Icon ? null : (
+    <Icon
+      aria-label="icon"
+      className="cpx--side-nav__item-icon"
+      aria-hidden="true"
+    />
+  );
+
   return (
     <MenuButtonComponent
       aria-haspopup="true"
@@ -65,8 +74,11 @@ const NavFlyout = ({
       type="button"
       className="cpx--side-nav__menu-button cpx--side-nav__menu-flyout"
       id={id}
-    >
-      {menuButtonLabel}
+    > 
+      <div className="cpx--side-nav__menu-button__label">
+        {iconItem}
+        {menuButtonLabel}
+      </div>
       <ChevronRight16 className="cpx--side-nav__menu-icon" />
       <span
         className="cpx--side-nav__flyout-box"
@@ -141,12 +153,17 @@ NavFlyout.propTypes = {
       label: PropTypes.string,
     })
   ).isRequired,
+  /**
+   * Icon of the item
+   */
+  icon: NavItem.propTypes.icon
 };
 
 NavFlyout.defaultProps = {
   id: undefined,
   linkComponent: "a",
   menuButtonComponent: "button",
+  icon: undefined,
 };
 
 export default NavFlyout;
