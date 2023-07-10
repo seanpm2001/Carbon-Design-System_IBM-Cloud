@@ -249,8 +249,7 @@ $pal-side-nav-item-active: $layer-selected-01;
 
   &__collapse-button {
     @include type.type-style("productive-heading-01");
-
-    background-color: $layer-02;
+    background-color: $layer;
     border: none;
     cursor: pointer;
     color: $icon-secondary;
@@ -268,7 +267,7 @@ $pal-side-nav-item-active: $layer-selected-01;
 
   &__collapse-button:hover,
   &--collapsed &__collapse-button:hover {
-    background-color: $gray-80;
+    background: $pal-hover-gradient;
   }
 
   &__collapse-button-icon {
@@ -305,7 +304,7 @@ $pal-side-nav-item-active: $layer-selected-01;
   // Active link hover styles
   &__item:not(.cpx--side-nav__item--with-menu, .cpx--side-nav__header):hover,
   &__item &__menu-button:hover {
-    background: linear-gradient(90deg, $layer-hover-01 43.75%, transparent 100%);
+    background: $pal-hover-gradient;
 
     .cpx--side-nav__link,
     .cpx--side-nav__menu-button {
@@ -330,7 +329,7 @@ $pal-side-nav-item-active: $layer-selected-01;
     content: "";
     width: 100%;
     height: 1px;
-    background-color: $gray-80;
+    background-color: $background-inverse;
     position: absolute;
     top: 0;
     left: 0;
