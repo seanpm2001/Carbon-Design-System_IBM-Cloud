@@ -16,6 +16,7 @@ function divideDigits(digitString, currentDigit, currentNumber, previousNumber) 
     let digitSet = "";
     let classString = "";
     let loopLength = digitString.length;
+
     // set current or previous class
     if (currentDigit) {
         classString = "pal--animated-numbers__current-number ";
@@ -29,7 +30,6 @@ function divideDigits(digitString, currentDigit, currentNumber, previousNumber) 
             classString = classString + "pal--animated-numbers__increase_number-enter";
         }
     }
-    //could also check if string != current number
     else if (!currentDigit) {
         classString = "pal--animated-numbers__previous-number ";
         // set increase or decrease class
@@ -91,6 +91,7 @@ const AnimatedNumbers = ({
       <div className="pal--animated-numbers" role="status">
         <div className="pal--animated-numbers__numbers">
             {/* Animation without stagger */}
+            {/* {!staggeredAnimation} */}
             {/* {currentNumber > previousNumber
             ? <h1 key={previousNumber} className="pal--animated-numbers__previous-number pal--animated-numbers__increase_number-exit">{previousNumber}</h1>
             : null
@@ -110,8 +111,6 @@ const AnimatedNumbers = ({
             }
             <h1 key={currentNumber} className={`pal--animated-numbers__current-number ${currentNumber < previousNumber ? "pal--animated-numbers__decrease_number-enter" : "pal--animated-numbers__increase_number-enter"} pal--animated-numbers__digit-#2}`}>{currentNumber}</h1>      
              */}
-            {/* <>{currentSet}</> 
-            <>{previousSet}</>  */}
             <div key={previousNumber} className=" pal--animated-numbers__numbers pal--animated-numbers__numbers-float" aria-hidden="true" dangerouslySetInnerHTML={{__html: previousSet}}></div>
             <div key={currentNumber} className="pal--animated-numbers__numbers"  dangerouslySetInnerHTML={{__html: currentSet}}></div>
         </div>
