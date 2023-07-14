@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -15,32 +15,37 @@ const NavItem = ({
   to,
   ...rest
 }) => {
+  const ref = useRef()
   const iconItem = !Icon ? null : (
     <Icon
       aria-label="icon"
-      className="pal--side-nav__item-icon pal--side-nav__menu-icon"
+      className="cpx--side-nav__item-icon"
       aria-hidden="true"
     />
   );
+
   return (
     <ItemComponent
+      ref={ref}
       className={classnames(
-        'pal--side-nav__item',
-        { 'pal--side-nav__item--active': active },
+        'cpx--side-nav__item',
+        { 'cpx--side-nav__item--active': active },
         className,
       )}
+      // onMouseMove={trackCursorGradient}
+
     >
       <LinkComponent
         href={href}
         to={href ? undefined : to}
-        className="pal--side-nav__link"
+        className="cpx--side-nav__link"
         {...rest}
         onClick={evt => onClick(evt, href || to)}
         onKeyDown={evt => onKeyDown(evt, href || to)}
         aria-current={active ? 'page' : undefined}
       >
-        {label}
         {iconItem}
+        {label}
       </LinkComponent>
     </ItemComponent>
   );

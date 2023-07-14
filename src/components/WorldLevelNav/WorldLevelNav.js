@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import SideNav from "../SideNav";
 import debounce from "../../utils/debounce";
+import { Home } from '@carbon/react/icons'
 
-const WorldLevelNav = ({ className, open, onToggle, ...props }) => {
+const WorldLevelNav = ({ className, open, onToggle, items, overviewHref, overviewLabel, ...props }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
@@ -18,6 +19,11 @@ const WorldLevelNav = ({ className, open, onToggle, ...props }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const extendedItems = [
+    { icon: Home, href: overviewHref, label: overviewLabel  },
+      ...items
+  ]
 
   const resizeEventListener = useCallback(
     (e) => {
@@ -46,13 +52,14 @@ const WorldLevelNav = ({ className, open, onToggle, ...props }) => {
     <SideNav
       {...props}
       onToggle={onToggle}
-      className={classNames("pal--world-level-nav", className)}
+      className={classNames("cpx--world-level-nav", className)}
       collapseButtonLocation="right"
       showMenuItems
       showDropdown={false}
       showHeader
       inverse
       open={isOpen}
+      items={extendedItems}
     />
   );
 };
@@ -119,13 +126,13 @@ WorldLevelNav.propTypes = {
    */
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   /**
-   * The location that clicking on the title element should link to.
+   * The location that clicking on the overview element should link to.
    */
-  titleHref: PropTypes.string.isRequired,
+  overviewHref: PropTypes.string.isRequired,
   /**
-   * An optional event handler that we'll run when the title is clicked
+   * The label for the overview item.
    */
-  onTitleClick: PropTypes.func,
+  overviewLabel: PropTypes.string,
 };
 
 WorldLevelNav.defaultProps = {
@@ -135,7 +142,8 @@ WorldLevelNav.defaultProps = {
   // locale: documentLanguage,
   onToggle: () => {},
   open: true,
-  onTitleClick: () => {},
+  overviewHref: undefined,
+  overviewLabel : 'Overview' // TODO: translate
 };
 
 export default WorldLevelNav;

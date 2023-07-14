@@ -3,7 +3,7 @@ import ResourceLevelNav from '.';
 import './_styles.scss';
 
 <Meta
-  title="Components/ResourceLevelNav"
+  title="Experimental/ResourceLevelNav"
   component={ResourceLevelNav}
   argTypes={{
     locale: { control: { type: 'select' }, options: ['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'zh-cn', 'zh-tw'], defaultValue: 'en' },
@@ -23,12 +23,19 @@ export const Template = (args) => (
     name="Demo"
     args={{
       items: [
-        { href: '/ibmcloud/pal/components/resource-level-nav/code', label: 'Link 1A'},
-        { href: '#example-item-1B', label: 'Link 1B'},
-        { href: '#example-item-1C', label: 'Link 1C'},
-        { href: '#example-item-1D', label: 'Link 1D'},
-        { href: '#example-item-1E', label: 'Link 1E'}
-      ]
+        { label: 'Link 1A' },
+        { label: 'Link 1B' },
+        { label: ' Nav List', items: [
+            {href: '#example-item-2A', label: 'Link 2A'},
+            {href: '#example-item-2B', label: 'Link 2B'}
+          ]},
+        { label: 'Link 3A' },
+        { label: 'Sub menu 1', items: [
+            { href: '#sub-item-1C', label: 'Sub Link 1B' },
+            { href: '#sub-item-1D', label: 'Sub Link 1D' },
+          ] },
+      ],
+      title: 'Header',
     }}
   >
     {Template.bind({})}

@@ -9,7 +9,7 @@ import ResourceLevelNavSkeleton from "./skeleton";
 const ResourceLevelNav = ({ className, ...props }) => (
   <SideNav
     {...props}
-    className={classNames("pal--resource-level-nav", className)}
+    className={classNames("cpx--resource-level-nav", className)}
     collapseButtonLocation="top"
     inverse={false}
     open={false}
