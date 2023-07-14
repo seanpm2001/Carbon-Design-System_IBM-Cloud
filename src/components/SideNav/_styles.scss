@@ -81,7 +81,6 @@ $pal-side-nav-item-active: $layer-selected-01;
     border: none;
     cursor: pointer;
     outline: none;
-    // background-color: transparent;
     padding: 0;
     text-align: left;
     width: 100%;
@@ -247,7 +246,6 @@ $pal-side-nav-item-active: $layer-selected-01;
     padding: $spacing-05 $spacing-05 $spacing-05 $spacing-07;
     width: 100%;
     position: relative;
-
     background: $pal-hover-gradient;
     background-size: 200% 100%;
     background-position: 100% 0;
