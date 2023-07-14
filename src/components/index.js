@@ -46,6 +46,7 @@ export {
   ResourceLevelNavSkeleton,
 } from './ResourceLevelNav';
 export { default as ResourceStatusIndicator } from './ResourceStatusIndicator';
+export { default as SideNavExperimental } from './SideNavExperimental';
 export { default as SideNav } from './SideNav';
 export { default as SidePanel, SidePanelContainer } from './SidePanel';
 export {
@@ -61,4 +62,5 @@ export { default as Status, StatusSkeleton } from './Status';
 export { default as Tag } from './Tag';
 export { default as TagList } from './TagList';
 export { default as Translate } from './Translate';
+export { default as WorldLevelNavExperimental } from './WorldLevelNavExperimental';
 export { default as WorldLevelNav } from './WorldLevelNav';
