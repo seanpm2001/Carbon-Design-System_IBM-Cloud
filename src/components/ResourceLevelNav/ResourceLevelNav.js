@@ -37,13 +37,14 @@ ResourceLevelNav.propTypes = {
       href: PropTypes.string,
       to: PropTypes.string,
       label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-      items: PropTypes.arrayOf(
-        PropTypes.shape({
-          href: PropTypes.string,
-          to: PropTypes.string,
-          label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-        })
-      ),
+      // for now do not allow subitems
+      // items: PropTypes.arrayOf(
+      //   PropTypes.shape({
+      //     href: PropTypes.string,
+      //     to: PropTypes.string,
+      //     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+      //   })
+      // ),
     })
   ).isRequired,
   /**
