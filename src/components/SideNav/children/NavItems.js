@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import NavItem from './NavItem';
 import NavMenu from './NavMenu';
 import { findActiveItem, isActiveItem } from '../utils/findActiveItem';
+import NavFlyout from './NavFlyout';
 
 const NavItems = ({
   items,
@@ -12,10 +13,11 @@ const NavItems = ({
   linkComponent: LinkComponent,
   onSelect,
 }) => (
-  <ul className="pal--side-nav__items">
+  <ul className="cpx--side-nav__items">
     {items.map(item => {
       const {
         items: subItems,
+        flyoutItems,
         onClick,
         onKeyDown,
         href,
@@ -23,7 +25,22 @@ const NavItems = ({
         label,
         ...itemProps
       } = item;
-      return subItems && showMenuItems ? (
+      if (flyoutItems) {
+        return (
+          <NavFlyout
+            key={`${label}-${href}`}
+            active={!!findActiveItem(flyoutItems, activeHref)}
+            {...itemProps}
+            label={label}
+            activeHref={activeHref}
+            items={flyoutItems}
+            onItemSelect={onSelect}
+            linkComponent={LinkComponent}
+          />
+        )
+      }
+      if (subItems && showMenuItems) {
+        return (
         <NavMenu
           key={`${label}-${href}`}
           active={!!findActiveItem(subItems, activeHref)}
@@ -35,7 +52,9 @@ const NavItems = ({
           linkComponent={LinkComponent}
           onItemSelect={onSelect}
         />
-      ) : (
+      ) 
+      } 
+      return (
         <NavItem
           key={href ? `${label}-${href}` : `${label}-${to}`}
           active={isActiveItem(item, activeHref)}

@@ -9,8 +9,10 @@ $pal-side-nav-collapse-transition-top: calc(
 $pal-side-nav-collapse-transition-side: -#{$pal-side-nav-width - $pal-side-nav-closed-width + $pal-side-nav-icon-offset};
 
 // Inverse Colors
-$pal-inverse-side-nav-background: $background;
-$pal-inverse-side-nav-hover: $layer-01;
-$pal-inverse-side-nav-active: $layer-01;
+$pal-inverse-side-nav-background: $layer-01;
+$pal-inverse-side-nav-hover: $layer-accent-01;
+$pal-inverse-side-nav-hover-text: $text-primary;
+$pal-inverse-side-nav-active: $layer-selected-01;
 $pal-inverse-side-nav-active-text: $text-primary;
 $pal-inverse-side-nav-text: $text-secondary;
+$pal-hover-gradient: linear-gradient(90deg, $layer-hover-01 0%, transparent 50%,  transparent 100%);
