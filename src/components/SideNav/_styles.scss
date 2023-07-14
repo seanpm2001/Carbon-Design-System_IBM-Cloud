@@ -85,7 +85,7 @@ $pal-side-nav-item-active: $layer-selected-01;
     padding: 0;
     text-align: left;
     width: 100%;
-    background: linear-gradient(90deg, $layer-hover-01 0%, transparent 50%,  transparent 100%);
+    background: $pal-hover-gradient;
     background-size: 200% 100%;
     background-position: 100% 0;
     transition: background-position $duration-moderate-02  motion(standard, productive);
@@ -236,7 +236,7 @@ $pal-side-nav-item-active: $layer-selected-01;
   &__collapse-button {
     @include type.type-style("productive-heading-01");
 
-    background-color: transparent;
+    // background-color: transparent;
     border: none;
     cursor: pointer;
     color: $icon-secondary;
@@ -247,6 +247,11 @@ $pal-side-nav-item-active: $layer-selected-01;
     padding: $spacing-05 $spacing-05 $spacing-05 $spacing-07;
     width: 100%;
     position: relative;
+
+    background: $pal-hover-gradient;
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position $duration-moderate-02  motion(standard, productive);
 
     @include breakpoint-up("md") {
       display: none;
@@ -266,6 +271,7 @@ $pal-side-nav-item-active: $layer-selected-01;
   &__collapse-button:hover,
   &--collapsed &__collapse-button:hover {
     background: $pal-hover-gradient;
+    background-position: 0% 0;
   }
 
   &__collapse-button:active,
