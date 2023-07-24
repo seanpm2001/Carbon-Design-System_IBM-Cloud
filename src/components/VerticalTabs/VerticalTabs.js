@@ -53,8 +53,13 @@ const VerticalTabs = props => {
 
   // create an event listener
   useEffect(() => {
+    if (window.innerWidth < BREAKPOINT) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
     window.addEventListener('resize', handleResize);
-  });
+  }, []);
 
   const value = {
     selectedIndex,

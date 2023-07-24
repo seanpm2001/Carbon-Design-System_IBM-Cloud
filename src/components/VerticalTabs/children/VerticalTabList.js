@@ -24,6 +24,7 @@ const VerticalTabList = React.forwardRef((props, ref) => {
     className,
     withSearch,
     withAdd,
+    withSort,
     fullHeight,
     SearchProps,
     OverflowMenuProps,
@@ -95,8 +96,8 @@ const VerticalTabList = React.forwardRef((props, ref) => {
     }
   };
 
-  const handleOpen = () => {
-    setOpen(!open);
+  const handleOpen = value => {
+    setOpen(value);
   };
 
   const handleSort = () => {
@@ -121,41 +122,47 @@ const VerticalTabList = React.forwardRef((props, ref) => {
   }, [filter]);
 
   useEffect(() => {
+    setOpen(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMobile]);
+
+  useEffect(() => {
     setTotalTabs(children.length);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [children]);
 
   const smContent = (
     <div className={classes}>
-      {!fullHeight && (
-        <div className="pal--vertical-tab-list__header">
-          <IconButton onClick={handleOpen} kind="ghost">
-            <TableOfContents />
-          </IconButton>
-          <ButtonSet>
-            {open ? (
+      <div className="pal--vertical-tab-list__header">
+        <IconButton onClick={() => handleOpen(!open)} kind="ghost">
+          <TableOfContents />
+        </IconButton>
+        <ButtonSet>
+          {withSearch &&
+            (open ? (
               <Search
                 onClear={handleClear}
                 className="pal--vertical-tab-list__search"
                 {...searchProps}
               />
             ) : (
-              <IconButton onClick={handleOpen} kind="ghost">
+              <IconButton onClick={() => handleOpen(!open)} kind="ghost">
                 <SearchIcon />
               </IconButton>
-            )}
+            ))}
+          {withSort && (
             <IconButton onClick={handleSort} kind="ghost">
               <ArrowsVertical />
             </IconButton>
-            {withAdd && (
-              <IconButton onClick={handleAdd} kind="primary">
-                <Add />
-              </IconButton>
-            )}
-          </ButtonSet>
-        </div>
-      )}
-      <VerticalTabsSidePanel open={open}>
+          )}
+          {withAdd && (
+            <IconButton onClick={handleAdd} kind="primary">
+              <Add />
+            </IconButton>
+          )}
+        </ButtonSet>
+      </div>
+      <VerticalTabsSidePanel open={open} onClose={handleOpen}>
         <TabList contained ref={ref} {...rest}>
           {tabs}
         </TabList>
@@ -173,32 +180,33 @@ const VerticalTabList = React.forwardRef((props, ref) => {
 
   return (
     <div className={classes}>
-      {!fullHeight && (
-        <div className="pal--vertical-tab-list__header">
+      <div className="pal--vertical-tab-list__header">
+        {withSearch && (
           <Search
             onClear={handleClear}
             className="pal--vertical-tab-list__search"
             {...searchProps}
           />
+        )}
+        {withSort && (
           <IconButton onClick={handleSort} kind="ghost">
             <ArrowsVertical />
           </IconButton>
-          {withAdd && (
-            <IconButton onClick={handleAdd} kind="primary">
-              <Add />
-            </IconButton>
-          )}
-        </div>
-      )}
+        )}
+
+        {withAdd && (
+          <IconButton onClick={handleAdd} kind="primary">
+            <Add />
+          </IconButton>
+        )}
+      </div>
       <TabList contained ref={ref} {...rest}>
         {tabs}
       </TabList>
-      {withSearch && (
-        <div className="pal--vertical-tab-list__footer">
-          {' '}
-          Showing {tabs.length} items{' '}
-        </div>
-      )}
+      <div className="pal--vertical-tab-list__footer">
+        {' '}
+        Showing {tabs.length} items{' '}
+      </div>
     </div>
   );
 });
@@ -208,6 +216,7 @@ VerticalTabList.propTypes = {
   SearchProps: Search.propTypes,
   OverflowMenuProps: OverflowMenu.propTypes,
   withAdd: PropTypes.bool,
+  withSort: PropTypes.bool,
   onAdd: PropTypes.func,
   onSort: PropTypes.func,
   /**
@@ -225,6 +234,7 @@ VerticalTabList.defaultProps = {
   onSort: undefined,
   onAdd: undefined,
   withAdd: false,
+  withSort: true,
   ...TabList.defaultProps,
 };
 

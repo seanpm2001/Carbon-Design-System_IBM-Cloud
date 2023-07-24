@@ -1,28 +1,28 @@
-import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { useState } from 'react';
-import { Button, Tab, TabList, TabPanels, TabPanel } from "@carbon/react";
+import { Button, Tab, TabList, TabPanels, TabPanel } from '@carbon/react';
 import { Add } from '@carbon/icons-react';
 import VerticalTabs, { VerticalTab, VerticalTabList } from '.';
-import "./_styles.scss";
+import './_styles.scss';
 
 <Meta
   title="Experimental/VerticalTabs"
   component={VerticalTabs}
-  parameters={{ status: { type: "experimental" } }}
+  parameters={{ status: { type: 'experimental' } }}
 />
 
 # VerticalTabs
 
 export const Template = args => (
   <VerticalTabs {...args}>
-    <VerticalTabList contained aria-label="vertical-tab-list">
+    <VerticalTabList withSort={false} aria-label="vertical-tab-list">
       <VerticalTab secondaryLabel="Label">Tab label 1</VerticalTab>
       <VerticalTab secondaryLabel="Label">Tab label 2</VerticalTab>
       <VerticalTab secondaryLabel="Label">Tab label 3</VerticalTab>
       <VerticalTab secondaryLabel="Label">Tab label 4</VerticalTab>
       <VerticalTab secondaryLabel="Label">Tab label 5</VerticalTab>
     </VerticalTabList>
-    <TabPanels className='test-panels'>
+    <TabPanels className="test-panels">
       <TabPanel style={{ height: '400px', width: '400px' }}>1</TabPanel>
       <TabPanel style={{ height: '400px', width: '400px' }}>2</TabPanel>
       <TabPanel style={{ height: '400px', width: '400px' }}>3</TabPanel>
@@ -30,75 +30,82 @@ export const Template = args => (
       <TabPanel style={{ height: '400px', width: '400px' }}>5</TabPanel>
     </TabPanels>
   </VerticalTabs>
-)
+);
 
 ### Default
 
 <Canvas>
-  <Story
-    name="Default"
-  >
-    {Template.bind({})}
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### Uncontrolled
+
+<Canvas>
+  <Story name="Controlled">
+    <div style={{ maxHeight: '400px', display: 'flex' }}>
+      <VerticalTabs>
+        <VerticalTabList withSort={false} aria-label="test">
+          {Array.from(Array(5).keys()).map((value, index) => (
+            <VerticalTab secondaryLabel="foo" index={index}>
+              Tab label {index}
+            </VerticalTab>
+          ))}
+        </VerticalTabList>
+        <TabPanels className="test-panels">
+          {Array.from(Array(5).keys()).map((value, index) => (
+            <TabPanel index={index} style={{ height: '400px', width: '400px' }}>
+              {index}
+            </TabPanel>
+          ))}
+        </TabPanels>
+      </VerticalTabs>
+    </div>
   </Story>
 </Canvas>
 
 ### Uncontrolled
 
 <Canvas>
-  <Story
-    name="Controlled"
-  >
-    <div style={{maxHeight:'400px', display: 'flex'}}>
-      <VerticalTabs >
-        <VerticalTabList fullHeight aria-label="test">
-          {Array.from(Array(5).keys()).map((value, index) => (
-            <VerticalTab secondaryLabel="foo" index={index}>Tab label {index}</VerticalTab>
+  <Story name="Uncontrolled">
+    <div style={{ maxHeight: '400px', display: 'flex' }}>
+      <VerticalTabs>
+        <VerticalTabList withSearch withAdd aria-label="test">
+          {Array.from(Array(30).keys()).map((value, index) => (
+            <VerticalTab
+              secondaryLabel="foo"
+              index={index}
+              statusIndicator="success">
+              Tab label {index}
+            </VerticalTab>
           ))}
         </VerticalTabList>
-        <TabPanels className='test-panels'>
-          {Array.from(Array(5).keys()).map((value, index) => (
-            <TabPanel index={index} style={{ height: '400px', width: '400px' }}>{index}</TabPanel>
+        <TabPanels className="test-panels">
+          {Array.from(Array(30).keys()).map((value, index) => (
+            <TabPanel index={index} style={{ height: '400px', width: '400px' }}>
+              {index}
+            </TabPanel>
           ))}
         </TabPanels>
       </VerticalTabs>
-  </div>
-  </Story>
-</Canvas>
-
-### Uncontrolled
-
-<Canvas>
-  <Story
-    name="Uncontrolled"
-  >
-    <div style={{maxHeight:'400px', display: 'flex'}}>
-      <VerticalTabs >
-        <VerticalTabList withSearch withAdd  aria-label="test">
-          {Array.from(Array(30).keys()).map((value, index) => (
-            <VerticalTab secondaryLabel="foo" index={index} statusIndicator='success'>Tab label {index}</VerticalTab>
-          ))}
-        </VerticalTabList>
-        <TabPanels className='test-panels'>
-          {Array.from(Array(30).keys()).map((value, index) => (
-            <TabPanel index={index} style={{ height: '400px', width: '400px' }}>{index}</TabPanel>
-          ))}
-        </TabPanels>
-      </VerticalTabs>
-  </div>
+    </div>
   </Story>
 </Canvas>
 
 ## Description
 
-VerticalTabs is a component in the Cloud PAL Experimental style. The VerticalTabs monitors the user’s progress through a series of steps. 
+VerticalTabs is a component in the Cloud PAL Experimental style. The
+VerticalTabs monitors the user’s progress through a series of steps.
 
-It guides them toward the completion of a specific process and shows the numeric value of the completed steps in relation to how many steps there are in total.
+It guides them toward the completion of a specific process and shows the numeric
+value of the completed steps in relation to how many steps there are in total.
 
 Motion can be reduced with system or browser settings.
 
 ## Usage
 
-1.  Install the [@carbon/carbon-for-ibm-cloud](https://pages.github.ibm.com/cdai-design/cloud-pal/cloudpal-guidance/cloudpal-v2/migration-guides/#installing-and-using-the-new-packages) library
+1.  Install the
+    [@carbon/carbon-for-ibm-cloud](https://pages.github.ibm.com/cdai-design/cloud-pal/cloudpal-guidance/cloudpal-v2/migration-guides/#installing-and-using-the-new-packages)
+    library
 2.  Import the styles:
 
     ```js
@@ -108,12 +115,13 @@ Motion can be reduced with system or browser settings.
 3.  Import the component:
 
     ```js
-    import { VerticalTabs } from "@carbon/carbon-for-ibm-cloud/components";
+    import { VerticalTabs } from '@carbon/carbon-for-ibm-cloud/components';
     ```
 
 4.  Render the component.
 
-For general component usage review the [Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+For general component usage review the
+[Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
 
 ## Props
 

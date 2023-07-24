@@ -31,6 +31,27 @@
     background-color: $layer;
     padding: $spacing-05;
     overflow: auto;
+    position: relative;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: 145ms motion.motion(entrance, productive) 0s 1 fadein;
+
+      @keyframes fadein {
+        0% {
+          transform: translateY(3rem);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
   }
 
   .cds--tabs {
@@ -87,7 +108,14 @@
     transform: translateX(-100%);
     position: absolute;
     top: 41px;
-    transition: $slide-transition;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: $slide-transition;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
 
     &::before {
       content: '';
@@ -203,6 +231,11 @@
   &--mobile {
     $slide-transition: transform 400ms carbon--motion(standard, expressive),
       visibility 400ms;
+
+    .cds--tab-content {
+      top: 41px;
+    }
+
     .pal--vertical-tab-list {
       width: 100%;
       border-right: 0;
