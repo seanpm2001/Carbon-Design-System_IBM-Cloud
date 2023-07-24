@@ -1,42 +1,22 @@
-@use "@carbon/react/scss/type";
+@use '@carbon/react/scss/type';
 @use '@carbon/react/scss/reset';
-@use "@carbon/react/scss/components/skeleton-styles";
+@use '@carbon/react/scss/components/skeleton-styles';
 
-@import "@carbon/react/scss/components/overflow-menu";
-@import "@carbon/react/scss/colors";
-@import "@carbon/react/scss/spacing";
-@import "@carbon/react/scss/themes";
-@import "@carbon/react/scss/theme";
-@import "@carbon/react/scss/config";
+@import '@carbon/react/scss/components/overflow-menu';
+@import '@carbon/react/scss/colors';
+@import '@carbon/react/scss/spacing';
+@import '@carbon/react/scss/themes';
+@import '@carbon/react/scss/theme';
+@import '@carbon/react/scss/config';
 @import '@carbon/styles/scss/breakpoint';
 
-
-.pal--vertical-tabs, .cds--overflow-menu-options--open {
+.pal--vertical-tabs {
   display: flex;
   align-items: flex-start;
   max-height: 100%;
   align-items: stretch;
-
-
-  .pal--vertical-tab-list, .pal--vertical-tab-list--sm, .pal--vertical-tab-list--lg {
-    position: relative;
-    overflow-y: auto;
-    flex-direction: column;
-    overflow-x: visible;
-  }
-
-  .pal--vertical-tab-list--sm, .pal--vertical-tab-list--lg {
-    display: flex;
-    position: relative;
-    overflow-y: auto;
-    flex-direction: row;
-    overflow-x: visible;
-    height:auto;
-  }
-
-  .pal--vertical-tab-list--search .pal--vertical-tab-list--sm, .pal--vertical-tab-list--search .pal--vertical-tab-list--lg {
-    height:100%;
-  }
+  position: relative;
+  overflow: hidden;
 
   .cds--tabs {
     display: flex;
@@ -46,64 +26,64 @@
     flex-direction: column;
   }
 
-  .cds--tab--list {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    height: 100%;
-  }
-
   .cds--tab-content {
     background-color: $layer;
     padding: $spacing-05;
-  }
-
-  // vertical tab
-  .cds--tabs.cds--tabs--contained .pal--vertical-tab.cds--tabs__nav-item--selected {
-    box-shadow: inset 2px 0 0 0 $border-interactive;
+    overflow: auto;
   }
 
   .cds--tabs {
     position: relative;
   }
 
-  .pal--vertical-tab.cds--tabs__nav-link {
-    background-color: $layer-accent-01;
-    border-bottom: 1px solid $border-tile-01;
+  .cds--tab--overflow-nav-button {
+    display: none;
   }
-
 
   .pal--vertical-tab {
     min-width: 250px;
 
+    &.cds--tabs__nav-link {
+      background-color: $layer-accent-01;
+      border-bottom: 1px solid $border-tile-01;
+    }
+
+    &.cds--tabs__nav-item:not(.cds--tabs__nav-item--selected):not(
+        .cds--tabs__nav-item--disabled
+      ):hover {
+      box-shadow: inset 2px 0 0 0 $border-strong;
+    }
+
+    &.cds--tabs__nav-item.cds--tabs__nav-item--selected {
+      box-shadow: inset 2px 0 0 0 $border-interactive;
+    }
+
     .cds--tabs__nav-item-label {
       display: flex;
       position: relative;
-      width:100%;
+      width: 100%;
 
       .pal--resource-status-indicator {
         position: absolute;
         right: 0;
-
       }
     }
   }
 
-  .pal--vertical-tab--hidden {
-    display: none;
+  @include breakpoint-down('md') {
+    flex-direction: column;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 
-  .pal--vertical-tab.cds--tabs__nav-item:not(.cds--tabs__nav-item--selected):not(.cds--tabs__nav-item--disabled):hover {
-    box-shadow: inset 2px 0 0 0 $border-strong;
-  }
+  .pal--vertical-tab-list {
+    position: relative;
+    overflow-y: auto;
+    flex-direction: column;
+    overflow-x: visible;
 
-  .pal--vertical-tab-list__search {
-    .cds--search-input {
-      border-bottom: 0px solid transparent;
-    }
-  }
-  
-  .pal--vertical-tab-list  {
     display: block;
     background-color: $layer-02;
     border-right: solid 1px $border-subtle-00;
@@ -111,90 +91,98 @@
     overflow-y: hidden;
     min-width: 250px;
 
+    &__header {
+      background-color: $layer;
+      border-bottom: 1px solid $border-subtle-00;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &--full-height {
+      display: grid;
+
+      .pal--vertical-tab.cds--tabs__nav-link:last-child {
+        box-shadow: 0px solid transparent;
+      }
+    }
+
     &--search {
       padding-bottom: 72px;
     }
-  }
 
-  .pal--vertical-tab-list--full-height{
-    display: grid;
+    &__search {
+      .cds--search-input {
+        border-bottom: 0px solid transparent;
+      }
+    }
 
-    .pal--vertical-tab.cds--tabs__nav-link:last-child {
-      box-shadow: 0px solid transparent;
+    &--sm {
+      height: 100%;
+      display: flex;
+      position: relative;
+      overflow-y: auto;
+      flex-direction: row;
+      overflow-x: visible;
+      height: auto;
+    }
+
+    &__footer {
+      display: flex;
+      border-top: 1px solid $border-subtle-00;
+      align-items: center;
+      padding-left: $spacing-05;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2em;
+      background-color: $layer;
+      overflow: hidden;
+    }
+
+    .cds--tab--list {
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    // responsive design
+    @include breakpoint-down('md') {
+      &__footer,
+      .cds--tabs {
+        display: none;
+      }
+
+      &--search {
+        padding-bottom: 0;
+        height: 47px;
+      }
+
+      &__search {
+        width: auto;
+      }
+    }
+
+    @include breakpoint-up('md') {
+      &--sm {
+        display: none;
+      }
     }
   }
-
-  .pal--vertical-tab-list__header {
-    background-color: $layer;
-    border-bottom: 1px solid $border-subtle-00;
-    display: flex;
-    justify-content: flex-end;
-  }
-
- .cds--tab--overflow-nav-button {
+}
+// mobile stepper
+.pal--vertical-tab-panel__footer {
   display: none;
- }
-
- // responsive design
-//   @include breakpoint-down('md') {
-
-//     flex-direction: column;
- 
-
-//     .pal--vertical-tab-list {
-//       display: flex;
-//       position: relative;
-//       overflow-y: auto;
-//       flex-direction: row-reverse;
-//       overflow-x: visible;
-//       align-items: flex-start;
-//       justify-content: space-between;
-//       width: 100%;
-//       height: 15%;
-//     }
-
-//     .pal--vertical-tab-list__search {
-//       width: auto;
-//     }
-
-//     .cds--overflow-menu {
-//       width: 100%;
-//       height: 100%;
-//       background-color: $layer;
-//     }
-//   }
-//   @include breakpoint-up('md') {
-//     .pal--vertical-tab-list--sm{
-//       display: none;
-//     }
-//   }
-}
-
-.cds--overflow-menu-options--open {
-  width: auto;
-  height: auto;
-}
-
-.pal--vertical-tabs.cds--tabs.cds--tabs--contained .pal--vertical-tab.cds--tabs__nav-item--selected {
-  box-shadow: inset 0 0 0 0;
-  border-left: 2px solid var(--cds-border-interactive, #0f62fe);
-  position: sticky;
-  top: 0;
-}
-
-// vertical pagination
-.pal--vertical-tab-list__footer {
-  display: flex;
-  border-top: 1px solid $border-subtle-00;
-  align-items:center;
-  padding-left: $spacing-05;
-  position:absolute;
+  position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 2em;
   background-color: $layer;
-  overflow: hidden;  
+  width: 100%;
+  justify-content: flex-end;
+  border-top: 1px solid $border-subtle-00;
+
+  @include breakpoint-down('md') {
+    display: flex;
+  }
 }
-
-

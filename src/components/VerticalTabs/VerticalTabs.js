@@ -1,42 +1,66 @@
-import {
-  Tabs
-} from "@carbon/react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
-import React, { useState } from "react";
+import { Tabs } from '@carbon/react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { createContext, useContext, useState } from 'react';
+import VerticalTabsFooter from './children/VerticalTabsFooter';
 
+export const VerticalTabsContext = createContext({
+  selectedIndex: 0,
+  totalTabs: 0,
+  setSelectedIndex: () => {},
+  setTotalTabs: () => {},
+});
 
 /**
- * 
+ * - make panels scrollable
  * - mobile view
- * - resource status indicator  
  */
 const VerticalTabs = props => {
+  const {
+    children,
+    className,
+    fullHeight,
+    selectedIndex: controlledSelectedIndex,
+    defaultSelectedIndex,
+    ...rest
+  } = props;
 
-  const { children, className, fullHeight, selectedIndex: controlledSelectedIndex, defaultSelectedIndex,  ...rest } = props;
+  const [selectedIndex, setSelectedIndex] = useState(
+    defaultSelectedIndex | controlledSelectedIndex
+  );
+  const [totalTabs, setTotalTabs] = useState(0);
+  const classes = classNames('pal--vertical-tabs', className);
 
-  const [selectedIndex, setSelectedIndex]  = useState(controlledSelectedIndex || defaultSelectedIndex)
-  const classes = classNames(
-  "pal--vertical-tabs",
-  className );
+  const handleTabSelect = ({ selectedIndex }) => {
+    setSelectedIndex(selectedIndex);
+  };
 
-  const handleTabSelect  = ({selectedIndex}) => {
-    setSelectedIndex(selectedIndex)
-  }
-
+  const value = {
+    selectedIndex,
+    totalTabs,
+    setSelectedIndex,
+    setTotalTabs,
+  };
 
   return (
-    <Tabs selectedIndex={selectedIndex} onSelectionChange={handleTabSelect} className={classes} {...rest}>
-        <div className={classes} >
+    <VerticalTabsContext.Provider value={value}>
+      <Tabs
+        selectedIndex={selectedIndex}
+        onChange={handleTabSelect}
+        className={classes}
+        {...rest}>
+        <div className={classes}>
           {children}
+          <VerticalTabsFooter />
         </div>
-    </Tabs>
+      </Tabs>
+    </VerticalTabsContext.Provider>
   );
 };
 
 VerticalTabs.defaultProps = {
   fullHeight: false,
-  ...Tabs.defaultProps
+  ...Tabs.defaultProps,
 };
 
 VerticalTabs.propTypes = {
@@ -44,6 +68,6 @@ VerticalTabs.propTypes = {
    * Determines whether Tabs span whole height or not.
    */
   fullHeight: PropTypes.bool,
-  ...Tabs.propTypes
+  ...Tabs.propTypes,
 };
 export default VerticalTabs;
