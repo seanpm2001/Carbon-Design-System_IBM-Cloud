@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const VerticalTabsSidePanel = props => {
-  const { open, hasOverlay, className, children, ...rest } = props;
+  const { open, className, children, ...rest } = props;
 
   const classes = classnames(
     'pal--vertical-tab-list__sidepanel',
     { 'pal--vertical-tab-list__sidepanel--open': open },
-    { 'pal--vertical-tab-list__sidepanel--overlay': hasOverlay },
     className
   );
 
@@ -16,7 +15,6 @@ const VerticalTabsSidePanel = props => {
 };
 
 VerticalTabsSidePanel.propTypes = {
-  hasOverlay: PropTypes.bool,
   open: PropTypes.bool.isRequired,
   className: PropTypes.string,
   children: PropTypes.oneOfType([
@@ -26,7 +24,6 @@ VerticalTabsSidePanel.propTypes = {
 };
 
 VerticalTabsSidePanel.defaultProps = {
-  hasOverlay: true,
   open: false,
   className: undefined,
   children: undefined,

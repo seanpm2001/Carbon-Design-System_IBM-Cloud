@@ -1,4 +1,5 @@
 @use '@carbon/react/scss/type';
+@use '@carbon/react/scss/motion';
 @use '@carbon/react/scss/reset';
 @use '@carbon/react/scss/components/skeleton-styles';
 
@@ -79,13 +80,24 @@
   }
 
   .pal--vertical-tab-list__sidepanel {
+    $slide-transition: transform 400ms motion.motion(standard, expressive),
+      visibility 400ms;
     z-index: 100;
-    display: none;
-    position: relative;
-    height: calc(100% - 34px); // footer + header
+    opacity: 0;
+    transform: translateX(-100%);
+    position: absolute;
+    top: 41px;
+    transition: $slide-transition;
 
-    &--overlay {
-      background-color: rgba($color: #000000, $alpha: 0.5);
+    &::before {
+      content: '';
+      z-index: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $overlay;
     }
 
     .cds--tabs {
@@ -102,10 +114,15 @@
 
     .pal--vertical-tab-list__footer {
       width: 75%;
+      position: absolute;
     }
 
     &--open {
       display: block;
+      opacity: 1;
+      transform: translateX(0%);
+      height: calc(100% - 41px);
+      width: 100%;
     }
   }
 
@@ -184,6 +201,8 @@
   }
 
   &--mobile {
+    $slide-transition: transform 400ms carbon--motion(standard, expressive),
+      visibility 400ms;
     .pal--vertical-tab-list {
       width: 100%;
       border-right: 0;
@@ -194,6 +213,7 @@
       position: absolute;
       left: 0;
       top: 0;
+      transition: $slide-transition;
     }
     .pal--vertical-tab-list--open {
       height: 100%;
