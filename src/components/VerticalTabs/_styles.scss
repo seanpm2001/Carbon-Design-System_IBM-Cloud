@@ -101,13 +101,15 @@
   }
 
   .pal--vertical-tab-list__sidepanel {
-    $slide-transition: transform 400ms motion.motion(standard, expressive),
-      visibility 400ms;
+    $slide-transition: transform 400ms ease-in-out, visibility 400ms;
+
+    visibility: hidden;
     z-index: 100;
-    opacity: 0;
     transform: translateX(-100%);
     position: absolute;
     top: 41px;
+    height: calc(100% - 41px);
+    width: 100%;
 
     @media (prefers-reduced-motion: no-preference) {
       transition: $slide-transition;
@@ -147,10 +149,8 @@
 
     &--open {
       display: block;
-      opacity: 1;
+      visibility: visible;
       transform: translateX(0%);
-      height: calc(100% - 41px);
-      width: 100%;
     }
   }
 
@@ -229,15 +229,13 @@
   }
 
   &--mobile {
-    $slide-transition: transform 400ms carbon--motion(standard, expressive),
-      visibility 400ms;
-
     .cds--tab-content {
       top: 41px;
     }
 
     .pal--vertical-tab-list {
       width: 100%;
+      height: 100%;
       border-right: 0;
       display: flex;
       overflow-y: auto;
@@ -246,10 +244,6 @@
       position: absolute;
       left: 0;
       top: 0;
-      transition: $slide-transition;
-    }
-    .pal--vertical-tab-list--open {
-      height: 100%;
     }
   }
 }
