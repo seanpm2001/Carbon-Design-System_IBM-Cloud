@@ -3,6 +3,11 @@ import { CaretDown, CaretUp } from '@carbon/react/icons';
 import { default as React, useContext } from 'react';
 import { VerticalTabsContext } from '../VerticalTabs';
 
+/**
+ *
+ * TODO: add keyboard events
+ */
+
 const VerticalTabsFooter = () => {
   const { selectedIndex, totalTabs, setSelectedIndex } =
     useContext(VerticalTabsContext);

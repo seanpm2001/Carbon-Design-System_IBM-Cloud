@@ -24,6 +24,7 @@ const VerticalTabs = props => {
     fullHeight,
     selectedIndex: controlledSelectedIndex,
     defaultSelectedIndex,
+    kind,
     ...rest
   } = props;
 
@@ -35,6 +36,7 @@ const VerticalTabs = props => {
   const classes = classNames(
     'pal--vertical-tabs',
     { 'pal--vertical-tabs--mobile': isMobile },
+    `pal--vertical-tabs--${kind}`,
     className
   );
 
@@ -87,7 +89,7 @@ const VerticalTabs = props => {
 };
 
 VerticalTabs.defaultProps = {
-  fullHeight: false,
+  kind: 'uncontrolled',
   ...Tabs.defaultProps,
 };
 
@@ -95,7 +97,7 @@ VerticalTabs.propTypes = {
   /**
    * Determines whether Tabs span whole height or not.
    */
-  fullHeight: PropTypes.bool,
+  kind: PropTypes.oneOf(['controlled', 'uncontrolled']),
   ...Tabs.propTypes,
 };
 export default VerticalTabs;

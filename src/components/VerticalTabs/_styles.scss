@@ -25,32 +25,36 @@
     width: auto;
     overflow-y: auto;
     flex-direction: column;
+    background-color: $layer-02;
   }
 
   .cds--tab-content {
     background-color: $layer;
     padding: $spacing-05;
     overflow: auto;
+    overflow-x: scroll;
     position: relative;
 
-    @media (prefers-reduced-motion: no-preference) {
-      animation: 145ms motion.motion(entrance, productive) 0s 1 fadein;
+    > * {
+      @media (prefers-reduced-motion: no-preference) {
+        animation: 145ms motion.motion(entrance, productive) 0s 1 fadein;
 
-      @keyframes fadein {
-        0% {
-          transform: translateY(3rem);
-          opacity: 0;
-        }
+        @keyframes fadein {
+          0% {
+            transform: translateY(3rem);
+            opacity: 0;
+          }
 
-        100% {
-          transform: translateY(0);
-          opacity: 1;
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
       }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
     }
   }
 
@@ -63,7 +67,8 @@
   }
 
   .pal--vertical-tab {
-    min-width: 250px;
+    min-height: 4rem;
+    max-height: 4rem;
 
     &.cds--tabs__nav-link {
       background-color: $layer-accent-01;
@@ -165,7 +170,6 @@
     border-right: solid 1px $border-subtle-00;
     position: relative;
     overflow-y: hidden;
-    min-width: 250px;
 
     &__header {
       background-color: $layer;
@@ -173,14 +177,6 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-    }
-
-    &--full-height {
-      display: grid;
-
-      .pal--vertical-tab.cds--tabs__nav-link:last-child {
-        box-shadow: 0px solid transparent;
-      }
     }
 
     &--search {
@@ -244,6 +240,24 @@
       position: absolute;
       left: 0;
       top: 0;
+    }
+  }
+
+  &--controlled {
+    .cds--tabs,
+    .cds--tab--list {
+      height: 100%;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .pal--vertical-tab {
+      // min-width: 250px;
+      height: 100%;
+      flex: 1;
+    }
+    .pal--vertical-tab.cds--tabs__nav-link:last-child {
+      box-shadow: 0px solid transparent;
     }
   }
 }

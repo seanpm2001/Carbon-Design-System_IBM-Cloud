@@ -1,11 +1,13 @@
-import React from 'react';
-import classnames from 'classnames';
 import { Tab } from '@carbon/react';
+import classnames from 'classnames';
+import React, { useContext } from 'react';
 import ResourceStatusIndicator from '../../ResourceStatusIndicator/ResourceStatusIndicator';
+import { VerticalTabsContext } from '../VerticalTabs';
 
 const VerticalTab = React.forwardRef((props, ref) => {
-  const { children, className, statusIndicator, ...rest } = props;
-
+  const { children, className, statusIndicator, index, ...rest } = props;
+  const { selectedIndex, isMobile, setTotalTabs } =
+    useContext(VerticalTabsContext);
   const classes = classnames('pal--vertical-tab', className);
 
   return (

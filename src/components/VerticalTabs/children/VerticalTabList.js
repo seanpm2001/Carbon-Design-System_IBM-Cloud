@@ -32,7 +32,8 @@ const VerticalTabList = React.forwardRef((props, ref) => {
     ...rest
   } = props;
 
-  const { isMobile, setTotalTabs } = useContext(VerticalTabsContext);
+  const { selectedIndex, isMobile, setTotalTabs } =
+    useContext(VerticalTabsContext);
   const [filter, setFilter] = useState('');
   const [tabs, setTabs] = useState(children);
   const [open, setOpen] = useState(false);

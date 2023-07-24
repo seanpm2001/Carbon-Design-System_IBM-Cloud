@@ -23,11 +23,61 @@ export const Template = args => (
       <VerticalTab secondaryLabel="Label">Tab label 5</VerticalTab>
     </VerticalTabList>
     <TabPanels className="test-panels">
-      <TabPanel style={{ height: '400px', width: '400px' }}>1</TabPanel>
-      <TabPanel style={{ height: '400px', width: '400px' }}>2</TabPanel>
-      <TabPanel style={{ height: '400px', width: '400px' }}>3</TabPanel>
-      <TabPanel style={{ height: '400px', width: '400px' }}>4</TabPanel>
-      <TabPanel style={{ height: '400px', width: '400px' }}>5</TabPanel>
+      <TabPanel>
+        <p
+          style={{
+            height: '400px',
+            width: '400px',
+            backgroundColor: '#E8DAFF',
+            padding: '16px',
+          }}>
+          1
+        </p>
+      </TabPanel>
+      <TabPanel>
+        <p
+          style={{
+            height: '400px',
+            width: '400px',
+            backgroundColor: '#E8DAFF',
+            padding: '16px',
+          }}>
+          2
+        </p>
+      </TabPanel>
+      <TabPanel>
+        <p
+          style={{
+            height: '400px',
+            width: '400px',
+            backgroundColor: '#E8DAFF',
+            padding: '16px',
+          }}>
+          3
+        </p>
+      </TabPanel>
+      <TabPanel>
+        <p
+          style={{
+            height: '400px',
+            width: '400px',
+            backgroundColor: '#E8DAFF',
+            padding: '16px',
+          }}>
+          4
+        </p>
+      </TabPanel>
+      <TabPanel>
+        <p
+          style={{
+            height: '400px',
+            width: '400px',
+            backgroundColor: '#E8DAFF',
+            padding: '16px',
+          }}>
+          5
+        </p>
+      </TabPanel>
     </TabPanels>
   </VerticalTabs>
 );
@@ -43,7 +93,7 @@ export const Template = args => (
 <Canvas>
   <Story name="Controlled">
     <div style={{ maxHeight: '400px', display: 'flex' }}>
-      <VerticalTabs>
+      <VerticalTabs kind="controlled">
         <VerticalTabList withSort={false} aria-label="test">
           {Array.from(Array(5).keys()).map((value, index) => (
             <VerticalTab secondaryLabel="foo" index={index}>
@@ -53,8 +103,16 @@ export const Template = args => (
         </VerticalTabList>
         <TabPanels className="test-panels">
           {Array.from(Array(5).keys()).map((value, index) => (
-            <TabPanel index={index} style={{ height: '400px', width: '400px' }}>
-              {index}
+            <TabPanel index={index}>
+              <p
+                style={{
+                  height: '400px',
+                  width: '400px',
+                  backgroundColor: '#E8DAFF',
+                  padding: '16px',
+                }}>
+                {index}
+              </p>
             </TabPanel>
           ))}
         </TabPanels>
@@ -81,8 +139,16 @@ export const Template = args => (
         </VerticalTabList>
         <TabPanels className="test-panels">
           {Array.from(Array(30).keys()).map((value, index) => (
-            <TabPanel index={index} style={{ height: '400px', width: '400px' }}>
-              {index}
+            <TabPanel index={index}>
+              <p
+                style={{
+                  height: '400px',
+                  width: '400px',
+                  backgroundColor: '#E8DAFF',
+                  padding: '16px',
+                }}>
+                {index}
+              </p>{' '}
             </TabPanel>
           ))}
         </TabPanels>
