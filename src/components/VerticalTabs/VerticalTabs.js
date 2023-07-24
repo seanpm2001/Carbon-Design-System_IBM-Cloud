@@ -1,16 +1,18 @@
 import { Tabs } from '@carbon/react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import VerticalTabsFooter from './children/VerticalTabsFooter';
+import VerticalTabsHeader from './children/VerticalTabsHeader';
 
 export const VerticalTabsContext = createContext({
   selectedIndex: 0,
   totalTabs: 0,
+  isMobile: false,
   setSelectedIndex: () => {},
   setTotalTabs: () => {},
 });
-
+const BREAKPOINT = 672;
 /**
  * - make panels scrollable
  * - mobile view
@@ -29,15 +31,35 @@ const VerticalTabs = props => {
     defaultSelectedIndex | controlledSelectedIndex
   );
   const [totalTabs, setTotalTabs] = useState(0);
-  const classes = classNames('pal--vertical-tabs', className);
+  const [isMobile, setIsMobile] = useState(false);
+  const classes = classNames(
+    'pal--vertical-tabs',
+    { 'pal--vertical-tabs--mobile': isMobile },
+    className
+  );
 
   const handleTabSelect = ({ selectedIndex }) => {
     setSelectedIndex(selectedIndex);
   };
 
+  //choose the screen size
+  const handleResize = () => {
+    if (window.innerWidth < BREAKPOINT) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  // create an event listener
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+  });
+
   const value = {
     selectedIndex,
     totalTabs,
+    isMobile,
     setSelectedIndex,
     setTotalTabs,
   };
@@ -50,6 +72,7 @@ const VerticalTabs = props => {
         className={classes}
         {...rest}>
         <div className={classes}>
+          {/* <VerticalTabsHeader /> */}
           {children}
           <VerticalTabsFooter />
         </div>

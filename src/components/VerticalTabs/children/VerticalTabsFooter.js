@@ -9,7 +9,6 @@ const VerticalTabsFooter = () => {
 
   const incrementTab = () => {
     setSelectedIndex(selectedIndex + 1);
-    console.log(selectedIndex);
   };
 
   const decrementTab = () => {

@@ -1,10 +1,22 @@
-import { IconButton, OverflowMenu, Search, TabList } from '@carbon/react';
-import { Add, ArrowsVertical } from '@carbon/react/icons';
+import {
+  ButtonSet,
+  IconButton,
+  OverflowMenu,
+  Search,
+  TabList,
+} from '@carbon/react';
+import {
+  Add,
+  ArrowsVertical,
+  Search as SearchIcon,
+  TableOfContents,
+} from '@carbon/react/icons';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import React, { useCallback, useEffect, useContext, useState } from 'react';
-import { getRecursiveChildText, search } from '../utils';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { VerticalTabsContext } from '../VerticalTabs';
+import { getRecursiveChildText, search } from '../utils';
+import VerticalTabsSidePanel from './VerticalTabsSidePanel';
 
 const VerticalTabList = React.forwardRef((props, ref) => {
   const {
@@ -19,14 +31,15 @@ const VerticalTabList = React.forwardRef((props, ref) => {
     ...rest
   } = props;
 
-  const { selectedIndex, totalTabs, setSelectedIndex, setTotalTabs } =
-    useContext(VerticalTabsContext);
+  const { isMobile, setTotalTabs } = useContext(VerticalTabsContext);
   const [filter, setFilter] = useState('');
   const [tabs, setTabs] = useState(children);
+  const [open, setOpen] = useState(false);
   const classes = classnames(
     'pal--vertical-tab-list',
     { 'pal--vertical-tab-list--search': withSearch },
     { 'pal--vertical-tab-list--full-height': fullHeight },
+    { 'pal--vertical-tab-list--open': open },
     className
   );
 
@@ -82,6 +95,10 @@ const VerticalTabList = React.forwardRef((props, ref) => {
     }
   };
 
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+
   const handleSort = () => {
     const copiedTabs = [...tabs];
     const reversedTabs = copiedTabs.reverse();
@@ -108,17 +125,61 @@ const VerticalTabList = React.forwardRef((props, ref) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [children]);
 
+  const smContent = (
+    <div className={classes}>
+      {!fullHeight && (
+        <div className="pal--vertical-tab-list__header">
+          <IconButton onClick={handleOpen} kind="ghost">
+            <TableOfContents />
+          </IconButton>
+          <ButtonSet>
+            {open ? (
+              <Search
+                onClear={handleClear}
+                className="pal--vertical-tab-list__search"
+                {...searchProps}
+              />
+            ) : (
+              <IconButton onClick={handleOpen} kind="ghost">
+                <SearchIcon />
+              </IconButton>
+            )}
+            <IconButton onClick={handleSort} kind="ghost">
+              <ArrowsVertical />
+            </IconButton>
+            {withAdd && (
+              <IconButton onClick={handleAdd} kind="primary">
+                <Add />
+              </IconButton>
+            )}
+          </ButtonSet>
+        </div>
+      )}
+      <VerticalTabsSidePanel open={open}>
+        <TabList contained ref={ref} {...rest}>
+          {tabs}
+        </TabList>
+        {withSearch && (
+          <div className="pal--vertical-tab-list__footer">
+            {' '}
+            Showing {tabs.length} items{' '}
+          </div>
+        )}
+      </VerticalTabsSidePanel>
+    </div>
+  );
+
+  if (isMobile) return smContent;
+
   return (
     <div className={classes}>
       {!fullHeight && (
         <div className="pal--vertical-tab-list__header">
-          {withSearch && (
-            <Search
-              onClear={handleClear}
-              className="pal--vertical-tab-list__search"
-              {...searchProps}
-            />
-          )}
+          <Search
+            onClear={handleClear}
+            className="pal--vertical-tab-list__search"
+            {...searchProps}
+          />
           <IconButton onClick={handleSort} kind="ghost">
             <ArrowsVertical />
           </IconButton>
