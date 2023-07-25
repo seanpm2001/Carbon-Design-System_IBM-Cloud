@@ -92,16 +92,7 @@
     &.cds--tabs__nav-link {
       background-color: $layer-accent-01;
       position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: $border-tile-01;
-      }
+      border-bottom: 1px solid $border-tile-01;
     }
 
     &.cds--tabs__nav-item:not(.cds--tabs__nav-item--selected):not(
@@ -198,21 +189,12 @@
     flex-direction: column;
     overflow-x: visible;
     min-width: 250px;
+    border-right: solid 1px $border-subtle-00;
 
     display: block;
     background-color: $layer-02;
     position: relative;
     overflow-y: hidden;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: 1px;
-      background-color: $border-subtle-00;
-    }
 
     &__header {
       background-color: $layer;
@@ -220,16 +202,7 @@
       justify-content: space-between;
       width: 100%;
       position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: $border-subtle-00;
-      }
+      border-bottom: 1px solid $border-subtle-00;
     }
 
     &--search {
@@ -254,16 +227,7 @@
       height: 2em;
       background-color: $layer;
       overflow: hidden;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: $border-subtle-00;
-      }
+      border-top: 1px solid $border-subtle-00;
     }
 
     .cds--tab--list {
@@ -332,16 +296,7 @@
   width: 100%;
   justify-content: flex-end;
   position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: $border-subtle-00;
-  }
+  border-top: 1px solid $border-subtle-00;
 
   @include breakpoint-down('md') {
     display: flex;
