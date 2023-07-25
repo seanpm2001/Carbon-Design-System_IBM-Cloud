@@ -92,32 +92,30 @@ export const Template = args => (
 
 <Canvas>
   <Story name="Controlled">
-    <div style={{ maxHeight: '400px', display: 'flex' }}>
-      <VerticalTabs kind="controlled">
-        <VerticalTabList withSort={false} aria-label="test">
-          {Array.from(Array(5).keys()).map((value, index) => (
-            <VerticalTab secondaryLabel="foo" index={index}>
-              Tab label {index}
-            </VerticalTab>
-          ))}
-        </VerticalTabList>
-        <TabPanels className="test-panels">
-          {Array.from(Array(5).keys()).map((value, index) => (
-            <TabPanel index={index}>
-              <p
-                style={{
-                  height: '400px',
-                  width: '400px',
-                  backgroundColor: '#E8DAFF',
-                  padding: '16px',
-                }}>
-                {index}
-              </p>
-            </TabPanel>
-          ))}
-        </TabPanels>
-      </VerticalTabs>
-    </div>
+    <VerticalTabs kind="controlled">
+      <VerticalTabList withSort={false} aria-label="test">
+        {Array.from(Array(5).keys()).map((value, index) => (
+          <VerticalTab secondaryLabel="foo" index={index}>
+            Tab label {index}
+          </VerticalTab>
+        ))}
+      </VerticalTabList>
+      <TabPanels className="test-panels">
+        {Array.from(Array(5).keys()).map((value, index) => (
+          <TabPanel index={index}>
+            <p
+              style={{
+                height: '400px',
+                width: '400px',
+                backgroundColor: '#E8DAFF',
+                padding: '16px',
+              }}>
+              {index}
+            </p>
+          </TabPanel>
+        ))}
+      </TabPanels>
+    </VerticalTabs>
   </Story>
 </Canvas>
 
@@ -142,12 +140,22 @@ export const Template = args => (
             <TabPanel index={index}>
               <p
                 style={{
-                  height: '400px',
-                  width: '400px',
                   backgroundColor: '#E8DAFF',
                   padding: '16px',
                 }}>
-                {index}
+                <h2>Tab {index}</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                  ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                  nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                  sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
               </p>{' '}
             </TabPanel>
           ))}

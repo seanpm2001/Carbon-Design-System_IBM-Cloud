@@ -1,19 +1,18 @@
-
-@use "sass:map";
-@use "@carbon/react/scss/type";
+@use 'sass:map';
+@use '@carbon/react/scss/type';
 @use '@carbon/react/scss/reset';
-@import "@carbon/react/scss/colors";
-@import "@carbon/react/scss/spacing";
-@import "@carbon/react/scss/themes";
-@import "@carbon/react/scss/theme";
-@import "@carbon/react/scss/config";
-@import "@carbon/react/scss/grid";
-@import "@carbon/react/scss/motion";
-@import "@carbon/react/scss/components/button";
-@import "@carbon/react/scss/components/tooltip";
-@import "@carbon/react/scss/components/breadcrumb";
-@import "@carbon/react/scss/components/modal";
-@import "@carbon/react/scss/components/progress-indicator";
+@import '@carbon/react/scss/colors';
+@import '@carbon/react/scss/spacing';
+@import '@carbon/react/scss/themes';
+@import '@carbon/react/scss/theme';
+@import '@carbon/react/scss/config';
+@import '@carbon/react/scss/grid';
+@import '@carbon/react/scss/motion';
+@import '@carbon/react/scss/components/button';
+@import '@carbon/react/scss/components/tooltip';
+@import '@carbon/react/scss/components/breadcrumb';
+@import '@carbon/react/scss/components/modal';
+@import '@carbon/react/scss/components/progress-indicator';
 
 /* Make sure to import any Carbon Component's styles that this component uses */
 
@@ -29,7 +28,7 @@ $side-panel-layer: 5100;
   @if map-has-key($grid-breakpoints, $size) {
     $breakpoint-key: map.get($grid-breakpoints, $size);
 
-    @media screen and (min-width: map-get($breakpoint-key, "width")) {
+    @media screen and (min-width: map-get($breakpoint-key, 'width')) {
       @content;
     }
   } @else {
@@ -59,7 +58,7 @@ body.pal--no-scroll {
     position: fixed;
     bottom: 0;
     left: 0;
-    content: "";
+    content: '';
     height: $side-panel-height;
     width: 100vw;
     z-index: $side-panel-layer;
@@ -162,7 +161,7 @@ body.pal--no-scroll {
     max-width: 1200px;
     width: 100vw;
 
-    @include breakpoint("md") {
+    @include breakpoint('md') {
       width: 75vw;
     }
   }
@@ -178,7 +177,7 @@ body.pal--no-scroll {
   }
 
   &__content--scroll::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     height: 2rem;
@@ -260,7 +259,7 @@ body.pal--no-scroll {
   }
 
   &__heading {
-    @include type.type-style("productive-heading-03");
+    @include type.type-style('productive-heading-03');
 
     display: inline-block;
     padding-bottom: $spacing-07;
