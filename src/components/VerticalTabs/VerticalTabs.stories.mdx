@@ -88,12 +88,12 @@ export const Template = args => (
   <Story name="Default">{Template.bind({})}</Story>
 </Canvas>
 
-### Uncontrolled
+### With Add
 
 <Canvas>
-  <Story name="Controlled">
-    <VerticalTabs kind="controlled">
-      <VerticalTabList withSort={false} aria-label="test">
+  <Story name="With Add">
+    <VerticalTabs>
+      <VerticalTabList withAdd withSort={false} aria-label="test">
         {Array.from(Array(5).keys()).map((value, index) => (
           <VerticalTab secondaryLabel="foo" index={index}>
             Tab label {index}
@@ -119,13 +119,90 @@ export const Template = args => (
   </Story>
 </Canvas>
 
-### Uncontrolled
+### With Sort
 
 <Canvas>
-  <Story name="Uncontrolled">
+  <Story name="With Sort">
+    <VerticalTabs>
+      <VerticalTabList withSort aria-label="test">
+        {Array.from(Array(5).keys()).map((value, index) => (
+          <VerticalTab secondaryLabel="foo" index={index}>
+            Tab label {index}
+          </VerticalTab>
+        ))}
+      </VerticalTabList>
+      <TabPanels className="test-panels">
+        {Array.from(Array(5).keys()).map((value, index) => (
+          <TabPanel index={index}>
+            <p
+              style={{
+                height: '400px',
+                width: '400px',
+                backgroundColor: '#E8DAFF',
+                padding: '16px',
+              }}>
+              {index}
+            </p>
+          </TabPanel>
+        ))}
+      </TabPanels>
+    </VerticalTabs>
+  </Story>
+</Canvas>
+
+### With Search
+
+<Canvas>
+  <Story name="With Search">
     <div style={{ maxHeight: '400px', display: 'flex' }}>
       <VerticalTabs>
-        <VerticalTabList withSearch withAdd aria-label="test">
+        <VerticalTabList withSearch aria-label="test">
+          {Array.from(Array(30).keys()).map((value, index) => (
+            <VerticalTab
+              secondaryLabel="foo"
+              index={index}
+              statusIndicator="success">
+              Tab label {index}
+            </VerticalTab>
+          ))}
+        </VerticalTabList>
+        <TabPanels className="test-panels">
+          {Array.from(Array(30).keys()).map((value, index) => (
+            <TabPanel index={index}>
+              <p
+                style={{
+                  backgroundColor: '#E8DAFF',
+                  padding: '16px',
+                }}>
+                <h2>Tab {index}</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                  ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                  nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                  sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+              </p>{' '}
+            </TabPanel>
+          ))}
+        </TabPanels>
+      </VerticalTabs>
+    </div>
+  </Story>
+</Canvas>
+
+### With Search, Add & Sort
+
+<Canvas>
+  <Story name="With Search, Add & Sort">
+    <div style={{ maxHeight: '400px', display: 'flex' }}>
+      <VerticalTabs>
+        <VerticalTabList withSearch withAdd WithSort aria-label="test">
           {Array.from(Array(30).keys()).map((value, index) => (
             <VerticalTab
               secondaryLabel="foo"

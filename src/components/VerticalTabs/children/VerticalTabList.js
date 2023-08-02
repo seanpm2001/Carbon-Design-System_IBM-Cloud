@@ -47,6 +47,8 @@ const VerticalTabList = React.forwardRef((props, ref) => {
   const classes = classnames(
     'pal--vertical-tab-list',
     { 'pal--vertical-tab-list--search': withSearch },
+    { 'pal--vertical-tab-list--add': withAdd },
+    { 'pal--vertical-tab-list--sort': withSort },
     { 'pal--vertical-tab-list--open': open },
     className
   );

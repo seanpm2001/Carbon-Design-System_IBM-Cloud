@@ -204,7 +204,7 @@
     &__header {
       background-color: $layer;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       width: 100%;
       position: relative;
       border-bottom: 1px solid $border-subtle-00;
@@ -270,6 +270,10 @@
       position: absolute;
       left: 0;
       top: 0;
+
+      &__header {
+        justify-content: space-between;
+      }
     }
   }
 
@@ -289,7 +293,9 @@
     display: none;
   }
 
-  .pal--vertical-tab-list--search {
+  .pal--vertical-tab-list--search,
+  .pal--vertical-tab-list--add,
+  .pal--vertical-tab-list--sort {
     .cds--tabs.cds--tabs--contained.cds--tabs--tall
       .cds--tabs__nav-link.pal--vertical-tab {
       min-height: 4rem;
