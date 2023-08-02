@@ -14,7 +14,13 @@ import "./_styles.scss";
 # AnimatedBackground
 
 export const Template = (args) => (
-  <AnimatedBackground {...args} />
+  
+  <Page>
+    <AnimatedBackground {...args} />
+    <Content>
+    ...
+    </Content>
+  </Page>
 );
 
 ### Demo

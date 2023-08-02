@@ -1,0 +1,313 @@
+@use '@carbon/react/scss/type';
+@use '@carbon/react/scss/motion';
+@use '@carbon/react/scss/reset';
+@use '@carbon/react/scss/components/skeleton-styles';
+@import '@carbon/react/scss/components/overflow-menu';
+@import '@carbon/react/scss/colors';
+@import '@carbon/react/scss/spacing';
+@import '@carbon/react/scss/themes';
+@import '@carbon/react/scss/theme';
+@import '@carbon/react/scss/config';
+@import '@carbon/styles/scss/breakpoint';
+
+@keyframes fadein {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pal--vertical-tabs {
+  display: flex;
+  height: 620px;
+  align-items: stretch;
+  position: relative;
+  overflow: auto;
+  max-width: 100%;
+
+  .cds--tabs {
+    display: flex;
+    position: relative;
+    max-height: 100%;
+    width: auto;
+    overflow-y: auto;
+    flex-direction: column;
+    background-color: $layer-02;
+  }
+
+  .cds--tab-content {
+    background-color: $layer;
+    padding: $spacing-05;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+
+    > * {
+      overflow: auto;
+
+      @media (prefers-reduced-motion: no-preference) {
+        animation: 145ms motion.motion(entrance, productive) 0s 1 fadein;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+    }
+  }
+
+  &--mobile {
+    height: 360px;
+
+    .cds--tab-content {
+      background-color: $layer;
+      padding: $spacing-05;
+      max-width: 100%;
+      overflow: auto;
+      position: relative;
+      min-width: 100%;
+      min-height: 280px;
+      max-height: 420px;
+      margin-bottom: 38px; // footer
+      top: 41px;
+    }
+
+    .pal--vertical-tab-list {
+      width: 100%;
+      height: 100%;
+      border-right: 0;
+      display: flex;
+      overflow-y: auto;
+      flex-direction: column;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      &__header {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .cds--tab--overflow-nav-button {
+    display: none;
+  }
+
+  .pal--vertical-tab {
+    min-height: 4rem;
+    max-height: 4rem;
+
+    &.cds--tabs__nav-link {
+      background-color: $layer-accent-01;
+      position: relative;
+      border-bottom: 1px solid $border-tile-01;
+    }
+
+    &.cds--tabs__nav-item:not(
+        .cds--tabs__nav-item--selected,
+        .cds--tabs__nav-item--disabled
+      ):hover {
+      box-shadow: inset 2px 0 0 0 $border-strong;
+    }
+
+    &.cds--tabs__nav-item.cds--tabs__nav-item--selected {
+      box-shadow: inset 2px 0 0 0 $border-interactive;
+    }
+
+    .cds--tabs__nav-item-label {
+      display: flex;
+      position: relative;
+      width: 100%;
+
+      .pal--resource-status-indicator {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+
+  @include breakpoint-down('md') {
+    flex-direction: column;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .pal--vertical-tab-list__sidepanel {
+    $slide-transition: transform 400ms ease-in-out, visibility 400ms;
+
+    z-index: 100;
+    position: absolute;
+    top: 41px;
+    visibility: hidden;
+    display: block;
+    height: calc(100% - 41px);
+    width: 100%;
+
+    .pal--vertical-tab-list__footer,
+    .cds--tabs {
+      visibility: hidden;
+      transform: translateX(-100%);
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: $slide-transition;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+    }
+
+    .cds--tabs {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: calc(100%);
+      width: 75%;
+    }
+
+    &--search .cds--tabs {
+      height: calc(100% - 32px); // footer
+    }
+
+    .pal--vertical-tab {
+      min-width: 100%;
+    }
+
+    .pal--vertical-tab-list__footer {
+      width: 75%;
+      position: absolute;
+    }
+
+    &--open {
+      visibility: visible;
+      background-color: $overlay;
+    }
+
+    &--open .cds--tabs,
+    &--open .pal--vertical-tab-list__footer {
+      visibility: visible;
+      transform: translateX(0%);
+    }
+  }
+
+  &:has(.pal--vertical-tab-list__footer)
+    .pal--vertical-tab-list__sidepanel
+    .cds--tabs {
+    height: calc(100% - 32px);
+  }
+
+  .pal--vertical-tab-list {
+    position: relative;
+    overflow-y: hidden;
+    flex-direction: column;
+    overflow-x: visible;
+    min-width: 250px;
+    border-right: solid 1px $border-subtle-00;
+    display: block;
+    background-color: $layer-02;
+
+    &__header {
+      background-color: $layer;
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      position: relative;
+      border-bottom: 1px solid $border-subtle-00;
+    }
+
+    &--search {
+      padding-bottom: 72px;
+    }
+
+    &__search {
+      height: 100%;
+
+      .cds--search-input {
+        border-bottom: 0 solid transparent;
+      }
+    }
+
+    &__footer {
+      display: none; // hide by default
+      align-items: center;
+      padding-left: $spacing-05;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2em;
+      background-color: $layer;
+      overflow: hidden;
+      border-top: 1px solid $border-subtle-00;
+    }
+
+    .cds--tab--list {
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    // responsive design
+    @include breakpoint-down('md') {
+      &--search {
+        padding-bottom: 0;
+      }
+
+      &__search {
+        width: auto;
+      }
+    }
+  }
+
+  .cds--tabs.cds--tabs--contained.cds--tabs--tall
+    .cds--tabs__nav-link.pal--vertical-tab {
+    max-height: 100%;
+  }
+
+  .cds--tab--list,
+  .cds--tabs {
+    height: 100%;
+  }
+
+  .pal--vertical-tab.cds--tabs__nav-link:last-child {
+    box-shadow: 0 solid transparent;
+  }
+
+  .pal--vertical-tab-list--search,
+  .pal--vertical-tab-list--add,
+  .pal--vertical-tab-list--sort {
+    .cds--tabs.cds--tabs--contained.cds--tabs--tall
+      .cds--tabs__nav-link.pal--vertical-tab {
+      min-height: 4rem;
+      max-height: 4rem;
+    }
+
+    .pal--vertical-tab-list__footer {
+      display: flex;
+    }
+  }
+
+  // mobile stepper
+  .pal--vertical-tab-panel__footer {
+    display: none;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    background-color: $layer;
+    width: 100%;
+    justify-content: flex-end;
+    position: relative;
+    border-top: 1px solid $border-subtle-00;
+
+    @include breakpoint-down('md') {
+      display: flex;
+    }
+  }
+}

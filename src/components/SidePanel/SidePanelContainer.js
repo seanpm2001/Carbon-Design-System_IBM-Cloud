@@ -4,15 +4,15 @@ import React, {
   useEffect,
   useCallback,
   Children,
-} from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import { Modal } from "@carbon/react";
-import { useTranslation } from "react-i18next";
+} from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { Modal } from '@carbon/react';
+import { useTranslation } from 'react-i18next';
 
-import { getPanelId, getPanelDetails } from "./utils/getPanelDetails";
+import { getPanelId, getPanelDetails } from './utils/getPanelDetails';
 // import trackComponentEvent from "../../utils/analytics";
-import canUseDom from "../../utils/canUseDom";
+import canUseDom from '../../utils/canUseDom';
 
 // Translations
 // import getLocale, { documentLanguage } from "../../utils/getLocale";
@@ -22,17 +22,17 @@ import canUseDom from "../../utils/canUseDom";
 /**
  * Adds a scroll lock to the body to prevent scrolling.
  */
-const addScrollLock = () => document.body.classList.add("pal--no-scroll");
+const addScrollLock = () => document.body.classList.add('pal--no-scroll');
 
 /**
  * Removes the scroll lock from the body.
  */
-const removeScrollLock = () => document.body.classList.remove("pal--no-scroll");
+const removeScrollLock = () => document.body.classList.remove('pal--no-scroll');
 
 /**
  * Manages the focus state for the initial focused element.
  */
-const useInitialFocus = (selector) => {
+const useInitialFocus = selector => {
   const initialFocus = useRef();
   const selectorFocus = useRef(null);
 
@@ -43,7 +43,7 @@ const useInitialFocus = (selector) => {
   const focusManagement = useRef({
     focus: () => {
       if (
-        document !== "undefined" &&
+        document !== 'undefined' &&
         document.body.contains(initialFocus.current)
       ) {
         initialFocus.current.focus();
@@ -52,7 +52,7 @@ const useInitialFocus = (selector) => {
     setFocus: () => {
       /* istanbul ignore next */
       initialFocus.current =
-        document !== "undefined" ? document.activeElement : null;
+        document !== 'undefined' ? document.activeElement : null;
     },
   });
 
@@ -81,14 +81,14 @@ const SidePanelContainer = ({
   afterClose,
   panelSize,
   focusOnCloseSelector,
-  "data-testid": testId,
+  'data-testid': testId,
   modalOnDismiss,
   dismissalModalHeader,
   dismissalModalBody,
   dismissalModalLabel,
   ...containerPanelProps
 }) => {
-  const { t } = useTranslation("SidePanel");
+  const { t } = useTranslation('SidePanel');
 
   const sidePanels = Children.toArray(children);
   // Shared State
@@ -116,7 +116,8 @@ const SidePanelContainer = ({
           setActivePanelById(getPanelId(sidePanels[0], 0));
           timeoutRef.current = null;
           resolveFaded();
-      }, timeoutValue)});
+        }, timeoutValue);
+      });
       timeoutRef.current = ref;
       return faded;
     }
@@ -127,7 +128,9 @@ const SidePanelContainer = ({
   // Clear the timeout if we're unmounting.
   useEffect(() => {
     // Used to match the media-query in our CSS
-    animationsOn.current = window.matchMedia && window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
+    animationsOn.current =
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
     return () => timeoutRef.current && clearTimeout(timeoutRef.current);
   }, []);
 
@@ -144,7 +147,7 @@ const SidePanelContainer = ({
   }, [isOpen, activePanelId, sidePanels]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (setPageRef) {
-    setPageRef((index) => {
+    setPageRef(index => {
       /* istanbul ignore next */
       if (sidePanels[index]) {
         setActivePanelById(getPanelId(sidePanels[index], index));
@@ -198,10 +201,10 @@ const SidePanelContainer = ({
   };
 
   // Closes the side panel and calls the child panels close event.
-  const handleOverlayEvents = (event) => {
-    const escapeKeyPress = event.key === "Escape" && hasOverlay;
+  const handleOverlayEvents = event => {
+    const escapeKeyPress = event.key === 'Escape' && hasOverlay;
     const overlayClick =
-      hasOverlay && event.target?.dataset?.id === "pal-side-panel-container";
+      hasOverlay && event.target?.dataset?.id === 'pal-side-panel-container';
 
     if ((escapeKeyPress || overlayClick) && childCloseRef.current(event)) {
       closePanel();
@@ -210,18 +213,18 @@ const SidePanelContainer = ({
 
   // Side Panel Component classes
   const panelContainerClasses = classNames(
-    "pal--side-panel-container",
+    'pal--side-panel-container',
     {
-      "pal--side-panel-container--open": panelsOpen,
-      "pal--side-panel-container--overlay": hasOverlay,
+      'pal--side-panel-container--open': panelsOpen,
+      'pal--side-panel-container--overlay': hasOverlay,
     },
     className
   );
 
-  const onCloseWithModalHandler = (closeFunc) => {
+  const onCloseWithModalHandler = closeFunc => {
     setModalOpen(true);
     setModalCloseFunc(() => () => {
-      if(closeFunc()) closePanel(); // behave like the typical flow in handleOverlayEvents above
+      if (closeFunc()) closePanel(); // behave like the typical flow in handleOverlayEvents above
     });
   };
 
@@ -233,8 +236,7 @@ const SidePanelContainer = ({
         className={panelContainerClasses}
         onMouseDown={handleOverlayEvents}
         onKeyDown={handleOverlayEvents}
-        data-testid={testId}
-      >
+        data-testid={testId}>
         <div className="pal--side-panel-container__panels">
           {sidePanels.reduce((visiblePanels, panel, index, panels) => {
             const {
@@ -289,20 +291,19 @@ const SidePanelContainer = ({
       </div>
       {modalOnDismiss && (
         <Modal
-          modalHeading={dismissalModalHeader || t("modal.header")}
-          aria-label={dismissalModalLabel || t("modal.label")}
-          modalLabel={dismissalModalLabel || t("modal.label")}
+          modalHeading={dismissalModalHeader || t('modal.header')}
+          aria-label={dismissalModalLabel || t('modal.label')}
+          modalLabel={dismissalModalLabel || t('modal.label')}
           onRequestClose={() => setModalOpen(false)}
           onRequestSubmit={() => {
             setModalOpen(false);
             modalCloseFunc();
           }}
-          secondaryButtonText={t("cancelText")}
-          primaryButtonText={t("modal.closeText")}
+          secondaryButtonText={t('cancelText')}
+          primaryButtonText={t('modal.closeText')}
           danger
-          open={modalOpen}
-        >
-          {dismissalModalBody || t("modal.confirmText")}
+          open={modalOpen}>
+          {dismissalModalBody || t('modal.confirmText')}
         </Modal>
       )}
     </>
@@ -312,8 +313,8 @@ const SidePanelContainer = ({
 const validSizes = (props, propName, componentName) => {
   const { [propName]: size } = props;
   if (size) {
-    if (typeof size === "string") {
-      return size === "xl" || size === "medium" || size === "small"
+    if (typeof size === 'string') {
+      return size === 'xl' || size === 'medium' || size === 'small'
         ? null
         : new Error(
             `${propName} in ${componentName} must be "small", "medium" or "xl". The "large" option is the same size as the "medium". The "large" prop will be deprecated in the next major release`
@@ -351,8 +352,8 @@ SidePanelContainer.propTypes = {
   hasOverlay: PropTypes.bool,
 
   /**
-     * Function to call after the SidepanelContainer has fully closed, post-animation. If using a boolean statement to control rendering, this callback would be a good place to toggle it to false.
-     */
+   * Function to call after the SidepanelContainer has fully closed, post-animation. If using a boolean statement to control rendering, this callback would be a good place to toggle it to false.
+   */
   afterClose: PropTypes.func,
 
   /**
@@ -369,7 +370,7 @@ SidePanelContainer.propTypes = {
   /**
    * An ID used for testing purposes on the container element.
    */
-  "data-testid": PropTypes.string,
+  'data-testid': PropTypes.string,
 
   /**
    * The text for the back button in a nested panel.
@@ -500,7 +501,7 @@ SidePanelContainer.propTypes = {
 SidePanelContainer.defaultProps = {
   isOpen: true,
   hasOverlay: true,
-  panelSize: "medium",
+  panelSize: 'medium',
   onCancelClick: () => true,
   onCloseClick: () => true,
   onDoneClick: () => true,

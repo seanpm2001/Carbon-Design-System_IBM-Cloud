@@ -1,0 +1,298 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { useState } from 'react';
+import { Button, Tab, TabList, TabPanels, TabPanel } from '@carbon/react';
+import { Add } from '@carbon/icons-react';
+import VerticalTabs, { VerticalTab, VerticalTabList } from '.';
+import './_styles.scss';
+
+<Meta
+  title="Experimental/VerticalTabs"
+  component={VerticalTabs}
+  parameters={{ status: { type: 'experimental' } }}
+/>
+
+# VerticalTabs
+
+export const Template = args => (
+  <VerticalTabs {...args}>
+    <VerticalTabList withSort={false} aria-label="vertical-tab-list">
+      <VerticalTab secondaryLabel="Label">Tab label 1</VerticalTab>
+      <VerticalTab secondaryLabel="Label">Tab label 2</VerticalTab>
+      <VerticalTab secondaryLabel="Label">Tab label 3</VerticalTab>
+      <VerticalTab secondaryLabel="Label">Tab label 4</VerticalTab>
+      <VerticalTab secondaryLabel="Label">Tab label 5</VerticalTab>
+    </VerticalTabList>
+    <TabPanels className="test-panels">
+      <TabPanel>
+        <p
+          style={{
+            height: '400px',
+            width: '400px',
+            backgroundColor: '#E8DAFF',
+            padding: '16px',
+          }}>
+          1
+        </p>
+      </TabPanel>
+      <TabPanel>
+        <p
+          style={{
+            height: '400px',
+            width: '400px',
+            backgroundColor: '#E8DAFF',
+            padding: '16px',
+          }}>
+          2
+        </p>
+      </TabPanel>
+      <TabPanel>
+        <p
+          style={{
+            height: '400px',
+            width: '400px',
+            backgroundColor: '#E8DAFF',
+            padding: '16px',
+          }}>
+          3
+        </p>
+      </TabPanel>
+      <TabPanel>
+        <p
+          style={{
+            height: '400px',
+            width: '400px',
+            backgroundColor: '#E8DAFF',
+            padding: '16px',
+          }}>
+          4
+        </p>
+      </TabPanel>
+      <TabPanel>
+        <p
+          style={{
+            height: '400px',
+            width: '400px',
+            backgroundColor: '#E8DAFF',
+            padding: '16px',
+          }}>
+          5
+        </p>
+      </TabPanel>
+    </TabPanels>
+  </VerticalTabs>
+);
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### With Add
+
+<Canvas>
+  <Story name="With Add">
+    <VerticalTabs>
+      <VerticalTabList withAdd withSort={false} aria-label="test">
+        {Array.from(Array(5).keys()).map((value, index) => (
+          <VerticalTab secondaryLabel="foo" index={index}>
+            Tab label {index}
+          </VerticalTab>
+        ))}
+      </VerticalTabList>
+      <TabPanels className="test-panels">
+        {Array.from(Array(5).keys()).map((value, index) => (
+          <TabPanel index={index}>
+            <p
+              style={{
+                height: '400px',
+                width: '400px',
+                backgroundColor: '#E8DAFF',
+                padding: '16px',
+              }}>
+              {index}
+            </p>
+          </TabPanel>
+        ))}
+      </TabPanels>
+    </VerticalTabs>
+  </Story>
+</Canvas>
+
+### With Sort
+
+<Canvas>
+  <Story name="With Sort">
+    <VerticalTabs>
+      <VerticalTabList withSort aria-label="test">
+        {Array.from(Array(5).keys()).map((value, index) => (
+          <VerticalTab secondaryLabel="foo" index={index}>
+            Tab label {index}
+          </VerticalTab>
+        ))}
+      </VerticalTabList>
+      <TabPanels className="test-panels">
+        {Array.from(Array(5).keys()).map((value, index) => (
+          <TabPanel index={index}>
+            <p
+              style={{
+                height: '400px',
+                width: '400px',
+                backgroundColor: '#E8DAFF',
+                padding: '16px',
+              }}>
+              {index}
+            </p>
+          </TabPanel>
+        ))}
+      </TabPanels>
+    </VerticalTabs>
+  </Story>
+</Canvas>
+
+### With Search
+
+<Canvas>
+  <Story name="With Search">
+    <div style={{ maxHeight: '400px', display: 'flex' }}>
+      <VerticalTabs>
+        <VerticalTabList withSearch aria-label="test">
+          {Array.from(Array(30).keys()).map((value, index) => (
+            <VerticalTab
+              secondaryLabel="foo"
+              index={index}
+              statusIndicator="success">
+              Tab label {index}
+            </VerticalTab>
+          ))}
+        </VerticalTabList>
+        <TabPanels className="test-panels">
+          {Array.from(Array(30).keys()).map((value, index) => (
+            <TabPanel index={index}>
+              <p
+                style={{
+                  backgroundColor: '#E8DAFF',
+                  padding: '16px',
+                }}>
+                <h2>Tab {index}</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                  ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                  nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                  sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+              </p>{' '}
+            </TabPanel>
+          ))}
+        </TabPanels>
+      </VerticalTabs>
+    </div>
+  </Story>
+</Canvas>
+
+### With Search, Add & Sort
+
+<Canvas>
+  <Story name="With Search, Add & Sort">
+    <div style={{ maxHeight: '400px', display: 'flex' }}>
+      <VerticalTabs>
+        <VerticalTabList withSearch withAdd WithSort aria-label="test">
+          {Array.from(Array(30).keys()).map((value, index) => (
+            <VerticalTab
+              secondaryLabel="foo"
+              index={index}
+              statusIndicator="success">
+              Tab label {index}
+            </VerticalTab>
+          ))}
+        </VerticalTabList>
+        <TabPanels className="test-panels">
+          {Array.from(Array(30).keys()).map((value, index) => (
+            <TabPanel index={index}>
+              <p
+                style={{
+                  backgroundColor: '#E8DAFF',
+                  padding: '16px',
+                }}>
+                <h2>Tab {index}</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                  ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                  nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                  sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+              </p>{' '}
+            </TabPanel>
+          ))}
+        </TabPanels>
+      </VerticalTabs>
+    </div>
+  </Story>
+</Canvas>
+
+## Description
+
+VerticalTabs is a component in the Cloud PAL Experimental style. The
+VerticalTabs monitors the user’s progress through a series of steps.
+
+It guides them toward the completion of a specific process and shows the numeric
+value of the completed steps in relation to how many steps there are in total.
+
+Motion can be reduced with system or browser settings.
+
+## Usage
+
+1.  Install the
+    [@carbon/carbon-for-ibm-cloud](https://pages.github.ibm.com/cdai-design/cloud-pal/cloudpal-guidance/cloudpal-v2/migration-guides/#installing-and-using-the-new-packages)
+    library
+2.  Import the styles:
+
+    ```js
+    @import '@carbon/carbon-for-ibm-cloud/components/VerticalTabs/styles';
+    ```
+
+3.  Import the component:
+
+    ```js
+    import { VerticalTabs } from '@carbon/carbon-for-ibm-cloud/components';
+    ```
+
+4.  Render the component.
+
+For general component usage review the
+[Components Docs](https://pages.github.ibm.com/ibmcloud/pal/development-guidelines/components/overview).
+
+## Props
+
+### VerticalTabs
+
+Wrapper component has same props as Carbon `Tabs` component
+
+<ArgsTable of={VerticalTabs} />
+
+### VerticalTabList
+
+<ArgsTable of={VerticalTabList} />
+
+### VerticalTab
+
+<ArgsTable of={VerticalTab} />
+
+## Contributors
+
+- Stephanie Cree
+- Lisa Kaiser
+- Asha Newsom
+- Max Hammer
