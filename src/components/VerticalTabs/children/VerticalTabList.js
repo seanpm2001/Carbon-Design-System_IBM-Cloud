@@ -1,10 +1,4 @@
-import {
-  ButtonSet,
-  IconButton,
-  OverflowMenu,
-  Search,
-  TabList,
-} from '@carbon/react';
+import { ButtonSet, IconButton, Search, TabList } from '@carbon/react';
 import {
   Add,
   ArrowsVertical,
@@ -233,19 +227,16 @@ const VerticalTabList = React.forwardRef((props, ref) => {
 VerticalTabList.propTypes = {
   withSearch: PropTypes.bool,
   SearchProps: Search.propTypes,
-  OverflowMenuProps: OverflowMenu.propTypes,
   withAdd: PropTypes.bool,
   withSort: PropTypes.bool,
   onAdd: PropTypes.func,
   onSort: PropTypes.func,
-
   ...TabList.propTypes,
 };
 
 VerticalTabList.defaultProps = {
   withSearch: false,
   SearchProps: Search.defaultProps,
-  OverflowMenuProps: OverflowMenu.defaultProps,
   onSort: undefined,
   onAdd: undefined,
   withAdd: false,
