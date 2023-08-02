@@ -13,7 +13,14 @@ import {
 } from '@carbon/react/icons';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import { VerticalTabsContext } from '../VerticalTabs';
 import { getRecursiveChildText, search } from '../utils';
 import VerticalTabsSidePanel from './VerticalTabsSidePanel';
@@ -25,22 +32,21 @@ const VerticalTabList = React.forwardRef((props, ref) => {
     withSearch,
     withAdd,
     withSort,
-    fullHeight,
     SearchProps,
     OverflowMenuProps,
     disabled,
     ...rest
   } = props;
 
-  const { selectedIndex, isMobile, setTotalTabs } =
-    useContext(VerticalTabsContext);
+  const { isMobile, setTotalTabs } = useContext(VerticalTabsContext);
   const [filter, setFilter] = useState('');
   const [tabs, setTabs] = useState(children);
   const [open, setOpen] = useState(false);
+  const searchRef = useRef();
+
   const classes = classnames(
     'pal--vertical-tab-list',
     { 'pal--vertical-tab-list--search': withSearch },
-    { 'pal--vertical-tab-list--full-height': fullHeight },
     { 'pal--vertical-tab-list--open': open },
     className
   );
@@ -116,6 +122,10 @@ const VerticalTabList = React.forwardRef((props, ref) => {
     onChange: handleSearch,
   };
 
+  useLayoutEffect(() => {
+    if (open && searchRef) searchRef?.current?.focus();
+  }, [open]);
+
   useEffect(() => {
     const newTabs = renderTabs(filter);
     setTabs(newTabs);
@@ -142,22 +152,27 @@ const VerticalTabList = React.forwardRef((props, ref) => {
           {withSearch &&
             (open ? (
               <Search
+                value={filter}
+                ref={searchRef}
                 onClear={handleClear}
                 className="pal--vertical-tab-list__search"
                 {...searchProps}
               />
             ) : (
-              <IconButton onClick={() => handleOpen(!open)} kind="ghost">
+              <IconButton
+                label="Search"
+                onClick={() => handleOpen(!open)}
+                kind="ghost">
                 <SearchIcon />
               </IconButton>
             ))}
           {withSort && (
-            <IconButton onClick={handleSort} kind="ghost">
+            <IconButton label="Sort" onClick={handleSort} kind="ghost">
               <ArrowsVertical />
             </IconButton>
           )}
           {withAdd && (
-            <IconButton onClick={handleAdd} kind="primary">
+            <IconButton label="Add" onClick={handleAdd} kind="primary">
               <Add />
             </IconButton>
           )}
@@ -184,6 +199,7 @@ const VerticalTabList = React.forwardRef((props, ref) => {
       <div className="pal--vertical-tab-list__header">
         {withSearch && (
           <Search
+            value={filter}
             onClear={handleClear}
             className="pal--vertical-tab-list__search"
             {...searchProps}
@@ -220,10 +236,7 @@ VerticalTabList.propTypes = {
   withSort: PropTypes.bool,
   onAdd: PropTypes.func,
   onSort: PropTypes.func,
-  /**
-   * Determines whether Tabs span whole height or not.
-   */
-  fullHeight: PropTypes.bool,
+
   ...TabList.propTypes,
 };
 
@@ -231,7 +244,6 @@ VerticalTabList.defaultProps = {
   withSearch: false,
   SearchProps: Search.defaultProps,
   OverflowMenuProps: OverflowMenu.defaultProps,
-  fullHeight: false,
   onSort: undefined,
   onAdd: undefined,
   withAdd: false,

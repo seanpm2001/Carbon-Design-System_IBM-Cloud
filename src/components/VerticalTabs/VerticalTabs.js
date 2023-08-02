@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { createContext, useEffect, useState } from 'react';
 import VerticalTabsFooter from './children/VerticalTabsFooter';
-import VerticalTabsHeader from './children/VerticalTabsHeader';
 
 export const VerticalTabsContext = createContext({
   selectedIndex: 0,
@@ -24,7 +23,6 @@ const VerticalTabs = props => {
     fullHeight,
     selectedIndex: controlledSelectedIndex,
     defaultSelectedIndex,
-    kind,
     ...rest
   } = props;
 
@@ -36,7 +34,6 @@ const VerticalTabs = props => {
   const classes = classNames(
     'pal--vertical-tabs',
     { 'pal--vertical-tabs--mobile': isMobile },
-    `pal--vertical-tabs--${kind}`,
     className
   );
 
@@ -79,7 +76,6 @@ const VerticalTabs = props => {
         className={classes}
         {...rest}>
         <div className={classes}>
-          {/* <VerticalTabsHeader /> */}
           {children}
           <VerticalTabsFooter />
         </div>
@@ -89,7 +85,6 @@ const VerticalTabs = props => {
 };
 
 VerticalTabs.defaultProps = {
-  kind: 'uncontrolled',
   ...Tabs.defaultProps,
 };
 
@@ -97,7 +92,6 @@ VerticalTabs.propTypes = {
   /**
    * Determines whether Tabs span whole height or not.
    */
-  kind: PropTypes.oneOf(['controlled', 'uncontrolled']),
   ...Tabs.propTypes,
 };
 export default VerticalTabs;

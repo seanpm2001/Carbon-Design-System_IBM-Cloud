@@ -24,16 +24,16 @@ const VerticalTabsFooter = () => {
     <div className="pal--vertical-tab-panel__footer">
       <IconButton
         kind="ghost"
+        label="Previous"
         onClick={decrementTab}
         disabled={selectedIndex <= 0}>
-        {' '}
         <CaretUp size={16} />
       </IconButton>
       <IconButton
         kind="ghost"
+        label="Next"
         onClick={incrementTab}
         disabled={selectedIndex >= totalTabs - 1}>
-        {' '}
         <CaretDown size={16} />
       </IconButton>
     </div>
