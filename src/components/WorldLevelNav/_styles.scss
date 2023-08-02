@@ -10,16 +10,16 @@
 @import "../SideNav/styles";
 @import "../SideNav/inverse-styles";
 
-.pal--world-level-nav::after {
+.cpx--world-level-nav::after {
   position: absolute;
   right: 0;
   content: "";
   width: 1px;
   height: 100%;
-  background-color: $layer-01;
+  background-color: $border-subtle-00;
 }
 
-.pal--world-level-nav.pal--side-nav {
+.cpx--world-level-nav.cpx--side-nav {
   bottom: 0;
   display: flex;
   height: calc(100% - 50px);
@@ -27,35 +27,36 @@
   position: relative;
 }
 
-.pal--world-level-nav.pal--side-nav--collapsed {
+.cpx--world-level-nav.cpx--side-nav--collapsed {
   transform: translateX($pal-side-nav-collapse-transition-side);
   transition: transform $duration-moderate-02 motion(exit, productive);
 }
 
-.pal--world-level-nav .pal--side-nav__item,
-.pal--world-level-nav .pal--side-nav__menu-button {
-  font-weight: 600;
+.cpx--world-level-nav .cpx--side-nav__item,
+.cpx--world-level-nav .cpx--side-nav__menu-button {
+  // font-weight: 600;
 }
 
-.pal--world-level-nav .pal--side-nav__link,
-.pal--world-level-nav .pal--side-nav__menu-button {
+.cpx--world-level-nav .cpx--side-nav__link,
+.cpx--world-level-nav .cpx--side-nav__menu-button {
   padding-left: $spacing-05;
 }
 
-.pal--world-level-nav .pal--side-nav__menu-button.pal--side-nav__menu-flyout {
-  padding-left: $spacing-06;
+.cpx--world-level-nav .cpx--side-nav__menu-button.cpx--side-nav__menu-flyout {
+  padding-left: $spacing-05;
 }
 
-.pal--world-level-nav .pal--side-nav__menu .pal--side-nav__link {
-  padding-left: $spacing-06;
+.cpx--world-level-nav .cpx--side-nav__menu .cpx--side-nav__link,
+ .cpx--world-level-nav .cpx--side-nav__menu .cpx--side-nav__menu-button {
+  padding-left: $spacing-08;
 }
 
-.pal--world-level-nav .pal--side-nav__link[aria-current="page"],
-.pal--world-level-nav .pal--side-nav__item--active .pal--side-nav__menu-button {
+.cpx--world-level-nav .cpx--side-nav__link[aria-current="page"],
+.cpx--world-level-nav .cpx--side-nav__item--active .cpx--side-nav__menu-button {
   color: $pal-inverse-side-nav-active-text;
 }
 
-.pal--world-level-nav .pal--side-nav__collapse-button {
+.cpx--world-level-nav .cpx--side-nav__collapse-button {
   justify-content: flex-end;
   padding: $spacing-05 $spacing-05 $spacing-05 $spacing-06;
 
@@ -64,18 +65,18 @@
   }
 }
 
-.pal--world-level-nav.pal--side-nav .pal--side-nav__item::before {
+.cpx--world-level-nav.cpx--side-nav .cpx--side-nav__item::before {
   display: none;
 }
 
-.pal--world-level-nav.pal--side-nav--collapsed
-  > *:not(.pal--side-nav__collapse-button) {
+.cpx--world-level-nav.cpx--side-nav--collapsed
+  > *:not(.cpx--side-nav__collapse-button) {
   visibility: hidden;
   opacity: 0;
   transition: all $duration-moderate-02 motion(exit, productive);
 }
 
-.pal--world-level-nav.pal--side-nav--collapsed .pal--side-nav__collapse-button {
+.cpx--world-level-nav.cpx--side-nav--collapsed .cpx--side-nav__collapse-button {
   align-items: center;
   flex-direction: column;
   height: 100%;
@@ -85,6 +86,6 @@
   width: 2.875rem;
 }
 
-:not(.pal-docs--renderer__component) > .pal--world-level-nav {
+:not(.pal-docs--renderer__component) > .cpx--world-level-nav {
   position: fixed;
 }

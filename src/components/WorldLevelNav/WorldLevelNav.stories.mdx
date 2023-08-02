@@ -1,10 +1,10 @@
 import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 import WorldLevelNav from ".";
 import "./_styles.scss";
-import { IbmCloud as IbmCloud16 } from "@carbon/react/icons";
+import { Bee, IbmCloud as IbmCloud16 } from "@carbon/react/icons";
 
 <Meta
-  title="Components/WorldLevelNav"
+  title="Experimental/WorldLevelNav"
   component={WorldLevelNav}
   argTypes={{
     locale: {
@@ -31,63 +31,6 @@ import { IbmCloud as IbmCloud16 } from "@carbon/react/icons";
 # WorldLevelNav
 
 export const Template = (args) => <WorldLevelNav {...args} />;
-
-<Canvas>
-  <Story
-    name="Demo"
-    args={{
-      title: "Cloud PAL",
-      titleHref: "/ibmcloud/pal/components/world-level-nav/code",
-      icon: <IbmCloud16 />,
-      items: [
-        { href: "#example-item-1A", label: "Link 1A" },
-        { href: "#example-item-1B", label: "Link 1B" },
-        {
-          label: "Sub menu 1",
-          items: [
-            {
-              label: "Sub Link 1A",
-              flyoutItems: [
-                { href: "#sub-menu-flyout-1A-1", label: "Sub Flyout Link 1A" },
-                { href: "#sub-menu-flyout-1A-2", label: "Sub Flyout Link 1B" },
-              ],
-            },
-            { href: "#sub-item-1C", label: "Sub Link 1B" },
-            {
-              label: "Sub menu flyout",
-              flyoutItems: [
-                { href: "#sub-menu-flyout-1", label: "Sub Flyout Link 1A" },
-              ],
-            },
-            { href: "#sub-item-1D", label: "Sub Link 1D" },
-          ],
-        },
-        {
-          label: "Sub Menu 2",
-          items: [
-            { href: "#sub-item-2B", label: "Sub Link 1B" },
-            {
-              label: "Sub menu flyout 2",
-              flyoutItems: [
-                { href: "#sub-menu-flyout-21", label: "Sub Flyout Link 1A" },
-                { href: "#sub-menu-flyout-22", label: "Sub Flyout Link 1B" },
-                { href: "#sub-menu-flyout-23", label: "Sub Flyout Link 1C" },
-                { href: "#sub-menu-flyout-24", label: "Sub Flyout Link 1D" },
-                { href: "#sub-menu-flyout-25", label: "Sub Flyout Link 1E" },
-              ],
-            },
-            { href: "#sub-item-2C", label: "Sub Link 1C" },
-            { href: "#sub-item-2D", label: "Sub Link 1D" },
-            { href: "#sub-item-2E", label: "Sub Link 1E" },
-            { href: "#sub-item-2F", label: "Sub Link 1F" },
-          ],
-        },
-      ],
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
 
 ## Description
 
@@ -153,25 +96,85 @@ For general component usage review the [Components Docs](https://pages.github.ib
 
 Providing an `open: true` property to a submenu will render the given submenu open by default.
 
+## Menu Variant
 <Canvas>
   <Story
-    name="Demo-default-opened"
+    name="Menu Variant"
     args={{
       title: "Cloud PAL",
       titleHref: "/ibmcloud/pal/components/world-level-nav/code",
+      overviewHref: "#",
       icon: <IbmCloud16 />,
       items: [
-        { href: "#example-item-1A", label: "Link 1A" },
-        { href: "#example-item-1B", label: "Link 1B" },
         {
-          label: "Nav Menu",
-          open: true,
+          icon: Bee,
+          label: "Link A",
+          href: "#example-link-a"
+        },
+        { icon: Bee, href: "#example-item-1A", label: "Link 1A" },
+        { icon: Bee, href: "#example-item-1B", label: "Link 1B" },
+        { icon: Bee, 
+          label: "Sub menu 1",
           items: [
-            { href: "#example-item-2A", label: "Link 2A" },
-            { href: "#example-item-2B", label: "Link 2B" },
+            
+            { href: "#sub-item-1C", label: "Sub Link 1B" },
+            { href: "#sub-item-1D", label: "Sub Link 1D" },
           ],
         },
-        { href: "#example-item-1C", label: "Link 1C" },
+        {
+          icon: Bee, 
+          label: "Sub Menu 2",
+          items: [
+            { href: "#sub-item-2B", label: "Sub Link 1B" },
+            { href: "#sub-item-2C", label: "Sub Link 1C" },
+            { href: "#sub-item-2D", label: "Sub Link 1D" },
+            { href: "#sub-item-2E", label: "Sub Link 1E" },
+            { href: "#sub-item-2F", label: "Sub Link 1F" },
+          ],
+        },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Flyout Variant
+<Canvas>
+  <Story
+    name="Flyout Variant"
+    args={{
+      title: "Cloud PAL",
+      titleHref: "/ibmcloud/pal/components/world-level-nav/code",
+      overviewHref: "/",
+      icon: <IbmCloud16 />,
+      items: [
+        {
+          icon: Bee,
+          label: "Link A",
+          href: "#example-link-a"
+        },
+        { icon: Bee, href: "#example-item-1A", label: "Link 1A" },
+        { icon: Bee, href: "#example-item-1B", label: "Link 1B" },
+        { icon: Bee, 
+          label: "Sub menu 1",
+          flyoutItems: [
+            
+            { href: "#sub-item-1C", label: "Sub Link 1B" },
+            { href: "#sub-item-1D", label: "Sub Link 1D" },
+          ],
+        },
+        {
+          icon: Bee, 
+          label: "Sub Menu 2",
+          flyoutItems: [
+            { href: "#sub-item-2B", label: "Sub Link 1B" },
+            { href: "#sub-item-2C", label: "Sub Link 1C" },
+            { href: "#sub-item-2D", label: "Sub Link 1D" },
+            { href: "#sub-item-2E", label: "Sub Link 1E" },
+            { href: "#sub-item-2F", label: "Sub Link 1F" },
+          ],
+        },
       ],
     }}
   >

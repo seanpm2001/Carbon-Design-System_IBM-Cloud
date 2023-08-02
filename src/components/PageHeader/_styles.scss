@@ -240,6 +240,7 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
   &--provisioning {
     background-color: $layer-01;
     padding-bottom: $spacing-05;
+    border-bottom: none;
 
     &.pal--page-header--wrapped-details .pal--page-header__surfaced-details {
       padding-top: $spacing-03;
@@ -271,6 +272,10 @@ $breadcrumb-spacing: 16px; // mocks breadcrumb spacing
         margin-left: 0;
       }
     }
+  }
+
+  &--resource-detail {
+    border-bottom: 1px solid $border-subtle-01;
   }
 
   &--sticky {

@@ -26,6 +26,7 @@ const PageHeader = ({
   icon,
   isSticky,
   isProvisioning,
+  isResourceDetail,
   linkComponent: LinkComponent,
   surfacedDetails,
   hasSurfacedDetailsList,
@@ -57,6 +58,7 @@ const PageHeader = ({
       "pal--page-header--wrapped-details": wrappedDetails,
       "pal--page-header--experimental": experimental,
       "pal--page-header--world": isWorld,
+      "pal--page-header--resource-detail": isResourceDetail,
     },
     className
   );
@@ -206,6 +208,7 @@ PageHeader.defaultProps = {
   icon: undefined,
   isSticky: false,
   isProvisioning: false,
+  isResourceDetail: false,
   linkComponent: Link,
   surfacedDetails: undefined,
   hasSurfacedDetailsList: false,
@@ -243,6 +246,10 @@ PageHeader.propTypes = {
    * Whether or not the provisioning page header should be used here.
    */
   isProvisioning: PropTypes.bool,
+  /**
+   *  Whether or not the Resource Detail page header should be used.
+   */
+  isResourceDetail:  PropTypes.bool,
   /**
    *  A title describing the page the user is on.
    */

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 // Carbon Components
 import { ChevronRight as ChevronRight16 } from "@carbon/react/icons";
-// PAL Components
+// cpx Components
 import NavItem from "./NavItem";
 import { isActiveItem } from "../utils/findActiveItem";
 
@@ -14,6 +14,7 @@ const NavFlyout = ({
   menuButtonComponent: MenuButtonComponent,
   onItemSelect,
   linkComponent: LinkComponent,
+  icon: Icon,
 }) => {
   const flyoutButtonRef = React.useRef(null);
   const flyoutContentRef = React.useRef(null);
@@ -23,7 +24,7 @@ const NavFlyout = ({
   React.useLayoutEffect(() => {
     if (flyoutButtonRef.current) {
       const findNavItemsComponents = (element) => {
-        if (element?.className === "pal--side-nav__items") {
+        if (element?.className === "cpx--side-nav__items") {
           return element;
         }
         if (element.parentElement && element.parentElement.nodeName !== "NAV") {
@@ -33,11 +34,6 @@ const NavFlyout = ({
       };
       const parent = findNavItemsComponents(flyoutButtonRef.current);
       const parentScroll = parent ? parent.scrollTop : 0;
-      const buttonHalfHeight =
-        (flyoutButtonRef.current?.getBoundingClientRect().height ?? 0) / 2;
-      const flyoutHeight =
-        flyoutContentRef.current?.getBoundingClientRect().height ?? 0;
-      const flyoutHalfHeight = flyoutHeight / 2;
       // We need to manually position the flyout since it is absolutely positioned relative to the whole Nav element (versus button)
       // Due to how we need to preserve the overflow.
       // First we get the height offset of the flyout menu (the button). Then we substract the scroll position of the container if there is any.
@@ -46,62 +42,75 @@ const NavFlyout = ({
       // adding half of the flyout height, and half of the flyout menu button height.
       const centeredPosition =
         flyoutButtonRef.current.offsetTop -
-        parentScroll -
-        flyoutHalfHeight +
-        buttonHalfHeight;
+        parentScroll
       setPosition(centeredPosition);
       setBoxPosition(flyoutButtonRef.current.offsetTop - parentScroll);
     }
   }, [position, hover]);
 
+  const iconItem = !Icon ? null : (
+    <Icon
+      aria-label="icon"
+      className="cpx--side-nav__item-icon"
+      aria-hidden="true"
+    />
+  );
+
   return (
-    <MenuButtonComponent
-      aria-haspopup="true"
-      ref={flyoutButtonRef}
-      onMouseOver={() => setHover(true)}
-      onMouseOut={() => setHover(false)}
-      onFocus={() => setHover(true)}
-      onBlur={() => setHover(false)}
-      type="button"
-      className="pal--side-nav__menu-button pal--side-nav__menu-flyout"
-      id={id}
+    <li
+      className="cpx--side-nav__item"
     >
-      {menuButtonLabel}
-      <ChevronRight16 className="pal--side-nav__menu-icon" />
-      <span
-        className="pal--side-nav__flyout-box"
-        style={{ top: boxPosition }}
-      />
-      <ul
-        ref={flyoutContentRef}
-        className="pal--side-nav__flyout"
-        style={{ top: position }}
-      >
-        {items.map((item) => {
-          const {
-            onClick: onItemClick,
-            onKeyDown: onItemKeyDown,
-            href,
-            to,
-            label,
-            ...props
-          } = item;
-          return (
-            <NavItem
-              key={`${href}-${label}`}
-              active={isActiveItem(item, activeHref)}
-              {...props}
-              linkComponent={href ? "a" : LinkComponent}
-              label={label}
-              to={to}
-              href={href}
-              onClick={(evt) => onItemSelect(evt, to || href, onItemClick)}
-              onKeyDown={(evt) => onItemSelect(evt, to || href, onItemKeyDown)}
-            />
-          );
-        })}
-      </ul>
-    </MenuButtonComponent>
+      <MenuButtonComponent
+        aria-haspopup="true"
+        ref={flyoutButtonRef}
+        onMouseOver={() => setHover(true)}
+        onMouseOut={() => setHover(false)}
+        onFocus={() => setHover(true)}
+        onBlur={() => setHover(false)}
+        type="button"
+        className="cpx--side-nav__menu-button cpx--side-nav__menu-flyout"
+        id={id}
+      > 
+        <div className="cpx--side-nav__menu-button__label">
+          {iconItem}
+          {menuButtonLabel}
+        </div>
+        <ChevronRight16 className="cpx--side-nav__menu-icon" />
+        <span
+          className="cpx--side-nav__flyout-box"
+          style={{ top: boxPosition }}
+        />
+        <ul
+          ref={flyoutContentRef}
+          className="cpx--side-nav__flyout"
+          style={{ top: position }}
+        >
+          {items.map((item) => {
+            const {
+              onClick: onItemClick,
+              onKeyDown: onItemKeyDown,
+              href,
+              to,
+              label,
+              ...props
+            } = item;
+            return (
+              <NavItem
+                key={`${href}-${label}`}
+                active={isActiveItem(item, activeHref)}
+                {...props}
+                linkComponent={href ? "a" : LinkComponent}
+                label={label}
+                to={to}
+                href={href}
+                onClick={(evt) => onItemSelect(evt, to || href, onItemClick)}
+                onKeyDown={(evt) => onItemSelect(evt, to || href, onItemKeyDown)}
+              />
+            );
+          })}
+        </ul>
+      </MenuButtonComponent>
+    </li>
   );
 };
 
@@ -141,12 +150,17 @@ NavFlyout.propTypes = {
       label: PropTypes.string,
     })
   ).isRequired,
+  /**
+   * Icon of the item
+   */
+  icon: NavItem.propTypes.icon
 };
 
 NavFlyout.defaultProps = {
   id: undefined,
   linkComponent: "a",
   menuButtonComponent: "button",
+  icon: undefined,
 };
 
 export default NavFlyout;

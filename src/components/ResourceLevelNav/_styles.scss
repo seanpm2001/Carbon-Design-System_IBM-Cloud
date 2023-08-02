@@ -11,7 +11,7 @@
 
 @media screen and (max-width: "671px") {
   :not(.pal-docs--renderer__component)
-    > .pal--side-nav.pal--resource-level-nav {
+    > .cpx--side-nav.cpx--resource-level-nav {
     position: fixed;
     overflow-y: auto;
     max-height: calc(100% - 3.125rem);
@@ -24,14 +24,14 @@
 }
 
 @media screen and (max-width: "671px") {
-  .pal--side-nav.pal--resource-level-nav.pal--resource-level-nav--skeleton {
+  .cpx--side-nav.cpx--resource-level-nav.cpx--resource-level-nav--skeleton {
     display: none;
   }
 }
 
-.pal--resource-level-nav--skeleton {
-  .pal--side-nav__item:not(.pal--side-nav__item--with-menu),
-  .pal--side-nav__menu-button {
+.cpx--resource-level-nav--skeleton {
+  .cpx--side-nav__item:not(.cpx--side-nav__item--with-menu),
+  .cpx--side-nav__menu-button {
     background-color: $background;
     cursor: default;
   }

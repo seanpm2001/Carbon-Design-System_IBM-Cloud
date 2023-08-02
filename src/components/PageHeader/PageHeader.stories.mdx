@@ -271,7 +271,7 @@ export const Skeleton = (args) => (
   </Story>
 </Canvas>
 
-### Page Header with tag management and defined actions
+### Resource Detail Page Header with tag management and defined actions
 **Disclaimer:** Since this component lives in a repository that supports no connected cloud experiences the `ResourceTagList` & `ResourceTagModal` components are not built in to the `PageHeader` anymore. You can see in the following example how you can incoporate a tag list component into the `surfacedDetails` property.
 You need to import the corresponding components of the `@console/pal` package and nest them inside the `surfacedDetails` prop.
 ```jsx
@@ -286,9 +286,10 @@ import { ResourceTagList, ResourceTagModal } from '@console/pal/Connected';
 ```
 <Canvas>
   <Story
-    name="PageHeader with tag management and defined actions"
+    name="Resource Detail Page Header with tagss"
     args={{
-      title: 'Create a Cloud Foundry App',
+      title: 'Overview',
+      isResourceDetail,
       breadcrumbs: [
         {
           'href':'https://cloud.ibm.com',
@@ -336,3 +337,5 @@ import { ResourceTagList, ResourceTagModal } from '@console/pal/Connected';
 - Trevor Wong
 - Attila Bartha
 - Flannan Lo
+- Maximillian Hammer
+- Stephanie Cree
