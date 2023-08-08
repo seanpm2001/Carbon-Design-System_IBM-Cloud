@@ -37,10 +37,6 @@ const VerticalTabs = props => {
     className
   );
 
-  const handleTabSelect = ({ selectedIndex }) => {
-    setSelectedIndex(selectedIndex);
-  };
-
   //choose the screen size
   const handleResize = () => {
     if (window.innerWidth < BREAKPOINT) {
@@ -70,11 +66,7 @@ const VerticalTabs = props => {
 
   return (
     <VerticalTabsContext.Provider value={value}>
-      <Tabs
-        selectedIndex={selectedIndex}
-        onChange={handleTabSelect}
-        className={classes}
-        {...rest}>
+      <Tabs selectedIndex={selectedIndex} className={classes} {...rest}>
         <div className={classes}>
           {children}
           <VerticalTabsFooter />

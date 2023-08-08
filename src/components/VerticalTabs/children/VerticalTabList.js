@@ -66,6 +66,7 @@ const VerticalTabList = React.forwardRef((props, ref) => {
       const searchedChildrenIndices = searchedChildren.map(
         child => child.refIndex
       );
+
       return tabs.filter((child, index) =>
         searchedChildrenIndices.includes(index)
       );
