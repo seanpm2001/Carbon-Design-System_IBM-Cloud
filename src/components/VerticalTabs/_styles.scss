@@ -201,9 +201,10 @@
 
     &__footer {
       display: none; // hide by default
-      align-items: center;
+            align-items: center;
+
+  
       padding-left: $spacing-05;
-      position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;

@@ -32,10 +32,10 @@ const VerticalTabList = React.forwardRef((props, ref) => {
     ...rest
   } = props;
 
-  const { isMobile, setTotalTabs } = useContext(VerticalTabsContext);
+  const { isMobile, setTotalTabs, open, setOpen } =
+    useContext(VerticalTabsContext);
   const [filter, setFilter] = useState('');
   const [tabs, setTabs] = useState(children);
-  const [open, setOpen] = useState(false);
   const searchRef = useRef();
 
   const classes = classnames(
@@ -156,27 +156,24 @@ const VerticalTabList = React.forwardRef((props, ref) => {
                 {...searchProps}
               />
             ) : (
-              <IconButton
-                label="Search"
-                onClick={() => handleOpen(!open)}
-                kind="ghost">
+              <IconButton onClick={() => handleOpen(!open)} kind="ghost">
                 <SearchIcon />
               </IconButton>
             ))}
           {withSort && (
-            <IconButton label="Sort" onClick={handleSort} kind="ghost">
+            <IconButton onClick={handleSort} kind="ghost">
               <ArrowsVertical />
             </IconButton>
           )}
           {withAdd && (
-            <IconButton label="Add" onClick={handleAdd} kind="primary">
+            <IconButton onClick={handleAdd} kind="primary">
               <Add />
             </IconButton>
           )}
         </ButtonSet>
       </div>
       <VerticalTabsSidePanel open={open} onClose={handleOpen}>
-        <TabList contained ref={ref} {...rest}>
+        <TabList {...rest} scrollIntoView contained ref={ref}>
           {tabs}
         </TabList>
         {withSearch && (

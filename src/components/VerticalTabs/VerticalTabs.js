@@ -8,8 +8,10 @@ export const VerticalTabsContext = createContext({
   selectedIndex: 0,
   totalTabs: 0,
   isMobile: false,
+  open: false,
   setSelectedIndex: () => {},
   setTotalTabs: () => {},
+  setOpen: () => {},
 });
 const BREAKPOINT = 672;
 /**
@@ -31,6 +33,7 @@ const VerticalTabs = props => {
   );
   const [totalTabs, setTotalTabs] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [open, setOpen] = useState(false);
   const classes = classNames(
     'pal--vertical-tabs',
     { 'pal--vertical-tabs--mobile': isMobile },
@@ -60,8 +63,10 @@ const VerticalTabs = props => {
     selectedIndex,
     totalTabs,
     isMobile,
+    open,
     setSelectedIndex,
     setTotalTabs,
+    setOpen,
   };
 
   return (

@@ -1,14 +1,25 @@
 import { Tab } from '@carbon/react';
 import classnames from 'classnames';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import ResourceStatusIndicator from '../../ResourceStatusIndicator/ResourceStatusIndicator';
 import { VerticalTabsContext } from '../VerticalTabs';
 import PropTypes from 'prop-types';
 
 const VerticalTab = React.forwardRef((props, ref) => {
   const { children, className, statusIndicator, index, ...rest } = props;
-  const { setSelectedIndex } = useContext(VerticalTabsContext);
+  const { selectedIndex, open, setSelectedIndex } =
+    useContext(VerticalTabsContext);
   const classes = classnames('pal--vertical-tab', className);
+  const divRef = useRef();
+
+  useEffect(() => {
+    if (index === selectedIndex && open) {
+      divRef?.current?.scrollIntoView({
+        block: 'nearest',
+        inline: 'nearest',
+      });
+    }
+  }, [selectedIndex, index, open]);
 
   const handleClick = e => {
     setSelectedIndex(index);
@@ -25,10 +36,12 @@ const VerticalTab = React.forwardRef((props, ref) => {
       className={classes}
       onClick={handleClick}
       onKeyDown={handleKeyDown}>
-      {children}
-      {statusIndicator && (
-        <ResourceStatusIndicator statusIndicator={statusIndicator} />
-      )}
+      <div ref={divRef}>
+        {children}
+        {statusIndicator && (
+          <ResourceStatusIndicator statusIndicator={statusIndicator} />
+        )}
+      </div>
     </Tab>
   );
 });
