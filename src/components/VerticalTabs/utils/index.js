@@ -1,3 +1,5 @@
 import getRecursiveChildText from "./getRecursiveChildText";
 import search from "./search";
-export { getRecursiveChildText, search };
+import getNextIndex from './getNextIndex';
+import useMergedRefs from './useMergedRefs';
+export { getRecursiveChildText, search, getNextIndex, useMergedRefs };

@@ -18,16 +18,12 @@ const BREAKPOINT = 672;
  * - make panels scrollable
  * - mobile view
  */
-const VerticalTabs = props => {
-  const {
-    children,
-    className,
-    fullHeight,
-    selectedIndex: controlledSelectedIndex,
-    defaultSelectedIndex,
-    ...rest
-  } = props;
-
+const VerticalTabs = ({
+  children,
+  className,
+  selectedIndex: controlledSelectedIndex,
+  defaultSelectedIndex,
+}) => {
   const [selectedIndex, setSelectedIndex] = useState(
     defaultSelectedIndex | controlledSelectedIndex
   );
@@ -71,24 +67,27 @@ const VerticalTabs = props => {
 
   return (
     <VerticalTabsContext.Provider value={value}>
-      <Tabs selectedIndex={selectedIndex} className={classes} {...rest}>
-        <div className={classes}>
-          {children}
-          <VerticalTabsFooter />
-        </div>
-      </Tabs>
+      <div className={classes}>
+        {children}
+        <VerticalTabsFooter />
+      </div>
     </VerticalTabsContext.Provider>
   );
 };
 
 VerticalTabs.defaultProps = {
-  ...Tabs.defaultProps,
+  selectedIndex: 0,
+  defaultSelectedIndex: 0,
+  onChange: undefined,
+  children: undefined,
+  className: undefined,
 };
 
 VerticalTabs.propTypes = {
-  /**
-   * Determines whether Tabs span whole height or not.
-   */
-  ...Tabs.propTypes,
+  selectedIndex: PropTypes.number,
+  defaultSelectedIndex: PropTypes.number,
+  onChange: PropTypes.func,
+  children: PropTypes.node,
+  className: PropTypes.string,
 };
 export default VerticalTabs;

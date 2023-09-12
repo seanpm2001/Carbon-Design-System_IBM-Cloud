@@ -24,13 +24,14 @@
 
 .pal--vertical-tabs {
   display: flex;
-  height: 620px;
+  // height: 620px;
   align-items: stretch;
   position: relative;
   overflow: auto;
   max-width: 100%;
+  background-color: $layer-02;
 
-  .cds--tabs {
+  .pal--vertical-tab-list {
     display: flex;
     position: relative;
     max-height: 100%;
@@ -40,7 +41,7 @@
     background-color: $layer-02;
   }
 
-  .cds--tab-content {
+  .pal--vertical-tab--panel{
     background-color: $layer;
     padding: $spacing-05;
     overflow: auto;
@@ -59,11 +60,7 @@
       }
     }
   }
-
-  .cds--tab--overflow-nav-button {
-    display: none;
-  }
-
+  
   .pal--vertical-tab {
     min-height: 4rem;
     max-height: 4rem;
@@ -117,7 +114,7 @@
     width: 100%;
 
     .pal--vertical-tab-list__footer,
-    .cds--tabs {
+    .cds--tab--list {
       visibility: hidden;
       transform: translateX(-100%);
 
@@ -130,11 +127,11 @@
       }
     }
 
-    .cds--tabs {
+    .cds--tab--list {
       position: absolute;
       top: 0;
       left: 0;
-      height: calc(100%);
+      height: 100%;
       width: 75%;
     }
 
@@ -156,7 +153,7 @@
       background-color: $overlay;
     }
 
-    &--open .cds--tabs,
+    &--open .cds--tab--list,
     &--open .pal--vertical-tab-list__footer {
       visibility: visible;
       transform: translateX(0%);
@@ -201,14 +198,12 @@
 
     &__footer {
       display: none; // hide by default
-            align-items: center;
-
-  
+      align-items: center;
       padding-left: $spacing-05;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 2em;
+      height: 32px;
       background-color: $layer;
       overflow: hidden;
       border-top: 1px solid $border-subtle-00;
@@ -218,7 +213,7 @@
       display: flex;
       flex-direction: column;
       overflow-y: auto;
-      height: 100%;
+      // height: 100%;
     }
 
     // responsive design
@@ -233,10 +228,10 @@
     }
   }
 
-  .cds--tabs.cds--tabs--contained.cds--tabs--tall
-    .cds--tabs__nav-link.pal--vertical-tab {
-    max-height: 100%;
-  }
+  // .cds--tabs.cds--tabs--contained.cds--tabs--tall
+  //   .cds--tabs__nav-link.pal--vertical-tab {
+  //   max-height: 100%;
+  // }
 
   .cds--tab--list,
   .cds--tabs {

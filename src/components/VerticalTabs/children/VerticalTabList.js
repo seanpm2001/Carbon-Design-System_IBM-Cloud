@@ -1,4 +1,4 @@
-import { ButtonSet, IconButton, Search, TabList } from '@carbon/react';
+import { ButtonSet, IconButton, Search } from '@carbon/react';
 import {
   Add,
   ArrowsVertical,
@@ -16,30 +16,38 @@ import React, {
   useState,
 } from 'react';
 import { VerticalTabsContext } from '../VerticalTabs';
-import { getRecursiveChildText, search } from '../utils';
+import { getRecursiveChildText, search, getNextIndex } from '../utils';
 import VerticalTabsSidePanel from './VerticalTabsSidePanel';
 
-const VerticalTabList = React.forwardRef((props, ref) => {
+const VerticalTabList = ({
+  children,
+  className,
+  withSearch,
+  withAdd,
+  withSort,
+  SearchProps,
+  disabled,
+  onSort,
+  onAdd,
+  'aria-label': label,
+  ...rest
+}) => {
   const {
-    children,
-    className,
-    withSearch,
-    withAdd,
-    withSort,
-    SearchProps,
-    OverflowMenuProps,
-    disabled,
-    ...rest
-  } = props;
-
-  const { isMobile, setTotalTabs, open, setOpen } =
-    useContext(VerticalTabsContext);
+    selectedIndex,
+    setSelectedIndex,
+    isMobile,
+    setTotalTabs,
+    open,
+    setOpen,
+  } = useContext(VerticalTabsContext);
   const [filter, setFilter] = useState('');
   const [tabs, setTabs] = useState(children);
   const searchRef = useRef();
 
   const classes = classnames(
     'pal--vertical-tab-list',
+    'cds--tabs',
+    'cds--tabs--contained',
     { 'pal--vertical-tab-list--search': withSearch },
     { 'pal--vertical-tab-list--add': withAdd },
     { 'pal--vertical-tab-list--sort': withSort },
@@ -95,8 +103,8 @@ const VerticalTabList = React.forwardRef((props, ref) => {
   };
 
   const handleAdd = () => {
-    if (props.onAdd) {
-      props.onAdd();
+    if (onAdd) {
+      onAdd();
     }
   };
 
@@ -108,10 +116,30 @@ const VerticalTabList = React.forwardRef((props, ref) => {
     const copiedTabs = [...tabs];
     const reversedTabs = copiedTabs.reverse();
     setTabs([...reversedTabs]);
-    if (props.onSort) {
-      props.onSort();
+    if (onSort) {
+      onSort();
     }
   };
+
+  function handleKeyDown(event) {
+    if (event.code === 'ArrowDown' || event.code === 'ArrowUp') {
+      event.preventDefault();
+
+      const activeTabs = tabs.filter(tab => !tab.props.disabled);
+      const actualSelectedIndex = activeTabs.indexOf(
+        activeTabs.find(tab => tab.props.index === selectedIndex)
+      );
+      const nextIndex = tabs.indexOf(
+        activeTabs[getNextIndex(event, activeTabs.length, actualSelectedIndex)]
+      );
+      console.log(nextIndex);
+      const nextTab = tabs[nextIndex].props.index;
+      console.log(tabs[nextIndex]);
+      setSelectedIndex(nextTab);
+
+      // tabs.current[nextIndex]?.focus();
+    }
+  }
 
   const searchProps = {
     ...SearchProps,
@@ -173,9 +201,16 @@ const VerticalTabList = React.forwardRef((props, ref) => {
         </ButtonSet>
       </div>
       <VerticalTabsSidePanel open={open} onClose={handleOpen}>
-        <TabList {...rest} scrollIntoView contained ref={ref}>
+        {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
+        <div
+          {...rest}
+          aria-label={label}
+          className="cds--tab--list"
+          role="tablist"
+          onKeyDown={handleKeyDown}>
+          {' '}
           {tabs}
-        </TabList>
+        </div>
         {withSearch && (
           <div className="pal--vertical-tab-list__footer">
             {' '}
@@ -211,16 +246,22 @@ const VerticalTabList = React.forwardRef((props, ref) => {
           </IconButton>
         )}
       </div>
-      <TabList contained ref={ref} {...rest}>
+      {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
+      <div
+        {...rest}
+        aria-label={label}
+        className="cds--tab--list"
+        role="tablist"
+        onKeyDown={handleKeyDown}>
         {tabs}
-      </TabList>
+      </div>
       <div className="pal--vertical-tab-list__footer">
         {' '}
         Showing {tabs.length} items{' '}
       </div>
     </div>
   );
-});
+};
 
 VerticalTabList.propTypes = {
   withSearch: PropTypes.bool,
@@ -229,7 +270,14 @@ VerticalTabList.propTypes = {
   withSort: PropTypes.bool,
   onAdd: PropTypes.func,
   onSort: PropTypes.func,
-  ...TabList.propTypes,
+  disabled: PropTypes.bool,
+  className: PropTypes.string,
+  children: PropTypes.node,
+  /**
+   * Provide an accessible label to be read when a user interacts with this
+   * component
+   */
+  'aria-label': PropTypes.string.isRequired,
 };
 
 VerticalTabList.defaultProps = {
@@ -239,7 +287,6 @@ VerticalTabList.defaultProps = {
   onAdd: undefined,
   withAdd: false,
   withSort: true,
-  ...TabList.defaultProps,
 };
 
 export default VerticalTabList;
