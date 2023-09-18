@@ -18,11 +18,9 @@ const VerticalTab = ({
     useContext(VerticalTabsContext);
   const classes = classnames(
     'pal--vertical-tab',
-    'cds--tabs__nav-item',
-    'cds--tabs__nav-link',
     {
-      [`cds--tabs__nav-item--selected`]: selectedIndex === index,
-      [`cds--tabs__nav-item--disabled`]: disabled,
+      [`pal--vertical-tab--selected`]: selectedIndex === index,
+      [`pal--vertical-tab--disabled`]: disabled,
     },
     className
   );
@@ -57,8 +55,8 @@ const VerticalTab = ({
       className={classes}
       onClick={handleClick}
       onKeyDown={handleKeyDown}>
-      <div className="cds--tabs__nav-item-label-wrapper">
-        <span className="cds--tabs__nav-item-label">
+      <div className="pal--vertical-tab-label-wrapper">
+        <span className="pal--vertical-tab-label">
           {children}
           {statusIndicator && (
             <ResourceStatusIndicator statusIndicator={statusIndicator} />
@@ -67,7 +65,7 @@ const VerticalTab = ({
       </div>
       {secondaryLabel && (
         <div
-          className="cds--tabs__nav-item-secondary-label"
+          className="pal--vertical-tab-secondary-label"
           title={secondaryLabel}>
           {secondaryLabel}
         </div>

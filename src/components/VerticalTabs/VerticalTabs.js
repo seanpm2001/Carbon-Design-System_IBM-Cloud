@@ -12,6 +12,8 @@ export const VerticalTabsContext = createContext({
   setSelectedIndex: () => {},
   setTotalTabs: () => {},
   setOpen: () => {},
+  onAdd: () => {},
+  setOnAdd: () => {},
 });
 const BREAKPOINT = 672;
 /**
@@ -30,11 +32,10 @@ const VerticalTabs = ({
   const [totalTabs, setTotalTabs] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [open, setOpen] = useState(false);
-  const classes = classNames(
-    'pal--vertical-tabs',
-    { 'pal--vertical-tabs--mobile': isMobile },
-    className
-  );
+  const [onAdd, setOnAdd] = useState(() => {});
+  const classes = classNames('pal--vertical-tabs__wrapper', {
+    'pal--vertical-tabs__wrapper--mobile': isMobile,
+  });
 
   //choose the screen size
   const handleResize = () => {
@@ -63,6 +64,8 @@ const VerticalTabs = ({
     setSelectedIndex,
     setTotalTabs,
     setOpen,
+    onAdd,
+    setOnAdd,
   };
 
   return (

@@ -26,14 +26,14 @@ const VerticalTabsFooter = () => {
         kind="ghost"
         label="Previous"
         onClick={decrementTab}
-        disabled={selectedIndex <= 0}>
+        disabled={selectedIndex <= 0 || !totalTabs}>
         <CaretUp size={16} />
       </IconButton>
       <IconButton
         kind="ghost"
         label="Next"
         onClick={incrementTab}
-        disabled={selectedIndex >= totalTabs - 1}>
+        disabled={selectedIndex >= totalTabs - 1 || !totalTabs}>
         <CaretDown size={16} />
       </IconButton>
     </div>

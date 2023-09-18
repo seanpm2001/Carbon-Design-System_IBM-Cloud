@@ -39,19 +39,19 @@ const VerticalTabList = ({
     setTotalTabs,
     open,
     setOpen,
+    setOnAdd,
   } = useContext(VerticalTabsContext);
   const [filter, setFilter] = useState('');
   const [tabs, setTabs] = useState(children);
   const searchRef = useRef();
 
   const classes = classnames(
-    'pal--vertical-tab-list',
-    'cds--tabs',
-    'cds--tabs--contained',
-    { 'pal--vertical-tab-list--search': withSearch },
-    { 'pal--vertical-tab-list--add': withAdd },
-    { 'pal--vertical-tab-list--sort': withSort },
-    { 'pal--vertical-tab-list--open': open },
+    'pal--vertical-tabs',
+    { 'pal--vertical-tabs--search': withSearch },
+    { 'pal--vertical-tabs--add': withAdd },
+    { 'pal--vertical-tabs--sort': withSort },
+    { 'pal--vertical-tabs--open': open },
+    { 'pal--vertical-tabs--mobile': isMobile },
     className
   );
 
@@ -132,9 +132,7 @@ const VerticalTabList = ({
       const nextIndex = tabs.indexOf(
         activeTabs[getNextIndex(event, activeTabs.length, actualSelectedIndex)]
       );
-      console.log(nextIndex);
       const nextTab = tabs[nextIndex].props.index;
-      console.log(tabs[nextIndex]);
       setSelectedIndex(nextTab);
 
       // tabs.current[nextIndex]?.focus();
@@ -163,13 +161,44 @@ const VerticalTabList = ({
   }, [isMobile]);
 
   useEffect(() => {
-    setTotalTabs(children.length);
+    setTotalTabs(children?.length);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [children]);
 
+  useEffect(() => {
+    // propagate to context
+    setTotalTabs(children?.length);
+    setOnAdd(() => onAdd);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [onAdd]);
+
+  const emptyState = (
+    <span className="pal--vertical-tabs__empty-state">
+      You can find a list of resources here once you create them.
+    </span>
+  );
+
+  const tablist = (
+    <>
+      {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
+      <div
+        {...rest}
+        aria-label={label}
+        className="pal--vertical-tab--list"
+        role="tablist"
+        onKeyDown={handleKeyDown}>
+        {tabs ? tabs : emptyState}
+      </div>
+      <div className="pal--vertical-tabs__footer">
+        {' '}
+        Showing {tabs?.length || 0} items{' '}
+      </div>
+    </>
+  );
+
   const smContent = (
     <div className={classes}>
-      <div className="pal--vertical-tab-list__header">
+      <div className="pal--vertical-tabs__header">
         <IconButton onClick={() => handleOpen(!open)} kind="ghost">
           <TableOfContents />
         </IconButton>
@@ -177,19 +206,23 @@ const VerticalTabList = ({
           {withSearch &&
             (open ? (
               <Search
+                {...searchProps}
                 value={filter}
                 ref={searchRef}
                 onClear={handleClear}
-                className="pal--vertical-tab-list__search"
-                {...searchProps}
+                className="pal--vertical-tabs__search"
+                disabled={!tabs}
               />
             ) : (
-              <IconButton onClick={() => handleOpen(!open)} kind="ghost">
+              <IconButton
+                onClick={() => handleOpen(!open)}
+                kind="ghost"
+                disabled={!tabs}>
                 <SearchIcon />
               </IconButton>
             ))}
           {withSort && (
-            <IconButton onClick={handleSort} kind="ghost">
+            <IconButton onClick={handleSort} kind="ghost" disabled={!tabs}>
               <ArrowsVertical />
             </IconButton>
           )}
@@ -201,22 +234,7 @@ const VerticalTabList = ({
         </ButtonSet>
       </div>
       <VerticalTabsSidePanel open={open} onClose={handleOpen}>
-        {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
-        <div
-          {...rest}
-          aria-label={label}
-          className="cds--tab--list"
-          role="tablist"
-          onKeyDown={handleKeyDown}>
-          {' '}
-          {tabs}
-        </div>
-        {withSearch && (
-          <div className="pal--vertical-tab-list__footer">
-            {' '}
-            Showing {tabs.length} items{' '}
-          </div>
-        )}
+        {tablist}
       </VerticalTabsSidePanel>
     </div>
   );
@@ -225,17 +243,18 @@ const VerticalTabList = ({
 
   return (
     <div className={classes}>
-      <div className="pal--vertical-tab-list__header">
+      <div className="pal--vertical-tabs__header">
         {withSearch && (
           <Search
+            {...searchProps}
             value={filter}
             onClear={handleClear}
-            className="pal--vertical-tab-list__search"
-            {...searchProps}
+            className="pal--vertical-tabs__search"
+            disabled={!tabs}
           />
         )}
         {withSort && (
-          <IconButton onClick={handleSort} kind="ghost">
+          <IconButton onClick={handleSort} kind="ghost" disabled={!tabs}>
             <ArrowsVertical />
           </IconButton>
         )}
@@ -246,19 +265,7 @@ const VerticalTabList = ({
           </IconButton>
         )}
       </div>
-      {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
-      <div
-        {...rest}
-        aria-label={label}
-        className="cds--tab--list"
-        role="tablist"
-        onKeyDown={handleKeyDown}>
-        {tabs}
-      </div>
-      <div className="pal--vertical-tab-list__footer">
-        {' '}
-        Showing {tabs.length} items{' '}
-      </div>
+      {tablist}
     </div>
   );
 };
@@ -283,8 +290,8 @@ VerticalTabList.propTypes = {
 VerticalTabList.defaultProps = {
   withSearch: false,
   SearchProps: Search.defaultProps,
-  onSort: undefined,
-  onAdd: undefined,
+  onSort: () => {},
+  onAdd: () => {},
   withAdd: false,
   withSort: true,
 };

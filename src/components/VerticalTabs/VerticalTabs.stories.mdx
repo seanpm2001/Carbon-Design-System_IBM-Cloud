@@ -8,6 +8,7 @@ import './_styles.scss';
 <Meta
   title="Experimental/VerticalTabs"
   component={VerticalTabs}
+  subcomponents={{ VerticalTabList, VerticalTab, VerticalTabPanel, VerticalTabPanels }}
   parameters={{ status: { type: 'experimental' } }}
 />
 
@@ -202,11 +203,12 @@ export const Template = args => (
   <Story name="With Search, Add & Sort">
     <div style={{ maxHeight: '400px', display: 'flex' }}>
       <VerticalTabs>
-        <VerticalTabList withSearch withAdd WithSort aria-label="test">
+        <VerticalTabList withSearch withAdd withSort aria-label="test">
           {Array.from(Array(30).keys()).map((value, index) => (
             <VerticalTab
               secondaryLabel="foo"
               index={index}
+              disabled
               statusIndicator="success">
               Tab label {index}
             </VerticalTab>
@@ -236,6 +238,23 @@ export const Template = args => (
               </p>{' '}
             </VerticalTabPanel>
           ))}
+        </VerticalTabPanels>
+      </VerticalTabs>
+    </div>
+  </Story>
+</Canvas>
+
+### Empty state
+
+<Canvas>
+  <Story name="Empty state">
+    <div style={{ height: '400px', display: 'flex' }}>
+      <VerticalTabs>
+        <VerticalTabList withSearch withAdd WithSort aria-label="test" onAdd={()=>console.log('works')}>
+          
+        </VerticalTabList>
+        <VerticalTabPanels className="test-panels">
+          
         </VerticalTabPanels>
       </VerticalTabs>
     </div>
@@ -277,18 +296,7 @@ For general component usage review the
 ## Props
 
 ### VerticalTabs
-
-Wrapper component has same props as Carbon `Tabs` component
-
 <ArgsTable of={VerticalTabs} />
-
-### VerticalTabList
-
-<ArgsTable of={VerticalTabList} />
-
-### VerticalTab
-
-<ArgsTable of={VerticalTab} />
 
 ## Contributors
 

@@ -7,11 +7,7 @@ import { VerticalTabPanelContext } from './VerticalTabPanels';
 const VerticalTabPanel = ({ children, className, ...rest }) => {
   const { selectedIndex } = useContext(VerticalTabsContext);
   const index = useContext(VerticalTabPanelContext);
-  const classes = classnames(
-    'pal--vertical-tab--panel',
-    'cds--tab-content',
-    className
-  );
+  const classes = classnames('pal--vertical-tab-panel', className);
   const ref = useRef();
   const id = `pal-tabpanel-${index}`;
   const tabId = `pal-tab-${index}`;
