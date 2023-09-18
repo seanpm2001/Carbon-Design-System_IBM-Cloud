@@ -2,6 +2,7 @@
 @use '@carbon/react/scss/motion';
 @use '@carbon/react/scss/reset';
 @use '@carbon/react/scss/components/skeleton-styles';
+@use '@carbon/react/scss/components/button/tokens' as button;
 @import '@carbon/react/scss/components/overflow-menu';
 @import '@carbon/react/scss/colors';
 @import '@carbon/react/scss/spacing';
@@ -22,25 +23,15 @@
   }
 }
 
-.pal--vertical-tabs {
+.pal--vertical-tabs__wrapper {
   display: flex;
-  height: 620px;
   align-items: stretch;
   position: relative;
   overflow: auto;
   max-width: 100%;
+  background-color: $layer-02;
 
-  .cds--tabs {
-    display: flex;
-    position: relative;
-    max-height: 100%;
-    width: auto;
-    overflow-y: auto;
-    flex-direction: column;
-    background-color: $layer-02;
-  }
-
-  .cds--tab-content {
+  .pal--vertical-tab-panel{
     background-color: $layer;
     padding: $spacing-05;
     overflow: auto;
@@ -59,40 +50,84 @@
       }
     }
   }
-
-  .cds--tab--overflow-nav-button {
-    display: none;
-  }
-
+  
   .pal--vertical-tab {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-start;
+    padding: $spacing-05;
     min-height: 4rem;
-    max-height: 4rem;
+    max-height: 100%;
+    height: 100%;
+    background-color: $layer-accent-01;
+    position: relative;
+    border-bottom: 1px solid $border-tile-01;
+    border-right: 0;
+    border-top: 0;
+    border-left: 0;
 
-    &.cds--tabs__nav-link {
-      background-color: $layer-accent-01;
-      position: relative;
-      border-bottom: 1px solid $border-tile-01;
+
+    &:hover{ 
+      background-color: $layer-accent-hover;
+
+      .pal--vertical-tab-label {
+        color: $text-primary;
+        fill: $text-primary;
+      }
     }
 
-    &.cds--tabs__nav-item:not(
-        .cds--tabs__nav-item--selected,
-        .cds--tabs__nav-item--disabled
+    &:focus {
+      outline: 2px solid $focus;
+      outline-offset: -2px;
+    }
+
+    .pal--vertical-tab-label-wrapper {
+      width: 100%;
+    }
+
+    .pal--vertical-tab-label {
+      @include type.type-style('body-compact-01');
+
+      color: $text-secondary;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      width: 100%;
+    }
+    
+    .pal--vertical-tab-secondary-label {
+      @include type.type-style('label-01');
+
+      color: $text-secondary;
+    }
+   
+
+    &:not(
+        .pal--vertical-tab--selected,
+        .pal--vertical-tab--disabled
       ):hover {
       box-shadow: inset 2px 0 0 0 $border-strong;
     }
 
-    &.cds--tabs__nav-item.cds--tabs__nav-item--selected {
+    &--selected {
       box-shadow: inset 2px 0 0 0 $border-interactive;
+
+      .pal--vertical-tab-label {
+        @include type.type-style('heading-compact-01');
+
+        color: $text-primary;
+      }
     }
 
-    .cds--tabs__nav-item-label {
-      display: flex;
-      position: relative;
-      width: 100%;
+    &--disabled {
+      box-shadow: inset 2px 0 0 0 $border-disabled;
+      background-color: button.$button-disabled;
+      pointer-events: none;
 
-      .pal--resource-status-indicator {
-        position: absolute;
-        right: 0;
+      .pal--vertical-tab-label, .pal--vertical-tab-secondary-label {
+        color: $text-disabled;
+        fill: $text-disabled;
       }
     }
   }
@@ -105,7 +140,7 @@
     justify-content: space-between;
   }
 
-  .pal--vertical-tab-list__sidepanel {
+  .pal--vertical-tabs__sidepanel {
     $slide-transition: transform 400ms ease-in-out, visibility 400ms;
 
     z-index: 100;
@@ -116,8 +151,8 @@
     height: calc(100% - 41px);
     width: 100%;
 
-    .pal--vertical-tab-list__footer,
-    .cds--tabs {
+    .pal--vertical-tabs__footer,
+    .pal--vertical-tab--list {
       visibility: hidden;
       transform: translateX(-100%);
 
@@ -130,15 +165,15 @@
       }
     }
 
-    .cds--tabs {
+    .pal--vertical-tab--list {
       position: absolute;
       top: 0;
       left: 0;
-      height: calc(100%);
+      height: 100%;
       width: 75%;
     }
 
-    &--search .cds--tabs {
+    &--search .pal--tab-list {
       height: calc(100% - 32px); // footer
     }
 
@@ -146,7 +181,7 @@
       min-width: 100%;
     }
 
-    .pal--vertical-tab-list__footer {
+    .pal--vertical-tabs__footer {
       width: 75%;
       position: absolute;
     }
@@ -156,27 +191,30 @@
       background-color: $overlay;
     }
 
-    &--open .cds--tabs,
-    &--open .pal--vertical-tab-list__footer {
+    &--open .pal--vertical-tab--list,
+    &--open .pal--vertical-tabs__footer {
       visibility: visible;
       transform: translateX(0%);
     }
   }
 
-  &:has(.pal--vertical-tab-list__footer)
-    .pal--vertical-tab-list__sidepanel
-    .cds--tabs {
+  &:has(.pal--vertical-tabs__footer)
+    .pal--vertical-tabs__sidepanel
+    .pal--vertical-tabs {
     height: calc(100% - 32px);
   }
 
-  .pal--vertical-tab-list {
-    overflow-y: hidden;
+  .pal--vertical-tabs {
+    position: relative;
+    width: auto;
     flex-direction: column;
+    background-color: $layer-02;
+    overflow-y: hidden;
     overflow-x: visible;
     min-width: 250px;
+    max-width: 350px;
     border-right: solid 1px $border-subtle-00;
     display: block;
-    background-color: $layer-02;
 
     &__header {
       background-color: $layer;
@@ -200,24 +238,34 @@
     }
 
     &__footer {
+      position: absolute;
       display: none; // hide by default
       align-items: center;
       padding-left: $spacing-05;
-      position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 2em;
+      height: 32px;
       background-color: $layer;
       overflow: hidden;
       border-top: 1px solid $border-subtle-00;
     }
 
-    .cds--tab--list {
+    &__empty-state {
+      @include type.type-style('body-long-01');
+
+      color: $text-primary;
+      background-color: $layer-02;
+      padding: $spacing-05;
+      height: 100%;
+    }
+
+    .pal--vertical-tab--list {
       display: flex;
       flex-direction: column;
       overflow-y: auto;
-      height: 100%;
+      border-left: solid 1px $border-subtle-00;
+
     }
 
     // responsive design
@@ -232,30 +280,23 @@
     }
   }
 
-  .cds--tabs.cds--tabs--contained.cds--tabs--tall
-    .cds--tabs__nav-link.pal--vertical-tab {
-    max-height: 100%;
-  }
-
-  .cds--tab--list,
-  .cds--tabs {
+  .pal--vertical-tab--list {
     height: 100%;
   }
 
-  .pal--vertical-tab.cds--tabs__nav-link:last-child {
-    box-shadow: 0 solid transparent;
+  .pal--vertical-tab:last-child {
+    box-shadow: none;
   }
 
-  .pal--vertical-tab-list--search,
-  .pal--vertical-tab-list--add,
-  .pal--vertical-tab-list--sort {
-    .cds--tabs.cds--tabs--contained.cds--tabs--tall
-      .cds--tabs__nav-link.pal--vertical-tab {
+  .pal--vertical-tabs--search,
+  .pal--vertical-tabs--add,
+  .pal--vertical-tabs--sort {
+    .pal--vertical-tab {
       min-height: 4rem;
       max-height: 4rem;
     }
 
-    .pal--vertical-tab-list__footer {
+    .pal--vertical-tabs__footer {
       display: flex;
     }
   }
@@ -276,11 +317,11 @@
       display: flex;
     }
   }
-
+ 
   &--mobile {
     height: 360px;
 
-    .cds--tab-content {
+    .pal--vertical-tab-panel {
       background-color: $layer;
       padding: $spacing-05;
       max-width: 100%;
@@ -293,7 +334,7 @@
       top: 41px;
     }
 
-    .pal--vertical-tab-list {
+    .pal--vertical-tabs {
       width: 100%;
       height: 100%;
       border-right: 0;

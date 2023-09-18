@@ -8,38 +8,34 @@ export const VerticalTabsContext = createContext({
   selectedIndex: 0,
   totalTabs: 0,
   isMobile: false,
+  open: false,
   setSelectedIndex: () => {},
   setTotalTabs: () => {},
+  setOpen: () => {},
+  onAdd: () => {},
+  setOnAdd: () => {},
 });
 const BREAKPOINT = 672;
 /**
  * - make panels scrollable
  * - mobile view
  */
-const VerticalTabs = props => {
-  const {
-    children,
-    className,
-    fullHeight,
-    selectedIndex: controlledSelectedIndex,
-    defaultSelectedIndex,
-    ...rest
-  } = props;
-
+const VerticalTabs = ({
+  children,
+  className,
+  selectedIndex: controlledSelectedIndex,
+  defaultSelectedIndex,
+}) => {
   const [selectedIndex, setSelectedIndex] = useState(
     defaultSelectedIndex | controlledSelectedIndex
   );
   const [totalTabs, setTotalTabs] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const classes = classNames(
-    'pal--vertical-tabs',
-    { 'pal--vertical-tabs--mobile': isMobile },
-    className
-  );
-
-  const handleTabSelect = ({ selectedIndex }) => {
-    setSelectedIndex(selectedIndex);
-  };
+  const [open, setOpen] = useState(false);
+  const [onAdd, setOnAdd] = useState(() => {});
+  const classes = classNames('pal--vertical-tabs__wrapper', {
+    'pal--vertical-tabs__wrapper--mobile': isMobile,
+  });
 
   //choose the screen size
   const handleResize = () => {
@@ -64,34 +60,37 @@ const VerticalTabs = props => {
     selectedIndex,
     totalTabs,
     isMobile,
+    open,
     setSelectedIndex,
     setTotalTabs,
+    setOpen,
+    onAdd,
+    setOnAdd,
   };
 
   return (
     <VerticalTabsContext.Provider value={value}>
-      <Tabs
-        selectedIndex={selectedIndex}
-        onChange={handleTabSelect}
-        className={classes}
-        {...rest}>
-        <div className={classes}>
-          {children}
-          <VerticalTabsFooter />
-        </div>
-      </Tabs>
+      <div className={classes}>
+        {children}
+        <VerticalTabsFooter />
+      </div>
     </VerticalTabsContext.Provider>
   );
 };
 
 VerticalTabs.defaultProps = {
-  ...Tabs.defaultProps,
+  selectedIndex: 0,
+  defaultSelectedIndex: 0,
+  onChange: undefined,
+  children: undefined,
+  className: undefined,
 };
 
 VerticalTabs.propTypes = {
-  /**
-   * Determines whether Tabs span whole height or not.
-   */
-  ...Tabs.propTypes,
+  selectedIndex: PropTypes.number,
+  defaultSelectedIndex: PropTypes.number,
+  onChange: PropTypes.func,
+  children: PropTypes.node,
+  className: PropTypes.string,
 };
 export default VerticalTabs;
